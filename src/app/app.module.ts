@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 
 // plugins
-
+import { QRCodeModule } from 'angularx-qrcode';
 import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -29,45 +30,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, "assets/i18n/", ".json");
 }
 
-// export class TranslateBrowserLoader implements TranslateLoader {
-//   constructor(
-//     private prefix: string = 'i18n',
-//     private suffix: string = '.json',
-//     private transferState: TransferState,
-//     private http: HttpClient
-//   ) { }
-
-//   public getTranslation(lang: string): Observable<any> {
-//     const key: StateKey<number> = makeStateKey<number>(
-//       'transfer-translate-' + lang
-//     );
-//     const data = this.transferState.get(key, null);
-
-//     // First we are looking for the translations in transfer-state, if none found, http load as fallback
-//     if (data) {
-//       return Observable.create((observer) => {
-//         observer.next(data);
-//         observer.complete();
-//       });
-//     } else {
-//       return new TranslateHttpLoader(
-//         this.http,
-//         this.prefix,
-//         this.suffix
-//       ).getTranslation(lang);
-//     }
-//   }
-// }
-
-// export function exportTranslateStaticLoader(http: HttpClient, transferState: TransferState) {
-//   return new TranslateBrowserLoader(
-//     './assets/i18n/',
-//     '.json?_t=' + new Date().getTime(),
-//     transferState,
-//     http
-//   );
-// }
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,6 +46,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    QRCodeModule,
+    FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
