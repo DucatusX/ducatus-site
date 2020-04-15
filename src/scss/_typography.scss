@@ -1,0 +1,421 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+li {
+    cursor: default;
+}
+
+.h1 {
+    &__title {
+        &-page {
+            font-weight: bold;
+            color: white;
+            font-size: 37px;
+
+            @include b(550) {
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+.h2 {
+    &__slider-title {
+        color: $white;
+        font-weight: bold;
+        font-size: 40px;
+        margin: 0;
+
+        @include b(750) {
+            font-size: 25px;
+        }
+    }
+
+    &__title {
+        font-size: 30px;
+        font-weight: bold;
+        margin: 0 0 20px 0;
+
+        &-section {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+    }
+
+
+}
+
+.span {
+    &__title {
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 38px;
+        display: inline-block;
+
+        &-section {
+            font-size: 18px;
+            color: $brown-red;
+            margin: 15px 0;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        &-text {
+            font-weight: bold;
+            font-size: 24px;
+            display: inline-block;
+            margin: 15px 0;
+        }
+    }
+
+    &__subtitle {
+        font-weight: normal;
+        display: block;
+        font-size: 17px;
+        margin-bottom: 20px;
+        line-height: 29px;
+    }
+
+    &__line {
+        width: 100px;
+        height: 2px;
+        border-radius: 10px;
+        display: inline-block;
+        background-color: $brown-red;
+        margin: 20px 0;
+
+        &-section {
+            width: 100px;
+            height: 2px;
+            border-radius: 10px;
+            display: inline-block;
+            background-color: $brown-red;
+            margin: 15px 0;
+        }
+    }
+
+    &__maintains-item {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 25px;
+        color: $brown-red;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+}
+
+.a {
+    &__link {
+        color: $brown-red;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.p {
+
+    &__section-ducatus,
+    &__slider-item,
+    &__text {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 29px;
+    }
+
+    &__slider-item {
+        color: $white;
+    }
+
+    &__section-ducatus-coin {
+        color: #9E8B5A;
+        font-size: 17px;
+        margin: 0;
+        line-height: 29px;
+    }
+
+
+    &__section-ducatus {
+        color: black;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    // &__title {
+    //     &-section {
+    //         font-size: 18px;
+    //         color: $brown-red;
+    //         margin: 15px 0;
+    //         font-weight: bold;
+    //     }
+    // }
+
+    &__text {
+        color: $black;
+        margin: 0 0 30px 0;
+
+        &-section {
+            color: $black;
+            font-size: 16px;
+            font-weight: normal;
+            margin: 15px 0;
+            line-height: 29px;
+        }
+    }
+
+    &__ducatus-coin {
+        font-size: 25px;
+        line-height: 30px;
+        font-weight: 300;
+        margin: 0;
+
+        @include b(750) {
+            font-size: 20px;
+        }
+    }
+}
+
+.icon {
+    &:before {
+        content: '';
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: initial;
+    }
+
+    &__swap-arrows {
+        @include before-img(block, 30px, 30px, r) {
+            background-color: #f7f3eb;
+            background-image: url('assets/img/icons/swap-arrows.svg');
+            border-radius: 5em;
+        }
+    }
+
+    &__money {
+        @include before-img(block, 90px, 90px, r) {
+            background-color: $gold-2;
+            background-image: url('assets/img/icons/money.svg');
+        }
+    }
+
+    &__arrow {
+        @include before-img(block, 90px, 90px, r) {
+            background-color: $gold-2;
+            background-image: url('assets/img/icons/arrow.svg');
+        }
+    }
+
+    &__house {
+        @include before-img(block, 90px, 90px, r) {
+            background-color: $white;
+            background-image: url('assets/img/icons/house.svg');
+        }
+    }
+
+    &__people {
+        @include before-img(block, 90px, 90px, r) {
+            background-color: $white;
+            background-image: url('assets/img/icons/people.svg');
+        }
+    }
+
+    &__hands {
+        @include before-img(block, 90px, 90px, r) {
+            background-color: $white;
+            background-image: url('assets/img/icons/hands.svg');
+        }
+    }
+
+    &__web {
+        @include before-img(block, 90px, 90px, r) {
+            background-color: $brown-red;
+            background-image: url('assets/img/icons/web.svg');
+        }
+    }
+
+    &__up {
+        @include before-img(block, 90px, 90px, r) {
+            background-color: $brown-red;
+            background-image: url('assets/img/icons/up.svg');
+        }
+    }
+
+    &__rocket {
+        @include before-img(block, 90px, 90px, r) {
+            background-color: $brown-red;
+            background-image: url('assets/img/icons/rocket.svg');
+        }
+    }
+
+    &__coin {
+        @include before-img(block, 90px, 90px, r) {
+            background-color: $brown-red;
+            background-image: url('assets/img/icons/coin.svg');
+        }
+    }
+
+    &__wallet {
+        @include before-img(block, 90px, 90px, r) {
+            background-color: $brown-red;
+            background-image: url('assets/img/icons/wallet.svg');
+        }
+    }
+
+    &__wallet_2 {
+        @include before-img(block, 100%, 50px, r) {
+            min-width: 50px;
+            max-width: 50px;
+            margin-right: 20px;
+            background-image: url('assets/img/icons/wallet.svg');
+        }
+    }
+
+    &__blockchain {
+        @include before-img(block, 100px, 100px, r) {
+            background-image: url('assets/img/icons/blockchain.svg');
+        }
+    }
+
+    &__source-code {
+        @include before-img(block, 100px, 100px, r) {
+            background-image: url('assets/img/icons/source-code.svg');
+        }
+    }
+
+    &__node {
+        @include before-img(block, 100px, 100px, r) {
+            background-image: url('assets/img/icons/node.svg');
+        }
+    }
+
+    &__big-data {
+        @include before-img(block, 50px, 50px, r) {
+            background-image: url('assets/img/icons/big-data.svg');
+        }
+    }
+
+    &__community {
+        @include before-img(block, 50px, 50px, r) {
+            background-image: url('assets/img/icons/community.svg');
+        }
+    }
+
+    &__hand-coin {
+        @include before-img(block, 50px, 50px, r) {
+            background-image: url('assets/img/icons/hand-coin.svg');
+        }
+    }
+
+    &__secure {
+        @include before-img(block, 50px, 50px, r) {
+            background-image: url('assets/img/icons/secure.svg');
+        }
+    }
+
+    &__phone-coin {
+        @include before-img(block, 50px, 50px, r) {
+            background-image: url('assets/img/icons/phone-coin.svg');
+        }
+    }
+
+    &__rocket-2 {
+        @include before-img(block, 50px, 50px, r) {
+            background-image: url('assets/img/icons/rocket-2.svg');
+        }
+    }
+
+    &__user {
+        @include before-img(block, 50px, 50px, r) {
+            background-image: url('assets/img/icons/user.svg');
+        }
+    }
+
+    &__email {
+        @include before-img(block, 50px, 50px, r) {
+            background-image: url('assets/img/icons/email.svg');
+        }
+    }
+
+    &__message {
+        @include before-img(block, 50px, 50px, r) {
+            background-image: url('assets/img/icons/message.svg');
+        }
+    }
+
+    &__facebook {
+        border-radius: 0px;
+
+        @include before-img(block, 20px, 20px, r) {
+            background-color: transparent;
+            background-image: url('assets/img/icons/facebook.svg');
+            background-size: contain;
+        }
+    }
+
+    &__twitter {
+        border-radius: 0px;
+
+        @include before-img(block, 20px, 20px, r) {
+            background-color: transparent;
+            background-image: url('assets/img/icons/twitter.svg');
+            background-size: contain;
+        }
+    }
+
+    &__instagram {
+        border-radius: 0px;
+
+        @include before-img(block, 20px, 20px, r) {
+            background-color: transparent;
+            background-image: url('assets/img/icons/instagram.svg');
+            background-size: contain;
+        }
+    }
+
+    &__linkedin {
+        border-radius: 0px;
+
+        @include before-img(block, 20px, 20px, r) {
+            background-color: transparent;
+            background-image: url('assets/img/icons/linkedin.svg');
+            background-size: contain;
+        }
+    }
+
+    &__youtube {
+        border-radius: 0px;
+
+        @include before-img(block, 30px, 20px, r) {
+            background-color: transparent;
+            background-image: url('assets/img/icons/youtube.svg');
+            background-size: contain;
+        }
+    }
+}
+
+.ol-a-type {
+    font-size: 16px;
+    font-family: 'Montserrat', serif;
+    line-height: 29px;
+
+    li {
+        margin-bottom: 20px;
+    }
+}
+
+.info-gray {
+    color: #5C5A57;
+}

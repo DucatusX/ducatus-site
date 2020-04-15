@@ -6,9 +6,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 // plugins
+
+import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 // pages
@@ -22,46 +23,50 @@ import { LegalDisclaimerComponent } from './pages/legal-disclaimer/legal-disclai
 
 // partials
 import { HeaderComponent } from './pages/index/header/header.component';
+import { FooterComponent } from './pages/index/footer/footer.component';
 
-
-export class TranslateBrowserLoader implements TranslateLoader {
-  constructor(
-    private prefix: string = 'i18n',
-    private suffix: string = '.json',
-    private transferState: TransferState,
-    private http: HttpClient
-  ) { }
-
-  public getTranslation(lang: string): Observable<any> {
-    const key: StateKey<number> = makeStateKey<number>(
-      'transfer-translate-' + lang
-    );
-    const data = this.transferState.get(key, null);
-
-    // First we are looking for the translations in transfer-state, if none found, http load as fallback
-    if (data) {
-      return Observable.create((observer) => {
-        observer.next(data);
-        observer.complete();
-      });
-    } else {
-      return new TranslateHttpLoader(
-        this.http,
-        this.prefix,
-        this.suffix
-      ).getTranslation(lang);
-    }
-  }
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, "assets/i18n/", ".json");
 }
 
-export function exportTranslateStaticLoader(http: HttpClient, transferState: TransferState) {
-  return new TranslateBrowserLoader(
-    './assets/i18n/',
-    '.json?_t=' + new Date().getTime(),
-    transferState,
-    http
-  );
-}
+// export class TranslateBrowserLoader implements TranslateLoader {
+//   constructor(
+//     private prefix: string = 'i18n',
+//     private suffix: string = '.json',
+//     private transferState: TransferState,
+//     private http: HttpClient
+//   ) { }
+
+//   public getTranslation(lang: string): Observable<any> {
+//     const key: StateKey<number> = makeStateKey<number>(
+//       'transfer-translate-' + lang
+//     );
+//     const data = this.transferState.get(key, null);
+
+//     // First we are looking for the translations in transfer-state, if none found, http load as fallback
+//     if (data) {
+//       return Observable.create((observer) => {
+//         observer.next(data);
+//         observer.complete();
+//       });
+//     } else {
+//       return new TranslateHttpLoader(
+//         this.http,
+//         this.prefix,
+//         this.suffix
+//       ).getTranslation(lang);
+//     }
+//   }
+// }
+
+// export function exportTranslateStaticLoader(http: HttpClient, transferState: TransferState) {
+//   return new TranslateBrowserLoader(
+//     './assets/i18n/',
+//     '.json?_t=' + new Date().getTime(),
+//     transferState,
+//     http
+//   );
+// }
 
 @NgModule({
   declarations: [
@@ -73,7 +78,8 @@ export function exportTranslateStaticLoader(http: HttpClient, transferState: Tra
     LegalComponent,
     LegalDisclaimerComponent,
 
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -81,13 +87,14 @@ export function exportTranslateStaticLoader(http: HttpClient, transferState: Tra
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
+    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: exportTranslateStaticLoader,
-        deps: [HttpClient, TransferState]
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
       }
-    })
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

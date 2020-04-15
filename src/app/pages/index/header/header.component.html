@@ -1,3 +1,24 @@
-<p>
-  header works!
-</p>
+<div class="header">
+    <div class="container">
+        <div class="header-wrap">
+            <div class="header-logo-block">
+                <a routerLink="/" class="header-logo"><img src="/assets/img/ducatus-logo-first.png" alt="Ducatus logo"></a>
+                <div class="header-menu-toggle-block">
+                    <label for="header-menu-toggle" class="header-menu-toggle" [ngClass]="{'open-menu': openMenu }" (click)="openMenu = !openMenu">
+                        <span class="line-toggle"></span>
+                        <span class="line-toggle"></span>
+                        <span class="line-toggle"></span>
+                    </label>
+                    <input type="checkbox" id="header-menu-toggle" class="header-menu-toggle-ch" role="button">
+                </div>
+            </div>
+            <div class="header-menu-block" [ngClass]="{'menu-open': openMenu === true }">
+                <!-- <a [routerLink]="['/']" class="header-menu-link">Home</a> -->
+                <a routerLink="/" class="header-menu-link">Home</a>
+                <a routerLink="/about" class="header-menu-link">About Duc</a>
+                <a routerLink="/buy" class="header-menu-link">Buy Duc</a>
+                <a routerLink="/contact" class="header-menu-link">Contact</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+@import "../../../scss/vars";
+@import "../../../scss/mixins";
+
+// swiper
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-pagination {
+    margin: 0 !important;
+    bottom: 20px !important;
+    width: 100% !important;
+
+    &-bullet {
+        background-color: white !important;
+        margin-right: 7px !important;
+        outline: none !important;
+        width: 30px !important;
+        border-radius: 0 !important;
+        height: 6px !important;
+
+        &-active {
+            background-color: white !important;
+        }
+    }
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include b(750) {
+        flex-direction: column;
+    }
+}
