@@ -46,7 +46,7 @@
         "TEXT_1": "How to get Ducatus Coins?",
         "TEXT_2": "Your Ducatus Coin experience starts when you download the Ducatus e-wallet."
     },
-    "PTIVACY": {
+    "PRIVACY": {
         "TEXT": "This website uses cookies to ensure you get the best experience on our website. By continuing to use this website, you agree to their use.",
         "BUTTON_ACCEPT": "Accept",
         "BUTTON_DECLINE": "Decline"
@@ -171,33 +171,31 @@
                 "TERMS": "I agree to the Terms & Conditions",
                 "BUTTON": "Close"
             },
-            "FORM": {
-                "FIELDS": {
-                    "ONE": {
-                        "TITLE": "You get",
-                        "PLACEHOLDER": "Amount"
-                    },
-                    "TWO": {
-                        "TITLE": "You send",
-                        "PLACEHOLDER": "Amount"
-                    },
-                    "THREE": {
-                        "TEXT_1": "Enter your",
-                        "TEXT_2": "address for receiving coins",
-                        "PLACEHOLDER_1": "Enter your",
-                        "PLACEHOLDER_2": "address for receiving coins",
-                        "ERROR": "Error! Please check, the address format is incorrect!"
-                    },
-                    "FOUR": {
-                        "TEXT_1": "Send your",
-                        "TEXT_2": "to",
-                        "ERROR": "something went wrong, try again later"
-                    },
-                    "FIVE": {
-                        "TEXT_1": "Attention!",
-                        "TEXT_2": "You will get",
-                        "TEXT_3": "to your address in"
-                    }
+            "FIELDS": {
+                "ONE": {
+                    "TITLE": "You get",
+                    "PLACEHOLDER": "Amount"
+                },
+                "TWO": {
+                    "TITLE": "You send",
+                    "PLACEHOLDER": "Amount"
+                },
+                "THREE": {
+                    "TEXT_1": "Enter your",
+                    "TEXT_2": "address for receiving coins",
+                    "PLACEHOLDER_1": "Enter your",
+                    "PLACEHOLDER_2": "address for receiving coins",
+                    "ERROR": "Error! Please check, the address format is incorrect!"
+                },
+                "FOUR": {
+                    "TEXT_1": "Send your",
+                    "TEXT_2": "to",
+                    "ERROR": "something went wrong, try again later"
+                },
+                "FIVE": {
+                    "TEXT_1": "Attention!",
+                    "TEXT_2": "You will get",
+                    "TEXT_3": "to your address in"
                 }
             }
         },
