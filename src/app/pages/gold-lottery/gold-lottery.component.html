@@ -17,7 +17,7 @@
 
                 <div class="lottery-form-block" *ngIf="registration">
 
-                    <div class="lottery-form-block-registration" *ngIf="registrationStep === 0">
+                    <form #registrationToken="ngForm" ngNativeValidate (submit)="registrationStep = 1" class="lottery-form-block-registration" *ngIf="registrationStep === 0">
                         <div class="lottery-form-top">
                             <span class="lottery-form-top-text">Fill out the form to link your gold card, DUC, DUCX wallets to recive DUC and GOLD TOKEN</span>
                         </div>
@@ -45,16 +45,16 @@
                             <div class="lottery-form-field" data-title="DUCX">
                                 <div class="lottery-form-field-input">
                                     <label for="input-ducx">Enter DUCX address</label>
-                                    <input required placeholder="0xfd367A2de6b8ECAe413BB4E61057C1430d4f4a61" type="text" id="input-ducx" class="lottery-form-input">
+                                    <input required maxlength="42" placeholder="0xfd367A2de6b8ECAe413BB4E61057C1430d4f4a61" pattern="0x[0-9a-fA-F]{40}" type="text" id="input-ducx" class="lottery-form-input">
                                     <span class="lottery-form-input-error">Invalid address!</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="lottery-form-footer">
-                            <span class="lottery-form-footer-button" (click)="registrationStep = 1">Next Step</span>
+                            <button type="submit" class="lottery-form-footer-button" [ngClass]="{ 'disabled' : !registrationToken.form.valid }" [disabled]="!registrationToken.form.valid">Next Step</button>
                         </div>
-                    </div>
+                    </form>
 
                     <div class="lottery-form-block-registration" *ngIf="registrationStep === 1">
                         <div class="lottery-form-top">
@@ -77,14 +77,28 @@
                         </div>
 
                         <div class="lottery-form-footer">
-                            <span class="lottery-form-footer-button" (click)="registrationStep = 0">Back</span>
+                            <button type="submit" class="lottery-form-footer-button" (click)="registrationStep = 2">Next Step</button>
+                        </div>
+                    </div>
+
+                    <div class="lottery-form-block-registration" *ngIf="registrationStep === 2">
+                        <div class="lottery-form-top">
+                            <span class="lottery-form-top-text">This code is already registered!</span>
+                        </div>
+
+                        <div class="lottery-form-info">
+                            <span class="lottery-form-info-text">Please try a another code</span>
+                        </div>
+
+                        <div class="lottery-form-footer">
+                            <button type="submit" class="lottery-form-footer-button" (click)="registrationStep = 0">Next Step</button>
                         </div>
                     </div>
 
                 </div>
 
                 <div class="lottery-form-block" *ngIf="!registration">
-                    <div class="lottery-form-block-check">
+                    <form #checkToken="ngForm" ngNativeValidate (submit)="registrationStep = 0" class="lottery-form-block-check">
                         <div class="lottery-form-top">
                             <span class="lottery-form-top-text">Fill out the form to check your card registration</span>
                         </div>
@@ -111,10 +125,9 @@
                         </div>
 
                         <div class="lottery-form-footer">
-                            <span class="lottery-form-footer-button">Next Step</span>
+                            <button type="submit" class="lottery-form-footer-button" [disabled]="!checkToken.valid">Next Step</button>
                         </div>
-                    </div>
-
+                    </form>
                 </div>
 
             </div>

@@ -62,9 +62,6 @@ export class HeaderComponent implements OnInit {
   }
 
   private setActiveLanguage(event) {
-
-    console.log("lang:", event)
-
     if (this.currLanguage) {
       this.languagesList.map((lang) => {
         if (lang['lng'] === this.currLanguage) { lang['active'] = true; }

@@ -16,6 +16,24 @@ section.gold-lottery {
         &-form {
             padding: 40px;
 
+            &-info {
+                padding: 100px 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &-text {
+                    background-color: rgba($color: #e1e1e1, $alpha: 0.5);
+                    padding: 10px 15px;
+                    text-align: center;
+                    max-width: 300px;
+                    width: 100%;
+                    font-weight: 500;
+                    color: gray;
+                    border-radius: 10px;
+                }
+            }
+
             &-switch {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -83,17 +101,29 @@ section.gold-lottery {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding: 10px 30px;
-                background-color: $brown-red;
+                padding: 10px 0px;
+
+                .disabled {
+                    opacity: 0.8;
+                }
 
                 &-button {
                     font-size: 18px;
                     color: white;
                     cursor: pointer;
                     transition: 0.4s ease;
+                    background-color: $brown-red;
+                    padding: 10px;
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                    outline: none !important;
+                    border: none !important;
 
                     &:hover {
-                        color: $gold;
+                        // color: $gold;
+                        color: white;
+                        background-color: $gold;
                     }
                 }
             }

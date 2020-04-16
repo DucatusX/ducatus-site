@@ -8,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class GoldLotteryComponent implements OnInit {
 
   public registration = true;
-  public registrationStep: number = 0;
+  public registrationStep = 0;
+
+  public code1 = '';
+  public code2 = '';
+  public code3 = '';
+  public code4 = '';
 
   constructor() { }
 
