@@ -24,14 +24,12 @@ export interface Addresses {
   selector: 'app-buy',
   templateUrl: './buy.component.html',
   styleUrls: ['./buy.component.scss'],
-  host: {
-    '(document:click)': 'onClick($event)',
-  },
+  host: { '(document:click)': 'onClick($event)' },
 })
 
 export class BuyComponent implements OnInit {
 
-  private addresses: Addresses = {
+  public addresses: Addresses = {
     btc_address: '',
     ducx_address: '',
     eth_address: '',
