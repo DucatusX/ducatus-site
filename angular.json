@@ -34,8 +34,10 @@
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",
+                            "node_modules/jquery.cookie/jquery.cookie.js",
                             "node_modules/swiper/js/swiper.min.js"
-                        ]
+                        ],
+                        "es5BrowserSupport": true
                     },
                     "configurations": {
                         "production": {

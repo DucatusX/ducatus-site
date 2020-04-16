@@ -1,6 +1,6 @@
 <section class="section-header-page" style="background-image: url(/assets/img/sections/privacy-policy-bg.png);">
     <div class="container">
-        <h1 class="h1__title-page">Legal Disclaimer</h1>
+        <h1 class="h1__title-page" [innerHTML]="'PAGE.LEGAL_DISCLAIMER.TITLE' | translate"></h1>
     </div>
 </section>
 
@@ -9,15 +9,11 @@
 
         <div class="section-infoblock-one-third">
             <div class="section-infoblock-block">
-                <p class="p__text-section">
-                    Important Notice: www.ducatuscoins.com is owned by Centurion Global Limited (“Centurion Global”), with registered office at Harneys Services (Cayman Limited), 4th Floor Harbour Place, 103 South Church Street, Grand Cayman, PO Box 10240, KY1-1002, Cayman Islands.
-                    <br><br>
-                    By visiting this site, you agree to be bound by Centurion’s Terms of Use and Privacy Policy. The Ducatus Coin (the “Coin”) issued by Centurion Global is intended for qualified buyers who understand and accept the risks associated with the ownership of digital assets such as the Coin. Each buyer is advised to conduct his/her own due diligence as none of Centurion Global, its affiliates provides any investment advice, business advice or tax or legal advice.
-                    <br><br>
-                    THE INFORMATION PROVIDED ON THIS SITE IS NOT FOR CIRCULATION, DISPLAY, RECEPTION OR DISTRIBUTION IN SINGAPORE (INCLUDING TO THE PUBLIC OR ANY SECTION OF THE PUBLIC IN SINGAPORE) OR ANY OTHER JURISDICTION WHERE THE PRODUCTS OR SERVICES OF CENTURION OR ITS AFFILIATES WOULD BE PROHIBITED WITHOUT A REQUISITE LICENSE OR EXEMPTION. NEITHER CENTURION NOR ANY OF ITS AFFILIATES HEREBY OFFERS ANY SERVICE THAT WOULD CONSTITUTE A PAYMENT SERVICE FOR PURPOSES OF THE SINGAPORE PAYMENT SERVICES ACT 2019, OR ANY OTHER ACTIVITY SUBJECT TO REGULATION BY THE MONETARY AUTHORITY OF SINGAPORE, IN SINGAPORE OR TO ANY PERSON IN SINGAPORE. THE COIN IS NOT AVAILABLE FOR SALE BY CENUTURION IN SINGAPORE.
-                </p>
+                <p class="p__text-section" [innerHTML]="'PAGE.LEGAL_DISCLAIMER.TEXT' | translate"></p>
             </div>
         </div>
 
     </div>
 </section>
+
+<section class="mb-130"></section>

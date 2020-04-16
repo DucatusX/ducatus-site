@@ -7,13 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  public privacyCookie = true;
+
   constructor() { }
+
+  public privacyCookieSet() {
+    window['jQuery']['cookie']('privacyCookie', true);
+    this.privacyCookie = false;
+  }
 
   ngOnInit() {
 
+    if (window['jQuery']['cookie']('privacyCookie')) {
+      this.privacyCookie = false;
+    }
+
     const bottomMenu = document.getElementsByClassName('footer-menu');
     for (let i = 0; i < bottomMenu.length; i++) {
-      bottomMenu[i].addEventListener("click", function () {
+      bottomMenu[i].addEventListener('click', function () {
         if ($(this).hasClass('footer-menu')) {
           if ($(this).parent().hasClass('footer-menu-same') && !$(this).parent().hasClass('footer-menu-same-open')) {
             $(this).parent().addClass('footer-menu-same-open');

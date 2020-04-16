@@ -14,10 +14,10 @@
             </div>
             <div class="header-menu-block" [ngClass]="{'menu-open': openMenu === true }">
                 <!-- <a [routerLink]="['/']" class="header-menu-link">Home</a> -->
-                <a routerLink="/" class="header-menu-link">Home</a>
-                <a routerLink="/about" class="header-menu-link">About Duc</a>
-                <a routerLink="/buy" class="header-menu-link">Buy Duc</a>
-                <a routerLink="/contact" class="header-menu-link">Contact</a>
+                <a routerLink="/" class="header-menu-link">{{ 'HEADER.MENU.HOME' | translate }}</a>
+                <a routerLink="/about" class="header-menu-link">{{ 'HEADER.MENU.ABOUT' | translate }}</a>
+                <a routerLink="/buy" class="header-menu-link">{{ 'HEADER.MENU.BUY' | translate }}</a>
+                <a routerLink="/contact" class="header-menu-link">{{ 'HEADER.MENU.CONTACT' | translate }}</a>
             </div>
         </div>
     </div>

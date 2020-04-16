@@ -1,6 +1,6 @@
 <section class="section-header-page" style="background-image: url(/assets/img/sections/buy-bg.png);">
     <div class="container">
-        <h1 class="h1__title-page">Buy DUC</h1>
+        <h1 class="h1__title-page" [innerHTML]="'PAGE.BUY.TITLE' | translate"></h1>
     </div>
 </section>
 
@@ -11,8 +11,8 @@
                 <div class="ducatus-pay-form" *ngIf="!loadingData">
 
                     <div class="group group-input group-input-select">
-                        <label for="get-coin">You get</label>
-                        <input type="number" min="0" [(ngModel)]="exchange.price.get " (ngModelChange)="setCurrentPrice('get')" placeholder="Amount" class="input input-white" oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');">
+                        <label for="get-coin">{{ 'PAGE.BUY.FIELDS.ONE.TITLE' | translate }}</label>
+                        <input type="number" min="0" [(ngModel)]="exchange.price.get " (ngModelChange)="setCurrentPrice('get')" [placeholder]="'PAGE.BUY.FIELDS.ONE.PLACEHOLDER' | translate" class="input input-white" oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');">
 
                         <div class="select-coin select-coin-fill" (click)="exchange.select.get = !exchange.select.get; exchange.select.send = false" [ngClass]="{ 'select-coin-start': exchange.select.get }">
                             <ng-container *ngFor="let item of exchange.coins">
@@ -37,8 +37,8 @@
                     </div>
 
                     <div class="group group-input group-input-select">
-                        <label for="send-coin">You send</label>
-                        <input min="0" type="number" (ngModelChange)="setCurrentPrice('send')" [(ngModel)]=" exchange.price.send" placeholder="Amount" class="input input-white" oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');">
+                        <label for="send-coin">{{ 'PAGE.BUY.FIELDS.TWO.TITLE' | translate }}</label>
+                        <input min="0" type="number" (ngModelChange)="setCurrentPrice('send')" [(ngModel)]=" exchange.price.send" [placeholder]="'PAGE.BUY.FIELDS.TWO.PLACEHOLDER' | translate" class="input input-white" oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');">
 
                         <div class="select-coin select-coin-fill" (click)="exchange.selected.get.name === 'DUC' ? exchange.select.send = !exchange.select.send  : null;exchange.select.get = false" [ngClass]="{ 'select-coin-start': exchange.select.send }">
 
@@ -67,14 +67,14 @@
                     </div>
 
                     <div class="group group-input">
-                        <label for="ducatus-address">Enter your {{ exchange.selected.get.fullname }} address for receiving coins</label>
-                        <input type="text" [ngClass]="{'text' : exchange.address.validate || exchange.address.loading }" [disabled]="exchange.address.validate || exchange.address.loading" [(ngModel)]="exchange.address.to" (ngModelChange)="setAddress()" placeholder="Enter your {{ exchange.selected.get.fullname }} address for receiving coins" class="input input-white" oninput="this.value = this.value.replace('ducatus:', '');">
-                        <span class="error-address-value" *ngIf="exchange.address.error">Error! Please check, the address format is incorrect!</span>
+                        <label for="ducatus-address">{{ 'PAGE.BUY.FIELDS.THREE.TEXT_1' | translate }} {{ exchange.selected.get.fullname }} {{ 'PAGE.BUY.FIELDS.THREE.TEXT_2' | translate }}</label>
+                        <input type="text" [ngClass]="{'text' : exchange.address.validate || exchange.address.loading }" [disabled]="exchange.address.validate || exchange.address.loading" [(ngModel)]="exchange.address.to" (ngModelChange)="setAddress()" [placeholder]="('PAGE.BUY.FIELDS.THREE.PLACEHOLDER_1' | translate) + ' ' + exchange.selected.get.fullname + ' ' + ('PAGE.BUY.FIELDS.THREE.PLACEHOLDER_2' | translate)" class="input input-white" oninput="this.value = this.value.replace('ducatus:', '');">
+                        <span class="error-address-value" *ngIf="exchange.address.error">{{ 'PAGE.BUY.FIELDS.THREE.ERROR' | translate }}</span>
                     </div>
 
                     <div id="loading-address" [ngClass]="{ 'loading-address-start': exchange.address.loading }" class="group group-block group-input group-input-copy m-b-0 qr-wrap">
                         <div class="group-wrap qr-address">
-                            <label>Send your <span class="send-coin">Ducatus</span> to</label>
+                            <label>{{ 'PAGE.BUY.FIELDS.FOUR.TEXT_1' | translate }} {{ exchange.selected.send.fullname }} {{ 'PAGE.BUY.FIELDS.FOUR.TEXT_2' | translate }} </label>
                             <p class="input input-accent">{{ exchange.selected.send.address }}</p>
                             <span class="copy-address icon icon-copy"></span>
                         </div>
@@ -84,7 +84,7 @@
 
                         <div class="loading-address-qr">
                             <div class="loading-address-qr-wrap">
-                                <p>something went wrong, try again later</p>
+                                <p>{{ 'PAGE.BUY.FIELDS.FOUR.ERROR' | translate }}</p>
                                 <div class="loading-address-qr-wrap-ellips">
                                     <span></span>
                                     <span></span>
@@ -95,7 +95,7 @@
                         </div>
 
                         <div class="group group-text qr-text">
-                            <span class="text-attantion"><span class="attantion">Attention!</span> You will get {{ exchange.selected.get.fullname }} to your address in {{ exchange.selected.send.text }}<br><br></span>
+                            <span class="text-attantion"><span class="attantion">{{ 'PAGE.BUY.FIELDS.FIVE.TEXT_1' | translate }}!</span> {{ 'PAGE.BUY.FIELDS.FIVE.TEXT_2' | translate }}{{ exchange.selected.get.fullname }} {{ 'PAGE.BUY.FIELDS.FIVE.TEXT_3' | translate }} {{ exchange.selected.send.text }}<br><br></span>
                         </div>
 
                     </div>
@@ -116,9 +116,7 @@
                 </div>
 
                 <div class="pay-form-block-text">
-                    <p class="p__text-section icon icon__wallet_2">
-                        Your Ducatus address will be associated with a unique address in Bitcoin and Ethereum. You can top up these addresses at any time and receive Ducatus at the current exchange rate at the time of the transaction
-                    </p>
+                    <p class="p__text-section icon icon__wallet_2" [innerHTML]="'PAGE.BUY.TEXT' | translate"></p>
                 </div>
             </div>
         </div>
@@ -126,18 +124,16 @@
 </section>
 
 <div class="modal" *ngIf="modal">
-  <div class="modal-wrap">
-    <div class="modal-content-top">
-      <p>
-        Please tick the box below to confirm that you acknowledge and agree to the <a href="/downloads/pdf/Wallet_Terms_Conditions.pdf" target="_blank">Terms & Conditions</a> of DUC purchase. Ducatus Coin is not available for purchase from Centurion in Singapore.
-      </p>
+    <div class="modal-wrap">
+        <div class="modal-content-top">
+            <p [innerHTML]="'PAGE.BUY.MODAL.TEXT' | translate"></p>
+        </div>
+        <div class="modal-content-bottom">
+            <div class="input-checkbox-group">
+                <label for="terms" [innerHTML]="'PAGE.BUY.MODAL.TERMS' | translate"></label>
+                <input type="checkbox" (ngModelChange)="modalAccept = !modalAccept" [ngModel]="modalAccept" name="terms" id="terms" class="terms">
+            </div>
+            <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!modalAccept" class="btn btn-red"> {{ 'PAGE.BUY.MODAL.BUTTON' | translate }}</button>
+        </div>
     </div>
-    <div class="modal-content-bottom">
-      <div class="input-checkbox-group">
-        <label for="terms">I agree to the Terms & Conditions</label>
-        <input type="checkbox" (ngModelChange)="modalAccept = !modalAccept" [ngModel]="modalAccept" name="terms" id="terms" class="terms">
-      </div>
-      <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!modalAccept" class="btn btn-red">Close</button>
-    </div>
-  </div>
 </div>

@@ -130,6 +130,8 @@ export class BuyComponent implements OnInit {
           if (this.exchange.address.to.length === 34 && ['L', 'l', 'M', 'm'].includes(this.exchange.address.to.substring(0, 1))) {
 
             this.exchange.address.validate = true;
+            this.exchange.address.loading = true;
+
             this.buyservice.getValidateDucatusAddress(this.exchange.address.to).then((result) => {
               if (result) { this.exchange.address.error = false; }
               else { this.exchange.address.error = true; }
@@ -155,30 +157,6 @@ export class BuyComponent implements OnInit {
           break;
 
         default: this.exchange.address.error = true;
-      }
-
-      if (!this.exchange.address.error && !this.exchange.address.validate) {
-
-        this.exchange.address.loading = true;
-
-        this.buyservice.getExchange(this.exchange.address.to, this.exchange.selected.get.name).then((result) => {
-          this.addresses = result;
-
-          switch (this.exchange.selected.get.name) {
-            case 'DUC':
-              this.exchange.coins[0].coins[0].address = this.addresses.btc_address;
-              this.exchange.coins[0].coins[1].address = this.addresses.eth_address;
-              this.exchange.coins[0].coins[2].address = this.addresses.ducx_address;
-              break;
-            case 'DUCX':
-              this.exchange.coins[1].coins[0].address = this.addresses.duc_address;
-              break;
-          }
-
-          this.exchange.address.loading = false;
-          this.exchange.address.qr = true;
-          console.log('address result', this.addresses, result);
-        }).catch(err => { console.log('something went wrong...', err); this.exchange.address.loading = false; });
       }
 
     } else { this.exchange.address.error = false; }

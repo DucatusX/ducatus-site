@@ -26,10 +26,10 @@
 
 .section-text-second {
     padding: 50px 0;
-    
+
     .container {
         display: grid;
-        grid-template-columns: minmax(320px,650px) minmax(500px,320px);
+        grid-template-columns: minmax(320px, 650px) minmax(500px, 320px);
         justify-content: space-between;
         grid-gap: 20px;
 
@@ -46,9 +46,7 @@
             flex-direction: column;
         }
 
-        &:nth-child(2) {
-            
-        }
+        &:nth-child(2) {}
 
         &-img {
             width: 100%;
@@ -69,9 +67,7 @@
 .section-infoblock {
     padding: 80px 0;
 
-    .container {
-
-    }
+    .container {}
 
     &-filled {
         background-color: #F0EAE2;
@@ -84,7 +80,7 @@
 
     &-double {
         display: grid;
-        grid-template-columns: repeat(2,50%);
+        grid-template-columns: repeat(2, 50%);
         grid-gap: 20px;
 
         @include b(750) {
@@ -99,7 +95,7 @@
 
         .section-infoblock-block {
             width: 66%;
-            
+
             @include b(750) {
                 width: 100%;
             }
@@ -113,7 +109,7 @@
 
     &-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(250px,33.333%));
+        grid-template-columns: repeat(3, minmax(250px, 33.333%));
         margin: 50px -30px;
 
         @include b(750) {
@@ -141,16 +137,16 @@
             // &:nth-child(6) {
             //     border-top: 0.5px solid #D2B3B2;
             // }
-            
+
             &:nth-child(2) {
                 border-left: 0.5px solid #D2B3B2;
                 border-right: 0.5px solid #D2B3B2;
-                border-bottom: 0.5px solid #D2B3B2; 
+                border-bottom: 0.5px solid #D2B3B2;
             }
 
             &:nth-child(5) {
                 border-left: 0.5px solid #D2B3B2;
-                border-right: 0.5px solid #D2B3B2; 
+                border-right: 0.5px solid #D2B3B2;
             }
 
             &-title {
@@ -202,7 +198,7 @@
             width: 100%;
             margin: 15px 0;
         }
-        
+
         &-link {
             display: inline-block;
             width: 100%;
@@ -215,9 +211,11 @@
 
             &-disabled {
                 opacity: 0.5;
-                &:before  {
+
+                &:before {
                     opacity: 0.4 !important;
                 }
+
                 &:before {
                     opacity: 0.4 !important;
                 }
@@ -292,10 +290,10 @@
     @include b(750) {
         max-width: 100%;
     }
-    
+
     form {
         position: relative;
-        
+
         &:before {
             content: attr(data-form-title);
             display: block;
@@ -370,7 +368,7 @@
             }
         }
     }
-    
+
     &-field {
         width: 100%;
         margin-bottom: 15px;
@@ -396,8 +394,7 @@
     font-size: 16px;
     width: 100%;
     height: 130px;
-    z-index: 99999;
-    display: none;
+    z-index: 99;
 
     @include b(750) {
         font-size: 12px;
@@ -423,7 +420,7 @@
             }
 
             &:nth-child(1) {
-                background-color: rgb(142,115,70);
+                background-color: rgb(142, 115, 70);
             }
         }
     }

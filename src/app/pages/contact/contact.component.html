@@ -1,6 +1,6 @@
 <section class="section-header-page" style="background-image: url(/assets/img/sections/contact-bg.png);">
     <div class="container">
-        <h1 class="h1__title-page">Contact</h1>
+        <h1 class="h1__title-page" [innerHTML]="'PAGE.CONTACT.TITLE' | translate"></h1>
     </div>
 </section>
 
@@ -8,35 +8,27 @@
     <div class="container">
         <div class="section-infoblock-double">
             <div class="section-infoblock-block">
-                <p class="p__text-section">
-                    Centurion Global Limited <br>
-                    Harneys Services (Cayman Limited) <br>
-                    4th Floor, Harbour Place, 103 South Church Street <br>
-                    Grand Cayman <br>
-                    PO Box 10240, KY1-1002 <br>
-                    Cayman Islands <br>
-                    <br>
-                    <a href="mailto:support@ducatus.net" class="a__link">support@ducatus.net</a>
-                </p>
+                <p class="p__text-section" [innerHTML]="'PAGE.CONTACT.TEXT' | translate"></p>
+                <a href="mailto:support@ducatus.net" class="a__link">support@ducatus.net</a>
             </div>
             <div class="section-infoblock-block">
                 <div class="contact-form">
-                    <form action="https://www.ducatuscoins.com//api/v1/send_ducatus_feedback/" id="contactform" data-form-title="Contact us for more details">
+                    <form action="https://www.ducatuscoins.com//api/v1/send_ducatus_feedback/" id="contactform" [attr.data-form-title]="'PAGE.CONTACT.FORM.TEXT' | translate">
                         <div class="contact-form-fields">
                             <div class="contact-form-field-input icon icon__user">
-                                <input class="input" type="text" required name="name" placeholder="Your name">
+                                <input class="input" type="text" required name="name" [placeholder]="'PAGE.CONTACT.FORM.TEXT_1' | translate">
                             </div>
                             <div class="contact-form-field-input">
-                                <input type="tel" name=socialNetwork id="phone" oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\..*)\./g, '$1');">
+                                <input type="tel" [placeholder]="'PAGE.CONTACT.FORM.TEXT_2' | translate" name=socialNetwork id="phone" oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\..*)\./g, '$1');">
                             </div>
                             <div class="contact-form-field-input icon icon__email">
-                                <input class="input" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required name="email" placeholder="Your e-mail">
+                                <input class="input" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required name="email" [placeholder]="'PAGE.CONTACT.FORM.TEXT_3' | translate">
                             </div>
                             <div class="contact-form-field-textarea icon icon__message">
-                                <textarea class="textarea" type="text" required name="message" placeholder="Your message"></textarea>
+                                <textarea class="textarea" type="text" required name="message" [placeholder]="'PAGE.CONTACT.FORM.TEXT_4' | translate"></textarea>
                             </div>
                             <div class="contact-form-field">
-                                <button class="button button__brown-red button-flat" type="submit">ENQUIRY</button>
+                                <button class="button button__brown-red button-flat" type="submit">{{ 'PAGE.CONTACT.FORM.BUTTON' | translate }}</button>
                             </div>
                         </div>
                     </form>
@@ -45,3 +37,5 @@
         </div>
     </div>
 </section>
+
+<section class="mb-130"></section>

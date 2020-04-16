@@ -1,12 +1,12 @@
-<section class="section-app mt-130">
+<section class="section-app">
     <div class="section-app-wrap">
         <div class="container">
             <div class="section-app-block section-app-block-fill">
                 <div class="section-app-block-wrap">
                     <div class="section-text">
                         <span class="section-app-line"></span>
-                        <span class="section-app-title section-app-title-left">Install Ducatus Wallet</span>
-                        <span class="section-app-text">Buy, Store & Sell Cryptos</span>
+                        <span class="section-app-title section-app-title-left" [innerHTML]="'APPS.TITLE' | translate"></span>
+                        <span class="section-app-text" [innerHTML]="'APPS.SUBTITLE' | translate"></span>
                     </div>
                     <div class="section-app-list">
                         <a href="https://wallet.ducatus.io/" target="_blank" class="download_ducatus"></a>
@@ -19,8 +19,8 @@
                 <div class="section-app-block-wrap">
                     <div class="section-text">
                         <span class="section-app-line"></span>
-                        <span class="section-app-title">How to get Ducatus Coins?</span>
-                        <span class="section-app-text">Your Ducatus Coin experience starts when you download the Ducatus e-wallet.</span>
+                        <span class="section-app-title" [innerHTML]="'APPS.TEXT_1' | translate"></span>
+                        <span class="section-app-text" [innerHTML]="'APPS.TEXT_2' | translate"></span>
                     </div>
                 </div>
             </div>
@@ -42,42 +42,41 @@
                 </div>
             </div>
             <div class="footer-right">
-                <div class="footer-menu" data-title="About">
-                    <!-- <a class="footer-menu-link" [routerLink]="['/about']"target="_blank">About Ducatus</a> -->
-                    <a class="footer-menu-link" routerLink="/about">About Ducatus</a>
-                    <a class="footer-menu-link" href="https://www.ducatus.com">Ducatus Corporate</a>
-                    <a class="footer-menu-link" routerLink="/contact">Contact</a>
+                <div class="footer-menu" [attr.title]="'FOOTER.MENU.SECTION.ONE.TITLE' | translate">
+                    <a class="footer-menu-link" routerLink="/about">{{ 'FOOTER.MENU.SECTION.ONE.LINK_1' | translate }}</a>
+                    <a class="footer-menu-link" href="https://www.ducatus.com">{{ 'FOOTER.MENU.SECTION.ONE.LINK_2' | translate }}</a>
+                    <a class="footer-menu-link" routerLink="/contact">{{ 'FOOTER.MENU.SECTION.ONE.LINK_3' | translate }}</a>
                 </div>
                 <div class="footer-menu-same">
-                    <div class="footer-menu" data-title="Ducatus Lifestyle">
-                        <a class="footer-menu-link footer-menu-link-disable" data-unactive="coming soon" target="_blank">Ducatus Academy</a>
-                        <a class="footer-menu-link footer-menu-link-disable" data-unactive="coming soon" target="_blank">Ducatus Cafe</a>
-                        <a class="footer-menu-link footer-menu-link-disable" data-unactive="coming soon" target="_blank">Ducatus Charity</a>
+                    <div class="footer-menu" [attr.title]="'FOOTER.MENU.SECTION.TWO.TITLE' | translate">
+                        <a class="footer-menu-link footer-menu-link-disable" [attr.data-unactive]="'FOOTER.MENU.SECTION.SOON' | translate" target="_blank">{{ 'FOOTER.MENU.SECTION.TWO.LINK_1' | translate }}</a>
+                        <a class="footer-menu-link footer-menu-link-disable" [attr.data-unactive]="'FOOTER.MENU.SECTION.SOON' | translate" target="_blank">{{ 'FOOTER.MENU.SECTION.TWO.LINK_2' | translate }}</a>
+                        <a class="footer-menu-link footer-menu-link-disable" [attr.data-unactive]="'FOOTER.MENU.SECTION.SOON' | translate" target="_blank">{{ 'FOOTER.MENU.SECTION.TWO.LINK_3' | translate }}</a>
                     </div>
-                    <div class="footer-menu" data-title="Ducatus Lifestyle">
-                        <a class="footer-menu-link footer-menu-link-disable" data-unactive="coming soon" target="_blank">Ducatus Health</a>
-                        <a class="footer-menu-link" href="https://property.ducatus.com" data-unactive="coming soon" target="_blank">Ducatus Property</a>
-                        <a class="footer-menu-link" href="https://travel.ducatus.com" data-unactive="coming soon" target="_blank">Ducatus Travel</a>
+                    <div class="footer-menu" [attr.title]="'FOOTER.MENU.SECTION.THREE.TITLE' | translate">
+                        <a class="footer-menu-link footer-menu-link-disable" [attr.unactive]="'FOOTER.MENU.SECTION.SOON' | translate" target="_blank">{{ 'FOOTER.MENU.SECTION.THREE.LINK_1' | translate }}</a>
+                        <a class="footer-menu-link" href="https://property.ducatus.com" [attr.unactive]="'FOOTER.MENU.SECTION.SOON' | translate" target="_blank">{{ 'FOOTER.MENU.SECTION.THREE.LINK_2' | translate }}</a>
+                        <a class="footer-menu-link" href="https://travel.ducatus.com" [attr.unactive]="'FOOTER.MENU.SECTION.SOON' | translate" target="_blank">{{ 'FOOTER.MENU.SECTION.THREE.LINK_3' | translate }}</a>
                     </div>
                 </div>
 
-                <div class="footer-menu" data-title="Ducatus Biz">
-                    <a class="footer-menu-link" href="https://ducatus.net" target="_blank">Ducatus Network</a>
-                    <a class="footer-menu-link" href="https://staydmob.com/" target="_blank">D-MOB</a>
-                    <a class="footer-menu-link" href="https://merchants.ducatus.com" target="_blank" data-unactive="coming soon">Ducatus Merchants</a>
+                <div class="footer-menu" [attr.title]="'FOOTER.MENU.SECTION.FOUR.TITLE' | translate">
+                    <a class="footer-menu-link" href="https://ducatus.net" target="_blank">{{ 'FOOTER.MENU.SECTION.FOUR.LINK_1' | translate }}</a>
+                    <a class="footer-menu-link" href="https://staydmob.com/" target="_blank">{{ 'FOOTER.MENU.SECTION.FOUR.LINK_2' | translate }}</a>
+                    <a class="footer-menu-link" href="https://merchants.ducatus.com" target="_blank" [attr.unactive]="'FOOTER.MENU.SECTION.SOON' | translate">{{ 'FOOTER.MENU.SECTION.FOUR.LINK_3' | translate }}</a>
                 </div>
             </div>
         </div>
         <div class="section-copyright">
-            <span class="p__copyrights">© 2020 Ducatus | <a routerLink="/legal">Legal </a> | <a routerLink="/legal-disclaimer">Legal Disclaimer</a></span>
+            <span class="p__copyrights">© 2020 Ducatus | <a routerLink="/legal">{{ 'FOOTER.MENU.LEGAL' | translate }}</a> | <a routerLink="/legal-disclaimer">{{ 'FOOTER.MENU.LEGAL_DISCLAIMER' | translate }}</a></span>
         </div>
     </div>
 </footer>
 
-<section class="section-cookie">
-    This website uses cookies to ensure you get the best experience on our website. By continuing to use this website, you agree to their use.
+<section class="section-cookie" *ngIf="privacyCookie">
+    <span [innerHTML]="'PRIVACY.TEXT' | translate"></span>
     <div class="section-cookie-buttons">
-        <span class="section-cookie-buttons-item">DECLINE</span>
-        <span id="accept_cookie" class="section-cookie-buttons-item">ACCEPT</span>
+        <span class="section-cookie-buttons-item" (click)="privacyCookie = false">{{ 'PRIVACY.BUTTON_DECLINE' | translate }}</span>
+        <span id="accept_cookie" class="section-cookie-buttons-item" (click)="privacyCookieSet()">{{ 'PRIVACY.BUTTON_ACCEPT' | translate }}</span>
     </div>
 </section>
