@@ -20,6 +20,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BuyComponent } from './pages/buy/buy.component';
 import { LegalComponent } from './pages/legal/legal.component';
+import { GoldLotteryComponent } from './pages/gold-lottery/gold-lottery.component';
 import { LegalDisclaimerComponent } from './pages/legal-disclaimer/legal-disclaimer.component';
 
 // partials
@@ -39,6 +40,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BuyComponent,
     LegalComponent,
     LegalDisclaimerComponent,
+    GoldLotteryComponent,
 
     HeaderComponent,
     FooterComponent

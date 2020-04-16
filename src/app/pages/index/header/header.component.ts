@@ -29,13 +29,13 @@ export class HeaderComponent implements OnInit {
         active: true,
       },
       {
-        lng: 'es',
-        title: 'Spain',
+        lng: 'it',
+        title: 'Italian',
         active: false,
       },
       {
-        lng: 'ru',
-        title: 'Russian',
+        lng: 'vie',
+        title: 'Vietman',
         active: false,
       },
     ];

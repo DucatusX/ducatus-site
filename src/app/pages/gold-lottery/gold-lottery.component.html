@@ -1,0 +1,95 @@
+<section class="section-header-page" style="background-image: url(/assets/img/sections/buy-bg.png);">
+    <div class="container">
+        <!-- <h1 class="h1__title-page" [innerHTML]="'PAGE.LOTTERY.TITLE' | translate">Gold Lottery</h1> -->
+        <h1 class="h1__title-page">Gold Lottery</h1>
+    </div>
+</section>
+
+<section class="app gold-lottery">
+    <div class="container">
+        <div class="lottery">
+            <div class="lottery-wrap">
+
+                <div class="lottery-form-switch">
+                    <span class="lottery-form-switch-button" [ngClass]="{ 'active': registration }" (click)="registration = true">Registration</span>
+                    <span class="lottery-form-switch-button" [ngClass]="{ 'active': !registration }" (click)=" registration=false">Checking</span>
+                </div>
+
+                <div class="lottery-form-block">
+
+                    <div class="lottery-form-block-registration" *ngIf="registration">
+                        <div class="lottery-form-top">
+                            <span class="lottery-form-top-text">Fill out the form to link your gold card, DUC, DUCX wallets to recive DUC and GOLD TOKEN</span>
+                        </div>
+
+                        <div class="lottery-form">
+                            <div class="lottery-form-field" data-title="Code">
+                                <div class="lottery-form-field-input">
+                                    <label for="input-code">Enter card Private code</label>
+                                    <div class="lottery-form-code">
+                                        <input required placeholder="W1V2" minlength="4" maxlength="4" min="4" max="4" type="text" id="input-code" class="lottery-form-input">
+                                        <input required placeholder="W1V2" minlength="4" maxlength="4" min="4" max="4" type="text" class="lottery-form-input">
+                                        <input required placeholder="W1V2" minlength="4" maxlength="4" min="4" max="4" type="text" class="lottery-form-input">
+                                        <input required placeholder="W1V2" minlength="4" maxlength="4" min="4" max="4" type="text" class="lottery-form-input">
+                                        <span class="lottery-form-input-error">Invalid code!</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lottery-form-field" data-title="DUC">
+                                <div class="lottery-form-field-input">
+                                    <label for="input-duc">Enter DUC address</label>
+                                    <input required placeholder="LsYgkGZZX2tvJYmb87RYwC3KdSwLtVpeiF" type="text" id="input-duc" class="lottery-form-input">
+                                    <span class="lottery-form-input-error">Invalid address!</span>
+                                </div>
+                            </div>
+                            <div class="lottery-form-field" data-title="DUCX">
+                                <div class="lottery-form-field-input">
+                                    <label for="input-ducx">Enter DUCX address</label>
+                                    <input required placeholder="0xfd367A2de6b8ECAe413BB4E61057C1430d4f4a61" type="text" id="input-ducx" class="lottery-form-input">
+                                    <span class="lottery-form-input-error">Invalid address!</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lottery-form-footer">
+                            <span class="lottery-form-footer-button">Next Step</span>
+                        </div>
+                    </div>
+
+                    <div class="lottery-form-block-check" *ngIf="!registration">
+                        <div class="lottery-form-top">
+                            <span class="lottery-form-top-text">Fill out the form to check your card registration</span>
+                        </div>
+
+                        <div class="lottery-form">
+                            <div class="lottery-form-field-check">
+
+                                <div class="lottery-form-field-left">
+                                    <input required minlength="4" maxlength="4" min="4" max="4" placeholder="Code" type="text" class="lottery-form-input">
+                                </div>
+
+                                <div class="lottery-form-field-right">
+                                    <label for="input-code">Enter Public code</label>
+                                    <div class="lottery-form-code">
+                                        <input required placeholder="W1V2" minlength="4" maxlength="4" min="4" max="4" type="text" id="input-code" class="lottery-form-input">
+                                        <input required placeholder="W1V2" minlength="4" maxlength="4" min="4" max="4" type="text" class="lottery-form-input">
+                                        <input required placeholder="W1V2" minlength="4" maxlength="4" min="4" max="4" type="text" class="lottery-form-input">
+                                        <input required placeholder="W1V2" minlength="4" maxlength="4" min="4" max="4" type="text" class="lottery-form-input">
+                                        <span class="lottery-form-input-error">Invalid code!</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="lottery-form-footer">
+                            <span class="lottery-form-footer-button">Next Step</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

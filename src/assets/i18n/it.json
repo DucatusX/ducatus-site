@@ -1,0 +1,257 @@
+{
+    "HEADER": {
+        "MENU": {
+            "HOME": "Casa",
+            "ABOUT": "A proposito di Duc",
+            "BUY": "Acquistare Duc",
+            "LOTTERY": "Lotteria d'oro",
+            "CONTACT": "Contatto"
+        }
+    },
+    "FOOTER": {
+        "MENU": {
+            "SECTION": {
+                "SOON": "Prossimamente",
+                "ONE": {
+                    "TITLE": "A PROPOSITO DI",
+                    "LINK_1": "A proposito di Ducatus",
+                    "LINK_2": "Ducatus aziendale",
+                    "LINK_3": "Contatto"
+                },
+                "TWO": {
+                    "TITLE": "Ducatus Stile di vita",
+                    "LINK_1": "Ducatus Accademia",
+                    "LINK_2": "Ducatus Caffè",
+                    "LINK_3": "Ducatus Beneficenza"
+                },
+                "THREE": {
+                    "TITLE": "Ducatus Stile di vita",
+                    "LINK_1": "Ducatus Salute",
+                    "LINK_2": "Ducatus Proprietà",
+                    "LINK_3": "Ducatus Viaggio"
+                },
+                "FOUR": {
+                    "TITLE": "Ducatus Biz",
+                    "LINK_1": "Ducatus Rete",
+                    "LINK_2": "D-MOB",
+                    "LINK_3": "Commercianti Ducatus"
+                }
+            },
+            "LEGAL": "Legale",
+            "LEGAL_DISCLAIMER": "Disclaimer"
+        }
+    },
+    "APPS": {
+        "TITLE": "Installa il portafoglio Ducatus",
+        "SUBTITLE": "Acquista, archivia e vendi Cryptos",
+        "TEXT_1": "Come ottenere Ducatus Coin?",
+        "TEXT_2": "La tua esperienza con Ducatus Coin inizia quando scarichi l'e-wallet Ducatus."
+    },
+    "PRIVACY": {
+        "TEXT": "Questo sito Web utilizza i cookie per assicurarti la migliore esperienza sul nostro sito Web. Continuando a utilizzare questo sito Web, accetti il loro utilizzo.",
+        "BUTTON_ACCEPT": "Accettare",
+        "BUTTON_DECLINE": "Declino"
+    },
+    "PAGE": {
+        "MAIN": {
+            "SLIDER": {
+                "ONE": {
+                    "TITLE": "Ducatus Coin",
+                    "TEXT": "Ispirato all'antica moneta di scambio romana e alimentato dallo spirito rivoluzionario che ha creato la moneta digitale, Ducatus Coin presenta una forma alternativa di scambio finanziario - inclusiva, unica e che offre possibilità illimitate.",
+                    "BUTTON": "Scarica il white paper"
+                },
+                "TWO": {
+                    "TITLE": "Criptovaluta per la vita di tutti i giorni",
+                    "TEXT": "Goditi la libertà di transazioni quotidiane senza contanti, senza confini e sicure, dall'acquisto del caffè del mattino all'acquisto della casa dei tuoi sogni, ora tutto possibile con Ducatus Coin.",
+                    "BUTTON": "Scarica il white paper"
+                },
+                "THREE": {
+                    "TITLE": "Sostenere l'economia digitale",
+                    "TEXT": "With Distribution, Convertibility and Usability (DUC) at its core, Ducatus Coin encourages the practical use and application of cryptocurrency in real life. These traits are instrumental in helping build a solid crypto-economy for the future.",
+                    "BUTTON": "Scarica il white paper"
+                }
+            },
+            "FINANCIAL": {
+                "TITLE": "Una nuova evoluzione finanziaria",
+                "SUBTITLE": "Essere la criptovaluta più popolare e utilizzabile del mondo ... ",
+                "TEXT_1": "Un Ducatus per persona sul pianeta. <br><br> Basato sui principi del matematico italiano Leonardo Fibonacci, Ducatus ha generato un totale di 7.778.742.049 criptovalute. Una volta distribuite tutte queste monete, il loro numero sarà simile al numero di persone sul nostro pianeta. <br><br> La visione per Ducatus Coin è audace. Ma con una combinazione di infrastruttura digitale di livello mondiale, un potente sistema di distribuzione di rete e una suite di attività correlate alla criptoeconomia, è un obiettivo che non è impossibile da raggiungere.",
+                "TEXT_2": "I proprietari di monete Ducatus ora possono accedere a una vasta gamma di prodotti e servizi sia da parte delle aziende di cripto-economia Ducatus che da commercianti di terze parti. Queste attività di cripto-economia vengono implementate in tutto il mondo in parallelo con la distribuzione delle nostre monete per dimostrare -applicazioni mondiali non solo per le monete Ducatus ma anche per le criptovalute nel loro insieme.",
+                "BUTTON": "Scopri di più"
+            },
+            "SECTION_1": {
+                "TITLE_1": "Le comunità diffondono le tecnologie. <br> Aziende come Ducatus le rendono tendenze dominanti.",
+                "TITLE_2": "Ducatus sviluppa <br> commercialmente le monete",
+                "TEXT_1": "Le monete Ducatus sono pre-minate e vendute, quindi vengono investiti i profitti per costruire il brand.",
+                "TEXT_2": "La tecnologia Ducatus Coin è sviluppata internamente sulla base del nostro piano strategico di business a lungo termine."
+            },
+            "SECTION_2": {
+                "LEFT": {
+                    "TITLE": "Ducatus mantiene gli standard leader di mercato",
+                    "SUBTITLE_1": "Governance",
+                    "TEXT_1": "Gestito da professionisti esperti con esperienze in diversi settori tra cui marketing, finanza e ingegneria",
+                    "SUBTITLE_2": "Trasparenza",
+                    "TEXT_2": "Team di dirigenti e azionisti visibili e accessibili",
+                    "SUBTITLE_3": "Conformità",
+                    "TEXT_3": "Collabora con gli enti governativi e rispetta i regolamenti stabiliti dalle autorità"
+                },
+                "RIGHT": {
+                    "TITLE": "Ducatus è un business, <br> non un progetto tecnologico",
+                    "TEXT_1": "Istituito <br> nel 2016",
+                    "TEXT_2": "Team di gestione globale di grande esperienza",
+                    "TEXT_3": "Team di vendita globale dinamico: Networking Marketing Strategy",
+                    "TEXT_4": "Quasi 1 miliardo di monete Ducatus vendute in oltre 180 paesi a partire da gennaio 2020"
+                }
+            },
+            "USABILITY": {
+                "TITLE": "Usabilità con la Ducatus Crypto-Economy",
+                "SUBTITLE": "Usa le monete Ducatus per acquistare caffè, prenotare una vacanza, acquistare souvenir. Se lo desideri, puoi persino acquistare proprietà o la casa dei tuoi sogni. Questi e altri scambi finanziari sono resi possibili dall'esclusiva cripto-economia Ducatus.",
+                "TEXT": "Ducatus ritiene che l'usabilità sia l'ultima misura di una valuta legittima. A supporto di questa visione, sono state create le società affiliate Ducatus che offrono servizi  di base per garantire e facilitare l'utilizzo agli utenti Ducatus Coin e ad altri utenti di crypto. Queste aziende Ducatus sono i cardini della cripto-economia Ducatus. Dall'acquisto di un espresso alla prenotazione di una camera in un hotel di lusso, le transazioni che erano solo in contanti ora possono essere cashless, attraverso l'uso di Ducatus Coin."
+            }
+        },
+        "ABOUT": {
+            "TITLE": "Informazioni su Ducatus Coin",
+            "SECTION_1": {
+                "TITLE": "Informazioni su Ducatus Coin",
+                "TEXT": "Conveniente, veloce e sicuro, Ducatus Coin è una criptovaluta creata per l'usabilità a lungo termine. Ducatus Coin è l'unica criptovaluta supportata dall'esclusiva Ducatus Crypto-Economy, un gruppo di aziende affiliate Ducatus in crescita , transazioni senza contanti per le necessità di base della vita: cibo, vestiti, alloggio, riposo e relax e altro ancora."
+            },
+            "SECTION_2": {
+                "TITLE": "Vantaggi della moneta Ducatus",
+                "SUBTITLE": "Ducatus Coin combina i vantaggi di Bitcoin con un modello di business strategico lungimirante: la Ducatus Crypto-Economy.",
+                "LIST": {
+                    "TITLE_1": "Ducatus Coin è altamente sicuro",
+                    "TEXT_1": "La migliore sicurezza del settore grazie a una tecnologia in costante evoluzione",
+                    "TITLE_2": "Ducatus Coin è più veloce",
+                    "TEXT_2": "Trasferimenti di fondi 10 volte più rapidi rispetto a Bitcoin grazie a tempi di blocco di 1 minuto",
+                    "TITLE_3": "La moneta Ducatus non ha confini",
+                    "TEXT_3": "Trasferisci fondi in qualsiasi parte del mondo a costi minimi",
+                    "TITLE_4": "Ducatus Coin ti mette al comando",
+                    "TEXT_4": Tutti i vantaggi di un sistema finanziario globale direttamente sul tuo smartphone "TITLE_5": "Ducatus Coin è innovativo",
+                    "TEXT_5": "Supportato da un'infrastruttura strategica progettata per promuovere l'accettazione e l'adozione globale della criptovaluta",
+                    "TITLE_6": "Ducatus Coin è professionale",
+                    "TEXT_6": "Il management di Ducatus garantisce che Ducatus Coin sia conforme alle leggi ed ai regolamenti globali"
+                }
+            },
+            "TECHNOLOGY": {
+                "TITLE": "Tecnologia delle monete Ducatus",
+                "SUBTITLE": "Ducatus Coin è un fork di Litecoin e utilizza quindi scrypt come base di un algoritmo Proof of Work.",
+                "TEXT_1": "Ducatus Blockchain",
+                "TEXT_2": "Codice sorgente"
+            },
+            "MILESTONES": {
+                "TITLE": "Pietre miliari della moneta Ducatus",
+                "LIST": {
+                    "YEAR_10": "Gennaio 2020",
+                    "TEXT_10": "<b>È stata lanciata la Ducatus Tangem Card.</b>",
+                    "YEAR_9": "Ottobre 2019",
+                    "TEXT_9": "È stato lanciato il Portafoglio Ducatus multivaluta.",
+                    "YEAR_8": "Gennaio 2019",
+                    "TEXT_8": "Ducatus è stato elencato come 10 fornitori di soluzioni Blockchain in più rapida crescita da tenere d'occhio nel 2019"
+                    da APAC Business Headlines.
+                    ",
+                    "YEAR_7": "Marzo 2018",
+                    "TEXT_7": "La moneta Ducatus è stata quotata nell'exchanghe di criptovaluta Coinbene.",
+                    "YEAR_6": "Gennaio 2018",
+                    "TEXT_6": "Ducatus ha sponsorizzato Blockchain Cruise Asia, un importante evento blockchain e criptovaluta regionale.",
+                    "YEAR_5": "Ottobre 2017",
+                    "TEXT_5": "La blockchain Ducatus è stata lanciata e la prima transazione live pubblica Ducatus è stata eseguita dal nostro CEO Ronny Tome con Dustin Trammell al vertice europeo Ducatus di Roma.",
+                    "YEAR_4": "Settembre 2017",
+                    "TEXT_4": "L'estrazione su blockchain è stata completata per tutte le monete Ducatus.",
+                    "YEAR_3": "Agosto 2017",
+                    "TEXT_3": "L'ufficio aziendale Ducatus è stato inaugurato a Singapore.",
+                    "YEAR_2": "Luglio 2017",
+                    "TEXT_2": "La settimana di lavoro sulla tecnologia Ducatus è stata ospitata da Dustin Trammell al DEFCON XXV di Las Vegas.",
+                    "YEAR_1": "Marzo 2017",
+                    "TEXT_1": "Il marchio Ducatus e il primo white paper tecnico Ducatus sono stati lanciati al Vertice globale Ducatus di Dubai."
+                }
+            }
+        },
+        "BUY": {
+            "TITLE": "Comprare DUC",
+            "TEXT": "Il tuo indirizzo Ducatus sarà associato a un indirizzo univoco in Bitcoin ed Ethereum. Puoi ricaricare questi indirizzi in qualsiasi momento e ricevere Ducatus al tasso di cambio corrente al momento della transazione",
+            "MODAL": {
+                "TEXT": "Spuntare la casella qui sotto per confermare che si riconosce e si accetta il <a href='/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'>Terms & Conditions</a> di acquisto DUC. La moneta Ducatus non è disponibile per l'acquisto da Centurion a Singapore.",
+                "TERMS": "Sono d'accordo con i termini e le condizioni",
+                "BUTTON": "Vicino"
+            },
+            "FIELDS": {
+                "ONE": {
+                    "TITLE": "Hai capito",
+                    "PLACEHOLDER": "Quantità"
+                },
+                "TWO": {
+                    "TITLE": "Tu invii",
+                    "PLACEHOLDER": "Quantità"
+                },
+                "THREE": {
+                    "TEXT_1": "Inserisci il tuo",
+                    "TEXT_2": "indirizzo per ricevere monete",
+                    "PLACEHOLDER_1": "Inserisci il tuo",
+                    "PLACEHOLDER_2": "indirizzo per ricevere monete",
+                    "ERROR": "Errore! Si prega di verificare, il formato dell'indirizzo non è corretto!"
+                },
+                "FOUR": {
+                    "TEXT_1": "Invia il tuo",
+                    "TEXT_2": "a",
+                    "ERROR": "qualcosa è andato storto, riprova più tardi"
+                },
+                "FIVE": {
+                    "TEXT_1": "Attenzione!",
+                    "TEXT_2": "Arriverete",
+                    "TEXT_3": "al vostro indirizzo in"
+                }
+            }
+        },
+        "CONTACT": {
+            "TITLE": "Contatto",
+            "TEXT": "Centurion Global Limited <br> Harneys Services (Cayman Limited) <br> 4th Floor, Harbor Place, 103 South Church Street <br> Grand Cayman <br> PO Box 10240, KY1-1002 <br> Isole Cayman <br> <br>",
+            "FORM": {
+                "TEXT": "Contattateci per maggiori dettagli",
+                "TEXT_1": "Il tuo nome",
+                "TEXT_2": "Il tuo numero di telefono",
+                "TEXT_3": "La tua email",
+                "TEXT_4": "Il tuo messaggio",
+                "BUTTON": "INCHIESTA"
+            }
+        },
+        "LEGAL": {
+            "TITLE": "Legal",
+            "SECTION": {
+                "ONE": {
+                    "TITLE": "General Terms & Conditions",
+                    "TEXT": "In these General Term & Conditions, the Seller and its affiliates and related companies together are hereinafter referred to as “Centurion Global Limited”, “we”, “us” or “our” and the Buyer is hereinafter referred to as the “Buyer”,”you” or “your”.",
+                    "SUBTITLE_1": "1. Disclaimers",
+                    "TEXT_1": "<li>Buyer agrees and expressly acknowledges that it is entering into the Contract at its own risk. To the fullest extent permitted by applicable law, Centurion Global Limited makes no representations or warranties of any kind, express or implied, as to the operation or performance of the Coins, or the information, content, materials, products (including the Coins or the blockchain, cryptocurrency wallets and related software) or any other aspect or element of Centurion Global Limited’s products and services included on or otherwise made available through the website, unless otherwise specified in writing.</li> <li>Buyer confirms that it has an appropriate understanding of the background, risks, usage and functions of cryptographic currencies as well as blockchain-based software, and that it is not relying on any statements or representations made by Centurion Global Limited or any of its associates in respect of these matters when entering into the Contract. Buyer has independently assessed all the risks, suitability and merits of the Coins and has obtained relevant and independent professional advice where necessary. </li> <li>Buyer acknowledges and agrees that, to the full extent permitted by applicable law, regulation or statute, Centurion Global Limited itself and any associated entities or individuals have no liability (including for any indirect, incidental, special, exemplary or consequential damages, to loss of profits, goodwill or data) resulting from or related to the use of or the inability to use the Coins for the goods/services provided by the Ducatus Group or any associated business or by third-party businesses.</li> <li>Centurion Global Limited makes no representation or warranty and expressly disclaims all representations and warranties, express or implied, including any implied warranties of merchantability and fitness for a particular purpose in relation to the Coins. </li> <li>Centurion Global Limited does not warrant or guarantee in any way that its products or services are free of viruses or other harmful components. Centurion Global Limited will not be held liable for damage of any kind arising from or as a result of the use of any of Centurion Global Limited products or services, including, but not limited to indirect, incidental, punitive or consequential damages</li> <li>Centurion Global Limited disclaims liability in cases of theft, hacking, cyberattacks or attacks on blockchains and does not in any way warrant the safety thereof. All risks or losses, including but not related to losses of Coins or damage to hardware due to these situations will be the Buyer’s alone.</li> <li>Buyer will bear sole responsibility for compliance with any local laws in relation to your transactions, including but not limited to any and all tax implications of the Contract.</li> <li>Buyer agrees that it is not purchasing Coins for purposes of investment, speculation for immediate resale or other financial purpose.</li> <li>Buyer agrees that all purchases of the Coins from Centurion Global Limited are made by Buyer for its own use for purchasing the goods/services provided by Centurion Global Limited or any associated business or by third-party businesses and Buyer shall not use the Coins for making a secondary offering to the public. If Buyer intends to do so, Buyer shall be solely responsible for complying with all relevant laws and regulations including any registration requirements, if any, applicable to such offerings.</li> <li>DISCLAIMER US PERSONS: THE COINS SOLD BY CENTURION, AS DESCRIBED HEREUNDER MAY NOT BE OFFERED, SOLD OR DISTRIBUTED, DIRECTLY OR INDIRECTLY, IN THE UNITED STATES OR FOR THE ACCOUNT OR RISK OF A U.S. PERSON (AS DEFINED BELOW). THE CONTENTS OF THIS DOCUMENT MAY NOT BE REGARDED AS AN OFFER OR INVITATION FOR U.S. PERSONS TO ACQUIRE COINS OR AN INVITATION TO SELL OR MARKET THE COINS. UNITED STATES('U.S.') CITIZENS, U.S.RESIDENTS, U.S.GREEN CARD HOLDERS OR CLIENTS WITH A U.S.MAILING ADDRESS, U.S.TELEPHONE NUMBER, ARE ALL U.S.PERSONS.A PERSON IS A 'U.S.RESIDENT' IF HE / SHE IS PRESENT IN THE U.S.FOR MORE THAN 31 DAYS IN THE CURRENT CALENDAR YEAR AND FOR AN AVERAGE OF AT LEAST 183 DAYS OVER THE CURRENT CALENDAR YEAR AND THE 2 PRECEDING CALENDAR YEARS.PLEASE NOTE THAT THE DUCATUS GROUP’ S DEFINITION OF U.S.PERSON MAY NOT BE THE SAME AS THE DEFINITION USED BY THE U.S.INLAND REVENUE SERVICES FOR U.S.TAX PURPOSES OR BY THE U.S.SECURITIES AND EXCHANGE COMMISSION.</li>",
+                    "SUBTITLE_2": "2. Risks Relating to Coins",
+                    "TEXT_2": "Purchase of Coins involve risks. There is no guarantee that any acquisition of Coins will result in you or any other person enjoying any form of financial or economic gain. You recognize and agree that Centurion Global Limited has made no representations, warranties, promises, guarantees, projections, suggestions or implications whatsoever to you about future prospects or earnings, or that you will earn any money or realize any financial or other return, as a result of your acquisition or ownership and/or use of Coins, and that Centurion Global Limited has not authorised any such statement or communication by any other person. You understand that you may suffer an amount of financial loss or damage, substantial or otherwise, resulting from the purchase of or dealing with the Coins. <br><br> You have considered and are comfortable with all these risks, including but not limited to those outlined below, and will not bring an action against or attempt to hold the Centurion Global Limited liable in any way or regard. Where necessary, you agree and represent that that you will or have obtained independent professional legal and financial advice."
+                },
+                "TWO": {
+                    "TITLE": "Impressum",
+                    "TEXT": "The Ducatus Coins website is owned by:<br> Centurion Global Limited<br> Harneys Services (Cayman Limited)<br> 4th Floor, Harbour Place, 103 South Church Street<br> Grand Cayman<br> PO Box 10240, KY1-1002<br> Cayman Islands <br><br> <b>Chief Executive Officer: Ronny Tome</b> <br> For any questions you may have regarding our Company, send us an email: support@ducatus.net. <br><br> <b>Proprietary Rights</b> <br> The materials on this website, including the information available on or through this website (the \"Contents\") are protected by copyright, trademark and other forms of proprietary rights. All rights, title and interest in the Contents are owned by, licensed to or controlled by the Company. <br><br> <b>Contents</b><br> Except as otherwise provided, no part of the Contents of this website shall be reproduced, republished, uploaded, posted, transmitted or otherwise distributed in any way, without the prior written permission of the Company. <br><br> Modification of any of the Contents or use of the Contents for any other purpose will be a violation of the Company's copyright and other intellectual property rights. Graphics and images on this website are protected by copyright and may not be reproduced or appropriated in any manner without the written permission of the respective copyright owners. <br><br> The design and layout of this website is protected by intellectual property and other laws and may not be copied or reproduced in whole or in part. No logo, graphic, sound, image, text or any other content from this website may be copied, reproduced or transmitted unless expressly permitted in writing by the Company."
+                },
+                "THREE": {
+                    "TITLE": "Privacy Policy",
+                    "SUBTITLE_1": "1. Introduction",
+                    "TEXT_1": "This Privacy Policy is designed to inform you of our policies regarding the collection, use and disclosure of Personal Data we receive from you, as well as to assist you in making an informed decision before providing us with any of your Personal Information. <br><br> In this Privacy Policy, “we”, “us”, “our” shall mean Centurion Global Limited having its registered office in the Cayman Islands (as Controller according to the European General Data Protection Regulation (&quot;GDPR&quot;) and its affiliates and related companies namely, Emperor Holdings Limited having its registered office in the Cayman Islands, in their capacity as Recipients and Processors under GDPR. <br><br> If you, at any time, have any queries on this Privacy Policy or any other queries in relation to how we may manage, process and protect your personal data, please do not hesitate to contact our Data Protection Officer (whose contact details are set out below). <br><br> <a href='mailto:support@ducatus.net' target='_blank' class='a__link'>support@ducatus.net</a><br> Attention: Data Protection Officer <br><br> By using the Site and/or our other services and/or products, you express your agreement with this Policy and the conditions of processing your Personal Data contained herein; if you do not agree with these conditions, you should not use the Site and/or our other services and/or products.",
+                    "SUBTITLE_2": "2. Data we collect",
+                    "TEXT_2": " Personal Data: While using the Site, and/or our services and/or our products we may ask you to provide us Personal Data that can be used to contact or identify you. “Personal Data” is defined to mean data, whether true or not, about an individual who can be identified from that data, or from that data and other information to which an organisation has or is likely to have access provided that to the extent you reside in, or are otherwise subject to the personal data laws of, a jurisdiction the relevant laws or other applicable rules of which provide for a different definition of personal data, the definition of “Personal Data” hereunder shall be construed to also encompass any other types of data that are included in such different definition. The Personal Data that we may collect from you includes, but is not limited to, your salutation, name, company, designation, industry, gender, country of residence, contact number and one or more email addresses."
+                }
+            }
+        },
+        "LEGAL_DISCLAIMER": {
+            "TITLE": "Disclaimer",
+            "TEXT": "Avviso importante: ducatuscoins.com è di proprietà di Centurion Global Limited ( Centurion Global "),
+        con sede legale in Harneys Services(Cayman Limited),
+        4 th Floor Harbor Place,
+        103 South Church Street,
+        Grand Cayman,
+        PO Box 10240,
+        KY1 - 1002,
+        Isole Cayman. < br > < br >
+        Visitando questo sito,
+        l 'utente accetta di essere vincolato dalle Condizioni d'
+        uso e dall 'Informativa sulla privacy di Centurion. Ducatus Coin (la moneta") emessa da Centurion Global è destinata ad acquirenti qualificati che comprendono e accettano i rischi associati alla proprietà di beni digitali come la moneta. Si consiglia a ciascun acquirente di svolgere la propria due diligence in quanto nessuno di Centurion Global, i suoi affiliati o ducatuscoins.com fornisce consulenza in materia di investimenti, consulenza aziendale o consulenza fiscale o legale. <br><br> TUTTE LE INFORMAZIONI CONTENUTE IN QUESTO SITO  NON SONO AUTORIZZATE ALLA DIVULGAZIONE, VISUALIZZAZIONE, RICEVIMENTO E/O DISTRIBUZIONE IN SINGAPORE  (A QUALSIASI SEZIONE DI PUBBLICO IN SINGAPORE) O IN QUALSIASI ALTRA GIURISDIZIONE IN CUI POTREBBERO ESSERE PROIBITI I PRODOTTI E/O SERVIZI DELLA CENTURION O DEI SUOI ​​AFFILIATI. CENTURION  NÉ QUALSIASI DEI SUOI ​​AFFILIATI OFFRE ALCUN SERVIZIO CHE COSTITUISCA UN PAGAMENTO A FINI DEL SINGAPORE PAYMENT SERVICES ACT 2019 (legge del Gennaio 2019 riguardante i pagamenti e/o vendite finanziarie) , O QUALUNQUE ALTRA ATTIVITÀ SOGGETTA AL REGOLAMENTO DELL'
+        AUTORITÀ MONETARIA DI SINGAPORE O A QUALUNQUE PERSONA.LA MONETA DI CENTURION NON È DISPONIBILE PER LA VENDITA IN SINGAPORE.
+        "
+    }
+}
+}
