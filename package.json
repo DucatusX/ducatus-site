@@ -27,6 +27,7 @@
         "intl-tel-input": "^16.1.0",
         "jquery": "^3.5.0",
         "jquery.cookie": "^1.4.1",
+        "ng2-tel-input": "^2.3.0",
         "ngx-swiper-wrapper": "^9.0.1",
         "rxjs": "~6.5.4",
         "swiper": "^5.3.7",

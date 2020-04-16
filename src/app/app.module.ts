@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 
 // plugins
 import { QRCodeModule } from 'angularx-qrcode';
+import { Ng2TelInputModule } from 'ng2-tel-input';
 import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -50,6 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     QRCodeModule,
     FormsModule,
+    Ng2TelInputModule,
     ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

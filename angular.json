@@ -30,12 +30,14 @@
                         ],
                         "styles": [
                             "node_modules/swiper/css/swiper.min.css",
+                            "node_modules/intl-tel-input/build/css/intlTelInput.css",
                             "src/styles.scss"
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",
                             "node_modules/jquery.cookie/jquery.cookie.js",
-                            "node_modules/swiper/js/swiper.min.js"
+                            "node_modules/swiper/js/swiper.min.js",
+                            "node_modules/intl-tel-input/build/js/intlTelInput.min.js"
                         ],
                         "es5BrowserSupport": true
                     },
