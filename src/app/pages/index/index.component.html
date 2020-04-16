@@ -9,11 +9,9 @@
                         <div class="section-header-wrap section-header-wrap-mobile" style="background-image: url(assets/img/slide-1-mob.png);"></div>
                         <div class="container-slider">
                             <div class="slider-item">
-                                <h2 class="h2__slider-title">Ducatus Coin</h2>
-                                <p class="p__slider-item">
-                                    Inspired by the ancient Roman trading coin and fuelled by the revolutionary spirit that created digital money, Ducatus Coin presents an alternative form of financial exchange – one that is inclusive, unique and offers boundless possibilities.
-                                </p>
-                                <a routerLink="assets/downloads/pdf/ducatus-coin-white-paper.pdf" target="_blank" class="button button__transparent-white">Download Whitepaper</a>
+                                <h2 class="h2__slider-title" [innerHTML]="'PAGE.MAIN.SLIDER.ONE.TITLE' | translate"></h2>
+                                <p class="p__slider-item" [innerHTML]="'PAGE.MAIN.SLIDER.ONE.TEXT' | translate"></p>
+                                <a routerLink="assets/downloads/pdf/ducatus-coin-white-paper.pdf" target="_blank" class="button button__transparent-white">{{ 'PAGE.MAIN.SLIDER.ONE.BUTTON' | translate }}</a>
                             </div>
                         </div>
                     </div>
@@ -22,11 +20,9 @@
                         <div class="section-header-wrap section-header-wrap-mobile" style="background-image: url(assets/img/slide-2-mob.png);"></div>
                         <div class="container-slider">
                             <div class="slider-item">
-                                <h2 class="h2__slider-title">Cryptocurrency for everyday living</h2>
-                                <p class="p__slider-item">
-                                    Enjoy the freedom of cashless, borderless and secure everyday transactions, from buying your morning coffee to purchasing your dream home, now all possible with Ducatus Coin.
-                                </p>
-                                <a routerLink="assets/downloads/pdf/ducatus-coin-white-paper.pdf" target="_blank" class="button button__transparent-white">Download Whitepaper</a>
+                                <h2 class="h2__slider-title" [innerHTML]="'PAGE.MAIN.SLIDER.TWO.TITLE' | translate"></h2>
+                                <p class="p__slider-item" [innerHTML]="'PAGE.MAIN.SLIDER.TWO.TEXT' | translate"></p>
+                                <a routerLink="assets/downloads/pdf/ducatus-coin-white-paper.pdf" target="_blank" class="button button__transparent-white">{{ 'PAGE.MAIN.SLIDER.TWO.BUTTON' | translate }}</a>
                             </div>
                         </div>
                     </div>
@@ -35,11 +31,9 @@
                         <div class="section-header-wrap section-header-wrap-mobile" style="background-image: url(assets/img/slide-3-mob.png);"></div>
                         <div class="container-slider">
                             <div class="slider-item">
-                                <h2 class="h2__slider-title">Championing the crypto-economy</h2>
-                                <p class="p__slider-item">
-                                    With Distribution, Convertibility and Usability (DUC) at its core, Ducatus Coin encourages the practical use and application of cryptocurrency in real life. These traits are instrumental in helping build a solid crypto-economy for the future.
-                                </p>
-                                <a routerLink="assets/downloads/pdf/ducatus-coin-white-paper.pdf" target="_blank" class="button button__transparent-white">Download Whitepaper</a>
+                                <h2 class="h2__slider-title" [innerHTML]="'PAGE.MAIN.SLIDER.THREE.TITLE' | translate"></h2>
+                                <p class="p__slider-item" [innerHTML]="'PAGE.MAIN.SLIDER.THREE.TEXT' | translate"></p>
+                                <a routerLink="assets/downloads/pdf/ducatus-coin-white-paper.pdf" target="_blank" class="button button__transparent-white">{{ 'PAGE.MAIN.SLIDER.THREE.BUTTON' | translate }}</a>
                             </div>
                         </div>
                     </div>
@@ -53,44 +47,16 @@
 <section class="section-financial">
     <div class="container">
         <div class="section-financial-info">
-            <h2 class="h2__title">A New Financial Evolution</h2>
-            <span class="span__subtitle">To be the world’s most popular and usable cryptocurrency…</span>
+            <h2 class="h2__title" [innerHTML]="'PAGE.MAIN.FINANCIAL.TITLE' | translate"></h2>
+            <span class="span__subtitle" [innerHTML]="'PAGE.MAIN.FINANCIAL.SUBTITLE' | translate"></span>
             <span class="span__line"></span>
             <div class="section-financial-info-blocks">
                 <div class="section-financial-info-block">
-                    <p class="p__text">
-                        One Ducatus Per Person on the Planet.
-                        <br>
-                        <br>
-                        Based on the principles of the Italian mathematician Leonardo Fibonacci, Ducatus has generated a total of 7,778,742,049 crypto coins. Once these coins have all been distributed, their number will be similar to the number of people on our planet.
-                        <br>
-                        <br>
-                        The vision for Ducatus Coin is bold.
-                        But with a combination of
-                        world-class digital infrastructure, a
-                        powerful network distribution
-                        system, and a suite of related
-                        crypto-economy businesses, it is a
-                        goal that is not impossible to
-                        achieve.
-                    </p>
+                    <p class="p__text" [innerHTML]="'PAGE.MAIN.FINANCIAL.TEXT_1' | translate"></p>
                 </div>
                 <div class="section-financial-info-block">
-                    <p class="p__text">
-                        Ducatus Coin owners can now
-                        access a wide range of products
-                        and services both from Ducatus
-                        Crypto-Economy businesses and
-                        third-party merchants. These
-                        crypto-economy businesses are
-                        being rolled out around the word in
-                        parallel with the distribution of our
-                        coins to demonstrate real-world
-                        applications not only for Ducatus
-                        Coin but also for cryptocurrencies
-                        as a whole.
-                    </p>
-                    <a routerLink="/about" class="button button__brown-red">Find Out More</a>
+                    <p class="p__text" [innerHTML]="'PAGE.MAIN.FINANCIAL.TEXT_2' | translate"></p>
+                    <a routerLink="/about" class="button button__brown-red"> {{ 'PAGE.MAIN.FINANCIAL.BUTTON' | translate }} </a>
                 </div>
             </div>
         </div>
@@ -104,27 +70,16 @@
             <div class="section-ducatus-block">
                 <span class="ducatus-coin"></span>
                 <br>
-                <p class="p__ducatus-coin">
-                    Communities popularise technologies.
-                    <br>
-                    Companies like Ducatus make them mainstream.
-                </p>
+                <p class="p__ducatus-coin" [innerHTML]="'PAGE.MAIN.SECTION_1.TITLE_1' | translate"></p>
             </div>
             <div class="section-ducatus-block">
-                <span class="span__title">Ducatus develops coins <br> commercially</span>
+                <span class="span__title" [innerHTML]="'PAGE.MAIN.SECTION_1.TITLE_2' | translate"></span>
                 <div class="section-ducatus-blocks-text">
                     <div class="section-ducatus-block-left">
-                        <p class="p__section-ducatus-coin icon icon__money">
-                            Ducatus Coins are pre-mined and sold, then profits are invested to build the brand.
-                        </p>
+                        <p class="p__section-ducatus-coin icon icon__money" [innerHTML]="'PAGE.MAIN.SECTION_1.TEXT_1' | translate"></p>
                     </div>
                     <div class="section-ducatus-block-right">
-                        <p class="p__section-ducatus-coin icon icon__arrow">
-                            Coin technology is
-                            developed internally based
-                            on our strategic long-term
-                            business plan.
-                        </p>
+                        <p class="p__section-ducatus-coin icon icon__arrow" [innerHTML]="'PAGE.MAIN.SECTION_1.TEXT_2' | translate"></p>
                     </div>
                 </div>
             </div>
@@ -138,59 +93,45 @@
     <div class="container">
 
         <div class="section-ducatus-maintains-block">
-            <span class="span__title span__title-left">Ducatus maintains market-leading standards</span>
+            <span class="span__title span__title-left" [innerHTML]="'PAGE.MAIN.SECTION_2.LEFT.TITLE' | translate"></span>
             <div class="section-ducatus-maintains-blocks">
                 <div class="section-ducatus-maintains-block-item">
                     <span class="icon icon__house"></span>
                     <div class="section-ducatus-maintains-block-item-text">
-                        <span class="span__maintains-item">Governance</span>
-                        <p class="p__section-ducatus">
-                            Managed by experienced professionals with backgrounds in a range of fields including marketing, finance, and engineering
-                        </p>
+                        <span class="span__maintains-item" [innerHTML]="'PAGE.MAIN.SECTION_2.LEFT.SUBTITLE_1' | translate"></span>
+                        <p class="p__section-ducatus" [innerHTML]="'PAGE.MAIN.SECTION_2.LEFT.TEXT_1' | translate"></p>
                     </div>
                 </div>
                 <div class="section-ducatus-maintains-block-item">
                     <span class="icon icon__people"></span>
                     <div class="section-ducatus-maintains-block-item-text">
-                        <span class="span__maintains-item">Transparency</span>
-                        <p class="p__section-ducatus">
-                            Visible and accessible senior management team and shareholders
-                        </p>
+                        <span class="span__maintains-item" [innerHTML]="'PAGE.MAIN.SECTION_2.LEFT.SUBTITLE_2' | translate"></span>
+                        <p class="p__section-ducatus" [innerHTML]="'PAGE.MAIN.SECTION_2.LEFT.TEXT_2' | translate"></p>
                     </div>
                 </div>
                 <div class="section-ducatus-maintains-block-item">
                     <span class="icon icon__hands"></span>
                     <div class="section-ducatus-maintains-block-item-text">
-                        <span class="span__maintains-item">Compliance</span>
-                        <p class="p__section-ducatus">
-                            Cooperates with government bodies and abides by regulations set by authorities
-                        </p>
+                        <span class="span__maintains-item" [innerHTML]="'PAGE.MAIN.SECTION_2.LEFT.SUBTITLE_3' | translate"></span>
+                        <p class="p__section-ducatus" [innerHTML]="'PAGE.MAIN.SECTION_2.LEFT.TEXT_3' | translate"></p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="section-ducatus-maintains-block">
-            <span class="span__title">Ducatus is a business, not a <br> technology project</span>
+            <span class="span__title" [innerHTML]="'PAGE.MAIN.SECTION_2.RIGHT.TITLE' | translate"></span>
             <div class="section-ducatus-maintains-blocks">
                 <div class="section-ducatus-maintains-block-item">
-                    <p class="p__section-ducatus icon icon__rocket">
-                        Established <br>in 2016
-                    </p>
+                    <p class="p__section-ducatus icon icon__rocket" [innerHTML]="'PAGE.MAIN.SECTION_2.RIGHT.TEXT_1' | translate"></p>
                 </div>
                 <div class="section-ducatus-maintains-block-item">
-                    <p class="p__section-ducatus icon icon__up">
-                        Highly-experienced global Management Team
-                    </p>
+                    <p class="p__section-ducatus icon icon__up" [innerHTML]="'PAGE.MAIN.SECTION_2.RIGHT.TEXT_2' | translate"></p>
                 </div>
                 <div class="section-ducatus-maintains-block-item">
-                    <p class="p__section-ducatus icon icon__web">
-                        Dynamic global sales team: Networking Marketing Strategy
-                    </p>
+                    <p class="p__section-ducatus icon icon__web" [innerHTML]="'PAGE.MAIN.SECTION_2.RIGHT.TEXT_3' | translate"></p>
                 </div>
                 <div class="section-ducatus-maintains-block-item">
-                    <p class="p__section-ducatus icon icon__coin">
-                        Nearly 1 Billion Ducatus Coins sold in over 180 countries as of January 2020
-                    </p>
+                    <p class="p__section-ducatus icon icon__coin" [innerHTML]="'PAGE.MAIN.SECTION_2.RIGHT.TEXT_4' | translate"></p>
                 </div>
             </div>
         </div>
@@ -202,14 +143,12 @@
     <div class="section-usability-wrap">
         <div class="container">
             <div class="section-usability-info">
-                <h2 class="h2__title">Usability with the Ducatus Crypto-Economy</h2>
-                <span class="span__subtitle">Use Ducatus Coins to buy coffee, book a holiday, shop for souvenirs. You can even purchase property or your dream home, if you wish. These and more financial exchanges are made possible through the unique Ducatus Crypto-Economy.</span>
+                <h2 class="h2__title" [innerHTML]="'PAGE.MAIN.USABILITY.TITLE' | translate"></h2>
+                <span class="span__subtitle" [innerHTML]="'PAGE.MAIN.USABILITY.SUBTITLE' | translate"></span>
                 <span class="span__line"></span>
                 <div class="section-usability-info-blocks">
                     <div class="section-usability-info-block">
-                        <p class="p__text">
-                            Ducatus believes that usability is the ultimate measure of legitimate currency. In support of this vision, Ducatus affiliate businesses offering basic needs were created to deliver ease and convenience to Ducatus Coin and other crypto users. These Ducatus businesses are the cornerstones of the Ducatus Crypto-Economy. From buying an espresso to booking a room at a luxury hotel, transactions that used to be cash-only can now be cashless, through the use of Ducatus Coin.
-                        </p>
+                        <p class="p__text" [innerHTML]="'PAGE.MAIN.USABILITY.TEXT' | translate"></p>
                     </div>
                 </div>
             </div>
