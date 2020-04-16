@@ -125,7 +125,8 @@
                     "TITLE_3": "La moneta Ducatus non ha confini",
                     "TEXT_3": "Trasferisci fondi in qualsiasi parte del mondo a costi minimi",
                     "TITLE_4": "Ducatus Coin ti mette al comando",
-                    "TEXT_4": Tutti i vantaggi di un sistema finanziario globale direttamente sul tuo smartphone "TITLE_5": "Ducatus Coin è innovativo",
+                    "TEXT_4": "Tutti i vantaggi di un sistema finanziario globale direttamente sul tuo smartphone",
+                    "TITLE_5 ": "Ducatus Coin è innovativo ",
                     "TEXT_5": "Supportato da un'infrastruttura strategica progettata per promuovere l'accettazione e l'adozione globale della criptovaluta",
                     "TITLE_6": "Ducatus Coin è professionale",
                     "TEXT_6": "Il management di Ducatus garantisce che Ducatus Coin sia conforme alle leggi ed ai regolamenti globali"
@@ -145,9 +146,7 @@
                     "YEAR_9": "Ottobre 2019",
                     "TEXT_9": "È stato lanciato il Portafoglio Ducatus multivaluta.",
                     "YEAR_8": "Gennaio 2019",
-                    "TEXT_8": "Ducatus è stato elencato come 10 fornitori di soluzioni Blockchain in più rapida crescita da tenere d'occhio nel 2019"
-                    da APAC Business Headlines.
-                    ",
+                    "TEXT_8": "Ducatus è stato elencato come 10 fornitori di soluzioni Blockchain in più rapida crescita da tenere d'occhio nel 2019 da APAC Business Headlines.",
                     "YEAR_7": "Marzo 2018",
                     "TEXT_7": "La moneta Ducatus è stata quotata nell'exchanghe di criptovaluta Coinbene.",
                     "YEAR_6": "Gennaio 2018",
@@ -239,19 +238,7 @@
         },
         "LEGAL_DISCLAIMER": {
             "TITLE": "Disclaimer",
-            "TEXT": "Avviso importante: ducatuscoins.com è di proprietà di Centurion Global Limited ( Centurion Global "),
-        con sede legale in Harneys Services(Cayman Limited),
-        4 th Floor Harbor Place,
-        103 South Church Street,
-        Grand Cayman,
-        PO Box 10240,
-        KY1 - 1002,
-        Isole Cayman. < br > < br >
-        Visitando questo sito,
-        l 'utente accetta di essere vincolato dalle Condizioni d'
-        uso e dall 'Informativa sulla privacy di Centurion. Ducatus Coin (la moneta") emessa da Centurion Global è destinata ad acquirenti qualificati che comprendono e accettano i rischi associati alla proprietà di beni digitali come la moneta. Si consiglia a ciascun acquirente di svolgere la propria due diligence in quanto nessuno di Centurion Global, i suoi affiliati o ducatuscoins.com fornisce consulenza in materia di investimenti, consulenza aziendale o consulenza fiscale o legale. <br><br> TUTTE LE INFORMAZIONI CONTENUTE IN QUESTO SITO  NON SONO AUTORIZZATE ALLA DIVULGAZIONE, VISUALIZZAZIONE, RICEVIMENTO E/O DISTRIBUZIONE IN SINGAPORE  (A QUALSIASI SEZIONE DI PUBBLICO IN SINGAPORE) O IN QUALSIASI ALTRA GIURISDIZIONE IN CUI POTREBBERO ESSERE PROIBITI I PRODOTTI E/O SERVIZI DELLA CENTURION O DEI SUOI ​​AFFILIATI. CENTURION  NÉ QUALSIASI DEI SUOI ​​AFFILIATI OFFRE ALCUN SERVIZIO CHE COSTITUISCA UN PAGAMENTO A FINI DEL SINGAPORE PAYMENT SERVICES ACT 2019 (legge del Gennaio 2019 riguardante i pagamenti e/o vendite finanziarie) , O QUALUNQUE ALTRA ATTIVITÀ SOGGETTA AL REGOLAMENTO DELL'
-        AUTORITÀ MONETARIA DI SINGAPORE O A QUALUNQUE PERSONA.LA MONETA DI CENTURION NON È DISPONIBILE PER LA VENDITA IN SINGAPORE.
-        "
+            "TEXT": "Avviso importante: ducatuscoins.com è di proprietà di Centurion Global Limited ( Centurion Global ), con sede legale in Harneys Services(Cayman Limited), 4 th Floor Harbor Place, 103 South Church Street, Grand Cayman, PO Box 10240, KY1 - 1002, Isole Cayman. < br > < br > Visitando questo sito, l 'utente accetta di essere vincolato dalle Condizioni d' uso e dall 'Informativa sulla privacy di Centurion. Ducatus Coin (la moneta ) emessa da Centurion Global è destinata ad acquirenti qualificati che comprendono e accettano i rischi associati alla proprietà di beni digitali come la moneta. Si consiglia a ciascun acquirente di svolgere la propria due diligence in quanto nessuno di Centurion Global, i suoi affiliati o ducatuscoins.com fornisce consulenza in materia di investimenti, consulenza aziendale o consulenza fiscale o legale. <br><br> TUTTE LE INFORMAZIONI CONTENUTE IN QUESTO SITO  NON SONO AUTORIZZATE ALLA DIVULGAZIONE, VISUALIZZAZIONE, RICEVIMENTO E/O DISTRIBUZIONE IN SINGAPORE  (A QUALSIASI SEZIONE DI PUBBLICO IN SINGAPORE) O IN QUALSIASI ALTRA GIURISDIZIONE IN CUI POTREBBERO ESSERE PROIBITI I PRODOTTI E/O SERVIZI DELLA CENTURION O DEI SUOI ​​AFFILIATI. CENTURION  NÉ QUALSIASI DEI SUOI ​​AFFILIATI OFFRE ALCUN SERVIZIO CHE COSTITUISCA UN PAGAMENTO A FINI DEL SINGAPORE PAYMENT SERVICES ACT 2019 (legge del Gennaio 2019 riguardante i pagamenti e/o vendite finanziarie) , O QUALUNQUE ALTRA ATTIVITÀ SOGGETTA AL REGOLAMENTO DELL' AUTORITÀ MONETARIA DI SINGAPORE O A QUALUNQUE PERSONA.LA MONETA DI CENTURION NON È DISPONIBILE PER LA VENDITA IN SINGAPORE."
+        }
     }
-}
 }
