@@ -117,6 +117,7 @@ section.gold-lottery {
                 padding: 10px 20px;
                 font-size: 16px;
                 height: 45px;
+                display: block;
                 outline: none;
                 box-shadow: none;
                 appearance: none;
@@ -125,6 +126,8 @@ section.gold-lottery {
                 background-color: #f3f3f3;
                 border: 1px solid #ddd;
                 letter-spacing: 1.1px;
+                display: flex;
+                align-items: center;
 
                 &-error {
                     color: $brown-red;

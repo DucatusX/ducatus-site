@@ -15,9 +15,9 @@
                     <span class="lottery-form-switch-button" [ngClass]="{ 'active': !registration }" (click)=" registration=false">Checking</span>
                 </div>
 
-                <div class="lottery-form-block">
+                <div class="lottery-form-block" *ngIf="registration">
 
-                    <div class="lottery-form-block-registration" *ngIf="registration">
+                    <div class="lottery-form-block-registration" *ngIf="registrationStep === 0">
                         <div class="lottery-form-top">
                             <span class="lottery-form-top-text">Fill out the form to link your gold card, DUC, DUCX wallets to recive DUC and GOLD TOKEN</span>
                         </div>
@@ -52,11 +52,39 @@
                         </div>
 
                         <div class="lottery-form-footer">
-                            <span class="lottery-form-footer-button">Next Step</span>
+                            <span class="lottery-form-footer-button" (click)="registrationStep = 1">Next Step</span>
                         </div>
                     </div>
 
-                    <div class="lottery-form-block-check" *ngIf="!registration">
+                    <div class="lottery-form-block-registration" *ngIf="registrationStep === 1">
+                        <div class="lottery-form-top">
+                            <span class="lottery-form-top-text">Congratulations! <br> You have successfully registred a card!</span>
+                        </div>
+
+                        <div class="lottery-form">
+                            <div class="lottery-form-field" data-title="DUC">
+                                <div class="lottery-form-field-input">
+                                    <label for="input-duc">Within 30 minutes, your DUC address will be replenished</label>
+                                    <span class="lottery-form-input">LsYgkGZZX2tvJYmb87RYwC3KdSwLtVpeiF</span>
+                                </div>
+                            </div>
+                            <div class="lottery-form-field" data-title="DUCX">
+                                <div class="lottery-form-field-input">
+                                    <label for="input-ducx">GOLD token will be placed on this addres</label>
+                                    <span class="lottery-form-input">0xfd367A2de6b8ECAe413BB4E61057C1430d4f4a61</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lottery-form-footer">
+                            <span class="lottery-form-footer-button" (click)="registrationStep = 0">Back</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="lottery-form-block" *ngIf="!registration">
+                    <div class="lottery-form-block-check">
                         <div class="lottery-form-top">
                             <span class="lottery-form-top-text">Fill out the form to check your card registration</span>
                         </div>
