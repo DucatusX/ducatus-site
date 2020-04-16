@@ -12,6 +12,12 @@
     z-index: 999;
     transition: 0.2s ease;
 
+    .container {
+        @include b(1366) {
+            padding: 0px;
+        }
+    }
+
     &-scroll {
         background-color: white;
         margin-top: 0 !important;
@@ -129,6 +135,7 @@
             @include b(750) {
                 display: block;
                 float: right;
+                margin-top: 10px;
             }
         }
 
@@ -137,4 +144,101 @@
 
 .menu-open {
     max-height: 130px !important;
+}
+
+.language-select {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    z-index: 2;
+
+    @include b(1240) {
+        right: -50px;
+    }
+
+    @include b(900) {
+        right: 0px;
+    }
+
+    @include b(750) {
+        right: 50px;
+    }
+
+    &-list {
+        display: block;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        position: relative;
+        background-color: #fff;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-width: 2px 2px 0 0;
+            border-style: solid;
+            border-color: #821617;
+            transform: rotate(135deg);
+            position: absolute;
+            top: 9px;
+            right: 11px;
+            transition: 0.2s ease;
+        }
+
+        &:not(.opened) {
+            &:hover {
+                background-color: #f0f0f0;
+            }
+        }
+
+        li {
+            display: none;
+            padding: 5px 10px 5px 10px;
+            margin: 0;
+            text-align: right;
+            line-height: 20px;
+            font-size: 12px;
+            font-weight: bolder;
+            color: #821617;
+
+            span {
+                cursor: pointer;
+            }
+
+            &:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            &.active {
+                padding-right: 30px;
+                display: block;
+            }
+        }
+
+        &.opened {
+            &:after {
+                transform: rotate(-45deg);
+                top: 13px;
+            }
+
+            li {
+                display: block;
+
+                +li {
+                    border-top: 1px solid #ddd;
+                }
+            }
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
 }

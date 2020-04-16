@@ -20,5 +20,12 @@
                 <a routerLink="/contact" class="header-menu-link">{{ 'HEADER.MENU.CONTACT' | translate }}</a>
             </div>
         </div>
+        <div class="language-select">
+            <ul class="language-select-list" [ngClass]="{'opened': openedLngList}" (click)="toggleLanguage()">
+                <li (click)="setLanguage(lng['lng'])" [ngClass]="{'active': lng['active']}" *ngFor="let lng of languagesList">
+                    <span>{{lng['title']}}</span>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

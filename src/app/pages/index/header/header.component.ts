@@ -1,19 +1,99 @@
 import { Component, OnInit } from '@angular/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import * as $ from 'jquery';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  host: { '(document:click)': 'onClick($event)' }
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public isBrowser: any;
+  public openedLngList = false;
+  private translator: TranslateService;
+  public languagesList: { lng: string; title: string; active?: boolean }[];
+  public currLanguage: string;
 
-  public openMenu: Boolean = false;
+  public openMenu = false;
+
+
+  constructor(translate: TranslateService) {
+
+    this.translator = translate;
+    this.languagesList = [
+      {
+        lng: 'en',
+        title: 'English',
+        active: true,
+      },
+      {
+        lng: 'es',
+        title: 'Spain',
+        active: false,
+      },
+      {
+        lng: 'ru',
+        title: 'Russian',
+        active: false,
+      },
+    ];
+
+    translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.setActiveLanguage(event);
+    });
+
+    this.setActiveLanguage({
+      lang: translate.currentLang,
+    });
+
+  }
+
+  private onClick($event) {
+    if ($($event.target).closest('.header-menu-toggle-block').length === 0) {
+      if ($($event.target).closest('.select-coin-list-item').length === 0) {
+        this.openMenu = false;
+      }
+    }
+    if ($($event.target).closest('.language-select').length === 0) {
+      this.openedLngList = false;
+    }
+  }
+
+  private setActiveLanguage(event) {
+
+    console.log("lang:", event)
+
+    if (this.currLanguage) {
+      this.languagesList.map((lang) => {
+        if (lang['lng'] === this.currLanguage) { lang['active'] = true; }
+        else { lang['active'] = false; }
+        // return lang['lng'] === this.currLanguage;
+      });
+    }
+    this.currLanguage = event.lang;
+    window['jQuery']['cookie']('lng', this.currLanguage);
+
+    this.languagesList.map((lang) => {
+      if (lang['lng'] === this.currLanguage) { lang['active'] = true; }
+      else { lang['active'] = false; }
+      // return lang['lng'] === this.currLanguage;
+    });
+    this.languagesList.sort((a, b) => {
+      return b.active ? 1 : -1;
+    });
+  }
+
+  public toggleLanguage() {
+    this.openedLngList = !this.openedLngList;
+  }
+
+  public setLanguage(lng) {
+    this.translator.use(lng);
+  }
 
   ngOnInit() {
-
     // scroll menu
     var scrollPosY = window.pageYOffset | document.body.scrollTop;
     var navBar = document.getElementsByClassName('header')[0];
@@ -34,7 +114,6 @@ export class HeaderComponent implements OnInit {
         navBar.classList.remove('header-scroll');
       }
     };
-
   }
 
 }

@@ -1,10 +1,10 @@
 {
     "HEADER": {
         "MENU": {
-            "HOME": "Home",
-            "ABOUT": "About Duc",
-            "BUY": "Buy Duc",
-            "CONTACT": "Contact"
+            "HOME": "Главная",
+            "ABOUT": "О Duc",
+            "BUY": "Купить Duc",
+            "CONTACT": "Контакты"
         }
     },
     "FOOTER": {
