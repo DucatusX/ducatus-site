@@ -29,9 +29,9 @@
                             "src/manifest.webmanifest"
                         ],
                         "styles": [
+                            "src/styles.scss",
                             "node_modules/swiper/css/swiper.min.css",
-                            "node_modules/intl-tel-input/build/css/intlTelInput.css",
-                            "src/styles.scss"
+                            "node_modules/intl-tel-input/build/css/intlTelInput.css"
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",

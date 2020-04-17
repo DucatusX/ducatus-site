@@ -25,17 +25,22 @@ export class HeaderComponent implements OnInit {
     this.languagesList = [
       {
         lng: 'en',
-        title: 'English',
+        title: 'Eng',
         active: true,
       },
       {
         lng: 'it',
-        title: 'Italian',
+        title: 'It',
         active: false,
       },
       {
         lng: 'vie',
-        title: 'Vietman',
+        title: 'Vie',
+        active: false,
+      },
+      {
+        lng: 'deu',
+        title: 'Deu',
         active: false,
       },
     ];

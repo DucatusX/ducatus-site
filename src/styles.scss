@@ -8,9 +8,6 @@
 @import "./scss/pages-modules";
 @import "./scss/pay-page";
 
-// @import "../../../node_modules/swiper/css/swiper.min.css";
-// @import "../../../node_modules/intl-tel-input/build/css/intlTelInput.min.css";
-
 .iti__flag {
     background-image: url("assets/img/icons/flags/flags.png");
 }
@@ -24,6 +21,50 @@
 
 .iti {
     width: 100%;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-pagination {
+    margin: 0;
+    bottom: 20px;
+    width: 100%;
+
+    .swiper-pagination-bullet {
+        background-color: white;
+        margin-right: 7px;
+        outline: none !important;
+        width: 30px;
+        border-radius: 0;
+        height: 6px;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: white;
+    }
+}
+
+.swiper-slide {
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    @include b(750) {
+        flex-direction: column;
+    }
 }
 
 .section-header {

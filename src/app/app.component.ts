@@ -16,6 +16,9 @@ export class AppComponent implements OnInit {
     this.translateService.use(langToSet);
   }
 
+  onActivate(event) {
+    window.scroll(0, 0);
+  }
 
   ngOnInit(): void {
     // this.translateService.use('en');

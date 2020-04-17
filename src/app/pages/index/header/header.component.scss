@@ -38,6 +38,7 @@
     @include b(750) {
         background-color: white;
         margin-top: 0 !important;
+        padding: 5px 10px;
         height: auto;
     }
 
@@ -68,6 +69,10 @@
         img {
             @include b(900) {
                 width: 200px;
+            }
+
+            @include b(370) {
+                width: 150px;
             }
         }
     }
@@ -137,6 +142,10 @@
                 float: right;
                 margin-top: 10px;
             }
+
+            @include b(370) {
+                margin-top: 3px;
+            }
         }
 
     }
@@ -162,6 +171,11 @@
 
     @include b(750) {
         right: 50px;
+    }
+
+    @include b(370) {
+        top: 5px;
+        right: 40px;
     }
 
     &-list {
