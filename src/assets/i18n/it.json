@@ -168,7 +168,7 @@
             "TITLE": "Comprare DUC",
             "TEXT": "Il tuo indirizzo Ducatus sarà associato a un indirizzo univoco in Bitcoin ed Ethereum. Puoi ricaricare questi indirizzi in qualsiasi momento e ricevere Ducatus al tasso di cambio corrente al momento della transazione",
             "MODAL": {
-                "TEXT": "Spuntare la casella qui sotto per confermare che si riconosce e si accetta il <a href='/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'>Terms & Conditions</a> di acquisto DUC. La moneta Ducatus non è disponibile per l'acquisto da Centurion a Singapore.",
+                "TEXT": "Spuntare la casella qui sotto per confermare che si riconosce e si accetta il <a href='assets/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'>Terms & Conditions</a> di acquisto DUC. La moneta Ducatus non è disponibile per l'acquisto da Centurion a Singapore.",
                 "TERMS": "Sono d'accordo con i termini e le condizioni",
                 "BUTTON": "Vicino"
             },

@@ -168,7 +168,7 @@
             "TITLE": "Kaufen DUC",
             "TEXT": "Ihre Ducatusadresse wird mit einer einmaligen Adresse in Bitcoin und Ethereum verknüpft. Sie können diese Adressen jederzeit auffüllen und Ducatus zum aktuellen Wechselkurs zum Zeitpunkt der Transaktion erhalten.",
             "MODAL": {
-                "TEXT": "Bitte kreuzen Sie das Kästchen unten an, um zu bestätigen, dass Sie das bestätigen und damit einverstanden sind <a href='/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'>Terms & Conditions</a> von DUC Kauf. Ducatus Coin kann nicht bei Centurion in Singapur gekauft werden.",
+                "TEXT": "Bitte kreuzen Sie das Kästchen unten an, um zu bestätigen, dass Sie das bestätigen und damit einverstanden sind <a href='assets/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'>Terms & Conditions</a> von DUC Kauf. Ducatus Coin kann nicht bei Centurion in Singapur gekauft werden.",
                 "TERMS": "Ich akzeptiere die Nutzungsbedingungen",
                 "BUTTON": "Schließen"
             },

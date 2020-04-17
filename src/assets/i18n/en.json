@@ -168,7 +168,7 @@
             "TITLE": "Buy DUC",
             "TEXT": "Your Ducatus address will be associated with a unique address in Bitcoin and Ethereum. You can top up these addresses at any time and receive Ducatus at the current exchange rate at the time of the transaction",
             "MODAL": {
-                "TEXT": "Please tick the box below to confirm that you acknowledge and agree to the <a href='/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'>Terms & Conditions</a> of DUC purchase. Ducatus Coin is not available for purchase from Centurion in Singapore.",
+                "TEXT": "Please tick the box below to confirm that you acknowledge and agree to the <a href='assets/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'>Terms & Conditions</a> of DUC purchase. Ducatus Coin is not available for purchase from Centurion in Singapore.",
                 "TERMS": "I agree to the Terms & Conditions",
                 "BUTTON": "Close"
             },

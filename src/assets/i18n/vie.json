@@ -168,7 +168,7 @@
             "TITLE": "Mua DUC",
             "TEXT": "Địa chỉ Ducatus của bạn sẽ được liên kết với một địa chỉ duy nhất trong Bitcoin và Ethereum. Bạn có thể nạp các địa chỉ này bất cứ lúc nào và nhận Ducatus theo tỷ giá hiện tại tại thời điểm giao dịch",
             "MODAL": {
-                "TEXT": "Vui lòng đánh dấu vào ô bên dưới để xác nhận rằng bạn thừa nhận và đồng ý với <a href='/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'>Terms & Conditions</a> mua DUC. Ducatus Coin không có sẵn để mua từ Centurion tại Singapore.",
+                "TEXT": "Vui lòng đánh dấu vào ô bên dưới để xác nhận rằng bạn thừa nhận và đồng ý với <a href='assets/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'>Terms & Conditions</a> mua DUC. Ducatus Coin không có sẵn để mua từ Centurion tại Singapore.",
                 "TERMS": "Tôi đồng ý với các Điều khoản & Điều kiện",
                 "BUTTON": "Đóng"
             },
