@@ -22,12 +22,4 @@ export class BuyService {
     }).toPromise();
   }
 
-  // public createContract(data) {
-  //   return this.httpService.post('contracts/', data).toPromise();
-  // }
-
-  // public updateSWAP3(data) {
-  //   return this.httpService.post(`edit_swap3/${data.id}/`, data).toPromise();
-  // }
-
 }

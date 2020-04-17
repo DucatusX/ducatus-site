@@ -13,24 +13,31 @@
             </div>
             <div class="section-infoblock-block">
                 <div class="contact-form">
-                    <form #registrationToken="ngForm" ngNativeValidate action="https://www.ducatuscoins.com/api/v1/send_ducatus_feedback/" id="contactform" [attr.data-form-title]="'PAGE.CONTACT.FORM.TEXT' | translate">
-                        <div class="contact-form-fields">
-                            <div class="contact-form-field-input icon icon__user">
-                                <input class="input" type="text" required name="name" [placeholder]="'PAGE.CONTACT.FORM.TEXT_1' | translate">
+                    <form #contactForm="ngForm" (submit)="sendMail()" id="contactform" [attr.data-form-title]="'PAGE.CONTACT.FORM.TEXT' | translate">
+                        <div class="contact-form-fields" *ngIf="contactMainSend === 0">
+                            <div class="contact-form-field-input icon icon__user" [ngClass]="{ 'error-input': name.invalid && (name.dirty || name.touched)  }">
+                                <input class="input" #name="ngModel" type="text" [disabled]="disableFields" required name="name" [(ngModel)]="formData.name" [placeholder]="'PAGE.CONTACT.FORM.TEXT_1' | translate">
                             </div>
-                            <div class="contact-form-field-input">
-                                <input type="tel" ng2TelInput id="phone" oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\..*)\./g, '$1');" />
-                                <!-- <input type="tel" ng2TelInput (hasError)="hasError($event)" (ng2TelOutput)="getNumber($event)" (intlTelInputObject)="telInputObject($event)" (countryChange)="onCountryChange($event)" /> -->
-                                <!-- <input type="tel" [placeholder]="'PAGE.CONTACT.FORM.TEXT_2' | translate" name=socialNetwork id="phone" oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\..*)\./g, '$1');"> -->
+                            <div class="contact-form-field-input" [ngClass]="{ 'error-input': tel.invalid && (tel.dirty || tel.touched)}">
+                                <input type="tel" ng2TelInput #tel="ngModel" [disabled]="disableFields" id="phone" [(ngModel)]="formData.tel" required name="tel" oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\..*)\./g, '$1');" />
                             </div>
-                            <div class="contact-form-field-input icon icon__email">
-                                <input class="input" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required name="email" [placeholder]="'PAGE.CONTACT.FORM.TEXT_3' | translate">
+                            <div class="contact-form-field-input icon icon__email" [ngClass]="{ 'error-input': email.invalid && (email.dirty || email.touched) }">
+                                <input class="input" type="email" #email="ngModel" [disabled]="disableFields" [(ngModel)]="formData.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required name="email" [placeholder]="'PAGE.CONTACT.FORM.TEXT_3' | translate">
                             </div>
-                            <div class="contact-form-field-textarea icon icon__message">
-                                <textarea class="textarea" type="text" required name="message" [placeholder]="'PAGE.CONTACT.FORM.TEXT_4' | translate"></textarea>
+                            <div class="contact-form-field-textarea icon icon__message" [ngClass]="{ 'error-input': message.invalid && (message.dirty || message.touched) }">
+                                <textarea class="textarea" type="text" #message="ngModel" [disabled]="disableFields" [(ngModel)]="formData.message" required name="message" [placeholder]="'PAGE.CONTACT.FORM.TEXT_4' | translate"></textarea>
                             </div>
                             <div class="contact-form-field">
-                                <button class="button button__brown-red button-flat" type="submit">{{ 'PAGE.CONTACT.FORM.BUTTON' | translate }}</button>
+                                <button class="button button__brown-red button-flat" [disabled]="contactForm.invalid" type="submit">{{ 'PAGE.CONTACT.FORM.BUTTON' | translate }}</button>
+                            </div>
+                        </div>
+                        <div class="contact-form-fields" *ngIf="contactMainSend === 1">
+                            <p style="text-align:center;">Thank you for your message!<br><br>Our customer support will contact you shortly!</p>
+                        </div>
+                        <div class="contact-form-fields" *ngIf="contactMainSend === 2">
+                            <p class="cl-red" style="text-align:center;">Something went wrong<br><br>please try again</p>
+                            <div class="contact-form-field">
+                                <span class="button button__brown-red button-flat" (click)="contactMainSend = 0" type="submit">try again</span>
                             </div>
                         </div>
                     </form>
