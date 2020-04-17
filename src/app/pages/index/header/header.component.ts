@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
       },
       {
         lng: 'it',
-        title: 'It',
+        title: 'Ita',
         active: false,
       },
       {
