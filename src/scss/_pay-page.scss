@@ -292,82 +292,6 @@
         display: none;
     }
 
-    .loading-address-start {
-        grid-template-areas: 'loadingAddress loadingAddress''qrText qrText' !important;
-
-        .qr-address {
-            grid-area: inputAddressQr;
-            display: none;
-        }
-
-        .qrcode {
-            display: none;
-        }
-
-        .loading-address-qr {
-            grid-area: loadingAddress;
-            height: 60px;
-            background: #fdfbf6;
-            border-radius: 5px;
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            min-width: 100%;
-            align-items: center;
-
-            &-wrap {
-                position: relative;
-                height: 100%;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                min-width: 60px;
-
-                p {
-                    display: none;
-                    margin: 0;
-                    min-height: 100%;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 14px;
-                    color: #821617;
-                }
-
-                span {
-                    position: absolute;
-                    top: 50%;
-                    background-color: #821617 !important;
-                    animation-timing-function: cubic-bezier(0, 1, 1, 0);
-                    margin-top: -5px;
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 15px;
-
-                    &:nth-child(1) {
-                        left: 6px;
-                        animation: .6s infinite lds-ellipsis1;
-                    }
-
-                    &:nth-child(2) {
-                        left: 6px;
-                        animation: .6s infinite lds-ellipsis2;
-                    }
-
-                    &:nth-child(3) {
-                        left: 26px;
-                        animation: .6s infinite lds-ellipsis2;
-                    }
-
-                    &:nth-child(4) {
-                        left: 45px;
-                        animation: .6s infinite lds-ellipsis3;
-                    }
-                }
-            }
-
-        }
-    }
-
     .qrcode {
         background-color: white;
         min-width: 60px;
@@ -818,4 +742,99 @@
         }
     }
 
+}
+
+.loading-small {
+    position: absolute;
+    top: 27px;
+    bottom: 0;
+    margin: auto;
+    min-width: 70px;
+    right: 0;
+    background: none;
+    margin-top: 0;
+}
+
+.loading-address-start,
+.loading-small {
+    grid-template-areas: 'loadingAddress loadingAddress''qrText qrText' !important;
+
+    .qr-address {
+        grid-area: inputAddressQr;
+        display: none;
+    }
+
+    .qrcode {
+        display: none;
+    }
+
+    .loading-dots {
+        background: none !important;
+        margin-top: 0 !important;
+        height: 45px !important;
+    }
+
+    .loading-address-qr,
+    .loading-dots {
+        grid-area: loadingAddress;
+        height: 60px;
+        background: #fdfbf6;
+        border-radius: 5px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        min-width: 100%;
+        align-items: center;
+
+        &-wrap {
+            position: relative;
+            height: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            min-width: 60px;
+
+            p {
+                display: none;
+                margin: 0;
+                min-height: 100%;
+                justify-content: center;
+                align-items: center;
+                font-size: 14px;
+                color: #821617;
+            }
+
+            span {
+                position: absolute;
+                top: 50%;
+                background-color: #821617 !important;
+                animation-timing-function: cubic-bezier(0, 1, 1, 0);
+                margin-top: -5px;
+                width: 10px;
+                height: 10px;
+                border-radius: 15px;
+
+                &:nth-child(1) {
+                    left: 6px;
+                    animation: .6s infinite lds-ellipsis1;
+                }
+
+                &:nth-child(2) {
+                    left: 6px;
+                    animation: .6s infinite lds-ellipsis2;
+                }
+
+                &:nth-child(3) {
+                    left: 26px;
+                    animation: .6s infinite lds-ellipsis2;
+                }
+
+                &:nth-child(4) {
+                    left: 45px;
+                    animation: .6s infinite lds-ellipsis3;
+                }
+            }
+        }
+
+    }
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { GoldLotteryService } from '../../service/gold-lottery/gold-lottery.service';
+import { UpperCasePipe } from '@angular/common';
 @Component({
   selector: 'app-gold-lottery',
   templateUrl: './gold-lottery.component.html',
@@ -7,17 +8,203 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoldLotteryComponent implements OnInit {
 
-  public registration = true;
+  public formData: any;
+  public formDataCheck: any;
+
+  public type = 'registration';
   public registrationStep = 0;
 
-  public code1 = '';
-  public code2 = '';
-  public code3 = '';
-  public code4 = '';
+  constructor(private goldlotteryservice: GoldLotteryService) {
+    this.formData = {
+      code: '',
+      validCode: false,
+      typeCode: false,
+      addressDuc: '',
+      validateDuc: false,
+      typeDuc: false,
+      validDuc: false,
+      finalValidDuc: false,
+      addressDucx: '',
+      validDucx: false,
+      typeDucx: false,
+      button: true,
+      formValidating: false
+    };
 
-  constructor() { }
+    this.formDataCheck = {
+      precode: '',
+      validPreCode: false,
+      code: '',
+      valid: false,
+      validating: false,
+      typeCode: false
+    };
+  }
+
+  @ViewChild('registrationForm') registrationForm: HTMLFormElement;
+  @ViewChild('checkForm') checkForm: HTMLFormElement;
 
   ngOnInit() {
+
+
+  }
+
+  public registrate(form) {
+    this.registrationStep = 1;
+  }
+
+  public changeForm(typeForm) {
+    this.type = typeForm;
+    this.formData = {
+      code: '',
+      validCode: false,
+      typeCode: false,
+      addressDuc: '',
+      validateDuc: false,
+      typeDuc: false,
+      validDuc: false,
+      finalValidDuc: false,
+      addressDucx: '',
+      validDucx: false,
+      typeDucx: false,
+      button: true,
+      formValidating: false
+    };
+
+    this.formDataCheck = {
+      precode: '',
+      validPreCode: false,
+      code: '',
+      valid: false,
+      validating: false,
+      typeCode: false
+    };
+  }
+
+  private format(input, format, sep) {
+    let output = "";
+    let idx = 0;
+    for (let i = 0; i < format.length && idx < input.length; i++) {
+      output += input.substr(idx, format[i]);
+      if (idx + format[i] < input.length) { output += sep; }
+      idx += format[i];
+    }
+
+    output += input.substr(idx);
+
+    return output;
+  }
+
+  public formValidate(addressType: string) {
+
+    switch (addressType) {
+      case 'DUC':
+        this.formData.typeDuc = true;
+        if (this.formData.addressDuc.length === 34 && ['L', 'l', 'M', 'm'].includes(this.formData.addressDuc.substring(0, 1))) {
+
+          this.formData.validateDuc = true;
+          this.formData.validDuc = false;
+
+          this.goldlotteryservice.getValidateDucatusAddress(this.formData.addressDuc).then((result) => {
+            console.log('address result', result);
+            if (result) { this.formData.validDuc = false; this.formData.finalValidDuc = false; }
+            else { this.formData.validDuc = true; this.formData.finalValidDuc = true; }
+
+            this.formData.validateDuc = false;
+
+            this.checkRegistrateForm();
+
+          }).catch(err => { console.log('something went wrong...', err); this.formData.finalValidDuc = false; this.formData.validDuc = true; this.formData.validateDuc = false; this.checkRegistrateForm(); });
+
+        } else {
+          this.formData.validDuc = true;
+        }
+        break;
+
+      case 'DUCX':
+
+        this.formData.typeDucx = true;
+        if (this.formData.addressDucx.length === 42) {
+
+          const reg = /0x[0-9a-fA-F]{40}/;
+          const inputstr = this.formData.addressDucx;
+
+
+          if (!reg.test(inputstr)) { this.formData.validDuc = true; return; }
+          if (($.trim(inputstr) === '') || ($.trim(inputstr).length < 15)) { this.formData.validDucx = true; }
+          else { this.formData.validDucx = false; }
+
+        } else { this.formData.validDucx = true; }
+        break;
+
+      case 'CODE':
+
+        this.formData.typeCode = true;
+        let foo = this.registrationForm.controls.code.value.replace(/-/g, '');
+
+        if (foo.length > 0) {
+          foo = this.format(foo, [4, 4, 4, 4, 4, 4, 4, 4], '-');
+        }
+
+        this.formData.code = foo;
+
+        if (this.formData.code.length !== 39) {
+          this.formData.validCode = true;
+        } else { this.formData.validCode = false; }
+
+        break;
+    }
+
+    this.checkRegistrateForm();
+  }
+
+  private checkRegistrateForm() {
+    if (this.formData.finalValidDuc && this.formData.typeDuc && !this.formData.validDucx && this.formData.typeDucx && !this.formData.validCode && this.formData.typeCode) {
+      this.formData.button = false;
+      this.formData.formValidating = true;
+    }
+    else { this.formData.button = true; this.formData.formValidating = false; }
+  }
+
+  public confirmRegistration() {
+    this.goldlotteryservice.codeRegistrate(this.formData.addressDuc, this.formData.addressDucx, new UpperCasePipe().transform(this.formData.code)).then((result) => {
+      console.log(result);
+    })
+  }
+
+  public confirmCheck() {
+    const publicCode = this.formDataCheck.precode + '-' + this.formDataCheck.code;
+
+    this.goldlotteryservice.codeCheck(new UpperCasePipe().transform(publicCode)).then((result) => {
+      console.log(result);
+    });
+  }
+
+  public formPreCodeValidate() {
+    if (this.formDataCheck.precode.length !== 4) {
+      this.formDataCheck.validPreCode = true;
+    } else { this.formDataCheck.validPreCode = false; }
+  }
+
+  public formCodeValidate() {
+
+    this.formDataCheck.typeCode = true;
+    let foo = this.formDataCheck.code.replace(/-/g, '');
+
+    if (foo.length > 0) {
+      foo = this.format(foo, [4, 4, 4, 4, 4, 4, 4], '-');
+    }
+
+    this.formDataCheck.code = foo;
+
+    if (this.formDataCheck.precode.length !== 4) {
+      this.formDataCheck.validPreCode = true;
+    } else { this.formDataCheck.validPreCode = false; }
+
+    if (this.formDataCheck.code.length !== 34) {
+      this.formDataCheck.validCode = true;
+    } else { this.formDataCheck.validCode = false; }
+
   }
 
 }

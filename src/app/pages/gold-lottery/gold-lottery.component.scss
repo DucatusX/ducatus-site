@@ -2,6 +2,19 @@
 @import "../../../scss/mixins";
 
 section.gold-lottery {
+
+    .error-input {
+        border: 1px solid red !important;
+    }
+
+    #input-code {
+        text-transform: uppercase;
+    }
+
+    .lottery-form-field-input {
+        position: relative;
+    }
+
     .container {
         padding-top: 100px;
     }
@@ -180,8 +193,14 @@ section.gold-lottery {
                     padding: 20px 0 40px 0;
 
                     input {
-                        text-align: center;
-                        padding: 10px 5px;
+                        text-transform: uppercase;
+                        padding: 10px 20px;
+                        text-align: left;
+
+                        &:nth-child(1) {
+                            padding: 10px 5px;
+                            text-align: center;
+                        }
                     }
 
                     label {
