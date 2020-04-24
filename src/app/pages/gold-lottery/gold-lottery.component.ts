@@ -107,8 +107,8 @@ export class GoldLotteryComponent implements OnInit {
 
           this.goldlotteryservice.getValidateDucatusAddress(this.formData.addressDuc).then((result) => {
             console.log('address result', result);
-            if (result) { this.formData.validDuc = false; this.formData.finalValidDuc = false; }
-            else { this.formData.validDuc = true; this.formData.finalValidDuc = true; }
+            if (result) { this.formData.validDuc = true; this.formData.finalValidDuc = false; }
+            else { this.formData.validDuc = false; this.formData.finalValidDuc = true; }
 
             this.formData.validateDuc = false;
 
@@ -159,17 +159,21 @@ export class GoldLotteryComponent implements OnInit {
   }
 
   private checkRegistrateForm() {
-    if (this.formData.finalValidDuc && this.formData.typeDuc && !this.formData.validDucx && this.formData.typeDucx && !this.formData.validCode && this.formData.typeCode) {
+    if (!this.formData.finalValidDuc && this.formData.typeDuc && !this.formData.validDucx && this.formData.typeDucx && !this.formData.validCode && this.formData.typeCode) {
       this.formData.button = false;
-      this.formData.formValidating = true;
     }
-    else { this.formData.button = true; this.formData.formValidating = false; }
+    else { this.formData.button = true; }
   }
 
   public confirmRegistration() {
+    this.formData.formValidating = true;
+
     this.goldlotteryservice.codeRegistrate(this.formData.addressDuc, this.formData.addressDucx, new UpperCasePipe().transform(this.formData.code)).then((result) => {
+
       console.log(result);
-    })
+      this.formData.formValidating = false;
+
+    }).catch((err) => { this.formData.formValidating = false; });
   }
 
   public confirmCheck() {
