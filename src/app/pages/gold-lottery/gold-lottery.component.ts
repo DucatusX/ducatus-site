@@ -10,6 +10,8 @@ export class GoldLotteryComponent implements OnInit {
 
   public formData: any;
   public formDataCheck: any;
+  public win = false;
+  public winData: any;
 
   public type = 'registration';
   public registrationStep = 0;
@@ -37,7 +39,9 @@ export class GoldLotteryComponent implements OnInit {
       code: '',
       valid: false,
       validating: false,
-      typeCode: false
+      validCode: false,
+      typeCode: false,
+      button: true
     };
   }
 
@@ -57,6 +61,7 @@ export class GoldLotteryComponent implements OnInit {
     this.type = typeForm;
     this.formData = {
       code: '',
+      validCodeRegistrated: false,
       validCode: false,
       typeCode: false,
       addressDuc: '',
@@ -77,7 +82,8 @@ export class GoldLotteryComponent implements OnInit {
       code: '',
       valid: false,
       validating: false,
-      typeCode: false
+      typeCode: false,
+      button: true
     };
   }
 
@@ -106,18 +112,15 @@ export class GoldLotteryComponent implements OnInit {
           this.formData.validDuc = false;
 
           this.goldlotteryservice.getValidateDucatusAddress(this.formData.addressDuc).then((result) => {
-            console.log('address result', result);
-            if (result) { this.formData.validDuc = true; this.formData.finalValidDuc = false; }
-            else { this.formData.validDuc = false; this.formData.finalValidDuc = true; }
-
+            if (result.address_valid === true) { this.formData.validDuc = false; this.formData.finalValidDuc = false; }
+            else { this.formData.validDuc = true; this.formData.finalValidDuc = true; }
             this.formData.validateDuc = false;
-
             this.checkRegistrateForm();
-
           }).catch(err => { console.log('something went wrong...', err); this.formData.finalValidDuc = false; this.formData.validDuc = true; this.formData.validateDuc = false; this.checkRegistrateForm(); });
 
         } else {
           this.formData.validDuc = true;
+          this.formData.finalValidDuc = true;
         }
         break;
 
@@ -147,6 +150,7 @@ export class GoldLotteryComponent implements OnInit {
         }
 
         this.formData.code = foo;
+        this.formData.validCodeRegistrated = false;
 
         if (this.formData.code.length !== 39) {
           this.formData.validCode = true;
@@ -161,8 +165,9 @@ export class GoldLotteryComponent implements OnInit {
   private checkRegistrateForm() {
     if (!this.formData.finalValidDuc && this.formData.typeDuc && !this.formData.validDucx && this.formData.typeDucx && !this.formData.validCode && this.formData.typeCode) {
       this.formData.button = false;
+      console.log('undeisable')
     }
-    else { this.formData.button = true; }
+    else { this.formData.button = true; console.log('deisable') }
   }
 
   public confirmRegistration() {
@@ -171,9 +176,51 @@ export class GoldLotteryComponent implements OnInit {
     this.goldlotteryservice.codeRegistrate(this.formData.addressDuc, this.formData.addressDucx, new UpperCasePipe().transform(this.formData.code)).then((result) => {
 
       console.log(result);
-      this.formData.formValidating = false;
 
-    }).catch((err) => { this.formData.formValidating = false; });
+      if (result.token_id) {
+        this.winData = result;
+        this.win = true;
+        this.formData.formValidating = false;
+      }
+
+    }).catch((err) => {
+      console.log(err.error.detail);
+
+      let words: string;
+
+      if (err.error.detail) {
+        words = this.wordsReturn(err.error.detail, 2);
+
+        if (words === 'NaNregisteredalready') {
+          this.formData.validCodeRegistrated = true;
+          this.formData.validCode = true;
+          this.formDataCheck.button = true;
+        }
+
+        if (words === 'NaNexistnot') {
+          this.formData.validCode = true;
+          this.formDataCheck.button = true;
+        }
+      }
+
+      console.log('words: ', words);
+
+      this.formData.formValidating = false;
+      this.winData = [];
+    });
+  }
+
+  public wordsReturn(words, count) {
+
+    let word: string;
+    let wordTo: string;
+    const n = words.split(' ');
+
+    for (let index = 0; index <= count; index++) {
+      word += n[n.length - index];
+    }
+
+    return word;
   }
 
   public confirmCheck() {
@@ -181,13 +228,50 @@ export class GoldLotteryComponent implements OnInit {
 
     this.goldlotteryservice.codeCheck(new UpperCasePipe().transform(publicCode)).then((result) => {
       console.log(result);
-    });
+
+      if (result.token_id) {
+        this.winData = result;
+        this.win = true;
+        this.formData.formValidating = false;
+      }
+
+    }).catch((err) => {
+      console.log(err.error.detail);
+
+      let words: string;
+
+      if (err.error.detail) {
+        words = this.wordsReturn(err.error.detail, 2);
+
+        if (words === 'NaNexistnot') {
+          this.formDataCheck.validPreCode = true;
+          this.formDataCheck.validCode = true;
+          this.formDataCheck.button = true;
+        }
+      }
+
+      console.log('words: ', words);
+
+      this.formDataCheck.validPreCode = true;
+      this.formDataCheck.validCode = true;
+      this.formDataCheck.button = true;
+    })
   }
 
   public formPreCodeValidate() {
     if (this.formDataCheck.precode.length !== 4) {
       this.formDataCheck.validPreCode = true;
-    } else { this.formDataCheck.validPreCode = false; }
+      this.formDataCheck.button = true;
+    } else {
+      this.formDataCheck.validPreCode = false;
+      if (this.formDataCheck.code.length === 34) {
+        this.formDataCheck.button = false;
+      }
+    }
+
+    if (this.formDataCheck.code.length !== 34) {
+      this.formDataCheck.validCode = true;
+    } else { this.formDataCheck.validCode = false; }
   }
 
   public formCodeValidate() {
@@ -200,6 +284,9 @@ export class GoldLotteryComponent implements OnInit {
     }
 
     this.formDataCheck.code = foo;
+
+    if ((this.formDataCheck.precode.length === 4) && (this.formDataCheck.code.length === 34)) { this.formDataCheck.button = false; }
+    else { this.formDataCheck.button = true; }
 
     if (this.formDataCheck.precode.length !== 4) {
       this.formDataCheck.validPreCode = true;

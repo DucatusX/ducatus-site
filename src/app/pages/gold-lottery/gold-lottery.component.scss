@@ -29,6 +29,14 @@ section.gold-lottery {
         &-form {
             padding: 40px;
 
+            @include b(600) {
+                padding: 40px 10px;
+            }
+
+            @include b(700) {
+                padding: 40px 20px;
+            }
+
             &-info {
                 padding: 100px 0px;
                 display: flex;
@@ -184,6 +192,10 @@ section.gold-lottery {
                 grid-template-columns: 80px 1fr;
                 grid-gap: 15px;
 
+                @include b(600) {
+                    grid-template-columns: 1fr;
+                }
+
                 &-check {
                     display: grid;
                     grid-template-columns: 80px 1fr;
@@ -226,6 +238,10 @@ section.gold-lottery {
                     margin-top: 30px;
                     height: 43px;
                     font-weight: normal;
+
+                    @include b(600) {
+                        display: none;
+                    }
                 }
 
                 label {
@@ -239,4 +255,158 @@ section.gold-lottery {
             }
         }
     }
+}
+
+.bg-win {
+    background-color: rgb(218, 185, 18) !important;
+    background-image: none;
+}
+
+.winner-block {
+    overflow: visible !important;
+    position: relative;
+    padding: 10px 20px 20px 20px;
+
+    &:before {
+        content: attr(data-title);
+        background-color: $brown-red;
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: -20px;
+        max-width: 300px;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        color: white;
+    }
+
+    &-img {
+        background-color: #fff;
+        background-position: center;
+        background-size: contain;
+        width: 125px;
+        height: 125px;
+        border-radius: 10em;
+        box-shadow: 0px 3px 6px -2px rgba(0, 0, 0, 0.407);
+        border: 8px solid #f4f2f1;
+        margin: 20px auto;
+    }
+
+    &-info {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px 10px;
+        box-shadow: 0px 3px 6px -2px rgba(0, 0, 0, 0.407);
+
+        &-gold {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            @include b(700) {
+                flex-direction: column;
+            }
+
+            ul {
+                margin: 0;
+                width: 100%;
+                padding: 0 20px;
+
+                li {
+                    margin: 0;
+                    padding-bottom: 5px;
+                    padding-top: 5px;
+                    border-bottom: 1px solid gray;
+                    font-size: 12px;
+                    width: 100%;
+
+                    span {
+                        color: $brown-red;
+                    }
+                }
+            }
+
+            &-left {
+                width: 50%;
+                padding-left: 15px;
+
+                @include b(700) {
+                    width: 100%;
+                }
+            }
+
+            &-right {
+                width: 50%;
+
+                @include b(700) {
+                    width: 100%;
+                    padding-left: 15px;
+                }
+            }
+        }
+
+        &-text {
+            text-align: center;
+            width: 100%;
+            display: block;
+            font-size: 14px;
+            padding: 15px 10px;
+
+            @include b(700) {
+                padding: 15px 10px 5px 10px;
+            }
+        }
+
+        &-addreses {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+
+            @include b(700) {
+                flex-direction: column;
+            }
+
+            &-left,
+            &-right {
+                width: 50%;
+                border-left: 1.5px solid #000;
+                padding-left: 1px;
+                display: flex;
+                flex-direction: column;
+                padding-left: 10px;
+
+                @include b(700) {
+                    border-left: none;
+                    width: 100%;
+                    margin-top: 10px;
+                    text-align: center;
+                }
+            }
+
+            &-address {
+                font-size: 10px;
+                color: $brown-red;
+                margin-top: 2px;
+            }
+
+            &-text {
+                font-size: 12px;
+
+                span {
+                    font-size: 14px;
+                    color: $brown-red;
+                }
+            }
+        }
+
+    }
+
+}
+
+.error-text {
+    color: $brown-red;
+    margin-left: 10px;
 }
