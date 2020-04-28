@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { GoldLotteryService } from '../../service/gold-lottery/gold-lottery.service';
 import { UpperCasePipe } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-gold-lottery',
   templateUrl: './gold-lottery.component.html',
@@ -12,11 +13,12 @@ export class GoldLotteryComponent implements OnInit {
   public formDataCheck: any;
   public win = false;
   public winData: any;
+  public ducPrice: any;
 
   public type = 'registration';
   public registrationStep = 0;
 
-  constructor(private goldlotteryservice: GoldLotteryService) {
+  constructor(private goldlotteryservice: GoldLotteryService, private route: ActivatedRoute) {
     this.formData = {
       code: '',
       validCode: false,
@@ -34,8 +36,8 @@ export class GoldLotteryComponent implements OnInit {
     };
 
     this.formDataCheck = {
-      precode: '',
-      validPreCode: false,
+      // precode: '',
+      // validPreCode: false,
       code: '',
       valid: false,
       validating: false,
@@ -50,7 +52,10 @@ export class GoldLotteryComponent implements OnInit {
   @ViewChild('checkForm') checkForm: HTMLFormElement;
 
   ngOnInit() {
-
+    this.route.queryParams.subscribe(params => {
+      if (params['t'] === 'reqistration') this.type = 'registration';
+      if (params['t'] === 'check') this.type = 'check';
+    });
 
   }
 
@@ -78,8 +83,8 @@ export class GoldLotteryComponent implements OnInit {
     };
 
     this.formDataCheck = {
-      precode: '',
-      validPreCode: false,
+      // precode: '',
+      // validPreCode: false,
       code: '',
       valid: false,
       validating: false,
@@ -108,6 +113,8 @@ export class GoldLotteryComponent implements OnInit {
     switch (addressType) {
       case 'DUC':
         this.formData.typeDuc = true;
+        this.formData.addressDuc = this.formData.addressDuc.replace('ducatus:', '');
+
         if (this.formData.addressDuc.length === 34 && ['L', 'l', 'M', 'm'].includes(this.formData.addressDuc.substring(0, 1))) {
 
           this.formData.validateDuc = true;
@@ -167,27 +174,23 @@ export class GoldLotteryComponent implements OnInit {
   private checkRegistrateForm() {
     if (!this.formData.finalValidDuc && this.formData.typeDuc && !this.formData.validDucx && this.formData.typeDucx && !this.formData.validCode && this.formData.typeCode) {
       this.formData.button = false;
-      console.log('undeisable');
     }
-    else { this.formData.button = true; console.log('deisable'); }
+    else { this.formData.button = true; }
   }
 
   public confirmRegistration() {
     this.formData.formValidating = true;
 
     this.goldlotteryservice.codeRegistrate(this.formData.addressDuc, this.formData.addressDucx, new UpperCasePipe().transform(this.formData.code)).then((result) => {
-
-      console.log(result);
-
       if (result.token_id) {
+        this.ducPrice = result.token_type * result.gold_price * result.duc_value / result.duc_count;
+        console.log(this.ducPrice);
         this.winData = result;
         this.win = true;
         this.formData.formValidating = false;
       }
 
     }).catch((err) => {
-      console.log(err.error.detail);
-
       let words: string;
 
       if (err.error.detail) {
@@ -205,8 +208,6 @@ export class GoldLotteryComponent implements OnInit {
         }
       }
 
-      console.log('words: ', words);
-
       this.formData.formValidating = false;
       this.winData = [];
     });
@@ -222,12 +223,12 @@ export class GoldLotteryComponent implements OnInit {
   }
 
   public confirmCheck() {
-    const publicCode = this.formDataCheck.precode + '-' + this.formDataCheck.code;
+    // const publicCode = this.formDataCheck.precode + '-' + this.formDataCheck.code;
 
-    this.goldlotteryservice.codeCheck(new UpperCasePipe().transform(publicCode)).then((result) => {
-      console.log(result);
-
+    this.goldlotteryservice.codeCheck(new UpperCasePipe().transform(this.formDataCheck.code)).then((result) => {
       if (result.token_id) {
+        this.ducPrice = result.token_type * result.gold_price * result.duc_value / result.duc_count;
+        console.log(this.ducPrice);
         this.winData = result;
         this.win = true;
         this.formData.formValidating = false;
@@ -235,52 +236,48 @@ export class GoldLotteryComponent implements OnInit {
 
       if (result.token_id === null && result.token_type != "") {
         this.formDataCheck.validRegistrate = true;
-        this.formDataCheck.validPreCode = true;
+        // this.formDataCheck.validPreCode = true;
         this.formDataCheck.validCode = true;
         this.formDataCheck.button = true;
       }
 
     }).catch((err) => {
-      console.log(err.error.detail);
-
       let words: string;
 
       if (err.error.detail) {
         words = this.wordsReturn(err.error.detail, 2);
 
         if (words === 'NaNexistnot') {
-          this.formDataCheck.validPreCode = true;
+          // this.formDataCheck.validPreCode = true;
           this.formDataCheck.validCode = true;
           this.formDataCheck.button = true;
         }
       }
 
-      console.log('words: ', words);
-
-      this.formDataCheck.validPreCode = true;
+      // this.formDataCheck.validPreCode = true;
       this.formDataCheck.validCode = true;
       this.formDataCheck.button = true;
     });
   }
 
-  public formPreCodeValidate() {
+  // public formPreCodeValidate() {
 
-    this.formDataCheck.validRegistrate = false;
+  //   this.formDataCheck.validRegistrate = false;
 
-    if (this.formDataCheck.precode.length !== 4) {
-      this.formDataCheck.validPreCode = true;
-      this.formDataCheck.button = true;
-    } else {
-      this.formDataCheck.validPreCode = false;
-      if (this.formDataCheck.code.length === 34) {
-        this.formDataCheck.button = false;
-      }
-    }
+  //   if (this.formDataCheck.precode.length !== 4) {
+  //     this.formDataCheck.validPreCode = true;
+  //     this.formDataCheck.button = true;
+  //   } else {
+  //     this.formDataCheck.validPreCode = false;
+  //     if (this.formDataCheck.code.length === 34) {
+  //       this.formDataCheck.button = false;
+  //     }
+  //   }
 
-    if (this.formDataCheck.code.length !== 34) {
-      this.formDataCheck.validCode = true;
-    } else { this.formDataCheck.validCode = false; }
-  }
+  //   if (this.formDataCheck.code.length !== 34) {
+  //     this.formDataCheck.validCode = true;
+  //   } else { this.formDataCheck.validCode = false; }
+  // }
 
   public formCodeValidate() {
 
@@ -290,21 +287,22 @@ export class GoldLotteryComponent implements OnInit {
     let foo = this.formDataCheck.code.replace(/-/g, '');
 
     if (foo.length > 0) {
-      foo = this.format(foo, [4, 4, 4, 4, 4, 4, 4], '-');
+      foo = this.format(foo, [4, 4, 4, 4, 4, 4, 4, 4], '-');
     }
 
     this.formDataCheck.code = foo;
 
-    if ((this.formDataCheck.precode.length === 4) && (this.formDataCheck.code.length === 34)) { this.formDataCheck.button = false; }
-    else { this.formDataCheck.button = true; }
+    // if ((this.formDataCheck.precode.length === 4) && (this.formDataCheck.code.length === 34)) { this.formDataCheck.button = false; }
+    // else { this.formDataCheck.button = true; }
 
-    if (this.formDataCheck.precode.length !== 4) {
-      this.formDataCheck.validPreCode = true;
-    } else { this.formDataCheck.validPreCode = false; }
+    // if (this.formDataCheck.precode.length !== 4) {
+    //   this.formDataCheck.validPreCode = true;
+    // } else { this.formDataCheck.validPreCode = false; }
 
-    if (this.formDataCheck.code.length !== 34) {
+    if (this.formDataCheck.code.length !== 39) {
       this.formDataCheck.validCode = true;
-    } else { this.formDataCheck.validCode = false; }
+      this.formDataCheck.button = true;
+    } else { this.formDataCheck.validCode = false; this.formDataCheck.button = false; }
 
   }
 

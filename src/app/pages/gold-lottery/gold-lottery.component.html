@@ -1,7 +1,6 @@
 <section class="section-header-page" style="background-image: url(/assets/img/sections/buy-bg.png);">
     <div class="container">
-        <!-- <h1 class="h1__title-page" [innerHTML]="'PAGE.LOTTERY.TITLE' | translate">Gold Lottery</h1> -->
-        <h1 class="h1__title-page">Gold Lottery</h1>
+        <h1 class="h1__title-page" [innerHTML]="'PAGE.LOTTERY.TITLE' | translate">Gold Lottery</h1>
     </div>
 </section>
 
@@ -29,19 +28,12 @@
                                     <div class="lottery-form-field-input">
                                         <label for="input-code">Enter card Private code <span *ngIf="formData.validCodeRegistrated" class="error-text">Code has already registered!</span><span *ngIf="formData.validCode && !formData.validCodeRegistrated" class="error-text">Invalid code!</span></label>
                                         <input #code="ngModel" [(ngModel)]="formData.code" name="code" [ngClass]="{ 'error-input': formData.validCode }" [disabled]="formData.formValidating" (ngModelChange)="formValidate('CODE')" required maxlength="39" placeholder="0021-1C4E-B5F2-4FDD-4954-4846-9551-CFDD" type="text" id="input-code" class="lottery-form-input" oninput="this.value = this.value.replace(/[^a-zA-Z0-9-]/g, '').replace(/(\..*)\./g, '$1');">
-                                        <!-- <div class="lottery-form-code">
-                                                        <input required placeholder="W1V2" minlength="4" maxlength="4" type="text" id="input-code" class="lottery-form-input">
-                                                        <input required placeholder="W1V2" minlength="4" maxlength="4" type="text" class="lottery-form-input">
-                                                        <input required placeholder="W1V2" minlength="4" maxlength="4" type="text" class="lottery-form-input">
-                                                        <input required placeholder="W1V2" minlength="4" maxlength="4" type="text" class="lottery-form-input">
-                                                        <span class="lottery-form-input-error">Invalid code!</span>
-                                                    </div> -->
                                     </div>
                                 </div>
                                 <div class="lottery-form-field" data-title="DUC">
                                     <div class="lottery-form-field-input">
                                         <label for="input-duc">Enter DUC address <span *ngIf="formData.validDuc" class="error-text">Invalid address!</span></label>
-                                        <input #addressDuc="ngModel" [(ngModel)]="formData.addressDuc" name="addressDuc" [ngClass]="{ 'error-input': formData.validDuc }" [disabled]="formData.validateDuc || formData.formValidating" (ngModelChange)="formValidate('DUC')" required maxlength="34" placeholder="LsYgkGZZX2tvJYmb87RYwC3KdSwLtVpeiF" type="text" id="input-duc" class="lottery-form-input">
+                                        <input #addressDuc="ngModel" [(ngModel)]="formData.addressDuc" name="addressDuc" [ngClass]="{ 'error-input': formData.validDuc }" [disabled]="formData.validateDuc || formData.formValidating" (ngModelChange)="formValidate('DUC')" required maxlength="42" placeholder="Enter your Ducatus address" type="text" id="input-duc" class="lottery-form-input">
                                         <div class="loading-small" *ngIf="formData.validateDuc">
                                             <div class="loading-dots">
                                                 <div class="loading-dots-wrap">
@@ -52,14 +44,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <span class="lottery-form-input-error">Invalid address!</span> -->
                                     </div>
                                 </div>
                                 <div class="lottery-form-field" data-title="DUCX">
                                     <div class="lottery-form-field-input">
                                         <label for="input-ducx">Enter DUCX address <span *ngIf="formData.validDucx" class="error-text">Invalid address!</span></label>
-                                        <input #addressDucx="ngModel" [(ngModel)]="formData.addressDucx" name="addressDucx" [ngClass]="{ 'error-input': formData.validDucx }" [disabled]="formData.formValidating" (ngModelChange)="formValidate('DUCX')" required maxlength="42" placeholder="0xfd367A2de6b8ECAe413BB4E61057C1430d4f4a61" pattern="0x[0-9a-fA-F]{40}" type="text" id="input-ducx" class="lottery-form-input">
-                                        <!-- <span class="lottery-form-input-error">Invalid address!</span> -->
+                                        <input #addressDucx="ngModel" [(ngModel)]="formData.addressDucx" name="addressDucx" [ngClass]="{ 'error-input': formData.validDucx }" [disabled]="formData.formValidating" (ngModelChange)="formValidate('DUCX')" required maxlength="42" placeholder="Enter your DucatusX address" pattern="0x[0-9a-fA-F]{40}" type="text" id="input-ducx" class="lottery-form-input">
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +58,7 @@
                                 <button type="submit" class="lottery-form-footer-button" [ngClass]="{ 'disabled' : formData.button }" [disabled]="formData.button">Next Step</button>
                             </div>
                         </form>
-
+                        <!--
                         <div class="lottery-form-block-registration" *ngIf="registrationStep === 1">
                             <div class="lottery-form-top">
                                 <span class="lottery-form-top-text">Congratulations! <br> You have successfully registred a card!</span>
@@ -106,7 +96,7 @@
                             <div class="lottery-form-footer">
                                 <button type="submit" class="lottery-form-footer-button" (click)="registrationStep = 0">Next Step</button>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
 
@@ -117,24 +107,11 @@
                             </div>
 
                             <div class="lottery-form">
-                                <div class="lottery-form-field-check">
-
-                                    <div class="lottery-form-field-left">
-                                        <input #precode="ngModel" [(ngModel)]="formDataCheck.precode" [ngClass]="{ 'error-input': formDataCheck.validPreCode }" [disabled]="formDataCheck.validating" (ngModelChange)="formPreCodeValidate()" name="precode" required minlength="4" maxlength="4" min="4" max="4" placeholder="Code" type="text" class="lottery-form-input" oninput="this.value = this.value.replace(/[^a-zA-Z0-9-]/g, '').replace(/(\..*)\./g, '$1');">
-                                    </div>
-
-                                    <div class="lottery-form-field-right">
+                                <div class="lottery-form-field" data-title="Code">
+                                    <div class="lottery-form-field-input">
                                         <label for="input-code">Enter Public code <span *ngIf="(formDataCheck.validCode || formDataCheck.validPreCode) && !formDataCheck.validRegistrate " class="error-text">Invalid code!</span><span *ngIf="formDataCheck.validRegistrate" class="error-text">Сode not registered!</span></label>
-                                        <input #code="ngModel" [(ngModel)]="formDataCheck.code" name="code" [ngClass]="{ 'error-input': formDataCheck.validCode }" [disabled]="formDataCheck.validating" (ngModelChange)="formCodeValidate()" required maxlength="34" placeholder="0021-1C4E-B5F2-4FDD-4954-4846-9551-CFDD" type="text" id="input-code" class="lottery-form-input" oninput="this.value = this.value.replace(/[^a-zA-Z0-9-]/g, '').replace(/(\..*)\./g, '$1');">
-                                        <!-- <div class="lottery-form-code">
-                                                        <input required placeholder="W1V2" minlength="4" maxlength="4" min="4" max="4" type="text" id="input-code" class="lottery-form-input">
-                                                        <input required placeholder="W1V2" minlength="4" maxlength="4" min="4" max="4" type="text" class="lottery-form-input">
-                                                        <input required placeholder="W1V2" minlength="4" maxlength="4" min="4" max="4" type="text" class="lottery-form-input">
-                                                        <input required placeholder="W1V2" minlength="4" maxlength="4" min="4" max="4" type="text" class="lottery-form-input">
-                                                        <span class="lottery-form-input-error">Invalid code!</span>
-                                                    </div> -->
+                                        <input #code="ngModel" [(ngModel)]="formDataCheck.code" name="code" [ngClass]="{ 'error-input': formDataCheck.validCode }" [disabled]="formData.formValidating" (ngModelChange)="formCodeValidate()" required maxlength="39" placeholder="PUB0-1C4E-B5F2-4FDD-4954-4846-9551-CFDD" type="text" id="input-code" class="lottery-form-input" oninput="this.value = this.value.replace(/[^a-zA-Z0-9-]/g, '').replace(/(\..*)\./g, '$1');">
                                     </div>
-
                                 </div>
                             </div>
 
@@ -174,7 +151,7 @@
                             <span class="winner-block-info-text">The bonus addresses:</span>
                             <div class="winner-block-info-addreses">
                                 <div class="winner-block-info-addreses-left">
-                                    <span class="winner-block-info-addreses-text"><span>{{ winData.duc_value || 'none' }}</span> DUC directed to this address</span>
+                                    <span class="winner-block-info-addreses-text"><span>{{ ducPrice || 'none' }}</span> DUC directed to this address</span>
                                     <span class="winner-block-info-addreses-address">{{ winData.ducatus_address || 'none' }}</span>
                                 </div>
                                 <div class="winner-block-info-addreses-right">
@@ -187,8 +164,6 @@
                     </div>
 
                 </div>
-
-
 
             </div>
         </div>

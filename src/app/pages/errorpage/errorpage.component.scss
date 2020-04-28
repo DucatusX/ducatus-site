@@ -1,0 +1,28 @@
+.error-page {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 140px;
+            line-height: 1;
+            font-weight: bold;
+            margin: 100px 0 0 0;
+            color: #862633;
+        }
+
+        small {
+            font-size: 25px;
+            margin-bottom: 30px;
+        }
+
+        a {
+            max-width: 250px;
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+}

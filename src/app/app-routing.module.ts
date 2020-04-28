@@ -8,7 +8,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { BuyComponent } from './pages/buy/buy.component';
 import { LegalComponent } from './pages/legal/legal.component';
 import { LegalDisclaimerComponent } from './pages/legal-disclaimer/legal-disclaimer.component';
-import { GoldLotteryComponent } from './pages/gold-lottery/gold-lottery.component'
+import { GoldLotteryComponent } from './pages/gold-lottery/gold-lottery.component';
+import { ErrorPageComponent } from './pages/errorpage/errorpage.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,14 @@ const routes: Routes = [
   {
     path: 'gold-lottery',
     component: GoldLotteryComponent,
+  },
+  {
+    path: '404',
+    component: ErrorPageComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '/404'
   }
 ];
 

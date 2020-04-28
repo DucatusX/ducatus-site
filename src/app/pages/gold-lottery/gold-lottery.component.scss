@@ -289,6 +289,7 @@ section.gold-lottery {
         text-align: center;
         padding: 10px;
         color: white;
+        font-size: 18px;
     }
 
     &-img {
@@ -328,7 +329,7 @@ section.gold-lottery {
                     padding-bottom: 5px;
                     padding-top: 5px;
                     border-bottom: 1px solid gray;
-                    font-size: 12px;
+                    font-size: 14px;
                     width: 100%;
 
                     span {
@@ -360,7 +361,7 @@ section.gold-lottery {
             text-align: center;
             width: 100%;
             display: block;
-            font-size: 14px;
+            font-size: 18px;
             padding: 15px 10px;
 
             @include b(700) {
