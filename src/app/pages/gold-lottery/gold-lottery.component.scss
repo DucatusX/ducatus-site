@@ -28,6 +28,10 @@ section.gold-lottery {
 
         &-form {
             padding: 40px;
+            background-image: url('/assets/img/gold/logo.svg');
+            background-position: center;
+            background-size: 200px;
+            background-repeat: no-repeat;
 
             @include b(600) {
                 padding: 40px 10px;
@@ -258,8 +262,10 @@ section.gold-lottery {
 }
 
 .bg-win {
-    background-color: rgb(218, 185, 18) !important;
-    background-image: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/assets/img/gold/bg.jpg');
 }
 
 .winner-block {
@@ -269,7 +275,9 @@ section.gold-lottery {
 
     &:before {
         content: attr(data-title);
-        background-color: $brown-red;
+        background-image: url('/assets/img/gold/title.svg');
+        background-position: center;
+        background-size: cover;
         z-index: 1;
         position: absolute;
         left: 0;

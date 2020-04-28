@@ -67,6 +67,8 @@
         }
 
         img {
+            width: 230px;
+
             @include b(900) {
                 width: 200px;
             }

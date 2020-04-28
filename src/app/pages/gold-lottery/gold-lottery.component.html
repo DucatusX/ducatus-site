@@ -124,7 +124,7 @@
                                     </div>
 
                                     <div class="lottery-form-field-right">
-                                        <label for="input-code">Enter Public code <span *ngIf="formDataCheck.validCode || formDataCheck.validPreCode " class="error-text">Invalid code!</span></label>
+                                        <label for="input-code">Enter Public code <span *ngIf="(formDataCheck.validCode || formDataCheck.validPreCode) && !formDataCheck.validRegistrate " class="error-text">Invalid code!</span><span *ngIf="formDataCheck.validRegistrate" class="error-text">Сode not registered!</span></label>
                                         <input #code="ngModel" [(ngModel)]="formDataCheck.code" name="code" [ngClass]="{ 'error-input': formDataCheck.validCode }" [disabled]="formDataCheck.validating" (ngModelChange)="formCodeValidate()" required maxlength="34" placeholder="0021-1C4E-B5F2-4FDD-4954-4846-9551-CFDD" type="text" id="input-code" class="lottery-form-input" oninput="this.value = this.value.replace(/[^a-zA-Z0-9-]/g, '').replace(/(\..*)\./g, '$1');">
                                         <!-- <div class="lottery-form-code">
                                                         <input required placeholder="W1V2" minlength="4" maxlength="4" min="4" max="4" type="text" id="input-code" class="lottery-form-input">
@@ -148,13 +148,14 @@
                 <div *ngIf="win">
 
                     <div class="lottery-form-block winner-block" data-title="Congratulations!">
-                        <div class="winner-block-img"></div>
+                        <div *ngIf="winData.token_type >= 144" class="winner-block-img" style="background-image: url(/assets/img/gold/bar.png);"></div>
+                        <div *ngIf="winData.token_type <= 144" class="winner-block-img" style="background-image: url(/assets/img/gold/coin.png);"></div>
                         <div class="winner-block-info">
                             <div class="winner-block-info-gold">
                                 <div class="winner-block-info-gold-left">
                                     <ul>
-                                        <li>Gold: <span>bar</span></li>
-                                        <li>Purchase Date: <span>{{ (winData.purchase_data| date) || 'none' }}</span></li>
+                                        <li>Gold: <span *ngIf="winData.token_type >= 144">bar</span><span *ngIf="winData.token_type < 144">coin</span></li>
+                                        <li>Purchase Date: <span>{{ (winData.purchase_date| date : 'yyyy-MM-dd') || 'none' }}</span></li>
                                         <li>Purity: <span>99.999%</span></li>
                                         <li>Country: <span>{{ winData.country || 'none' }}</span></li>
                                     </ul>
@@ -162,10 +163,10 @@
 
                                 <div class="winner-block-info-gold-right">
                                     <ul>
-                                        <li>Weight: <span>146g</span></li>
-                                        <li>Gold price, $/gram: <span>{{ winData.gold_price || 'none' }}</span></li>
+                                        <li>Weight: <span>{{ winData.token_type }}g</span></li>
+                                        <li>Gold price, $/gram: <span>{{ winData.gold_price || 'none' }}$</span></li>
                                         <li>Certified Assayer: <span>{{ winData.certified_assayer || 'none' }}</span></li>
-                                        <li>Production Date: <span>{{ (winData.production_date| date) || 'none' }}</span></li>
+                                        <li>Production Date: <span>{{ (winData.production_date| date : 'yyyy-MM-dd') || 'none' }}</span></li>
                                     </ul>
                                 </div>
                             </div>

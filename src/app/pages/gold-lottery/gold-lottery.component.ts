@@ -41,7 +41,8 @@ export class GoldLotteryComponent implements OnInit {
       validating: false,
       validCode: false,
       typeCode: false,
-      button: true
+      button: true,
+      validRegistrate: false
     };
   }
 
@@ -83,12 +84,13 @@ export class GoldLotteryComponent implements OnInit {
       valid: false,
       validating: false,
       typeCode: false,
-      button: true
+      button: true,
+      validRegistrate: false
     };
   }
 
   private format(input, format, sep) {
-    let output = "";
+    let output = '';
     let idx = 0;
     for (let i = 0; i < format.length && idx < input.length; i++) {
       output += input.substr(idx, format[i]);
@@ -165,9 +167,9 @@ export class GoldLotteryComponent implements OnInit {
   private checkRegistrateForm() {
     if (!this.formData.finalValidDuc && this.formData.typeDuc && !this.formData.validDucx && this.formData.typeDucx && !this.formData.validCode && this.formData.typeCode) {
       this.formData.button = false;
-      console.log('undeisable')
+      console.log('undeisable');
     }
-    else { this.formData.button = true; console.log('deisable') }
+    else { this.formData.button = true; console.log('deisable'); }
   }
 
   public confirmRegistration() {
@@ -211,15 +213,11 @@ export class GoldLotteryComponent implements OnInit {
   }
 
   public wordsReturn(words, count) {
-
     let word: string;
-    let wordTo: string;
     const n = words.split(' ');
-
     for (let index = 0; index <= count; index++) {
       word += n[n.length - index];
     }
-
     return word;
   }
 
@@ -233,6 +231,13 @@ export class GoldLotteryComponent implements OnInit {
         this.winData = result;
         this.win = true;
         this.formData.formValidating = false;
+      }
+
+      if (result.token_id === null && result.token_type != "") {
+        this.formDataCheck.validRegistrate = true;
+        this.formDataCheck.validPreCode = true;
+        this.formDataCheck.validCode = true;
+        this.formDataCheck.button = true;
       }
 
     }).catch((err) => {
@@ -255,10 +260,13 @@ export class GoldLotteryComponent implements OnInit {
       this.formDataCheck.validPreCode = true;
       this.formDataCheck.validCode = true;
       this.formDataCheck.button = true;
-    })
+    });
   }
 
   public formPreCodeValidate() {
+
+    this.formDataCheck.validRegistrate = false;
+
     if (this.formDataCheck.precode.length !== 4) {
       this.formDataCheck.validPreCode = true;
       this.formDataCheck.button = true;
@@ -275,6 +283,8 @@ export class GoldLotteryComponent implements OnInit {
   }
 
   public formCodeValidate() {
+
+    this.formDataCheck.validRegistrate = false;
 
     this.formDataCheck.typeCode = true;
     let foo = this.formDataCheck.code.replace(/-/g, '');
