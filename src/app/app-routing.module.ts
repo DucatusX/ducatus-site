@@ -10,6 +10,7 @@ import { LegalComponent } from './pages/legal/legal.component';
 import { LegalDisclaimerComponent } from './pages/legal-disclaimer/legal-disclaimer.component';
 import { GoldLotteryComponent } from './pages/gold-lottery/gold-lottery.component';
 import { ErrorPageComponent } from './pages/errorpage/errorpage.component';
+import { DucatusxComponent } from './pages/ducatusx/ducatusx/ducatusx.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,14 @@ const routes: Routes = [
   {
     path: 'legal-disclaimer',
     component: LegalDisclaimerComponent,
+  },
+  {
+    path: 'gold-lottery',
+    component: GoldLotteryComponent,
+  },
+  {
+    path: 'ducatusx',
+    component: DucatusxComponent,
   },
   {
     path: 'gold-lottery',

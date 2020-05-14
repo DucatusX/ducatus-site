@@ -1,0 +1,131 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+
+.section-infoblock-grid-double-item {
+    .section-app-list {
+        margin-top: 10px;
+        max-width: 400px;
+        width: 100%;
+
+        a {
+            margin-right: 15px;
+        }
+    }
+}
+
+.ducatusx-section {
+
+    .section-text-second-block-img {
+        background-size: contain;
+
+        @include b(750) {
+            margin-bottom: 20px;
+        }
+    }
+
+    a {
+        color: $brown-red;
+        font-weight: bold;
+    }
+
+    &.section-infoblock {
+        padding-top: 20px;
+    }
+
+    .section-infoblock-grid-double-nb {
+        margin-top: 50px;
+    }
+
+    &.mt-80 {
+        margin-top: 80px;
+    }
+
+    .block-video {
+        position: relative;
+        padding-bottom: 42%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+        margin-bottom: 50px;
+
+        iframe,
+        embed,
+        object {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .section-infoblock-items {
+        margin-top: 10px;
+    }
+
+    .section-infoblock-items-table {
+        &:nth-child(1) {
+            padding-right: 50px;
+
+            @include b(1024) {
+                padding-right: 20px;
+            }
+
+            @include b(750) {
+                padding-right: 0px;
+            }
+        }
+
+        &:nth-child(2) {
+            padding-left: 50px;
+
+            @include b(1024) {
+                padding-left: 20px;
+            }
+
+            @include b(750) {
+                padding-left: 0px;
+            }
+        }
+
+        .section-infoblock-item-cell {
+            display: flex;
+            min-height: 60px;
+            position: relative;
+
+            &.section-infoblock-item-cell-title {
+                padding-top: 40px;
+
+                &:before {
+                    content: attr(data-title);
+                    width: 100%;
+                    position: absolute;
+                    background-color: #f0eae2;
+                    text-align: center;
+                    padding: 10px;
+                    font-weight: bold;
+                    color: #882425;
+                    top: 0;
+                }
+            }
+
+            &-info {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 20px 20px;
+
+                p {
+                    margin: 5px 0;
+                    font-size: 17px;
+                    line-height: 25px;
+                }
+
+                &:nth-child(1) {
+                    border-right: 1px solid #e4e4e4;
+                }
+            }
+        }
+    }
+}

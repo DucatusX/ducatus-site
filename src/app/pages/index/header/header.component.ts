@@ -71,7 +71,6 @@ export class HeaderComponent implements OnInit {
       this.languagesList.map((lang) => {
         if (lang['lng'] === this.currLanguage) { lang['active'] = true; }
         else { lang['active'] = false; }
-        // return lang['lng'] === this.currLanguage;
       });
     }
     this.currLanguage = event.lang;
@@ -80,7 +79,6 @@ export class HeaderComponent implements OnInit {
     this.languagesList.map((lang) => {
       if (lang['lng'] === this.currLanguage) { lang['active'] = true; }
       else { lang['active'] = false; }
-      // return lang['lng'] === this.currLanguage;
     });
     this.languagesList.sort((a, b) => {
       return b.active ? 1 : -1;

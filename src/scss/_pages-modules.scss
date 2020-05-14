@@ -177,6 +177,134 @@
         }
     }
 
+    &-grid-double {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(250px, 50%));
+        margin: 0px 0px;
+
+        @include b(750) {
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
+            margin: 0;
+        }
+
+        &-item {
+            color: #5C5A57;
+            padding: 30px 0px;
+            border: none;
+
+            @include b(750) {
+                border: none !important;
+                padding: 20px 0;
+            }
+
+            &:nth-child(1),
+            &:nth-child(3) {
+                padding-right: 50px;
+
+                @include b(750) {
+                    padding-right: 0;
+                }
+            }
+
+            &:nth-child(2),
+            &:nth-child(4) {
+                padding-left: 50px;
+
+                @include b(750) {
+                    padding-left: 0;
+                }
+            }
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                border-bottom: 0.5px solid #D2B3B2;
+            }
+
+            &:nth-child(2) {
+                border-left: 0.5px solid #D2B3B2;
+            }
+
+            &:nth-child(4) {
+                border-left: 0.5px solid #D2B3B2;
+            }
+
+            &-title {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            &-text {
+                margin: 10px 0;
+                font-size: 14px;
+                line-height: 25px;
+                width: 100%;
+
+                @include b(750) {
+                    max-width: 100%;
+                }
+            }
+
+            .icon {
+                &:before {
+                    background-position: center;
+                    background-size: contain;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    &-grid-double-nb {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(250px, 45%));
+        margin: 0px -30px;
+        justify-content: space-between;
+
+        @include b(750) {
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
+            margin: 0;
+        }
+
+        &-item {
+            color: #5C5A57;
+            padding: 10px 30px;
+            border: none;
+
+            @include b(750) {
+                border: none !important;
+                padding: 20px 0;
+            }
+
+            &-title {
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            &-text {
+                margin: 10px 0;
+                font-size: 14px;
+                line-height: 25px;
+                width: 100%;
+
+                @include b(750) {
+                    max-width: 100%;
+                }
+            }
+
+            .icon {
+                &:before {
+                    background-position: center;
+                    background-size: contain;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
 
     &-items {
         display: flex;
@@ -193,6 +321,39 @@
 
     &-item {
         width: 40%;
+
+        &-1-4 {
+            width: 23%;
+
+            @include b(1024) {
+                width: 45%;
+                margin: 15px 0;
+            }
+
+            @include b(550) {
+                width: 100%;
+                margin: 15px 0;
+            }
+
+            &-info {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding: 30px;
+                text-align: center;
+                width: 100%;
+                height: 200px;
+                border-radius: 10px;
+                color: white;
+                background-color: $brown-red;
+                cursor: default;
+
+                .icon {
+                    margin-bottom: 20px;
+                }
+            }
+        }
 
         @include b(750) {
             width: 100%;

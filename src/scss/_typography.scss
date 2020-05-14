@@ -404,6 +404,102 @@ li {
             background-size: contain;
         }
     }
+
+    &__coin-ducx {
+        @include before-img(block, 90px, 90px, r) {
+            background-image: url('assets/img/icons/coin-ducx.svg');
+        }
+    }
+
+    &__community-ducx {
+        @include before-img(block, 90px, 90px, r) {
+            background-image: url('assets/img/icons/community-ducx.svg');
+        }
+    }
+
+    &__trusted-ducx {
+        @include before-img(block, 90px, 90px, r) {
+            background-image: url('assets/img/icons/trusted-ducx.svg');
+        }
+    }
+
+    &__money-ducx {
+        @include before-img(block, 90px, 90px, r) {
+            background-image: url('assets/img/icons/money-ducx.svg');
+        }
+    }
+
+    &__coin-dollar-ducx {
+        @include before-img(block, 40px, 40px, r) {
+            background-image: url('assets/img/icons/coin-dollar-ducx.svg');
+        }
+    }
+
+    &__cash-ducx {
+        @include before-img(block, 40px, 40px, r) {
+            background-image: url('assets/img/icons/cash-ducx.svg');
+        }
+    }
+
+    &__snow-ducx {
+        @include before-img(block, 40px, 40px, r) {
+            background-image: url('assets/img/icons/snow-ducx.svg');
+        }
+    }
+
+    &__double-money-ducx {
+        @include before-img(block, 40px, 40px, r) {
+            background-image: url('assets/img/icons/double-money-ducx.svg');
+        }
+    }
+
+    &__calendar-2-ducx {
+        @include before-img(block, 40px, 40px, r) {
+            background-image: url('assets/img/icons/calendar-2-ducx.svg');
+        }
+    }
+
+    &__calendar-ducx {
+        @include before-img(block, 40px, 40px, r) {
+            background-image: url('assets/img/icons/calendar-ducx.svg');
+        }
+    }
+
+    &__circles-ducx {
+        @include before-img(block, 42px, 42px, r) {
+            background-image: url('assets/img/icons/circles-ducx.svg');
+        }
+    }
+
+    &__gift-ducx {
+        @include before-img(block, 38px, 40px, r) {
+            background-image: url('assets/img/icons/gift-ducx.svg');
+        }
+    }
+
+    &__hand-cash-ducx {
+        @include before-img(block, 48px, 48px, r) {
+            background-image: url('assets/img/icons/hand-cash-ducx.svg');
+        }
+    }
+
+    &__hand-coin-ducx {
+        @include before-img(block, 34px, 38px, r) {
+            background-image: url('assets/img/icons/hand-coin-ducx.svg');
+        }
+    }
+
+    &__hand-dollar-ducx {
+        @include before-img(block, 42px, 40px, r) {
+            background-image: url('assets/img/icons/hand-dollar-ducx.svg');
+        }
+    }
+
+    &__shield-ducx {
+        @include before-img(block, 38px, 48px, r) {
+            background-image: url('assets/img/icons/shield-ducx.svg');
+        }
+    }
 }
 
 .ol-a-type {
