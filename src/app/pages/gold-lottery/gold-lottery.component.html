@@ -1,6 +1,6 @@
 <section class="section-header-page" style="background-image: url(/assets/img/sections/buy-bg.png);">
     <div class="container">
-        <h1 class="h1__title-page" [innerHTML]="'PAGE.LOTTERY.TITLE' | translate">Gold Lottery</h1>
+        <h1 class="h1__title-page" [innerHTML]="'PAGE.GOLD_LOTTERY.TITLE' | translate"></h1>
     </div>
 </section>
 
@@ -11,29 +11,28 @@
 
                 <div *ngIf="!win">
                     <div class="lottery-form-switch">
-                        <span class="lottery-form-switch-button" [ngClass]="{ 'active': this.type === 'registration' }" (click)="changeForm('registration')">Registration</span>
-                        <span class="lottery-form-switch-button" [ngClass]="{ 'active': this.type === 'check' }" (click)="changeForm('check')">Checking</span>
+                        <span class="lottery-form-switch-button" [ngClass]="{ 'active': this.type === 'registration' }" (click)="changeForm('registration')" [innerHTML]="'PAGE.GOLD_LOTTERY.NAV.TITLE_1' | translate"></span>
+                        <span class="lottery-form-switch-button" [ngClass]="{ 'active': this.type === 'check' }" (click)="changeForm('check')" [innerHTML]="'PAGE.GOLD_LOTTERY.NAV.TITLE_2' | translate"></span>
                     </div>
 
                     <div class="lottery-form-block" *ngIf="this.type === 'registration'">
 
                         <form #registrationForm="ngForm" (ngSubmit)="confirmRegistration()" id="registrationForm" ngNativeValidate class="lottery-form-block-registration" *ngIf="registrationStep === 0">
                             <div class="lottery-form-top">
-                                <span class="lottery-form-top-text">Fill out the form to link your gold card, DUC, DUCX wallets to recive
-                                    DUC and GOLD TOKEN</span>
+                                <span class="lottery-form-top-text" [innerHTML]="'PAGE.GOLD_LOTTERY.REGISTRATE.TEXT_1' | translate"></span>
                             </div>
 
                             <div class="lottery-form">
                                 <div class="lottery-form-field" data-title="Code">
                                     <div class="lottery-form-field-input">
-                                        <label for="input-code">Enter card Private code <span *ngIf="formData.validCodeRegistrated" class="error-text">Code has already registered!</span><span *ngIf="formData.validCode && !formData.validCodeRegistrated" class="error-text">Invalid code!</span></label>
+                                        <label for="input-code">{{ 'PAGE.GOLD_LOTTERY.REGISTRATE.TEXT_2' | translate }} <span *ngIf="formData.validCodeRegistrated" class="error-text">{{ 'PAGE.GOLD_LOTTERY.REGISTRATE.ERROR_1' | translate }}</span><span *ngIf="formData.validCode && !formData.validCodeRegistrated" class="error-text">{{ 'PAGE.GOLD_LOTTERY.REGISTRATE.ERROR_2' | translate }}</span></label>
                                         <input #code="ngModel" [(ngModel)]="formData.code" name="code" [ngClass]="{ 'error-input': formData.validCode }" [disabled]="formData.formValidating" (ngModelChange)="formValidate('CODE')" required maxlength="39" placeholder="0021-1C4E-B5F2-4FDD-4954-4846-9551-CFDD" type="text" id="input-code" class="lottery-form-input" oninput="this.value = this.value.replace(/[^a-zA-Z0-9-]/g, '').replace(/(\..*)\./g, '$1');">
                                     </div>
                                 </div>
                                 <div class="lottery-form-field" data-title="DUC">
                                     <div class="lottery-form-field-input">
-                                        <label for="input-duc">Enter DUC address <span *ngIf="formData.validDuc" class="error-text">Invalid address!</span></label>
-                                        <input #addressDuc="ngModel" [(ngModel)]="formData.addressDuc" name="addressDuc" [ngClass]="{ 'error-input': formData.validDuc }" [disabled]="formData.validateDuc || formData.formValidating" (ngModelChange)="formValidate('DUC')" required maxlength="42" placeholder="Enter your Ducatus address" type="text" id="input-duc" class="lottery-form-input">
+                                        <label for="input-duc">{{ 'PAGE.GOLD_LOTTERY.REGISTRATE.TEXT_3' | translate }} <span *ngIf="formData.validDuc" class="error-text">{{ 'PAGE.GOLD_LOTTERY.REGISTRATE.ERROR_1' | translate }}</span></label>
+                                        <input #addressDuc="ngModel" [(ngModel)]="formData.addressDuc" name="addressDuc" [ngClass]="{ 'error-input': formData.validDuc }" [disabled]="formData.validateDuc || formData.formValidating" (ngModelChange)="formValidate('DUC')" required maxlength="42" [placeholder]="'PAGE.GOLD_LOTTERY.REGISTRATE.PLACEHOLDER_1' | translate" type="text" id="input-duc" class="lottery-form-input">
                                         <div class="loading-small" *ngIf="formData.validateDuc">
                                             <div class="loading-dots">
                                                 <div class="loading-dots-wrap">
@@ -48,14 +47,14 @@
                                 </div>
                                 <div class="lottery-form-field" data-title="DUCX">
                                     <div class="lottery-form-field-input">
-                                        <label for="input-ducx">Enter DUCX address <span *ngIf="formData.validDucx" class="error-text">Invalid address!</span></label>
-                                        <input #addressDucx="ngModel" [(ngModel)]="formData.addressDucx" name="addressDucx" [ngClass]="{ 'error-input': formData.validDucx }" [disabled]="formData.formValidating" (ngModelChange)="formValidate('DUCX')" required maxlength="42" placeholder="Enter your DucatusX address" pattern="0x[0-9a-fA-F]{40}" type="text" id="input-ducx" class="lottery-form-input">
+                                        <label for="input-ducx">{{ 'PAGE.GOLD_LOTTERY.REGISTRATE.TEXT_4' | translate }} <span *ngIf="formData.validDucx" class="error-text">{{ 'PAGE.GOLD_LOTTERY.REGISTRATE.ERROR_4' | translate }}</span></label>
+                                        <input #addressDucx="ngModel" [(ngModel)]="formData.addressDucx" name="addressDucx" [ngClass]="{ 'error-input': formData.validDucx }" [disabled]="formData.formValidating" (ngModelChange)="formValidate('DUCX')" required maxlength="42" [placeholder]="'PAGE.GOLD_LOTTERY.REGISTRATE.PLACEHOLDER_2' | translate" pattern="0x[0-9a-fA-F]{40}" type="text" id="input-ducx" class="lottery-form-input">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="lottery-form-footer">
-                                <button type="submit" class="lottery-form-footer-button" [ngClass]="{ 'disabled' : formData.button }" [disabled]="formData.button">Next Step</button>
+                                <button type="submit" class="lottery-form-footer-button" [ngClass]="{ 'disabled' : formData.button }" [disabled]="formData.button">{{ 'PAGE.GOLD_LOTTERY.BUTTON' | translate }}</button>
                             </div>
                         </form>
                         <!--
@@ -103,20 +102,20 @@
                     <div class="lottery-form-block" *ngIf="this.type === 'check'">
                         <form #checkForm="ngForm" ngNativeValidate (ngSubmit)="confirmCheck()" class="lottery-form-block-check">
                             <div class="lottery-form-top">
-                                <span class="lottery-form-top-text">Fill out the form to check your card registration</span>
+                                <span class="lottery-form-top-text">{{ 'PAGE.GOLD_LOTTERY.CHECK.TEXT_1' | translate }}</span>
                             </div>
 
                             <div class="lottery-form">
                                 <div class="lottery-form-field" data-title="Code">
                                     <div class="lottery-form-field-input">
-                                        <label for="input-code">Enter Public code <span *ngIf="(formDataCheck.validCode || formDataCheck.validPreCode) && !formDataCheck.validRegistrate " class="error-text">Invalid code!</span><span *ngIf="formDataCheck.validRegistrate" class="error-text">Сode not registered!</span></label>
+                                        <label for="input-code">{{ 'PAGE.GOLD_LOTTERY.CHECK.TEXT_2' | translate }} <span *ngIf="(formDataCheck.validCode || formDataCheck.validPreCode) && !formDataCheck.validRegistrate " class="error-text">{{ 'PAGE.GOLD_LOTTERY.CHECK.ERROR_1' | translate }}</span><span *ngIf="formDataCheck.validRegistrate" class="error-text">{{ 'PAGE.GOLD_LOTTERY.CHECK.ERROR_2' | translate }}</span></label>
                                         <input #code="ngModel" [(ngModel)]="formDataCheck.code" name="code" [ngClass]="{ 'error-input': formDataCheck.validCode }" [disabled]="formData.formValidating" (ngModelChange)="formCodeValidate()" required maxlength="39" placeholder="PUB0-1C4E-B5F2-4FDD-4954-4846-9551-CFDD" type="text" id="input-code" class="lottery-form-input" oninput="this.value = this.value.replace(/[^a-zA-Z0-9-]/g, '').replace(/(\..*)\./g, '$1');">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="lottery-form-footer">
-                                <button type="submit" class="lottery-form-footer-button" [ngClass]="{ 'disabled' : formDataCheck.button }" [disabled]="formDataCheck.button">Next Step</button>
+                                <button type="submit" class="lottery-form-footer-button" [ngClass]="{ 'disabled' : formDataCheck.button }" [disabled]="formDataCheck.button">{{ 'PAGE.GOLD_LOTTERY.BUTTON' | translate }}</button>
                             </div>
                         </form>
                     </div>
@@ -131,31 +130,31 @@
                             <div class="winner-block-info-gold">
                                 <div class="winner-block-info-gold-left">
                                     <ul>
-                                        <li>Gold: <span *ngIf="winData.token_type >= 144">bar</span><span *ngIf="winData.token_type < 144">coin</span></li>
-                                        <li>Purchase Date: <span>{{ (winData.purchase_date| date : 'yyyy-MM-dd') || 'none' }}</span></li>
-                                        <li>Purity: <span>99.999%</span></li>
-                                        <li>Country: <span>{{ winData.country || 'none' }}</span></li>
+                                        <li>{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_1' | translate }} <span *ngIf="winData.token_type >= 144">{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_2' | translate }}</span><span *ngIf="winData.token_type < 144">{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_3' | translate }}</span></li>
+                                        <li>{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_4' | translate }} <span>{{ (winData.purchase_date| date : 'yyyy-MM-dd') || 'none' }}</span></li>
+                                        <li>{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_5' | translate }} <span>{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_6' | translate }}</span></li>
+                                        <li>{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_7' | translate }} <span>{{ winData.country || 'none' }}</span></li>
                                     </ul>
                                 </div>
 
                                 <div class="winner-block-info-gold-right">
                                     <ul>
-                                        <li>Weight: <span>{{ winData.token_type }}g</span></li>
-                                        <li>Gold price, $/gram: <span>{{ winData.gold_price || 'none' }}$</span></li>
-                                        <li>Certified Assayer: <span>{{ winData.certified_assayer || 'none' }}</span></li>
-                                        <li>Production Date: <span>{{ (winData.production_date| date : 'yyyy-MM-dd') || 'none' }}</span></li>
+                                        <li>{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_8' | translate }} <span>{{ winData.token_type }}{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_9' | translate }}</span></li>
+                                        <li>{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_10' | translate }} <span>{{ winData.gold_price || 'none' }}{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_11' | translate }}</span></li>
+                                        <li>{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_12' | translate }} <span>{{ winData.certified_assayer || 'none' }}</span></li>
+                                        <li>{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_13' | translate }} <span>{{ (winData.production_date| date : 'yyyy-MM-dd') || 'none' }}</span></li>
                                     </ul>
                                 </div>
                             </div>
 
-                            <span class="winner-block-info-text">The bonus addresses:</span>
+                            <span class="winner-block-info-text">{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_14' | translate }}</span>
                             <div class="winner-block-info-addreses">
                                 <div class="winner-block-info-addreses-left">
-                                    <span class="winner-block-info-addreses-text"><span>{{ ducPrice || 'none' }}</span> DUC directed to this address</span>
+                                    <span class="winner-block-info-addreses-text"><span>{{ ducPrice || 'none' }}</span> {{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_15' | translate }}</span>
                                     <span class="winner-block-info-addreses-address">{{ winData.ducatus_address || 'none' }}</span>
                                 </div>
                                 <div class="winner-block-info-addreses-right">
-                                    <span class="winner-block-info-addreses-text">GOLD DUCX token directed to this address</span>
+                                    <span class="winner-block-info-addreses-text">{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_16' | translate }}</span>
                                     <span class="winner-block-info-addreses-address">{{ winData.ducatusx_address || 'none' }}</span>
                                 </div>
                             </div>

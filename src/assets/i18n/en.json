@@ -241,6 +241,54 @@
             "TITLE": "Legal Disclaimer",
             "DISCLAIMER": "",
             "TEXT": "Important Notice: www.ducatuscoins.com is owned by Centurion Global Limited (“Centurion Global”), with registered office at Harneys Services (Cayman Limited), 4th Floor Harbour Place, 103 South Church Street, Grand Cayman, PO Box 10240, KY1-1002, Cayman Islands. <br><br> By visiting this site, you agree to be bound by Centurion’s Terms of Use and Privacy Policy. The Ducatus Coin (the “Coin”) issued by Centurion Global is intended for qualified buyers who understand and accept the risks associated with the ownership of digital assets such as the Coin. Each buyer is advised to conduct his/her own due diligence as none of Centurion Global, its affiliates provides any investment advice, business advice or tax or legal advice. <br><br> THE INFORMATION PROVIDED ON THIS SITE IS NOT FOR CIRCULATION, DISPLAY, RECEPTION OR DISTRIBUTION IN SINGAPORE (INCLUDING TO THE PUBLIC OR ANY SECTION OF THE PUBLIC IN SINGAPORE) OR ANY OTHER JURISDICTION WHERE THE PRODUCTS OR SERVICES OF CENTURION OR ITS AFFILIATES WOULD BE PROHIBITED WITHOUT A REQUISITE LICENSE OR EXEMPTION. NEITHER CENTURION NOR ANY OF ITS AFFILIATES HEREBY OFFERS ANY SERVICE THAT WOULD CONSTITUTE A PAYMENT SERVICE FOR PURPOSES OF THE SINGAPORE PAYMENT SERVICES ACT 2019, OR ANY OTHER ACTIVITY SUBJECT TO REGULATION BY THE MONETARY AUTHORITY OF SINGAPORE, IN SINGAPORE OR TO ANY PERSON IN SINGAPORE. THE COIN IS NOT AVAILABLE FOR SALE BY CENUTURION IN SINGAPORE."
+        },
+        "GOLD_LOTTERY": {
+            "TITLE": "Gold Lottery",
+            "NAV": {
+                "TITLE_1": "Registration",
+                "TITLE_2": "Checking"
+            },
+            "REGISTRATE": {
+                "TEXT_1": "Fill out the form to link your gold card, DUC, DUCX wallets to recive DUC and GOLD TOKEN",
+                "TEXT_2": "Enter card Private code",
+                "ERROR_1": "Code has already registered!",
+                "ERROR_2": "Invalid code!",
+                "TEXT_3": "Enter DUC address",
+                "PLACEHOLDER_1": "Enter your Ducatus address",
+                "ERROR_3": "Invalid address!",
+                "TEXT_4": "Enter DUCX address",
+                "ERROR_4": "Invalid address!",
+                "PLACEHOLDER_2": "Enter your DucatusX address"
+            },
+            "BUTTON": "Next Step",
+            "CHECK": {
+                "TEXT_1": "Fill out the form to check your card registration",
+                "TEXT_2": "Enter Public code",
+                "ERROR_1": "Invalid code!",
+                "ERROR_2": "Сode not registered!",
+                "TEXT_3": "Enter DUC address",
+                "ERROR_3": "Invalid address!",
+                "TEXT_4": "Enter DUCX address",
+                "ERROR_4": "Invalid address!"
+            },
+            "INFO": {
+                "TEXT_1": "Gold:",
+                "TEXT_2": "bar",
+                "TEXT_3": "coin",
+                "TEXT_4": "Purchase Date:",
+                "TEXT_5": "Purity:",
+                "TEXT_6": "99.999%",
+                "TEXT_7": "Country:",
+                "TEXT_8": "Weight:",
+                "TEXT_9": "g",
+                "TEXT_10": "Gold price, $/gram:",
+                "TEXT_11": "$",
+                "TEXT_12": "Certified Assayer:",
+                "TEXT_13": "Production Date:",
+                "TEXT_14": "The bonus addresses:",
+                "TEXT_15": "DUC directed to this address",
+                "TEXT_16": "GOLD DUCX token directed to this address"
+            }
         }
     }
 }
