@@ -1,15 +1,15 @@
 <section class="section-header-page" style="background-image: url(/assets/img/sections/about-ducatusx-bg.png);">
     <div class="container">
-        <h1 class="h1__title-page">DucatusX</h1>
+        <h1 class="h1__title-page" [innerHTML]="'PAGE.DUCATUSX.TITLE' | translate"></h1>
     </div>
 </section>
 
 <section class="section-text-second ducatusx-section">
     <div class="container">
         <div class="section-text-second-block">
-            <span class="h2__title-section">About DucatusX</span>
+            <span class="h2__title-section" [innerHTML]="'PAGE.DUCATUSX.CONTENT.TITLE' | translate"></span>
             <span class="span__line-section"></span>
-            <p class="p__text-section">DucatusX is a fork of the Ethereum blockchain, therefore it supports both transactions and creations of smart contracts. Unlike Ethereum, DucatusX uses a “Proof of Authority” consensus algorithm which reduces the maintenance cost. In the future, it is considered to switch to “Proof of Stake” which may give users even more confidence in choosing DucatusX for their projects. The blocks are produced regularly by 3 proven secured nodes resulting in stable cost and speed of block production.</p>
+            <p class="p__text-section" [innerHTML]="'PAGE.DUCATUSX.CONTENT.TEXT' | translate"></p>
         </div>
         <div class="section-text-second-block">
             <div class="section-text-second-block-img" style="background-image: url(/assets/img/sections/about-ducx-img.png);"></div>
@@ -20,32 +20,32 @@
 <section class="section-infoblock ducatusx-section">
     <div class="container">
         <div class="section-infoblock-text">
-            <span class="h2__title-section">Why DucX</span>
+            <span class="h2__title-section" [innerHTML]="'PAGE.DUCATUSX.BLOCK_1.TITLE' | translate"></span>
             <span class="span__line-section"></span>
         </div>
         <div class="section-infoblock-items">
             <div class="section-infoblock-item-1-4">
                 <div class="section-infoblock-item-1-4-info">
                     <span class="icon icon__community-ducx"></span>
-                    <b>Strong supporting community</b>
+                    <b>{{ 'PAGE.DUCATUSX.BLOCK_1.TEXT' | translate }}</b>
                 </div>
             </div>
             <div class="section-infoblock-item-1-4">
                 <div class="section-infoblock-item-1-4-info">
                     <span class="icon icon__trusted-ducx"></span>
-                    <b>Only trusted projects,<br> no scam token</b>
+                    <b [innerHTML]="'PAGE.DUCATUSX.BLOCK_1.TEXT_1' | translate"></b>
                 </div>
             </div>
             <div class="section-infoblock-item-1-4">
                 <div class="section-infoblock-item-1-4-info">
                     <span class="icon icon__coin-ducx"></span>
-                    <b>Lower fees,<br> staking rewards</b>
+                    <b [innerHTML]="'PAGE.DUCATUSX.BLOCK_1.TEXT_2' | translate"></b>
                 </div>
             </div>
             <div class="section-infoblock-item-1-4">
                 <div class="section-infoblock-item-1-4-info">
                     <span class="icon icon__money-ducx"></span>
-                    <b>Total number of DucX fixed at maximum 777.874.204</b>
+                    <b [innerHTML]="'PAGE.DUCATUSX.BLOCK_1.TEXT_3' | translate"></b>
                 </div>
             </div>
         </div>
@@ -55,13 +55,13 @@
 <section class="section-infoblock section-infoblock-filled ducatusx-section">
     <div class="container">
         <div class="section-infoblock-text">
-            <span class="h2__title-section">DucatusX Resources</span>
+            <span class="h2__title-section" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT' | translate"></span>
             <span class="span__line-section"></span>
         </div>
         <div class="section-infoblock-grid-double">
             <div class="section-infoblock-grid-double-item">
-                <span class="section-infoblock-grid-double-item-title">Manage DucatusX</span>
-                <p class="section-infoblock-grid-double-item-text">To manage DucatusX you can use our Ducatus Wallet</p>
+                <span class="section-infoblock-grid-double-item-title" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_1' | translate"></span>
+                <p class="section-infoblock-grid-double-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_2' | translate"></p>
                 <div class="section-app-list">
                     <a href="https://wallet.ducatus.io/" target="_blank" class="download_ducatus"></a>
                     <a href="https://play.google.com/store/apps/details?id=io.ducatus.walnew" target="_blank" class="download_googleplay"></a>
@@ -69,8 +69,8 @@
                 </div>
             </div>
             <div class="section-infoblock-grid-double-item">
-                <span class="section-infoblock-grid-double-item-title">Convert Ducatus to DucatusX</span>
-                <p class="section-infoblock-grid-double-item-text">DucatusX can be converted from and into Ducatus (DUC) by a fixed ratio of 1:10 on <a href="https://www.ducatuscoins.com/buy">https://www.ducatuscoins.com/buy</a></p>
+                <span class="section-infoblock-grid-double-item-title" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_3' | translate"></span>
+                <p class="section-infoblock-grid-double-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_4' | translate"></p>
             </div>
             <div class="section-infoblock-grid-double-item">
 
@@ -78,25 +78,25 @@
                     <iframe src="https://www.youtube.com/embed/WWtObEFdrhc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
-                <span class="section-infoblock-grid-double-item-title">Create DucatusX token</span>
-                <p class="section-infoblock-grid-double-item-text">DucatusX supports smart contracts and allows you to tokenize your assets. It's quite simple, just visit the <a href="http://ducx.mywish.io/create">http://ducx.mywish.io/create</a> and create a token that may be sold throught the <a href="https://www.aaplussg.com/">AA + exchange</a> after being accepted for listing.</p>
+                <span class="section-infoblock-grid-double-item-title" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_5' | translate"></span>
+                <p class="section-infoblock-grid-double-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_6' | translate"></p>
 
                 <div class="section-infoblock-grid-double-nb">
                     <div class="section-infoblock-grid-double-nb-item">
                         <span class="section-infoblock-grid-double-nb-item-title icon icon__coin-dollar-ducx"></span>
-                        <p class="section-infoblock-grid-double-nb-item-text">It allows you to create tokens in the right amount.</p>
+                        <p class="section-infoblock-grid-double-nb-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_7' | translate"></p>
                     </div>
                     <div class="section-infoblock-grid-double-nb-item">
                         <span class="section-infoblock-grid-double-nb-item-title icon icon__snow-ducx"></span>
-                        <p class="section-infoblock-grid-double-nb-item-text">Reserve/Freeze tokens at specific addresses</p>
+                        <p class="section-infoblock-grid-double-nb-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_8' | translate"></p>
                     </div>
                     <div class="section-infoblock-grid-double-nb-item">
                         <span class="section-infoblock-grid-double-nb-item-title icon icon__double-money-ducx"></span>
-                        <p class="section-infoblock-grid-double-nb-item-text">If you want to make a Crowdsale contract then created token can be used in it without creating a new one</p>
+                        <p class="section-infoblock-grid-double-nb-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_9' | translate"></p>
                     </div>
                     <div class="section-infoblock-grid-double-nb-item">
                         <span class="section-infoblock-grid-double-nb-item-title icon icon__cash-ducx"></span>
-                        <p class="section-infoblock-grid-double-nb-item-text">You distribute the token on your own</p>
+                        <p class="section-infoblock-grid-double-nb-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_10' | translate"></p>
                     </div>
                 </div>
 
@@ -107,41 +107,41 @@
                     <iframe src="https://www.youtube.com/embed/JjCssl-26OU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
-                <span class="section-infoblock-grid-double-item-title">Create crowdsale contract</span>
-                <p class="section-infoblock-grid-double-item-text">To attract investment into your project, you can create a token contract and sell it through a crowdsale. To get project tokens, buyers will need to send you DucX, which you can then spend on the project needs. <br><a href="http://ducx.mywish.io/create">http://ducx.mywish.io/create</a></p>
+                <span class="section-infoblock-grid-double-item-title" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_11' | translate"></span>
+                <p class="section-infoblock-grid-double-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_12' | translate"></p>
 
                 <div class="section-infoblock-grid-double-nb">
                     <div class="section-infoblock-grid-double-nb-item">
                         <span class="section-infoblock-grid-double-nb-item-title icon icon__hand-coin-ducx"></span>
-                        <p class="section-infoblock-grid-double-nb-item-text">Includes Token contracts functionality</p>
+                        <p class="section-infoblock-grid-double-nb-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_13' | translate"></p>
                     </div>
                     <div class="section-infoblock-grid-double-nb-item">
                         <span class="section-infoblock-grid-double-nb-item-title icon icon__circles-ducx"></span>
-                        <p class="section-infoblock-grid-double-nb-item-text">Automatic distribution of the token during an investment</p>
+                        <p class="section-infoblock-grid-double-nb-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_14' | translate"></p>
                     </div>
                     <div class="section-infoblock-grid-double-nb-item">
                         <span class="section-infoblock-grid-double-nb-item-title icon icon__calendar-2-ducx"></span>
-                        <p class="section-infoblock-grid-double-nb-item-text">Setting the start and end dates for the ICO</p>
+                        <p class="section-infoblock-grid-double-nb-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_15' | translate"></p>
                     </div>
                     <div class="section-infoblock-grid-double-nb-item">
                         <span class="section-infoblock-grid-double-nb-item-title icon icon__calendar-ducx"></span>
-                        <p class="section-infoblock-grid-double-nb-item-text">Changing dates of ICO</p>
+                        <p class="section-infoblock-grid-double-nb-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_16' | translate"></p>
                     </div>
                     <div class="section-infoblock-grid-double-nb-item">
                         <span class="section-infoblock-grid-double-nb-item-title icon icon__hand-dollar-ducx"></span>
-                        <p class="section-infoblock-grid-double-nb-item-text">You can specify a token rate</p>
+                        <p class="section-infoblock-grid-double-nb-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_17' | translate"></p>
                     </div>
                     <div class="section-infoblock-grid-double-nb-item">
                         <span class="section-infoblock-grid-double-nb-item-title icon icon__gift-ducx"></span>
-                        <p class="section-infoblock-grid-double-nb-item-text">Bonus programs (time, amount of investments, etc.)</p>
+                        <p class="section-infoblock-grid-double-nb-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_18' | translate"></p>
                     </div>
                     <div class="section-infoblock-grid-double-nb-item">
                         <span class="section-infoblock-grid-double-nb-item-title icon icon__shield-ducx"></span>
-                        <p class="section-infoblock-grid-double-nb-item-text">White list</p>
+                        <p class="section-infoblock-grid-double-nb-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_19' | translate"></p>
                     </div>
                     <div class="section-infoblock-grid-double-nb-item">
                         <span class="section-infoblock-grid-double-nb-item-title icon icon__hand-cash-ducx"></span>
-                        <p class="section-infoblock-grid-double-nb-item-text">Min Max investment</p>
+                        <p class="section-infoblock-grid-double-nb-item-text" [innerHTML]="'PAGE.DUCATUSX.BLOCK_2.TEXT_20' | translate"></p>
                     </div>
                 </div>
             </div>
@@ -152,89 +152,67 @@
 <section class="section-infoblock ducatusx-section mt-80">
     <div class="container">
         <div class="section-infoblock-text">
-            <span class="h2__title-section">Tech Spec (DucatusX vs Ethereum)</span>
+            <span class="h2__title-section" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TITLE' | translate"></span>
             <span class="span__line-section"></span>
         </div>
 
         <div class="section-infoblock-grid-double">
             <div class="section-infoblock-items-table">
                 <div class="section-infoblock-item-cell">
-                    <div class="section-infoblock-item-cell-info">
-                        <b>DucatusX</b>
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_1' | translate">
                     </div>
-                    <div class="section-infoblock-item-cell-info">
-                        <b>Ethereum</b>
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_2' | translate">
                     </div>
                 </div>
-                <div data-title="Consensus" class="section-infoblock-item-cell section-infoblock-item-cell-title">
-                    <div class="section-infoblock-item-cell-info">
-                        <p>POA</p>
+                <div class="section-infoblock-item-cell section-infoblock-item-cell-title" [attr.data-title]="'PAGE.DUCATUSX.BLOCK_3.TABLE_TITLE_1' | translate">
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_3' | translate">
                     </div>
-                    <div class="section-infoblock-item-cell-info">
-                        <p>POW</p>
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_4' | translate">
                     </div>
                 </div>
-                <div data-title="Difficulty" class="section-infoblock-item-cell section-infoblock-item-cell-title">
-                    <div class="section-infoblock-item-cell-info">
-                        <p>432 ZH</p>
+                <div class="section-infoblock-item-cell section-infoblock-item-cell-title" [attr.data-title]="'PAGE.DUCATUSX.BLOCK_3.TABLE_TITLE_2' | translate">
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_5' | translate">
                     </div>
-                    <div class="section-infoblock-item-cell-info">
-                        <p>2,148.98 TH</p>
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_6' | translate">
                     </div>
                 </div>
-                <div data-title="Block Producing Speed" class="section-infoblock-item-cell section-infoblock-item-cell-title">
-                    <div class="section-infoblock-item-cell-info">
-                        <p>40 sec. stable</p>
+                <div class="section-infoblock-item-cell section-infoblock-item-cell-title" [attr.data-title]="'PAGE.DUCATUSX.BLOCK_3.TABLE_TITLE_3' | translate">
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_7' | translate">
                     </div>
-                    <div class="section-infoblock-item-cell-info">
-                        <p>from 15 sec to 15 minutes, depends on network load</p>
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_8' | translate">
                     </div>
                 </div>
-                <div data-title="TX cost" class="section-infoblock-item-cell section-infoblock-item-cell-title">
-                    <div class="section-infoblock-item-cell-info">
-                        <p>min gas price = 8gwei</p>
-                        <p>gas limit = 21000</p>
-                        <p>8 x 21000 = 0.000168 DUCX = 0.000084$</p>
+                <div class="section-infoblock-item-cell section-infoblock-item-cell-title" [attr.data-title]="'PAGE.DUCATUSX.BLOCK_3.TABLE_TITLE_4' | translate">
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_9' | translate">
                     </div>
-                    <div class="section-infoblock-item-cell-info">
-                        <p>for ex gas price = 8 gwei (it's too low for ethereum, not recommend)</p>
-                        <p>gas limit = 21000</p>
-                        <p>8 x 21000 = 0.000168 ETH = 0,022848$</p>
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_10' | translate">
                     </div>
                 </div>
             </div>
 
             <div class="section-infoblock-items-table">
                 <div class="section-infoblock-item-cell">
-                    <div class="section-infoblock-item-cell-info">
-                        <b>DucatusX</b>
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_11' | translate">
                     </div>
-                    <div class="section-infoblock-item-cell-info">
-                        <b>Ethereum</b>
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_12' | translate">
                     </div>
                 </div>
-                <div data-title="Smart-contract support" class="section-infoblock-item-cell section-infoblock-item-cell-title">
-                    <div class="section-infoblock-item-cell-info">
-                        <p>Yes (Solidity), contracts can only be created after project analysis and administrator approval</p>
+                <div class="section-infoblock-item-cell section-infoblock-item-cell-title" [attr.data-title]="'PAGE.DUCATUSX.BLOCK_3.TABLE_TITLE_5' | translate">
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_13' | translate">
                     </div>
-                    <div class="section-infoblock-item-cell-info">
-                        <p>Yes (Solidity)</p>
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_14' | translate">
                     </div>
                 </div>
-                <div data-title="RPC, Web socket support" class="section-infoblock-item-cell section-infoblock-item-cell-title">
-                    <div class="section-infoblock-item-cell-info">
-                        <p>Yes. For the security reasons ports opened only for proven resources</p>
+                <div class="section-infoblock-item-cell section-infoblock-item-cell-title" [attr.data-title]="'PAGE.DUCATUSX.BLOCK_3.TABLE_TITLE_6' | translate">
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_15' | translate">
                     </div>
-                    <div class="section-infoblock-item-cell-info">
-                        <p>yes</p>
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_16' | translate">
                     </div>
                 </div>
-                <div data-title="Total pending transaction" class="section-infoblock-item-cell section-infoblock-item-cell-title">
-                    <div class="section-infoblock-item-cell-info">
-                        <p>0 - at the moment, all transactions included into the block. Transaction Timeout = New Block Creation Time</p>
+                <div class="section-infoblock-item-cell section-infoblock-item-cell-title" [attr.data-title]="'PAGE.DUCATUSX.BLOCK_3.TABLE_TITLE_7' | translate">
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_17' | translate">
                     </div>
-                    <div class="section-infoblock-item-cell-info">
-                        <p>34 586</p>
+                    <div class="section-infoblock-item-cell-info" [innerHTML]="'PAGE.DUCATUSX.BLOCK_3.TEXT_18' | translate">
                     </div>
                 </div>
             </div>
