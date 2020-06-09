@@ -18,18 +18,17 @@ export class HeaderComponent implements OnInit {
 
   public openMenu = false;
 
-
   constructor(translate: TranslateService) {
 
     this.translator = translate;
     this.languagesList = [
       {
-        lng: 'en',
+        lng: 'eng',
         title: 'Eng',
         active: true,
       },
       {
-        lng: 'it',
+        lng: 'ita',
         title: 'Ita',
         active: false,
       },

@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   constructor(private translateService: TranslateService) {
 
     const defaultLng = (navigator.language || navigator['browserLanguage']).split('-')[0];
-    const langToSet = window['jQuery']['cookie']('lng') || (['en', 'vie', 'it'].includes(defaultLng) ? defaultLng : 'en');
+    const langToSet = window['jQuery']['cookie']('lng') || (['deu', 'eng', 'vie', 'ita'].includes(defaultLng) ? defaultLng : 'eng');
 
     this.translateService.use(langToSet);
   }
