@@ -354,6 +354,9 @@
                 "TABLE_TITLE_6": "RPC, supporto socket WEB",
                 "TABLE_TITLE_7": "Totale transazione in sospeso"
             }
+        },
+        "VAUCHER": {
+            "TITLE": "Vaucher"
         }
     }
 }

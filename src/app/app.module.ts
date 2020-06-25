@@ -25,6 +25,7 @@ import { GoldLotteryComponent } from './pages/gold-lottery/gold-lottery.componen
 import { LegalDisclaimerComponent } from './pages/legal-disclaimer/legal-disclaimer.component';
 import { ErrorPageComponent } from './pages/errorpage/errorpage.component';
 import { DucatusxComponent } from './pages/ducatusx/ducatusx/ducatusx.component';
+import { VaucherComponent } from './pages/vaucher/vaucher.component';
 
 // partials
 import { HeaderComponent } from './pages/index/header/header.component';
@@ -46,6 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     GoldLotteryComponent,
     ErrorPageComponent,
     DucatusxComponent,
+    VaucherComponent,
 
     HeaderComponent,
     FooterComponent

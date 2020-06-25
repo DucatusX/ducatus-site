@@ -11,6 +11,7 @@ import { LegalDisclaimerComponent } from './pages/legal-disclaimer/legal-disclai
 import { GoldLotteryComponent } from './pages/gold-lottery/gold-lottery.component';
 import { ErrorPageComponent } from './pages/errorpage/errorpage.component';
 import { DucatusxComponent } from './pages/ducatusx/ducatusx/ducatusx.component';
+import { VaucherComponent } from './pages/vaucher/vaucher.component';
 
 const routes: Routes = [
   {
@@ -46,8 +47,8 @@ const routes: Routes = [
     component: DucatusxComponent,
   },
   {
-    path: 'gold-lottery',
-    component: GoldLotteryComponent,
+    path: 'vaucher',
+    component: VaucherComponent,
   },
   {
     path: '404',

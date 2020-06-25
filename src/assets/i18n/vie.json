@@ -356,6 +356,9 @@
                 "TABLE_TITLE_6": "Hỗ trợ RPC, WEB",
                 "TABLE_TITLE_7": "Tổng số giao dịch đang chờ xử lý"
             }
+        },
+        "VAUCHER": {
+            "TITLE": "Vaucher"
         }
     }
 }
