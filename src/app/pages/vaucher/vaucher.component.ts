@@ -7,7 +7,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class VaucherComponent implements OnInit {
   @ViewChild('loginForm') loginForm: HTMLFormElement;
 
-  public user = false;
+  public user = true;
 
   constructor() { }
 
