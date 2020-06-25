@@ -1,0 +1,9 @@
+<section class="login" id="login">
+  <div class="login-container">
+    <form #loginForm="ngForm" (ngSubmit)="onLogin()" class="login-form">
+      <input type="email">
+      <input type="password">
+      <button type="submit" [ngClass]="{ 'disabled' : loginForm.valid }" [disabled]="loginForm.valid"></button>
+    </form>
+  </div>
+</section>

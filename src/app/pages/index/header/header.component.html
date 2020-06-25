@@ -1,10 +1,12 @@
-<div class="header">
-    <div class="container">
+<div class="header" [ngClass]="{'header-hide': !hideHeader }">
+    <div class="container" *ngIf="hideHeader">
         <div class="header-wrap">
             <div class="header-logo-block">
-                <a routerLink="/" class="header-logo"><img src="/assets/img/ducatus-logo-first.png" alt="Ducatus logo"></a>
+                <a routerLink="/" class="header-logo"><img src="/assets/img/ducatus-logo-first.png"
+                        alt="Ducatus logo"></a>
                 <div class="header-menu-toggle-block">
-                    <label for="header-menu-toggle" class="header-menu-toggle" [ngClass]="{'open-menu': openMenu }" (click)="openMenu = !openMenu">
+                    <label for="header-menu-toggle" class="header-menu-toggle" [ngClass]="{'open-menu': openMenu }"
+                        (click)="openMenu = !openMenu">
                         <span class="line-toggle"></span>
                         <span class="line-toggle"></span>
                         <span class="line-toggle"></span>
@@ -23,7 +25,8 @@
         </div>
         <div class="language-select">
             <ul class="language-select-list" [ngClass]="{'opened': openedLngList}" (click)="toggleLanguage()">
-                <li (click)="setLanguage(lng['lng'])" [ngClass]="{'active': lng['active']}" *ngFor="let lng of languagesList">
+                <li (click)="setLanguage(lng['lng'])" [ngClass]="{'active': lng['active']}"
+                    *ngFor="let lng of languagesList">
                     <span>{{lng['title']}}</span>
                 </li>
             </ul>

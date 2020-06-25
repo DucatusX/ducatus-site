@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
+import { hideFooterInRoutes } from 'src/app/params';
 
 @Component({
   selector: 'app-footer',
@@ -8,8 +10,26 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
 
   public privacyCookie = true;
+  public hideFooter = false;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) {
+
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationStart) {
+        // Show loading indicator
+      }
+
+      if (event instanceof NavigationEnd) {
+        this.hideFooter = !hideFooterInRoutes.includes(event.url);
+      }
+
+      if (event instanceof NavigationError) {
+        console.warn(event.error);
+      }
+    });
+  }
 
   public privacyCookieSet() {
     window['jQuery']['cookie']('privacyCookie', true);
@@ -17,12 +37,12 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit() {
-
     if (window['jQuery']['cookie']('privacyCookie')) {
       this.privacyCookie = false;
     }
 
     const bottomMenu = document.getElementsByClassName('footer-menu');
+    // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < bottomMenu.length; i++) {
       bottomMenu[i].addEventListener('click', function () {
         if ($(this).hasClass('footer-menu')) {
@@ -40,7 +60,7 @@ export class FooterComponent implements OnInit {
           }
         }
       });
-    };
+    }
 
   }
 

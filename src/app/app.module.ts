@@ -26,6 +26,7 @@ import { LegalDisclaimerComponent } from './pages/legal-disclaimer/legal-disclai
 import { ErrorPageComponent } from './pages/errorpage/errorpage.component';
 import { DucatusxComponent } from './pages/ducatusx/ducatusx/ducatusx.component';
 import { VaucherComponent } from './pages/vaucher/vaucher.component';
+import { LoginComponent } from './pages/login/login.component';
 
 // partials
 import { HeaderComponent } from './pages/index/header/header.component';
@@ -48,6 +49,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ErrorPageComponent,
     DucatusxComponent,
     VaucherComponent,
+    LoginComponent,
 
     HeaderComponent,
     FooterComponent

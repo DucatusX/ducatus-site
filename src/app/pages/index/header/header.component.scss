@@ -12,6 +12,10 @@
     z-index: 999;
     transition: 0.2s ease;
 
+    &-hide {
+        display: none !important;
+    }
+
     .container {
         @include b(1366) {
             padding: 0px;
