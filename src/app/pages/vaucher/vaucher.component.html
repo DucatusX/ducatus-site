@@ -7,8 +7,54 @@
         </div>
     </section>
 
-    <section class="app vaucher">
+    <section class="app voucher">
         <div class="container">
+
+            <div class="content-block">
+                <span class="page-text-title">Voucher</span>
+                <div class="page-btn-block">
+                    <span class="page-btn page-btn-brown">New Voucher</span>
+                    <span class="page-btn page-btn-gold">Importing CSV</span>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <div class="page-table-wrap">
+                    <table class="page-table">
+                        <thead class="page-table-head">
+                            <th style="min-width: 90px; width: 90px;" class="text-center">№</th>
+                            <th style="min-width: 130px; width: 130px;">Voucher <br> Add Date</th>
+                            <th style="min-width: 115px; width: 115px;">Voucher <br> Add Time</th>
+                            <th style="min-width: 120px;">Voucher Code</th>
+                            <th style="min-width: 100px;">Activation <br> Code</th>
+                            <th style="min-width: 60px;">Amount <br> (DUC)</th>
+                            <th style="min-width: 80px; width: 80px;" class="text-center">Active</th>
+                            <th style="min-width: 120px; width: 120px;" class="text-center">Used/<br>unused</th>
+                        </thead>
+                        <tbody class="page-table-body">
+                            <tr *ngFor="let item of vouchers">
+                                <td class="text-center">{{ item.id }}</td>
+                                <td class="page-table-text-accent">{{ item.add_date }}</td>
+                                <td>{{ item.add_time }}</td>
+                                <td>{{ item.code }}</td>
+                                <td>{{ item.activation_code }}</td>
+                                <td>{{ item.amount }}</td>
+                                <td class="text-center">
+                                    <label class="page-table-switch">
+                                        <input type="checkbox" [checked]="item.active">
+                                        <span class="page-table-switch-slider"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <span class="page-table-active"
+                                        [ngClass]="{ 'page-table-active-yes': item.status }"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <!-- vaucher app content -->
         </div>
     </section>
