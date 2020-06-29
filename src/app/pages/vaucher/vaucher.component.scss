@@ -50,48 +50,29 @@ section.voucher {
     }
 
     &-btn {
-      border-radius: 5px;
-      min-width: 200px;
-      min-height: 50px;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: 600;
-      letter-spacing: 1px;
-      border: none;
-      transition: 0.4s ease;
-
-      &:hover {
-        transform: scale(0.97);
-        transition: 0.4s ease;
-        cursor: pointer;
-      }
-
       &-block {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, max-content);
         grid-gap: 20px;
         align-items: center;
 
         @include b(450) {
           grid-template-columns: 1fr;
         }
-      }
 
-      &-brown {
-        background-color: $brown-red;
-
-        &:hover {
-          box-shadow: 0px 0px 15px -4px $brown-red;
+        span {
+          cursor: pointer;
         }
-      }
 
-      &-gold {
-        background-color: $gold;
+        .icon__loading {
+          min-width: 40px;
+          width: 55px;
+          opacity: 0.9;
 
-        &:hover {
-          box-shadow: 0px 0px 15px -4px $gold;
+          @include b(450) {
+            min-width: 200px;
+            width: 100%;
+          }
         }
       }
     }
@@ -193,7 +174,7 @@ section.voucher {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.233);
-    z-index: 9999;
+    z-index: 999;
   }
 
   &-container {
@@ -251,6 +232,58 @@ section.voucher {
     display: flex;
     flex-direction: column;
 
+    input {
+      padding-right: 0;
+    }
+
+    &-text {
+      &-label  {
+        background-color: #FBF9F6;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #414b537c;
+        font-size: 16px;
+        width: 60px;
+        transition: 0.4s ease;
+        border-radius: 0 5px 5px 0;
+      }
+    }
+
+    &-input {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+
+      .icon {
+        height: 100%;
+        background-color: #FBF9F6;
+        border-radius: 0 5px 5px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+
+        &:before {
+          transition: 0.4s ease;
+          opacity: 0.3;
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          &:before {
+            transition: 0.4s ease;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
     input,
     label {
       width: 100%;
@@ -265,7 +298,15 @@ section.voucher {
     }
 
     input {
-      margin-bottom: 30px;
+      border-radius: 5px 0 0 5px;
+      transition: 0.4s ease;
+
+      &:focus {
+        ~.popup-form-text-label {
+          transition: 0.4s ease;
+          color: black;
+        }
+      }
     }
 
     .ducatus {
@@ -274,7 +315,6 @@ section.voucher {
       }
 
       &-btn {
-        margin-top: 30px;
         max-width: 200px;
       }
     }
@@ -283,6 +323,11 @@ section.voucher {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 20px;
+      margin-bottom: 30px;
+
+      .popup-form-input {
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -346,11 +391,9 @@ section.voucher {
       }
     }
 
-    // &[class*="ducatus-inputs-"] {
-    //   font-family: 'Montserrat';
-    //   font-weight: 300;
-    //   font-size: 40px;
-    // }
+    &-file {
+      display: none;
+    }
 
     &-input {
       background-color: #FBF9F6;
@@ -378,6 +421,10 @@ section.voucher {
     letter-spacing: 1px;
     border: none;
     transition: 0.4s ease;
+
+    &:disabled {
+      opacity: 0.5;
+    }
 
     &:hover {
       transition: 0.4s ease;
@@ -410,3 +457,17 @@ section.voucher {
     }
   }
 }
+
+input.ng-touched.ng-invalid {
+  border-top: solid red 1px;
+  border-left: solid red 1px;
+  border-bottom: solid red 1px;
+
+  ~.icon,
+  ~.popup-form-text-label {
+    border-top: solid red 1px;
+    border-right: solid red 1px;
+    border-bottom: solid red 1px;
+  }
+}
+// input.ng-touched.ng-valid {border:solid green 2px;}

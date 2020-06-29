@@ -15,7 +15,7 @@ li {
         &-page {
             font-weight: bold;
             color: white;
-            font-size: 37px;
+            font-size: 37px !important;
 
             @include b(550) {
                 font-size: 25px;
@@ -27,18 +27,18 @@ li {
 .h2 {
     &__slider-title {
         color: $white;
-        font-weight: bold;
-        font-size: 40px;
-        margin: 0;
+        font-weight: bold !important;
+        font-size: 40px !important;
+        margin: 0 !important;
 
         @include b(750) {
-            font-size: 25px;
+            font-size: 25px !important;
         }
     }
 
     &__title {
-        font-size: 30px;
-        font-weight: bold;
+        font-size: 30px !important;
+        font-weight: bold !important;
         margin: 0 0 20px 0;
 
         &-section {
@@ -498,6 +498,25 @@ li {
     &__shield-ducx {
         @include before-img(block, 38px, 48px, r) {
             background-image: url('assets/img/icons/shield-ducx.svg');
+        }
+    }
+
+    &__settings {
+        @include before-img(block, 20px, 20px, r) {
+            background-image: url('assets/img/icons/settings.svg');
+        }
+    }
+
+    &__datetimepicker {
+        @include before-img(block, 20px, 20px, r) {
+            background-image: url('assets/img/icons/datetimepicker.svg');
+        }
+    }
+
+    &__loading {
+        @include before-img(block, 50px, 50px, a) {
+            background-size: 80px;
+            background-image: url('assets/img/icons/loading.svg');
         }
     }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Papa } from 'ngx-papaparse';
+
 @Component({
   selector: 'app-vaucher',
   templateUrl: './vaucher.component.html',
@@ -8,8 +11,17 @@ export class VaucherComponent implements OnInit {
   @ViewChild('loginForm') loginForm: HTMLFormElement;
 
   public user = true;
-
   public popupAdd = false;
+
+  public cvsFile: any;
+  public loadingCSV = false;
+  private jsonCSV: any;
+
+  public activationCode = null;
+  public voucherCode = null;
+  public freezeDate = null;
+  public amount = null;
+  public statusVoucher = false;
 
   public vouchers = [
     { id: 10, add_date: '22.06.2020', add_time: '12:35', code: '123456789123456789', activation_code: 'asdqwecxz', amount: 25, active: true, status: false },
@@ -25,7 +37,49 @@ export class VaucherComponent implements OnInit {
     { id: 20, add_date: '01.07.2020', add_time: '22:15', code: '536475869536475869', activation_code: 'poiuytgfv', amount: 35.1234567, active: false, status: true }
   ];
 
-  constructor() { }
+  constructor(
+    private papa: Papa
+  ) { }
 
   ngOnInit() { }
+
+  private makeCode(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+
+    let result = '';
+
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+    return result;
+  }
+
+  public generateCode(type) {
+    type === 'a' ? this.activationCode = this.makeCode(15) : this.voucherCode = this.makeCode(15);
+  }
+
+  public submit(form: NgForm) {
+    console.log(form, form.controls.amount.value);
+  }
+
+  public parseCsvFile($event: any) {
+    this.loadingCSV = true;
+    const file = $event.srcElement.files[0];
+
+    this.papa.parse(file, {
+      header: true,
+      dynamicTyping: true,
+      skipEmptyLines: 'greedy',
+      worker: true,
+      chunk: (chunk) => {
+        this.loadingCSV = false;
+        this.jsonCSV = chunk.data;
+      },
+      complete: () => {
+        console.log('Result: ', this.jsonCSV);
+      },
+    });
+  }
 }

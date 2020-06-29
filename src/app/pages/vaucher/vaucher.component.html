@@ -12,7 +12,12 @@
                 <span class="page-text-title" [innerHTML]="'PAGE.VAUCHER.TITLE' | translate">Voucher</span>
                 <div class="page-btn-block">
                     <span class="ducatus-btn ducatus-btn-brown" (click)="popupAdd=true">New Voucher</span>
-                    <span class="ducatus-btn ducatus-btn-gold">Importing CSV</span>
+                    <label for="file" class="ducatus-btn ducatus-btn-gold"
+                        [ngClass]="{ 'icon icon__loading': loadingCSV }">
+                        <span *ngIf="!loadingCSV">Importing CSV</span>
+                    </label>
+                    <input type="file" id="file" accept=".csv" (change)="parseCsvFile($event)"
+                        class="ducatus-inputs-file" [disabled]="loadingCSV">
                 </div>
             </div>
             <div class="content-block">
@@ -63,31 +68,50 @@
                 <span class="popup-close" (click)="popupAdd=false">X</span>
             </div>
             <div class="popup-body">
-                <form #voucherAddForm class="popup-form">
+                <form #voucherAddForm="ngForm" novalidate class="popup-form">
                     <label for="voucherCode">Voucher code</label>
-                    <input type="text" class="ducatus-inputs-input" id="voucherCode">
+                    <div class="popup-form-input">
+                        <input type="text" name="voucherCode" required placeholder="Write voucher code"
+                            class="ducatus-inputs-input" id="voucherCode" [(ngModel)]="voucherCode">
+                        <span class="icon icon__settings" (click)="generateCode('v')"></span>
+                    </div>
                     <label for="activationCode">Activation code</label>
-                    <input type="text" class="ducatus-inputs-input" id="activationCode">
+                    <div class="popup-form-input">
+                        <input type="text" name="activationCode" required placeholder="Write activation code"
+                            class="ducatus-inputs-input" id="activationCode" [(ngModel)]="activationCode">
+                        <span class="icon icon__settings" (click)="generateCode('a')"></span>
+                    </div>
                     <div class="popup-form-group">
                         <div class="popup-form-group-item">
                             <label for="amountVoucher">Amount</label>
-                            <input type="text" class="ducatus-inputs-input" id="amountVoucher">
+                            <div class="popup-form-input">
+                                <input type="text" placeholder="Amount" minlength="1" name="amount" [(ngModel)]="amount"
+                                    required class="ducatus-inputs-input" id="amountVoucher">
+                                <span class="popup-form-text-label">DUC</span>
+                            </div>
                         </div>
                         <div class="popup-form-group-item">
                             <label for="freezeVoucher">Freeze time</label>
-                            <input type="text" class="ducatus-inputs-input" id="freezeVoucher">
+                            <div class="popup-form-input">
+                                <input [matDatepicker]="picker" name="freezeDate" [(ngModel)]="freezeDate" required
+                                    class="ducatus-inputs-input" id="freezeVoucher">
+                                <span class="icon icon__datetimepicker" (click)="picker.open()"></span>
+                                <mat-datepicker placeholder="Choose Date" #picker></mat-datepicker>
+                            </div>
                         </div>
                     </div>
                     <div class="popup-form-group">
                         <div class="popup-form-group-item">
                             <label class="popup-label" for="statusVoucher">Status</label>
                             <label class="ducatus-inputs-switch">
-                                <input type="checkbox" id="statusVoucher" [checked]="true">
+                                <input type="checkbox" name="statusVoucher" id="statusVoucher"
+                                    [(ngModel)]="statusVoucher" [checked]="false">
                                 <span class="ducatus-inputs-switch-slider"></span>
                             </label>
                         </div>
                     </div>
-                    <button type="submit" class="ducatus-btn ducatus-btn-brown">ADD</button>
+                    <button type="submit" [disabled]="voucherAddForm.invalid" class="ducatus-btn ducatus-btn-brown"
+                        (click)="submit(voucherAddForm)">ADD</button>
                 </form>
             </div>
         </div>

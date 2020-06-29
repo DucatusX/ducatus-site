@@ -9,10 +9,12 @@ import { environment } from '../environments/environment';
 // plugins
 import { QRCodeModule } from 'angularx-qrcode';
 import { Ng2TelInputModule } from 'ng2-tel-input';
-import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 // pages
 import { AppComponent } from './app.component';
@@ -72,6 +74,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
