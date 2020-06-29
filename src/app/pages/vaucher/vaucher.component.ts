@@ -9,6 +9,8 @@ export class VaucherComponent implements OnInit {
 
   public user = true;
 
+  public popupAdd = false;
+
   public vouchers = [
     { id: 10, add_date: '22.06.2020', add_time: '12:35', code: '123456789123456789', activation_code: 'asdqwecxz', amount: 25, active: true, status: false },
     { id: 11, add_date: '23.06.2020', add_time: '13:46', code: '987654321987654321', activation_code: 'dasdasdas', amount: 36.9, active: false, status: true },

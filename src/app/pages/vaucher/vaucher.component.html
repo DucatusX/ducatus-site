@@ -3,21 +3,18 @@
 <ng-container *ngIf="user">
     <section class="section-header-page" style="background-image: url(/assets/img/sections/vaucher-bg.png);">
         <div class="container">
-            <h1 class="h1__title-page" [innerHTML]="'PAGE.VAUCHER.TITLE' | translate"></h1>
+            <!-- <h1 class="h1__title-page" [innerHTML]="'PAGE.VAUCHER.TITLE' | translate"></h1> -->
         </div>
     </section>
-
     <section class="app voucher">
         <div class="container">
-
             <div class="content-block">
-                <span class="page-text-title">Voucher</span>
+                <span class="page-text-title" [innerHTML]="'PAGE.VAUCHER.TITLE' | translate">Voucher</span>
                 <div class="page-btn-block">
-                    <span class="page-btn page-btn-brown">New Voucher</span>
-                    <span class="page-btn page-btn-gold">Importing CSV</span>
+                    <span class="ducatus-btn ducatus-btn-brown" (click)="popupAdd=true">New Voucher</span>
+                    <span class="ducatus-btn ducatus-btn-gold">Importing CSV</span>
                 </div>
             </div>
-
             <div class="content-block">
                 <div class="page-table-wrap">
                     <table class="page-table">
@@ -40,9 +37,9 @@
                                 <td>{{ item.activation_code }}</td>
                                 <td>{{ item.amount }}</td>
                                 <td class="text-center">
-                                    <label class="page-table-switch">
+                                    <label class="ducatus-inputs-switch">
                                         <input type="checkbox" [checked]="item.active">
-                                        <span class="page-table-switch-slider"></span>
+                                        <span class="ducatus-inputs-switch-slider"></span>
                                     </label>
                                 </td>
                                 <td>
@@ -54,8 +51,45 @@
                     </table>
                 </div>
             </div>
-
-            <!-- vaucher app content -->
         </div>
     </section>
+</ng-container>
+
+<ng-container *ngIf="popupAdd">
+    <div class="popup-voucher">
+        <div class="popup-container">
+            <div class="popup-header">
+                <span class="popup-header-text">New Voucher</span>
+                <span class="popup-close" (click)="popupAdd=false">X</span>
+            </div>
+            <div class="popup-body">
+                <form #voucherAddForm class="popup-form">
+                    <label for="voucherCode">Voucher code</label>
+                    <input type="text" class="ducatus-inputs-input" id="voucherCode">
+                    <label for="activationCode">Activation code</label>
+                    <input type="text" class="ducatus-inputs-input" id="activationCode">
+                    <div class="popup-form-group">
+                        <div class="popup-form-group-item">
+                            <label for="amountVoucher">Amount</label>
+                            <input type="text" class="ducatus-inputs-input" id="amountVoucher">
+                        </div>
+                        <div class="popup-form-group-item">
+                            <label for="freezeVoucher">Freeze time</label>
+                            <input type="text" class="ducatus-inputs-input" id="freezeVoucher">
+                        </div>
+                    </div>
+                    <div class="popup-form-group">
+                        <div class="popup-form-group-item">
+                            <label class="popup-label" for="statusVoucher">Status</label>
+                            <label class="ducatus-inputs-switch">
+                                <input type="checkbox" id="statusVoucher" [checked]="true">
+                                <span class="ducatus-inputs-switch-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="ducatus-btn ducatus-btn-brown">ADD</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </ng-container>
