@@ -26,6 +26,7 @@
     "@ngx-translate/http-loader": "^4.0.0",
     "an-qrcode": "^1.0.3",
     "angularx-qrcode": "^2.1.0",
+    "bignumber.js": "^9.0.0",
     "intl-tel-input": "^16.1.0",
     "jquery": "^3.5.0",
     "jquery.cookie": "^1.4.1",

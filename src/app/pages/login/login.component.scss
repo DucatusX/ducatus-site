@@ -19,6 +19,25 @@ section.login {
     width: 100%;
     height: 100%;
 
+    &-text {
+      font-weight: 400;
+      color: black;
+      opacity: 0.5;
+      letter-spacing: 1px;
+
+      &-title {
+        opacity: 1;
+        font-weight: 500;
+        margin-bottom: 40px !important;
+      }
+
+      &-spacer {
+        display: block;
+        text-align: center;
+        margin: 15px auto;
+      }
+    }
+
     &-logo  {
       display: block;
       margin: 0 auto;
@@ -86,38 +105,10 @@ section.login {
         color: #404040;
         font-weight: 300;
         margin-bottom: -7px;
-
-        &-error {
-          position: relative;
-          width: max-content;
-
-          // &:before {
-          //   content: attr(data-error);
-          //   position: absolute;
-          //   font-size: 10px;
-          //   color: $brown-red;
-          //   right: -120px;
-          //   width: 100px;
-          // }
-
-          &:after {
-            content: '';
-            position: absolute;
-            background-color: $brown-red;
-            width: 5px;
-            height: 5px;
-            border-radius: 5em;
-            top: 0px;
-            right: -10px;
-          }
-        }
       }
 
-      .text {
-        &-error {
-          display: none;
-          color: red;
-        }
+      input.ng-touched.ng-invalid {
+        border: solid $brown-red 1px;
       }
 
       .input {
@@ -135,37 +126,21 @@ section.login {
         font-weight: 400;
         font-family: 'Montserrat';
         letter-spacing: 1px;
-
-        &-error {
-          border-color: $brown-red;
-
-          .error-text {
-            display: block;
-          }
-        }
       }
 
-      button {
-        background: $brown-red;
+      .ducatus-btn {
         border-radius: 33px;
         text-transform: uppercase;
         font-size: 14px;
         font-weight: 500;
-        height: 60px;
-        width: 200px;
+        max-width: 200px;
         margin: 0 auto;
-        outline: none;
-        box-shadow: none;
-        border: none;
-        color: white;
         letter-spacing: 1px;
-        cursor: pointer;
-        transition: 0.4s ease;
+      }
 
-        &:hover {
-          transition: 0.4s ease;
-          box-shadow: 0px 0px 15px -5px $brown-red;
-        }
+      .icon__loading {
+        min-width: 50px;
+        transition: 0.4s ease;
       }
     }
   }

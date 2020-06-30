@@ -1,4 +1,2 @@
-// export const hideHeaderInRoutes = ['/vaucher'];
-export const hideHeaderInRoutes = [];
-// export const hideFooterInRoutes = ['/vaucher'];
-export const hideFooterInRoutes = [];
+export const hideHeaderInRoutes = ['/voucher/login'];
+export const hideFooterInRoutes = ['/voucher/login'];

@@ -38,7 +38,7 @@ export class HeaderComponent implements OnInit {
       }
 
       if (event instanceof NavigationError) {
-        console.warn(event.error);
+        // console.warn(event.error);
       }
     });
 

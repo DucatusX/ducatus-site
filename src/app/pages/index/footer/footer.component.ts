@@ -26,7 +26,7 @@ export class FooterComponent implements OnInit {
       }
 
       if (event instanceof NavigationError) {
-        console.warn(event.error);
+        // console.warn(event.error);
       }
     });
   }

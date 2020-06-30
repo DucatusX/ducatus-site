@@ -1,4 +1,4 @@
-import { BrowserModule, makeStateKey, StateKey, TransferState } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,7 +14,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HttpClientXsrfModule } from '@angular/common/http';
+
+// resolvers
+import { UserResolver } from './resolvers';
 
 // pages
 import { AppComponent } from './app.component';
@@ -76,9 +79,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     BrowserAnimationsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HttpClientXsrfModule.withOptions({
+      cookieName: 'csrftoken',
+      headerName: 'X-CSRFToken'
+    }),
   ],
-  providers: [],
+  providers: [
+    UserResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

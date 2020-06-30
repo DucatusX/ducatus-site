@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Papa } from 'ngx-papaparse';
+import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-vaucher',
@@ -8,9 +8,6 @@ import { Papa } from 'ngx-papaparse';
   styleUrls: ['./vaucher.component.scss']
 })
 export class VaucherComponent implements OnInit {
-  @ViewChild('loginForm') loginForm: HTMLFormElement;
-
-  public user = true;
   public popupAdd = false;
 
   public cvsFile: any;
@@ -39,7 +36,8 @@ export class VaucherComponent implements OnInit {
 
   constructor(
     private papa: Papa
-  ) { }
+  ) {
+  }
 
   ngOnInit() { }
 
@@ -61,7 +59,16 @@ export class VaucherComponent implements OnInit {
   }
 
   public submit(form: NgForm) {
-    console.log(form, form.controls.amount.value);
+    console.log(form, form.value);
+  }
+
+  public close() {
+    this.popupAdd = false;
+    this.activationCode = null;
+    this.voucherCode = null;
+    this.freezeDate = null;
+    this.amount = null;
+    this.statusVoucher = false;
   }
 
   public parseCsvFile($event: any) {

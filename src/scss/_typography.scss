@@ -534,3 +534,135 @@ li {
 .info-gray {
     color: #5C5A57;
 }
+
+
+
+.ducatus {
+  &-inputs {
+    &-switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+      cursor: pointer;
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+
+        &:checked {
+          ~ .ducatus-inputs-switch-slider {
+            background-color: white;
+            border: 1px solid $brown-red;
+
+            &:before {
+              transform: translateX(16px);
+              background-color: $brown-red;
+            }
+          }
+        }
+
+        &:focus {
+          ~.ducatus-inputs-switch-slider {
+            box-shadow: 0 0 1px $brown-red;
+          }
+        }
+      }
+
+      &-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #F3F3F3;
+        border: 1px solid #CFCFCF;
+        transition: .4s;
+        border-radius: 34px;
+
+        &:before {
+          position: absolute;
+          content: '';
+          height: 18px;
+          width: 18px;
+          left: 4px;
+          bottom: 2px;
+          background-color: #B8B8B8;
+          transition: 0.4s ease;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &-file {
+      display: none;
+    }
+
+    &-input {
+      background-color: #FBF9F6;
+      border-radius: 5px;
+      font-size: 16px;
+      padding: 20px 10px;
+      outline: none;
+      border: none;
+      font-family: 'Montserrat';
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: #414B53;
+    }
+  }
+
+  &-btn {
+    border-radius: 5px;
+    min-width: 200px;
+    min-height: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: none;
+    transition: 0.4s ease;
+
+    span {
+        cursor: pointer;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+
+    &:hover {
+      transition: 0.4s ease;
+      cursor: pointer;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+
+    &-brown {
+      background-color: $brown-red;
+
+      &:hover {
+        box-shadow: 0px 0px 15px -4px $brown-red;
+      }
+    }
+
+    &-gold {
+      background-color: $gold;
+
+      &:hover {
+        box-shadow: 0px 0px 15px -4px $gold;
+      }
+    }
+  }
+}

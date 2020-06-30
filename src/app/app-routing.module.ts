@@ -12,6 +12,8 @@ import { GoldLotteryComponent } from './pages/gold-lottery/gold-lottery.componen
 import { ErrorPageComponent } from './pages/errorpage/errorpage.component';
 import { DucatusxComponent } from './pages/ducatusx/ducatusx/ducatusx.component';
 import { VaucherComponent } from './pages/vaucher/vaucher.component';
+import { LoginComponent } from './pages/login/login.component';
+import { UserResolver } from './resolvers';
 
 const routes: Routes = [
   {
@@ -47,8 +49,15 @@ const routes: Routes = [
     component: DucatusxComponent,
   },
   {
-    path: 'vaucher',
+    path: 'voucher',
     component: VaucherComponent,
+    resolve: {
+      user: UserResolver
+    }
+  },
+  {
+    path: 'voucher/login',
+    component: LoginComponent
   },
   {
     path: '404',
