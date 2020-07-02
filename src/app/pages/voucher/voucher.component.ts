@@ -4,12 +4,12 @@ import { VoucherService } from 'src/app/service/voucher/voucher.service';
 import { IVoucher } from 'src/app/interfaces';
 
 @Component({
-  selector: 'app-vaucher',
-  templateUrl: './vaucher.component.html',
-  styleUrls: ['./vaucher.component.scss']
+  selector: 'app-voucher',
+  templateUrl: './voucher.component.html',
+  styleUrls: ['./voucher.component.scss']
 })
 
-export class VaucherComponent implements OnInit {
+export class VoucherComponent implements OnInit {
   public updateVouchersTable = false;
   public sortById = true;
   public sortByAddDate = false;
