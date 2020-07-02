@@ -109,11 +109,13 @@
                         (click)="acceptPopupProgress()">ok</span>
                 </div>
                 <form #voucherAddForm="ngForm" novalidate class="popup-form">
-                    <label for="voucher_code">Voucher code</label>
-                    <div class="popup-form-input">
-                        <input type="text" name="voucher_code" required placeholder="Enter voucher code"
-                            class="ducatus-inputs-input" id="voucher_code" [(ngModel)]="voucherCode">
-                        <span class="icon icon__settings" (click)="generateCode('v')"></span>
+                    <div>
+                        <label for="voucher_code">Voucher code</label>
+                        <div class="popup-form-input">
+                            <input type="text" name="voucher_code" required placeholder="Enter voucher code"
+                                class="ducatus-inputs-input" id="voucher_code" [(ngModel)]="voucherCode">
+                            <span class="icon icon__settings" (click)="generateCode('v')"></span>
+                        </div>
                     </div>
                     <div class="ducatus-inputs-disabled">
                         <label for="activation_code">Activation code</label>
