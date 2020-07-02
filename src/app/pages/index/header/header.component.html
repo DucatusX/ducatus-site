@@ -1,9 +1,10 @@
-<div class="header" [ngClass]="{'header-hide': !hideHeader }">
+<div class="header" [ngClass]="{'header-hide': !hideHeader, 'header-admin': !adminHeader }">
     <div class="container" *ngIf="hideHeader">
         <div class="header-wrap">
             <div class="header-logo-block">
-                <a routerLink="/" class="header-logo"><img src="/assets/img/ducatus-logo-first.png"
+                <a *ngIf="adminHeader" routerLink="/" class="header-logo"><img src="/assets/img/ducatus-logo-first.png"
                         alt="Ducatus logo"></a>
+                <a *ngIf="!adminHeader" class="header-logo"></a>
                 <div class="header-menu-toggle-block">
                     <label for="header-menu-toggle" class="header-menu-toggle" [ngClass]="{'open-menu': openMenu }"
                         (click)="openMenu = !openMenu">
@@ -14,7 +15,7 @@
                     <input type="checkbox" id="header-menu-toggle" class="header-menu-toggle-ch" role="button">
                 </div>
             </div>
-            <div class="header-menu-block" [ngClass]="{'menu-open': openMenu === true }">
+            <div *ngIf="adminHeader" class="header-menu-block" [ngClass]="{'menu-open': openMenu === true }">
                 <a routerLink="/" class="header-menu-link">{{ 'HEADER.MENU.HOME' | translate }}</a>
                 <a routerLink="/about" class="header-menu-link">{{ 'HEADER.MENU.ABOUT' | translate }}</a>
                 <a routerLink="/buy" class="header-menu-link">{{ 'HEADER.MENU.BUY' | translate }}</a>
@@ -22,8 +23,15 @@
                 <!-- <a routerLink="/gold-lottery" class="header-menu-link">{{ 'HEADER.MENU.LOTTERY' | translate }}</a> -->
                 <a routerLink="/contact" class="header-menu-link">{{ 'HEADER.MENU.CONTACT' | translate }}</a>
             </div>
+            <div *ngIf="!adminHeader" class="header-menu-block"
+                [ngClass]="{'menu-open': openMenu === true, 'header-menu-block-admin': !adminHeader }">
+                <a class="header-menu-link">Balance</a>
+                <a class="header-menu-link">Convertor</a>
+                <a routerLink="/admin/voucher" class="header-menu-link">Voucher</a>
+                <a (click)="logout()" class="header-menu-link">Logout</a>
+            </div>
         </div>
-        <div class="language-select">
+        <div class="language-select" [ngClass]="{'language-select-admin': !adminHeader }">
             <ul class="language-select-list" [ngClass]="{'opened': openedLngList}" (click)="toggleLanguage()">
                 <li (click)="setLanguage(lng['lng'])" [ngClass]="{'active': lng['active']}"
                     *ngFor="let lng of languagesList">
