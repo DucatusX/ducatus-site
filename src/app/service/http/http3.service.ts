@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-export const SERVER_REST_URL = 'api/v2/';
+export const SERVER_REST_URL = 'api/v3/';
 
 @Injectable({
   providedIn: 'root'
 })
-export class Http2Service {
+export class Http3Service {
 
   constructor(private http: HttpClient) { }
 

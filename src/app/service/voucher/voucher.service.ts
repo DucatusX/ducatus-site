@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpService } from '../http/http.service';
+import { Http3Service } from '../http/http3.service';
 
 @Injectable({ providedIn: 'root' })
 
 export class VoucherService {
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: Http3Service) { }
 
   public getVouchers() {
     return this.httpService.get(`vouchers/`).toPromise();
