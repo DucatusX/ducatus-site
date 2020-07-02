@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpService } from '../http/http.service';
+import { Http3Service } from '../http/http3.service';
 import { Observable } from 'rxjs';
 import { URLS } from './user.service.api';
 import {
@@ -16,7 +16,7 @@ export class UserService {
   private userModel: UserInterface;
   private updateProgress: boolean;
 
-  constructor(private httpService: HttpService) {
+  constructor(private httpService: Http3Service) {
     this.userObserves = [];
   }
 

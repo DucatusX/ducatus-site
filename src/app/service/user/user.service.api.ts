@@ -1,7 +1,7 @@
 export const URLS = {
   HOSTS: {
-    PATH: '/api/v1/',
-    AUTH_PATH: '/api/v1/rest-auth/',
+    PATH: '/api/v3/',
+    AUTH_PATH: '/api/v3/rest-auth/',
   },
   REGISTRATION: 'registration/',
   PROFILE: 'user/',
