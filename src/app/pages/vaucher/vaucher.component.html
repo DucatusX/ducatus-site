@@ -29,24 +29,55 @@
                         <th style="min-width: 60px;">Amount <br> (DUC)</th>
                         <th style="min-width: 80px; width: 80px;" class="text-center">Active</th>
                         <th style="min-width: 120px; width: 120px;" class="text-center">Used/<br>unused</th>
+                        <th style="min-width: 130px; width: 130px;">Activated <br> Date</th>
                     </thead>
                     <tbody class="page-table-body">
-                        <tr *ngFor="let item of vouchers">
+                        <tr *ngFor="let item of vouchers"
+                            [ngClass]="{ 'table-line-blocked': item.isProgress || false }">
                             <td class="text-center">{{ item.id }}</td>
-                            <td class="page-table-text-accent">{{ item.add_date }}</td>
-                            <td>{{ item.add_time }}</td>
-                            <td>{{ item.code }}</td>
-                            <td>{{ item.activation_code }}</td>
-                            <td>{{ item.amount }}</td>
+                            <td class="page-table-text-accent">{{ item.publish_date | date:'dd.LL.y' }}</td>
+                            <td>{{ item.publish_date | date:'hh:mm' }}</td>
+                            <td class="voucher-voucher-code">
+                                <span class="page-table-w" title="{{ item.voucher_code }}">
+                                    <span *ngIf="item.voucher_code.length > 14" class="voucher-show-info"
+                                        (click)="openInfoModal('Voucher code', item.voucher_code)">(?)</span>
+                                    {{ item.voucher_code }}
+                                </span>
+                            </td>
+                            <td class="voucher-activation-code">
+                                <span class="page-table-w" title="{{ item.activation_code }}">
+                                    <span class="voucher-show-info"
+                                        (click)="openInfoModal('Activation code', item.activation_code)">(?)</span>
+                                    {{ item.activation_code }}
+                                </span>
+                            </td>
+                            <td class="voucher-ducatus-amount">
+                                <span class="page-table-w" title="{{ item.duc_amount }}">
+                                    <span *ngIf="item.duc_amount.toString().length > 8" class="voucher-show-info"
+                                        (click)="openInfoModal('Ducatus amount', item.duc_amount + ' DUC')">(?)</span>
+                                    {{ item.duc_amount }}
+                                </span>
+                            </td>
                             <td class="text-center">
                                 <label class="ducatus-inputs-switch">
-                                    <input type="checkbox" [checked]="item.active">
+                                    <input type="checkbox" [checked]="item.is_active"
+                                        (change)="changeActive(item.id, item.is_active)">
                                     <span class="ducatus-inputs-switch-slider"></span>
                                 </label>
                             </td>
                             <td>
                                 <span class="page-table-active"
-                                    [ngClass]="{ 'page-table-active-yes': item.status }"></span>
+                                    [ngClass]="{ 'page-table-active-yes': item.is_used }"></span>
+                            </td>
+                            <td [ngClass]="{ 'page-table-text-accent': item.activation_date ? true  : false  }">
+                                {{ item.activation_date | date:'dd.LL.y' || '-' }}
+                            </td>
+                            <td class="page-table-blocked" *ngIf="item.isProgress || false">
+                                <span
+                                    class="page-table-blocked-text">{{ item.progressText || 'in progress, please wait...' }}</span>
+                                <span *ngIf="item.isProgressBtn || false"
+                                    class="ducatus-btn ducatus-btn-brown page-table-blocked-btn"
+                                    (click)="acceptTableProgress(item.id)">ok</span>
                             </td>
                         </tr>
                     </tbody>
@@ -64,51 +95,72 @@
                 <span class="popup-close" (click)="close()">X</span>
             </div>
             <div class="popup-body">
+                <div class="popup-blocked" *ngIf="pupopInProgress">
+                    <span class="popup-blocked-text" [innerHTML]="this.popupInProgressText"></span>
+                    <span *ngIf="popupInProgressBtn" class="ducatus-btn ducatus-btn-brown"
+                        (click)="acceptPopupProgress()">ok</span>
+                </div>
                 <form #voucherAddForm="ngForm" novalidate class="popup-form">
-                    <label for="voucherCode">Voucher code</label>
+                    <label for="voucher_code">Voucher code</label>
                     <div class="popup-form-input">
-                        <input type="text" name="voucherCode" required placeholder="Write voucher code"
-                            class="ducatus-inputs-input" id="voucherCode" [(ngModel)]="voucherCode">
+                        <input type="text" name="voucher_code" required placeholder="Write voucher code"
+                            class="ducatus-inputs-input" id="voucher_code" [(ngModel)]="voucherCode">
                         <span class="icon icon__settings" (click)="generateCode('v')"></span>
                     </div>
-                    <label for="activationCode">Activation code</label>
+                    <label for="activation_code">Activation code</label>
                     <div class="popup-form-input">
-                        <input type="text" name="activationCode" required placeholder="Write activation code"
-                            class="ducatus-inputs-input" id="activationCode" [(ngModel)]="activationCode">
+                        <input type="text" name="activation_code" required placeholder="Write activation code"
+                            class="ducatus-inputs-input" id="activation_code" [(ngModel)]="activationCode">
                         <span class="icon icon__settings" (click)="generateCode('a')"></span>
                     </div>
                     <div class="popup-form-group">
                         <div class="popup-form-group-item">
-                            <label for="amountVoucher">Amount</label>
+                            <label for="duc_amount">Amount</label>
                             <div class="popup-form-input">
-                                <input type="text" placeholder="Amount" minlength="1" name="amount" [(ngModel)]="amount"
-                                    required class="ducatus-inputs-input" id="amountVoucher">
+                                <input type="text" placeholder="Amount" minlength="1" name="duc_amount"
+                                    [(ngModel)]="ducAmount" required class="ducatus-inputs-input" id="duc_amount"
+                                    oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');">
                                 <span class="popup-form-text-label">DUC</span>
                             </div>
                         </div>
-                        <div class="popup-form-group-item">
+                        <div class="popup-form-group-item ducatus-inputs-disabled">
                             <label for="freezeVoucher">Freeze time</label>
                             <div class="popup-form-input">
-                                <input [matDatepicker]="picker" name="freezeDate" [(ngModel)]="freezeDate" required
-                                    class="ducatus-inputs-input" id="freezeVoucher">
-                                <span class="icon icon__datetimepicker" (click)="picker.open()"></span>
+                                <input [matDatepicker]="picker" disabled class="ducatus-inputs-input"
+                                    id="freezeVoucher">
+                                <span class="icon icon__datetimepicker"></span>
+                                <!-- <span class="icon icon__datetimepicker" (click)="picker.open()"></span> -->
                                 <mat-datepicker placeholder="Choose Date" #picker></mat-datepicker>
                             </div>
                         </div>
                     </div>
                     <div class="popup-form-group">
                         <div class="popup-form-group-item">
-                            <label class="popup-label" for="statusVoucher">Status</label>
+                            <label class="popup-label" for="is_active">Status</label>
                             <label class="ducatus-inputs-switch">
-                                <input type="checkbox" name="statusVoucher" id="statusVoucher"
-                                    [(ngModel)]="statusVoucher" [checked]="false">
+                                <input type="checkbox" name="is_active" id="is_active" [(ngModel)]="isActive"
+                                    [checked]="false">
                                 <span class="ducatus-inputs-switch-slider"></span>
                             </label>
                         </div>
                     </div>
                     <button type="submit" [disabled]="voucherAddForm.invalid" class="ducatus-btn ducatus-btn-brown"
-                        (click)="submit(voucherAddForm)">ADD</button>
+                        (click)="addVoucher()">ADD</button>
                 </form>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="popupModal">
+    <div class="popup-voucher">
+        <div class="popup-container popup-container-modal">
+            <div class="popup-header">
+                <span class="popup-header-text">{{ infoModalTitle }}</span>
+                <span class="popup-close" (click)="closeInfoModal()">X</span>
+            </div>
+            <div class="popup-body">
+                <span class="popup-body-text" title="{{ infoModalText }}">{{ infoModalText }}</span>
             </div>
         </div>
     </div>

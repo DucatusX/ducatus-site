@@ -535,8 +535,6 @@ li {
     color: #5C5A57;
 }
 
-
-
 .ducatus {
   &-inputs {
     &-switch {
@@ -611,6 +609,21 @@ li {
       font-weight: 300;
       letter-spacing: 1px;
       color: #414B53;
+    }
+
+    &-disabled {
+      label {
+        color: #5C5A57 !important;
+        opacity: 0.5 !important;
+        cursor: not-allowed !important;
+      }
+
+      input,
+      .icon {
+        background-color: #5C5A57 !important;
+        opacity: 0.5 !important;
+        cursor: not-allowed !important;
+      }
     }
   }
 

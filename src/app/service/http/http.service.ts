@@ -37,6 +37,11 @@ export class HttpService {
       .post<any>((path || SERVER_REST_URL) + (url || ''), data);
   }
 
+  public put(url: string, data?: {}, path?: string): Observable<any> {
+    return this.http
+      .put<any>((path || SERVER_REST_URL) + (url || ''), data);
+  }
+
   public customDelete(url: string, options?: {}): Observable<any> {
     return this.http
       .request<any>('delete', SERVER_REST_URL + (url || ''), options);
