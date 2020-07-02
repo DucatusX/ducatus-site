@@ -49,14 +49,21 @@ const routes: Routes = [
     component: DucatusxComponent,
   },
   {
-    path: 'voucher',
+    path: 'admin',
+    resolve: {
+      user: UserResolver
+    },
+    redirectTo: 'admin/login',
+  },
+  {
+    path: 'admin/voucher',
     component: VoucherComponent,
     resolve: {
       user: UserResolver
     }
   },
   {
-    path: 'voucher/login',
+    path: 'admin/login',
     component: LoginComponent
   },
   {

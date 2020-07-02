@@ -18,7 +18,7 @@ export class UserResolver implements Resolve<any> {
   resolve() {
     return new Observable((observer) => {
       const subscription = this.userService.getCurrentUser(true, true).subscribe((user) => {
-        !user.is_ghost ? this.continue(observer) : this.router.navigate(['/voucher/login']);
+        !user.is_ghost ? this.continue(observer) : this.router.navigate(['/admin/login']);
         subscription.unsubscribe();
       });
       return {

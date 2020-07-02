@@ -2,6 +2,8 @@ import { Papa } from 'ngx-papaparse';
 import { Component, OnInit } from '@angular/core';
 import { VoucherService } from 'src/app/service/voucher/voucher.service';
 import { IVoucher } from 'src/app/interfaces';
+import { UserService } from 'src/app/service/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-voucher',
@@ -37,7 +39,9 @@ export class VoucherComponent implements OnInit {
 
   constructor(
     private papa: Papa,
-    private voucherService: VoucherService
+    private voucherService: VoucherService,
+    private userService: UserService,
+    private router: Router
   ) {
   }
 
@@ -237,6 +241,12 @@ export class VoucherComponent implements OnInit {
     }).catch(err => {
       console.log('add vouchers error: ', err);
       this.loadingCSV = false;
+    });
+  }
+
+  public logout() {
+    this.userService.logout().then(() => {
+      this.router.navigate(['/admin/login']);
     });
   }
 }

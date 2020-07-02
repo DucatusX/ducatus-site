@@ -20,7 +20,7 @@
   </div>
   <div class="login-container" *ngIf="hasUser">
     <span class="login-text login-text-title login-text-spacer">Hello, you are logged in</span>
-    <span class="ducatus-btn ducatus-btn-gold" routerLink="/voucher">Vouchers?</span>
+    <span class="ducatus-btn ducatus-btn-gold" routerLink="/admin/voucher">Vouchers</span>
     <span class="login-text login-text-spacer">or</span>
     <span class="ducatus-btn ducatus-btn-brown" (click)="logout()"
       [ngClass]="{ 'icon icon__loading' : logoutIsProgress }">

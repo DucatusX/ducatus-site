@@ -1,2 +1,2 @@
-export const hideHeaderInRoutes = ['/voucher/login'];
-export const hideFooterInRoutes = ['/voucher/login'];
+export const hideHeaderInRoutes = ['/admin/login', '/admin'];
+export const hideFooterInRoutes = ['/admin/login', '/admin'];

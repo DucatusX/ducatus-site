@@ -28,10 +28,16 @@ export class LoginComponent implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router
-  ) { }
+  ) {
+    this.userService.getCurrentUser(true, false).subscribe((user: UserInterface) => {
+      this.hasUser = !user.is_ghost || false;
+    });
+  }
 
   ngOnInit() {
-    this.userService.getCurrentUser(true, false).subscribe((user: UserInterface) => { this.hasUser = !user.is_ghost || false; });
+    if (!this.hasUser) {
+      this.router.navigate(['/admin/voucher']);
+    }
   }
 
   public sendLoginForm(form: NgForm) {
@@ -47,7 +53,7 @@ export class LoginComponent implements OnInit {
       .authenticate(form.value)
       .then(
         (response) => {
-          if (response.key) { this.router.navigate(['/voucher']); }
+          if (response.key) { this.router.navigate(['/admin/voucher']); }
         },
         (error) => {
           switch (error.status) {
