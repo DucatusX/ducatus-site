@@ -15,14 +15,22 @@
                 </label>
                 <input type="file" id="file" accept=".csv" (change)="parseCsvFile($event)" class="ducatus-inputs-file"
                     [disabled]="loadingCSV">
+                <span class="ducatus-btn ducatus-btn-brown table-refresh" (click)="updateVouchers()"
+                    [ngClass]="{ 'icon icon__refresh': !updateVouchersTable, 'icon icon__loading': updateVouchersTable }"></span>
             </div>
+
         </div>
         <div class="content-block">
             <div class="page-table-wrap">
                 <table class="page-table">
                     <thead class="page-table-head">
-                        <th style="min-width: 90px; width: 90px;" class="text-center">№</th>
-                        <th style="min-width: 130px; width: 130px;" class="table-sort icon icon__sort-down">Voucher
+                        <th style="min-width: 90px; width: 90px;" class="text-center table-sort icon"
+                            [ngClass]="{'icon__sort-down': sortById, 'icon__sort-up': !sortById}"
+                            (click)="sortVouchers('id')">№
+                        </th>
+                        <th style="min-width: 130px; width: 130px;" class="table-sort icon"
+                            [ngClass]="{'icon__sort-down': sortByAddDate, 'icon__sort-up': !sortByAddDate}"
+                            (click)="sortVouchers('add-date')">Voucher
                             <br> Add Date</th>
                         <th style="min-width: 115px; width: 115px;">Voucher <br> Add Time</th>
                         <th style="min-width: 120px;">Voucher Code</th>
@@ -104,15 +112,18 @@
                 <form #voucherAddForm="ngForm" novalidate class="popup-form">
                     <label for="voucher_code">Voucher code</label>
                     <div class="popup-form-input">
-                        <input type="text" name="voucher_code" required placeholder="Write voucher code"
+                        <input type="text" name="voucher_code" required placeholder="Enter voucher code"
                             class="ducatus-inputs-input" id="voucher_code" [(ngModel)]="voucherCode">
                         <span class="icon icon__settings" (click)="generateCode('v')"></span>
                     </div>
-                    <label for="activation_code">Activation code</label>
-                    <div class="popup-form-input">
-                        <input type="text" name="activation_code" required placeholder="Write activation code"
-                            class="ducatus-inputs-input" id="activation_code" [(ngModel)]="activationCode">
-                        <span class="icon icon__settings" (click)="generateCode('a')"></span>
+                    <div class="ducatus-inputs-disabled">
+                        <label for="activation_code">Activation code</label>
+                        <div class="popup-form-input">
+                            <input type="text" name="activation_code" disabled placeholder="Enter activation code"
+                                class="ducatus-inputs-input" id="activation_code" [(ngModel)]="activationCode">
+                            <!-- <span class="icon icon__settings" (click)="generateCode('a')"></span> -->
+                            <span class="icon icon__settings"></span>
+                        </div>
                     </div>
                     <div class="popup-form-group">
                         <div class="popup-form-group-item">

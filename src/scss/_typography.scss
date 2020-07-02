@@ -534,6 +534,12 @@ li {
             background-image: url('assets/img/icons/sort-down.svg');
         }
     }
+
+    &__refresh {
+        @include before-img(block, 30px, 30px, a) {
+            background-image: url('assets/img/icons/refresh.svg');
+        }
+    }
 }
 
 .ol-a-type {
@@ -635,7 +641,7 @@ li {
 
       input,
       .icon {
-        background-color: #5C5A57 !important;
+        background-color: #e6e5e4 !important;
         opacity: 0.5 !important;
         cursor: not-allowed !important;
       }

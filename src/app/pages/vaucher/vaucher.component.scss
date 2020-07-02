@@ -20,7 +20,7 @@ section.voucher {
       display: flex;
       justify-content: space-between;
 
-      @include b(600) {
+      @include b(650) {
         flex-direction: column;
       }
     }
@@ -35,7 +35,7 @@ section.voucher {
         font-weight: bold;
         color: #414B53;
 
-        @include b(600) {
+        @include b(650) {
           margin-bottom: 20px;
         }
 
@@ -52,11 +52,11 @@ section.voucher {
     &-btn {
       &-block {
         display: grid;
-        grid-template-columns: repeat(2, max-content);
+        grid-template-columns: repeat(3, max-content);
         grid-gap: 20px;
         align-items: center;
 
-        @include b(450) {
+        @include b(550) {
           grid-template-columns: 1fr;
         }
 
@@ -64,12 +64,38 @@ section.voucher {
           cursor: pointer;
         }
 
+        .table-refresh {
+          min-width: 50px;
+        }
+
+        .table-refresh.icon__loading {
+          border-radius: 50%;
+          width: 50px;
+
+          @include b(550) {
+            min-width: 200px;
+            width: 100%;
+            border-radius: 5px;
+          }
+        }
+
+        .icon__update {
+          min-width: 40px;
+          width: 55px;
+          opacity: 1;
+
+          @include b(550) {
+            min-width: 200px;
+            width: 100%;
+          }
+        }
+
         .icon__loading {
           min-width: 40px;
           width: 55px;
           opacity: 0.9;
 
-          @include b(450) {
+          @include b(550) {
             min-width: 200px;
             width: 100%;
           }

@@ -10,6 +10,10 @@ import { IVoucher } from 'src/app/interfaces';
 })
 
 export class VaucherComponent implements OnInit {
+  public updateVouchersTable = false;
+  public sortById = true;
+  public sortByAddDate = false;
+
   public popupAdd = false;
   public pupopInProgress = false;
   public popupInProgressBtn = false;
@@ -38,14 +42,55 @@ export class VaucherComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.updateVouchers();
+  }
+
+  public updateVouchers() {
+    this.updateVouchersTable = true;
+
     this.voucherService.getVouchers().then((res) => {
+      this.updateVouchersTable = false;
+
       this.vouchers = res;
       this.vouchers.sort((vouchers1, vouchers2) => {
         return (vouchers1.id > vouchers2.id ? 1 : -1);
       });
+    }).catch((err) => {
+      console.log(err);
+      this.updateVouchersTable = false;
+    })
+  }
 
-      console.log(res);
-    });
+  public sortVouchers(type) {
+    if (type === 'id') {
+      this.sortByAddDate = false;
+
+      this.sortById = !this.sortById;
+
+      this.sortById ?
+        this.vouchers.sort((vouchers1, vouchers2) => {
+          return (vouchers1.id > vouchers2.id ? 1 : -1);
+        })
+        : this.vouchers.sort((vouchers1, vouchers2) => {
+          return (vouchers1.id < vouchers2.id ? 1 : -1);
+        });
+    }
+
+    if (type === 'add-date') {
+      this.sortById = true;
+
+      this.sortByAddDate = !this.sortByAddDate;
+
+      this.sortByAddDate ?
+        this.vouchers.sort((vouchers1, vouchers2) => {
+          return (new Date(vouchers1.publish_date)).getDate() >
+            (new Date(vouchers2.publish_date)).getDate() ? 1 : -1;
+        })
+        : this.vouchers.sort((vouchers1, vouchers2) => {
+          return (new Date(vouchers1.publish_date)).getDate() <
+            (new Date(vouchers2.publish_date)).getDate() ? 1 : -1;
+        });
+    }
   }
 
   private makeCode(length) {
@@ -114,7 +159,7 @@ export class VaucherComponent implements OnInit {
   }
 
   public addVoucher() {
-    const vaucher = {
+    const voucher = {
       voucher_code: this.voucherCode,
       duc_amount: this.ducAmount,
       is_active: this.isActive
@@ -123,7 +168,7 @@ export class VaucherComponent implements OnInit {
     this.popupInProgressText = 'in progress, please wait...';
     this.pupopInProgress = true;
 
-    this.voucherService.sendVoucher(vaucher).then((res) => {
+    this.voucherService.sendVoucher(voucher).then((res) => {
       this.pupopInProgress = false;
       this.close();
       this.vouchers.push(res);
@@ -170,12 +215,28 @@ export class VaucherComponent implements OnInit {
       skipEmptyLines: 'greedy',
       worker: true,
       chunk: (chunk) => {
-        this.loadingCSV = false;
         this.jsonCSV = chunk.data;
       },
       complete: () => {
         console.log('Result: ', this.jsonCSV);
+        this.addVouchers(this.jsonCSV);
       },
+    });
+  }
+
+  public addVouchers(vouchers) {
+    vouchers.map(item => {
+      item.voucher_code = item.voucher_code.toString();
+      item.duc_amount = item.duc_amount.toString();
+    });
+
+    this.voucherService.sendVoucher(vouchers).then((res) => {
+      console.log(res);
+      this.updateVouchers();
+      this.loadingCSV = false;
+    }).catch(err => {
+      console.log('add vouchers error: ', err);
+      this.loadingCSV = false;
     });
   }
 }
