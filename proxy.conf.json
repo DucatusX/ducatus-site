@@ -1,6 +1,6 @@
 {
     "/api": {
-        "target": "http://5.9.121.164:8092/",
+        "target": "http://ducsite.rocknblock.io/",
         "secure": false,
         "changeOrigin": true,
         "logLevel": "debug"

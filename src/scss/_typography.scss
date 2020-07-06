@@ -630,6 +630,8 @@ li {
       font-weight: 300;
       letter-spacing: 1px;
       color: #414B53;
+      -webkit-appearance: none;
+      height: 100%;
     }
 
     &-disabled {
