@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
-import { Http2Service } from '../http/http2.service';
 
 @Injectable({ providedIn: 'root' })
 
 export class GoldLotteryService {
 
-  constructor(private httpService: HttpService, private http2Service: Http2Service) { }
+  constructor(private httpService: HttpService) { }
 
   public codeRegistrate(addressDuc: string, addressDucx: string, code: string) {
-    return this.http2Service.post(`coin/`, { ducatus_address: addressDuc, ducatusx_address: addressDucx, secret_code: code }).toPromise();
+    return this.httpService.post(`coin/`, { ducatus_address: addressDuc, ducatusx_address: addressDucx, secret_code: code }, 'api/v2/').toPromise();
   }
 
   public codeCheck(pubCode: string) {
-    return this.http2Service.get(`coin/`, { public_code: pubCode }).toPromise();
+    return this.httpService.get(`coin/`, { public_code: pubCode }, 'api/v2/').toPromise();
   }
 
   public getValidateDucatusAddress(ducAddress: string) {

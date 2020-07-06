@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http3Service } from '../http/http3.service';
+import { HttpService } from '../http/http.service';
 import { Observable } from 'rxjs';
 import { URLS } from './user.service.api';
 import {
@@ -16,7 +16,7 @@ export class UserService {
   private userModel: UserInterface;
   private updateProgress: boolean;
 
-  constructor(private httpService: Http3Service) {
+  constructor(private httpService: HttpService) {
     this.userObserves = [];
   }
 
@@ -97,13 +97,6 @@ export class UserService {
         }, reject);
     });
   }
-
-  // public registration(data: NewUserInterface): Promise<any> {
-  //   data.email = data.username = data.username.toLowerCase();
-  //   return this.httpService
-  //     .post(URLS.REGISTRATION, data, URLS.HOSTS.AUTH_PATH)
-  //     .toPromise();
-  // }
 
   public logout() {
     return this.httpService
