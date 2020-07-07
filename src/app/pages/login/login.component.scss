@@ -7,6 +7,7 @@ section.login {
   justify-content: center;
   align-items: center;
   background-color: #F8F5EF;
+  flex-direction: column;
 
   @include b(650) {
     flex-direction: column;

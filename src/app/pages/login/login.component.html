@@ -1,12 +1,12 @@
 <section class="login" id="login">
   <span class="login-logo"></span>
   <div class="login-container" *ngIf="!hasUser">
-    <div class="buttons-switch">
+    <!-- <div class="buttons-switch">
       <span class="buttons-switch-item active">Sign in</span>
       <span class="buttons-switch-item">Sign up</span>
-    </div>
+    </div> -->
     <form #loginForm="ngForm" (submit)="sendLoginForm(loginForm)" novalidate class="login-form">
-      <label for="username" class="label">E-mail</label>
+      <label for="username" class="label">Name</label>
       <input name="username" [(ngModel)]="login" type="text" minlength="3" id="username" required class="input"
         placeholder="Username">
       <label for="password" class="label">Password</label>
