@@ -540,6 +540,13 @@ li {
             background-image: url('assets/img/icons/refresh.svg');
         }
     }
+
+    &__plus {
+        @include before-img(block, 21px, 21px, r) {
+            margin-right: 10px;
+            background-image: url('assets/img/icons/plus.svg');
+        }
+    }
 }
 
 .ol-a-type {

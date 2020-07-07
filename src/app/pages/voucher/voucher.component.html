@@ -8,7 +8,7 @@
         <div class="content-block">
             <span class="page-text-title" [innerHTML]="'PAGE.VAUCHER.TITLE' | translate">Voucher</span>
             <div class="page-btn-block">
-                <span class="ducatus-btn ducatus-btn-brown" (click)="popupAdd=true">New Voucher</span>
+                <span class="ducatus-btn ducatus-btn-brown icon icon__plus" (click)="popupAdd=true">New Voucher</span>
                 <label for="file" class="ducatus-btn ducatus-btn-gold" [ngClass]="{ 'icon icon__loading': loadingCSV }">
                     <span *ngIf="!loadingCSV">Importing CSV</span>
                 </label>
