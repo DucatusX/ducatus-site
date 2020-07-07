@@ -209,12 +209,31 @@ section.voucher {
 
         .table-sort {
           cursor: pointer;
+          position: relative;
+          display: grid;
+          grid-template-columns: max-content 14px;
+          align-items: center;
+          grid-gap: 5px;
+        }
+
+        .icon {
 
           &:before {
             z-index: 1;
-            right: 15px;
-            bottom: 19px;
+            // position: relative !important;
+            // right: 15px;
+            // bottom: 19px;
+            grid-row: 1;
+            grid-column: 2;
           }
+
+          &__sort-down,
+          &__sort-up {
+            // display: grid;
+            // grid-template-columns: max-content 15px;
+            // grid-gap: 5px;
+            // align-items: end;
+            }
         }
       }
 
@@ -239,7 +258,7 @@ section.voucher {
       }
 
       &-body {
-        font-size: 17px;
+        font-size: 16px;
         line-height: 25px;
         font-weight: 300;
         color: #5C5A57;
@@ -359,8 +378,8 @@ section.voucher {
 
   &-header {
     position: relative;
-    background: #FBF9F6;
-    border-radius: 8px;
+    background: #E9DCCA;
+    border-radius: 8px 8px 0 0;
     padding: 20px 45px;
 
     @include b(600) {
@@ -406,11 +425,14 @@ section.voucher {
         display: flex;
         align-items: center;
         justify-content: center;
+        border-top: 1px solid #CFB778;
+        border-right: 1px solid #CFB778;
+        border-bottom: 1px solid #CFB778;
         color: #414b537c;
         font-size: 16px;
         width: 60px;
         transition: 0.4s ease;
-        border-radius: 0 5px 5px 0;
+        border-radius: 0 12px 12px 0;
       }
     }
 
@@ -425,7 +447,11 @@ section.voucher {
       .icon {
         height: 100%;
         background-color: #FBF9F6;
-        border-radius: 0 5px 5px 0;
+        border-top: 1px solid #CFB778;
+        border-right: 1px solid #CFB778;
+        border-bottom: 1px solid #CFB778;
+        border-left: none;
+        border-radius: 0 12px 12px 0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -455,14 +481,16 @@ section.voucher {
     label {
       display: inline-block;
       margin-bottom: 10px;
-      color: #B6A478;
+      color: #414B53;
       font-size: 16px;
       font-weight: 400;
     }
 
     input {
-      border-radius: 5px 0 0 5px;
+      border-radius: 12px 0 0 12px;
       transition: 0.4s ease;
+      font-weight: bold;
+      padding-left: 20px;
 
       &:focus {
         ~.popup-form-text-label {

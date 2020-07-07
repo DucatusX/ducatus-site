@@ -621,15 +621,17 @@ li {
 
     &-input {
       background-color: #FBF9F6;
-      border-radius: 5px;
       font-size: 16px;
       padding: 20px 10px;
       outline: none;
-      border: none;
+      border-top: 1px solid #CFB778;
+      border-left: 1px solid #CFB778;
+      border-bottom: 1px solid #CFB778;
+      border-right: none;
       font-family: 'Montserrat';
       font-weight: 300;
       letter-spacing: 1px;
-      color: #414B53;
+      color: #862632;
       -webkit-appearance: none;
       height: 100%;
     }

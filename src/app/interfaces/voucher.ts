@@ -3,7 +3,7 @@ export interface IVoucher {
   publish_date: string;
   voucher_code: string;
   activation_code: string;
-  duc_amount: number;
+  usd_amount: number;
   is_active: boolean;
   is_used: boolean;
   activation_date?: string;

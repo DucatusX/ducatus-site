@@ -11,8 +11,20 @@ import { IVoucher } from 'src/app/interfaces';
 
 export class VoucherComponent implements OnInit {
   public updateVouchersTable = false;
-  public sortById = true;
-  public sortByAddDate = false;
+
+  public changeSort = true;
+
+  public sortData = {
+    id: true,
+    addDate: false,
+    addTime: false,
+    voucherCode: false,
+    activateCode: false,
+    usdAmount: false,
+    active: false,
+    used: false,
+    activatedDate: false
+  } as any;
 
   public popupAdd = false;
   public pupopInProgress = false;
@@ -62,35 +74,135 @@ export class VoucherComponent implements OnInit {
   }
 
   public sortVouchers(type) {
-    if (type === 'id') {
-      this.sortByAddDate = false;
 
-      this.sortById = !this.sortById;
+    this.sortData[type] && this.changeSort ? this.changeSort = false : this.changeSort = true;
+    Object.keys(this.sortData).forEach(v => this.sortData[v] = v === type);
 
-      this.sortById ?
-        this.vouchers.sort((vouchers1, vouchers2) => {
-          return (vouchers1.id > vouchers2.id ? 1 : -1);
-        })
-        : this.vouchers.sort((vouchers1, vouchers2) => {
-          return (vouchers1.id < vouchers2.id ? 1 : -1);
-        });
+    switch (type) {
+      case 'id':
+        this.changeSort ?
+          this.vouchers.sort((vouchers1, vouchers2) => {
+            return (vouchers1.id > vouchers2.id ? 1 : -1);
+          })
+          : this.vouchers.sort((vouchers1, vouchers2) => {
+            return (vouchers1.id < vouchers2.id ? 1 : -1);
+          });
+        break;
+      case 'addDate':
+        this.changeSort ?
+          this.vouchers.sort((vouchers1, vouchers2) => {
+            return (new Date(vouchers1.publish_date)).getDate() >
+              (new Date(vouchers2.publish_date)).getDate() ? 1 : -1;
+          })
+          : this.vouchers.sort((vouchers1, vouchers2) => {
+            return (new Date(vouchers1.publish_date)).getDate() <
+              (new Date(vouchers2.publish_date)).getDate() ? 1 : -1;
+          });
+        break;
+      case 'addTime':
+        this.changeSort ?
+          this.vouchers.sort((vouchers1, vouchers2) => {
+            return (new Date(vouchers1.publish_date)).getTime() >
+              (new Date(vouchers2.publish_date)).getTime() ? 1 : -1;
+          })
+          : this.vouchers.sort((vouchers1, vouchers2) => {
+            return (new Date(vouchers1.publish_date)).getTime() <
+              (new Date(vouchers2.publish_date)).getTime() ? 1 : -1;
+          });
+        break;
+      case 'usdAmount':
+        this.changeSort ?
+          this.vouchers.sort((vouchers1, vouchers2) => {
+            return (vouchers1.usd_amount > vouchers2.usd_amount ? 1 : -1);
+          })
+          : this.vouchers.sort((vouchers1, vouchers2) => {
+            return (vouchers1.usd_amount < vouchers2.usd_amount ? 1 : -1);
+          });
+        break;
+      case 'voucherCode':
+        this.changeSort ?
+          this.vouchers.sort((vouchers1, vouchers2) => {
+            return (vouchers1.voucher_code > vouchers2.voucher_code ? 1 : -1);
+          })
+          : this.vouchers.sort((vouchers1, vouchers2) => {
+            return (vouchers1.voucher_code < vouchers2.voucher_code ? 1 : -1);
+          });
+        break;
+      case 'activateCode':
+        this.changeSort ?
+          this.vouchers.sort((vouchers1, vouchers2) => {
+            return (vouchers1.activation_code > vouchers2.activation_code ? 1 : -1);
+          })
+          : this.vouchers.sort((vouchers1, vouchers2) => {
+            return (vouchers1.activation_code < vouchers2.activation_code ? 1 : -1);
+          });
+        break;
+      case 'active':
+        this.changeSort ?
+          this.vouchers.sort((vouchers1, vouchers2) => {
+            return (vouchers1.is_active > vouchers2.is_active ? 1 : -1);
+          })
+          : this.vouchers.sort((vouchers1, vouchers2) => {
+            return (vouchers1.is_active < vouchers2.is_active ? 1 : -1);
+          });
+        break;
+      case 'used':
+        this.changeSort ?
+          this.vouchers.sort((vouchers1, vouchers2) => {
+            return (vouchers1.is_used > vouchers2.is_used ? 1 : -1);
+          })
+          : this.vouchers.sort((vouchers1, vouchers2) => {
+            return (vouchers1.is_used < vouchers2.is_used ? 1 : -1);
+          });
+        break;
+      case 'activatedDate':
+        this.changeSort ?
+          this.vouchers.sort((vouchers1, vouchers2) => {
+            return (new Date(vouchers1.activation_date)).getDate() >
+              (new Date(vouchers2.activation_date)).getDate() ? 1 : -1;
+          })
+          : this.vouchers.sort((vouchers1, vouchers2) => {
+            return (new Date(vouchers1.activation_date)).getDate() <
+              (new Date(vouchers2.activation_date)).getDate() ? 1 : -1;
+          });
+        break;
+      default:
+        this.sortVouchers('id');
+        break;
     }
 
-    if (type === 'add-date') {
-      this.sortById = true;
 
-      this.sortByAddDate = !this.sortByAddDate;
+    // if (type === 'voucher-code') {
+    //   this.sortById = this.sortByAddTime = false;
 
-      this.sortByAddDate ?
-        this.vouchers.sort((vouchers1, vouchers2) => {
-          return (new Date(vouchers1.publish_date)).getDate() >
-            (new Date(vouchers2.publish_date)).getDate() ? 1 : -1;
-        })
-        : this.vouchers.sort((vouchers1, vouchers2) => {
-          return (new Date(vouchers1.publish_date)).getDate() <
-            (new Date(vouchers2.publish_date)).getDate() ? 1 : -1;
-        });
-    }
+    //   this.sortByVoucherCode = !this.sortByVoucherCode;
+
+    //   this.sortByVoucherCode ?
+    //     this.vouchers.sort((vouchers1, vouchers2) => {
+    //       return (new Date(vouchers1.publish_date)).getTime() >
+    //         (new Date(vouchers2.publish_date)).getTime() ? 1 : -1;
+    //     })
+    //     : this.vouchers.sort((vouchers1, vouchers2) => {
+    //       return (new Date(vouchers1.publish_date)).getTime() <
+    //         (new Date(vouchers2.publish_date)).getTime() ? 1 : -1;
+    //     });
+    // }
+
+    // if (type === 'activated-code') {
+    //   this.sortById = this.sortByAddTime = false;
+
+    //   this.sortByVoucherCode = !this.sortByVoucherCode;
+
+    //   this.sortByVoucherCode ?
+    //     this.vouchers.sort((vouchers1, vouchers2) => {
+    //       return (new Date(vouchers1.publish_date)).getTime() >
+    //         (new Date(vouchers2.publish_date)).getTime() ? 1 : -1;
+    //     })
+    //     : this.vouchers.sort((vouchers1, vouchers2) => {
+    //       return (new Date(vouchers1.publish_date)).getTime() <
+    //         (new Date(vouchers2.publish_date)).getTime() ? 1 : -1;
+    //     });
+    // }
   }
 
   private makeCode(length) {
@@ -123,7 +235,7 @@ export class VoucherComponent implements OnInit {
     });
 
     const voucher = {
-      duc_amount: voucherFind[0].duc_amount,
+      usd_amount: voucherFind[0].usd_amount,
       voucher_code: voucherFind[0].voucher_code,
       is_active: voucherFind[0].is_active
     };
@@ -161,7 +273,7 @@ export class VoucherComponent implements OnInit {
   public addVoucher() {
     const voucher = {
       voucher_code: this.voucherCode,
-      duc_amount: this.ducAmount,
+      usd_amount: this.ducAmount,
       is_active: this.isActive
     };
 
@@ -227,7 +339,7 @@ export class VoucherComponent implements OnInit {
   public addVouchers(vouchers) {
     vouchers.map(item => {
       item.voucher_code = item.voucher_code.toString();
-      item.duc_amount = item.duc_amount.toString();
+      item.usd_amount = item.usd_amount.toString();
     });
 
     this.voucherService.sendVoucher(vouchers).then((res) => {
