@@ -183,13 +183,110 @@
                         display: flex;
                     }
                 }
+
+                &-wrap {
+                    padding: 30px;
+                    border-radius: 12px;
+                    width: 100%;
+                    height: 100%;
+                    padding: 30px 30px 50px 30px;
+                    background-color: #FDFBF6;
+                    box-shadow: 0px 50px 45px rgba(204, 199, 189, 0.25);
+                }
+
+                .lottery {
+                    display: flex;
+                    flex-direction: column;
+                    height: max-content;
+
+                    span {
+                        display: block;
+                    }
+
+                    &-title {
+                        width: 100%;
+                        font-weight: bold;
+                        font-size: 20px;
+                        color: #000000;
+                        opacity: 0.5;
+                        margin-bottom: 15px;
+                    }
+
+                    &-subtitle {
+                        width: 100%;
+                        font-weight: bold;
+                        font-size: 16px;
+                        color: $brown-red;
+                        margin-bottom: 15px;
+                    }
+
+                    &-image {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 20px;
+                        border-radius: 10px;
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    &-progress {
+                        &-title {
+                            font-weight: bold;
+                            font-size: 15px;
+                            line-height: 18px;
+                            color: #000000;
+                            opacity: 0.5;
+                            margin-bottom: 10px;
+                            display: flex !important;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 100%;
+                        }
+
+                        &-bar {
+                            padding: 7px;
+                            border-radius: 15px;
+                            background-color: white;
+                            width: 100%;
+                            border: 1px solid #E9DCCA;
+                            height: 24px;
+
+                            span {
+                                background: $brown-red;
+                                border-radius: 12px;
+                                height: 10px;
+                                bottom: 5px;
+                                transition: 0.4s ease;
+                                position: relative;
+                                margin-top: 4px;
+
+                                &:after {
+                                    content: attr(data-progress);
+                                    font-weight: bold;
+                                    font-size: 14px;
+                                    text-align: center;
+                                    color: $brown-red;
+                                    position: absolute;
+                                    right: 0;
+                                    top: 17px;
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
             &-wrap {
                 max-width: 600px;
                 width: 100%;
-                border-radius: 5px;
-                box-shadow: 0px 3px 10px -4px #0000006e;
+                height: max-content;
+                border-radius: 12px;
+                box-shadow: 0px 50px 45px rgba(204, 199, 189, 0.25);
                 overflow: hidden;
 
                 @include b(900) {
@@ -223,7 +320,7 @@
     width: 100%;
     height: 100%;
     // padding: 30px 30px;
-    padding: 30px 30px 0px 30px;
+    padding: 30px 30px 10px 30px;
     background-color: #FDFBF6;
 
     input[type=number]::-webkit-inner-spin-button,
@@ -253,7 +350,7 @@
         outline: none;
         box-shadow: none;
         border: none;
-        border-radius: 5px;
+        border-radius: 12px;
         font-size: 15px;
         padding: 20px;
         width: 100%;
@@ -277,6 +374,151 @@
         &-accent {
             background-color: #F9F7F5;
             border: 1px solid #E9DCCA;
+        }
+    }
+
+    .group-currency {
+        width: 260px;
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #E9DCCA;
+
+        &-item {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #E9DCCA;
+            overflow: hidden;
+
+            &:nth-child(1) {
+                border-radius: 6px 0 0 6px;
+            }
+
+            &:nth-child(2) {
+                border-radius: 0px 6px 6px 0px;
+            }
+        }
+
+        label {
+            width: 100%;
+            height: 100%;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            padding: 14px;
+            background: rgba(247, 243, 235, 0.7);
+            margin-bottom: 0 !important;
+            cursor: pointer;
+
+            img {
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+        }
+
+        input {
+            display: none;
+
+            &:checked {
+                + label {
+                    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #F7F3EB;
+                    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+
+        &-text {
+            font-weight: bold;
+            font-size: 19px;
+            text-align: center;
+            color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+    }
+
+    .group-radio {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+
+        @include b(500) {
+            flex-direction: column;
+        }
+
+        &-label {
+            margin-bottom: 20px !important;
+        }
+
+        &-item {
+            @include b(500) {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        label {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 95px;
+            height: 95px;
+            margin-bottom: 0 !important;
+            transition: 0.4s ease;
+
+            @include b(600) {
+                width: 80px;
+                height: 80px;
+            }
+
+            @include b(500) {
+                flex-direction: row;
+                width: 100%;
+                height: 60px;
+            }
+        }
+
+        &-amount {
+            color: $brown-red;
+            font-weight: bold;
+            font-size: 19px;
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+
+            @include b(500) {
+                margin-bottom: 0;
+                margin-right: 10px;
+            }
+        }
+
+        &-text {
+            display: block;
+            font-size: 13px;
+            color: $gold;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input {
+            display: none;
+
+            &:checked {
+                + label {
+                    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #F7F3EB;
+                    border: 1px solid #C2B395;
+                    border-radius: 12px;
+                    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.1);
+                    cursor: default !important;
+                }
+            }
         }
     }
 
@@ -467,7 +709,7 @@
     }
 
     .group {
-        padding: 7.5px 0px;
+        margin-bottom: 30px;
         position: relative;
 
         &-columns {
@@ -553,7 +795,7 @@
         }
 
         &-block {
-            background-color: rgb(245, 243, 239);
+            background: rgba(0, 0, 0, 0.02);
             padding: 10px 30px;
             margin: 15px -30px;
             display: flex;
@@ -705,7 +947,7 @@
     .qr-wrap {
         display: grid;
         grid-template-columns: 1fr 60px;
-        grid-gap: 10px;
+        grid-gap: 20px 10px;
         grid-template-areas:
             "inputAddressQr qrCode"
             "qrText qrText";

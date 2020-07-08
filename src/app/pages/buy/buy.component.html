@@ -4,82 +4,104 @@
     </div>
 </section>
 
-<section class="app">
+<section class="app color-page">
     <div class="container">
         <div class="pay-form">
             <div class="pay-form-wrap">
                 <div class="ducatus-pay-form" *ngIf="!loadingData">
 
-                    <div class="group group-input group-input-select">
-                        <label for="get-coin">{{ 'PAGE.BUY.FIELDS.ONE.TITLE' | translate }}</label>
-                        <input type="number" min="0" [(ngModel)]="exchange.price.get " (ngModelChange)="setCurrentPrice('get')" [placeholder]="'PAGE.BUY.FIELDS.ONE.PLACEHOLDER' | translate" class="input input-white" oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');">
-
-                        <div class="select-coin select-coin-fill" (click)="exchange.select.get = !exchange.select.get; exchange.select.send = false" [ngClass]="{ 'select-coin-start': exchange.select.get }">
-                            <ng-container *ngFor="let item of exchange.coins">
-                                <span class="select-coin-selected" *ngIf="item.active"><img [src]="'assets/img/icons/' + item.icon + '.png'" [alt]="item.name"> {{ item.name }}</span>
-                            </ng-container>
-                            <div class="select-coin-list">
-                                <div class="select-coin-list-wrap">
-                                    <ng-container *ngFor="let item of exchange.coins">
-                                        <span class="select-coin-list-item" (click)="coinSwitch(item.name,'get')" *ngIf="!item.active"><img [src]="'assets/img/icons/' + item.icon + '.png'" [alt]="item.name">{{ item.name }}</span>
-                                    </ng-container>
-                                </div>
+                    <div class="group group-input">
+                        <div class="group-currency">
+                            <div class="group-currency-item">
+                                <input type="radio" name="currency" id="currency-btc" value="btc">
+                                <label for="currency-btc">
+                                    <img src="/assets/img/icons/btc.svg" width="30" height="30" alt="bitcoin">
+                                    <span class="group-currency-text">BTC</span>
+                                </label>
                             </div>
-
+                            <div class="group-currency-item">
+                                <input type="radio" checked name="currency" id="currency-eth" value="eth">
+                                <label for="currency-eth">
+                                    <img src="/assets/img/icons/eth.svg" width="30" height="30" alt="etherium">
+                                    <span class="group-currency-text">ETH</span>
+                                </label>
+                            </div>
                         </div>
-
                     </div>
 
-                    <div class="group group-text group-columns">
-
-                        <span class="text">1 {{ exchange.selected.get.fullname }} = {{ exchange.rate }} {{ exchange.selected.send.fullname }}</span>
-
-                    </div>
-
-                    <div class="group group-input group-input-select">
-                        <label for="send-coin">{{ 'PAGE.BUY.FIELDS.TWO.TITLE' | translate }}</label>
-                        <input min="0" type="number" (ngModelChange)="setCurrentPrice('send')" [(ngModel)]=" exchange.price.send" [placeholder]="'PAGE.BUY.FIELDS.TWO.PLACEHOLDER' | translate" class="input input-white" oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');">
-
-                        <div class="select-coin select-coin-fill" (click)="exchange.selected.get.name === 'DUC' ? exchange.select.send = !exchange.select.send  : null;exchange.select.get = false" [ngClass]="{ 'select-coin-start': exchange.select.send }">
-
-                            <ng-container *ngFor="let item of exchange.coins">
-                                <ng-container *ngIf="item.active">
-
-                                    <ng-container *ngFor="let coin of item.coins">
-                                        <span class="select-coin-selected" *ngIf="coin.active"><img [src]="'assets/img/icons/'+coin.icon+'.png'" [alt]="coin.name"> {{ coin.name }}</span>
-                                    </ng-container>
-
-                                    <div class="select-coin-list" [ngClass]="{ 'select-coin-start': exchange.select.send }">
-
-                                        <div class="select-coin-list-wrap">
-                                            <ng-container *ngFor="let coin of item.coins">
-                                                <span class="select-coin-list-item" *ngIf="!coin.active" (click)="coinSwitch(coin.name,'send')"><img [src]="'assets/img/icons/' + coin.icon +'.png'" [alt]="coin.name">{{ coin.name }}</span>
-                                            </ng-container>
-                                        </div>
-
-                                    </div>
-
-
-                                </ng-container>
-                            </ng-container>
+                    <div class="group group-input group-block">
+                        <label class="group-radio-label" for="amount-2">Сhoose amount for Ducatus purchase</label>
+                        <div class="group-radio">
+                            <div class="group-radio-item">
+                                <input type="radio" name="amount" id="amount-1" value="10">
+                                <label for="amount-1">
+                                    <span class="group-radio-amount">10$</span>
+                                    <span class="group-radio-text">1 tickets</span>
+                                </label>
+                            </div>
+                            <div class="group-radio-item">
+                                <input type="radio" checked name="amount" id="amount-2" value="50">
+                                <label for="amount-2">
+                                    <span class="group-radio-amount">50$</span>
+                                    <span class="group-radio-text">6 tickets</span>
+                                </label>
+                            </div>
+                            <div class="group-radio-item">
+                                <input type="radio" name="amount" id="amount-3" value="100">
+                                <label for="amount-3">
+                                    <span class="group-radio-amount">100$</span>
+                                    <span class="group-radio-text">13 tickets</span>
+                                </label>
+                            </div>
+                            <div class="group-radio-item">
+                                <input type="radio" name="amount" id="amount-4" value="500">
+                                <label for="amount-4">
+                                    <span class="group-radio-amount">500$</span>
+                                    <span class="group-radio-text">70 tickets</span>
+                                </label>
+                            </div>
+                            <div class="group-radio-item">
+                                <input type="radio" name="amount" id="amount-5" value="1000">
+                                <label for="amount-5">
+                                    <span class="group-radio-amount">1000$</span>
+                                    <span class="group-radio-text">150 tickets</span>
+                                </label>
+                            </div>
 
                         </div>
                     </div>
 
                     <div class="group group-input">
-                        <label for="ducatus-address">{{ 'PAGE.BUY.FIELDS.THREE.TEXT_1' | translate }} {{ exchange.selected.get.fullname }} {{ 'PAGE.BUY.FIELDS.THREE.TEXT_2' | translate }}</label>
-                        <input type="text" [ngClass]="{'text' : exchange.address.validate || exchange.address.loading }" [disabled]="exchange.address.validate || exchange.address.loading" [(ngModel)]="exchange.address.to" (ngModelChange)="setAddress()" [placeholder]="('PAGE.BUY.FIELDS.THREE.PLACEHOLDER_1' | translate) + ' ' + exchange.selected.get.fullname + ' ' + ('PAGE.BUY.FIELDS.THREE.PLACEHOLDER_2' | translate)" class="input input-white" oninput="this.value = this.value.replace('ducatus:', '');">
-                        <span class="error-address-value" *ngIf="exchange.address.error">{{ 'PAGE.BUY.FIELDS.THREE.ERROR' | translate }}</span>
+                        <label for="address">{{ 'PAGE.BUY.FIELDS.THREE.TEXT_1' | translate }}
+                            {{ exchange.selected.get.fullname }}
+                            {{ 'PAGE.BUY.FIELDS.THREE.TEXT_2' | translate }}</label>
+                        <input id="address" type="text"
+                            [ngClass]="{'text' : exchange.address.validate || exchange.address.loading }"
+                            [disabled]="exchange.address.validate || exchange.address.loading"
+                            [(ngModel)]="exchange.address.to" (ngModelChange)="setAddress()"
+                            [placeholder]="('PAGE.BUY.FIELDS.THREE.PLACEHOLDER_1' | translate) + ' ' + exchange.selected.get.fullname + ' ' + ('PAGE.BUY.FIELDS.THREE.PLACEHOLDER_2' | translate)"
+                            class="input input-white" oninput="this.value = this.value.replace('ducatus:', '');">
+                        <span class="error-address-value"
+                            *ngIf="exchange.address.error">{{ 'PAGE.BUY.FIELDS.THREE.ERROR' | translate }}</span>
                     </div>
 
-                    <div id="loading-address" [ngClass]="{ 'loading-address-start': exchange.address.loading }" class="group group-block group-input group-input-copy m-b-0 qr-wrap">
+                    <div class="group group-input">
+                        <label for="email">Enter your email address for getting draw result</label>
+                        <input id="email" type="email" placeholder="Enter your email" class="input input-white">
+                    </div>
+
+                    <div id="loading-address" [ngClass]="{ 'loading-address-start': exchange.address.loading }"
+                        class="group group-input group-input-copy m-b-0 qr-wrap">
                         <div class="group-wrap qr-address">
-                            <label>{{ 'PAGE.BUY.FIELDS.FOUR.TEXT_1' | translate }} {{ exchange.selected.send.fullname }} {{ 'PAGE.BUY.FIELDS.FOUR.TEXT_2' | translate }} </label>
+                            <label>{{ 'PAGE.BUY.FIELDS.FOUR.TEXT_1' | translate }} {{ exchange.selected.send.fullname }}
+                                {{ 'PAGE.BUY.FIELDS.FOUR.TEXT_2' | translate }} </label>
                             <p class="input input-accent">{{ exchange.selected.send.address }}</p>
                             <span class="copy-address icon icon-copy"></span>
                         </div>
                         <div class="qrcode">
-                            <qrcode *ngIf="exchange.address.qr" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1" [qrdata]="exchange.selected.send.address" [width]="60" [errorCorrectionLevel]="'L'"></qrcode>
+                            <qrcode *ngIf="exchange.address.qr" class="qr-code" [elementType]="'url'" [margin]="0"
+                                [scale]="1" [qrdata]="exchange.selected.send.address" [width]="60"
+                                [errorCorrectionLevel]="'L'"></qrcode>
                         </div>
 
                         <div class="loading-address-qr">
@@ -94,8 +116,12 @@
                             </div>
                         </div>
 
-                        <div class="group group-text qr-text">
-                            <span class="text-attantion"><span class="attantion">{{ 'PAGE.BUY.FIELDS.FIVE.TEXT_1' | translate }}!</span> {{ 'PAGE.BUY.FIELDS.FIVE.TEXT_2' | translate }} {{ exchange.selected.get.fullname }} {{ 'PAGE.BUY.FIELDS.FIVE.TEXT_3' | translate }} {{ exchange.selected.send.text }}<br><br></span>
+                        <div class="group group-text qr-text" style="margin-bottom: 0;">
+                            <span class="text-attantion"><span
+                                    class="attantion">{{ 'PAGE.BUY.FIELDS.FIVE.TEXT_1' | translate }}!</span>
+                                {{ 'PAGE.BUY.FIELDS.FIVE.TEXT_2' | translate }} {{ exchange.selected.get.fullname }}
+                                {{ 'PAGE.BUY.FIELDS.FIVE.TEXT_3' | translate }}
+                                {{ exchange.selected.send.text }}<br><br></span>
                         </div>
 
                     </div>
@@ -111,12 +137,20 @@
                 </div>
             </div>
             <div class="pay-form-block">
-                <div class="pay-form-block-video">
-                    <iframe src="https://www.youtube.com/embed/5tzX8UzUQkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-                <div class="pay-form-block-text">
-                    <p class="p__text-section icon icon__wallet_2" [innerHTML]="'PAGE.BUY.TEXT' | translate"></p>
+                <div class="pay-form-block-wrap lottery">
+                    <span class="lottery-title">Get a chance to win prize</span>
+                    <span class="lottery-subtitle">Lamborghini Aventador SV</span>
+                    <div class="lottery-image">
+                        <img src="http://ducsite.rocknblock.io/media/lottery_images/1.jpg" class="lottery-image">
+                    </div>
+                    <div class="lottery-progress">
+                        <span class="lottery-progress-title">Get a chance to win prize <img
+                                src="/assets/img/icons/lottery-rocket.svg" height="28" width="28"
+                                alt="ducatus lottery rocket"></span>
+                        <div class="lottery-progress-bar">
+                            <span style="width: 65%;" data-progress="65%"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -131,9 +165,11 @@
         <div class="modal-content-bottom">
             <div class="input-checkbox-group">
                 <label for="terms" [innerHTML]="'PAGE.BUY.MODAL.TERMS' | translate"></label>
-                <input type="checkbox" (ngModelChange)="modalAccept = !modalAccept" [ngModel]="modalAccept" name="terms" id="terms" class="terms">
+                <input type="checkbox" (ngModelChange)="modalAccept = !modalAccept" [ngModel]="modalAccept" name="terms"
+                    id="terms" class="terms">
             </div>
-            <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!modalAccept" class="btn btn-red"> {{ 'PAGE.BUY.MODAL.BUTTON' | translate }}</button>
+            <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!modalAccept" class="btn btn-red">
+                {{ 'PAGE.BUY.MODAL.BUTTON' | translate }}</button>
         </div>
     </div>
 </div>
