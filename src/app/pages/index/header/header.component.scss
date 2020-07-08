@@ -12,6 +12,18 @@
     z-index: 999;
     transition: 0.2s ease;
 
+    &-admin {
+        padding: 20px !important;
+
+        @include b(750) {
+            padding: 10px 20px !important;
+        }
+    }
+
+    &-hide {
+        display: none !important;
+    }
+
     .container {
         @include b(1366) {
             padding: 0px;
@@ -95,6 +107,15 @@
                 max-height: 0px;
                 overflow: hidden;
             }
+
+            &-admin {
+                flex-basis: auto;
+                margin-right: 100px;
+
+                @include b(750) {
+                    margin-right: 0;
+                }
+            }
         }
 
         &-link {
@@ -104,6 +125,7 @@
             transition: 0.4s ease;
             margin: 2px 20px;
             font-weight: bold;
+            cursor: pointer;
 
             @include b(900) {
                 margin: 2px 10px;
@@ -163,9 +185,17 @@
     top: 15px;
     z-index: 2;
 
-    @include b(1240) {
-        right: -50px;
+    &-admin {
+        top: -4px;
+
+        @include b(750) {
+            top: 0;
+        }
     }
+
+    // @include b(1240) {
+    //     right: -50px;
+    // }
 
     @include b(900) {
         right: 0px;

@@ -354,6 +354,9 @@
                 "TABLE_TITLE_6": "RPC, Web socket support",
                 "TABLE_TITLE_7": "Insgesamt ausstehende Transaktion"
             }
+        },
+        "VAUCHER": {
+            "TITLE": "Voucher"
         }
     }
 }

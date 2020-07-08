@@ -1,4 +1,4 @@
-import { BrowserModule, makeStateKey, StateKey, TransferState } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,10 +9,15 @@ import { environment } from '../environments/environment';
 // plugins
 import { QRCodeModule } from 'angularx-qrcode';
 import { Ng2TelInputModule } from 'ng2-tel-input';
-import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClientModule, HttpClient, HttpClientXsrfModule } from '@angular/common/http';
+
+// resolvers
+import { UserResolver } from './resolvers';
 
 // pages
 import { AppComponent } from './app.component';
@@ -25,6 +30,8 @@ import { GoldLotteryComponent } from './pages/gold-lottery/gold-lottery.componen
 import { LegalDisclaimerComponent } from './pages/legal-disclaimer/legal-disclaimer.component';
 import { ErrorPageComponent } from './pages/errorpage/errorpage.component';
 import { DucatusxComponent } from './pages/ducatusx/ducatusx/ducatusx.component';
+import { VoucherComponent } from './pages/voucher/voucher.component';
+import { LoginComponent } from './pages/login/login.component';
 
 // partials
 import { HeaderComponent } from './pages/index/header/header.component';
@@ -46,6 +53,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     GoldLotteryComponent,
     ErrorPageComponent,
     DucatusxComponent,
+    VoucherComponent,
+    LoginComponent,
 
     HeaderComponent,
     FooterComponent
@@ -68,8 +77,17 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    HttpClientXsrfModule.withOptions({
+      cookieName: 'csrftoken',
+      headerName: 'X-CSRFToken'
+    }),
   ],
-  providers: [],
+  providers: [
+    UserResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
