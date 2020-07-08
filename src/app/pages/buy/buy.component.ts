@@ -20,6 +20,18 @@ export interface Addresses {
   eth_address: string;
   duc_address: string;
 }
+
+export interface Lottery {
+  id?: number;
+  name: string;
+  description: string;
+  image: string;
+  usd_amount: any;
+  received_usd_amount: any;
+  started_at: any;
+  ended: any;
+  percent?: any;
+}
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
@@ -28,6 +40,16 @@ export interface Addresses {
 })
 
 export class BuyComponent implements OnInit {
+
+  public lottery: Lottery = {
+    name: '',
+    description: 'info',
+    image: '',
+    usd_amount: '',
+    received_usd_amount: '',
+    started_at: 0,
+    ended: false,
+  };
 
   public addresses: Addresses = {
     btc_address: '',
@@ -255,6 +277,17 @@ export class BuyComponent implements OnInit {
 
   public acceptModalTerms() {
     this.modal = false;
+
+    this.buyservice.getLottery().then((result) => {
+
+      console.log(result[0]);
+
+      this.lottery = result[0];
+      this.lottery.percent = (100 * parseInt(this.lottery.received_usd_amount) / parseInt(this.lottery.usd_amount)).toString() + '%';
+
+      console.log(this.lottery.percent);
+
+    }).catch(err => console.log(err));
 
     this.buyservice.getRates().then((result) => {
       this.rates = result;

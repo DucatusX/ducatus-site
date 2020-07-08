@@ -11,6 +11,10 @@ export class BuyService {
     return this.httpService.get(`rates/`).toPromise();
   }
 
+  public getLottery() {
+    return this.httpService.get(`lotteries/`).toPromise();
+  }
+
   public getValidateDucatusAddress(duc_address: string) {
     return this.httpService.post(`validate_ducatus_address/`, { address: duc_address }).toPromise();
   }

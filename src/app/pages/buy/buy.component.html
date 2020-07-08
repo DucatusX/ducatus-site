@@ -128,28 +128,36 @@
 
                 </div>
                 <div class="ducatus-pay-form loading-pay-form" *ngIf="loadingData">
-                    <div class="group group-input group-input-select input-h-60"></div>
-                    <div class="group group-text group-columns input-h-20"></div>
+                    <div class="group group-input group-input-select" style="height: 90px;"></div>
+                    <div class="group group-input group-input-select" style="height: 130px;"></div>
                     <div class="group group-input group-input-select input-h-85"></div>
-                    <div class="group group-input input-h-105"></div>
+                    <div class="group group-input group-input-select input-h-85"></div>
                     <div class="group group-input group-input-select input-h-60"></div>
                     <div class="group group-text group-columns input-h-20"></div>
                 </div>
             </div>
             <div class="pay-form-block">
-                <div class="pay-form-block-wrap lottery">
+                <div class="pay-form-block-wrap lottery" *ngIf="!loadingData">
                     <span class="lottery-title">Get a chance to win prize</span>
-                    <span class="lottery-subtitle">Lamborghini Aventador SV</span>
+                    <span class="lottery-subtitle">{{ lottery.name }}</span>
                     <div class="lottery-image">
-                        <img src="http://ducsite.rocknblock.io/media/lottery_images/1.jpg" class="lottery-image">
+                        <img [src]="lottery.image" class="lottery-image">
                     </div>
                     <div class="lottery-progress">
                         <span class="lottery-progress-title">Get a chance to win prize <img
                                 src="/assets/img/icons/lottery-rocket.svg" height="28" width="28"
                                 alt="ducatus lottery rocket"></span>
                         <div class="lottery-progress-bar">
-                            <span style="width: 65%;" data-progress="65%"></span>
+                            <span [style.width]="lottery.percent" [attr.data-progress]="lottery.percent"></span>
                         </div>
+                    </div>
+                </div>
+                <div class="pay-form-block-wrap lottery" style="padding: 30px!important" *ngIf="loadingData">
+                    <div class="ducatus-pay-form loading-pay-form" style="padding: 0 !important;" *ngIf="loadingData">
+                        <div class="group group-input group-input-select input-h-60"></div>
+                        <div class="group group-text group-columns input-h-20"></div>
+                        <div class="group group-input group-input-select" style="height: 130px;"></div>
+                        <div class="group group-input group-input-select input-h-85"></div>
                     </div>
                 </div>
             </div>

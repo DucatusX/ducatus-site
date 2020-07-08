@@ -10,7 +10,12 @@
         animation: rainbow 4s ease infinite;
         margin-bottom: 15px;
         border-radius: 5px;
+
+        &:nth-last-child(1) {
+            margin-bottom: 0 !important;
+        }
     }
+
 
     .input-h-20 {
         height: 30px !important;
