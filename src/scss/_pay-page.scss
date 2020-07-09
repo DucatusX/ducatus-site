@@ -198,9 +198,87 @@
                     display: flex;
                     flex-direction: column;
                     height: max-content;
+                    border-radius: 12px;
+                    width: 100%;
+                    background-color: #FDFBF6;
+                    box-shadow: 0px 50px 45px rgba(204, 199, 189, 0.25);
 
                     span {
                         display: block;
+                    }
+
+                    &-wrap {
+                        padding: 30px 30px 50px 30px;
+                    }
+
+                    &-completed {
+                        border-radius: 12px;
+                        background: #FDFBF6;
+                        box-shadow: 0px 50px 45px rgba(204, 199, 189, 0.25);
+                        padding: 30px;
+                        width: 100%;
+                        min-height: 170px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        word-break: break-all;
+
+                        &-title {
+                            font-weight: bold;
+                            font-size: 20px;
+                            line-height: 24px;
+                            text-align: center;
+                            color: #862633;
+                            margin-bottom: 15px;
+                            display: block;
+                            width: 100%;
+                        }
+
+                        &-text {
+                            font-weight: bold;
+                            font-size: 24px;
+                            text-align: center;
+                            color: #BEAD8A;
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+
+                    &-win {
+                        border-radius: 12px;
+                        background: #FDFBF6;
+                        box-shadow: 0px 15px 25px rgba(230, 127, 127, 0.25);
+                        padding: 30px;
+                        width: 100%;
+                        min-height: 170px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background-image: url("assets/img/buy-page-win.png");
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        word-break: break-all;
+
+                        &-title {
+                            font-weight: bold;
+                            font-size: 20px;
+                            text-align: center;
+                            color: #E2C78E;
+                            margin-bottom: 15px;
+                        }
+
+                        &-text {
+                            font-weight: bold;
+                            font-weight: bold;
+                            font-size: 18px;
+                            line-height: 22px;
+                            text-align: center;
+                            color: #FFFFFF;
+                            line-height: 1.5;
+                        }
                     }
 
                     &-title {

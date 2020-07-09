@@ -139,22 +139,34 @@
                 </div>
             </div>
             <div class="pay-form-block">
-                <div class="pay-form-block-wrap lottery" *ngIf="!loadingData">
-                    <span class="lottery-title">Get a chance to win prize</span>
-                    <span class="lottery-subtitle">{{ lottery.name }}</span>
-                    <div class="lottery-image">
-                        <img [src]="lottery.image" class="lottery-image">
+                <div class="lottery" *ngIf="!loadingData">
+
+                    <div class="lottery-completed">
+                        <span class="lottery-completed-title">Fundraising completed</span>
+                        <span class="lottery-completed-text">Winner will be announced in 8 days</span>
                     </div>
-                    <div class="lottery-progress">
-                        <span class="lottery-progress-title">Get a chance to win prize <img
-                                src="/assets/img/icons/lottery-rocket.svg" height="28" width="28"
-                                alt="ducatus lottery rocket"></span>
-                        <div class="lottery-progress-bar">
-                            <span [style.width]="lottery.percent" [attr.data-progress]="lottery.percent"></span>
+                    <div class="lottery-win">
+                        <span class="lottery-win-title">Congratulations to Ducatus address</span>
+                        <span class="lottery-win-text">0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7</span>
+                    </div>
+
+                    <div class="lottery-wrap">
+                        <span class="lottery-title">Get a chance to win prize</span>
+                        <span class="lottery-subtitle">{{ lottery.name }}</span>
+                        <div class="lottery-image">
+                            <img [src]="lottery.image" class="lottery-image">
+                        </div>
+                        <div class="lottery-progress">
+                            <span class="lottery-progress-title">Get a chance to win prize <img
+                                    src="/assets/img/icons/lottery-rocket.svg" height="28" width="28"
+                                    alt="ducatus lottery rocket"></span>
+                            <div class="lottery-progress-bar">
+                                <span [style.width]="lottery.percent" [attr.data-progress]="lottery.percent"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="pay-form-block-wrap lottery" style="padding: 30px!important" *ngIf="loadingData">
+                <div class="lottery" style="padding: 30px!important" *ngIf="loadingData">
                     <div class="ducatus-pay-form loading-pay-form" style="padding: 0 !important;">
                         <div class="group group-input group-input-select input-h-60"></div>
                         <div class="group group-text group-columns input-h-20"></div>
