@@ -1027,8 +1027,16 @@
         grid-template-columns: 1fr 60px;
         grid-gap: 20px 10px;
         grid-template-areas:
-            "inputAddressQr qrCode"
+            "inputAddressQr inputAddressQr"
+            "qrTextCode qrCode"
             "qrText qrText";
+    }
+
+    .qr-textCode {
+        grid-area: qrTextCode;
+        display: flex;
+        align-items: center;
+        height: 100%;
     }
 
 
@@ -1081,6 +1089,16 @@
 
     .qr-address {
         grid-area: inputAddressQr;
+        display: none;
+    }
+
+    .qr-textCode {
+        grid-area: qrTextCode;
+        display: none;
+    }
+
+    .qr-text {
+        grid-area: qrText;
         display: none;
     }
 

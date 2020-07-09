@@ -33,35 +33,40 @@
                         <label class="group-radio-label" for="amount-2">Сhoose amount for Ducatus purchase</label>
                         <div class="group-radio">
                             <div class="group-radio-item">
-                                <input formControlName="amount" required type="radio" id="amount-1" value="10">
+                                <input (ngModelChange)="setAmount()" formControlName="amount" required type="radio"
+                                    id="amount-1" value="10">
                                 <label for="amount-1">
                                     <span class="group-radio-amount">10$</span>
                                     <span class="group-radio-text">1 tickets</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
-                                <input formControlName="amount" type="radio" id="amount-2" value="50">
+                                <input (ngModelChange)="setAmount()" formControlName="amount" type="radio" id="amount-2"
+                                    value="50">
                                 <label for="amount-2">
                                     <span class="group-radio-amount">50$</span>
                                     <span class="group-radio-text">6 tickets</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
-                                <input formControlName="amount" checked type="radio" id="amount-3" value="100">
+                                <input (ngModelChange)="setAmount()" formControlName="amount" checked type="radio"
+                                    id="amount-3" value="100">
                                 <label for="amount-3">
                                     <span class="group-radio-amount">100$</span>
                                     <span class="group-radio-text">13 tickets</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
-                                <input formControlName="amount" type="radio" id="amount-4" value="500">
+                                <input (ngModelChange)="setAmount()" formControlName="amount" type="radio" id="amount-4"
+                                    value="500">
                                 <label for="amount-4">
                                     <span class="group-radio-amount">500$</span>
                                     <span class="group-radio-text">70 tickets</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
-                                <input formControlName="amount" type="radio" id="amount-5" value="1000">
+                                <input (ngModelChange)="setAmount()" formControlName="amount" type="radio" id="amount-5"
+                                    value="1000">
                                 <label for="amount-5">
                                     <span class="group-radio-amount">1000$</span>
                                     <span class="group-radio-text">150 tickets</span>
@@ -75,7 +80,7 @@
                         <label for="address">{{ 'PAGE.BUY.FIELDS.THREE.TEXT_1' | translate }}
                             Ducatus
                             {{ 'PAGE.BUY.FIELDS.THREE.TEXT_2' | translate }}</label>
-                        <input id="address" formControlName="address" required type="text" [disabled]="loadingAddress"
+                        <input id="address" formControlName="address" required type="text"
                             (ngModelChange)="setAddress()"
                             [placeholder]="('PAGE.BUY.FIELDS.THREE.PLACEHOLDER_1' | translate) + ' Ducatus ' + ('PAGE.BUY.FIELDS.THREE.PLACEHOLDER_2' | translate)"
                             class="input input-white" oninput="this.value = this.value.replace('ducatus:', '');">
@@ -85,25 +90,31 @@
 
                     <div class="group group-input">
                         <label for="email">Enter your email address for getting draw result</label>
-                        <input id="email" formControlName="email" type="email" placeholder="Enter your email"
-                            class="input input-white">
+                        <input (ngModelChange)="setEmail()" id="email" formControlName="email" type="email"
+                            placeholder="Enter your email" class="input input-white">
                     </div>
 
-                    <div id="loading-address" [ngClass]="{ 'loading-address-start': loadingAddress}"
+                    <div id="loading-address" [ngClass]="{ 'loading-address-start': loadingQr}"
                         class="group group-input group-input-copy m-b-0 qr-wrap">
                         <div class="group-wrap qr-address">
                             <label>{{ 'PAGE.BUY.FIELDS.FOUR.TEXT_1' | translate }}
+                                {{ currencyData[BuyGroup.value.currency].amount }}
                                 {{ currencyData[BuyGroup.value.currency].name }}
                                 {{ 'PAGE.BUY.FIELDS.FOUR.TEXT_2' | translate }} </label>
-                            <p class="input input-accent">{{ currencyData[BuyGroup.value.currency].address }}</p>
+                            <p class="input input-accent">
+                                <span *ngIf="!loadingQr">{{ currencyData[BuyGroup.value.currency].address }}</span>
+                            </p>
                             <span class="copy-address icon icon-copy"
                                 [cdkCopyToClipboard]="currencyData[BuyGroup.value.currency].address"></span>
                         </div>
-                        <div class="qrcode" [attr.title]="currencyData[BuyGroup.value.currency].address">
-                            <qrcode *ngIf="loadingAddressQr" class="qr-code" [elementType]="'url'" [margin]="0"
-                                [scale]="1" [qrdata]="currencyData[BuyGroup.value.currency].address" [width]="60"
+
+                        <div class="qrcode" [attr.title]="currencyData[BuyGroup.value.currency].info">
+                            <qrcode *ngIf="!loadingQr" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1"
+                                [qrdata]="currencyData[BuyGroup.value.currency].info" [width]="60"
                                 [errorCorrectionLevel]="'L'"></qrcode>
                         </div>
+
+                        <div class="group-wrap qr-textCode"><label>Or scan QR Code in Ducatus Wallet app</label></div>
 
                         <div class="loading-address-qr">
                             <div class="loading-address-qr-wrap">
@@ -141,11 +152,11 @@
             <div class="pay-form-block">
                 <div class="lottery" *ngIf="!loadingData">
 
-                    <div class="lottery-completed">
+                    <div *ngIf="lottery.ended" class="lottery-completed">
                         <span class="lottery-completed-title">Fundraising completed</span>
-                        <span class="lottery-completed-text">Winner will be announced in 8 days</span>
+                        <span class="lottery-completed-text">Winner will be announced in {{ lottery.range }} days</span>
                     </div>
-                    <div class="lottery-win">
+                    <div *ngIf="lottery.range && lottery.range === 0" class="lottery-win">
                         <span class="lottery-win-title">Congratulations to Ducatus address</span>
                         <span class="lottery-win-text">0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7</span>
                     </div>

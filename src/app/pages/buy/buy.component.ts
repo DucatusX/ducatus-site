@@ -34,6 +34,8 @@ export interface Lottery {
   started_at: any;
   ended: any;
   percent?: any;
+  range?: number;
+  winner?: string;
 }
 @Component({
   selector: 'app-buy',
@@ -44,24 +46,28 @@ export interface Lottery {
 export class BuyComponent implements OnInit {
 
   public BuyGroup: FormGroup;
-  public loadingAddress = false;
-  public loadingAddressQr = false;
+  public loadingQr = true;
   public loadingData = true;
+  public loadedAddress = false;
   public modal = true;
   public modalAccept = false;
 
   public currencyData = {
     eth: {
-      name: 'Etherium',
+      name: 'Ethereum',
       shortName: 'eth',
       time: '40 minutes',
-      address: ''
+      address: '',
+      amount: 0,
+      info: ''
     },
     btc: {
       name: 'Bitcoin',
       shortName: 'btc',
       time: '1 hour',
-      address: ''
+      address: '',
+      amount: 0,
+      info: ''
     }
   };
 
@@ -115,49 +121,80 @@ export class BuyComponent implements OnInit {
     return this.BuyGroup.get('address');
   }
 
-  public setAddress() {
+  public setAmount() {
+    this.setQrAddress('amount');
+  }
 
+  public setEmail() {
+    const email = this.BuyGroup.controls['email'].valid;
+    console.log(email);
+    this.getAddresses();
+  }
+
+  public setAddress() {
     const address = this.BuyGroup.value.address;
 
     if (address.length === 34 && ['L', 'l', 'M', 'm'].includes(address.substring(0, 1))) {
-      this.loadingAddress = true;
-      this.loadingAddressQr = false;
-
+      console.log('setAddress');
+      this.currencyData['eth'].address = this.currencyData['btc'].address = '';
+      this.loadedAddress = false;
       this.buyservice.getValidateDucatusAddress(address).then((result) => {
         if (result.address_valid) {
-          this.getAddresses(address);
-        }
-        else {
-          this.BuyGroup.controls['address'].setErrors({ 'incorrect': true });
-          this.currencyData['eth'].address = this.currencyData['btc'].address = '';
-        }
+          this.getAddresses();
+          this.BuyGroup.controls['address'].setErrors(null);
+        } else { this.BuyGroup.controls['address'].setErrors({ 'incorrect': true }); }
+      }).catch(err => { console.error(err); });
+    } else { this.BuyGroup.controls['address'].setErrors({ 'incorrect': true }); }
 
-        this.loadingAddress = false;
-      }).catch(err => {
-        console.error(err);
-        this.loadingAddress = this.loadingAddressQr = false;
-      });
+    this.setQrAddress();
+  }
 
+  public getAddresses() {
+    const address = this.BuyGroup.value.address;
+    const addressValid = this.BuyGroup.controls['address'].valid;
+    const email = this.BuyGroup.value.email;
+
+    console.log('address: ', addressValid);
+
+    if (addressValid) {
+      this.buyservice.getExchange(address, 'DUC', email).then((result) => {
+        this.loadedAddress = true;
+        this.currencyData['eth'].address = result.eth_address;
+        this.currencyData['btc'].address = result.btc_address;
+        this.setQrAddress();
+        this.BuyGroup.controls['address'].setErrors(null);
+      }).catch(err => { console.error(err); this.loadedAddress = false; });
     } else {
       this.BuyGroup.controls['address'].setErrors({ 'incorrect': true });
-      this.currencyData['eth'].address = this.currencyData['btc'].address = '';
-      this.loadingAddress = this.loadingAddressQr = false;
+      this.BuyGroup.controls['address'].markAsTouched();
     }
   }
 
-  public getAddresses(address?) {
-    this.loadingAddress = true;
+  public setQrAddress(type?) {
+    const email = this.BuyGroup.controls['email'].valid;
+    const address = this.BuyGroup.controls['address'].valid;
 
-    this.buyservice.getExchange(address, 'DUC').then((result) => {
-      console.log('address result', result);
-      this.loadingAddress = false;
+    if (email && address && this.loadedAddress && !this.loadingData) {
+      this.loadingQr = true;
+      this.currencyData['btc'].amount = this.BuyGroup.value.amount / 0.05 * this.rates.DUC.BTC;
+      this.currencyData['eth'].amount = this.BuyGroup.value.amount / 0.05 * this.rates.DUC.ETH;
 
-      this.currencyData['eth'].address = result.eth_address;
-      this.currencyData['btc'].address = result.btc_address;
+      console.log('BTC:', this.currencyData['btc'].amount, 'ETH:', this.currencyData['eth'].amount);
 
-      this.loadingAddressQr = true;
+      this.currencyData['btc'].info = this.currencyData['btc'].name.toLowerCase() + ':' + this.currencyData['btc'].address + '?amount=' + this.currencyData['btc'].amount;
+      this.currencyData['eth'].info = this.currencyData['eth'].name.toLowerCase() + ':' + this.currencyData['eth'].address + '?amount=' + this.currencyData['eth'].amount;
 
-    }).catch(err => { console.error(err); this.loadingAddress = this.loadingAddressQr = false; });
+      this.loadingQr = false;
+    } else {
+      this.loadingQr = true;
+
+      if (type != 'amount') {
+        if (!email || !address) {
+          this.BuyGroup.controls['address'].setErrors({ 'incorrect': true });
+          this.BuyGroup.controls['address'].markAsTouched();
+        }
+      }
+    }
   }
 
   public acceptModalTerms() {
@@ -165,7 +202,24 @@ export class BuyComponent implements OnInit {
 
     this.buyservice.getLottery().then((result) => {
       this.lottery = result[0];
-      this.lottery.percent = (100 * parseInt(this.lottery.received_usd_amount) / parseInt(this.lottery.usd_amount)).toString() + '%';
+      const percent = 100 * Number(this.lottery.received_usd_amount) / Number(this.lottery.usd_amount);
+      console.log(Number(percent).toFixed(2));
+      if (Number(percent.toFixed(0)) >= 100) {
+
+        console.log('Lottery finished');
+
+        const dateEnded = new Date(this.lottery.ended);
+        const dateNow = new Date();
+        const days = Math.ceil(Math.abs(dateNow.getTime() - dateEnded.getTime()) / (1000 * 3600 * 24));
+
+        console.log('Days to get winner: ', days);
+
+        days > 8 ? this.lottery.range = 0 : this.lottery.range = days;
+        this.lottery.percent = '100%';
+      }
+      else { this.lottery.percent = percent.toFixed(2) + '%'; }
+
+
     }).catch(err => console.error(err));
 
     this.buyservice.getRates().then((result) => {

@@ -19,11 +19,11 @@ export class BuyService {
     return this.httpService.post(`validate_ducatus_address/`, { address: duc_address }).toPromise();
   }
 
-  public getExchange(address: string, currency: string) {
+  public getExchange(address: string, currency: string, toEmail: string) {
     return this.httpService.post(`exchange/`, {
       to_address: address,
-      to_currency: currency
+      to_currency: currency,
+      email: toEmail
     }).toPromise();
   }
-
 }
