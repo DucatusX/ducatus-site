@@ -8,19 +8,19 @@
     <div class="container">
         <div class="pay-form">
             <div class="pay-form-wrap">
-                <div class="ducatus-pay-form" *ngIf="!loadingData">
-
+                <form [formGroup]="BuyGroup" class="ducatus-pay-form" *ngIf="!loadingData">
                     <div class="group group-input">
                         <div class="group-currency">
                             <div class="group-currency-item">
-                                <input type="radio" name="currency" id="currency-btc" value="btc">
+                                <input formControlName="currency" required type="radio" id="currency-btc" value="btc">
                                 <label for="currency-btc">
                                     <img src="/assets/img/icons/btc.svg" width="30" height="30" alt="bitcoin">
                                     <span class="group-currency-text">BTC</span>
                                 </label>
                             </div>
                             <div class="group-currency-item">
-                                <input type="radio" checked name="currency" id="currency-eth" value="eth">
+                                <input formControlName="currency" checked required type="radio" checked
+                                    id="currency-eth" value="eth">
                                 <label for="currency-eth">
                                     <img src="/assets/img/icons/eth.svg" width="30" height="30" alt="etherium">
                                     <span class="group-currency-text">ETH</span>
@@ -33,35 +33,35 @@
                         <label class="group-radio-label" for="amount-2">Сhoose amount for Ducatus purchase</label>
                         <div class="group-radio">
                             <div class="group-radio-item">
-                                <input type="radio" name="amount" id="amount-1" value="10">
+                                <input formControlName="amount" required type="radio" id="amount-1" value="10">
                                 <label for="amount-1">
                                     <span class="group-radio-amount">10$</span>
                                     <span class="group-radio-text">1 tickets</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
-                                <input type="radio" checked name="amount" id="amount-2" value="50">
+                                <input formControlName="amount" type="radio" id="amount-2" value="50">
                                 <label for="amount-2">
                                     <span class="group-radio-amount">50$</span>
                                     <span class="group-radio-text">6 tickets</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
-                                <input type="radio" name="amount" id="amount-3" value="100">
+                                <input formControlName="amount" checked type="radio" id="amount-3" value="100">
                                 <label for="amount-3">
                                     <span class="group-radio-amount">100$</span>
                                     <span class="group-radio-text">13 tickets</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
-                                <input type="radio" name="amount" id="amount-4" value="500">
+                                <input formControlName="amount" type="radio" id="amount-4" value="500">
                                 <label for="amount-4">
                                     <span class="group-radio-amount">500$</span>
                                     <span class="group-radio-text">70 tickets</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
-                                <input type="radio" name="amount" id="amount-5" value="1000">
+                                <input formControlName="amount" type="radio" id="amount-5" value="1000">
                                 <label for="amount-5">
                                     <span class="group-radio-amount">1000$</span>
                                     <span class="group-radio-text">150 tickets</span>
@@ -73,34 +73,35 @@
 
                     <div class="group group-input">
                         <label for="address">{{ 'PAGE.BUY.FIELDS.THREE.TEXT_1' | translate }}
-                            {{ exchange.selected.get.fullname }}
+                            Ducatus
                             {{ 'PAGE.BUY.FIELDS.THREE.TEXT_2' | translate }}</label>
-                        <input id="address" type="text"
-                            [ngClass]="{'text' : exchange.address.validate || exchange.address.loading }"
-                            [disabled]="exchange.address.validate || exchange.address.loading"
-                            [(ngModel)]="exchange.address.to" (ngModelChange)="setAddress()"
-                            [placeholder]="('PAGE.BUY.FIELDS.THREE.PLACEHOLDER_1' | translate) + ' ' + exchange.selected.get.fullname + ' ' + ('PAGE.BUY.FIELDS.THREE.PLACEHOLDER_2' | translate)"
+                        <input id="address" formControlName="address" required type="text" [disabled]="loadingAddress"
+                            (ngModelChange)="setAddress()"
+                            [placeholder]="('PAGE.BUY.FIELDS.THREE.PLACEHOLDER_1' | translate) + ' Ducatus ' + ('PAGE.BUY.FIELDS.THREE.PLACEHOLDER_2' | translate)"
                             class="input input-white" oninput="this.value = this.value.replace('ducatus:', '');">
                         <span class="error-address-value"
-                            *ngIf="exchange.address.error">{{ 'PAGE.BUY.FIELDS.THREE.ERROR' | translate }}</span>
+                            *ngIf="ducAddress?.invalid && (ducAddress?.dirty || ducAddress?.touched)">{{ 'PAGE.BUY.FIELDS.THREE.ERROR' | translate }}</span>
                     </div>
 
                     <div class="group group-input">
                         <label for="email">Enter your email address for getting draw result</label>
-                        <input id="email" type="email" placeholder="Enter your email" class="input input-white">
+                        <input id="email" formControlName="email" type="email" placeholder="Enter your email"
+                            class="input input-white">
                     </div>
 
-                    <div id="loading-address" [ngClass]="{ 'loading-address-start': exchange.address.loading }"
+                    <div id="loading-address" [ngClass]="{ 'loading-address-start': loadingAddress}"
                         class="group group-input group-input-copy m-b-0 qr-wrap">
                         <div class="group-wrap qr-address">
-                            <label>{{ 'PAGE.BUY.FIELDS.FOUR.TEXT_1' | translate }} {{ exchange.selected.send.fullname }}
+                            <label>{{ 'PAGE.BUY.FIELDS.FOUR.TEXT_1' | translate }}
+                                {{ currencyData[BuyGroup.value.currency].name }}
                                 {{ 'PAGE.BUY.FIELDS.FOUR.TEXT_2' | translate }} </label>
-                            <p class="input input-accent">{{ exchange.selected.send.address }}</p>
-                            <span class="copy-address icon icon-copy"></span>
+                            <p class="input input-accent">{{ currencyData[BuyGroup.value.currency].address }}</p>
+                            <span class="copy-address icon icon-copy"
+                                [cdkCopyToClipboard]="currencyData[BuyGroup.value.currency].address"></span>
                         </div>
-                        <div class="qrcode">
-                            <qrcode *ngIf="exchange.address.qr" class="qr-code" [elementType]="'url'" [margin]="0"
-                                [scale]="1" [qrdata]="exchange.selected.send.address" [width]="60"
+                        <div class="qrcode" [attr.title]="currencyData[BuyGroup.value.currency].address">
+                            <qrcode *ngIf="loadingAddressQr" class="qr-code" [elementType]="'url'" [margin]="0"
+                                [scale]="1" [qrdata]="currencyData[BuyGroup.value.currency].address" [width]="60"
                                 [errorCorrectionLevel]="'L'"></qrcode>
                         </div>
 
@@ -119,14 +120,15 @@
                         <div class="group group-text qr-text" style="margin-bottom: 0;">
                             <span class="text-attantion"><span
                                     class="attantion">{{ 'PAGE.BUY.FIELDS.FIVE.TEXT_1' | translate }}!</span>
-                                {{ 'PAGE.BUY.FIELDS.FIVE.TEXT_2' | translate }} {{ exchange.selected.get.fullname }}
+                                {{ 'PAGE.BUY.FIELDS.FIVE.TEXT_2' | translate }}
+                                Ducatus
                                 {{ 'PAGE.BUY.FIELDS.FIVE.TEXT_3' | translate }}
-                                {{ exchange.selected.send.text }}<br><br></span>
+                                {{ currencyData[BuyGroup.value.currency].time }}<br><br></span>
                         </div>
 
                     </div>
 
-                </div>
+                </form>
                 <div class="ducatus-pay-form loading-pay-form" *ngIf="loadingData">
                     <div class="group group-input group-input-select" style="height: 90px;"></div>
                     <div class="group group-input group-input-select" style="height: 130px;"></div>
@@ -153,7 +155,7 @@
                     </div>
                 </div>
                 <div class="pay-form-block-wrap lottery" style="padding: 30px!important" *ngIf="loadingData">
-                    <div class="ducatus-pay-form loading-pay-form" style="padding: 0 !important;" *ngIf="loadingData">
+                    <div class="ducatus-pay-form loading-pay-form" style="padding: 0 !important;">
                         <div class="group group-input group-input-select input-h-60"></div>
                         <div class="group group-text group-columns input-h-20"></div>
                         <div class="group group-input group-input-select" style="height: 130px;"></div>

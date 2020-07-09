@@ -15,6 +15,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient, HttpClientXsrfModule } from '@angular/common/http';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 // resolvers
 import { UserResolver } from './resolvers';
@@ -66,6 +67,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     Ng2TelInputModule,
     ReactiveFormsModule,
+    ClipboardModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
