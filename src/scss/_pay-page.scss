@@ -208,7 +208,7 @@
                     }
 
                     &-wrap {
-                        padding: 30px 30px 50px 30px;
+                        padding: 30px 30px 55px 30px;
                     }
 
                     &-completed {
@@ -278,6 +278,88 @@
                             text-align: center;
                             color: #FFFFFF;
                             line-height: 1.5;
+                        }
+                    }
+
+                    &-tickets {
+                        display: grid;
+                        grid-template-columns: 1fr 240px;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        height: 85px;
+                        border-radius: 12px;
+                        background-color: #FDFBF6;
+                        margin-top: 28px;
+
+                        &:before {
+                            content: '';
+                            left: 0;
+                            position: absolute;
+                            height: 27px;
+                            width: 13px;
+                            border-radius: 0px 50px 50px 0px;
+                            background-color: #F4F0E5;
+                        }
+
+                        &:after {
+                            content: '';
+                            right: 0;
+                            position: absolute;
+                            height: 27px;
+                            width: 13px;
+                            border-radius: 50px 0px 0px 50px;
+                            background-color: #F4F0E5;
+                        }
+
+                        &-item {
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            &:nth-child(2) {
+                                background-color: rgba(247, 239, 223, 0.5);
+                                flex-direction: column;
+                            }
+
+                            &:nth-child(1) {
+                                border-right: 1px dashed #DDC491;
+                                padding: 10px;
+                            }
+
+                            &-title {
+                                font-weight: bold;
+                                font-size: 16px;
+                                line-height: 20px;
+                                text-align: center;
+                                color: #BE8112;
+                                cursor: pointer;
+                                transition: 0.4s ease;
+
+                                &:hover {
+                                    // text-shadow: 0px 10px 8px #892834b5;
+                                    // transform: translateY(-5px);
+                                    transition: 0.4s ease;
+                                    color: $brown-red;
+                                }
+                            }
+
+                            &-amount {
+                                font-weight: bold;
+                                font-size: 16px;
+                                line-height: 20px;
+                                text-align: center;
+                                color: #BE8112;
+                            }
+
+                            &-text {
+                                font-size: 16px;
+                                line-height: 20px;
+                                text-align: center;
+                                color: #BE8112;
+                                margin-top: 6px;
+                            }
                         }
                     }
 

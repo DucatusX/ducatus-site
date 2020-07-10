@@ -149,9 +149,8 @@
                     <div class="group group-text group-columns input-h-20"></div>
                 </div>
             </div>
-            <div class="pay-form-block">
-                <div class="lottery" *ngIf="!loadingData">
-
+            <div class="pay-form-block" *ngIf="!loadingData">
+                <div class="lottery">
                     <div *ngIf="lottery.ended" class="lottery-completed">
                         <span class="lottery-completed-title">Fundraising completed</span>
                         <span class="lottery-completed-text">Winner will be announced in {{ lottery.range }} days</span>
@@ -177,7 +176,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="lottery" style="padding: 30px!important" *ngIf="loadingData">
+                <div class="lottery-tickets">
+                    <div class="lottery-tickets-item">
+                        <img src="/assets/img/icons/ticket.svg" height="62" width="75" alt="ducatus lottery ticket">
+                        <span class="lottery-tickets-item-title">List of participants →</span>
+                    </div>
+                    <div class="lottery-tickets-item">
+                        <span class="lottery-tickets-item-amount">2401</span>
+                        <span class="lottery-tickets-item-text">of tickets</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pay-form-block" *ngIf="loadingData">
+                <div class="lottery" style="padding: 30px!important">
                     <div class="ducatus-pay-form loading-pay-form" style="padding: 0 !important;">
                         <div class="group group-input group-input-select input-h-60"></div>
                         <div class="group group-text group-columns input-h-20"></div>
