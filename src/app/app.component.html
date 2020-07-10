@@ -1,3 +1,13 @@
 <app-header></app-header>
 <router-outlet (activate)="onActivate($event)"></router-outlet>
 <app-footer></app-footer>
+
+<div class="page-overlay" *ngIf="showOverlay">
+  <img src="/assets/img/icons/logo.svg" alt="ducauts logo">
+  <div class="lds-ring">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
