@@ -19,11 +19,12 @@ import { UserResolver } from './resolvers';
 const routes: Routes = [
   {
     path: '',
-    component: IndexComponent,
+    component: IndexComponent
   },
   {
     path: 'about',
     component: AboutComponent,
+    // data: { animation: 'isRight' }
   },
   {
     path: 'contact',

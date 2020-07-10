@@ -1,5 +1,9 @@
 <app-header></app-header>
-<router-outlet (activate)="onActivate($event)"></router-outlet>
+
+<div [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet" (activate)="onActivate($event)"></router-outlet>
+</div>
+
 <app-footer></app-footer>
 
 <div class="page-overlay" *ngIf="showOverlay">
