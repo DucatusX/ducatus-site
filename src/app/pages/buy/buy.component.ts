@@ -36,6 +36,7 @@ export interface Lottery {
   percent?: any;
   range?: number;
   winner?: string;
+  gave_tickets_amount?: number;
 }
 @Component({
   selector: 'app-buy',
