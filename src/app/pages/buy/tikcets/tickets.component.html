@@ -1,0 +1,23 @@
+<section class="section-header-page" style="background-image: url(/assets/img/sections/vaucher-bg.png);">
+  <div class="container">
+    <!-- <h1 class="h1__title-page" [innerHTML]="'PAGE.VAUCHER.TITLE' | translate"></h1> -->
+    <h1 class="h1__title-page">Buy DUC</h1>
+  </div>
+</section>
+<section class="app lottery-info-page color-page">
+  <div class="container">
+
+    <div class="lottery-info">
+      <span class="lottery-info-title">
+        Ticket | Ducatus address
+      </span>
+
+      <div class="lottery-info-table" *ngIf="players">
+        <div class="lottery-info-table-items" *ngFor="let item of players">
+          <div class="lottery-info-table-item">{{ item.tickets_amount }}</div>
+          <div class="lottery-info-table-item">{{ item.address }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
