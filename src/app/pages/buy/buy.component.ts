@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -19,6 +19,7 @@ export class BuyComponent implements OnInit {
   public loadedAddress = false;
   public modal = true;
   public modalAccept = false;
+  private checker;
 
   public currencyData = {
     eth: {
@@ -86,6 +87,10 @@ export class BuyComponent implements OnInit {
   }
 
   ngOnInit() { }
+
+  ngOnDestroy() {
+    this.checker = undefined;
+  }
 
   get ducAddress() {
     return this.BuyGroup.get('address');
@@ -171,19 +176,27 @@ export class BuyComponent implements OnInit {
     }
   }
 
-  public acceptModalTerms() {
-    this.modal = false;
-
+  private checkLotteryStatus() {
     this.buyservice.getLottery().then((result) => {
       this.lottery = result[0];
       const percent = 100 * Number(this.lottery.sent_duc_amount) / Number(this.lottery.duc_amount);
       Number(percent.toFixed(0)) >= 100 ? this.lottery.percent = '100%' : this.lottery.percent = percent.toFixed(2) + '%';
     }).catch(err => console.error(err));
 
+    if (!this.lottery.winner_address) {
+      this.checker = setTimeout(() => {
+        if (this.checker) { this.checkLotteryStatus(); }
+      }, 10000);
+    } else { this.checker = undefined; }
+  }
+
+  public acceptModalTerms() {
+    this.modal = false;
+    this.checkLotteryStatus();
+
     this.buyservice.getRates().then((result) => {
       this.rates = result;
       this.loadingData = false;
     }).catch(err => { console.error(err); });
   }
-
 }
