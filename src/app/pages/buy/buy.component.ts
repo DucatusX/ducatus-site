@@ -176,20 +176,8 @@ export class BuyComponent implements OnInit {
 
     this.buyservice.getLottery().then((result) => {
       this.lottery = result[0];
-
       const percent = 100 * Number(this.lottery.sent_duc_amount) / Number(this.lottery.duc_amount);
-
-      if (!this.lottery.ended) {
-        if (this.lottery.filled_at) {
-          const dateEnded = new Date(this.lottery.filled_at as any);
-          const days = Math.ceil(Math.abs(new Date().getTime() - dateEnded.getTime()) / (1000 * 3600 * 24));
-          console.log('Days to get winner: ', days);
-          days > 8 ? this.lottery.range = 0 : this.lottery.range = days;
-        }
-      }
-
       Number(percent.toFixed(0)) >= 100 ? this.lottery.percent = '100%' : this.lottery.percent = percent.toFixed(2) + '%';
-
     }).catch(err => console.error(err));
 
     this.buyservice.getRates().then((result) => {
