@@ -247,10 +247,17 @@
 
                             &-winner {
                                 font-weight: normal;
-                                font-size: 20px;
+                                font-size: 18px;
                                 line-height: 49px;
                                 text-align: center;
                                 color: #862633;
+                                word-break: break-all;
+                                line-height: 1.4;
+                                padding: 0 10px;
+
+                                @include b(500) {
+                                    font-size: 13px;
+                                }
                             }
                         }
 
