@@ -1213,6 +1213,15 @@
         color: #892734;
     }
 
+    .ng-untouched {
+        border-color: #e9dcca !important;
+    }
+
+    .error-address,
+    .ng-invalid {
+        border-color: #892834;
+    }
+
     .qr-wrap {
         display: grid;
         grid-template-columns: 1fr 80px;

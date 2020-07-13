@@ -102,10 +102,10 @@
                                 {{ currencyData[BuyGroup.value.currency].name }}
                                 {{ 'PAGE.BUY.FIELDS.FOUR.TEXT_2' | translate }} </label>
                             <p class="input input-accent">
-                                <span *ngIf="!loadingQr">{{ currencyData[BuyGroup.value.currency].address }}</span>
+                                <span *ngIf="!loadingQr">{{ currencyData[BuyGroup.value.currency].info }}</span>
                             </p>
                             <span class="copy-address icon icon-copy"
-                                [cdkCopyToClipboard]="currencyData[BuyGroup.value.currency].address"></span>
+                                [cdkCopyToClipboard]="currencyData[BuyGroup.value.currency].info"></span>
                         </div>
 
                         <div class="qrcode" [attr.title]="currencyData[BuyGroup.value.currency].info">
