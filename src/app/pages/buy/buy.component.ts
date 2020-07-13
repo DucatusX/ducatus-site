@@ -27,7 +27,7 @@ export class BuyComponent implements OnInit {
       shortName: 'eth',
       time: '40 minutes',
       address: '',
-      amount: 0,
+      amount: null,
       info: ''
     },
     btc: {
@@ -35,7 +35,7 @@ export class BuyComponent implements OnInit {
       shortName: 'btc',
       time: '1 hour',
       address: '',
-      amount: 0,
+      amount: null,
       info: ''
     }
   };
@@ -155,13 +155,14 @@ export class BuyComponent implements OnInit {
 
     if (email && address && this.loadedAddress && !this.loadingData) {
       this.loadingQr = true;
-      this.currencyData['btc'].amount = this.BuyGroup.value.amount / 0.05 * this.rates.DUC.BTC;
-      this.currencyData['eth'].amount = this.BuyGroup.value.amount / 0.05 * this.rates.DUC.ETH;
+
+      this.currencyData['btc'].amount = ((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.BTC).toFixed(8)).toString();
+      this.currencyData['eth'].amount = ((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.BTC).toFixed(18)).toString();
 
       console.log('BTC:', this.currencyData['btc'].amount, 'ETH:', this.currencyData['eth'].amount);
 
       this.currencyData['btc'].info = this.currencyData['btc'].name.toLowerCase() + ':' + this.currencyData['btc'].address + '?amount=' + this.currencyData['btc'].amount;
-      this.currencyData['eth'].info = this.currencyData['eth'].name.toLowerCase() + ':' + this.currencyData['eth'].address + '?amount=' + this.currencyData['eth'].amount;
+      this.currencyData['eth'].info = this.currencyData['eth'].name.toLowerCase() + ':' + this.currencyData['eth'].address + '?value=' + this.currencyData['eth'].amount.split('.').join('');
 
       this.loadingQr = false;
     } else {

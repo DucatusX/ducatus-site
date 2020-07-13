@@ -46,6 +46,11 @@
     grid-gap: 3px;
     margin-top: 30px;
 
+    @include b(600) {
+      overflow: hidden;
+      overflow-x: scroll;
+    }
+
     &-items {
       background-color: white;
       border-radius: 12px;

@@ -110,7 +110,7 @@
 
                         <div class="qrcode" [attr.title]="currencyData[BuyGroup.value.currency].info">
                             <qrcode *ngIf="!loadingQr" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1"
-                                [qrdata]="currencyData[BuyGroup.value.currency].info" [width]="60"
+                                [qrdata]="currencyData[BuyGroup.value.currency].info" [width]="80"
                                 [errorCorrectionLevel]="'L'"></qrcode>
                         </div>
 
