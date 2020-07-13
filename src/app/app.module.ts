@@ -39,12 +39,20 @@ import { TicketsComponent } from './pages/buy/tikcets/tickets.component';
 import { HeaderComponent } from './pages/index/header/header.component';
 import { FooterComponent } from './pages/index/footer/footer.component';
 
+// components
+import { CountdownComponent } from './components/countdown/countdown.component';
+
+// pipes
+import { SafePipe } from './pipe/safeUrl.pipe';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
   declarations: [
+
+    // pages
     AppComponent,
     IndexComponent,
     AboutComponent,
@@ -59,8 +67,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginComponent,
     TicketsComponent,
 
+    // components
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+
+    // pipes
+    SafePipe,
+    CountdownComponent
   ],
   imports: [
     BrowserModule,

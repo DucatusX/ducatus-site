@@ -37,7 +37,7 @@
                                     id="amount-1" value="10">
                                 <label for="amount-1">
                                     <span class="group-radio-amount">10$</span>
-                                    <span class="group-radio-text">1 ticket</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">1 ticket</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -45,7 +45,7 @@
                                     value="50">
                                 <label for="amount-2">
                                     <span class="group-radio-amount">50$</span>
-                                    <span class="group-radio-text">6 tickets</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">6 tickets</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -53,7 +53,7 @@
                                     id="amount-3" value="100">
                                 <label for="amount-3">
                                     <span class="group-radio-amount">100$</span>
-                                    <span class="group-radio-text">13 tickets</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">13 tickets</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -61,7 +61,7 @@
                                     value="500">
                                 <label for="amount-4">
                                     <span class="group-radio-amount">500$</span>
-                                    <span class="group-radio-text">70 tickets</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">70 tickets</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -69,7 +69,7 @@
                                     value="1000">
                                 <label for="amount-5">
                                     <span class="group-radio-amount">1000$</span>
-                                    <span class="group-radio-text">150 tickets</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">150 tickets</span>
                                 </label>
                             </div>
 
@@ -151,42 +151,86 @@
             </div>
             <div class="pay-form-block" *ngIf="!loadingData">
                 <div class="lottery">
-                    <div *ngIf="lottery.ended" class="lottery-completed">
-                        <span class="lottery-completed-title">Fundraising completed</span>
-                        <span class="lottery-completed-text">Winner will be announced in {{ lottery.range }} days</span>
+                    <div class="lottery-wrap">
+                        <span *ngIf="lottery.description && lottery.description.title" class="lottery-title"
+                            [innerHTML]="lottery.description.title"></span>
+                        <span *ngIf="lottery.description && lottery.description.subtitle" class="lottery-subtitle"
+                            [innerHTML]="lottery.description.subtitle"></span>
+
+                        <ul *ngIf="lottery.description">
+                            <li *ngFor="let item of lottery.description.list">{{ item }}</li>
+                        </ul>
+
+                        <div *ngIf="lottery.image" class="lottery-image">
+                            <img [src]="lottery.image">
+                        </div>
+
+                        <div *ngIf="lottery.video" class="lottery-video">
+                            <iframe [src]="lottery.video | safe" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+
+                        <div class="lottery-info">
+                            <span class="lottery-info-title">How can you own this timepiece?</span>
+                            <p class="lottery-info-text">Every buyer of DUC stands a chance to win. The higher your DUC
+                                purchase, the more winning chances you get.</p>
+                            <p class="lottery-info-text">Once the target of {{ lottery.duc_amount | number }} DUC sold
+                                is reached, the 8-day
+                                countdown to the Lucky Draw Day starts. The sale of DUC
+                                continues until the countdown reaches 00:00:00.</p>
+                            <p class="lottery-info-text">Through a random smart contract draw, the winning hash will be
+                                determined and published on this page.</p>
+                        </div>
                     </div>
-                    <div *ngIf="lottery.range && lottery.range === 0" class="lottery-win">
-                        <span class="lottery-win-title">Congratulations to Ducatus address</span>
-                        <span class="lottery-win-text">0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7</span>
+                </div>
+
+                <div class="lottery-tickets">
+
+                    <div *ngIf="lottery.filled_at && !lottery.ended" class="lottery-tickets-timer">
+                        <div class="lottery-tickets-timer-title">Time until Lucky Draw</div>
+                        <span class="lottery-tickets-timer-count">
+                            <app-countdown [timeStart]="lottery.filled_at" [timeEndDayPlus]="8"></app-countdown>
+                        </span>
                     </div>
 
-                    <div class="lottery-wrap">
-                        <span class="lottery-title">Get a chance to win prize</span>
-                        <span class="lottery-subtitle">{{ lottery.name }}</span>
-                        <div class="lottery-image">
-                            <img [src]="lottery.image" class="lottery-image">
+                    <div *ngIf="lottery.ended" class="lottery-tickets-timer">
+                        <div *ngIf="lottery.winner_address">
+                            <div class="lottery-tickets-timer-title">Lottery winner</div>
+                            <span class="lottery-tickets-timer-winner">{{ lottery.winner_address }}</span>
                         </div>
-                        <div class="lottery-progress">
-                            <span class="lottery-progress-title">Get a chance to win prize <img
-                                    src="/assets/img/icons/lottery-rocket.svg" height="28" width="28"
-                                    alt="ducatus lottery rocket"></span>
-                            <div class="lottery-progress-bar">
-                                <span [style.width]="lottery.percent" [attr.data-progress]="lottery.percent"></span>
-                            </div>
+                        <div *ngIf="!lottery.winner_address">
+                            <div class="lottery-tickets-timer-title">Please wait</div>
+                            <div class="lottery-tickets-timer-winner">calculating winner...</div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="lottery.filled_at" class="lottery-tickets-spacer"><span></span></div>
+
+                    <div class="lottery-tickets-items">
+                        <div class="lottery-tickets-item">
+                            <img src="/assets/img/icons/ticket.svg" height="62" width="75" alt="ducatus lottery ticket">
+                            <span [routerLink]="['/buy/tickets']" class="lottery-tickets-item-title">Description of
+                                Counters →</span>
+                        </div>
+                        <div class="lottery-tickets-item">
+                            <span class="lottery-tickets-item-amount">{{ lottery.gave_tickets_amount }}</span>
+                            <span class="lottery-tickets-item-text">Number of DUC Sold</span>
+                        </div>
+                    </div>
+
+                    <div class="lottery-tickets-spacer"><span></span></div>
+
+                    <div class="lottery-tickets-progress">
+                        <span class="lottery-tickets-progress-title">Get a chance to win prize <img
+                                src="/assets/img/icons/lottery-rocket.svg" height="28" width="28"
+                                alt="ducatus lottery rocket"></span>
+                        <div class="lottery-tickets-progress-bar">
+                            <span [style.width]="lottery.percent" [attr.data-progress]="lottery.percent"></span>
                         </div>
                     </div>
                 </div>
-                <div class="lottery-tickets">
-                    <div class="lottery-tickets-item">
-                        <img src="/assets/img/icons/ticket.svg" height="62" width="75" alt="ducatus lottery ticket">
-                        <span [routerLink]="['/buy/tickets']" class="lottery-tickets-item-title">List of participants
-                            →</span>
-                    </div>
-                    <div class="lottery-tickets-item">
-                        <span class="lottery-tickets-item-amount">{{ lottery.gave_tickets_amount }}</span>
-                        <span class="lottery-tickets-item-text">of tickets</span>
-                    </div>
-                </div>
+
             </div>
             <div class="pay-form-block" *ngIf="loadingData">
                 <div class="lottery" style="padding: 30px!important">

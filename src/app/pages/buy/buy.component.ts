@@ -1,43 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
 
 import { BuyService } from '../../service/buy/buy.service';
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+import { Lottery, Rates } from 'src/app/interfaces';
 
-const f = x => ((x.toString().includes('.')) ? (x.toString().split('.').pop().length) : (0));
-
-export interface Rates {
-  DUC: {
-    ETH: number;
-    BTC: number;
-    DUCX: number;
-  };
-  DUCX: {
-    DUC: number;
-  };
-}
-
-export interface Addresses {
-  btc_address: string;
-  ducx_address: string;
-  eth_address: string;
-  duc_address: string;
-}
-
-export interface Lottery {
-  id?: number;
-  name: string;
-  description: string;
-  image: string;
-  usd_amount: any;
-  received_usd_amount: any;
-  started_at: any;
-  ended: any;
-  percent?: any;
-  range?: number;
-  winner?: string;
-  gave_tickets_amount?: number;
-}
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
@@ -76,12 +43,11 @@ export class BuyComponent implements OnInit {
     name: '',
     description: 'info',
     image: '',
-    usd_amount: '',
-    received_usd_amount: '',
+    duc_amount: '',
+    sent_duc_amount: '',
     started_at: 0,
     ended: false,
   };
-
 
   public rates: Rates = {
     DUC: {
@@ -97,6 +63,7 @@ export class BuyComponent implements OnInit {
   constructor(
     private buyservice: BuyService,
     private formBuilder: FormBuilder,
+    private sanitizer: DomSanitizer
   ) {
     this.BuyGroup = this.formBuilder.group({
       currency: [
@@ -118,8 +85,14 @@ export class BuyComponent implements OnInit {
     });
   }
 
+  ngOnInit() { }
+
   get ducAddress() {
     return this.BuyGroup.get('address');
+  }
+
+  get lotteryVideoUrl() {
+    return this.sanitizer.bypassSecurityTrustUrl(this.lottery.video);
   }
 
   public setAmount() {
@@ -203,23 +176,19 @@ export class BuyComponent implements OnInit {
 
     this.buyservice.getLottery().then((result) => {
       this.lottery = result[0];
-      const percent = 100 * Number(this.lottery.received_usd_amount) / Number(this.lottery.usd_amount);
-      console.log(Number(percent).toFixed(2));
-      if (Number(percent.toFixed(0)) >= 100) {
 
-        console.log('Lottery finished');
+      const percent = 100 * Number(this.lottery.sent_duc_amount) / Number(this.lottery.duc_amount);
 
-        const dateEnded = new Date(this.lottery.ended);
-        const dateNow = new Date();
-        const days = Math.ceil(Math.abs(dateNow.getTime() - dateEnded.getTime()) / (1000 * 3600 * 24));
-
-        console.log('Days to get winner: ', days);
-
-        days > 8 ? this.lottery.range = 0 : this.lottery.range = days;
-        this.lottery.percent = '100%';
+      if (!this.lottery.ended) {
+        if (this.lottery.filled_at) {
+          const dateEnded = new Date(this.lottery.filled_at as any);
+          const days = Math.ceil(Math.abs(new Date().getTime() - dateEnded.getTime()) / (1000 * 3600 * 24));
+          console.log('Days to get winner: ', days);
+          days > 8 ? this.lottery.range = 0 : this.lottery.range = days;
+        }
       }
-      else { this.lottery.percent = percent.toFixed(2) + '%'; }
 
+      Number(percent.toFixed(0)) >= 100 ? this.lottery.percent = '100%' : this.lottery.percent = percent.toFixed(2) + '%';
 
     }).catch(err => console.error(err));
 
@@ -228,7 +197,5 @@ export class BuyComponent implements OnInit {
       this.loadingData = false;
     }).catch(err => { console.error(err); });
   }
-
-  ngOnInit() { }
 
 }
