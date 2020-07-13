@@ -190,7 +190,8 @@
                     <div *ngIf="lottery.filled_at && !lottery.ended" class="lottery-tickets-timer">
                         <div class="lottery-tickets-timer-title">Time until Lucky Draw</div>
                         <span class="lottery-tickets-timer-count">
-                            <app-countdown [timeStart]="lottery.filled_at" [timeEndDayPlus]="8"></app-countdown>
+                            <app-countdown [timeStart]="lottery.filled_at" [correctTimeStart]="1000"
+                                [timeEndDayPlus]="8"></app-countdown>
                         </span>
                     </div>
 

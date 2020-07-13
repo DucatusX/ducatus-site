@@ -11,6 +11,7 @@ import { map, tap } from 'rxjs/operators';
 export class CountdownComponent implements OnInit {
 
   @Input() timeStart: number;
+  @Input() correctTimeStart: number;
   @Input() timeEndDayPlus: number;
 
   private counter$: Observable<number>;
@@ -41,6 +42,8 @@ export class CountdownComponent implements OnInit {
 
 
   ngOnInit() {
+    if (this.correctTimeStart) { this.timeStart = this.timeStart * 1000; }
+
     const future = new Date(this.timeStart);
     future.setDate(future.getDate() + this.timeEndDayPlus);
     this.counter$ = interval(1000).pipe(map(() => Math.floor((future.getTime() - new Date().getTime()) / 1000)));
