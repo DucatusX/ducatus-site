@@ -377,11 +377,11 @@
 
                         &-items {
                             display: grid;
-                            grid-template-columns: minmax(100px,240px) minmax(100px,240px);
+                            grid-template-columns: minmax(100px, 280px) minmax(100px, 280px);
                             align-items: center;
                             justify-content: center;
                             height: 70px;
-                            padding: 0 40px;
+                            padding: 0 20px;
                             margin: 15px 0;
 
                             @include bb(1150, 900) {
@@ -708,12 +708,25 @@
                     @include b(500) {
                         font-size: 16px;
                     }
+
+                    @include b(400) {
+                        text-align: center;
+                        font-size: 14px;
+                        margin-bottom: 15px;
+                        line-height: 1.4;
+                    }
                 }
 
                 &-group-text {
                     display: grid;
                     grid-template-columns: 110px 1fr;
                     align-items: center;
+
+                    @include b(400) {
+                        grid-template-columns: 1fr;
+                        text-align: center;
+                        grid-gap: 10px;
+                    }
                 }
 
                 &-subtitle {
@@ -1598,5 +1611,19 @@
             }
         }
 
+    }
+}
+
+.hidden-mobile {
+    @include b(900) {
+        display: none !important;
+    }
+}
+
+.hidden-desktop {
+    display: none;
+
+    @include b(900) {
+        display: block !important;
     }
 }

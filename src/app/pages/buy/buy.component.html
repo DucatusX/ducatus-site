@@ -39,7 +39,7 @@
                                     id="amount-1" value="10">
                                 <label for="amount-1">
                                     <span class="group-radio-amount">10$</span>
-                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">1 chance</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">1 entry</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -47,7 +47,7 @@
                                     value="50">
                                 <label for="amount-2">
                                     <span class="group-radio-amount">50$</span>
-                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">6 chances</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">6 entrys</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -55,7 +55,7 @@
                                     id="amount-3" value="100">
                                 <label for="amount-3">
                                     <span class="group-radio-amount">100$</span>
-                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">13 chances</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">13 entrys</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -63,7 +63,7 @@
                                     value="500">
                                 <label for="amount-4">
                                     <span class="group-radio-amount">500$</span>
-                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">70 chances</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">70 entrys</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -71,7 +71,7 @@
                                     value="1000">
                                 <label for="amount-5">
                                     <span class="group-radio-amount">1000$</span>
-                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">150 chances</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">150 entrys</span>
                                 </label>
                             </div>
 
@@ -143,7 +143,7 @@
                     <div class="group group-text group-columns input-h-20"></div>
                 </div>
 
-                <div class="buy-info-block" *ngIf="!loadingData">
+                <div class="buy-info-block hidden-mobile" *ngIf="!loadingData">
                     <span class="buy-info-block-title">Discover, learn and earn by being part of the Ducatus Cashless
                         Economy.</span>
 
@@ -170,7 +170,6 @@
                                 target="_blank">https://remusnation.com/dbay/</a>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="buy-info-block loading-pay-form" *ngIf="loadingData">
@@ -222,8 +221,8 @@
                     <div class="lottery-tickets-items">
                         <div class="lottery-tickets-item">
                             <img src="/assets/img/icons/ticket.svg" height="57" width="70" alt="ducatus lottery ticket">
-                            <span [routerLink]="['/buy/entries']" class="lottery-tickets-item-title">Description of
-                                Counters →</span>
+                            <span [routerLink]="['/buy/entries']" class="lottery-tickets-item-title">List of entries
+                                →</span>
                         </div>
                         <div class="lottery-tickets-spacer"><span></span></div>
                         <div class="lottery-tickets-item">
@@ -263,10 +262,36 @@
                         </div>
                     </div>
                 </div>
+                <div class="buy-info-block hidden-desktop" *ngIf="!loadingData">
+                    <span class="buy-info-block-title">Discover, learn and earn by being part of the Ducatus Cashless
+                        Economy.</span>
 
+                    <div class="buy-info-block-group-text">
+                        <div class="buy-info-block-group-text-item">
+                            <img src="/assets/img/aa-logo.png" height="60" alt="aa+ logo">
+                        </div>
+                        <div class="buy-info-block-group-text-item">
+                            <span class="buy-info-block-subtitle">Trade cryptocurrency at AA+</span>
+                            <a class="buy-info-block-link" href="https://www.aaplussg.com"
+                                target="_blank">https://www.aaplussg.com</a>
+                        </div>
+                    </div>
+
+                    <span class="buy-info-block-spacer"></span>
+
+                    <div class="buy-info-block-group-text">
+                        <div class="buy-info-block-group-text-item">
+                            <img src="/assets/img/d-bay-logo.jpg" height="30" alt="d-bay logo">
+                        </div>
+                        <div class="buy-info-block-group-text-item">
+                            <span class="buy-info-block-subtitle">Use DUC and shop for pre-loved items online</span>
+                            <a class="buy-info-block-link" href="https://remusnation.com/dbay/"
+                                target="_blank">https://remusnation.com/dbay/</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="pay-form-block" *ngIf="loadingData">
-
                 <div class="lottery-tickets" style="margin-bottom: 30px;">
                     <div class="ducatus-pay-form loading-pay-form">
                         <div class="group group-input group-input-select input-h-60"></div>
