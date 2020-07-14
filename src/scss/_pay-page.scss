@@ -112,6 +112,7 @@
 
             @include b(900) {
                 grid-template-columns: 1fr;
+                grid-gap: 30px;
             }
 
             @include b(750) {
@@ -193,6 +194,7 @@
                     display: flex;
                     flex-direction: column;
                     height: max-content;
+                    min-height: 950px;
                     border-radius: 12px;
                     width: 100%;
                     background-color: #FDFBF6;
@@ -215,13 +217,18 @@
                         background-color: #FDFBF6;
                         padding: 30px;
                         width: 100%;
-                        min-height: 170px;
+                        min-height: 190px;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
                         word-break: break-all;
-                        margin-bottom: 45px;
+                        margin-bottom: 40px;
+
+                        @include b(900) {
+                            min-height: 170px;
+                            margin-bottom: 30px;
+                        }
 
                         &-title {
                             font-weight: bold;
@@ -258,7 +265,11 @@
                         background-repeat: no-repeat;
                         background-size: cover;
                         word-break: break-all;
-                        margin-bottom: 45px;
+                        margin-bottom: 60px;
+
+                        @include b(900) {
+                            margin-bottom: 30px;
+                        }
 
                         &-title {
                             font-weight: bold;
@@ -280,11 +291,15 @@
                     }
 
                     &-tickets {
-                        margin-bottom: 15px;
+                        margin-bottom: 47px;
                         border-radius: 12px;
                         position: relative;
                         background-color: #FDFBF6;
                         padding: 1px 0;
+
+                        @include b(900) {
+                            margin-bottom: 30px;
+                        }
 
                         &-timer {
                             text-align: center;
@@ -668,6 +683,7 @@
 
                 @include b(600) {
                     box-shadow: none;
+                    padding: 0px 15px;
                 }
             }
 
@@ -686,8 +702,18 @@
                     font-size: 20px;
                     line-height: 24px;
                     color: #862633;
-                    margin-bottom: 32px;
+                    margin-bottom: 25px;
                     display: inline-block;
+
+                    @include b(500) {
+                        font-size: 16px;
+                    }
+                }
+
+                &-group-text {
+                    display: grid;
+                    grid-template-columns: 110px 1fr;
+                    align-items: center;
                 }
 
                 &-subtitle {
@@ -696,8 +722,13 @@
                     line-height: 21px;
                     color: #B6914F;
                     display: inline-block;
-                    margin: 5px 0;
+                    margin-bottom: 6px;
                     width: 100%;
+
+                    @include b(500) {
+                        font-size: 13px;
+                        margin-bottom: 0px;
+                    }
                 }
 
                 &-link {
@@ -706,7 +737,10 @@
                     color: rgba(0, 0, 0, 0.5);
                     transition: 0.4s ease;
                     display: inline-block;
-                    margin: 5px 0;
+
+                    @include b(500) {
+                        font-size: 13px;
+                    }
 
                     &:hover {
                         color: $brown-red;
@@ -718,7 +752,7 @@
                     border-top: 1px dashed #DDC491;
                     max-width: 250px;
                     width: 100%;
-                    margin: 30px 0;
+                    margin: 20px 0;
                     display: block;
                 }
             }
@@ -754,6 +788,10 @@
     input[type=number]::-webkit-outer-spin-button {
         -webkit-appearance: none !important;
         margin: 0 !important;
+    }
+
+    @include b(500) {
+        padding: 30px 15px 10px 15px;
     }
 
     div.input {
@@ -1248,6 +1286,10 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+
+            @include b(500) {
+                margin: 15px -15px;
+            }
 
             .group-input {
                 max-width: 260px;

@@ -35,7 +35,7 @@ const routes: Routes = [
     component: BuyComponent,
   },
   {
-    path: 'buy/tickets',
+    path: 'buy/entries',
     component: TicketsComponent,
   },
   {

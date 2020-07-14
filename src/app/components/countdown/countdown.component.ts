@@ -16,7 +16,7 @@ export class CountdownComponent implements OnInit {
 
   private counter$: Observable<number>;
   private subscription: Subscription;
-  public message: string;
+  public message = '--:--:--:--';
 
   constructor(
 

@@ -20,12 +20,13 @@ export class BuyComponent implements OnInit {
   public modal = true;
   public modalAccept = false;
   private checker;
+  public bg = 'assets/img/sections/buy-bg.png';
 
   public currencyData = {
     eth: {
       name: 'Ethereum',
       shortName: 'eth',
-      time: '40 minutes',
+      time: '15 minutes',
       address: '',
       amount: null,
       info: ''
@@ -180,6 +181,9 @@ export class BuyComponent implements OnInit {
   private checkLotteryStatus() {
     this.buyservice.getLottery().then((result) => {
       this.lottery = result[0];
+
+      this.bg = this.lottery.image ? this.lottery.image : 'assets/img/sections/buy-bg.png';
+
       const percent = 100 * Number(this.lottery.sent_duc_amount) / Number(this.lottery.duc_amount);
       Number(percent.toFixed(0)) >= 100 ? this.lottery.percent = '100%' : this.lottery.percent = percent.toFixed(2) + '%';
     }).catch(err => console.error(err));
