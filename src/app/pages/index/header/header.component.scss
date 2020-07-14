@@ -129,12 +129,13 @@
             text-decoration: none;
             text-transform: uppercase;
             transition: 0.4s ease;
-            margin: 2px 20px;
+            margin: 2px 15px;
             font-weight: bold;
             cursor: pointer;
 
-            @include b(900) {
-                margin: 2px 10px;
+            @include b(1000) {
+                    margin: 2px 10px;
+                    font-size: 14px;
             }
 
             @include b(750) {
