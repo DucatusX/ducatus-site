@@ -162,6 +162,13 @@
 	}
 }
 
+// breakpoints
+@mixin bb($pointMax, $pointMin) {
+	@media (max-width: $pointMax + 'px') and (min-width: $pointMin + 'px') {
+		@content ;
+	}
+}
+
 @mixin ie() {
 
 	@media screen and (-ms-high-contrast: active),

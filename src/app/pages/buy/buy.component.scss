@@ -1,3 +1,6 @@
+@import "../../../scss/vars";
+@import "../../../scss/mixins";
+
 .loading-pay-form {
     padding: 30px !important;
 
@@ -95,4 +98,10 @@
 .color-page {
     background-color: #F4F0E5 !important;
     background-image: none !important;
+}
+
+.buy-page {
+    @include b(600) {
+        padding-top: 20px !important;
+    }
 }
