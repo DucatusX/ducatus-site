@@ -200,6 +200,10 @@
                     background-color: #FDFBF6;
                     box-shadow: 0px 50px 45px rgba(204, 199, 189, 0.25);
 
+                    @include b(900) {
+                        min-height: max-content;
+                    }
+
                     span {
                         display: block;
                     }
