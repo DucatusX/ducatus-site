@@ -39,6 +39,10 @@
 
         .header-menu-link {
             color: $brown-red;
+
+            @include bb(900, 750) {
+                font-size: 14px;
+            }
         }
     }
 
@@ -96,16 +100,18 @@
         &-block {
             flex-basis: 100%;
             display: flex;
-            justify-content: center;
             align-items: center;
             text-align: center;
             transition: 0.4s ease;
+            justify-content: flex-end;
+            padding-right: 80px;
 
             @include b(750) {
                 align-items: flex-end;
                 flex-direction: column;
                 max-height: 0px;
                 overflow: hidden;
+                padding-right: 0px;
             }
 
             &-admin {
@@ -123,12 +129,13 @@
             text-decoration: none;
             text-transform: uppercase;
             transition: 0.4s ease;
-            margin: 2px 20px;
+            margin: 2px 15px;
             font-weight: bold;
             cursor: pointer;
 
-            @include b(900) {
-                margin: 2px 10px;
+            @include b(1000) {
+                    margin: 2px 10px;
+                    font-size: 14px;
             }
 
             @include b(750) {
@@ -164,7 +171,7 @@
             @include b(750) {
                 display: block;
                 float: right;
-                margin-top: 10px;
+                margin-top: 5px;
             }
 
             @include b(370) {
@@ -182,8 +189,12 @@
 .language-select {
     position: absolute;
     right: 0;
-    top: 15px;
+    top: 18px;
     z-index: 2;
+
+    @include b(900) {
+        top: 15px;
+    }
 
     &-admin {
         top: -4px;

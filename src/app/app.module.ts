@@ -15,6 +15,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient, HttpClientXsrfModule } from '@angular/common/http';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 // resolvers
 import { UserResolver } from './resolvers';
@@ -32,10 +33,17 @@ import { ErrorPageComponent } from './pages/errorpage/errorpage.component';
 import { DucatusxComponent } from './pages/ducatusx/ducatusx/ducatusx.component';
 import { VoucherComponent } from './pages/voucher/voucher.component';
 import { LoginComponent } from './pages/login/login.component';
+import { TicketsComponent } from './pages/buy/tikcets/tickets.component';
 
 // partials
 import { HeaderComponent } from './pages/index/header/header.component';
 import { FooterComponent } from './pages/index/footer/footer.component';
+
+// components
+import { CountdownComponent } from './components/countdown/countdown.component';
+
+// pipes
+import { SafePipe } from './pipe/safeUrl.pipe';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -43,6 +51,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   declarations: [
+
+    // pages
     AppComponent,
     IndexComponent,
     AboutComponent,
@@ -55,9 +65,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     DucatusxComponent,
     VoucherComponent,
     LoginComponent,
+    TicketsComponent,
 
+    // components
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+
+    // pipes
+    SafePipe,
+    CountdownComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +82,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     Ng2TelInputModule,
     ReactiveFormsModule,
+    ClipboardModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),

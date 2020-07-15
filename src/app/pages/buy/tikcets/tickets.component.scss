@@ -1,0 +1,94 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+
+.color-page {
+  background-color: #F4F0E5 !important;
+  background-image: none !important;
+}
+
+.lottery-info {
+
+  &-page {
+    .container {
+      padding: 0 15px !important;
+    }
+  }
+
+  &-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 37px;
+    color: #414B53;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+
+    @include b(650) {
+      margin-bottom: 20px;
+      margin-top: 30px;
+      font-size: 20px;
+    }
+
+    &:after {
+      content: '';
+      height: 2px;
+      width: 90px;
+      background-color: $brown-red;
+      margin-top: 20px;
+    }
+  }
+
+  &-table {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 60px;
+    align-items: center;
+    grid-gap: 3px;
+    margin-top: 30px;
+
+    @include b(600) {
+      overflow: hidden;
+      overflow-x: scroll;
+    }
+
+    &-items {
+      background-color: white;
+      border-radius: 12px;
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      color: $brown-red;
+      height: 100%;
+    }
+
+    &-item {
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      word-wrap: break-word;
+
+      a {
+        color: $brown-red;
+        text-decoration: none;
+        transition: 0.4s ease;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &:nth-child(2) {
+        justify-content: flex-start;
+        padding-left: 30px;
+      }
+    }
+  }
+}
+
+.header-entries-page {
+  background-position: 30% 50% !important;
+}

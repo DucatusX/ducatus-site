@@ -11,6 +11,7 @@ import { LegalDisclaimerComponent } from './pages/legal-disclaimer/legal-disclai
 import { GoldLotteryComponent } from './pages/gold-lottery/gold-lottery.component';
 import { ErrorPageComponent } from './pages/errorpage/errorpage.component';
 import { DucatusxComponent } from './pages/ducatusx/ducatusx/ducatusx.component';
+import { TicketsComponent } from './pages/buy/tikcets/tickets.component';
 import { VoucherComponent } from './pages/voucher/voucher.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UserResolver } from './resolvers';
@@ -18,11 +19,12 @@ import { UserResolver } from './resolvers';
 const routes: Routes = [
   {
     path: '',
-    component: IndexComponent,
+    component: IndexComponent
   },
   {
     path: 'about',
     component: AboutComponent,
+    // data: { animation: 'isRight' }
   },
   {
     path: 'contact',
@@ -31,6 +33,10 @@ const routes: Routes = [
   {
     path: 'buy',
     component: BuyComponent,
+  },
+  {
+    path: 'buy/entries',
+    component: TicketsComponent,
   },
   {
     path: 'legal',
