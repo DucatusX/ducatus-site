@@ -1,0 +1,148 @@
+@import "../../../scss/vars";
+@import "../../../scss/mixins";
+
+section.login {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #F8F5EF;
+  flex-direction: column;
+
+  @include b(650) {
+    flex-direction: column;
+  }
+
+  .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    &-text {
+      font-weight: 400;
+      color: black;
+      opacity: 0.5;
+      letter-spacing: 1px;
+
+      &-title {
+        opacity: 1;
+        font-weight: 500;
+        margin-bottom: 40px !important;
+      }
+
+      &-spacer {
+        display: block;
+        text-align: center;
+        margin: 15px auto;
+      }
+    }
+
+    &-logo  {
+      display: block;
+      margin: 0 auto;
+      width: 200px;
+      height: 130px;
+      background-image: url('../../../assets/img/login/ducatus-login-logo.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-bottom: 30px;
+    }
+
+    &-container {
+      max-width: 390px;
+      width: 100%;
+      padding: 45px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px -5px #0000004f;
+
+      .buttons-switch {
+        display: flex;
+        width: 100%;
+        margin-bottom: 30px;
+
+        .active {
+          color: $brown-red;
+          font-weight: 600;
+          cursor: default;
+
+          &:after {
+            background-color: $brown-red;
+          }
+        }
+
+        &-item {
+          display: flex;
+          width: 50%;
+          flex-direction: column;
+          font-weight: 300;
+          color: black;
+          cursor: pointer;
+
+          &:after {
+            content: '';
+            height: 3px;
+            width: 100%;
+            background-color: #F4EFE8;
+            margin-top: 12px;
+          }
+        }
+      }
+    }
+
+    &-form {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 17px;
+      justify-content: center;
+      align-items: center;
+
+      .label {
+        font-size: 14px;
+        line-height: 17px;
+        color: #404040;
+        font-weight: 300;
+        margin-bottom: -7px;
+      }
+
+      input.ng-touched.ng-invalid {
+        border: solid $brown-red 1px;
+      }
+
+      .input {
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 14px;
+        margin-bottom: 15px;
+        background: #FBF9F6;
+        border: 1px solid #E0E0E0;
+        color: black;
+        border-radius: 5px;
+        outline: none;
+        padding: 20px 10px;
+        font-weight: 400;
+        font-family: 'Montserrat';
+        letter-spacing: 1px;
+      }
+
+      .ducatus-btn {
+        border-radius: 33px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 500;
+        max-width: 200px;
+        margin: 0 auto;
+        letter-spacing: 1px;
+      }
+
+      .icon__loading {
+        min-width: 50px;
+        transition: 0.4s ease;
+      }
+    }
+  }
+}

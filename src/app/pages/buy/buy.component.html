@@ -1,86 +1,119 @@
-<section class="section-header-page" style="background-image: url(/assets/img/sections/buy-bg.png);">
+<section class="section-header-page header-buy-page" [ngStyle]="{'background-image': 'url(' + bg + ')'}">
     <div class="container">
         <h1 class="h1__title-page" [innerHTML]="'PAGE.BUY.TITLE' | translate"></h1>
     </div>
 </section>
 
-<section class="app">
+<section class="app color-page buy-page">
     <div class="container">
         <div class="pay-form">
             <div class="pay-form-wrap">
-                <div class="ducatus-pay-form" *ngIf="!loadingData">
-
-                    <div class="group group-input group-input-select">
-                        <label for="get-coin">{{ 'PAGE.BUY.FIELDS.ONE.TITLE' | translate }}</label>
-                        <input type="number" min="0" [(ngModel)]="exchange.price.get " (ngModelChange)="setCurrentPrice('get')" [placeholder]="'PAGE.BUY.FIELDS.ONE.PLACEHOLDER' | translate" class="input input-white" oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');">
-
-                        <div class="select-coin select-coin-fill" (click)="exchange.select.get = !exchange.select.get; exchange.select.send = false" [ngClass]="{ 'select-coin-start': exchange.select.get }">
-                            <ng-container *ngFor="let item of exchange.coins">
-                                <span class="select-coin-selected" *ngIf="item.active"><img [src]="'assets/img/icons/' + item.icon + '.png'" [alt]="item.name"> {{ item.name }}</span>
-                            </ng-container>
-                            <div class="select-coin-list">
-                                <div class="select-coin-list-wrap">
-                                    <ng-container *ngFor="let item of exchange.coins">
-                                        <span class="select-coin-list-item" (click)="coinSwitch(item.name,'get')" *ngIf="!item.active"><img [src]="'assets/img/icons/' + item.icon + '.png'" [alt]="item.name">{{ item.name }}</span>
-                                    </ng-container>
-                                </div>
+                <form [formGroup]="BuyGroup" class="ducatus-pay-form" *ngIf="!loadingData">
+                    <div class="group group-input">
+                        <div class="group-currency">
+                            <div class="group-currency-item">
+                                <input formControlName="currency" required type="radio" id="currency-btc" value="btc">
+                                <label for="currency-btc">
+                                    <img src="/assets/img/icons/btc.svg" width="30" height="30" alt="bitcoin">
+                                    <span class="group-currency-text">BTC</span>
+                                </label>
                             </div>
-
+                            <div class="group-currency-item">
+                                <input formControlName="currency" checked required type="radio" checked
+                                    id="currency-eth" value="eth">
+                                <label for="currency-eth">
+                                    <img src="/assets/img/icons/eth.svg" width="30" height="30" alt="etherium">
+                                    <span class="group-currency-text">ETH</span>
+                                </label>
+                            </div>
                         </div>
-
                     </div>
 
-                    <div class="group group-text group-columns">
-
-                        <span class="text">1 {{ exchange.selected.get.fullname }} = {{ exchange.rate }} {{ exchange.selected.send.fullname }}</span>
-
-                    </div>
-
-                    <div class="group group-input group-input-select">
-                        <label for="send-coin">{{ 'PAGE.BUY.FIELDS.TWO.TITLE' | translate }}</label>
-                        <input min="0" type="number" (ngModelChange)="setCurrentPrice('send')" [(ngModel)]=" exchange.price.send" [placeholder]="'PAGE.BUY.FIELDS.TWO.PLACEHOLDER' | translate" class="input input-white" oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');">
-
-                        <div class="select-coin select-coin-fill" (click)="exchange.selected.get.name === 'DUC' ? exchange.select.send = !exchange.select.send  : null;exchange.select.get = false" [ngClass]="{ 'select-coin-start': exchange.select.send }">
-
-                            <ng-container *ngFor="let item of exchange.coins">
-                                <ng-container *ngIf="item.active">
-
-                                    <ng-container *ngFor="let coin of item.coins">
-                                        <span class="select-coin-selected" *ngIf="coin.active"><img [src]="'assets/img/icons/'+coin.icon+'.png'" [alt]="coin.name"> {{ coin.name }}</span>
-                                    </ng-container>
-
-                                    <div class="select-coin-list" [ngClass]="{ 'select-coin-start': exchange.select.send }">
-
-                                        <div class="select-coin-list-wrap">
-                                            <ng-container *ngFor="let coin of item.coins">
-                                                <span class="select-coin-list-item" *ngIf="!coin.active" (click)="coinSwitch(coin.name,'send')"><img [src]="'assets/img/icons/' + coin.icon +'.png'" [alt]="coin.name">{{ coin.name }}</span>
-                                            </ng-container>
-                                        </div>
-
-                                    </div>
-
-
-                                </ng-container>
-                            </ng-container>
+                    <div class="group group-input group-block">
+                        <label class="group-radio-label" for="amount-3">Price of DUC = USD 0.05 <br>
+                            Select from the options below and receive corresponding number of entries for the
+                            draw <span class="ducatus-info-link" (click)="modalInfo = true">(more info)</span></label>
+                        <div class="group-radio">
+                            <div class="group-radio-item">
+                                <input (ngModelChange)="setAmount()" formControlName="amount" required type="radio"
+                                    id="amount-1" value="10">
+                                <label for="amount-1">
+                                    <span class="group-radio-amount">10$</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">1 entry</span>
+                                </label>
+                            </div>
+                            <div class="group-radio-item">
+                                <input (ngModelChange)="setAmount()" formControlName="amount" type="radio" id="amount-2"
+                                    value="50">
+                                <label for="amount-2">
+                                    <span class="group-radio-amount">50$</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">6 entries</span>
+                                </label>
+                            </div>
+                            <div class="group-radio-item">
+                                <input (ngModelChange)="setAmount()" formControlName="amount" checked type="radio"
+                                    id="amount-3" value="100">
+                                <label for="amount-3">
+                                    <span class="group-radio-amount">100$</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">13 entries</span>
+                                </label>
+                            </div>
+                            <div class="group-radio-item">
+                                <input (ngModelChange)="setAmount()" formControlName="amount" type="radio" id="amount-4"
+                                    value="500">
+                                <label for="amount-4">
+                                    <span class="group-radio-amount">500$</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">70 entries</span>
+                                </label>
+                            </div>
+                            <div class="group-radio-item">
+                                <input (ngModelChange)="setAmount()" formControlName="amount" type="radio" id="amount-5"
+                                    value="1000">
+                                <label for="amount-5">
+                                    <span class="group-radio-amount">1000$</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">150 entries</span>
+                                </label>
+                            </div>
 
                         </div>
                     </div>
 
                     <div class="group group-input">
-                        <label for="ducatus-address">{{ 'PAGE.BUY.FIELDS.THREE.TEXT_1' | translate }} {{ exchange.selected.get.fullname }} {{ 'PAGE.BUY.FIELDS.THREE.TEXT_2' | translate }}</label>
-                        <input type="text" [ngClass]="{'text' : exchange.address.validate || exchange.address.loading }" [disabled]="exchange.address.validate || exchange.address.loading" [(ngModel)]="exchange.address.to" (ngModelChange)="setAddress()" [placeholder]="('PAGE.BUY.FIELDS.THREE.PLACEHOLDER_1' | translate) + ' ' + exchange.selected.get.fullname + ' ' + ('PAGE.BUY.FIELDS.THREE.PLACEHOLDER_2' | translate)" class="input input-white" oninput="this.value = this.value.replace('ducatus:', '');">
-                        <span class="error-address-value" *ngIf="exchange.address.error">{{ 'PAGE.BUY.FIELDS.THREE.ERROR' | translate }}</span>
+                        <label for="address">Enter your DUC receiving address</label>
+                        <input id="address" formControlName="address" required type="text"
+                            (ngModelChange)="setAddress()" [placeholder]="'Enter your DUC receiving address'"
+                            class="input input-white" oninput="this.value = this.value.replace('ducatus:', '');">
+                        <span class="error-address-value"
+                            *ngIf="ducAddress?.invalid && (ducAddress?.dirty || ducAddress?.touched)">{{ 'PAGE.BUY.FIELDS.THREE.ERROR' | translate }}</span>
                     </div>
 
-                    <div id="loading-address" [ngClass]="{ 'loading-address-start': exchange.address.loading }" class="group group-block group-input group-input-copy m-b-0 qr-wrap">
+                    <div class="group group-input">
+                        <label for="email">Enter your email address so we can reach out should YOU be the WINNER</label>
+                        <input (ngModelChange)="setEmail()" id="email" formControlName="email" type="email"
+                            placeholder="Enter your email" class="input input-white">
+                    </div>
+
+                    <div id="loading-address" [ngClass]="{ 'loading-address-start': loadingQr}"
+                        class="group group-input group-input-copy m-b-0 qr-wrap">
                         <div class="group-wrap qr-address">
-                            <label>{{ 'PAGE.BUY.FIELDS.FOUR.TEXT_1' | translate }} {{ exchange.selected.send.fullname }} {{ 'PAGE.BUY.FIELDS.FOUR.TEXT_2' | translate }} </label>
-                            <p class="input input-accent">{{ exchange.selected.send.address }}</p>
-                            <span class="copy-address icon icon-copy"></span>
+                            <label>Send your {{ currencyData[BuyGroup.value.currency].amount }}
+                                {{ currencyData[BuyGroup.value.currency].name }} to the following address
+                            </label>
+                            <p class="input input-accent">
+                                <span *ngIf="!loadingQr">{{ currencyData[BuyGroup.value.currency].address }}</span>
+                            </p>
+                            <span class="copy-address icon icon-copy"
+                                [cdkCopyToClipboard]="currencyData[BuyGroup.value.currency].address"></span>
                         </div>
-                        <div class="qrcode">
-                            <qrcode *ngIf="exchange.address.qr" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1" [qrdata]="exchange.selected.send.address" [width]="60" [errorCorrectionLevel]="'L'"></qrcode>
+
+                        <div class="qrcode" [attr.title]="currencyData[BuyGroup.value.currency].info">
+                            <qrcode *ngIf="!loadingQr" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1"
+                                [qrdata]="currencyData[BuyGroup.value.currency].info" [width]="80"
+                                [errorCorrectionLevel]="'L'"></qrcode>
                         </div>
+
+                        <div class="group-wrap qr-textCode"><label style="margin-bottom: 0;">Or scan this QR
+                                code</label></div>
 
                         <div class="loading-address-qr">
                             <div class="loading-address-qr-wrap">
@@ -94,29 +127,192 @@
                             </div>
                         </div>
 
-                        <div class="group group-text qr-text">
-                            <span class="text-attantion"><span class="attantion">{{ 'PAGE.BUY.FIELDS.FIVE.TEXT_1' | translate }}!</span> {{ 'PAGE.BUY.FIELDS.FIVE.TEXT_2' | translate }} {{ exchange.selected.get.fullname }} {{ 'PAGE.BUY.FIELDS.FIVE.TEXT_3' | translate }} {{ exchange.selected.send.text }}<br><br></span>
+                        <div class="group group-text qr-text" style="margin-bottom: 0;">
+                            <span class="text-attantion">
+                                Please note that it may take up to {{ currencyData[BuyGroup.value.currency].time }}
+                                until you receive your DUC in your wallet<br><br></span>
                         </div>
 
                     </div>
 
-                </div>
+                </form>
                 <div class="ducatus-pay-form loading-pay-form" *ngIf="loadingData">
-                    <div class="group group-input group-input-select input-h-60"></div>
-                    <div class="group group-text group-columns input-h-20"></div>
+                    <div class="group group-input group-input-select" style="height: 90px;"></div>
+                    <div class="group group-input group-input-select" style="height: 130px;"></div>
                     <div class="group group-input group-input-select input-h-85"></div>
-                    <div class="group group-input input-h-105"></div>
+                    <div class="group group-input group-input-select input-h-85"></div>
                     <div class="group group-input group-input-select input-h-60"></div>
                     <div class="group group-text group-columns input-h-20"></div>
-                </div>
-            </div>
-            <div class="pay-form-block">
-                <div class="pay-form-block-video">
-                    <iframe src="https://www.youtube.com/embed/5tzX8UzUQkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
-                <div class="pay-form-block-text">
-                    <p class="p__text-section icon icon__wallet_2" [innerHTML]="'PAGE.BUY.TEXT' | translate"></p>
+                <div class="buy-info-block hidden-mobile" *ngIf="!loadingData">
+                    <span class="buy-info-block-title">Discover, learn and earn by being part of the Ducatus Cashless
+                        Economy.</span>
+
+                    <div class="buy-info-block-group-text">
+                        <div class="buy-info-block-group-text-item">
+                            <img src="/assets/img/aa-logo.png" height="60" alt="aa+ logo">
+                        </div>
+                        <div class="buy-info-block-group-text-item">
+                            <span class="buy-info-block-subtitle">Trade cryptocurrency at AA+</span>
+                            <a class="buy-info-block-link" href="https://www.aaplussg.com"
+                                target="_blank">https://www.aaplussg.com</a>
+                        </div>
+                    </div>
+
+                    <span class="buy-info-block-spacer"></span>
+
+                    <div class="buy-info-block-group-text">
+                        <div class="buy-info-block-group-text-item">
+                            <img src="/assets/img/d-bay-logo.jpg" height="30" alt="d-bay logo">
+                        </div>
+                        <div class="buy-info-block-group-text-item">
+                            <span class="buy-info-block-subtitle">Use DUC and shop for pre-loved items online</span>
+                            <a class="buy-info-block-link" href="https://remusnation.com/dbay/"
+                                target="_blank">https://remusnation.com/dbay/</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buy-info-block loading-pay-form" *ngIf="loadingData">
+                    <div class="group group-input group-input-select input-h-60"></div>
+                    <div class="group group-input group-input-select input-h-60"></div>
+                    <div class="group group-input group-input-select input-h-60"></div>
+                    <div class="group group-input group-input-select input-h-60"></div>
+                </div>
+
+            </div>
+
+
+
+            <div class="pay-form-block" *ngIf="!loadingData">
+
+                <div *ngIf="lottery.ended">
+                    <div *ngIf="lottery.winner_address" class="lottery-win">
+                        <div class="lottery-win-title">WINNING HASH</div>
+                        <span class="lottery-win-text">{{ lottery.winner_tx_hash }}</span>
+                    </div>
+                    <div *ngIf="!lottery.winner_address" class="lottery-waiting">
+                        <div class="lottery-waiting-title">Please wait</div>
+                        <div class="lottery-waiting-text">calculating winner...</div>
+                    </div>
+                </div>
+
+                <div *ngIf="!lottery.ended" class="lottery-tickets">
+
+                    <div *ngIf="lottery.filled_at && !lottery.ended" class="lottery-tickets-timer">
+                        <div class="lottery-tickets-timer-title">Countdown to Draw Date</div>
+                        <span class="lottery-tickets-timer-count">
+                            <app-countdown [timeStart]="lottery.filled_at" [correctTimeStart]="1000"
+                                [timeEndDayPlus]="8">
+                            </app-countdown>
+                        </span>
+                    </div>
+
+                    <div *ngIf="!lottery.filled_at && !lottery.ended" class="lottery-tickets-progress">
+                        <span class="lottery-tickets-progress-title">% of sales target reached before draw countdown
+                            starts<img src="/assets/img/icons/lottery-rocket.svg" height="25" width="25"
+                                alt="ducatus lottery rocket"></span>
+                        <div class="lottery-tickets-progress-bar">
+                            <span [style.width]="lottery.percent" [ngClass]="{'progress-info-5': percentLottery > 5}"
+                                [attr.data-progress]="lottery.percent"></span>
+                        </div>
+                    </div>
+
+                    <div class="lottery-tickets-spacer"><span></span></div>
+
+                    <div class="lottery-tickets-items">
+                        <div class="lottery-tickets-item">
+                            <img src="/assets/img/icons/ticket.svg" height="57" width="70" alt="ducatus lottery ticket">
+                            <span [routerLink]="['/buy/entries']" class="lottery-tickets-item-title">List of hash
+                                entries →</span>
+                        </div>
+                        <div class="lottery-tickets-spacer"><span></span></div>
+                        <div class="lottery-tickets-item">
+                            <span class="lottery-tickets-item-amount">{{ lottery.gave_tickets_amount }}</span>
+                            <span class="lottery-tickets-item-text">Number of DUC Sold</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lottery">
+                    <div class="lottery-wrap">
+                        <span *ngIf="lottery.description && lottery.description.title" class="lottery-title"
+                            [innerHTML]="lottery.description.title"></span>
+                        <span *ngIf="lottery.description && lottery.description.subtitle" class="lottery-subtitle"
+                            [innerHTML]="lottery.description.subtitle"></span>
+
+                        <ul *ngIf="lottery.description">
+                            <li *ngFor="let item of lottery.description.list">{{ item }}</li>
+                        </ul>
+
+                        <div *ngIf="lottery.video" class="lottery-video">
+                            <iframe [src]="lottery.video | safe" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+
+                        <div class="lottery-info">
+                            <span class="lottery-info-title">How can you own this timepiece?</span>
+                            <p class="lottery-info-text">Every buyer of DUC stands a chance to win. The higher your DUC
+                                purchase, the more winning chances you get.</p>
+                            <p class="lottery-info-text">Once the target of {{ lottery.duc_amount | number }} DUC sold
+                                is reached, the 8-day
+                                countdown to the Lucky Draw Day starts. The sale of DUC
+                                continues until the countdown reaches 00:00:00:00 which will trigger the draw.</p>
+                            <p class="lottery-info-text">Through a random smart contract draw, the winning hash will be
+                                determined and published on this page and the Winner will be informed by email.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="buy-info-block hidden-desktop" *ngIf="!loadingData">
+                    <span class="buy-info-block-title">Discover, learn and earn by being part of the Ducatus Cashless
+                        Economy.</span>
+
+                    <div class="buy-info-block-group-text">
+                        <div class="buy-info-block-group-text-item">
+                            <img src="/assets/img/aa-logo.png" height="60" alt="aa+ logo">
+                        </div>
+                        <div class="buy-info-block-group-text-item">
+                            <span class="buy-info-block-subtitle">Trade cryptocurrency at AA+</span>
+                            <a class="buy-info-block-link" href="https://www.aaplussg.com"
+                                target="_blank">https://www.aaplussg.com</a>
+                        </div>
+                    </div>
+
+                    <span class="buy-info-block-spacer"></span>
+
+                    <div class="buy-info-block-group-text">
+                        <div class="buy-info-block-group-text-item">
+                            <img src="/assets/img/d-bay-logo.jpg" height="30" alt="d-bay logo">
+                        </div>
+                        <div class="buy-info-block-group-text-item">
+                            <span class="buy-info-block-subtitle">Use DUC and shop for pre-loved items online</span>
+                            <a class="buy-info-block-link" href="https://remusnation.com/dbay/"
+                                target="_blank">https://remusnation.com/dbay/</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pay-form-block" *ngIf="loadingData">
+                <div class="lottery-tickets" style="margin-bottom: 30px;">
+                    <div class="ducatus-pay-form loading-pay-form">
+                        <div class="group group-input group-input-select input-h-60"></div>
+                        <div class="group group-input group-input-select input-h-60"></div>
+                        <div class="group group-input group-input-select input-h-60"></div>
+                        <div class="group group-text group-columns input-h-20"></div>
+                    </div>
+
+                </div>
+
+                <div class="lottery" style="padding: 30px!important; min-height: auto;">
+                    <div class="ducatus-pay-form loading-pay-form" style="padding: 0 !important;box-shadow: none;">
+                        <div class="group group-input group-input-select input-h-60"></div>
+                        <div class="group group-input group-input-select" style="height: 50px;"></div>
+                        <div class="group group-input group-input-select" style="height: 130px;"></div>
+                        <div class="group group-input group-input-select" style="height: 200px;"></div>
+                        <div class="group group-input group-input-select" style="height: 103px;"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -131,9 +327,32 @@
         <div class="modal-content-bottom">
             <div class="input-checkbox-group">
                 <label for="terms" [innerHTML]="'PAGE.BUY.MODAL.TERMS' | translate"></label>
-                <input type="checkbox" (ngModelChange)="modalAccept = !modalAccept" [ngModel]="modalAccept" name="terms" id="terms" class="terms">
+                <input type="checkbox" (ngModelChange)="modalAccept = !modalAccept" [ngModel]="modalAccept" name="terms"
+                    id="terms" class="terms">
             </div>
-            <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!modalAccept" class="btn btn-red"> {{ 'PAGE.BUY.MODAL.BUTTON' | translate }}</button>
+            <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!modalAccept"
+                class="ducatus-btn ducatus-btn-brown">
+                {{ 'PAGE.BUY.MODAL.BUTTON' | translate }}</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" *ngIf="modalInfo">
+    <div class="modal-wrap">
+        <div class="modal-content-top">
+            <p>The exact amount of DUC as per BTC/ETH payment received will be sent to the indicated DUC wallet.
+                However, if the money
+                received falls short of the USD amount stated for the chosen package, then the system by default will
+                only submit the
+                number of entries for the draw based on the lower package.</p>
+            <p>To buy DUC in multiples of 1000 USD, you may do so in separate transactions, as the entries awarded per
+                transaction is
+                capped at 150, equivalent to a 1000 USD purchase.</p>
+        </div>
+        <div class="modal-content-bottom">
+            <button id="btn-modal" style="margin: 0 auto;" (click)="modalInfo = false"
+                class="ducatus-btn ducatus-btn-brown">
+                close</button>
         </div>
     </div>
 </div>

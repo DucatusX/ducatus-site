@@ -1,5 +1,9 @@
+import { UserService } from 'src/app/service/user/user.service';
 import { Component, OnInit } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
+import { hideHeaderInRoutes, adminHeaderInRoutes } from 'src/app/params';
+
 import * as $ from 'jquery';
 
 @Component({
@@ -18,7 +22,29 @@ export class HeaderComponent implements OnInit {
 
   public openMenu = false;
 
-  constructor(translate: TranslateService) {
+  public hideHeader = false;
+  public adminHeader = false;
+
+  constructor(
+    public translate: TranslateService,
+    private router: Router,
+    private userService: UserService
+  ) {
+
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationStart) {
+        // Show loading indicator
+      }
+
+      if (event instanceof NavigationEnd) {
+        this.hideHeader = !hideHeaderInRoutes.includes(event.url);
+        this.adminHeader = !adminHeaderInRoutes.includes(event.url);
+      }
+
+      if (event instanceof NavigationError) {
+        // console.warn(event.error);
+      }
+    });
 
     this.translator = translate;
     this.languagesList = [
@@ -115,4 +141,9 @@ export class HeaderComponent implements OnInit {
     };
   }
 
+  public logout() {
+    this.userService.logout().then(() => {
+      this.router.navigate(['/admin/login']);
+    });
+  }
 }

@@ -1,3 +1,6 @@
+@import "../../../scss/vars";
+@import "../../../scss/mixins";
+
 .loading-pay-form {
     padding: 30px !important;
 
@@ -10,7 +13,12 @@
         animation: rainbow 4s ease infinite;
         margin-bottom: 15px;
         border-radius: 5px;
+
+        &:nth-last-child(1) {
+            margin-bottom: 0 !important;
+        }
     }
+
 
     .input-h-20 {
         height: 30px !important;
@@ -84,5 +92,31 @@
 
     100% {
         background-position: 0% 82%
+    }
+}
+
+.color-page {
+    background-color: #F4F0E5 !important;
+    background-image: none !important;
+}
+
+.buy-page {
+    @include b(600) {
+        padding-top: 20px !important;
+    }
+}
+
+.header-buy-page {
+    background-position: 30% 50% !important;
+}
+
+.ducatus-info-link {
+    color: #852633;
+    cursor: pointer;
+    transition: 0.4s ease;
+    font-size: 12px;
+
+    &:hover {
+        text-decoration: underline;
     }
 }
