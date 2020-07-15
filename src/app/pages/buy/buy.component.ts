@@ -17,10 +17,12 @@ export class BuyComponent implements OnInit {
   public loadingQr = true;
   public loadingData = true;
   public loadedAddress = false;
-  public modal = true;
+  public modal = false;
+  public modalInfo = false;
   public modalAccept = false;
   private checker;
   public bg = 'assets/img/sections/buy-bg.png';
+  public percentLottery = 0;
 
   public currencyData = {
     eth: {
@@ -87,7 +89,9 @@ export class BuyComponent implements OnInit {
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    window['jQuery']['cookie']('termsBuy') ? this.acceptModalTerms() : this.modal = true;
+  }
 
   ngOnDestroy() {
     this.checker = undefined;
@@ -157,13 +161,17 @@ export class BuyComponent implements OnInit {
     if (email && address && this.loadedAddress && !this.loadingData) {
       this.loadingQr = true;
 
-      this.currencyData['btc'].amount = ((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.BTC).toFixed(8)).toString();
-      this.currencyData['eth'].amount = ((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.BTC).toFixed(18)).toString();
+      const amountBTC = ((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.BTC).toFixed(8));
+      const amountETH = ((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.ETH).toFixed(18));
+
+      this.currencyData['btc'].amount = parseFloat(amountBTC);
+      this.currencyData['eth'].amount = parseFloat(amountETH);
 
       console.log('BTC:', this.currencyData['btc'].amount, 'ETH:', this.currencyData['eth'].amount);
+      console.log('BTC:', parseFloat(this.currencyData['btc'].amount), 'ETH:', parseFloat(this.currencyData['eth'].amount));
 
-      this.currencyData['btc'].info = this.currencyData['btc'].name.toLowerCase() + ':' + this.currencyData['btc'].address + '?amount=' + this.currencyData['btc'].amount;
-      this.currencyData['eth'].info = this.currencyData['eth'].name.toLowerCase() + ':' + this.currencyData['eth'].address + '?value=' + this.currencyData['eth'].amount.split('.').join('');
+      this.currencyData['btc'].info = this.currencyData['btc'].name.toLowerCase() + ':' + this.currencyData['btc'].address; // + '?amount=' + this.currencyData['btc'].amount;
+      this.currencyData['eth'].info = this.currencyData['eth'].name.toLowerCase() + ':' + this.currencyData['eth'].address; // + '?value=' + this.currencyData['eth'].amount.split('.').join('');
 
       this.loadingQr = false;
     } else {
@@ -185,7 +193,9 @@ export class BuyComponent implements OnInit {
       this.bg = this.lottery.image ? this.lottery.image : 'assets/img/sections/buy-bg.png';
 
       const percent = 100 * Number(this.lottery.sent_duc_amount) / Number(this.lottery.duc_amount);
-      Number(percent.toFixed(0)) >= 100 ? this.lottery.percent = '100%' : this.lottery.percent = percent.toFixed(2) + '%';
+      this.percentLottery = percent;
+
+      Number(percent) >= 100 ? this.lottery.percent = '100%' : this.lottery.percent = percent.toString().substr(0, 5) + '%';
     }).catch(err => console.error(err));
 
     if (!this.lottery.winner_address) {
@@ -196,6 +206,7 @@ export class BuyComponent implements OnInit {
   }
 
   public acceptModalTerms() {
+    window['jQuery']['cookie']('termsBuy', true);
     this.modal = false;
     this.checkLotteryStatus();
 

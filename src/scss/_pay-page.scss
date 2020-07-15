@@ -496,6 +496,12 @@
                                 border: 1px solid #E9DCCA;
                                 height: 24px;
 
+                                .progress-info-5 {
+                                    &:after {
+                                        right: -15px !important;
+                                    }
+                                }
+
                                 span {
                                     background: $brown-red;
                                     border-radius: 12px;
@@ -513,7 +519,7 @@
                                         text-align: center;
                                         color: $brown-red;
                                         position: absolute;
-                                        right: -15px;
+                                        right: -40px;
                                         top: 17px;
                                     }
                                 }
@@ -692,7 +698,7 @@
             }
 
             .buy-info-block {
-                margin-top: 30px;
+                margin-top: 50px;
                 // min-height: 343px;
                 width: 100%;
                 padding: 30px;
@@ -700,6 +706,10 @@
                 box-shadow: 0px 50px 45px rgba(204, 199, 189, 0.25);
                 border-radius: 12px;
                 word-break: break-word;
+
+                @include b(900) {
+                    margin-top: 30px;
+                }
 
                 &-title {
                     font-weight: bold;

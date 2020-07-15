@@ -10,13 +10,13 @@
 
     <div class="lottery-info">
       <span class="lottery-info-title">
-        Entries | Ducatus address
+        Entries / Eligible hashes for the draw
       </span>
 
       <div class="lottery-info-table" *ngIf="players">
         <div class="lottery-info-table-items" *ngFor="let item of players">
           <div class="lottery-info-table-item">{{ item.tickets_amount }}</div>
-          <div class="lottery-info-table-item">{{ item.address }}</div>
+          <div class="lottery-info-table-item">{{ item.tx_hash }}</div>
         </div>
       </div>
     </div>

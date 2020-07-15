@@ -31,8 +31,8 @@
 
                     <div class="group group-input group-block">
                         <label class="group-radio-label" for="amount-3">Price of DUC = USD 0.05 <br>
-                            Select from the below options and receive corresponding number of entries for the
-                            draw</label>
+                            Select from the options below and receive corresponding number of entries for the
+                            draw <span class="ducatus-info-link" (click)="modalInfo = true">(more info)</span></label>
                         <div class="group-radio">
                             <div class="group-radio-item">
                                 <input (ngModelChange)="setAmount()" formControlName="amount" required type="radio"
@@ -96,13 +96,14 @@
                     <div id="loading-address" [ngClass]="{ 'loading-address-start': loadingQr}"
                         class="group group-input group-input-copy m-b-0 qr-wrap">
                         <div class="group-wrap qr-address">
-                            <label>Send your {{ currencyData[BuyGroup.value.currency].name }} to the following address
+                            <label>Send your {{ currencyData[BuyGroup.value.currency].amount }}
+                                {{ currencyData[BuyGroup.value.currency].name }} to the following address
                             </label>
                             <p class="input input-accent">
-                                <span *ngIf="!loadingQr">{{ currencyData[BuyGroup.value.currency].info }}</span>
+                                <span *ngIf="!loadingQr">{{ currencyData[BuyGroup.value.currency].address }}</span>
                             </p>
                             <span class="copy-address icon icon-copy"
-                                [cdkCopyToClipboard]="currencyData[BuyGroup.value.currency].info"></span>
+                                [cdkCopyToClipboard]="currencyData[BuyGroup.value.currency].address"></span>
                         </div>
 
                         <div class="qrcode" [attr.title]="currencyData[BuyGroup.value.currency].info">
@@ -111,7 +112,8 @@
                                 [errorCorrectionLevel]="'L'"></qrcode>
                         </div>
 
-                        <div class="group-wrap qr-textCode"><label>Or scan QR Code in Ducatus Wallet app</label></div>
+                        <div class="group-wrap qr-textCode"><label style="margin-bottom: 0;">Or scan this QR
+                                code</label></div>
 
                         <div class="loading-address-qr">
                             <div class="loading-address-qr-wrap">
@@ -188,7 +190,7 @@
                 <div *ngIf="lottery.ended">
                     <div *ngIf="lottery.winner_address" class="lottery-win">
                         <div class="lottery-win-title">WINNING HASH</div>
-                        <span class="lottery-win-text">{{ lottery.winner_address }}</span>
+                        <span class="lottery-win-text">{{ lottery.winner_tx_hash }}</span>
                     </div>
                     <div *ngIf="!lottery.winner_address" class="lottery-waiting">
                         <div class="lottery-waiting-title">Please wait</div>
@@ -212,7 +214,8 @@
                             starts<img src="/assets/img/icons/lottery-rocket.svg" height="25" width="25"
                                 alt="ducatus lottery rocket"></span>
                         <div class="lottery-tickets-progress-bar">
-                            <span [style.width]="lottery.percent" [attr.data-progress]="lottery.percent"></span>
+                            <span [style.width]="lottery.percent" [ngClass]="{'progress-info-5': percentLottery > 5}"
+                                [attr.data-progress]="lottery.percent"></span>
                         </div>
                     </div>
 
@@ -221,8 +224,8 @@
                     <div class="lottery-tickets-items">
                         <div class="lottery-tickets-item">
                             <img src="/assets/img/icons/ticket.svg" height="57" width="70" alt="ducatus lottery ticket">
-                            <span [routerLink]="['/buy/entries']" class="lottery-tickets-item-title">List of entries
-                                →</span>
+                            <span [routerLink]="['/buy/entries']" class="lottery-tickets-item-title">List of hash
+                                entries →</span>
                         </div>
                         <div class="lottery-tickets-spacer"><span></span></div>
                         <div class="lottery-tickets-item">
@@ -256,9 +259,9 @@
                             <p class="lottery-info-text">Once the target of {{ lottery.duc_amount | number }} DUC sold
                                 is reached, the 8-day
                                 countdown to the Lucky Draw Day starts. The sale of DUC
-                                continues until the countdown reaches 00:00:00 which will trigger the draw.</p>
+                                continues until the countdown reaches 00:00:00:00 which will trigger the draw.</p>
                             <p class="lottery-info-text">Through a random smart contract draw, the winning hash will be
-                                determined and published on this page.</p>
+                                determined and published on this page and the Winner will be informed by email.</p>
                         </div>
                     </div>
                 </div>
@@ -303,12 +306,12 @@
                 </div>
 
                 <div class="lottery" style="padding: 30px!important; min-height: auto;">
-                    <div class="ducatus-pay-form loading-pay-form" style="padding: 0 !important;">
+                    <div class="ducatus-pay-form loading-pay-form" style="padding: 0 !important;box-shadow: none;">
                         <div class="group group-input group-input-select input-h-60"></div>
                         <div class="group group-input group-input-select" style="height: 50px;"></div>
                         <div class="group group-input group-input-select" style="height: 130px;"></div>
                         <div class="group group-input group-input-select" style="height: 200px;"></div>
-                        <div class="group group-input group-input-select" style="height: 83px;"></div>
+                        <div class="group group-input group-input-select" style="height: 103px;"></div>
                     </div>
                 </div>
             </div>
@@ -330,6 +333,26 @@
             <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!modalAccept"
                 class="ducatus-btn ducatus-btn-brown">
                 {{ 'PAGE.BUY.MODAL.BUTTON' | translate }}</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" *ngIf="modalInfo">
+    <div class="modal-wrap">
+        <div class="modal-content-top">
+            <p>The exact amount of DUC as per BTC/ETH payment received will be sent to the indicated DUC wallet.
+                However, if the money
+                received falls short of the USD amount stated for the chosen package, then the system by default will
+                only submit the
+                number of entries for the draw based on the lower package.</p>
+            <p>To buy DUC in multiples of 1000 USD, you may do so in separate transactions, as the entries awarded per
+                transaction is
+                capped at 150, equivalent to a 1000 USD purchase.</p>
+        </div>
+        <div class="modal-content-bottom">
+            <button id="btn-modal" style="margin: 0 auto;" (click)="modalInfo = false"
+                class="ducatus-btn ducatus-btn-brown">
+                close</button>
         </div>
     </div>
 </div>

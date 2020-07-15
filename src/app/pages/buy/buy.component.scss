@@ -109,3 +109,14 @@
 .header-buy-page {
     background-position: 30% 50% !important;
 }
+
+.ducatus-info-link {
+    color: #852633;
+    cursor: pointer;
+    transition: 0.4s ease;
+    font-size: 12px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

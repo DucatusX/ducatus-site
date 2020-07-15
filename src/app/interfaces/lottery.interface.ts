@@ -24,5 +24,6 @@ export interface Lottery {
   gave_tickets_amount?: number;
   video?: string;
   winner_address?: string;
+  winner_tx_hash?: string;
   filled_at?: any;
 }
