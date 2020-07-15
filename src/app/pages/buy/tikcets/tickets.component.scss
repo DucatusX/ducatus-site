@@ -71,6 +71,16 @@
       align-items: center;
       word-wrap: break-word;
 
+      a {
+        color: $brown-red;
+        text-decoration: none;
+        transition: 0.4s ease;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
       &:nth-child(2) {
         justify-content: flex-start;
         padding-left: 30px;
