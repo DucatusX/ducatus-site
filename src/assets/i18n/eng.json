@@ -167,38 +167,92 @@
         },
         "BUY": {
             "TITLE": "Buy DUC",
-            "TEXT": "Your Ducatus address will be associated with a unique address in Bitcoin and Ethereum. You can top up these addresses at any time and receive Ducatus at the current exchange rate at the time of the transaction",
-            "MODAL": {
-                "TEXT": "Please tick the box below to confirm that you acknowledge and agree to the <a href='assets/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'>Terms & Conditions</a> of DUC purchase. Ducatus Coin is not available for purchase from Centurion in Singapore.",
-                "TERMS": "I agree to the Terms & Conditions",
-                "BUTTON": "Close"
-            },
-            "FIELDS": {
-                "ONE": {
-                    "TITLE": "You get",
-                    "PLACEHOLDER": "Amount"
+            "FORM": {
+                "RADIO": {
+                    "PRICE": "Price of DUC = USD 0.05",
+                    "TEXT": "Select from the below options and receive corresponding number of entries for the draw",
+                    "LINK": "(more info)",
+                    "TICKET": {
+                        "ONE": "entry",
+                        "MANY": "entries"
+                    }
                 },
-                "TWO": {
-                    "TITLE": "You send",
-                    "PLACEHOLDER": "Amount"
-                },
-                "THREE": {
-                    "TEXT_1": "Enter your",
-                    "TEXT_2": "address for receiving coins",
-                    "PLACEHOLDER_1": "Enter your",
-                    "PLACEHOLDER_2": "address for receiving coins",
+                "ADDRESS": {
+                    "TEXT": "Enter your DUC receiving address",
+                    "PLACEHOLDER": "Enter your DUC receiving address",
                     "ERROR": "Error! Please check, the address format is incorrect!"
                 },
-                "FOUR": {
-                    "TEXT_1": "Send your",
-                    "TEXT_2": "to",
-                    "ERROR": "something went wrong, try again later"
+                "EMAIL": {
+                    "TEXT": "Enter your email address so we can reach out should YOU be the WINNER",
+                    "PLACEHOLDER": "Enter your email"
                 },
-                "FIVE": {
-                    "TEXT_1": "Attention!",
-                    "TEXT_2": "You will get",
-                    "TEXT_3": "to your address in"
+                "RESULT": {
+                    "TEXT_1": "Send your",
+                    "TEXT_2": "to the following address",
+                    "QR": {
+                        "TEXT": "Or scan this QR code"
+                    },
+                    "ERROR": "something went wrong, try again later",
+                    "NOTE": {
+                        "TEXT_1": "Please note that it may take up to",
+                        "TEXT_2": "until you receive your DUC in your wallet"
+                    }
                 }
+            },
+            "INFO": {
+                "TITLE": "Discover, learn and earn by being part of the Ducatus Cashless Economy.",
+                "LINK": {
+                    "ONE": {
+                        "TITLE": "Trade cryptocurrency at AA+",
+                        "LINK": "https://www.aaplussg.com"
+                    },
+                    "TWO": {
+                        "TITLE": "Use DUC and shop for pre-loved items online",
+                        "LINK": "https://remusnation.com/dbay/"
+                    }
+                }
+            },
+            "LOTTERY": {
+                "BLOCK": {
+                    "WINNER": {
+                        "TITLE": "WINNING HASH"
+                    },
+                    "WAITING": {
+                        "TITLE": "Please wait",
+                        "TEXT": "calculating winner..."
+                    },
+                    "COUNTDOWN": {
+                        "TITLE": "Countdown to Draw Date"
+                    },
+                    "PROGRESS": {
+                        "TITLE": "% of sales target reached before draw countdown starts"
+                    },
+                    "TICKETS": {
+                        "LINK": "List of hash entries →",
+                        "TEXT": "Number of entries"
+                    },
+                    "INFO": {
+                        "TITLE": "How can you own this timepiece?",
+                        "TEXT": "<p class=\"lottery-info-text\">Every buyer of DUC stands a chance to win. The higher your DUC purchase, the more winning chances you get.</p> <p class=\"lottery-info-text\">Once the target of {{ duc_amount }} DUC sold is reached, the 8-day countdown to the Lucky Draw Day starts. The sale of DUC continues until the countdown reaches 00:00:00:00 which will trigger the draw.</p> <p class=\"lottery-info-text\">Through a random smart contract draw, the winning hash will be determined and published on this page and the Winner will be informed by email.</p>"
+                    }
+                }
+            },
+            "MODAL": {
+                "TERMS": {
+                    "TEXT": "Please tick the box below to confirm that you acknowledge and agree to the <a href='assets/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'>Terms & Conditions</a> of DUC purchase. Ducatus Coin is not available for purchase from Centurion in Singapore.",
+                    "AGREE": "I agree to the Terms & Conditions",
+                    "BUTTON": "Close"
+                },
+                "INFO": {
+                    "TEXT": "<p>The exact amount of DUC as per BTC/ETH payment received will be sent to the indicated DUC wallet. However, if the money received falls short of the USD amount stated for the chosen package, then the system by default will only submit the number of entries for the draw based on the lower package.</p><p>To buy DUC in multiples of 1000 USD, you may do so in separate transactions, as the entries awarded per transaction is capped at 150, equivalent to a 1000 USD purchase.</p>",
+                    "BUTTON": "Close"
+                }
+            }
+        },
+        "TICKETS": {
+            "TITLE": "Buy DUC",
+            "TABLE": {
+                "TITLE": "Entries / Eligible hashes for the draw"
             }
         },
         "CONTACT": {

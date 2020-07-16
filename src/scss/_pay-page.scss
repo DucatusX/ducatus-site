@@ -1006,15 +1006,28 @@
 
         &-text {
             display: block;
-            font-size: 13px;
+            font-size: 12px;
             color: $gold;
             font-weight: bold;
             cursor: pointer;
             margin-top: 8px;
+            text-align: center;
 
             @include bb(1150, 900) {
-                font-size: 11px;
+                font-size: 10px;
+                margin-top: 5px;
             }
+
+            @include b(500) {
+                margin-top: 0;
+            }
+
+            br {
+                @include b(500) {
+                    display: none;
+                }
+            }
+
         }
 
         input {

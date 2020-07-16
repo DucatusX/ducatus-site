@@ -1,17 +1,14 @@
 <section class="section-header-page header-entries-page"
   style="background-image: url(/assets/img/sections/lottery-prize-watch.png);">
   <div class="container">
-    <!-- <h1 class="h1__title-page" [innerHTML]="'PAGE.VAUCHER.TITLE' | translate"></h1> -->
-    <h1 class="h1__title-page">Buy DUC</h1>
+    <h1 class="h1__title-page" [innerHTML]="'PAGE.TICKETS.TITLE' | translate"></h1>
   </div>
 </section>
 <section class="app lottery-info-page color-page">
   <div class="container">
 
     <div class="lottery-info">
-      <span class="lottery-info-title">
-        Entries / Eligible hashes for the draw
-      </span>
+      <span class="lottery-info-title">{{ 'PAGE.TICKETS.TABLE.TITLE' | translate }}</span>
 
       <div class="lottery-info-table" *ngIf="players">
         <div class="lottery-info-table-items" *ngFor="let item of players">
