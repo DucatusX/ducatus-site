@@ -12,7 +12,7 @@ export interface Rates {
 export interface Lottery {
   id?: number;
   name: string;
-  description?: any;
+  description?: any[];
   image: string;
   duc_amount: any;
   sent_duc_amount: any;

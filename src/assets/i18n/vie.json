@@ -167,38 +167,92 @@
         },
         "BUY": {
             "TITLE": "Mua DUC",
-            "TEXT": "Địa chỉ Ducatus của bạn sẽ được liên kết với một địa chỉ duy nhất trong Bitcoin và Ethereum. Bạn có thể nạp các địa chỉ này bất cứ lúc nào và nhận Ducatus theo tỷ giá hiện tại tại thời điểm giao dịch",
-            "MODAL": {
-                "TEXT": "Vui lòng đánh dấu vào ô bên dưới để xác nhận rằng bạn thừa nhận và đồng ý với <a href='/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'>Terms & Conditions</a> mua DUC. Ducatus Coin không có sẵn để mua từ Centurion tại Singapore.",
-                "TERMS": "Tôi đồng ý với các Điều khoản & Điều kiện",
-                "BUTTON": "Đóng"
-            },
-            "FIELDS": {
-                "ONE": {
-                    "TITLE": "Bạn lấy",
-                    "PLACEHOLDER": "Số tiền"
+            "FORM": {
+                "RADIO": {
+                    "PRICE": "Giá của DUC = 0,05 USD",
+                    "TEXT": " Chọn một trong những lựa chọn bên dưới và nhận số lượt rút thăm tương ứng",
+                    "LINK": "(thêm thông tin)",
+                    "TICKET": {
+                        "ONE": "lượt",
+                        "MANY": "lượt"
+                    }
                 },
-                "TWO": {
-                    "TITLE": "Bạn gửi",
-                    "PLACEHOLDER": "Số tiền"
-                },
-                "THREE": {
-                    "TEXT_1": "Nhập của bạn",
-                    "TEXT_2": "địa chỉ nhận tiền",
-                    "PLACEHOLDER_1": "Nhập của bạn",
-                    "PLACEHOLDER_2": "địa chỉ nhận tiền",
+                "ADDRESS": {
+                    "TEXT": "Nhập địa chỉ nhận DUC",
+                    "PLACEHOLDER": "Nhập địa chỉ nhận DUC",
                     "ERROR": "Lỗi! Vui lòng kiểm tra, định dạng địa chỉ không chính xác!"
                 },
-                "FOUR": {
-                    "TEXT_1": "Gửi của bạn",
-                    "TEXT_2": "đến",
-                    "ERROR": "đã xảy ra lỗi, thử lại sau"
+                "EMAIL": {
+                    "TEXT": "Nhập email của bạn vì bạn sẽ được thông báo nếu bạn là người chiến thắng",
+                    "PLACEHOLDER": "Nhập email của bạn "
                 },
-                "FIVE": {
-                    "TEXT_1": "Chú ý!",
-                    "TEXT_2": "Bạn sẽ nhận được",
-                    "TEXT_3": "đến địa chỉ của bạn trong"
+                "RESULT": {
+                    "TEXT_1": "Gửi đồng ",
+                    "TEXT_2": " của bạn đến địa chỉ sau:",
+                    "QR": {
+                        "TEXT": "hoặc quét mã QR này:"
+                    },
+                    "ERROR": "đã xảy ra lỗi, thử lại sau",
+                    "NOTE": {
+                        "TEXT_1": "Hãy lưu ý rằng bạn sẽ mất khoảng",
+                        "TEXT_2": " để nhận DUC về ví"
+                    }
                 }
+            },
+            "INFO": {
+                "TITLE": "Hãy khám phá, học hỏi và có thêm thu nhập từ việc trở thành một phần của nền kinh tế không tiền mặt Ducatus.",
+                "LINK": {
+                    "ONE": {
+                        "TITLE": "Mua bán cryptocurrency trên sàn AA+",
+                        "LINK": "https://www.aaplussg.com"
+                    },
+                    "TWO": {
+                        "TITLE": "Sử dụng DUC để mua sắm những món đồ yêu thích trực tuyến",
+                        "LINK": "https://remusnation.com/dbay/"
+                    }
+                }
+            },
+            "LOTTERY": {
+                "BLOCK": {
+                    "WINNER": {
+                        "TITLE": "GIÀNH CHIẾN THẮNG"
+                    },
+                    "WAITING": {
+                        "TITLE": "Xin vui lòng chờ",
+                        "TEXT": "người chiến thắng tính toán..."
+                    },
+                    "COUNTDOWN": {
+                        "TITLE": "Đếm ngược đến ngày rút thăm"
+                    },
+                    "PROGRESS": {
+                        "TITLE": "Phần trăm doanh số bán ra phải đạt đúng chỉ tiêu trước khi cuộc đếm ngược thời gian diễn ra"
+                    },
+                    "TICKETS": {
+                        "LINK": "Danh sách các giao dịch và số lượt rút thăm tương ứng →",
+                        "TEXT": "Số lượng mục"
+                    },
+                    "INFO": {
+                        "TITLE": "Làm thế nào để có thể sỡ hữu chiếc đồng hồ này?",
+                        "TEXT": "<p class=\"lottery-info-text\">Bất cứ người mua DUC nào cũng có khả năng chiến thắng. Mua càng nhiều DUC, càng tăng cơ hội sở hữu.</p> <p class=\"lottery-info-text\">Khi đạt đến mục tiêu {{ duc_amount }}  DUC được bán ra, 8 ngày đếm ngược cho đến cuộc rút thăm trúng thưởng sẽ bắt đầu. DUC sẽ tiếp tục được bán ra trước khi thời gian đếm ngược kết thúc.</p> <p class=\"lottery-info-text\">Thông qua rút thăm hợp đồng thông minh ngẫu nhiên, băm chiến thắng sẽ được xác định và công bố trên trang này và Người chiến thắng sẽ được thông báo qua email.</p>"
+                    }
+                }
+            },
+            "MODAL": {
+                "TERMS": {
+                    "TEXT": "Vui lòng đánh dấu vào ô bên dưới để xác nhận rằng bạn thừa nhận và đồng ý với <a href='assets/doads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'> Điều khoản & Điều kiện </a> khi mua DUC. Ducatus Coin không có sẵn để mua từ Centurion tại Singapore.",
+                    "AGREE": "Tôi đồng ý với các Điều khoản & Điều kiện",
+                    "BUTTON": "Đóng"
+                },
+                "INFO": {
+                    "TEXT": "<p>Số lượng quy đổi chính xác của DUC được căn cứ theo theo giá trị thanh toán BTC / ETH sẽ được gửi đến ví DUC được chỉ định. Tuy nhiên, nếu số tiền (USD) công ty nhận được bé hơn giá trị của gói bạn đã chọn, hệ thống sẽ mặc định ghi nhận số lượt rút thăm của bạn ở gói giá trị thấp hơn.</p><p>Để mua DUC với bội số nguyên của 1000 USD, bạn có thể thực hiện nhiều giao dịch riêng biệt, vì số lượng giới hạn tối đa cho một lần mua là 1000 USD.</p>",
+                    "BUTTON": "Đóng"
+                }
+            }
+        },
+        "TICKETS": {
+            "TITLE": "Mua DUC",
+            "TABLE": {
+                "TITLE": "Bài dự thi / Băm đủ điều kiện để rút thăm"
             }
         },
         "CONTACT": {
