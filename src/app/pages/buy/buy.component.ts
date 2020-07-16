@@ -124,7 +124,6 @@ export class BuyComponent implements OnInit {
 
   public setEmail() {
     const email = this.BuyGroup.controls['email'].valid;
-    console.log(email);
     this.getAddresses();
   }
 
@@ -132,7 +131,6 @@ export class BuyComponent implements OnInit {
     const address = this.BuyGroup.value.address;
 
     if (address.length === 34 && ['L', 'l', 'M', 'm'].includes(address.substring(0, 1))) {
-      console.log('setAddress');
       this.currencyData['eth'].address = this.currencyData['btc'].address = '';
       this.loadedAddress = false;
       this.buyservice.getValidateDucatusAddress(address).then((result) => {
@@ -150,8 +148,6 @@ export class BuyComponent implements OnInit {
     const address = this.BuyGroup.value.address;
     const addressValid = this.BuyGroup.controls['address'].valid;
     const email = this.BuyGroup.value.email;
-
-    console.log('address: ', addressValid);
 
     if (addressValid) {
       this.buyservice.getExchange(address, 'DUC', email).then((result) => {
@@ -179,9 +175,6 @@ export class BuyComponent implements OnInit {
 
       this.currencyData['btc'].amount = parseFloat(amountBTC);
       this.currencyData['eth'].amount = parseFloat(amountETH);
-
-      console.log('BTC:', this.currencyData['btc'].amount, 'ETH:', this.currencyData['eth'].amount);
-      console.log('BTC:', parseFloat(this.currencyData['btc'].amount), 'ETH:', parseFloat(this.currencyData['eth'].amount));
 
       this.currencyData['btc'].info = this.currencyData['btc'].name.toLowerCase() + ':' + this.currencyData['btc'].address; // + '?amount=' + this.currencyData['btc'].amount;
       this.currencyData['eth'].info = this.currencyData['eth'].name.toLowerCase() + ':' + this.currencyData['eth'].address; // + '?value=' + this.currencyData['eth'].amount.split('.').join('');
