@@ -173,8 +173,8 @@
                     "TEXT": "Seleziona tra le seguenti opzioni e ricevi il numero corrispondente di hash per il sorteggio",
                     "LINK": "(ulteriori informazioni)",
                     "TICKET": {
-                        "ONE": "iscrizione",
-                        "MANY": "inserimenti"
+                        "ONE": "<br>iscrizione",
+                        "MANY": "<br>inserimenti"
                     }
                 },
                 "ADDRESS": {

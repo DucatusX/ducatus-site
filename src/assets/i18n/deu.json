@@ -173,8 +173,8 @@
                     "TEXT": "Wählen Sie aus den folgenden Optionen und erhalten Sie die entsprechende Anzahl von Hash-Einträgen für die Verlosung.",
                     "LINK": "(mehr info)",
                     "TICKET": {
-                        "ONE": "Hash-Eintrag",
-                        "MANY": "Hash-Einträge"
+                        "ONE": "Hash-<br>Eintrag",
+                        "MANY": "Hash-<br>Einträge"
                     }
                 },
                 "ADDRESS": {

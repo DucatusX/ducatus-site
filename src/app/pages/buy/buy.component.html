@@ -41,7 +41,8 @@
                                 <label for="amount-1">
                                     <span class="group-radio-amount">10$</span>
                                     <span *ngIf="!lottery.ended || false" class="group-radio-text">1
-                                        {{ 'PAGE.BUY.FORM.RADIO.TICKET.ONE' | translate }}</span>
+                                        <span [innerHTML]="'PAGE.BUY.FORM.RADIO.TICKET.ONE' | translate"></span>
+                                    </span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -50,7 +51,8 @@
                                 <label for="amount-2">
                                     <span class="group-radio-amount">50$</span>
                                     <span *ngIf="!lottery.ended || false" class="group-radio-text">6
-                                        {{ 'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate }}</span>
+                                        <span [innerHTML]="'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate"></span>
+                                    </span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -59,7 +61,8 @@
                                 <label for="amount-3">
                                     <span class="group-radio-amount">100$</span>
                                     <span *ngIf="!lottery.ended || false" class="group-radio-text">13
-                                        {{ 'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate }}</span>
+                                        <span [innerHTML]="'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate"></span>
+                                    </span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -68,7 +71,8 @@
                                 <label for="amount-4">
                                     <span class="group-radio-amount">500$</span>
                                     <span *ngIf="!lottery.ended || false" class="group-radio-text">70
-                                        {{ 'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate }}</span>
+                                        <span [innerHTML]="'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate"></span>
+                                    </span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -77,7 +81,8 @@
                                 <label for="amount-5">
                                     <span class="group-radio-amount">1000$</span>
                                     <span *ngIf="!lottery.ended || false" class="group-radio-text">150
-                                        {{ 'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate }}</span>
+                                        <span [innerHTML]="'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate"></span>
+                                    </span>
                                 </label>
                             </div>
 
