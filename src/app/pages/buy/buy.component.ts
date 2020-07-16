@@ -190,8 +190,6 @@ export class BuyComponent implements OnInit {
     this.buyservice.getLottery().then((result) => {
       this.lottery = result[0];
 
-      this.lottery.filled_at = 1594650700;
-
       this.bg = this.lottery.image ? this.lottery.image : 'assets/img/sections/buy-bg.png';
 
       const percent = 100 * Number(this.lottery.sent_duc_amount) / Number(this.lottery.duc_amount);
