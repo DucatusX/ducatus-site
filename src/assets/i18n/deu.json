@@ -167,38 +167,92 @@
         },
         "BUY": {
             "TITLE": "Kaufen DUC",
-            "TEXT": "Ihre Ducatusadresse wird mit einer einmaligen Adresse in Bitcoin und Ethereum verknüpft. Sie können diese Adressen jederzeit auffüllen und Ducatus zum aktuellen Wechselkurs zum Zeitpunkt der Transaktion erhalten.",
-            "MODAL": {
-                "TEXT": "Bitte kreuzen Sie das Kästchen unten an, um zu bestätigen, dass Sie das bestätigen und damit einverstanden sind <a href='/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'>Terms & Conditions</a> von DUC Kauf. Ducatus Coin kann nicht bei Centurion in Singapur gekauft werden.",
-                "TERMS": "Ich akzeptiere die Nutzungsbedingungen",
-                "BUTTON": "Schließen"
-            },
-            "FIELDS": {
-                "ONE": {
-                    "TITLE": "Du erhältst",
-                    "PLACEHOLDER": "Menge"
+            "FORM": {
+                "RADIO": {
+                    "PRICE": "DUC Preis = USD 0.05",
+                    "TEXT": "Wählen Sie aus den folgenden Optionen und erhalten Sie die entsprechende Anzahl von Hash-Einträgen für die Verlosung.",
+                    "LINK": "(mehr info)",
+                    "TICKET": {
+                        "ONE": "Hash-Eintrag",
+                        "MANY": "Hash-Einträge"
+                    }
                 },
-                "TWO": {
-                    "TITLE": "Du sendest",
-                    "PLACEHOLDER": "Menge"
-                },
-                "THREE": {
-                    "TEXT_1": "Geben Sie Ihre",
-                    "TEXT_2": "Adresse für den Erhalt von Münzen ein",
-                    "PLACEHOLDER_1": "Geben Sie Ihre",
-                    "PLACEHOLDER_2": "Adresse für den Erhalt von Münzen ein",
+                "ADDRESS": {
+                    "TEXT": "Geben Sie Ihre DUC Empfangsadresse ein",
+                    "PLACEHOLDER": "Geben Sie Ihre DUC Empfangsadresse ein",
                     "ERROR": "Error! Bitte überprüfen Sie, das Adressformat ist falsch!"
                 },
-                "FOUR": {
-                    "TEXT_1": "Senden Sie Ihre",
-                    "TEXT_2": "an",
-                    "ERROR": "etwas schief gelaufen, versuchen Sie es später erneut"
+                "EMAIL": {
+                    "TEXT": "Geben Sie Ihre Emailadresse ein, damit wir Sie kontaktieren können, falls SIE der GEWINNER sind ",
+                    "PLACEHOLDER": "Email eingeben"
                 },
-                "FIVE": {
-                    "TEXT_1": "Beachtung!",
-                    "TEXT_2": "Sie gelangen",
-                    "TEXT_3": "an Ihre Adresse in"
+                "RESULT": {
+                    "TEXT_1": "Senden Sie Ihre ",
+                    "TEXT_2": " an folgende Adresse",
+                    "QR": {
+                        "TEXT": "oder scannen Sie den QR Code"
+                    },
+                    "ERROR": "etwas ist schief gelaufen, versuchen Sie es später erneut",
+                    "NOTE": {
+                        "TEXT_1": "Please note that it may take up to Bitte beachten Sie, daß es bis zu ",
+                        "TEXT_2": " dauern kann, bis Sie die DUC in Ihrem Wallet erhalten"
+                    }
                 }
+            },
+            "INFO": {
+                "TITLE": "Entdecken, lernen und verdienen Sie es, Teil der Ducatus Cashless Economy zu werden.",
+                "LINK": {
+                    "ONE": {
+                        "TITLE": "Handeln Sie Kryptowährungen auf AA+",
+                        "LINK": "https://www.aaplussg.com"
+                    },
+                    "TWO": {
+                        "TITLE": "Nutzen Sie DUC und shoppen Sie Ihre Lieblingsprodukte online.",
+                        "LINK": "https://remusnation.com/dbay/"
+                    }
+                }
+            },
+            "LOTTERY": {
+                "BLOCK": {
+                    "WINNER": {
+                        "TITLE": "GEWINNENDER HASH"
+                    },
+                    "WAITING": {
+                        "TITLE": "Warten Sie mal",
+                        "TEXT": "gewinner berechnen..."
+                    },
+                    "COUNTDOWN": {
+                        "TITLE": "Countdown zum Ziehungsdatum"
+                    },
+                    "PROGRESS": {
+                        "TITLE": "% des Verkaufsziels erreicht, bevor der Countdown beginnt"
+                    },
+                    "TICKETS": {
+                        "LINK": "Liste der Hash-Einträge →",
+                        "TEXT": "Anzahl der Einträge"
+                    },
+                    "INFO": {
+                        "TITLE": "Wie können Sie dieses Meisterstück besitzen?",
+                        "TEXT": "<p class=\"lottery-info-text\">Jeder Käufer DUC sichert sich eine Gewinnchance. Je höher Ihr DUC Kauf, dest mehr Gewinnchancen erhalten Sie.</p> <p class=\"lottery-info-text\">Sobald das Verkaufsziel von {{ duc_amount }} DUC erreicht ist, beginnt der 8-tägige Countdown bis zur Verlosung. Der DUC Verkauf geht solange weiter, bis der Countdown bei 00:00:00:00 aufhört, dies wird die Verlosung auslösen.</p> <p class=\"lottery-info-text\">Durch eine zufällige Verlosung eines intelligenten Vertrags wird der Gewinner-Hash ermittelt und auf dieser Seite veröffentlicht, und der Gewinner wird per E-Mail informiert.</p>"
+                    }
+                }
+            },
+            "MODAL": {
+                "TERMS": {
+                    "TEXT": "Bitte kreuzen Sie das unten stehende Kästchen an, um zu bestätigen, dass Sie die <a href='assets/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'> Allgemeinen Geschäftsbedingungen </a> des DUC-Kaufs bestätigen und damit einverstanden sind. Ducatus Coin kann nicht bei Centurion in Singapur gekauft werden.",
+                    "AGREE": "Ich akzeptiere die Nutzungsbedingungen",
+                    "BUTTON": "Schließen"
+                },
+                "INFO": {
+                    "TEXT": "<p>Der genaue Betrag der DUC gemäß der erhaltenen BTC / ETH-Zahlung wird auf das angegebene DUC-Wallet gesendet.Wenn der erhaltene Betrag jedoch den für das ausgewählte Paket angegebenen USD-Betrag unterschreitet, dann sendet das System standardmäßig nur die Anzahl der Hash-Einträge für die Verlosung basierend auf dem niedrigeren Paket.</p><p>Um mehrfach DUC im Betrag von 1000 USD zu kaufen, können Sie dies in separaten Transaktionen tun,denn die maximal pro Transaktion zu vergebenen Hash-Einträge sind auf 150 begrenzt, also ist maximal jeweils ein Kauf von 1000 USD möglich.</p>",
+                    "BUTTON": "Schließen"
+                }
+            }
+        },
+        "TICKETS": {
+            "TITLE": "Kaufen DUC",
+            "TABLE": {
+                "TITLE": "Einträge / Geeignete Hashes für die Auslosung"
             }
         },
         "CONTACT": {

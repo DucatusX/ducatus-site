@@ -30,16 +30,18 @@
                     </div>
 
                     <div class="group group-input group-block">
-                        <label class="group-radio-label" for="amount-3">Price of DUC = USD 0.05 <br>
-                            Select from the options below and receive corresponding number of entries for the
-                            draw <span class="ducatus-info-link" (click)="modalInfo = true">(more info)</span></label>
+                        <label class="group-radio-label" for="amount-3">{{ 'PAGE.BUY.FORM.RADIO.PRICE' | translate }}
+                            <br>
+                            {{ 'PAGE.BUY.FORM.RADIO.TEXT' | translate }} <span class="ducatus-info-link"
+                                (click)="modalInfo = true">{{ 'PAGE.BUY.FORM.RADIO.LINK' | translate }}</span></label>
                         <div class="group-radio">
                             <div class="group-radio-item">
                                 <input (ngModelChange)="setAmount()" formControlName="amount" required type="radio"
                                     id="amount-1" value="10">
                                 <label for="amount-1">
                                     <span class="group-radio-amount">10$</span>
-                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">1 entry</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">1
+                                        {{ 'PAGE.BUY.FORM.RADIO.TICKET.ONE' | translate }}</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -47,7 +49,8 @@
                                     value="50">
                                 <label for="amount-2">
                                     <span class="group-radio-amount">50$</span>
-                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">6 entries</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">6
+                                        {{ 'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate }}</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -55,7 +58,8 @@
                                     id="amount-3" value="100">
                                 <label for="amount-3">
                                     <span class="group-radio-amount">100$</span>
-                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">13 entries</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">13
+                                        {{ 'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate }}</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -63,7 +67,8 @@
                                     value="500">
                                 <label for="amount-4">
                                     <span class="group-radio-amount">500$</span>
-                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">70 entries</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">70
+                                        {{ 'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate }}</span>
                                 </label>
                             </div>
                             <div class="group-radio-item">
@@ -71,7 +76,8 @@
                                     value="1000">
                                 <label for="amount-5">
                                     <span class="group-radio-amount">1000$</span>
-                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">150 entries</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">150
+                                        {{ 'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate }}</span>
                                 </label>
                             </div>
 
@@ -79,25 +85,28 @@
                     </div>
 
                     <div class="group group-input">
-                        <label for="address">Enter your DUC receiving address</label>
+                        <label for="address">{{ 'PAGE.BUY.FORM.ADDRESS.TEXT' | translate }}</label>
                         <input id="address" formControlName="address" required type="text"
-                            (ngModelChange)="setAddress()" [placeholder]="'Enter your DUC receiving address'"
-                            class="input input-white" oninput="this.value = this.value.replace('ducatus:', '');">
+                            (ngModelChange)="setAddress()"
+                            [placeholder]="'PAGE.BUY.FORM.ADDRESS.PLACEHOLDER' | translate" class="input input-white"
+                            oninput="this.value = this.value.replace('ducatus:', '');">
                         <span class="error-address-value"
-                            *ngIf="ducAddress?.invalid && (ducAddress?.dirty || ducAddress?.touched)">{{ 'PAGE.BUY.FIELDS.THREE.ERROR' | translate }}</span>
+                            *ngIf="ducAddress?.invalid && (ducAddress?.dirty || ducAddress?.touched)">{{ 'PAGE.BUY.FORM.ADDRESS.ERROR' | translate }}</span>
                     </div>
 
                     <div class="group group-input">
-                        <label for="email">Enter your email address so we can reach out should YOU be the WINNER</label>
+                        <label for="email">{{ 'PAGE.BUY.FORM.EMAIL.TEXT' | translate }}</label>
                         <input (ngModelChange)="setEmail()" id="email" formControlName="email" type="email"
-                            placeholder="Enter your email" class="input input-white">
+                            [placeholder]="'PAGE.BUY.FORM.EMAIL.PLACEHOLDER' | translate" class="input input-white">
                     </div>
 
                     <div id="loading-address" [ngClass]="{ 'loading-address-start': loadingQr}"
                         class="group group-input group-input-copy m-b-0 qr-wrap">
                         <div class="group-wrap qr-address">
-                            <label>Send your {{ currencyData[BuyGroup.value.currency].amount }}
-                                {{ currencyData[BuyGroup.value.currency].name }} to the following address
+                            <label>{{ 'PAGE.BUY.FORM.RESULT.TEXT_1' | translate }}
+                                {{ currencyData[BuyGroup.value.currency].amount }}
+                                {{ currencyData[BuyGroup.value.currency].name }}
+                                {{ 'PAGE.BUY.FORM.RESULT.TEXT_2' | translate }}
                             </label>
                             <p class="input input-accent">
                                 <span *ngIf="!loadingQr">{{ currencyData[BuyGroup.value.currency].address }}</span>
@@ -112,12 +121,12 @@
                                 [errorCorrectionLevel]="'L'"></qrcode>
                         </div>
 
-                        <div class="group-wrap qr-textCode"><label style="margin-bottom: 0;">Or scan this QR
-                                code</label></div>
+                        <div class="group-wrap qr-textCode"><label
+                                style="margin-bottom: 0;">{{ 'PAGE.BUY.FORM.RESULT.QR.TEXT' | translate }}</label></div>
 
                         <div class="loading-address-qr">
                             <div class="loading-address-qr-wrap">
-                                <p>{{ 'PAGE.BUY.FIELDS.FOUR.ERROR' | translate }}</p>
+                                <p>{{ 'PAGE.BUY.FORM.RESULT.ERROR' | translate }}</p>
                                 <div class="loading-address-qr-wrap-ellips">
                                     <span></span>
                                     <span></span>
@@ -129,8 +138,9 @@
 
                         <div class="group group-text qr-text" style="margin-bottom: 0;">
                             <span class="text-attantion">
-                                Please note that it may take up to {{ currencyData[BuyGroup.value.currency].time }}
-                                until you receive your DUC in your wallet<br><br></span>
+                                {{ 'PAGE.BUY.FORM.RESULT.NOTE.TEXT_1' | translate }}
+                                {{ currencyData[BuyGroup.value.currency].time }}
+                                {{ 'PAGE.BUY.FORM.RESULT.NOTE.TEXT_2' | translate }}<br><br></span>
                         </div>
 
                     </div>
@@ -146,17 +156,17 @@
                 </div>
 
                 <div class="buy-info-block hidden-mobile" *ngIf="!loadingData">
-                    <span class="buy-info-block-title">Discover, learn and earn by being part of the Ducatus Cashless
-                        Economy.</span>
+                    <span class="buy-info-block-title">{{ 'PAGE.BUY.INFO.TITLE' | translate }}</span>
 
                     <div class="buy-info-block-group-text">
                         <div class="buy-info-block-group-text-item">
                             <img src="/assets/img/aa-logo.png" height="60" alt="aa+ logo">
                         </div>
                         <div class="buy-info-block-group-text-item">
-                            <span class="buy-info-block-subtitle">Trade cryptocurrency at AA+</span>
-                            <a class="buy-info-block-link" href="https://www.aaplussg.com"
-                                target="_blank">https://www.aaplussg.com</a>
+                            <span
+                                class="buy-info-block-subtitle">{{ 'PAGE.BUY.INFO.LINK.ONE.TITLE' | translate }}</span>
+                            <a class="buy-info-block-link" [href]="'PAGE.BUY.INFO.LINK.ONE.TITLE' | translate"
+                                target="_blank">{{ 'PAGE.BUY.INFO.LINK.ONE.TITLE' | translate }}</a>
                         </div>
                     </div>
 
@@ -167,9 +177,10 @@
                             <img src="/assets/img/d-bay-logo.jpg" height="30" alt="d-bay logo">
                         </div>
                         <div class="buy-info-block-group-text-item">
-                            <span class="buy-info-block-subtitle">Use DUC and shop for pre-loved items online</span>
-                            <a class="buy-info-block-link" href="https://remusnation.com/dbay/"
-                                target="_blank">https://remusnation.com/dbay/</a>
+                            <span
+                                class="buy-info-block-subtitle">{{ 'PAGE.BUY.INFO.LINK.TWO.TITLE' | translate }}</span>
+                            <a class="buy-info-block-link" [href]="'PAGE.BUY.INFO.LINK.TWO.TITLE' | translate"
+                                target="_blank">{{ 'PAGE.BUY.INFO.LINK.TWO.TITLE' | translate }}</a>
                         </div>
                     </div>
                 </div>
@@ -189,19 +200,21 @@
 
                 <div *ngIf="lottery.ended">
                     <div *ngIf="lottery.winner_address" class="lottery-win">
-                        <div class="lottery-win-title">WINNING HASH</div>
+                        <div class="lottery-win-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WINNER.TITLE' | translate }}</div>
                         <span class="lottery-win-text">{{ lottery.winner_tx_hash }}</span>
                     </div>
                     <div *ngIf="!lottery.winner_address" class="lottery-waiting">
-                        <div class="lottery-waiting-title">Please wait</div>
-                        <div class="lottery-waiting-text">calculating winner...</div>
+                        <div class="lottery-waiting-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TITLE' | translate }}
+                        </div>
+                        <div class="lottery-waiting-text">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TEXT' | translate }}</div>
                     </div>
                 </div>
 
                 <div *ngIf="!lottery.ended" class="lottery-tickets">
 
                     <div *ngIf="lottery.filled_at && !lottery.ended" class="lottery-tickets-timer">
-                        <div class="lottery-tickets-timer-title">Countdown to Draw Date</div>
+                        <div class="lottery-tickets-timer-title">
+                            {{ 'PAGE.BUY.LOTTERY.BLOCK.COUNTDOWN.TITLE' | translate }}</div>
                         <span class="lottery-tickets-timer-count">
                             <app-countdown [timeStart]="lottery.filled_at" [correctTimeStart]="1000"
                                 [timeEndDayPlus]="8">
@@ -210,8 +223,9 @@
                     </div>
 
                     <div *ngIf="!lottery.filled_at && !lottery.ended" class="lottery-tickets-progress">
-                        <span class="lottery-tickets-progress-title">% of sales target reached before draw countdown
-                            starts<img src="/assets/img/icons/lottery-rocket.svg" height="25" width="25"
+                        <span
+                            class="lottery-tickets-progress-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.PROGRESS.TITLE' | translate }}
+                            <img src="/assets/img/icons/lottery-rocket.svg" height="25" width="25"
                                 alt="ducatus lottery rocket"></span>
                         <div class="lottery-tickets-progress-bar">
                             <span [style.width]="lottery.percent" [ngClass]="{'progress-info-5': percentLottery > 5}"
@@ -224,26 +238,27 @@
                     <div class="lottery-tickets-items">
                         <div class="lottery-tickets-item">
                             <img src="/assets/img/icons/ticket.svg" height="57" width="70" alt="ducatus lottery ticket">
-                            <span [routerLink]="['/buy/entries']" class="lottery-tickets-item-title">List of hash
-                                entries →</span>
+                            <span [routerLink]="['/buy/entries']"
+                                class="lottery-tickets-item-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.TICKETS.LINK' | translate }}</span>
                         </div>
                         <div class="lottery-tickets-spacer"><span></span></div>
                         <div class="lottery-tickets-item">
                             <span class="lottery-tickets-item-amount">{{ lottery.gave_tickets_amount }}</span>
-                            <span class="lottery-tickets-item-text">Number of entries</span>
+                            <span
+                                class="lottery-tickets-item-text">{{ 'PAGE.BUY.LOTTERY.BLOCK.TICKETS.TEXT' | translate }}</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="lottery">
                     <div class="lottery-wrap">
-                        <span *ngIf="lottery.description && lottery.description.title" class="lottery-title"
-                            [innerHTML]="lottery.description.title"></span>
-                        <span *ngIf="lottery.description && lottery.description.subtitle" class="lottery-subtitle"
-                            [innerHTML]="lottery.description.subtitle"></span>
+                        <span *ngIf="lottery.description && lottery.description[lang].title" class="lottery-title"
+                            [innerHTML]="lottery.description[lang].title"></span>
+                        <span *ngIf="lottery.description && lottery.description[lang].subtitle" class="lottery-subtitle"
+                            [innerHTML]="lottery.description[lang].subtitle"></span>
 
                         <ul *ngIf="lottery.description">
-                            <li *ngFor="let item of lottery.description.list">{{ item }}</li>
+                            <li *ngFor="let item of lottery.description[lang].list">{{ item }}</li>
                         </ul>
 
                         <div *ngIf="lottery.video" class="lottery-video">
@@ -253,30 +268,26 @@
                         </div>
 
                         <div class="lottery-info">
-                            <span class="lottery-info-title">How can you own this timepiece?</span>
-                            <p class="lottery-info-text">Every buyer of DUC stands a chance to win. The higher your DUC
-                                purchase, the more winning chances you get.</p>
-                            <p class="lottery-info-text">Once the target of {{ lottery.duc_amount | number }} DUC sold
-                                is reached, the 8-day
-                                countdown to the Lucky Draw Day starts. The sale of DUC
-                                continues until the countdown reaches 00:00:00:00 which will trigger the draw.</p>
-                            <p class="lottery-info-text">Through a random smart contract draw, the winning hash will be
-                                determined and published on this page and the Winner will be informed by email.</p>
+                            <span
+                                class="lottery-info-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.INFO.TITLE' | translate }}</span>
+                            <div [innerHTML]="'PAGE.BUY.LOTTERY.BLOCK.INFO.TEXT' | translate:{duc_amount:
+                                (lottery.duc_amount | number) }">
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="buy-info-block hidden-desktop" *ngIf="!loadingData">
-                    <span class="buy-info-block-title">Discover, learn and earn by being part of the Ducatus Cashless
-                        Economy.</span>
+                    <span class="buy-info-block-title">{{ 'PAGE.BUY.INFO.TITLE' | translate }}</span>
 
                     <div class="buy-info-block-group-text">
                         <div class="buy-info-block-group-text-item">
                             <img src="/assets/img/aa-logo.png" height="60" alt="aa+ logo">
                         </div>
                         <div class="buy-info-block-group-text-item">
-                            <span class="buy-info-block-subtitle">Trade cryptocurrency at AA+</span>
-                            <a class="buy-info-block-link" href="https://www.aaplussg.com"
-                                target="_blank">https://www.aaplussg.com</a>
+                            <span
+                                class="buy-info-block-subtitle">{{ 'PAGE.BUY.INFO.LINK.ONE.TITLE' | translate }}</span>
+                            <a class="buy-info-block-link" [href]="'PAGE.BUY.INFO.LINK.TWO.TITLE' | translate"
+                                target="_blank">{{ 'PAGE.BUY.INFO.LINK.ONE.TITLE' | translate }}</a>
                         </div>
                     </div>
 
@@ -287,9 +298,10 @@
                             <img src="/assets/img/d-bay-logo.jpg" height="30" alt="d-bay logo">
                         </div>
                         <div class="buy-info-block-group-text-item">
-                            <span class="buy-info-block-subtitle">Use DUC and shop for pre-loved items online</span>
-                            <a class="buy-info-block-link" href="https://remusnation.com/dbay/"
-                                target="_blank">https://remusnation.com/dbay/</a>
+                            <span
+                                class="buy-info-block-subtitle">{{ 'PAGE.BUY.INFO.LINK.TWO.TITLE' | translate }}</span>
+                            <a class="buy-info-block-link" [href]="'PAGE.BUY.INFO.LINK.TWO.TITLE' | translate"
+                                target="_blank">{{ 'PAGE.BUY.INFO.LINK.TWO.TITLE' | translate }}</a>
                         </div>
                     </div>
                 </div>
@@ -322,37 +334,27 @@
 <div class="modal" *ngIf="modal">
     <div class="modal-wrap">
         <div class="modal-content-top">
-            <p [innerHTML]="'PAGE.BUY.MODAL.TEXT' | translate"></p>
+            <p [innerHTML]="'PAGE.BUY.MODAL.TERMS.TEXT' | translate"></p>
         </div>
         <div class="modal-content-bottom">
             <div class="input-checkbox-group">
-                <label for="terms" [innerHTML]="'PAGE.BUY.MODAL.TERMS' | translate"></label>
+                <label for="terms" [innerHTML]="'PAGE.BUY.MODAL.TERMS.AGREE' | translate"></label>
                 <input type="checkbox" (ngModelChange)="modalAccept = !modalAccept" [ngModel]="modalAccept" name="terms"
                     id="terms" class="terms">
             </div>
             <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!modalAccept"
                 class="ducatus-btn ducatus-btn-brown">
-                {{ 'PAGE.BUY.MODAL.BUTTON' | translate }}</button>
+                {{ 'PAGE.BUY.MODAL.TERMS.BUTTON' | translate }}</button>
         </div>
     </div>
 </div>
 
 <div class="modal" *ngIf="modalInfo">
     <div class="modal-wrap">
-        <div class="modal-content-top">
-            <p>The exact amount of DUC as per BTC/ETH payment received will be sent to the indicated DUC wallet.
-                However, if the money
-                received falls short of the USD amount stated for the chosen package, then the system by default will
-                only submit the
-                number of entries for the draw based on the lower package.</p>
-            <p>To buy DUC in multiples of 1000 USD, you may do so in separate transactions, as the entries awarded per
-                transaction is
-                capped at 150, equivalent to a 1000 USD purchase.</p>
-        </div>
+        <div class="modal-content-top" [innerHTML]="'PAGE.BUY.MODAL.INFO.TEXT' | translate"></div>
         <div class="modal-content-bottom">
             <button id="btn-modal" style="margin: 0 auto;" (click)="modalInfo = false"
-                class="ducatus-btn ducatus-btn-brown">
-                close</button>
+                class="ducatus-btn ducatus-btn-brown">{{ 'PAGE.BUY.MODAL.INFO.BUTTON' | translate }}</button>
         </div>
     </div>
 </div>

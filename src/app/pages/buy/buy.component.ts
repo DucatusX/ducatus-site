@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 import { BuyService } from '../../service/buy/buy.service';
 import { Lottery, Rates } from 'src/app/interfaces';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-buy',
@@ -23,6 +24,8 @@ export class BuyComponent implements OnInit {
   private checker;
   public bg = 'assets/img/sections/buy-bg.png';
   public percentLottery = 0;
+  public lang = 'eng';
+  public onLangChange: any;
 
   public currencyData = {
     eth: {
@@ -45,7 +48,7 @@ export class BuyComponent implements OnInit {
 
   public lottery: Lottery = {
     name: '',
-    description: 'info',
+    description: [],
     image: '',
     duc_amount: '',
     sent_duc_amount: '',
@@ -67,7 +70,8 @@ export class BuyComponent implements OnInit {
   constructor(
     private buyservice: BuyService,
     private formBuilder: FormBuilder,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private translate: TranslateService,
   ) {
     this.BuyGroup = this.formBuilder.group({
       currency: [
@@ -91,6 +95,15 @@ export class BuyComponent implements OnInit {
 
   ngOnInit() {
     window['jQuery']['cookie']('termsBuy') ? this.acceptModalTerms() : this.modal = true;
+
+    const defaultLng = (navigator.language || navigator['browserLanguage']).split('-')[0];
+    const langToSet = window['jQuery']['cookie']('lng') || (['deu', 'eng', 'vie', 'ita'].includes(defaultLng) ? defaultLng : 'eng');
+
+    this.lang = langToSet;
+
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.lang = event.lang;
+    });
   }
 
   ngOnDestroy() {
