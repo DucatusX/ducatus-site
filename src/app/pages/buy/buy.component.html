@@ -90,7 +90,7 @@
                     </div>
 
                     <div class="group group-input">
-                        <label for="address">{{ 'PAGE.BUY.FORM.ADDRESS.TEXT' | translate }}</label>
+                        <label for="address" [innerHTML]="'PAGE.BUY.FORM.ADDRESS.TEXT' | translate"></label>
                         <input id="address" formControlName="address" required type="text"
                             (ngModelChange)="setAddress()"
                             [placeholder]="'PAGE.BUY.FORM.ADDRESS.PLACEHOLDER' | translate" class="input input-white"
@@ -248,7 +248,7 @@
                         </div>
                         <div class="lottery-tickets-spacer"><span></span></div>
                         <div class="lottery-tickets-item">
-                            <span class="lottery-tickets-item-amount">{{ lottery.gave_tickets_amount }}</span>
+                            <span class="lottery-tickets-item-amount">{{ lottery.sent_duc_amount | number }}</span>
                             <span
                                 class="lottery-tickets-item-text">{{ 'PAGE.BUY.LOTTERY.BLOCK.TICKETS.TEXT' | translate }}</span>
                         </div>
