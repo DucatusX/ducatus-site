@@ -10,15 +10,15 @@
             <div class="pay-form-wrap">
                 <form [formGroup]="BuyGroup" class="ducatus-pay-form" *ngIf="!loadingData">
                     <div class="group group-input">
-                        <div class="group-currency">
-                            <div class="group-currency-item">
+                        <div class="group-radio group-currency">
+                            <div class="group-radio-item group-currency-item">
                                 <input formControlName="currency" required type="radio" id="currency-btc" value="btc">
                                 <label for="currency-btc">
                                     <img src="/assets/img/icons/btc.svg" width="30" height="30" alt="bitcoin">
                                     <span class="group-currency-text">BTC</span>
                                 </label>
                             </div>
-                            <div class="group-currency-item">
+                            <div class="group-radio-item group-currency-item">
                                 <input formControlName="currency" checked required type="radio" checked
                                     id="currency-eth" value="eth">
                                 <label for="currency-eth">

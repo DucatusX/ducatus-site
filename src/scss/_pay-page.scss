@@ -870,17 +870,22 @@
     }
 
     .group-currency {
-        width: 260px;
-        display: flex;
-        border-radius: 8px;
-        overflow: hidden;
-        border: 1px solid #E9DCCA;
+        // width: 260px;
+        // display: flex;
+        // border-radius: 8px;
+        // overflow: hidden;
+        // border: 1px solid #E9DCCA;
+
+        display: grid !important;
+        grid-template-columns: repeat(2,120px);
+        justify-content: flex-start !important;
+        grid-gap: 20px;
 
         &-item {
-            width: 100%;
+            width: 100% !important;
             height: 100%;
-            border: 1px solid #E9DCCA;
-            overflow: hidden;
+            // border: 1px solid #E9DCCA;
+            // overflow: hidden;
 
             &:nth-child(1) {
                 border-radius: 6px 0 0 6px;
@@ -889,18 +894,23 @@
             &:nth-child(2) {
                 border-radius: 0px 6px 6px 0px;
             }
+
+            @include b(500) {
+                margin-bottom: 0 !important;
+            }
         }
 
         label {
-            width: 100%;
-            height: 100%;
+            width: 100% !important;
+            height: 60px !important;
             display: flex !important;
+            flex-direction: row !important;
             justify-content: center;
             align-items: center;
             padding: 14px;
-            background: rgba(247, 243, 235, 0.7);
-            margin-bottom: 0 !important;
-            cursor: pointer;
+            // background: rgba(247, 243, 235, 0.7);
+            // margin-bottom: 0 !important;
+            // cursor: pointer;
 
             img {
                 width: 30px;
