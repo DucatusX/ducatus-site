@@ -234,7 +234,7 @@
                     },
                     "INFO": {
                         "TITLE": "Come puoi possedere questo orologio?",
-                        "TEXT": "<p class=\"lottery-info-text\">Ogni acquirente di DUC ha la possibilità di vincere. Maggiore è l'acquisto DUC, maggiori sono le possibilità di vincita.</p> <p class=\"lottery-info-text\">Una volta raggiunto l'obiettivo di {{ duc_amount }} DUC venduti, inizia il conto alla rovescia di 8 giorni per il Lucky Draw Day. La vendita di DUC continua fino a quando il conto alla rovescia raggiunge 00:00:00:00 che attiverà il sorteggio.</p> <p class=\"lottery-info-text\">Attraverso un sorteggio casuale di contratti intelligenti, l'hash vincente verrà determinato e pubblicato su questa pagina e il vincitore verrà informato via e-mail.</p>"
+                        "TEXT": "<p class=\"lottery-info-text\">Ogni acquirente di DUC ha la possibilità di vincere. Maggiore è l'acquisto DUC, maggiori sono le possibilità di vincita.</p> <p class=\"lottery-info-text\">Una volta raggiunto l'obiettivo di {{ duc_amount }} DUC venduti, inizia il conto alla rovescia di 8 giorni per il Lucky Draw Day. La vendita di DUC continua fino a quando il conto alla rovescia raggiunge 00:00:00:00 che attiverà il sorteggio.</p> <p class=\"lottery-info-text\">Attraverso un sorteggio casuale di smart contract, l'hash vincente verrà determinato e pubblicato su questa pagina e il vincitore verrà informato via e-mail.</p>"
                     }
                 }
             },

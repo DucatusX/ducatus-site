@@ -3,7 +3,7 @@
         "MENU": {
             "HOME": "Zuhause",
             "ABOUT": "Über Duc",
-            "BUY": "Kaufen Duc",
+            "BUY": "Duc Kaufen",
             "DUCATUSX": "DUCX",
             "LOTTERY": "Lotterie Gold",
             "CONTACT": "Kontakt"
@@ -167,7 +167,7 @@
             }
         },
         "BUY": {
-            "TITLE": "Kaufen DUC",
+            "TITLE": "DUC Kaufen",
             "FORM": {
                 "RADIO": {
                     "PRICE": "DUC Preis = USD 0.05",
@@ -234,7 +234,7 @@
                     },
                     "INFO": {
                         "TITLE": "Wie können Sie dieses Meisterstück besitzen?",
-                        "TEXT": "<p class=\"lottery-info-text\">Jeder Käufer DUC sichert sich eine Gewinnchance. Je höher Ihr DUC Kauf, dest mehr Gewinnchancen erhalten Sie.</p> <p class=\"lottery-info-text\">Sobald das Verkaufsziel von {{ duc_amount }} DUC erreicht ist, beginnt der 8-tägige Countdown bis zur Verlosung. Der DUC Verkauf geht solange weiter, bis der Countdown bei 00:00:00:00 aufhört, dies wird die Verlosung auslösen.</p> <p class=\"lottery-info-text\">Durch eine zufällige Verlosung eines intelligenten Vertrags wird der Gewinner-Hash ermittelt und auf dieser Seite veröffentlicht, und der Gewinner wird per E-Mail informiert.</p>"
+                        "TEXT": "<p class=\"lottery-info-text\">Jeder Käufer DUC sichert sich eine Gewinnchance. Je höher Ihr DUC Kauf, desto mehr Gewinnchancen erhalten Sie.</p> <p class=\"lottery-info-text\">Sobald das Verkaufsziel von {{ duc_amount }} DUC erreicht ist, beginnt der 8-tägige Countdown bis zur Verlosung. Der DUC Verkauf geht solange weiter, bis der Countdown bei 00:00:00:00 aufhört, dies wird die Verlosung auslösen.</p> <p class=\"lottery-info-text\">Durch eine zufällige Verlosung eines smart contract wird der Gewinner-Hash ermittelt und auf dieser Seite veröffentlicht, und der Gewinner wird per E-Mail informiert.</p>"
                     }
                 }
             },
@@ -251,7 +251,7 @@
             }
         },
         "TICKETS": {
-            "TITLE": "Kaufen DUC",
+            "TITLE": "DUC Kaufen",
             "TABLE": {
                 "TITLE": "Einträge / Geeignete Hashes für die Auslosung"
             }
