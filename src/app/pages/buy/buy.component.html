@@ -90,7 +90,7 @@
                     </div>
 
                     <div class="group group-input">
-                        <label for="address">{{ 'PAGE.BUY.FORM.ADDRESS.TEXT' | translate }}</label>
+                        <label for="address" [innerHTML]="'PAGE.BUY.FORM.ADDRESS.TEXT' | translate"></label>
                         <input id="address" formControlName="address" required type="text"
                             (ngModelChange)="setAddress()"
                             [placeholder]="'PAGE.BUY.FORM.ADDRESS.PLACEHOLDER' | translate" class="input input-white"

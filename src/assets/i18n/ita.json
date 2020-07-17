@@ -179,7 +179,7 @@
                     }
                 },
                 "ADDRESS": {
-                    "TEXT": "Inserisci il tuo indirizzo di ricezione DUC",
+                    "TEXT": "Inserisci il tuo indirizzo di ricezione DUC<br>Hai bisogno di un indirizzo Ducatus? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Scarica</a> il nostro portafoglio portachiavi",
                     "PLACEHOLDER": "Inserisci il tuo indirizzo di ricezione DUC",
                     "ERROR": "Errore! Si prega di verificare, il formato dell'indirizzo non è corretto!"
                 },

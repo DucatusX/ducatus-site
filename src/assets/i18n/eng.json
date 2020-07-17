@@ -179,7 +179,7 @@
                     }
                 },
                 "ADDRESS": {
-                    "TEXT": "Enter your DUC receiving address",
+                    "TEXT": "Enter your DUC receiving address<br>Need Ducatus address? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Download</a> our keychain wallet",
                     "PLACEHOLDER": "Enter your DUC receiving address",
                     "ERROR": "Error! Please check, the address format is incorrect!"
                 },

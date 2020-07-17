@@ -179,7 +179,7 @@
                     }
                 },
                 "ADDRESS": {
-                    "TEXT": "Geben Sie Ihre DUC Empfangsadresse ein",
+                    "TEXT": "Geben Sie Ihre DUC Empfangsadresse ein<br>Benötigen Sie eine Ducatus-Adresse? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Laden</a> Sie unsere Schlüsselbund-Brieftasche herunter",
                     "PLACEHOLDER": "Geben Sie Ihre DUC Empfangsadresse ein",
                     "ERROR": "Error! Bitte überprüfen Sie, das Adressformat ist falsch!"
                 },
