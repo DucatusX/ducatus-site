@@ -39,7 +39,8 @@
                 }
             },
             "LEGAL": "Legale",
-            "LEGAL_DISCLAIMER": "Legal Disclaimer"
+            "LEGAL_DISCLAIMER": "Legal Disclaimer",
+            "TERMS": "Termini & Condizioni"
         }
     },
     "APPS": {
@@ -229,7 +230,7 @@
                     },
                     "TICKETS": {
                         "LINK": "Elenco di voci hash →",
-                        "TEXT": "Numero di entrate"
+                        "TEXT": "Numero di DUC"
                     },
                     "INFO": {
                         "TITLE": "Come puoi possedere questo orologio?",
@@ -239,7 +240,7 @@
             },
             "MODAL": {
                 "TERMS": {
-                    "TEXT": "Spuntare la casella di seguito per confermare di riconoscere e accettare i <a href='assets/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'> Termini e condizioni </a> dell'acquisto DUC. La moneta Ducatus non è disponibile per l'acquisto da Centurion a Singapore.",
+                    "TEXT": "Spuntare la casella di seguito per confermare di riconoscere e accettare i <a href='assets/downloads/pdf/Lucky_Draw_Terms_Conditions.pdf' target='_blank'> Termini e condizioni </a> dell'acquisto DUC. La moneta Ducatus non è disponibile per l'acquisto da Centurion a Singapore.",
                     "AGREE": "sono d'accordo con i termini e le condizioni",
                     "BUTTON": "Vicino"
                 },

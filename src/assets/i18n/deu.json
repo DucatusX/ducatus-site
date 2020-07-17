@@ -39,7 +39,8 @@
                 }
             },
             "LEGAL": "Legal",
-            "LEGAL_DISCLAIMER": "Legal Disclaimer"
+            "LEGAL_DISCLAIMER": "Legal Disclaimer",
+            "TERMS": "Terms & Bedingungen"
         }
     },
     "APPS": {
@@ -229,7 +230,7 @@
                     },
                     "TICKETS": {
                         "LINK": "Liste der Hash-Einträge →",
-                        "TEXT": "Anzahl der Einträge"
+                        "TEXT": "Anzahl der DUC"
                     },
                     "INFO": {
                         "TITLE": "Wie können Sie dieses Meisterstück besitzen?",
@@ -239,7 +240,7 @@
             },
             "MODAL": {
                 "TERMS": {
-                    "TEXT": "Bitte kreuzen Sie das unten stehende Kästchen an, um zu bestätigen, dass Sie die <a href='assets/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'> Allgemeinen Geschäftsbedingungen </a> des DUC-Kaufs bestätigen und damit einverstanden sind. Ducatus Coin kann nicht bei Centurion in Singapur gekauft werden.",
+                    "TEXT": "Bitte kreuzen Sie das unten stehende Kästchen an, um zu bestätigen, dass Sie die <a href='assets/downloads/pdf/Lucky_Draw_Terms_Conditions.pdf' target='_blank'> Allgemeinen Geschäftsbedingungen </a> des DUC-Kaufs bestätigen und damit einverstanden sind. Ducatus Coin kann nicht bei Centurion in Singapur gekauft werden.",
                     "AGREE": "Ich akzeptiere die Nutzungsbedingungen",
                     "BUTTON": "Schließen"
                 },

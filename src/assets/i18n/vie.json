@@ -39,7 +39,8 @@
                 }
             },
             "LEGAL": "Legal",
-            "LEGAL_DISCLAIMER": "Legal Disclaimer"
+            "LEGAL_DISCLAIMER": "Legal Disclaimer",
+            "TERMS": "Điều khoản và điều kiện"
         }
     },
     "APPS": {
@@ -229,7 +230,7 @@
                     },
                     "TICKETS": {
                         "LINK": "Danh sách các giao dịch và số lượt rút thăm tương ứng →",
-                        "TEXT": "Số lượng mục"
+                        "TEXT": "Số lượng DUC"
                     },
                     "INFO": {
                         "TITLE": "Làm thế nào để có thể sỡ hữu chiếc đồng hồ này?",
@@ -239,7 +240,7 @@
             },
             "MODAL": {
                 "TERMS": {
-                    "TEXT": "Vui lòng đánh dấu vào ô bên dưới để xác nhận rằng bạn thừa nhận và đồng ý với <a href='assets/doads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'> Điều khoản & Điều kiện </a> khi mua DUC. Ducatus Coin không có sẵn để mua từ Centurion tại Singapore.",
+                    "TEXT": "Vui lòng đánh dấu vào ô bên dưới để xác nhận rằng bạn thừa nhận và đồng ý với <a href='assets/downloads/pdf/Lucky_Draw_Terms_Conditions.pdf' target='_blank'> Điều khoản & Điều kiện </a> khi mua DUC. Ducatus Coin không có sẵn để mua từ Centurion tại Singapore.",
                     "AGREE": "Tôi đồng ý với các Điều khoản & Điều kiện",
                     "BUTTON": "Đóng"
                 },

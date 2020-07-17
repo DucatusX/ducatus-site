@@ -39,7 +39,8 @@
                 }
             },
             "LEGAL": "Legal",
-            "LEGAL_DISCLAIMER": "Legal Disclaimer"
+            "LEGAL_DISCLAIMER": "Legal Disclaimer",
+            "TERMS": "Terms & Conditions"
         }
     },
     "APPS": {
@@ -229,7 +230,7 @@
                     },
                     "TICKETS": {
                         "LINK": "List of hash entries →",
-                        "TEXT": "Number of entries"
+                        "TEXT": "Number of DUC"
                     },
                     "INFO": {
                         "TITLE": "How can you own this timepiece?",
@@ -239,7 +240,7 @@
             },
             "MODAL": {
                 "TERMS": {
-                    "TEXT": "Please tick the box below to confirm that you acknowledge and agree to the <a href='assets/downloads/pdf/Wallet_Terms_Conditions.pdf' target='_blank'>Terms & Conditions</a> of DUC purchase. Ducatus Coin is not available for purchase from Centurion in Singapore.",
+                    "TEXT": "Please tick the box below to confirm that you acknowledge and agree to the <a href='assets/downloads/pdf/Lucky_Draw_Terms_Conditions.pdf' target='_blank'>Terms & Conditions</a> of DUC purchase. Ducatus Coin is not available for purchase from Centurion in Singapore.",
                     "AGREE": "I agree to the Terms & Conditions",
                     "BUTTON": "Close"
                 },

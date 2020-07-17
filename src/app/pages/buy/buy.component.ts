@@ -22,7 +22,7 @@ export class BuyComponent implements OnInit {
   public modalInfo = false;
   public modalAccept = false;
   private checker;
-  public bg = 'assets/img/sections/buy-bg.png';
+  public bg: string; // 'assets/img/sections/buy-bg.png';
   public percentLottery = 0;
   public lang = 'eng';
   public onLangChange: any;
