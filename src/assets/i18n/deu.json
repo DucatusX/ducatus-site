@@ -179,7 +179,7 @@
                     }
                 },
                 "ADDRESS": {
-                    "TEXT": "Geben Sie Ihre DUC Empfangsadresse ein<br>Benötigen Sie eine Ducatus-Adresse? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Laden</a> Sie unsere Schlüsselbund-Brieftasche herunter",
+                    "TEXT": "Geben Sie Ihre DUC Empfangsadresse ein<br>Benötigen Sie eine Ducatus-Adresse? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Laden</a> Sie die Ducatus Wallet HIER herunter!",
                     "PLACEHOLDER": "Geben Sie Ihre DUC Empfangsadresse ein",
                     "ERROR": "Error! Bitte überprüfen Sie, das Adressformat ist falsch!"
                 },
@@ -194,23 +194,14 @@
                         "TEXT": "oder scannen Sie den QR Code"
                     },
                     "ERROR": "etwas ist schief gelaufen, versuchen Sie es später erneut",
-                    "NOTE": {
-                        "TEXT_1": "Please note that it may take up to Bitte beachten Sie, daß es bis zu ",
-                        "TEXT_2": " dauern kann, bis Sie die DUC in Ihrem Wallet erhalten"
-                    }
+                    "NOTE": "Bitte beachten Sie, dass es bis zu {{ time }} dauern kann, bis Sie Ihren DUC in Ihrer Brieftasche erhalten <br><br>"
                 }
             },
             "INFO": {
                 "TITLE": "Entdecken, lernen und verdienen Sie es, Teil der Ducatus Cashless Economy zu werden.",
                 "LINK": {
-                    "ONE": {
-                        "TITLE": "Handeln Sie Kryptowährungen auf AA+",
-                        "LINK": "https://www.aaplussg.com"
-                    },
-                    "TWO": {
-                        "TITLE": "Nutzen Sie DUC und shoppen Sie Ihre Lieblingsprodukte online.",
-                        "LINK": "https://remusnation.com/dbay/"
-                    }
+                    "ONE": "Handeln Sie Kryptowährungen auf AA+",
+                    "TWO": "Nutzen Sie DUC und shoppen Sie Ihre Lieblingsprodukte online."
                 }
             },
             "LOTTERY": {
@@ -229,7 +220,7 @@
                         "TITLE": "% des Verkaufsziels erreicht, bevor der Countdown beginnt"
                     },
                     "TICKETS": {
-                        "LINK": "Liste der Hash-Einträge →",
+                        "LINK": "Liste der {{ tickets_amount }} der gesamten Hash-Einträge →",
                         "TEXT": "Anzahl der DUC"
                     },
                     "INFO": {

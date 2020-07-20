@@ -179,7 +179,7 @@
                     }
                 },
                 "ADDRESS": {
-                    "TEXT": "Enter your DUC receiving address<br>Need Ducatus address? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Download</a> our keychain wallet",
+                    "TEXT": "Enter your DUC receiving address<br>Need Ducatus address? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Download</a> the Ducatus Wallet HERE!",
                     "PLACEHOLDER": "Enter your DUC receiving address",
                     "ERROR": "Error! Please check, the address format is incorrect!"
                 },
@@ -194,23 +194,14 @@
                         "TEXT": "Or scan this QR code"
                     },
                     "ERROR": "something went wrong, try again later",
-                    "NOTE": {
-                        "TEXT_1": "Please note that it may take up to",
-                        "TEXT_2": "until you receive your DUC in your wallet"
-                    }
+                    "NOTE": "Please note that it may take up to {{ time }} until you receive your DUC in your wallet <br><br>"
                 }
             },
             "INFO": {
                 "TITLE": "Discover, learn and earn by being part of the Ducatus Cashless Economy.",
                 "LINK": {
-                    "ONE": {
-                        "TITLE": "Trade cryptocurrency at AA+",
-                        "LINK": "https://www.aaplussg.com"
-                    },
-                    "TWO": {
-                        "TITLE": "Use DUC and shop for pre-loved items online",
-                        "LINK": "https://remusnation.com/dbay/"
-                    }
+                    "ONE": "Trade cryptocurrency at AA+",
+                    "TWO": "Use DUC and shop for pre-loved items online"
                 }
             },
             "LOTTERY": {
@@ -229,7 +220,7 @@
                         "TITLE": "% of sales target reached before draw countdown starts"
                     },
                     "TICKETS": {
-                        "LINK": "List of hash entries →",
+                        "LINK": "List of {{ tickets_amount }} total hash entries →",
                         "TEXT": "Number of DUC"
                     },
                     "INFO": {

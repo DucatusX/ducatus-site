@@ -179,7 +179,7 @@
                     }
                 },
                 "ADDRESS": {
-                    "TEXT": "Nhập địa chỉ nhận DUC<br>Cần địa chỉ Ducatus? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Tải xuống</a> ví móc khóa của chúng tôi",
+                    "TEXT": "Nhập địa chỉ nhận DUC<br>Cần địa chỉ Ducatus? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Tải xuống</a> ví Ducatus TẠI ĐÂY!",
                     "PLACEHOLDER": "Nhập địa chỉ nhận DUC",
                     "ERROR": "Lỗi! Vui lòng kiểm tra, định dạng địa chỉ không chính xác!"
                 },
@@ -194,23 +194,14 @@
                         "TEXT": "hoặc quét mã QR này:"
                     },
                     "ERROR": "đã xảy ra lỗi, thử lại sau",
-                    "NOTE": {
-                        "TEXT_1": "Hãy lưu ý rằng bạn sẽ mất khoảng",
-                        "TEXT_2": " để nhận DUC về ví"
-                    }
+                    "NOTE": "Hãy lưu ý rằng bạn sẽ mất khoảng {{ time }} để nhận DUC về ví <br><br>"
                 }
             },
             "INFO": {
                 "TITLE": "Hãy khám phá, học hỏi và có thêm thu nhập từ việc trở thành một phần của nền kinh tế không tiền mặt Ducatus.",
                 "LINK": {
-                    "ONE": {
-                        "TITLE": "Mua bán cryptocurrency trên sàn AA+",
-                        "LINK": "https://www.aaplussg.com"
-                    },
-                    "TWO": {
-                        "TITLE": "Sử dụng DUC để mua sắm những món đồ yêu thích trực tuyến",
-                        "LINK": "https://remusnation.com/dbay/"
-                    }
+                    "ONE": "Mua bán cryptocurrency trên sàn AA+",
+                    "TWO": "Sử dụng DUC để mua sắm những món đồ yêu thích trực tuyến"
                 }
             },
             "LOTTERY": {
@@ -229,7 +220,7 @@
                         "TITLE": "Phần trăm doanh số bán ra phải đạt đúng chỉ tiêu trước khi cuộc đếm ngược thời gian diễn ra"
                     },
                     "TICKETS": {
-                        "LINK": "Danh sách các giao dịch và số lượt rút thăm tương ứng →",
+                        "LINK": "Danh sách {{ tickets_amount }} tổng số mục băm →",
                         "TEXT": "Số lượng DUC"
                     },
                     "INFO": {
