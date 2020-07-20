@@ -31,7 +31,12 @@ export class BuyComponent implements OnInit {
     eth: {
       name: 'Ethereum',
       shortName: 'eth',
-      time: '15 minutes',
+      time: {
+        eng: '15 minutes',
+        deu: '15 Minuten',
+        ita: '15 minuti',
+        vie: '15 phút',
+      },
       address: '',
       amount: null,
       info: ''
@@ -39,7 +44,12 @@ export class BuyComponent implements OnInit {
     btc: {
       name: 'Bitcoin',
       shortName: 'btc',
-      time: '1 hour',
+      time: {
+        eng: '1 hour',
+        deu: '1 Stunde',
+        ita: '1 ora',
+        vie: '1 giờ',
+      },
       address: '',
       amount: null,
       info: ''
@@ -219,6 +229,11 @@ export class BuyComponent implements OnInit {
     this.buyservice.getRates().then((result) => {
       this.rates = result;
       this.loadingData = false;
-    }).catch(err => { console.error(err); });
+    }).catch(err => {
+      setTimeout(() => {
+        this.acceptModalTerms();
+      }, 5000);
+      console.error(err);
+    });
   }
 }
