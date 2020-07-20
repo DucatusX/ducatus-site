@@ -20,6 +20,7 @@ export class VoucherComponent implements OnInit {
     voucherCode: false,
     activateCode: false,
     usdAmount: false,
+    freezeDays: false,
     active: false,
     used: false,
     activatedDate: false
@@ -40,7 +41,7 @@ export class VoucherComponent implements OnInit {
 
   public activationCode = null;
   public voucherCode = null;
-  // public freezeDate = null;
+  public lockDays = null;
   public usdAmount = null;
   public isActive = false;
 
@@ -69,7 +70,7 @@ export class VoucherComponent implements OnInit {
     }).catch((err) => {
       console.log(err);
       this.updateVouchersTable = false;
-    })
+    });
   }
 
   public changeActive(id, activeStatus) {
@@ -124,7 +125,8 @@ export class VoucherComponent implements OnInit {
     const voucher = {
       voucher_code: this.voucherCode,
       usd_amount: this.usdAmount,
-      is_active: this.isActive
+      is_active: this.isActive,
+      lock_days: this.lockDays
     };
 
     this.popupInProgressText = 'in progress, please wait...';
@@ -151,7 +153,7 @@ export class VoucherComponent implements OnInit {
     this.pupopInProgress = false;
     this.activationCode = null;
     this.voucherCode = null;
-    // this.freezeDate = null;
+    this.lockDays = null;
     this.usdAmount = null;
     this.isActive = false;
   }
@@ -246,6 +248,15 @@ export class VoucherComponent implements OnInit {
           })
           : this.vouchers.sort((vouchers1, vouchers2) => {
             return (vouchers1.usd_amount < vouchers2.usd_amount ? 1 : -1);
+          });
+        break;
+      case 'freezeDays':
+        this.changeSort ?
+          this.vouchers.sort((vouchers1, vouchers2) => {
+            return (vouchers1.lock_days > vouchers2.lock_days ? 1 : -1);
+          })
+          : this.vouchers.sort((vouchers1, vouchers2) => {
+            return (vouchers1.lock_days < vouchers2.lock_days ? 1 : -1);
           });
         break;
       case 'voucherCode':
