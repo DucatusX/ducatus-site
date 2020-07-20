@@ -179,7 +179,7 @@
                     }
                 },
                 "ADDRESS": {
-                    "TEXT": "Inserisci il tuo indirizzo di ricezione DUC<br>Hai bisogno di un indirizzo Ducatus? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Scarica</a> il nostro portafoglio portachiavi",
+                    "TEXT": "Inserisci il tuo indirizzo di ricezione DUC<br>Hai bisogno di un indirizzo Ducatus? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Scarica</a> QUI il Portafoglio Ducatus!",
                     "PLACEHOLDER": "Inserisci il tuo indirizzo di ricezione DUC",
                     "ERROR": "Errore! Si prega di verificare, il formato dell'indirizzo non è corretto!"
                 },
@@ -194,23 +194,14 @@
                         "TEXT": "O scansiona questo codice QR"
                     },
                     "ERROR": "qualcosa è andato storto, riprovare più tardi",
-                    "NOTE": {
-                        "TEXT_1": "Tieni presente che potrebbero essere necessari fino a ",
-                        "TEXT_2": "prima di ricevere i DUC nel tuo wallet"
-                    }
+                    "NOTE": "Tieni presente che potrebbero essere necessari fino a {{ time }} prima di ricevere i DUC nel tuo wallet <br><br>"
                 }
             },
             "INFO": {
                 "TITLE": "Scopri, impara e guadagna facendo parte dell'Economia Cashless Ducatus.",
                 "LINK": {
-                    "ONE": {
-                        "TITLE": "Fai trading di crypto su AA +",
-                        "LINK": "https://www.aaplussg.com"
-                    },
-                    "TWO": {
-                        "TITLE": "Usa DUC e acquista online oggetti amati",
-                        "LINK": "https://remusnation.com/dbay/"
-                    }
+                    "ONE": "Fai trading di crypto su AA +",
+                    "TWO": "Usa DUC e acquista online oggetti amati"
                 }
             },
             "LOTTERY": {
@@ -229,7 +220,7 @@
                         "TITLE": "% dell'obiettivo di vendita raggiunto prima dell'inizio del conto alla rovescia"
                     },
                     "TICKETS": {
-                        "LINK": "Elenco di voci hash →",
+                        "LINK": "Elenco di {{ tickets_amount }} voci di hash totali →",
                         "TEXT": "Numero di DUC"
                     },
                     "INFO": {
