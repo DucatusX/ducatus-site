@@ -126,7 +126,7 @@ export class VoucherComponent implements OnInit {
       voucher_code: this.voucherCode,
       usd_amount: this.usdAmount,
       is_active: this.isActive,
-      lock_days: this.lockDays
+      lock_days: Number(this.lockDays)
     };
 
     this.popupInProgressText = 'in progress, please wait...';
