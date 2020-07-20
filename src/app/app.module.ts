@@ -44,6 +44,7 @@ import { CountdownComponent } from './components/countdown/countdown.component';
 
 // pipes
 import { SafePipe } from './pipe/safeUrl.pipe';
+import { GoogleAnalyticsService } from './service/gtag/google-analytics.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -103,7 +104,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
   ],
   providers: [
-    UserResolver
+    UserResolver,
+    GoogleAnalyticsService
   ],
   bootstrap: [AppComponent]
 })

@@ -5,6 +5,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { BuyService } from '../../service/buy/buy.service';
 import { Lottery, Rates } from 'src/app/interfaces';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { GoogleAnalyticsService } from 'src/app/service/gtag/google-analytics.service';
 
 @Component({
   selector: 'app-buy',
@@ -12,7 +13,7 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
   styleUrls: ['./buy.component.scss']
 })
 
-export class BuyComponent implements OnInit {
+export class BuyComponent implements OnInit, OnDestroy {
 
   public BuyGroup: FormGroup;
   public loadingQr = true;
@@ -82,6 +83,7 @@ export class BuyComponent implements OnInit {
     private formBuilder: FormBuilder,
     private sanitizer: DomSanitizer,
     private translate: TranslateService,
+    private googleAnalyticsService: GoogleAnalyticsService
   ) {
     this.BuyGroup = this.formBuilder.group({
       currency: [
@@ -114,6 +116,8 @@ export class BuyComponent implements OnInit {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.lang = event.lang;
     });
+
+    console.log(this.lang);
   }
 
   ngOnDestroy() {
@@ -189,11 +193,13 @@ export class BuyComponent implements OnInit {
       this.currencyData['btc'].info = this.currencyData['btc'].name.toLowerCase() + ':' + this.currencyData['btc'].address; // + '?amount=' + this.currencyData['btc'].amount;
       this.currencyData['eth'].info = this.currencyData['eth'].name.toLowerCase() + ':' + this.currencyData['eth'].address; // + '?value=' + this.currencyData['eth'].amount.split('.').join('');
 
+      this.googleAnalyticsService.eventEmitter('get_lotetry_address', 'lottery', 'address', 'generate', 10);
+
       this.loadingQr = false;
     } else {
       this.loadingQr = true;
 
-      if (type != 'amount') {
+      if (type !== 'amount') {
         if (!email || !address) {
           this.BuyGroup.controls['address'].setErrors({ 'incorrect': true });
           this.BuyGroup.controls['address'].markAsTouched();

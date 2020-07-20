@@ -12,6 +12,8 @@ import {
 } from '@angular/router';
 import { slider } from './route-animation';
 
+declare let gtag;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -44,6 +46,9 @@ export class AppComponent implements OnInit {
     }
     if (event instanceof NavigationEnd) {
       this.showOverlay = false;
+      gtag('config', 'UA-153904034-1',
+        { page_path: event.urlAfterRedirects }
+      );
     }
 
     if (event instanceof NavigationCancel) {
