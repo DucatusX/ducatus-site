@@ -22,59 +22,66 @@
             <div class="page-table-wrap">
                 <table class="page-table">
                     <thead class="page-table-head">
-                        <th style="min-width: 90px; width: 90px;" (click)="sortVouchers('id')">
+                        <th style="min-width: 70px;width: 90px;padding-left: 28px;padding-right: 5px;"
+                            (click)="sortVouchers('id')">
                             <span class="text-center table-sort icon"
                                 [ngClass]="{'icon__sort-down': sortData['id'] && changeSort, 'icon__sort-up': sortData['id'] && !changeSort}">
                                 №
                             </span>
                         </th>
-                        <th style="min-width: 130px; width: 130px;" (click)="sortVouchers('addDate')">
+                        <th style="min-width: 130px; width: 130px;" (click)="sortVouchers('publish_date', 'date')">
                             <span class="table-sort icon"
-                                [ngClass]="{'icon__sort-down': sortData['addDate'] && changeSort, 'icon__sort-up': sortData['addDate'] && !changeSort}">
+                                [ngClass]="{'icon__sort-down': sortData['publish_date'] && changeSort, 'icon__sort-up': sortData['publish_date'] && !changeSort}">
                                 Voucher<br>
                                 Add Date
                             </span>
 
                         </th>
-                        <th style="min-width: 115px; width: 115px;" (click)="sortVouchers('addTime')">
+                        <th style="min-width: 115px; width: 115px;" (click)="sortVouchers('publish_date_time', 'time')">
                             <span class="table-sort icon"
-                                [ngClass]="{'icon__sort-down': sortData['addTime'] && changeSort, 'icon__sort-up': sortData['addTime'] && !changeSort}">
+                                [ngClass]="{'icon__sort-down': sortData['publish_date_time'] && changeSort, 'icon__sort-up': sortData['publish_date_time'] && !changeSort}">
                                 Voucher <br> Add Time
                             </span>
                         </th>
-                        <th style="min-width: 120px;" (click)="sortVouchers('voucherCode')">
+                        <th style="min-width: 120px;" (click)="sortVouchers('voucher_code')">
                             <span class="table-sort icon"
-                                [ngClass]="{'icon__sort-down': sortData['voucherCode'] && changeSort, 'icon__sort-up': sortData['voucherCode'] && !changeSort}">
+                                [ngClass]="{'icon__sort-down': sortData['voucher_code'] && changeSort, 'icon__sort-up': sortData['voucher_code'] && !changeSort}">
                                 Voucher Code
                             </span>
                         </th>
-                        <th style="min-width: 100px;" (click)="sortVouchers('activateCode')">
+                        <th style="min-width: 100px;" (click)="sortVouchers('activation_code')">
                             <span class="table-sort icon"
-                                [ngClass]="{'icon__sort-down': sortData['activateCode'] && changeSort, 'icon__sort-up': sortData['activateCode'] && !changeSort}">
+                                [ngClass]="{'icon__sort-down': sortData['activation_code'] && changeSort, 'icon__sort-up': sortData['activation_code'] && !changeSort}">
                                 Activation Code
                             </span>
                         </th>
-                        <th style="min-width: 60px;" (click)="sortVouchers('usdAmount')">
+                        <th style="min-width: 60px;" (click)="sortVouchers('usd_amount')">
                             <span class="table-sort icon"
-                                [ngClass]="{'icon__sort-down': sortData['usdAmount'] && changeSort, 'icon__sort-up': sortData['usdAmount'] && !changeSort}">
+                                [ngClass]="{'icon__sort-down': sortData['usd_amount'] && changeSort, 'icon__sort-up': sortData['usd_amount'] && !changeSort}">
                                 Amount $
                             </span>
                         </th>
-                        <th style="min-width: 80px; width: 80px;" (click)="sortVouchers('active')">
+                        <th style="min-width: 30px;" (click)="sortVouchers('lock_days')">
+                            <span class="table-sort icon"
+                                [ngClass]="{'icon__sort-down': sortData['lock_days'] && changeSort, 'icon__sort-up': sortData['lock_days'] && !changeSort}">
+                                Freeze <br> Days
+                            </span>
+                        </th>
+                        <th style="min-width: 80px; width: 80px;" (click)="sortVouchers('is_active')">
                             <span class="text-center table-sort icon"
-                                [ngClass]="{'icon__sort-down': sortData['active'] && changeSort, 'icon__sort-up': sortData['active'] && !changeSort}">
+                                [ngClass]="{'icon__sort-down': sortData['is_active'] && changeSort, 'icon__sort-up': sortData['is_active'] && !changeSort}">
                                 Active
                             </span>
                         </th>
-                        <th style="min-width: 120px; width: 120px;" (click)="sortVouchers('used')">
-                            <span class="text-center table-sort icon"
-                                [ngClass]="{'icon__sort-down': sortData['used'] && changeSort, 'icon__sort-up': sortData['used'] && !changeSort}">
-                                Used/unused
+                        <th style="min-width: 80px; width: 80px;" (click)="sortVouchers('is_used')">
+                            <span class="table-sort icon"
+                                [ngClass]="{'icon__sort-down': sortData['is_used'] && changeSort, 'icon__sort-up': sortData['is_used'] && !changeSort}">
+                                Used<br>Unused
                             </span>
                         </th>
-                        <th style="min-width: 130px; width: 130px;" (click)="sortVouchers('activatedDate')">
+                        <th style="min-width: 130px; width: 130px;" (click)="sortVouchers('activation_date', 'date')">
                             <span class="table-sort icon"
-                                [ngClass]="{'icon__sort-down': sortData['activatedDate'] && changeSort, 'icon__sort-up': sortData['activatedDate'] && !changeSort}">
+                                [ngClass]="{'icon__sort-down': sortData['activation_date'] && changeSort, 'icon__sort-up': sortData['activation_date'] && !changeSort}">
                                 Activated <br> Date
                             </span>
                         </th>
@@ -105,6 +112,11 @@
                                     <span *ngIf="item.usd_amount.toString().length > 8" class="voucher-show-info"
                                         (click)="openInfoModal('Usd amount', item.usd_amount + ' $')">(?)</span>
                                     {{ item.usd_amount || '0' }}
+                                </span>
+                            </td>
+                            <td>
+                                <span class="page-table-w" title="{{ item.lock_days }}">
+                                    {{ item.lock_days || '0' }}
                                 </span>
                             </td>
                             <td class="text-center">
@@ -169,14 +181,13 @@
                                 <span class="popup-form-text-label">$</span>
                             </div>
                         </div>
-                        <div class="popup-form-group-item ducatus-inputs-disabled">
+                        <div class="popup-form-group-item">
                             <label for="freezeVoucher">Freeze time</label>
                             <div class="popup-form-input">
-                                <input [matDatepicker]="picker" disabled class="ducatus-inputs-input"
-                                    id="freezeVoucher">
-                                <span class="icon icon__datetimepicker"></span>
-                                <!-- <span class="icon icon__datetimepicker" (click)="picker.open()"></span> -->
-                                <mat-datepicker placeholder="Choose Date" #picker></mat-datepicker>
+                                <input type="text" placeholder="Freeze" minlength="1" name="lock_days"
+                                    [(ngModel)]="lockDays" class="ducatus-inputs-input" id="lock_days"
+                                    oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');">
+                                <span class="popup-form-text-label">DAYS</span>
                             </div>
                         </div>
                     </div>

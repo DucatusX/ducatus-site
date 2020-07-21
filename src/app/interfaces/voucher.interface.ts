@@ -6,6 +6,7 @@ export interface IVoucher {
   usd_amount: number;
   is_active: boolean;
   is_used: boolean;
+  lock_days?: number;
   activation_date?: string;
   isProgress?: boolean;
   isProgressBtn?: boolean;
