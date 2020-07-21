@@ -311,21 +311,4 @@ export class VoucherComponent implements OnInit {
         break;
     }
   }
-
-  // private makeCode(length) {
-  //   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  //   const charactersLength = characters.length;
-
-  //   let result = '';
-
-  //   for (let i = 0; i < length; i++) {
-  //     result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  //   }
-
-  //   return result;
-  // }
-
-  // public generateCode(type) {
-  //   type === 'a' ? this.activationCode = this.makeCode(15) : this.voucherCode = this.makeCode(15);
-  // }
 }
