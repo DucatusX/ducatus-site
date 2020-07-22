@@ -159,21 +159,21 @@
 
                 <div class="buy-info-block hidden-mobile" *ngIf="!loadingData">
 
-                    <span class="buy-info-block-referral-title">Referral link</span>
-                    <span class="buy-info-block-referral-subtitle">Share your referral link and get 3% revenue from
-                        each Ducatus purchase</span>
+                    <span class="buy-info-block-referral-title">{{ 'PAGE.BUY.REFERRAL.TITLE' | translate }}</span>
+                    <span class="buy-info-block-referral-subtitle">{{ 'PAGE.BUY.REFERRAL.SUBTITLE' | translate }}</span>
 
                     <div class="group group-input">
-                        <label for="referralAddress">Enter your Ducatus address</label>
+                        <label for="referralAddress">{{ 'PAGE.BUY.REFERRAL.LABEL' | translate }}</label>
                         <input id="referralAddress" class="input input-white"
                             [ngClass]="{ 'error-input': referralAddressError }" [(ngModel)]="referralAddress"
+                            [placeholder]="'PAGE.BUY.REFERRAL.PLACEHOLDER' | translate"
                             (ngModelChange)="generateReferralLink()">
                         <span class="error-address-value"
-                            *ngIf="referralAddressError">{{ 'PAGE.BUY.FORM.ADDRESS.ERROR' | translate }}</span>
+                            *ngIf="referralAddressError">{{ 'PAGE.BUY.REFERRAL.ERROR' | translate }}</span>
                     </div>
 
                     <div *ngIf="!referralAddressError && referralLink" class="group group-input">
-                        <label style="margin-top: 30px;">Your referral link</label>
+                        <label style="margin-top: 30px;">{{ 'PAGE.BUY.REFERRAL.LINK' | translate }}</label>
                         <div class="buy-info-block-referral-link">
                             <span class="buy-info-block-referral-link-text">{{ referralLink }}</span>
                             <span class="icon icon__copy" [cdkCopyToClipboard]="referralLink"></span>
@@ -274,31 +274,28 @@
                     </div>
                 </div>
                 <div class="buy-info-block hidden-desktop" *ngIf="!loadingData">
-                    <span class="buy-info-block-title">{{ 'PAGE.BUY.INFO.TITLE' | translate }}</span>
 
-                    <div class="buy-info-block-group-text">
-                        <div class="buy-info-block-group-text-item">
-                            <img src="/assets/img/aa-logo.png" height="60" alt="aa+ logo">
-                        </div>
-                        <div class="buy-info-block-group-text-item">
-                            <span class="buy-info-block-subtitle">{{ 'PAGE.BUY.INFO.LINK.ONE' | translate }}</span>
-                            <a class="buy-info-block-link" href="https://www.aaplussg.com"
-                                target="_blank">https://www.aaplussg.com</a>
+                    <span class="buy-info-block-referral-title">{{ 'PAGE.BUY.REFERRAL.TITLE' | translate }}</span>
+                    <span class="buy-info-block-referral-subtitle">{{ 'PAGE.BUY.REFERRAL.SUBTITLE' | translate }}</span>
+
+                    <div class="group group-input">
+                        <label for="referralAddress">{{ 'PAGE.BUY.REFERRAL.LABEL' | translate }}</label>
+                        <input id="referralAddress" class="input input-white"
+                            [ngClass]="{ 'error-input': referralAddressError }" [(ngModel)]="referralAddress"
+                            [placeholder]="'PAGE.BUY.REFERRAL.PLACEHOLDER' | translate"
+                            (ngModelChange)="generateReferralLink()">
+                        <span class="error-address-value"
+                            *ngIf="referralAddressError">{{ 'PAGE.BUY.REFERRAL.ERROR' | translate }}</span>
+                    </div>
+
+                    <div *ngIf="!referralAddressError && referralLink" class="group group-input">
+                        <label style="margin-top: 30px;">{{ 'PAGE.BUY.REFERRAL.LINK' | translate }}</label>
+                        <div class="buy-info-block-referral-link">
+                            <span class="buy-info-block-referral-link-text">{{ referralLink }}</span>
+                            <span class="icon icon__copy" [cdkCopyToClipboard]="referralLink"></span>
                         </div>
                     </div>
 
-                    <span class="buy-info-block-spacer"></span>
-
-                    <div class="buy-info-block-group-text">
-                        <div class="buy-info-block-group-text-item">
-                            <img src="/assets/img/d-bay-logo.jpg" height="30" alt="d-bay logo">
-                        </div>
-                        <div class="buy-info-block-group-text-item">
-                            <span class="buy-info-block-subtitle">{{ 'PAGE.BUY.INFO.LINK.TWO' | translate }}</span>
-                            <a class="buy-info-block-link" href="https://remusnation.com/dbay/"
-                                target="_blank">https://remusnation.com/dbay/</a>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="pay-form-block" *ngIf="loadingData">

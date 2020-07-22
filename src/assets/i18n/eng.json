@@ -204,6 +204,14 @@
                     "TWO": "Use DUC and shop for pre-loved items online"
                 }
             },
+            "REFERRAL": {
+                "TITLE": "Referral link",
+                "SUBTITLE": "Share your referral link and get 3% revenue from each Ducatus purchase",
+                "LABEL": "Enter your Ducatus address",
+                "PLACEHOLDER": "Enter your Ducatus address",
+                "ERROR": "Error! Please check, the address format is incorrect!",
+                "LINK": "Your referral link"
+            },
             "LOTTERY": {
                 "BLOCK": {
                     "WINNER": {

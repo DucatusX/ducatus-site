@@ -204,6 +204,14 @@
                     "TWO": "Usa DUC e acquista online oggetti amati"
                 }
             },
+            "REFERRAL": {
+                "TITLE": "Link di riferimento",
+                "SUBTITLE": "Condividi il tuo link di riferimento e ottieni entrate del 3% da ogni acquisto Ducatus",
+                "LABEL": "Inserisci il tuo indirizzo Ducatus",
+                "PLACEHOLDER": "Inserisci il tuo indirizzo Ducatus",
+                "ERROR": "Errore! Si prega di verificare, il formato dell'indirizzo non è corretto!",
+                "LINK": "Il tuo link di riferimento"
+            },
             "LOTTERY": {
                 "BLOCK": {
                     "WINNER": {

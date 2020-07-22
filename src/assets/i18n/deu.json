@@ -204,6 +204,14 @@
                     "TWO": "Nutzen Sie DUC und shoppen Sie Ihre Lieblingsprodukte online."
                 }
             },
+            "REFERRAL": {
+                "TITLE": "Empfehlungslink",
+                "SUBTITLE": "Teilen Sie Ihren Empfehlungslink und erhalten Sie 3% Umsatz mit jedem Kauf von Ducatus",
+                "LABEL": "Geben Sie Ihre Ducatus-Adresse ein",
+                "PLACEHOLDER": "Geben Sie Ihre Ducatus-Adresse ein",
+                "ERROR": "Error! Bitte überprüfen Sie, das Adressformat ist falsch!",
+                "LINK": "Ihr Empfehlungslink"
+            },
             "LOTTERY": {
                 "BLOCK": {
                     "WINNER": {
