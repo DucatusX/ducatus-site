@@ -29,9 +29,10 @@ export class BuyComponent implements OnInit, OnDestroy {
   public lang = 'eng';
   public onLangChange: any;
 
-  public refferalStatus = false;
-  public refferalLink: string;
-  public refferalIncoming: string;
+  public referralAddressError = false;
+  public referralAddress: string;
+  public referralLink: string;
+  public referralIncoming: string;
 
   public currencyData = {
     eth: {
@@ -125,11 +126,11 @@ export class BuyComponent implements OnInit, OnDestroy {
 
     console.log(this.lang);
 
-    this.route.queryParams.subscribe((params) =>
-      this.refferalIncoming = params['referral']
-    );
+    this.route.queryParams.subscribe((params) => {
+      this.referralIncoming = params['referral'];
+    });
 
-    if (this.refferalIncoming) { console.log('you use referral link: ', this.refferalIncoming); }
+    if (this.referralIncoming) { console.log('you use referral link: ', this.referralIncoming); window['jQuery']['cookie']('referral', this.referralIncoming); }
   }
 
   ngOnDestroy() {
@@ -152,13 +153,17 @@ export class BuyComponent implements OnInit, OnDestroy {
     this.getAddresses();
   }
 
+  private checkDucatusAddress(address: string) {
+    return this.buyservice.getValidateDucatusAddress(address);
+  }
+
   public setAddress() {
     const address = this.BuyGroup.value.address;
 
     if (address.length === 34 && ['L', 'l', 'M', 'm'].includes(address.substring(0, 1))) {
       this.currencyData['eth'].address = this.currencyData['btc'].address = '';
       this.loadedAddress = false;
-      this.buyservice.getValidateDucatusAddress(address).then((result) => {
+      this.checkDucatusAddress(address).then((result) => {
         if (result.address_valid) {
           this.getAddresses();
           this.BuyGroup.controls['address'].setErrors(null);
@@ -194,7 +199,6 @@ export class BuyComponent implements OnInit, OnDestroy {
 
     if (email && address && this.loadedAddress && !this.loadingData) {
       this.loadingQr = true;
-      this.refferalStatus = false;
 
       const amountBTC = ((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.BTC).toFixed(8));
       const amountETH = ((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.ETH).toFixed(18));
@@ -206,12 +210,8 @@ export class BuyComponent implements OnInit, OnDestroy {
       this.currencyData['eth'].info = this.currencyData['eth'].name.toLowerCase() + ':' + this.currencyData['eth'].address; // + '?value=' + this.currencyData['eth'].amount.split('.').join('');
 
       this.googleAnalyticsService.eventEmitter('get_lotetry_address', 'lottery', 'address', 'generate', 10);
-      this.refferalLink = 'http://ducsite.rocknblock.io/buy?referral=' + this.BuyGroup.value.address;
-
-      console.log(this.refferalLink);
 
       this.loadingQr = false;
-      this.refferalStatus = true;
     } else {
       this.loadingQr = true;
 
@@ -241,6 +241,21 @@ export class BuyComponent implements OnInit, OnDestroy {
         if (this.checker) { this.checkLotteryStatus(); }
       }, 10000);
     } else { this.checker = undefined; }
+  }
+
+  public generateReferralLink() {
+
+    if (this.referralAddress.length === 34 && ['L', 'l', 'M', 'm'].includes(this.referralAddress.substring(0, 1))) {
+      this.referralAddressError = false;
+      this.referralLink = '';
+      this.checkDucatusAddress(this.referralAddress).then((result) => {
+        if (result.address_valid) {
+          this.referralAddressError = false;
+          this.referralLink = 'http://ducsite.rocknblock.io/buy?referral=' + this.referralAddress;
+        } else { this.referralAddressError = true; }
+      }).catch(err => { console.error(err); });
+    } else { this.referralAddressError = true; this.referralLink = ''; }
+
   }
 
   public acceptModalTerms() {
