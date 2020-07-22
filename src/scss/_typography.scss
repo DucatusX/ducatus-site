@@ -547,6 +547,13 @@ li {
             background-image: url('assets/img/icons/plus.svg');
         }
     }
+
+    &__copy {
+        @include before-img(block, 18px, 18px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/copy.svg');
+        }
+    }
 }
 
 .ol-a-type {

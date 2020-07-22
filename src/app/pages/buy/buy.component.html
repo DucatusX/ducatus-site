@@ -148,6 +148,17 @@
 
                     </div>
 
+
+                    <div *ngIf="refferalStatus" class="group group-info-block group-mt-30">
+                        <span class="group-info-block-label">Referral link</span>
+                        <span class="group-info-block-subtext">Share your referral link and get 3% revenue from each
+                            Ducatus purchase</span>
+                        <div class="group-info-block-refferal-link">
+                            <span class="group-info-block-refferal-link-text">{{ refferalLink }}</span>
+                            <span class="icon icon__copy" [cdkCopyToClipboard]="refferalLink"></span>
+                        </div>
+                    </div>
+
                 </form>
                 <div class="ducatus-pay-form loading-pay-form" *ngIf="loadingData">
                     <div class="group group-input group-input-select" style="height: 90px;"></div>

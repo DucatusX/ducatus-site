@@ -6,6 +6,7 @@ import { BuyService } from '../../service/buy/buy.service';
 import { Lottery, Rates } from 'src/app/interfaces';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { GoogleAnalyticsService } from 'src/app/service/gtag/google-analytics.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-buy',
@@ -23,10 +24,14 @@ export class BuyComponent implements OnInit, OnDestroy {
   public modalInfo = false;
   public modalAccept = false;
   private checker;
-  public bg: string; // 'assets/img/sections/buy-bg.png';
+  public bg: string;
   public percentLottery = 0;
   public lang = 'eng';
   public onLangChange: any;
+
+  public refferalStatus = false;
+  public refferalLink: string;
+  public refferalIncoming: string;
 
   public currencyData = {
     eth: {
@@ -83,7 +88,8 @@ export class BuyComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
     private sanitizer: DomSanitizer,
     private translate: TranslateService,
-    private googleAnalyticsService: GoogleAnalyticsService
+    private googleAnalyticsService: GoogleAnalyticsService,
+    protected route: ActivatedRoute
   ) {
     this.BuyGroup = this.formBuilder.group({
       currency: [
@@ -118,6 +124,12 @@ export class BuyComponent implements OnInit, OnDestroy {
     });
 
     console.log(this.lang);
+
+    this.route.queryParams.subscribe((params) =>
+      this.refferalIncoming = params['referral']
+    );
+
+    if (this.refferalIncoming) { console.log('you use referral link: ', this.refferalIncoming); }
   }
 
   ngOnDestroy() {
@@ -137,7 +149,6 @@ export class BuyComponent implements OnInit, OnDestroy {
   }
 
   public setEmail() {
-    const email = this.BuyGroup.controls['email'].valid;
     this.getAddresses();
   }
 
@@ -183,6 +194,7 @@ export class BuyComponent implements OnInit, OnDestroy {
 
     if (email && address && this.loadedAddress && !this.loadingData) {
       this.loadingQr = true;
+      this.refferalStatus = false;
 
       const amountBTC = ((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.BTC).toFixed(8));
       const amountETH = ((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.ETH).toFixed(18));
@@ -194,8 +206,12 @@ export class BuyComponent implements OnInit, OnDestroy {
       this.currencyData['eth'].info = this.currencyData['eth'].name.toLowerCase() + ':' + this.currencyData['eth'].address; // + '?value=' + this.currencyData['eth'].amount.split('.').join('');
 
       this.googleAnalyticsService.eventEmitter('get_lotetry_address', 'lottery', 'address', 'generate', 10);
+      this.refferalLink = 'http://ducsite.rocknblock.io/buy?referral=' + this.BuyGroup.value.address;
+
+      console.log(this.refferalLink);
 
       this.loadingQr = false;
+      this.refferalStatus = true;
     } else {
       this.loadingQr = true;
 
