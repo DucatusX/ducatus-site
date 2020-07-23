@@ -166,10 +166,12 @@ export class BuyComponent implements OnInit, OnDestroy {
       this.checkDucatusAddress(address).then((result) => {
         if (result.address_valid) {
           this.getAddresses();
+          this.referralAddress = address;
+          this.generateReferralLink();
           this.BuyGroup.controls['address'].setErrors(null);
-        } else { this.BuyGroup.controls['address'].setErrors({ 'incorrect': true }); }
+        } else { this.BuyGroup.controls['address'].setErrors({ 'incorrect': true }); this.referralAddress = ''; this.generateReferralLink(); }
       }).catch(err => { console.error(err); });
-    } else { this.BuyGroup.controls['address'].setErrors({ 'incorrect': true }); }
+    } else { this.BuyGroup.controls['address'].setErrors({ 'incorrect': true }); this.referralAddress = ''; this.generateReferralLink(); }
 
     this.setQrAddress();
   }
