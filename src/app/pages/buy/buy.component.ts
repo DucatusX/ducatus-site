@@ -253,7 +253,7 @@ export class BuyComponent implements OnInit, OnDestroy {
       this.checkDucatusAddress(this.referralAddress).then((result) => {
         if (result.address_valid) {
           this.referralAddressError = false;
-          this.referralLink = 'http://ducsite.rocknblock.io/buy?referral=' + this.referralAddress;
+          this.referralLink = window.location.origin + '/buy?referral=' + this.referralAddress;
         } else { this.referralAddressError = true; }
       }).catch(err => { console.error(err); });
     } else { this.referralAddressError = true; this.referralLink = ''; }
