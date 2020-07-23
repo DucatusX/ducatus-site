@@ -204,6 +204,14 @@
                     "TWO": "Sử dụng DUC để mua sắm những món đồ yêu thích trực tuyến"
                 }
             },
+            "REFERRAL": {
+                "TITLE": "Liên kết giới thiệu",
+                "SUBTITLE": "Chia sẻ cơ hội tuyệt vời này với bạn bè và gia đình của bạn và nhận phần thưởng giới thiệu 3% DUC cho bất kỳ giao dịch mua nào họ thực hiện bằng liên kết dưới đây",
+                "LABEL": "Nhập địa chỉ Ducatus của bạn",
+                "PLACEHOLDER": "Nhập địa chỉ Ducatus của bạn",
+                "ERROR": "Lỗi! Vui lòng kiểm tra, định dạng địa chỉ không chính xác!",
+                "LINK": "Liên kết giới thiệu của bạn"
+            },
             "LOTTERY": {
                 "BLOCK": {
                     "WINNER": {
