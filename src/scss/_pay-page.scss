@@ -709,7 +709,7 @@
             }
 
             .buy-info-block {
-                margin-top: 68px;
+                margin-top: 47px;
                 // min-height: 343px;
                 width: 100%;
                 padding: 30px;
@@ -860,6 +860,7 @@
                         overflow: hidden;
                         border-radius: 15px;
                         background-color: #F5F0E4;
+                        overflow: hidden;
 
                         &-text {
                             width: 100%;
@@ -871,6 +872,7 @@
                             font-weight: bold;
                             font-size: 14px;
                             word-break: break-all;
+                            overflow: hidden;
                         }
 
                         .icon__copy {

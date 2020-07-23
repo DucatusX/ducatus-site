@@ -206,7 +206,7 @@
             },
             "REFERRAL": {
                 "TITLE": "Empfehlungslink",
-                "SUBTITLE": "Teilen Sie Ihren Empfehlungslink und erhalten Sie 3% Umsatz mit jedem Kauf von Ducatus",
+                "SUBTITLE": "Teilen Sie diese großartige Gelegenheit mit Ihren Freunden und Ihrer Familie und erhalten Sie einen 3% DUC-Empfehlungsbonus für jeden Einkauf, den sie über den folgenden Link tätigen",
                 "LABEL": "Geben Sie Ihre Ducatus-Adresse ein",
                 "PLACEHOLDER": "Geben Sie Ihre Ducatus-Adresse ein",
                 "ERROR": "Error! Bitte überprüfen Sie, das Adressformat ist falsch!",

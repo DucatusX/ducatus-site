@@ -206,7 +206,7 @@
             },
             "REFERRAL": {
                 "TITLE": "Referral link",
-                "SUBTITLE": "Share your referral link and get 3% revenue from each Ducatus purchase",
+                "SUBTITLE": "Change wording to: Share this amazing opportunity with your friends and family and receive a 3% DUC referral bonus for any purchase they make using the below link",
                 "LABEL": "Enter your Ducatus address",
                 "PLACEHOLDER": "Enter your Ducatus address",
                 "ERROR": "Error! Please check, the address format is incorrect!",
