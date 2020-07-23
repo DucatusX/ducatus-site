@@ -200,14 +200,14 @@ export class BuyComponent implements OnInit, OnDestroy {
     if (email && address && this.loadedAddress && !this.loadingData) {
       this.loadingQr = true;
 
-      const amountBTC = ((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.BTC).toFixed(8));
-      const amountETH = ((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.ETH).toFixed(18));
+      const amountBTC = Number((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.BTC).toFixed(8)) + 0.00005;
+      const amountETH = Number((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.ETH).toFixed(18)) + 0.00005;
 
-      this.currencyData['btc'].amount = parseFloat(amountBTC);
-      this.currencyData['eth'].amount = parseFloat(amountETH);
+      this.currencyData['btc'].amount = (Math.ceil((amountBTC) * 10000) / 10000 + 0.00001).toFixed(5);
+      this.currencyData['eth'].amount = (Math.ceil((amountETH) * 10000) / 10000 + 0.00001).toFixed(5);
 
-      this.currencyData['btc'].info = this.currencyData['btc'].name.toLowerCase() + ':' + this.currencyData['btc'].address; // + '?amount=' + this.currencyData['btc'].amount;
-      this.currencyData['eth'].info = this.currencyData['eth'].name.toLowerCase() + ':' + this.currencyData['eth'].address; // + '?value=' + this.currencyData['eth'].amount.split('.').join('');
+      this.currencyData['btc'].info = this.currencyData['btc'].name.toLowerCase() + ':' + this.currencyData['btc'].address;
+      this.currencyData['eth'].info = this.currencyData['eth'].name.toLowerCase() + ':' + this.currencyData['eth'].address;
 
       this.googleAnalyticsService.eventEmitter('get_lotetry_address', 'lottery', 'address', 'generate', 10);
 
