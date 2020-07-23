@@ -179,7 +179,7 @@ section.voucher {
         }
 
         &-activation-code {
-          max-width: 325px;
+          max-width: 270px;
           position: relative;
         }
 
@@ -189,7 +189,7 @@ section.voucher {
         }
 
         &-ducatus-amount {
-          max-width: 135px;
+          max-width: 100px;
           position: relative;
         }
       }
@@ -201,7 +201,7 @@ section.voucher {
           color: $brown-red;
           font-weight: bold;
           font-size: 16px;
-          padding: 15px 15px;
+          padding: 15px 10px;
           text-align: left;
           border-bottom: 1px solid #E2E2E2;
           position: relative;
@@ -265,7 +265,7 @@ section.voucher {
 
         tr {
           td {
-            padding: 20px 15px;
+            padding: 20px 10px;
             border-bottom: 1px solid #E2E2E2;
 
             &:nth-child(1) {
