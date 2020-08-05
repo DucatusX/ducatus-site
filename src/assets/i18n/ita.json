@@ -195,7 +195,8 @@
                     },
                     "ERROR": "qualcosa è andato storto, riprovare più tardi",
                     "NOTE": "Tieni presente che potrebbero essere necessari fino a {{ time }} prima di ricevere i DUC nel tuo wallet <br><br>"
-                }
+                },
+                "SUBMIT": "Invia"
             },
             "INFO": {
                 "TITLE": "Scopri, impara e guadagna facendo parte dell'Economia Cashless Ducatus.",

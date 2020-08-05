@@ -195,7 +195,8 @@
                     },
                     "ERROR": "đã xảy ra lỗi, thử lại sau",
                     "NOTE": "Hãy lưu ý rằng bạn sẽ mất khoảng {{ time }} để nhận DUC về ví <br><br>"
-                }
+                },
+                "SUBMIT": "Gửi đi"
             },
             "INFO": {
                 "TITLE": "Hãy khám phá, học hỏi và có thêm thu nhập từ việc trở thành một phần của nền kinh tế không tiền mặt Ducatus.",
