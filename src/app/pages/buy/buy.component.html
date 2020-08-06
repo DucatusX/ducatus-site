@@ -8,7 +8,7 @@
     <div class="container">
         <div class="pay-form">
 
-            <div class="pay-form-block  hidden-desktop" *ngIf="!loadingData">
+            <div class="pay-form-block hidden-desktop" *ngIf="!loadingData">
                 <div class="buy-info-block" *ngIf="!loadingData">
                     <span class="buy-info-block-referral-title">{{ 'PAGE.BUY.REFERRAL.TITLE' | translate }}</span>
                     <span class="buy-info-block-referral-subtitle">{{ 'PAGE.BUY.REFERRAL.SUBTITLE' | translate }}</span>
@@ -181,11 +181,11 @@
 
                     <div class="group group-input">
                         <label for="email">{{ 'PAGE.BUY.FORM.EMAIL.TEXT' | translate }}</label>
-                        <input (ngModelChange)="setEmail()" id="email" formControlName="email" type="email"
+                        <input id="email" (ngModelChange)="setEmail()" formControlName="email" type="email"
                             [placeholder]="'PAGE.BUY.FORM.EMAIL.PLACEHOLDER' | translate" class="input input-white">
                     </div>
 
-                    <div id="loading-address" [ngClass]="{ 'loading-address-start': loadingQr}"
+                    <div id="loading-address" [ngClass]="{ 'loading-address-start': !buttonSubmit }"
                         class="group group-input group-input-copy m-b-0 qr-wrap">
                         <div class="group-wrap qr-address">
                             <label>{{ 'PAGE.BUY.FORM.RESULT.TEXT_1' | translate }}
@@ -194,23 +194,27 @@
                                 {{ 'PAGE.BUY.FORM.RESULT.TEXT_2' | translate }}
                             </label>
                             <p class="input input-accent">
-                                <span *ngIf="!loadingQr">{{ currencyData[BuyGroup.value.currency].address }}</span>
+                                <span
+                                    *ngIf="!loadingQr && buttonSubmit">{{ currencyData[BuyGroup.value.currency].address }}</span>
                             </p>
                             <span class="copy-address icon icon-copy"
                                 [cdkCopyToClipboard]="currencyData[BuyGroup.value.currency].address"></span>
                         </div>
 
                         <div class="qrcode" [attr.title]="currencyData[BuyGroup.value.currency].info">
-                            <qrcode *ngIf="!loadingQr" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1"
-                                [qrdata]="currencyData[BuyGroup.value.currency].info" [width]="80"
-                                [errorCorrectionLevel]="'L'"></qrcode>
+                            <qrcode *ngIf="!loadingQr && buttonSubmit" class="qr-code" [elementType]="'url'"
+                                [margin]="0" [scale]="1" [qrdata]="currencyData[BuyGroup.value.currency].info"
+                                [width]="80" [errorCorrectionLevel]="'L'"></qrcode>
                         </div>
 
                         <div class="group-wrap qr-textCode"><label
                                 style="margin-bottom: 0;">{{ 'PAGE.BUY.FORM.RESULT.QR.TEXT' | translate }}</label></div>
 
                         <div class="loading-address-qr">
-                            <div class="loading-address-qr-wrap">
+                            <button *ngIf="!buttonSubmit" [disabled]='BuyGroup.invalid' (click)="clickSubmit()"
+                                class="ducatus-btn ducatus-btn-brown"
+                                style="min-width: 100%;">{{ 'PAGE.BUY.FORM.SUBMIT' | translate }}</button>
+                            <!-- <div class="loading-address-qr-wrap">
                                 <p>{{ 'PAGE.BUY.FORM.RESULT.ERROR' | translate }}</p>
                                 <div class="loading-address-qr-wrap-ellips">
                                     <span></span>
@@ -218,7 +222,7 @@
                                     <span></span>
                                     <span></span>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="group group-text qr-text" style="margin-bottom: 0;">
