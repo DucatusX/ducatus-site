@@ -47,7 +47,8 @@ import { SafePipe } from './pipe/safeUrl.pipe';
 import { GoogleAnalyticsService } from './service/gtag/google-analytics.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json?v='
+    + new Date().getTime());
 }
 
 @NgModule({
