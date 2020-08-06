@@ -28,6 +28,9 @@ export class BuyComponent implements OnInit, OnDestroy {
   public percentLottery = 0;
   public lang = 'eng';
   public onLangChange: any;
+  public savedEmail: string;
+  public savedAddress: string;
+  public buttonSubmit = false;
 
   public referralAddressError = false;
   public referralAddress: string;
@@ -150,7 +153,30 @@ export class BuyComponent implements OnInit, OnDestroy {
   }
 
   public setEmail() {
-    this.getAddresses();
+    const email = this.BuyGroup.controls['email'];
+    if (email.value !== this.savedEmail) {
+      this.buttonSubmit = false;
+    }
+  }
+
+  public clickSubmit() {
+    const email = this.BuyGroup.controls['email'];
+    const address = this.BuyGroup.controls['address'];
+
+    if (email.valid) {
+      this.savedEmail = email.value;
+    }
+
+    if (address.valid) {
+      this.savedAddress = address.value;
+    }
+
+    if (email.valid && address.valid) {
+      this.buttonSubmit = true;
+      this.getAddresses();
+      this.referralAddress = address.value;
+      this.generateReferralLink();
+    }
   }
 
   private checkDucatusAddress(address: string) {
@@ -158,40 +184,45 @@ export class BuyComponent implements OnInit, OnDestroy {
   }
 
   public setAddress() {
-    const address = this.BuyGroup.value.address;
+    const address = this.BuyGroup.controls['address'];;
 
-    if (address.length === 34 && ['L', 'l', 'M', 'm'].includes(address.substring(0, 1))) {
+    if (address.value.length === 34 && ['L', 'l', 'M', 'm'].includes(address.value.substring(0, 1))) {
       this.currencyData['eth'].address = this.currencyData['btc'].address = '';
       this.loadedAddress = false;
-      this.checkDucatusAddress(address).then((result) => {
+      this.checkDucatusAddress(address.value).then((result) => {
         if (result.address_valid) {
-          this.getAddresses();
-          this.referralAddress = address;
-          this.generateReferralLink();
           this.BuyGroup.controls['address'].setErrors(null);
         } else { this.BuyGroup.controls['address'].setErrors({ 'incorrect': true }); this.referralAddress = ''; this.generateReferralLink(); }
       }).catch(err => { console.error(err); });
     } else { this.BuyGroup.controls['address'].setErrors({ 'incorrect': true }); this.referralAddress = ''; this.generateReferralLink(); }
 
-    this.setQrAddress();
+    if (address.value !== this.savedAddress) {
+      this.buttonSubmit = false;
+    }
   }
 
   public getAddresses() {
-    const address = this.BuyGroup.value.address;
-    const addressValid = this.BuyGroup.controls['address'].valid;
-    const email = this.BuyGroup.value.email;
+    const address = this.BuyGroup.controls['address'];
+    const email = this.BuyGroup.controls['email'];
 
-    if (addressValid) {
-      this.buyservice.getExchange(address, 'DUC', email).then((result) => {
+    if (address.valid && email.valid) {
+      this.buyservice.getExchange(address.value, 'DUC', email.value).then((result) => {
         this.loadedAddress = true;
         this.currencyData['eth'].address = result.eth_address;
         this.currencyData['btc'].address = result.btc_address;
         this.setQrAddress();
         this.BuyGroup.controls['address'].setErrors(null);
+        this.BuyGroup.controls['email'].setErrors(null);
       }).catch(err => { console.error(err); this.loadedAddress = false; });
     } else {
-      this.BuyGroup.controls['address'].setErrors({ 'incorrect': true });
-      this.BuyGroup.controls['address'].markAsTouched();
+      if (!address.valid) {
+        this.BuyGroup.controls['address'].setErrors({ 'incorrect': true });
+        this.BuyGroup.controls['address'].markAsTouched();
+      }
+      if (!email.valid) {
+        this.BuyGroup.controls['email'].setErrors({ 'incorrect': true });
+        this.BuyGroup.controls['email'].markAsTouched();
+      }
     }
   }
 

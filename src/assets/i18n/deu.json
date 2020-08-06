@@ -195,7 +195,8 @@
                     },
                     "ERROR": "etwas ist schief gelaufen, versuchen Sie es später erneut",
                     "NOTE": "Bitte beachten Sie, dass es bis zu {{ time }} dauern kann, bis Sie Ihren DUC in Ihrer Brieftasche erhalten <br><br>"
-                }
+                },
+                "SUBMIT": "einreichen"
             },
             "INFO": {
                 "TITLE": "Entdecken, lernen und verdienen Sie es, Teil der Ducatus Cashless Economy zu werden.",
