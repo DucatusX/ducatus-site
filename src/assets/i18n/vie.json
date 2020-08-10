@@ -170,7 +170,7 @@
             "TITLE": "Mua DUC",
             "FORM": {
                 "RADIO": {
-                    "PRICE": "Giá của DUC = 0,05 USD",
+                    "PRICE": "Giá của DUC = 0,06 USD",
                     "TEXT": " Chọn một trong những lựa chọn bên dưới và nhận số lượt rút thăm tương ứng",
                     "LINK": "(thêm thông tin)",
                     "TICKET": {

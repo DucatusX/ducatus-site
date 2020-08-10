@@ -170,7 +170,7 @@
             "TITLE": "Buy DUC",
             "FORM": {
                 "RADIO": {
-                    "PRICE": "Price of DUC = USD 0.05",
+                    "PRICE": "Price of DUC = USD 0.06",
                     "TEXT": "Select from the below options and receive corresponding number of entries for the draw",
                     "LINK": "(more info)",
                     "TICKET": {
