@@ -257,7 +257,7 @@ export class BuyComponent implements OnInit, OnDestroy {
 
       this.currencyData['btc'].amount = (Math.ceil((amountBTC) * 10000) / 10000 + 0.00001).toFixed(5);
       this.currencyData['eth'].amount = (Math.ceil((amountETH) * 10000) / 10000 + 0.00001).toFixed(5);
-      this.currencyData['usdc'].amount = (Math.ceil((amountETH) * 10000) / 10000 + 0.00001).toFixed(5);
+      this.currencyData['usdc'].amount = (Math.ceil((amountUSDC) * 10000) / 10000 + 0.00001).toFixed(5);
 
       this.currencyData['btc'].info = this.currencyData['btc'].qrName.toLowerCase() + ':' + this.currencyData['btc'].address;
       this.currencyData['eth'].info = this.currencyData['eth'].qrName.toLowerCase() + ':' + this.currencyData['eth'].address;
