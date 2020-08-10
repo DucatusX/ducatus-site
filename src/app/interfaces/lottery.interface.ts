@@ -3,6 +3,7 @@ export interface Rates {
     ETH: number;
     BTC: number;
     DUCX: number;
+    USDC: number;
   };
   DUCX: {
     DUC: number;
