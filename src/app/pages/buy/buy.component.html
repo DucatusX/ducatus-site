@@ -170,15 +170,6 @@
             </div>
 
             <div class="pay-form-block" *ngIf="loadingData">
-                <div class="lottery-tickets" style="margin-bottom: 30px;">
-                    <div class="ducatus-pay-form loading-pay-form">
-                        <div class="group group-input group-input-select input-h-60"></div>
-                        <div class="group group-input group-input-select input-h-60"></div>
-                        <div class="group group-input group-input-select input-h-60"></div>
-                        <div class="group group-text group-columns input-h-20"></div>
-                    </div>
-
-                </div>
 
                 <div class="lottery" style="padding: 30px!important; min-height: auto;">
                     <div class="ducatus-pay-form loading-pay-form" style="padding: 0 !important;box-shadow: none;">
@@ -189,95 +180,47 @@
                         <div class="group group-input group-input-select" style="height: 103px;"></div>
                     </div>
                 </div>
+
+                <div class="lottery-tickets" style="margin-bottom: 30px; margin-top: 30px;">
+                    <div class="ducatus-pay-form loading-pay-form">
+                        <div class="group group-input group-input-select input-h-60"></div>
+                        <div class="group group-input group-input-select input-h-60"></div>
+                        <div class="group group-input group-input-select input-h-60"></div>
+                        <div class="group group-text group-columns input-h-20"></div>
+                    </div>
+                </div>
             </div>
 
             <div class="pay-form-wrap mt-m-30">
                 <form [formGroup]="BuyGroup" class="ducatus-pay-form" *ngIf="!loadingData">
                     <div class="group group-input">
                         <div class="group-radio group-currency">
-                            <div class="group-radio-item group-currency-item">
-                                <input formControlName="currency" required type="radio" id="currency-btc" value="btc">
-                                <label for="currency-btc">
-                                    <img src="/assets/img/icons/btc.svg" width="30" height="30" alt="bitcoin">
-                                    <span class="group-currency-text">BTC</span>
-                                </label>
-                            </div>
-                            <div class="group-radio-item group-currency-item">
-                                <input formControlName="currency" checked required type="radio" checked
-                                    id="currency-eth" value="eth">
-                                <label for="currency-eth">
-                                    <img src="/assets/img/icons/eth.svg" width="30" height="30" alt="etherium">
-                                    <span class="group-currency-text">ETH</span>
-                                </label>
-                            </div>
-                            <div class="group-radio-item group-currency-item">
-                                <input formControlName="currency" checked required type="radio" checked
-                                    id="currency-usdc" value="usdc">
-                                <label for="currency-usdc">
-                                    <img src="/assets/img/icons/usdc.svg" width="30" height="30" alt="usdc">
-                                    <span class="group-currency-text">USDC</span>
+                            <div *ngFor="let item of currencyTemplate" class="group-radio-item group-currency-item">
+                                <input (ngModelChange)="setAmount()" formControlName="currency" required type="radio" [id]="'currency-' + item.shortName" [value]="item.shortName">
+                                <label [for]="'currency-' + item.shortName">
+                                    <img [src]="'/assets/img/icons/' + item.shortName + '.svg'" width="30" height="30" [alt]="item.name">
+                                    <span class="group-currency-text">{{ item.shortName }}</span>
                                 </label>
                             </div>
                         </div>
                     </div>
 
                     <div class="group group-input group-block">
-                        <label class="group-radio-label" for="amount-3">{{ 'PAGE.BUY.FORM.RADIO.PRICE' | translate }}
+                        <label class="group-radio-label" for="amount-3">{{ 'PAGE.BUY.FORM.RADIO.PRICE' | translate:{ ducRateToUsd: ducToUsd } }}
                             <br>
                             {{ 'PAGE.BUY.FORM.RADIO.TEXT' | translate }} <span class="ducatus-info-link"
                                 (click)="modalInfo = true">{{ 'PAGE.BUY.FORM.RADIO.LINK' | translate }}</span></label>
                         <div class="group-radio">
-                            <div class="group-radio-item">
+                            <div *ngFor="let item of priceTemplate" class="group-radio-item">
                                 <input (ngModelChange)="setAmount()" formControlName="amount" required type="radio"
-                                    id="amount-1" value="10">
-                                <label for="amount-1">
-                                    <span class="group-radio-amount">10$</span>
-                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">1
+                                    [id]="'amount-' + item.price" [value]="item.price">
+                                <label [for]="'amount-' + item.price">
+                                    <span class="group-radio-amount">{{ item.price }}$</span>
+                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">{{ item.ticket }}
                                         <span [innerHTML]="'PAGE.BUY.FORM.RADIO.TICKET.ONE' | translate"></span>
                                     </span>
                                 </label>
                             </div>
-                            <div class="group-radio-item">
-                                <input (ngModelChange)="setAmount()" formControlName="amount" type="radio" id="amount-2"
-                                    value="50">
-                                <label for="amount-2">
-                                    <span class="group-radio-amount">50$</span>
-                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">6
-                                        <span [innerHTML]="'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="group-radio-item">
-                                <input (ngModelChange)="setAmount()" formControlName="amount" checked type="radio"
-                                    id="amount-3" value="100">
-                                <label for="amount-3">
-                                    <span class="group-radio-amount">100$</span>
-                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">13
-                                        <span [innerHTML]="'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="group-radio-item">
-                                <input (ngModelChange)="setAmount()" formControlName="amount" type="radio" id="amount-4"
-                                    value="500">
-                                <label for="amount-4">
-                                    <span class="group-radio-amount">500$</span>
-                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">70
-                                        <span [innerHTML]="'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="group-radio-item">
-                                <input (ngModelChange)="setAmount()" formControlName="amount" type="radio" id="amount-5"
-                                    value="1000">
-                                <label for="amount-5">
-                                    <span class="group-radio-amount">1000$</span>
-                                    <span *ngIf="!lottery.ended || false" class="group-radio-text">150
-                                        <span [innerHTML]="'PAGE.BUY.FORM.RADIO.TICKET.MANY' | translate"></span>
-                                    </span>
-                                </label>
-                            </div>
-
                         </div>
                     </div>
 
