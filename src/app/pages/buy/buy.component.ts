@@ -6,7 +6,7 @@ import { BuyService } from '../../service/buy/buy.service';
 import { Lottery, Rates } from 'src/app/interfaces';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { GoogleAnalyticsService } from 'src/app/service/gtag/google-analytics.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-buy',
@@ -37,10 +37,52 @@ export class BuyComponent implements OnInit, OnDestroy {
   public referralLink: string;
   public referralIncoming: string;
 
+  public ducToUsd = 0.05;
+
+  public currencyTemplate = [
+    {
+      name: 'Ethereum',
+      shortName: 'eth'
+    },
+    {
+      name: 'Bitcoin',
+      shortName: 'btc'
+    },
+    {
+      name: 'USDC',
+      shortName: 'usdc'
+    }
+  ];
+
+  public priceTemplate = [
+    {
+      price: 10,
+      ticket: 1
+    },
+    {
+      price: 50,
+      ticket: 6
+    },
+    {
+      price: 100,
+      ticket: 13
+    },
+    {
+      price: 500,
+      ticket: 70
+    },
+    {
+      price: 1000,
+      ticket: 150
+    },
+  ];
+
   public currencyData = {
     eth: {
       name: 'Ethereum',
+      qrName: 'Ethereum',
       shortName: 'eth',
+      decimals: 18,
       time: {
         eng: '15 minutes',
         deu: '15 Minuten',
@@ -53,7 +95,9 @@ export class BuyComponent implements OnInit, OnDestroy {
     },
     btc: {
       name: 'Bitcoin',
+      qrName: 'Bitcoin',
       shortName: 'btc',
+      decimals: 8,
       time: {
         eng: '1 hour',
         deu: '1 Stunde',
@@ -63,6 +107,33 @@ export class BuyComponent implements OnInit, OnDestroy {
       address: '',
       amount: null,
       info: ''
+    },
+    usdc: {
+      name: 'USDC',
+      qrName: 'Ethereum',
+      shortName: 'usdc',
+      decimals: 18,
+      time: {
+        eng: '15 minutes',
+        deu: '15 Minuten',
+        ita: '15 minuti',
+        vie: '15 phút',
+      },
+      address: '',
+      amount: null,
+      info: ''
+    }
+  };
+
+  public rates: Rates = {
+    DUC: {
+      ETH: 0.00046189,
+      BTC: 0.00001040,
+      DUCX: 0.10000000,
+      USDC: 0.06000000
+    },
+    DUCX: {
+      DUC: 10.00000000
     }
   };
 
@@ -74,17 +145,6 @@ export class BuyComponent implements OnInit, OnDestroy {
     sent_duc_amount: '',
     started_at: 0,
     ended: false,
-  };
-
-  public rates: Rates = {
-    DUC: {
-      ETH: 0.00046189,
-      BTC: 0.00001040,
-      DUCX: 0.10000000
-    },
-    DUCX: {
-      DUC: 10.00000000
-    }
   };
 
   constructor(
@@ -184,7 +244,7 @@ export class BuyComponent implements OnInit, OnDestroy {
   }
 
   public setAddress() {
-    const address = this.BuyGroup.controls['address'];;
+    const address = this.BuyGroup.controls['address'];
 
     if (address.value.length === 34 && ['L', 'l', 'M', 'm'].includes(address.value.substring(0, 1))) {
       this.currencyData['eth'].address = this.currencyData['btc'].address = '';
@@ -210,6 +270,7 @@ export class BuyComponent implements OnInit, OnDestroy {
         this.loadedAddress = true;
         this.currencyData['eth'].address = result.eth_address;
         this.currencyData['btc'].address = result.btc_address;
+        this.currencyData['usdc'].address = result.eth_address;
         this.setQrAddress();
         this.BuyGroup.controls['address'].setErrors(null);
         this.BuyGroup.controls['email'].setErrors(null);
@@ -233,14 +294,11 @@ export class BuyComponent implements OnInit, OnDestroy {
     if (email && address && this.loadedAddress && !this.loadingData) {
       this.loadingQr = true;
 
-      const amountBTC = Number((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.BTC).toFixed(8)) + 0.00005;
-      const amountETH = Number((this.BuyGroup.value.amount / 0.05 * this.rates.DUC.ETH).toFixed(18)) + 0.00005;
+      const currency  = this.BuyGroup.controls['currency'].value;
+      const amount = Number((this.BuyGroup.value.amount / this.ducToUsd * this.rates.DUC[this.currencyData[currency].shortName.toUpperCase()]).toFixed(this.currencyData[currency].decimals)) + 0.00005;
 
-      this.currencyData['btc'].amount = (Math.ceil((amountBTC) * 10000) / 10000 + 0.00001).toFixed(5);
-      this.currencyData['eth'].amount = (Math.ceil((amountETH) * 10000) / 10000 + 0.00001).toFixed(5);
-
-      this.currencyData['btc'].info = this.currencyData['btc'].name.toLowerCase() + ':' + this.currencyData['btc'].address;
-      this.currencyData['eth'].info = this.currencyData['eth'].name.toLowerCase() + ':' + this.currencyData['eth'].address;
+      this.currencyData[currency].amount = (Math.ceil((amount) * 10000) / 10000 + 0.00001).toFixed(5);
+      this.currencyData[currency].info = this.currencyData[currency].qrName.toLowerCase() + ':' + this.currencyData[currency].address;
 
       this.googleAnalyticsService.eventEmitter('get_lotetry_address', 'lottery', 'address', 'generate', 10);
 
