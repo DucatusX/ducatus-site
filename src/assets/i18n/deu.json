@@ -170,7 +170,7 @@
             "TITLE": "DUC Kaufen",
             "FORM": {
                 "RADIO": {
-                    "PRICE": "DUC Preis = USD 0.05",
+                    "PRICE": "DUC Preis = USD {{ ducRateToUsd }}",
                     "TEXT": "Wählen Sie aus den folgenden Optionen und erhalten Sie die entsprechende Anzahl von Hash-Einträgen für die Verlosung.",
                     "LINK": "(mehr info)",
                     "TICKET": {

@@ -126,7 +126,7 @@
             }
 
             @include b(750) {
-                padding-top: 30px;
+                padding-top: 0px;
             }
 
             &-block {
@@ -212,6 +212,7 @@
 
                     @include b(900) {
                         min-height: max-content;
+                        margin-top: 30px;
                     }
 
                     span {
@@ -305,7 +306,8 @@
                     }
 
                     &-tickets {
-                        margin-bottom: 49px;
+                        // margin-bottom: 49px;
+                        margin-top: 49px;
                         border-radius: 12px;
                         position: relative;
                         background-color: #FDFBF6;
@@ -313,6 +315,7 @@
 
                         @include b(900) {
                             margin-bottom: 30px;
+                            margin-top: 0;
                         }
 
                         &-timer {
@@ -985,22 +988,19 @@
     }
 
     .group-currency {
-        // width: 260px;
-        // display: flex;
-        // border-radius: 8px;
-        // overflow: hidden;
-        // border: 1px solid #E9DCCA;
-
         display: grid !important;
-        grid-template-columns: repeat(2,120px);
+        grid-template-columns: repeat(3, 120px);
         justify-content: flex-start !important;
         grid-gap: 20px;
+
+        @include b(500) {
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
+        }
 
         &-item {
             width: 100% !important;
             height: 100%;
-            // border: 1px solid #E9DCCA;
-            // overflow: hidden;
 
             &:nth-child(1) {
                 border-radius: 6px 0 0 6px;
@@ -1056,6 +1056,7 @@
             text-align: center;
             color: rgba(0, 0, 0, 0.5);
             cursor: pointer;
+            text-transform: uppercase;
         }
     }
 
