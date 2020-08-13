@@ -8,17 +8,41 @@
   <div class="container">
 
     <div class="lottery-info">
-      <span class="lottery-info-title">{{ 'PAGE.TICKETS.TABLE.TITLE' | translate }}</span>
-
-      <div class="lottery-info-table" *ngIf="players">
-        <div class="lottery-info-table-items" *ngFor="let item of players">
-          <div class="lottery-info-table-item">{{ item.tickets_amount }}</div>
-          <div class="lottery-info-table-item">
-            <a target="_blank"
-              [attr.href]="'https://insight.ducatus.io/insight#/DUC/mainnet/tx/'+ item.tx_hash">{{ item.tx_hash }}</a>
-          </div>
+      <div class="lottery-info-header">
+        <span class="lottery-info-title">{{ 'PAGE.TICKETS.TABLE.TITLE' | translate }}</span>
+        <div class="lottery-info-search">
+          <span class="icon icon__search"></span>
+          <input class="lottery-info-search-input" (ngModelChange)="findAddress($event)" [(ngModel)]='search' placeholder="Search hashes" type="text">
         </div>
       </div>
+
+      <div *ngIf="playersPagination">
+        <div class="lottery-info-table">
+          <div class="lottery-info-table-items">
+            <div class="lottery-info-table-item">
+              <span class="lottery-ingo-table-item-icon" (click)="sort('tickets_amount')"
+                      [ngClass]="{ 'icon icon__sort-dash-up': !filter, 'icon icon__sort-dash-down': filter }"></span>
+            </div>
+            <div class="lottery-info-table-item"><b>Address</b></div>
+          </div>
+
+          
+          <div class="lottery-info-table-items" *ngFor="let item of playersPagination">
+            <div class="lottery-info-table-item">{{ item.tickets_amount }}</div>
+            <div class="lottery-info-table-item">
+              <a target="_blank"
+              [attr.href]="'https://insight.ducatus.io/insight#/DUC/mainnet/tx/'+ item.tx_hash">{{ item.tx_hash }}</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="lottery-info-paginaton">
+          <div class="lottery-info-paginaton-item lottery-info-paginaton-item-arrow" style="margin-right: 15px;" *ngIf="pgPage > 1" (click)="paginationSwitchRange(-1);">&#8592;</div>
+          <div class="lottery-info-paginaton-item" [ngClass]="{ 'lottery-info-paginaton-item-active': item === currentPage }" (click)="paginationSwitch(item);" *ngFor="let item of paginationCountMapUse">{{ item }}</div>
+          <div class="lottery-info-paginaton-item lottery-info-paginaton-item-arrow" style="margin-left: 15px;" *ngIf="pgPage !== pgNow" (click)="paginationSwitchRange(1);">&#8594;</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
