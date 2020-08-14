@@ -581,6 +581,17 @@
                         }
                     }
 
+                    &-prize-desc {
+                        margin-bottom: 10px;
+                        font-size: 16px;
+                        color: #000000;
+                        opacity: 0.5;
+                        line-height: 1.4;
+                        font-weight: normal;
+                        width: 100%;
+                        word-break: break-word;
+                    }
+
                     ul {
                         padding-left: 20px;
                         margin-bottom: 25px;
