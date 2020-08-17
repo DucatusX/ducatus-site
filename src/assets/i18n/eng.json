@@ -234,7 +234,7 @@
                     },
                     "INFO": {
                         "TITLE": "How can you win any of these amazing prizes?",
-                        "TEXT": "<p class=\"lottery-info-text\">Every buyer of DUC stands a chance to win. The higher your DUC purchase, the more winning chances you get.</p> <p class=\"lottery-info-text\">Once the target of {{ duc_amount }} DUC sold is reached, the 8-day countdown to the Lucky Draw Day starts. The sale of DUC continues until the countdown reaches 00:00:00:00 which will trigger the draw.</p> <p class=\"lottery-info-text\">Through a random smart contract draw, the winning hash will be determined and published on this page and the Winner will be informed by email.</p>"
+                        "TEXT": "<p class=\"lottery-info-text\">Every buyer of DUC stands a chance to win. The higher your DUC purchase, the more winning chances you get.</p> <p class=\"lottery-info-text\">Once the target of {{ duc_amount }} DUC sold is reached, the 8-day countdown to the Lucky Draw Day starts. The sale of DUC continues until the countdown reaches 00:00:00:00 which will trigger the draw.</p> <p class=\"lottery-info-text\">Through a random smart contract draw, the winning hashes will be determined and published on this page and the Winners will be informed by email.</p>"
                     }
                 }
             },
