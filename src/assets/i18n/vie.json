@@ -233,8 +233,8 @@
                         "TEXT": "Số lượng DUC"
                     },
                     "INFO": {
-                        "TITLE": "Làm thế nào để có thể sỡ hữu chiếc đồng hồ này?",
-                        "TEXT": "<p class=\"lottery-info-text\">Bất cứ người mua DUC nào cũng có khả năng chiến thắng. Mua càng nhiều DUC, càng tăng cơ hội sở hữu.</p> <p class=\"lottery-info-text\">Khi đạt đến mục tiêu {{ duc_amount }}  DUC được bán ra, 8 ngày đếm ngược cho đến cuộc rút thăm trúng thưởng sẽ bắt đầu. DUC sẽ tiếp tục được bán ra trước khi thời gian đếm ngược kết thúc.</p> <p class=\"lottery-info-text\">Thông qua rút thăm hợp đồng thông minh ngẫu nhiên, băm chiến thắng sẽ được xác định và công bố trên trang này và Người chiến thắng sẽ được thông báo qua email.</p>"
+                        "TITLE": "Làm thế nào bạn có thể giành được bất kỳ giải thưởng tuyệt vời này ?",
+                        "TEXT": "<p class=\"lottery-info-text\">Mỗi người mua ĐỨC đều có cơ hội trúng thưởng. Mua DUC càng cao, bạn càng có nhiều cơ hội trúng thưởng.</p> <p class=\"lottery-info-text\">Sau khi đạt được mục tiêu {{ duc_amount }}  ĐỨC đã bán, thời gian đếm ngược 8 ngày đến Ngày Rút thăm May mắn sẽ bắt đầu. Việc bán DUC tiếp tục cho đến khi bộ đếm ngược đến 00: 00: 00: 00 sẽ kích hoạt rút thăm.</p> <p class=\"lottery-info-text\">Qua một trận hòa đồng thông minh ngẫu nhiên, băm chiến thắng es sẽ được xác định và công bố trên trang này và người chiến thắng s sẽ được thông báo qua email.</p>"
                     }
                 }
             },

@@ -139,12 +139,15 @@ export class BuyComponent implements OnInit, OnDestroy {
 
   public lottery: Lottery = {
     name: '',
-    description: [],
     image: '',
     duc_amount: '',
     sent_duc_amount: '',
     started_at: 0,
     ended: false,
+  };
+
+  public lotteryDesc: any = {
+    description: []
   };
 
   constructor(
@@ -316,10 +319,8 @@ export class BuyComponent implements OnInit, OnDestroy {
   }
 
   private checkLotteryStatus() {
-    this.buyservice.getLottery().then((result) => {
-      this.lottery = result[0];
-
-      this.bg = this.lottery.image ? this.lottery.image : 'assets/img/sections/buy-bg.png';
+    this.buyservice.getLotteryInfo().then((result) => {
+      this.lottery = result;
 
       const percent = 100 * Number(this.lottery.sent_duc_amount) / Number(this.lottery.duc_amount);
       this.percentLottery = percent;
@@ -352,7 +353,14 @@ export class BuyComponent implements OnInit, OnDestroy {
   public acceptModalTerms() {
     window['jQuery']['cookie']('termsBuy', true);
     this.modal = false;
-    this.checkLotteryStatus();
+
+    this.buyservice.getLottery().then((result) => {
+      this.lotteryDesc = result[0];
+      this.bg = this.lotteryDesc.image ? this.lotteryDesc.image : 'assets/img/sections/buy-bg.png';
+
+      console.log(this.lotteryDesc, result, result[0])
+      this.checkLotteryStatus();
+    });
 
     this.buyservice.getRates().then((result) => {
       this.rates = result;

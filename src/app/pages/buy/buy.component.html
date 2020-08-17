@@ -24,19 +24,26 @@
 
                 <div class="lottery">
                     <div class="lottery-wrap">
-                        <span *ngIf="lottery.description && lottery.description[lang].title" class="lottery-title"
-                            [innerHTML]="lottery.description[lang].title"></span>
-                        <span *ngIf="lottery.description && lottery.description[lang].subtitle" class="lottery-subtitle"
-                            [innerHTML]="lottery.description[lang].subtitle"></span>
+                        <span *ngIf="lotteryDesc.description && lotteryDesc.description[lang].title" class="lottery-title"
+                            [innerHTML]="lotteryDesc.description[lang].title"></span>
+                        <span *ngIf="lotteryDesc.description && lotteryDesc.description[lang].subtitle" class="lottery-subtitle"
+                            [innerHTML]="lotteryDesc.description[lang].subtitle"></span>
 
-                        <ul *ngIf="lottery.description">
-                            <li *ngFor="let item of lottery.description[lang].list">{{ item }}</li>
-                        </ul>
+                        <div *ngIf="lotteryDesc.description[lang].prizes">
+                            <div *ngFor="let item of lotteryDesc.description[lang].prizes">
+                                <span *ngIf="item.description" class="lottery-prize-desc"
+                                [innerHTML]="item.description"></span>
 
-                        <div *ngIf="lottery.video" class="lottery-video">
-                            <iframe [src]="lottery.video | safe" frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                                <ul *ngIf="item.list">
+                                    <li *ngFor="let list of item.list">{{ list }}</li>
+                                </ul>
+
+                                <div *ngIf="item.video" class="lottery-video">
+                                    <iframe [src]="item.video | safe" frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="lottery-info">

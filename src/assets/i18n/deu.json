@@ -233,8 +233,8 @@
                         "TEXT": "Anzahl der DUC"
                     },
                     "INFO": {
-                        "TITLE": "Wie können Sie dieses Meisterstück besitzen?",
-                        "TEXT": "<p class=\"lottery-info-text\">Jeder Käufer DUC sichert sich eine Gewinnchance. Je höher Ihr DUC Kauf, desto mehr Gewinnchancen erhalten Sie.</p> <p class=\"lottery-info-text\">Sobald das Verkaufsziel von {{ duc_amount }} DUC erreicht ist, beginnt der 8-tägige Countdown bis zur Verlosung. Der DUC Verkauf geht solange weiter, bis der Countdown bei 00:00:00:00 aufhört, dies wird die Verlosung auslösen.</p> <p class=\"lottery-info-text\">Durch eine zufällige Verlosung eines smart contract wird der Gewinner-Hash ermittelt und auf dieser Seite veröffentlicht, und der Gewinner wird per E-Mail informiert.</p>"
+                        "TITLE": "Wie können Sie einen dieser erstaunlichen Preise gewinnen?",
+                        "TEXT": "<p class=\"lottery-info-text\">Jeder Käufer von DUC hat die Chance zu gewinnen. Je höher Ihr DUC-Kauf ist, desto mehr Gewinnchancen erhalten Sie.</p> <p class=\"lottery-info-text\">Sobald das Ziel von {{ duc_amount }} verkauften DUC erreicht ist, beginnt der 8-Tage- Countdown bis zum Lucky Draw Day. Der Verkauf von DUC wird fortgesetzt, bis der Countdown 00: 00: 00: 00 erreicht, wodurch die Ziehung ausgelöst wird.</p> <p class=\"lottery-info-text\">Durch einen zufälligen Smart Vertrag zu ziehen, der Gewinn Hash es wird bestimmt und auf dieser Seite und die Gewinner veröffentlicht s informiert werden per E-Mail.</p>"
                     }
                 }
             },
