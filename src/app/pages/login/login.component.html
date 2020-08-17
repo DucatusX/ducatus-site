@@ -13,9 +13,17 @@
       <input name="password" [(ngModel)]="password" type="password" minlength="3" id="password" required class="input"
         placeholder="Password">
       <button type="submit" class="ducatus-btn ducatus-btn-brown" [ngClass]="{ 'icon icon__loading' : formIsProgress }"
-        [disabled]="loginForm.invalid">
+        [disabled]="loginForm.invalid || captchaControl.valid || captchaControl.pristine">
         <span *ngIf="!formIsProgress">Login</span>
       </button>
+
+      <re-captcha
+        [(ngModel)]="formModel.captcha"
+        name="captcha"
+        required
+        siteKey="6LdUBMAZAAAAAFTEL4Jac7iNO24hWJuPpSyxGmL6"
+        #captchaControl="ngModel"
+      ></re-captcha>
     </form>
   </div>
   <div class="login-container" *ngIf="hasUser">

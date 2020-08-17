@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient, HttpClientXsrfModule } from '@angular/common/http';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
 
 // resolvers
 import { UserResolver } from './resolvers';
@@ -103,6 +104,8 @@ export function HttpLoaderFactory(http: HttpClient) {
       cookieName: 'csrftoken',
       headerName: 'X-CSRFToken'
     }),
+    RecaptchaModule,
+    RecaptchaFormsModule,
   ],
   providers: [
     UserResolver,
