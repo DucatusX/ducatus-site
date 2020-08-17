@@ -12,11 +12,11 @@
         <span class="lottery-info-title">{{ 'PAGE.TICKETS.TABLE.TITLE' | translate }}</span>
         <div class="lottery-info-search">
           <span class="icon icon__search"></span>
-          <input class="lottery-info-search-input" (ngModelChange)="findAddress($event)" [(ngModel)]='search' placeholder="Search hashes" type="text">
+          <input class="lottery-info-search-input" name="search" [(ngModel)]="search" placeholder="Search hashes" type="text">
         </div>
       </div>
 
-      <div *ngIf="playersPagination">
+      <div *ngIf="players">
         <div class="lottery-info-table">
           <div class="lottery-info-table-items">
             <div class="lottery-info-table-item">
@@ -27,7 +27,7 @@
           </div>
 
           
-          <div class="lottery-info-table-items" *ngFor="let item of playersPagination">
+          <div class="lottery-info-table-items" *ngFor="let item of players | filter: search | paginate: config">
             <div class="lottery-info-table-item">{{ item.tickets_amount }}</div>
             <div class="lottery-info-table-item">
               <a target="_blank"
@@ -36,11 +36,31 @@
           </div>
         </div>
 
-        <div class="lottery-info-paginaton">
-          <div class="lottery-info-paginaton-item lottery-info-paginaton-item-arrow" style="margin-right: 15px;" *ngIf="pgPage > 1" (click)="paginationSwitchRange(-1);">&#8592;</div>
-          <div class="lottery-info-paginaton-item" [ngClass]="{ 'lottery-info-paginaton-item-active': item === currentPage }" (click)="paginationSwitch(item);" *ngFor="let item of paginationCountMapUse">{{ item }}</div>
-          <div class="lottery-info-paginaton-item lottery-info-paginaton-item-arrow" style="margin-left: 15px;" *ngIf="pgPage !== pgNow" (click)="paginationSwitchRange(1);">&#8594;</div>
-        </div>
+        <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
+          <div class="lottery-info-paginaton">
+            <button class="lottery-info-paginaton-item lottery-info-paginaton-item-arrow lottery-info-paginaton-item-arrow-left" (click)="p.previous()" [disabled]="p.isFirstPage()" [class.disabled]="p.isFirstPage()">
+                <span> < </span>
+            </button>
+
+            <div class="lottery-info-paginaton-item lottery-info-paginaton-hidden-mobile" *ngFor="let page of p.pages" [class.lottery-info-paginaton-item-active]="p.getCurrent() === page.value">
+                <a (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
+                    <span>{{ page.label }}</span>
+                </a>
+                <div *ngIf="p.getCurrent() === page.value">
+                    <span>{{ page.label }}</span>
+                </div>
+            </div>
+
+            <div class="lottery-info-paginaton-item lottery-info-paginaton-hidden-desktop">
+              <b>{{ p.getCurrent() }}</b> <span>/</span>
+              {{ (p.getTotalItems()/10+1).toFixed(0) }}
+            </div>
+
+            <button class="lottery-info-paginaton-item lottery-info-paginaton-item-arrow lottery-info-paginaton-item-arrow-right" (click)="p.next()" [disabled]="p.isLastPage()" [class.disabled]="p.isLastPage()">
+                <span> > </span>
+            </button>
+          </div>
+        </pagination-template>
       </div>
 
     </div>
