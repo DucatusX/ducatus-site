@@ -23,6 +23,9 @@ export class TicketsComponent implements OnInit {
 
   public search = '';
 
+  public currentPageSave = 1;
+  public currentPageSaveState = false;
+
   public filter = false;
   public sortData = {
     tickets_amount: true,
@@ -53,10 +56,17 @@ export class TicketsComponent implements OnInit {
 
   public onPageChange(value: number) {
     this.config.currentPage = value;
+    this.startScrollTo('tickets');
   }
+
+  public startScrollTo(id: string) {
+    const el = document.getElementById(id);
+    el.scrollIntoView({behavior: 'smooth'});
+}
 
   public onPageBoundsCorrection(value: number) {
       this.config.currentPage = value;
+      console.log(value);
   }
 
   public pushItem() {
@@ -66,6 +76,21 @@ export class TicketsComponent implements OnInit {
 
   public popItem() {
       this.popped.push(this.players.pop());
+  }
+
+  public searchChange(event: string) {
+
+    if (event !== '' && !this.currentPageSaveState) {
+      this.currentPageSave = this.config.currentPage;
+      this.currentPageSaveState = true;
+    }
+
+    if (event !== '') {
+      this.config.currentPage = 1;
+    } else {
+      this.config.currentPage = this.currentPageSave;
+      this.currentPageSaveState = false;
+    }
   }
 
   public sort(type: string) {
