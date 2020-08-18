@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 
 // plugins
@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient, HttpClientXsrfModule } from '@angular/common/http';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
 
 // resolvers
 import { UserResolver } from './resolvers';
@@ -103,6 +104,8 @@ export function HttpLoaderFactory(http: HttpClient) {
       cookieName: 'csrftoken',
       headerName: 'X-CSRFToken'
     }),
+    RecaptchaModule,
+    RecaptchaFormsModule,
   ],
   providers: [
     UserResolver,
