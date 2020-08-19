@@ -81,35 +81,8 @@
             <span class="span__line-section"></span>
         </div>
         <div class="section-infoblock-items-table">
-            <div class="section-infoblock-item-cell">
-                <span [attr.data-year]="'PAGE.ABOUT.MILESTONES.LIST.YEAR_10' | translate" class="section-infoblock-item-cell-text" [innerHTML]="'PAGE.ABOUT.MILESTONES.LIST.TEXT_10' | translate"></span>
-            </div>
-            <div class="section-infoblock-item-cell">
-                <span [attr.data-year]="'PAGE.ABOUT.MILESTONES.LIST.YEAR_9' | translate" class="section-infoblock-item-cell-text" [innerHTML]="'PAGE.ABOUT.MILESTONES.LIST.TEXT_9' | translate"></span>
-            </div>
-            <div class="section-infoblock-item-cell">
-                <span [attr.data-year]="'PAGE.ABOUT.MILESTONES.LIST.YEAR_8' | translate" class="section-infoblock-item-cell-text" [innerHTML]="'PAGE.ABOUT.MILESTONES.LIST.TEXT_8' | translate"></span>
-            </div>
-            <div class="section-infoblock-item-cell">
-                <span [attr.data-year]="'PAGE.ABOUT.MILESTONES.LIST.YEAR_7' | translate" class="section-infoblock-item-cell-text" [innerHTML]="'PAGE.ABOUT.MILESTONES.LIST.TEXT_7' | translate"></span>
-            </div>
-            <div class="section-infoblock-item-cell">
-                <span [attr.data-year]="'PAGE.ABOUT.MILESTONES.LIST.YEAR_6' | translate" class="section-infoblock-item-cell-text" [innerHTML]="'PAGE.ABOUT.MILESTONES.LIST.TEXT_6' | translate"></span>
-            </div>
-            <div class="section-infoblock-item-cell">
-                <span [attr.data-year]="'PAGE.ABOUT.MILESTONES.LIST.YEAR_5' | translate" class="section-infoblock-item-cell-text" [innerHTML]="'PAGE.ABOUT.MILESTONES.LIST.TEXT_5' | translate"></span>
-            </div>
-            <div class="section-infoblock-item-cell">
-                <span [attr.data-year]="'PAGE.ABOUT.MILESTONES.LIST.YEAR_4' | translate" class="section-infoblock-item-cell-text" [innerHTML]="'PAGE.ABOUT.MILESTONES.LIST.TEXT_4' | translate"></span>
-            </div>
-            <div class="section-infoblock-item-cell">
-                <span [attr.data-year]="'PAGE.ABOUT.MILESTONES.LIST.YEAR_3' | translate" class="section-infoblock-item-cell-text" [innerHTML]="'PAGE.ABOUT.MILESTONES.LIST.TEXT_3' | translate"></span>
-            </div>
-            <div class="section-infoblock-item-cell">
-                <span [attr.data-year]="'PAGE.ABOUT.MILESTONES.LIST.YEAR_2' | translate" class="section-infoblock-item-cell-text" [innerHTML]="'PAGE.ABOUT.MILESTONES.LIST.TEXT_2' | translate"></span>
-            </div>
-            <div class="section-infoblock-item-cell">
-                <span [attr.data-year]="'PAGE.ABOUT.MILESTONES.LIST.YEAR_1' | translate" class="section-infoblock-item-cell-text" [innerHTML]="'PAGE.ABOUT.MILESTONES.LIST.TEXT_1' | translate"></span>
+            <div class="section-infoblock-item-cell" *ngFor="let item of milestinesData">
+                <span [attr.data-year]="'PAGE.ABOUT.MILESTONES.LIST.YEAR_' + item | translate" class="section-infoblock-item-cell-text" [innerHTML]="'PAGE.ABOUT.MILESTONES.LIST.TEXT_' + item | translate"></span>
             </div>
         </div>
     </div>
