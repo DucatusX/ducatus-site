@@ -4,36 +4,15 @@
         <div class="section-header-slider">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="section-header-wrap section-header-wrap-desctop" style="background-image: url(assets/img/slide-1.png);"></div>
-                        <div class="section-header-wrap section-header-wrap-mobile" style="background-image: url(assets/img/slide-1-mob.png);"></div>
+
+                    <div class="swiper-slide" *ngFor="let slide of slider">
+                        <div class="section-header-wrap section-header-wrap-desctop" [style.background-image]="'url(assets/img/' + slide[lang].image + ')'"></div>
+                        <div class="section-header-wrap section-header-wrap-mobile" [style.background-image]="'url(assets/img/' + slide[lang].image_mob + ')'"></div>
                         <div class="container-slider">
                             <div class="slider-item">
-                                <h2 class="h2__slider-title" [innerHTML]="'PAGE.MAIN.SLIDER.ONE.TITLE' | translate"></h2>
-                                <p class="p__slider-item" [innerHTML]="'PAGE.MAIN.SLIDER.ONE.TEXT' | translate"></p>
-                                <a routerLink="assets/downloads/pdf/ducatus-coin-white-paper.pdf" target="_blank" class="button button__transparent-white">{{ 'PAGE.MAIN.SLIDER.ONE.BUTTON' | translate }}</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="section-header-wrap section-header-wrap-desctop" style="background-image: url(assets/img/slide-2.png);"></div>
-                        <div class="section-header-wrap section-header-wrap-mobile" style="background-image: url(assets/img/slide-2-mob.png);"></div>
-                        <div class="container-slider">
-                            <div class="slider-item">
-                                <h2 class="h2__slider-title" [innerHTML]="'PAGE.MAIN.SLIDER.TWO.TITLE' | translate"></h2>
-                                <p class="p__slider-item" [innerHTML]="'PAGE.MAIN.SLIDER.TWO.TEXT' | translate"></p>
-                                <a routerLink="assets/downloads/pdf/ducatus-coin-white-paper.pdf" target="_blank" class="button button__transparent-white">{{ 'PAGE.MAIN.SLIDER.TWO.BUTTON' | translate }}</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="section-header-wrap section-header-wrap-desctop" style="background-image: url(assets/img/slide-3.jpg);"></div>
-                        <div class="section-header-wrap section-header-wrap-mobile" style="background-image: url(assets/img/slide-3-mob.png);"></div>
-                        <div class="container-slider">
-                            <div class="slider-item">
-                                <h2 class="h2__slider-title" [innerHTML]="'PAGE.MAIN.SLIDER.THREE.TITLE' | translate"></h2>
-                                <p class="p__slider-item" [innerHTML]="'PAGE.MAIN.SLIDER.THREE.TEXT' | translate"></p>
-                                <a routerLink="assets/downloads/pdf/ducatus-coin-white-paper.pdf" target="_blank" class="button button__transparent-white">{{ 'PAGE.MAIN.SLIDER.THREE.BUTTON' | translate }}</a>
+                                <h2 class="h2__slider-title" [innerHTML]="slide[lang].title"></h2>
+                                <p class="p__slider-item" [innerHTML]="slide[lang].text"></p>
+                                <a [routerLink]="'assets/downloads/pdf/' + slide[lang].file" target="_blank" class="button button__transparent-white">{{ slide[lang].button }}</a>
                             </div>
                         </div>
                     </div>
