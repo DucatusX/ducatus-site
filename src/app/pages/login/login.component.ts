@@ -4,6 +4,9 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserInterface } from 'src/app/service/user/user.interface';
 
+export interface FormModel {
+  captcha?: string;
+}
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -25,6 +28,8 @@ export class LoginComponent implements OnInit {
     non_field_errors?: [string];
   } = {};
 
+  public formModel: FormModel = {};
+
   constructor(
     private userService: UserService,
     private router: Router
@@ -41,10 +46,7 @@ export class LoginComponent implements OnInit {
   }
 
   public sendLoginForm(form: NgForm) {
-    console.log(form, form.value);
-
     if (form.invalid) {
-      console.warn('form is not submitted');
       return;
     }
 
@@ -87,7 +89,6 @@ export class LoginComponent implements OnInit {
     }).finally(() => {
       this.logoutIsProgress = false;
       this.hasUser = false;
-      // window.location.reload();
     });
   }
 }

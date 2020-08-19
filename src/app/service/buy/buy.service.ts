@@ -15,12 +15,16 @@ export class BuyService {
     return this.httpService.get(`lotteries/`).toPromise();
   }
 
+  public getLotteryInfo() {
+    return this.httpService.get(`get_lotteries_info/`).toPromise();
+  }
+
   public getLotteryPlayers() {
     return this.httpService.get(`lotteries_players/`).toPromise();
   }
 
-  public getValidateDucatusAddress(duc_address: string) {
-    return this.httpService.post(`validate_ducatus_address/`, { address: duc_address }).toPromise();
+  public getValidateDucatusAddress(address: string) {
+    return this.httpService.post(`validate_ducatus_address/`, { address }).toPromise();
   }
 
   public getExchange(address: string, currency: string, toEmail: string) {

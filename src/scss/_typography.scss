@@ -554,6 +554,27 @@ li {
             background-image: url('assets/img/icons/copy.svg');
         }
     }
+
+    &__sort-dash-up {
+        @include before-img(block, 31px, 19px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/sort-dash-up.svg');
+        }
+    }
+
+    &__sort-dash-down {
+        @include before-img(block, 31px, 19px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/sort-dash-down.svg');
+        }
+    }
+
+    &__search {
+        @include before-img(block, 14px, 14px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/search.svg');
+        }
+    }
 }
 
 .ol-a-type {

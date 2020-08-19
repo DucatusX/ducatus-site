@@ -1,6 +1,6 @@
 {
   "name": "ducatus-site",
-  "version": "1.4.9",
+  "version": "1.5.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json --host localducatus.mywish.io --port 4224 --disableHostCheck",
@@ -30,7 +30,9 @@
     "intl-tel-input": "^16.1.0",
     "jquery": "^3.5.0",
     "jquery.cookie": "^1.4.1",
+    "ng-recaptcha": "^5.0.0",
     "ng2-tel-input": "^2.3.0",
+    "ngx-pagination": "^5.0.0",
     "ngx-papaparse": "^4.0.4",
     "ngx-swiper-wrapper": "^9.0.1",
     "node": "^14.4.0",

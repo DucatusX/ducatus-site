@@ -33,9 +33,9 @@
                 },
                 "FOUR": {
                     "TITLE": "Ducatus Biz",
-                    "LINK_1": "Ducatus Network",
+                    "LINK_1": "Mạng lưới Ducatus",
                     "LINK_2": "D-MOB",
-                    "LINK_3": "Ducatus Merchants"
+                    "LINK_3": "Thương gia Ducatus"
                 }
             },
             "LEGAL": "Legal",
@@ -141,10 +141,20 @@
                 "TEXT_2": "Mã nguồn"
             },
             "MILESTONES": {
-                "TITLE": "Các cột mốc của Ducatus Coin",
+                "TITLE": "Các cột mốc",
                 "LIST": {
-                    "YEAR_10": "Tháng 1 năm 2020",
-                    "TEXT_10": "<b>Thẻ Ducatus Tangem đã được tung ra. </b>",
+                    "YEAR_15": "Tháng 6 năm 2020",
+                    "TEXT_15": "<b>Mua xu Ducatus bằng Bitcoin, Ethereum và thẻ tín dụng đã trở nên khả thi thông qua Ví Ducatus được cập nhật</b>",
+                    "YEAR_14": "Tháng 4 năm 2020",
+                    "TEXT_14": "Một nhánh của chuỗi khối Ethereum, DucatusX được tạo ra để hỗ trợ cả giao dịch và tạo hợp đồng thông minh",
+                    "YEAR_13": "Tháng 3 năm 2020",
+                    "TEXT_13": "Ducatus Coins và vàng vật chất (ở dạng tiền xu và thanh) đã được đăng ký trên blockchain và được cung cấp dưới dạng một gói duy nhất thông qua Remus Gold",
+                    "YEAR_12": "Tháng 2 năm 2020",
+                    "TEXT_12": "Mua Ducatus Coins trực tuyến bắt đầu qua ducatuscoins.com",
+                    "YEAR_11": "Tháng 1 năm 2020",
+                    "TEXT_11": "Ví Ducatus đa tiền tệ đã được ra mắt",
+                    "YEAR_10": "Tháng 12 năm 2019",
+                    "TEXT_10": "1 tỷ Ducatus Coins đã được bán kể từ khi được giới thiệu vào năm 2017",
                     "YEAR_9": "Tháng 10 năm 2019",
                     "TEXT_9": "Ví Ducatus đa tiền tệ đã được ra mắt. ",
                     "YEAR_8": "Tháng 1 năm 2019",
@@ -233,8 +243,8 @@
                         "TEXT": "Số lượng DUC"
                     },
                     "INFO": {
-                        "TITLE": "Làm thế nào để có thể sỡ hữu chiếc đồng hồ này?",
-                        "TEXT": "<p class=\"lottery-info-text\">Bất cứ người mua DUC nào cũng có khả năng chiến thắng. Mua càng nhiều DUC, càng tăng cơ hội sở hữu.</p> <p class=\"lottery-info-text\">Khi đạt đến mục tiêu {{ duc_amount }}  DUC được bán ra, 8 ngày đếm ngược cho đến cuộc rút thăm trúng thưởng sẽ bắt đầu. DUC sẽ tiếp tục được bán ra trước khi thời gian đếm ngược kết thúc.</p> <p class=\"lottery-info-text\">Thông qua rút thăm hợp đồng thông minh ngẫu nhiên, băm chiến thắng sẽ được xác định và công bố trên trang này và Người chiến thắng sẽ được thông báo qua email.</p>"
+                        "TITLE": "Làm thế nào bạn có thể giành được bất kỳ giải thưởng tuyệt vời này ?",
+                        "TEXT": "<p class=\"lottery-info-text\">Mỗi người mua ĐỨC đều có cơ hội trúng thưởng. Mua DUC càng cao, bạn càng có nhiều cơ hội trúng thưởng.</p> <p class=\"lottery-info-text\">Sau khi đạt được mục tiêu {{ duc_amount }}  ĐỨC đã bán, thời gian đếm ngược 8 ngày đến Ngày Rút thăm May mắn sẽ bắt đầu. Việc bán DUC tiếp tục cho đến khi bộ đếm ngược đến 00: 00: 00: 00 sẽ kích hoạt rút thăm.</p> <p class=\"lottery-info-text\">Qua một trận hòa đồng thông minh ngẫu nhiên, băm chiến thắng es sẽ được xác định và công bố trên trang này và người chiến thắng s sẽ được thông báo qua email.</p>"
                     }
                 }
             },
@@ -350,38 +360,38 @@
             "TITLE": "DucatusX",
             "CONTENT": {
                 "TITLE": "Giới thiệu DucatusX",
-                "TEXT": "DucatusX là một fork của blockchain Ethereum, do đó nó hỗ trợ cả giao dịch và tạo hợp đồng thông minh. Không giống như Ethereum, DucatusX sử dụng thuật toán đồng thuận Proof of Authority (bằng chứng thẩm quyền) giúp giảm chi phí bảo trì. Trong tương lai, nó được xem xét để chuyển sang sử dụng thuật toán Proof of Stake (bằng chứng cổ phần), điều này có thể khiến người dùng tự tin hơn khi chọn DucatusX cho các dự án của họ.  Các khối được sản xuất thường xuyên bởi 3 nút bảo mật đã được chứng minh giúp chi phí rẻ hơn và tốc độ sản xuất khối nhanh hơn."
+                "TEXT": "Được tạo ra để hỗ trợ các giao dịch ngang hàng, cũng như tạo ra các hợp đồng thông minh, DucatusX là một nhánh của chuỗi khối Ethereum. Nhưng không giống như Ethereum, DucatusX sử dụng thuật toán đồng thuận “Proof of Authority” giúp giảm đáng kể chi phí bảo trì. Trong tương lai, dự kiến sẽ chuyển sang “Proof of Stake”, giúp người dùng tin tưởng hơn nữa khi lựa chọn DucatusX cho các dự án của họ. Trên DucatusX, các khối được sản xuất thường xuyên bởi 3 nút đã được chứng minh và bảo mật, dẫn đến chi phí ổn định và tốc độ sản xuất khối đáng tin cậy."
             },
             "BLOCK_1": {
                 "TITLE": "Tại sao DucX",
-                "TEXT": "Một cộng đồng hỗ trợ tích cực",
-                "TEXT_1": "Chỉ những dự án uy tín,<br> Không dành cho token lừa đảo",
-                "TEXT_2": "Chi phí thấp,<br> Thưởng cổ phần",
-                "TEXT_3": "Tổng số DucX cố định tối đa 777.874.204"
+                "TEXT": "Hỗ trợ cộng đồng mạnh mẽ",
+                "TEXT_1": "Các dự án đáng tin cậy,<br> không cho phép mã thông báo lừa đảo",
+                "TEXT_2": "Phí thấp hơn,<br> phần thưởng đặt cược",
+                "TEXT_3": "Tổng số DucX cố định tối đa 777,874.204"
             },
             "BLOCK_2": {
                 "TITLE": "Tài nguyên DucatusX",
-                "TEXT": "Một cộng đồng hỗ trợ tích cực",
+                "TEXT": "Hỗ trợ cộng đồng mạnh mẽ",
                 "TEXT_1": "Quản lý DucatusX",
-                "TEXT_2": "Bạn có thể dùng ví Ducatus để quản lý DucatusX",
-                "TEXT_3": "Đổi Ducatus sang DucatusX",
-                "TEXT_4": "DucatusX có thể được chuyển đổi từ Ducatus (DUC) và ngược lại theo tỷ lệ cố định 1:10 tại <a href='https://www.ducatuscoins.com/buy'>https://www.ducatuscoins.com/buy</a>",
+                "TEXT_2": "Sử dụng Ví Ducatus của chúng tôi để quản lý DucatusX",
+                "TEXT_3": "Chuyển đổi Ducatus sang DucatusX",
+                "TEXT_4": "DucatusX có thể được chuyển đổi từ và thành Ducatus (DUC) theo tỷ lệ cố định 1:10 trên <a href='https://www.ducatuscoins.com/buy'>https://www.ducatuscoins.com/buy</a>",
                 "TEXT_5": "Tạo token DucatusX",
-                "TEXT_6": "DucatusX hỗ trợ các hợp đồng thông minh và cho phép bạn token hóa tài sản của mình.  Điều này khá đơn giản, chỉ cần truy cập <a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a> và tạo token có thể được bán thông qua sàn <a href='https://www.aaplussg.com/'>AA + exchange</a> sau khi được chấp nhận niêm yết.",
-                "TEXT_7": "Nó cho phép bạn tạo token với số lượng phù hợp.",
-                "TEXT_8": "Dự trữ/Đóng băng token tại các địa chỉ cụ thể",
-                "TEXT_9": "Nếu bạn muốn tạo hợp đồng Crowdsale thì token đã tạo có thể được sử dụng trong đó mà không cần tạo hợp đồng mới",
-                "TEXT_10": "Bạn tự phân phối token",
-                "TEXT_11": "Tạo hợp đồng Crowdsale",
-                "TEXT_12": "Để thu hút nhà đầu tư vào dự án của bạn, bạn có thể tạo hợp đồng token và bán nó thông qua crowdsale.  Để nhận được token dự án, người mua phải gửi DucX cho bạn, sau đó bạn có thể dùng nó để chi phí cho dự án <br><a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a>",
-                "TEXT_13": "Bao gồm chức năng hợp đồng token",
-                "TEXT_14": "Tự động phân phối token trong khi đầu tư",
+                "TEXT_6": "DucatusX hỗ trợ các hợp đồng thông minh và cho phép bạn mã hóa tài sản của mình. Quá trình này rất đơn giản, tất cả những gì bạn phải làm là làm theo các bước trên <a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a>. Mã thông báo được tạo trên DucatusX có thể được bán thông qua AA + sau khi được chấp nhận niêm yết.",
+                "TEXT_7": "Tạo số lượng mã thông báo phù hợp thông qua DucatusX.",
+                "TEXT_8": "Dự trữ/đóng băng mã thông báo tại các địa chỉ cụ thể.",
+                "TEXT_9": "Thực hiện hợp đồng crowdsale bằng cách sử dụng mã thông báo đã tạo của bạn, không cần tạo mới.",
+                "TEXT_10": "Bạn có thể phân phối mã thông báo của riêng bạn.",
+                "TEXT_11": "Tạo hợp đồng crowdsale",
+                "TEXT_12": "Để thu hút các khoản đầu tư vào dự án của mình, bạn có thể tạo một hợp đồng mã thông báo và bán nó thông qua crowdsale. Để nhận được mã thông báo dự án, người mua sẽ cần gửi cho bạn DucX, sau đó bạn có thể chi tiêu cho nhu cầu của dự án. <br><a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a>",
+                "TEXT_13": "Bao gồm chức năng hợp đồng mã thông báo",
+                "TEXT_14": "Tự động phân phối mã thông báo trong khi đầu tư",
                 "TEXT_15": "Đặt ngày bắt đầu và ngày kết thúc cho ICO",
                 "TEXT_16": "Thay đổi ngày của ICO",
-                "TEXT_17": "Bạn có thể chỉ định tỷ lệ token",
-                "TEXT_18": "Chương trình thưởng (thời gian, số lượng đầu tư,...)",
+                "TEXT_17": "Chỉ định tỷ lệ mã thông báo",
+                "TEXT_18": "Các chương trình tiền thưởng (tức là thời gian, số tiền đầu tư, v.v.)",
                 "TEXT_19": "Danh sách trắng",
-                "TEXT_20": "Đầu tư Tối thiểu Tối đa"
+                "TEXT_20": "Đầu tư tối thiểu / tối đa"
             },
             "BLOCK_3": {
                 "TITLE": "Thông số kỹ thuật (DucatusX vs Ethereum)",

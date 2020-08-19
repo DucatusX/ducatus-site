@@ -216,5 +216,7 @@ export class VoucherComponent implements OnInit {
         return sortVoucher1 < sortVoucher2 ? 1 : -1;
       }
     });
+
+    console.log(this.vouchers);
   }
 }

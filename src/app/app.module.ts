@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 
 // plugins
@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient, HttpClientXsrfModule } from '@angular/common/http';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 // resolvers
 import { UserResolver } from './resolvers';
@@ -44,6 +46,7 @@ import { CountdownComponent } from './components/countdown/countdown.component';
 
 // pipes
 import { SafePipe } from './pipe/safeUrl.pipe';
+import { FilterPipe } from './pipe/filter.pipe';
 import { GoogleAnalyticsService } from './service/gtag/google-analytics.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -75,6 +78,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
     // pipes
     SafePipe,
+    FilterPipe,
     CountdownComponent
   ],
   imports: [
@@ -103,6 +107,9 @@ export function HttpLoaderFactory(http: HttpClient) {
       cookieName: 'csrftoken',
       headerName: 'X-CSRFToken'
     }),
+    RecaptchaModule,
+    RecaptchaFormsModule,
+    NgxPaginationModule
   ],
   providers: [
     UserResolver,

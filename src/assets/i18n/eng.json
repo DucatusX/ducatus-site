@@ -141,10 +141,20 @@
                 "TEXT_2": "Source Code"
             },
             "MILESTONES": {
-                "TITLE": "Ducatus Coin Milestones",
+                "TITLE": "Milestones",
                 "LIST": {
-                    "YEAR_10": "January 2020",
-                    "TEXT_10": "<b>The Ducatus Tangem Card was launched.</b>",
+                    "YEAR_15": "June 2020",
+                    "TEXT_15": "<b>Buying Ducatus Coins with Bitcoin, Ethereum and credit card became possible through the updated Ducatus Wallet</b>",
+                    "YEAR_14": "April 2020",
+                    "TEXT_14": "A fork of the Ethereum blockchain, DucatusX was created to support both transactions and the creation of smart contracts",
+                    "YEAR_13": "March 2020",
+                    "TEXT_13": "Ducatus Coins and physical gold (in the form of coins and bars) were registered on the blockchain and offered as a single package through Remus Gold",
+                    "YEAR_12": "February 2020",
+                    "TEXT_12": "Online purchase of Ducatus Coins started via ducatuscoins.com",
+                    "YEAR_11": "January 2020",
+                    "TEXT_11": "The multi-currency Ducatus Wallet was launched ",
+                    "YEAR_10": "December 2019",
+                    "TEXT_10": "1 Billion Ducatus Coins have been sold since its introduction in 2017",
                     "YEAR_9": "October 2019",
                     "TEXT_9": "The multi-currency Ducatus Wallet was launched.",
                     "YEAR_8": "January 2019",
@@ -233,8 +243,8 @@
                         "TEXT": "Number of DUC"
                     },
                     "INFO": {
-                        "TITLE": "How can you own this timepiece?",
-                        "TEXT": "<p class=\"lottery-info-text\">Every buyer of DUC stands a chance to win. The higher your DUC purchase, the more winning chances you get.</p> <p class=\"lottery-info-text\">Once the target of {{ duc_amount }} DUC sold is reached, the 8-day countdown to the Lucky Draw Day starts. The sale of DUC continues until the countdown reaches 00:00:00:00 which will trigger the draw.</p> <p class=\"lottery-info-text\">Through a random smart contract draw, the winning hash will be determined and published on this page and the Winner will be informed by email.</p>"
+                        "TITLE": "How can you win any of these amazing prizes?",
+                        "TEXT": "<p class=\"lottery-info-text\">Every buyer of DUC stands a chance to win. The higher your DUC purchase, the more winning chances you get.</p> <p class=\"lottery-info-text\">Once the target of {{ duc_amount }} DUC sold is reached, the 8-day countdown to the Lucky Draw Day starts. The sale of DUC continues until the countdown reaches 00:00:00:00 which will trigger the draw.</p> <p class=\"lottery-info-text\">Through a random smart contract draw, the winning hashes will be determined and published on this page and the Winners will be informed by email.</p>"
                     }
                 }
             },
@@ -350,38 +360,38 @@
             "TITLE": "DucatusX",
             "CONTENT": {
                 "TITLE": "About DucatusX",
-                "TEXT": "DucatusX is a fork of the Ethereum blockchain, therefore it supports both transactions and creations of smart contracts. Unlike Ethereum, DucatusX uses a “Proof of Authority” consensus algorithm which reduces the maintenance cost. In the future, it is considered to switch to “Proof of Stake” which may give users even more confidence in choosing DucatusX for their projects. The blocks are produced regularly by 3 proven secured nodes resulting in stable cost and speed of block production."
+                "TEXT": "Created to support peer-to-peer transactions, as well as the creation of smart contracts, DucatusX is a fork of the Ethereum blockchain. But unlike Ethereum, DucatusX uses a “Proof of Authority” consensus algorithm which significantly reduces its maintenance cost. In the future, it is envisioned to switch to “Proof of Stake”, giving users even more confidence in choosing DucatusX for their projects. On DucatusX, the blocks are produced regularly by 3 proven and secured nodes, resulting in stable cost and reliable speed of block production."
             },
             "BLOCK_1": {
                 "TITLE": "Why DucX",
-                "TEXT": "Strong supporting community",
-                "TEXT_1": "Only trusted projects,<br> no scam token",
+                "TEXT": "Strong community support",
+                "TEXT_1": "Trustworthy projects, no scam tokens allowed",
                 "TEXT_2": "Lower fees,<br> staking rewards",
                 "TEXT_3": "Total number of DucX fixed at maximum 777.874.204"
             },
             "BLOCK_2": {
                 "TITLE": "DucatusX Resources",
-                "TEXT": "Strong supporting community",
+                "TEXT": "Strong community support",
                 "TEXT_1": "Manage DucatusX",
-                "TEXT_2": "To manage DucatusX you can use our Ducatus Wallet",
+                "TEXT_2": "Use our Ducatus Wallet to manage DucatusX",
                 "TEXT_3": "Convert Ducatus to DucatusX",
                 "TEXT_4": "DucatusX can be converted from and into Ducatus (DUC) by a fixed ratio of 1:10 on <a href='https://www.ducatuscoins.com/buy'>https://www.ducatuscoins.com/buy</a>",
                 "TEXT_5": "Create DucatusX token",
-                "TEXT_6": "DucatusX supports smart contracts and allows you to tokenize your assets. It's quite simple, just visit the <a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a> and create a token that may be sold throught the <a href='https://www.aaplussg.com/'>AA + exchange</a> after being accepted for listing.",
-                "TEXT_7": "It allows you to create tokens in the right amount.",
-                "TEXT_8": "Reserve/Freeze tokens at specific addresses",
-                "TEXT_9": "If you want to make a Crowdsale contract then created token can be used in it without creating a new one",
-                "TEXT_10": "You distribute the token on your own",
+                "TEXT_6": "DucatusX supports smart contracts and allows you to tokenize your assets. The process is simple, all you have to do is to follow the steps on <a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a>. A token created on DucatusX may be sold through AA+ after being accepted for listing.",
+                "TEXT_7": "Create the right amount of tokens through DucatusX.",
+                "TEXT_8": "Reserve/Freeze tokens at specific addresses.",
+                "TEXT_9": "Make a crowdsale contract using your created token, no need to create a new one.",
+                "TEXT_10": "You can distribute tokens on your own.",
                 "TEXT_11": "Create crowdsale contract",
-                "TEXT_12": "To attract investment into your project, you can create a token contract and sell it through a crowdsale. To get project tokens, buyers will need to send you DucX, which you can then spend on the project needs. <br><a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a>",
-                "TEXT_13": "Includes Token contracts functionality",
-                "TEXT_14": "Automatic distribution of the token during an investment",
-                "TEXT_15": "Setting the start and end dates for the ICO",
-                "TEXT_16": "Changing dates of ICO",
-                "TEXT_17": "You can specify a token rate",
-                "TEXT_18": "Bonus programs (time, amount of investments, etc.)",
+                "TEXT_12": "To attract investments to your project, you can create a token contract and sell it through a crowdsale. To get project tokens, buyers will need to send you DucX, which you can then spend for the project’s needs. <br><a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a>",
+                "TEXT_13": "Includes token contracts functionality",
+                "TEXT_14": "Automatic distribution of tokens during an investment",
+                "TEXT_15": "Set the start and end dates for the ICO",
+                "TEXT_16": "Change dates of ICO",
+                "TEXT_17": "Specify a token rate",
+                "TEXT_18": "Bonus programmes (i.e. time, amount of investments, etc.)",
                 "TEXT_19": "White list",
-                "TEXT_20": "Min Max investment"
+                "TEXT_20": "Min / Max investment"
             },
             "BLOCK_3": {
                 "TITLE": "Tech Spec (DucatusX vs Ethereum)",

@@ -16,6 +16,14 @@
         [disabled]="loginForm.invalid">
         <span *ngIf="!formIsProgress">Login</span>
       </button>
+
+      <re-captcha
+        [(ngModel)]="formModel.captcha"
+        name="captcha"
+        required
+        siteKey="6LeAEsAZAAAAADuQ1rmOj8XosljmflXC6T7JcALs"
+        #captchaControl="ngModel"
+      ></re-captcha>
     </form>
   </div>
   <div class="login-container" *ngIf="hasUser">
