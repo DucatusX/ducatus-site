@@ -141,10 +141,20 @@
                 "TEXT_2": "Codice sorgente"
             },
             "MILESTONES": {
-                "TITLE": "Pietre miliari della moneta Ducatus",
+                "TITLE": "Pietre miliari",
                 "LIST": {
-                    "YEAR_10": "Gennaio 2020",
-                    "TEXT_10": "<b>È stata lanciata la Ducatus Tangem Card.</b>",
+                    "YEAR_15": "Giugno 2020",
+                    "TEXT_15": "<b>L'acquisto di monete Ducatus con Bitcoin, Ethereum e carta di credito è diventato possibile attraverso il Portafoglio Ducatus aggiornato</b>",
+                    "YEAR_14": "Aprile 2020",
+                    "TEXT_14": "Un fork della blockchain di Ethereum, DucatusX è stato creato per supportare sia le transazioni che la creazione di contratti intelligenti",
+                    "YEAR_13": "Marzo 2020",
+                    "TEXT_13": "Le monete Ducatus e l'oro fisico (sotto forma di monete e lingotti) sono stati registrati sulla blockchain e offerti come un unico pacchetto tramite Remus Gold",
+                    "YEAR_12": "Febbraio 2020",
+                    "TEXT_12": "L'acquisto online di monete Ducatus è iniziato tramite ducatuscoins.com",
+                    "YEAR_11": "Gennaio 2020",
+                    "TEXT_11": "Viene lanciato Portafoglio Ducatus multivaluta",
+                    "YEAR_10": "Dicembre 2019",
+                    "TEXT_10": "1 miliardo di monete Ducatus sono state vendute dalla sua introduzione nel 2017",
                     "YEAR_9": "Ottobre 2019",
                     "TEXT_9": "È stato lanciato il Portafoglio Ducatus multivaluta.",
                     "YEAR_8": "Gennaio 2019",

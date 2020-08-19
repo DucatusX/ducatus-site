@@ -141,10 +141,20 @@
                 "TEXT_2": "Mã nguồn"
             },
             "MILESTONES": {
-                "TITLE": "Các cột mốc của Ducatus Coin",
+                "TITLE": "Các cột mốc",
                 "LIST": {
-                    "YEAR_10": "Tháng 1 năm 2020",
-                    "TEXT_10": "<b>Thẻ Ducatus Tangem đã được tung ra. </b>",
+                    "YEAR_15": "Tháng 6 năm 2020",
+                    "TEXT_15": "<b>Mua xu Ducatus bằng Bitcoin, Ethereum và thẻ tín dụng đã trở nên khả thi thông qua Ví Ducatus được cập nhật</b>",
+                    "YEAR_14": "Tháng 4 năm 2020",
+                    "TEXT_14": "Một nhánh của chuỗi khối Ethereum, DucatusX được tạo ra để hỗ trợ cả giao dịch và tạo hợp đồng thông minh",
+                    "YEAR_13": "Tháng 3 năm 2020",
+                    "TEXT_13": "Ducatus Coins và vàng vật chất (ở dạng tiền xu và thanh) đã được đăng ký trên blockchain và được cung cấp dưới dạng một gói duy nhất thông qua Remus Gold",
+                    "YEAR_12": "Tháng 2 năm 2020",
+                    "TEXT_12": "Mua Ducatus Coins trực tuyến bắt đầu qua ducatuscoins.com",
+                    "YEAR_11": "Tháng 1 năm 2020",
+                    "TEXT_11": "Ví Ducatus đa tiền tệ đã được ra mắt",
+                    "YEAR_10": "Tháng 12 năm 2019",
+                    "TEXT_10": "1 tỷ Ducatus Coins đã được bán kể từ khi được giới thiệu vào năm 2017",
                     "YEAR_9": "Tháng 10 năm 2019",
                     "TEXT_9": "Ví Ducatus đa tiền tệ đã được ra mắt. ",
                     "YEAR_8": "Tháng 1 năm 2019",

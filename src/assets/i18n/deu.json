@@ -141,10 +141,20 @@
                 "TEXT_2": "Quellcode"
             },
             "MILESTONES": {
-                "TITLE": "Ducatus Coin Meilensteine",
+                "TITLE": "Meilensteine",
                 "LIST": {
-                    "YEAR_10": "Januar 2020",
-                    "TEXT_10": "<b>Die Ducatus Tangem Card wird präsentiert und eingeführt.</b>",
+                    "YEAR_15": "Juni 2020",
+                    "TEXT_15": "<b>Der Kauf von Ducatus-Münzen mit Bitcoin, Ethereum und Kreditkarte wurde über die aktualisierte Ducatus Brieftasche möglich</b>",
+                    "YEAR_14": "April 2020",
+                    "TEXT_14": "DucatusX ist eine Abzweigung der Ethereum-Blockchain und wurde entwickelt, um sowohl Transaktionen als auch die Erstellung intelligenter Verträge zu unterstützen",
+                    "YEAR_13": "März 2020",
+                    "TEXT_13": "Ducatus-Münzen und physisches Gold (in Form von Münzen und Barren) wurden in der Blockchain registriert und über Remus Gold als Einzelpaket angeboten",
+                    "YEAR_12": "Februar 2020",
+                    "TEXT_12": "Der Online-Kauf von Ducatus-Münzen begann über ducatuscoins.com",
+                    "YEAR_11": "Januar 2020",
+                    "TEXT_11": "Das Ducatus Brieftasche mit mehreren Währungen wurde eingeführt",
+                    "YEAR_10": "Dezember 2019",
+                    "TEXT_10": "Seit seiner Einführung im Jahr 2017 wurden 1 Milliarde Ducatus-Münzen verkauft",
                     "YEAR_9": "Oktober 2019",
                     "TEXT_9": "Das Ducatus Wallet für mit Mehrfach-Währungen wird präsentiert und eingeführt.",
                     "YEAR_8": "Januar 2019",
