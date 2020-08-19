@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BuyService } from '../../../service/buy/buy.service';
 import { PaginationInstance } from 'ngx-pagination/dist/pagination-instance';
 
