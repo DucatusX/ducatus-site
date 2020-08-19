@@ -81,7 +81,7 @@
             <span class="span__line-section"></span>
         </div>
         <div class="section-infoblock-items-table">
-            <div class="section-infoblock-item-cell" *ngFor="let item of milestinesData.reverse()">
+            <div class="section-infoblock-item-cell" *ngFor="let item of milestinesData">
                 <span [attr.data-year]="'PAGE.ABOUT.MILESTONES.LIST.YEAR_' + item | translate" class="section-infoblock-item-cell-text" [innerHTML]="'PAGE.ABOUT.MILESTONES.LIST.TEXT_' + item | translate"></span>
             </div>
         </div>
