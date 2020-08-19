@@ -46,10 +46,7 @@ export class LoginComponent implements OnInit {
   }
 
   public sendLoginForm(form: NgForm) {
-    console.log(form, form.value);
-
     if (form.invalid) {
-      console.warn('form is not submitted');
       return;
     }
 
@@ -92,7 +89,6 @@ export class LoginComponent implements OnInit {
     }).finally(() => {
       this.logoutIsProgress = false;
       this.hasUser = false;
-      // window.location.reload();
     });
   }
 }
