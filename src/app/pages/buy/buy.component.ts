@@ -40,39 +40,68 @@ export class BuyComponent implements OnInit, OnDestroy {
   public ducToUsd = 0.05;
 
   public currencyTemplate = [
-    {
-      name: 'Ethereum',
-      shortName: 'eth'
-    },
-    {
-      name: 'Bitcoin',
-      shortName: 'btc'
-    },
-    {
-      name: 'USDC',
-      shortName: 'usdc'
-    }
+    { name: 'Ethereum', shortName: 'eth' },
+    { name: 'Bitcoin', shortName: 'btc' },
+    { name: 'USDC', shortName: 'usdc' },
+    { name: 'Card', shortName: 'card' }
   ];
+
+  public moneyTemplate = [
+    { name: '$, USD', currency: 'usd' },
+    { name: '€, EUR', currency: 'eur' },
+    { name: '£, GBP', currency: 'gbp' },
+    { name: '₣, CHF', currency: 'chf' },
+  ];
+
+  public moneyPrice = {
+    usd: { name: 'USD', price: '0.05' },
+    eur: { name: 'EUR', price: '0.042' },
+    gbp: { name: 'GBP', price: '0.038' },
+    chf: { name: 'CHF', price: '0.046' },
+  };
+
+  // public priceTemplate = [
+  //   { price: 10, ticket: 1 },
+  //   { price: 50, ticket: 6 },
+  //   { price: 100, ticket: 13 },
+  //   { price: 500, ticket: 70 },
+  //   { price: 1000, ticket: 150 },
+  // ];
 
   public priceTemplate = [
     {
-      price: 10,
+      usd: { postition: 'after', sign: '$', price: 10 },
+      eur: { postition: 'before', sign: '€', price: 8.46 },
+      gbp: { postition: 'before', sign: '£', price: 7.62 },
+      chf: { postition: 'after', sign: '₣', price: 9.10 },
       ticket: 1
     },
     {
-      price: 50,
+      usd: { postition: 'after', sign: '$', price: 50 },
+      eur: { postition: 'before', sign: '€', price: 42.31 },
+      gbp: { postition: 'before', sign: '£', price: 38.08 },
+      chf: { postition: 'after', sign: '₣', price: 45.51 },
       ticket: 6
     },
     {
-      price: 100,
+      usd: { postition: 'after', sign: '$', price: 100 },
+      eur: { postition: 'before', sign: '€', price: 84.62 },
+      gbp: { postition: 'before', sign: '£', price: 76.19 },
+      chf: { postition: 'after', sign: '₣', price: 91.03 },
       ticket: 13
     },
     {
-      price: 500,
+      usd: { postition: 'after', sign: '$', price: 500 },
+      eur: { postition: 'before', sign: '€', price: 423.09 },
+      gbp: { postition: 'before', sign: '£', price: 380.82 },
+      chf: { postition: 'after', sign: '₣', price: 455.15 },
       ticket: 70
     },
     {
-      price: 1000,
+      usd: { postition: 'after', sign: '$', price: 1000 },
+      eur: { postition: 'before', sign: '€', price: 846.17 },
+      gbp: { postition: 'before', sign: '£', price: 761.63 },
+      chf: { postition: 'after', sign: '₣', price: 910.29 },
       ticket: 150
     },
   ];
@@ -163,8 +192,12 @@ export class BuyComponent implements OnInit, OnDestroy {
         'eth',
         Validators.compose([Validators.required])
       ],
+      money: [
+        'usd',
+        Validators.compose([Validators.required])
+      ],
       amount: [
-        '100',
+        100,
         Validators.compose([Validators.required])
       ],
       address: [
@@ -211,7 +244,15 @@ export class BuyComponent implements OnInit, OnDestroy {
     return this.sanitizer.bypassSecurityTrustUrl(this.lottery.video);
   }
 
+  public setCurrency() {
+    // this.setQrAddress('amount');
+  }
+
   public setAmount() {
+    if (this.BuyGroup.controls['currency'].value !== 'card') {
+      this.BuyGroup.controls['money'].setValue('usd');
+    }
+
     this.setQrAddress('amount');
   }
 

@@ -133,17 +133,31 @@
                         </div>
                     </div>
 
+                    <div *ngIf="BuyGroup.controls['currency'].value === 'card'" class="group group-input group-block" style="margin: 14px -37px; background: none;">
+                        <label class="group-radio-label" for="money-usd">Choose the currency</label>
+                        <div class="group-radio" style="justify-content: flex-start;">
+                            <div *ngFor="let item of moneyTemplate" class="group-radio-item">
+                                <input (ngModelChange)="setCurrency()" formControlName="money" type="radio"
+                                    [id]="'money-' + item.currency" [value]="item.currency">
+                                <label [for]="'money-' + item.currency" style="margin: 0 7px; height: 50px;">
+                                    <span class="group-radio-amount" style="font-size: 14px;">{{ item.name }}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="group group-input group-block">
-                        <label class="group-radio-label" for="amount-3">{{ 'PAGE.BUY.FORM.RADIO.PRICE' | translate:{ ducRateToUsd: ducToUsd } }}
+                        <label class="group-radio-label" for="amount-100">{{ 'PAGE.BUY.FORM.RADIO.PRICE' | translate:{ curName: moneyPrice[BuyGroup.controls['money'].value].name, ducRate: moneyPrice[BuyGroup.controls['money'].value].price } }}
                             <br>
                             {{ 'PAGE.BUY.FORM.RADIO.TEXT' | translate }} <span class="ducatus-info-link"
                                 (click)="modalInfo = true">{{ 'PAGE.BUY.FORM.RADIO.LINK' | translate }}</span></label>
                         <div class="group-radio">
                             <div *ngFor="let item of priceTemplate" class="group-radio-item">
                                 <input (ngModelChange)="setAmount()" formControlName="amount" required type="radio"
-                                    [id]="'amount-' + item.price" [value]="item.price">
-                                <label [for]="'amount-' + item.price">
-                                    <span class="group-radio-amount">{{ item.price }}$</span>
+                                    [id]="'amount-' + item[BuyGroup.controls['money'].value].price" [value]="item[BuyGroup.controls['money'].value].price">
+                                <label [for]="'amount-' + item[BuyGroup.controls['money'].value].price">
+                                    <span *ngIf="item[BuyGroup.controls['money'].value].postition === 'after'" class="group-radio-amount">{{ item[BuyGroup.controls['money'].value].price }}{{ item[BuyGroup.controls['money'].value].sign }}</span>
+                                    <span *ngIf="item[BuyGroup.controls['money'].value].postition === 'before'" class="group-radio-amount">{{ item[BuyGroup.controls['money'].value].sign }}{{ item[BuyGroup.controls['money'].value].price }}</span>
                                     <span *ngIf="!lottery.ended || false" class="group-radio-text">{{ item.ticket }}
                                         <span [innerHTML]="'PAGE.BUY.FORM.RADIO.TICKET.ONE' | translate"></span>
                                     </span>
@@ -170,7 +184,7 @@
 
                     <div id="loading-address" [ngClass]="{ 'loading-address-start': !buttonSubmit }"
                         class="group group-input group-input-copy m-b-0 qr-wrap">
-                        <div class="group-wrap qr-address">
+                        <div *ngIf="BuyGroup.controls['currency'].value !== 'card'" class="group-wrap qr-address">
                             <label>{{ 'PAGE.BUY.FORM.RESULT.TEXT_1' | translate }}
                                 {{ currencyData[BuyGroup.value.currency].amount }}
                                 {{ currencyData[BuyGroup.value.currency].name }}
@@ -184,31 +198,22 @@
                                 [cdkCopyToClipboard]="currencyData[BuyGroup.value.currency].address"></span>
                         </div>
 
-                        <div class="qrcode" [attr.title]="currencyData[BuyGroup.value.currency].info">
+                        <div *ngIf="BuyGroup.controls['currency'].value !== 'card'" class="qrcode" [attr.title]="currencyData[BuyGroup.value.currency].info">
                             <qrcode *ngIf="!loadingQr && buttonSubmit" class="qr-code" [elementType]="'url'"
                                 [margin]="0" [scale]="1" [qrdata]="currencyData[BuyGroup.value.currency].info"
                                 [width]="80" [errorCorrectionLevel]="'L'"></qrcode>
                         </div>
 
-                        <div class="group-wrap qr-textCode"><label
-                                style="margin-bottom: 0;">{{ 'PAGE.BUY.FORM.RESULT.QR.TEXT' | translate }}</label></div>
+                        <div *ngIf="BuyGroup.controls['currency'].value !== 'card'" class="group-wrap qr-textCode"><label style="margin-bottom: 0;">{{ 'PAGE.BUY.FORM.RESULT.QR.TEXT' | translate }}</label></div>
 
                         <div class="loading-address-qr">
-                            <button *ngIf="!buttonSubmit" [disabled]='BuyGroup.invalid' (click)="clickSubmit()"
-                                class="ducatus-btn ducatus-btn-brown"
-                                style="min-width: 100%;">{{ 'PAGE.BUY.FORM.SUBMIT' | translate }}</button>
-                            <!-- <div class="loading-address-qr-wrap">
-                                <p>{{ 'PAGE.BUY.FORM.RESULT.ERROR' | translate }}</p>
-                                <div class="loading-address-qr-wrap-ellips">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                            </div> -->
+                            <button *ngIf="!buttonSubmit && BuyGroup.controls['currency'].value !== 'card'" [disabled]='BuyGroup.invalid' (click)="clickSubmit()" class="ducatus-btn ducatus-btn-brown" style="min-width: 100%;">
+                                {{ 'PAGE.BUY.FORM.SUBMIT' | translate }}</button>
+                            <button *ngIf="!buttonSubmit && BuyGroup.controls['currency'].value === 'card'" [disabled]='BuyGroup.invalid' (click)="clickSubmit()" class="ducatus-btn ducatus-btn-brown" style="min-width: 100%;">
+                                Continue</button>
                         </div>
 
-                        <div class="group group-text qr-text" style="margin-bottom: 0;">
+                        <div *ngIf="BuyGroup.controls['currency'].value !== 'card'" class="group group-text qr-text" style="margin-bottom: 0;">
                             <span class="text-attantion" [innerHTML]="'PAGE.BUY.FORM.RESULT.NOTE' | translate:{time:
                                 currencyData[BuyGroup.value.currency].time[lang] }"></span>
                         </div>
