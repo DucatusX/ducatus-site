@@ -147,17 +147,18 @@
                     </div>
 
                     <div class="group group-input group-block">
-                        <label class="group-radio-label" for="amount-100">{{ 'PAGE.BUY.FORM.RADIO.PRICE' | translate:{ curName: moneyPrice[BuyGroup.controls['money'].value].name, ducRate: moneyPrice[BuyGroup.controls['money'].value].price } }}
+                        <label class="group-radio-label" for="amount-100">
+                            {{ 'PAGE.BUY.FORM.RADIO.PRICE' | translate:{ curName: moneyPrice[selectedMoney].name, ducRate: moneyPrice[selectedMoney].price } }}
                             <br>
                             {{ 'PAGE.BUY.FORM.RADIO.TEXT' | translate }} <span class="ducatus-info-link"
                                 (click)="modalInfo = true">{{ 'PAGE.BUY.FORM.RADIO.LINK' | translate }}</span></label>
                         <div class="group-radio">
                             <div *ngFor="let item of priceTemplate" class="group-radio-item">
                                 <input (ngModelChange)="setAmount()" formControlName="amount" required type="radio"
-                                    [id]="'amount-' + item[BuyGroup.controls['money'].value].price" [value]="item[BuyGroup.controls['money'].value].price">
-                                <label [for]="'amount-' + item[BuyGroup.controls['money'].value].price">
-                                    <span *ngIf="item[BuyGroup.controls['money'].value].postition === 'after'" class="group-radio-amount">{{ item[BuyGroup.controls['money'].value].price }}{{ item[BuyGroup.controls['money'].value].sign }}</span>
-                                    <span *ngIf="item[BuyGroup.controls['money'].value].postition === 'before'" class="group-radio-amount">{{ item[BuyGroup.controls['money'].value].sign }}{{ item[BuyGroup.controls['money'].value].price }}</span>
+                                    [id]="'amount-' + item[selectedMoney].price" [value]="item[selectedMoney].price">
+                                <label [for]="'amount-' + item[selectedMoney].price">
+                                    <span *ngIf="item[selectedMoney].postition === 'after'" class="group-radio-amount">{{ item[selectedMoney].price }}{{ item[selectedMoney].sign }}</span>
+                                    <span *ngIf="item[selectedMoney].postition === 'before'" class="group-radio-amount">{{ item[selectedMoney].sign }}{{ item[selectedMoney].price }}</span>
                                     <span *ngIf="!lottery.ended || false" class="group-radio-text">{{ item.ticket }}
                                         <span [innerHTML]="'PAGE.BUY.FORM.RADIO.TICKET.ONE' | translate"></span>
                                     </span>
@@ -209,8 +210,10 @@
                         <div class="loading-address-qr">
                             <button *ngIf="!buttonSubmit && BuyGroup.controls['currency'].value !== 'card'" [disabled]='BuyGroup.invalid' (click)="clickSubmit()" class="ducatus-btn ducatus-btn-brown" style="min-width: 100%;">
                                 {{ 'PAGE.BUY.FORM.SUBMIT' | translate }}</button>
-                            <button *ngIf="!buttonSubmit && BuyGroup.controls['currency'].value === 'card'" [disabled]='BuyGroup.invalid' (click)="clickSubmit()" class="ducatus-btn ducatus-btn-brown" style="min-width: 100%;">
-                                Continue</button>
+                            <button [ngClass]="{ 'icon icon__loading': loadingCard }" *ngIf="cardRedirect === '' && !buttonSubmit && BuyGroup.controls['currency'].value === 'card' && !loadingCard" [disabled]='BuyGroup.invalid' (click)="cardLink()" class="ducatus-btn ducatus-btn-brown" style="min-width: 100%; display: flex;">
+                                <span *ngIf="!loadingCard">Continue</span></button>
+                            <button [ngClass]="{ 'icon icon__loading': loadingCard }" *ngIf="cardRedirect === '' && !buttonSubmit && BuyGroup.controls['currency'].value === 'card' && loadingCard" [disabled]='true' class="ducatus-btn ducatus-btn-brown" style="min-width: 100%; display: flex;"></button>
+                            <a [href]="cardRedirect" target="_blank" [ngClass]="{ 'icon icon__loading': loadingCard }" *ngIf="cardRedirect !== '' && BuyGroup.controls['currency'].value === 'card'" class="ducatus-btn ducatus-btn-gold" style="min-width: 100%; text-decoration: none;">continue in new window</a>
                         </div>
 
                         <div *ngIf="BuyGroup.controls['currency'].value !== 'card'" class="group group-text qr-text" style="margin-bottom: 0;">

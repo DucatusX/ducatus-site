@@ -20,6 +20,7 @@ export class BuyComponent implements OnInit, OnDestroy {
   public loadingQr = true;
   public loadingData = true;
   public loadedAddress = false;
+  public loadingCard = false;
   public modal = false;
   public modalInfo = false;
   public modalAccept = false;
@@ -30,6 +31,7 @@ export class BuyComponent implements OnInit, OnDestroy {
   public onLangChange: any;
   public savedEmail: string;
   public savedAddress: string;
+  public cardRedirect = '';
   public buttonSubmit = false;
 
   public referralAddressError = false;
@@ -38,6 +40,7 @@ export class BuyComponent implements OnInit, OnDestroy {
   public referralIncoming: string;
 
   public ducToUsd = 0.05;
+  public selectedMoney = 'usd';
 
   public currencyTemplate = [
     { name: 'Ethereum', shortName: 'eth' },
@@ -245,11 +248,16 @@ export class BuyComponent implements OnInit, OnDestroy {
   }
 
   public setCurrency() {
-    // this.setQrAddress('amount');
+    // this.selectedMoney = this.BuyGroup.controls['money'].value;
+    this.selectedMoney = 'usd';
   }
 
   public setAmount() {
+
+    console.log(this.BuyGroup.controls['amount'].value);
+
     if (this.BuyGroup.controls['currency'].value !== 'card') {
+      this.cardRedirect = '';
       this.BuyGroup.controls['money'].setValue('usd');
     }
 
@@ -377,7 +385,6 @@ export class BuyComponent implements OnInit, OnDestroy {
   }
 
   public generateReferralLink() {
-
     if (this.referralAddress.length === 34 && ['L', 'l', 'M', 'm'].includes(this.referralAddress.substring(0, 1))) {
       this.referralAddressError = false;
       this.referralLink = '';
@@ -388,7 +395,27 @@ export class BuyComponent implements OnInit, OnDestroy {
         } else { this.referralAddressError = true; }
       }).catch(err => { console.error(err); });
     } else { this.referralAddressError = true; this.referralLink = ''; }
+  }
 
+  public cardLink() {
+    const amount = this.BuyGroup.controls['amount'];
+    const address = this.BuyGroup.controls['address'];
+    const currency = this.BuyGroup.controls['money'];
+    const email = this.BuyGroup.controls['email'];
+
+    this.loadingCard = true;
+
+    this.buyservice.getCardLink(amount.value, currency.value.toUpperCase(), address.value, email.value).then(res => {
+      console.log(res);
+      if (res.redirect_url) {
+        window.open(res.redirect_url, '_blank');
+        this.cardRedirect = res.redirect_url;
+      }
+      this.loadingCard = false;
+    }).catch(err => {
+      console.log(err);
+      this.loadingCard = false;
+    });
   }
 
   public acceptModalTerms() {
