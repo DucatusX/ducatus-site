@@ -250,14 +250,15 @@ export class BuyComponent implements OnInit, OnDestroy {
   public setCurrency() {
     // this.selectedMoney = this.BuyGroup.controls['money'].value;
     this.selectedMoney = 'usd';
+    this.cardRedirect = '';
   }
 
   public setAmount() {
 
     console.log(this.BuyGroup.controls['amount'].value);
+    this.cardRedirect = '';
 
     if (this.BuyGroup.controls['currency'].value !== 'card') {
-      this.cardRedirect = '';
       this.BuyGroup.controls['money'].setValue('usd');
     }
 
