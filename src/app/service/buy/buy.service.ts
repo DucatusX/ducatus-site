@@ -27,6 +27,10 @@ export class BuyService {
     return this.httpService.post(`validate_ducatus_address/`, { address }).toPromise();
   }
 
+  public getCardLink(amount: number, currency: string, duc_address: string, email: string) {
+    return this.httpService.post(`add_charge/`, { amount, currency, duc_address, email }).toPromise();
+  }
+
   public getExchange(address: string, currency: string, toEmail: string) {
     return this.httpService.post(`exchange/`, {
       to_address: address,
