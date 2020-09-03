@@ -63,14 +63,6 @@ export class BuyComponent implements OnInit, OnDestroy {
     chf: { name: 'CHF', price: '0.046' },
   };
 
-  // public priceTemplate = [
-  //   { price: 10, ticket: 1 },
-  //   { price: 50, ticket: 6 },
-  //   { price: 100, ticket: 13 },
-  //   { price: 500, ticket: 70 },
-  //   { price: 1000, ticket: 150 },
-  // ];
-
   public priceTemplate = [
     {
       usd: { postition: 'after', sign: '$', price: 10 },
