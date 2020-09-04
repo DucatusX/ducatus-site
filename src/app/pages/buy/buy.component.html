@@ -167,7 +167,7 @@
                         </div>
                     </div>
 
-                    <div class="group group-input">
+                    <div class="group group-input" *ngIf="BuyGroup.controls['currency'].value !== 'card'">
                         <label for="address" [innerHTML]="'PAGE.BUY.FORM.ADDRESS.TEXT' | translate"></label>
                         <input id="address" formControlName="address" required type="text"
                             (ngModelChange)="setAddress()"
