@@ -605,6 +605,20 @@ li {
             background-image: url('assets/img/icons/search.svg');
         }
     }
+
+    &__cash-community {
+        @include before-img(block, 110px, 110px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/cash-community.svg');
+        }
+    }
+
+    &__arrow-community {
+        @include before-img(block, 110px, 110px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/arrow-community.svg');
+        }
+    }
 }
 
 .ol-a-type {
