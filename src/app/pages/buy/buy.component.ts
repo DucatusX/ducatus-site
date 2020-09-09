@@ -218,13 +218,11 @@ export class BuyComponent implements OnInit, OnDestroy {
       this.lang = event.lang;
     });
 
-    console.log(this.lang);
-
     this.route.queryParams.subscribe((params) => {
       this.referralIncoming = params['referral'];
     });
 
-    if (this.referralIncoming) { console.log('you use referral link: ', this.referralIncoming); window['jQuery']['cookie']('referral', this.referralIncoming); }
+    if (this.referralIncoming) { window['jQuery']['cookie']('referral', this.referralIncoming); }
   }
 
   ngOnDestroy() {
@@ -246,12 +244,16 @@ export class BuyComponent implements OnInit, OnDestroy {
   }
 
   public setAmount() {
-
-    console.log(this.BuyGroup.controls['amount'].value);
     this.cardRedirect = '';
 
     if (this.BuyGroup.controls['currency'].value !== 'card') {
       this.BuyGroup.controls['money'].setValue('usd');
+    }
+
+
+    if (this.BuyGroup.controls['currency'].value === 'card') {
+      this.BuyGroup.controls['address'].setErrors(null);
+      this.buttonSubmit = false;
     }
 
     this.setQrAddress('amount');
@@ -290,6 +292,11 @@ export class BuyComponent implements OnInit, OnDestroy {
 
   public setAddress() {
     const address = this.BuyGroup.controls['address'];
+
+    if (this.BuyGroup.controls['currency'].value === 'card') {
+      this.BuyGroup.controls['address'].setErrors(null);
+      return;
+    }
 
     if (address.value.length === 34 && ['L', 'l', 'M', 'm'].includes(address.value.substring(0, 1))) {
       this.currencyData['eth'].address = this.currencyData['btc'].address = '';
@@ -392,14 +399,14 @@ export class BuyComponent implements OnInit, OnDestroy {
 
   public cardLink() {
     const amount = this.BuyGroup.controls['amount'];
-    const address = this.BuyGroup.controls['address'];
     const currency = this.BuyGroup.controls['money'];
     const email = this.BuyGroup.controls['email'];
+
+    const address = this.BuyGroup.controls['currency'].value !== 'card' ? this.BuyGroup.controls['address'] : { value: 'null' };
 
     this.loadingCard = true;
 
     this.buyservice.getCardLink(amount.value, currency.value.toUpperCase(), address.value, email.value).then(res => {
-      console.log(res);
       if (res.redirect_url) {
         window.open(res.redirect_url, '_blank');
         this.cardRedirect = res.redirect_url;
@@ -418,8 +425,6 @@ export class BuyComponent implements OnInit, OnDestroy {
     this.buyservice.getLottery().then((result) => {
       this.lotteryDesc = result[0];
       this.bg = this.lotteryDesc.image ? this.lotteryDesc.image : 'assets/img/sections/buy-bg.png';
-
-      console.log(this.lotteryDesc, result, result[0])
       this.checkLotteryStatus();
     });
 
