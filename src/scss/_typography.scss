@@ -47,11 +47,32 @@ li {
             margin: 15px 0;
         }
     }
+}
 
-
+.h3 {
+    &-title {
+        &-section {
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 37px;
+            text-align: center;
+            color: #8C3443;
+        }
+    }
 }
 
 .span {
+
+    &-subtitle {
+        &-section {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 29px;
+            text-align: center;
+            color: #5C5A57;
+        }
+    }
+
     &__title {
         font-weight: normal;
         font-size: 24px;
@@ -123,6 +144,15 @@ li {
 }
 
 .p {
+
+    &-text {
+        &-section{
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 29px;
+            color: #5C5A57;
+        }
+    }
 
     &__section-ducatus,
     &__slider-item,

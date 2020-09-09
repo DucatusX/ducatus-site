@@ -1,0 +1,169 @@
+<section class="section-header">
+    <div class="section-header-container">
+        <div class="swiper-pagination"></div>
+        <div class="section-header-slider">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" *ngFor="let slide of slider">
+                        <div class="section-header-wrap section-header-wrap-desctop"
+                            [style.background-image]="'url(assets/img/' + slide[lang].image + ')'"></div>
+                        <div class="section-header-wrap section-header-wrap-mobile"
+                            [style.background-image]="'url(assets/img/' + slide[lang].image_mob + ')'"></div>
+                        <div class="container-slider">
+                            <div class="slider-item">
+                                <h2 class="h2__slider-title" [innerHTML]="slide[lang].title"></h2>
+                                <p class="p__slider-item" [innerHTML]="slide[lang].text"></p>
+                                <a [routerLink]="'assets/downloads/pdf/' + slide[lang].file" target="_blank"
+                                    class="button button__transparent-white">{{ slide[lang].button }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-financial-evolution">
+    <div class="container">
+        <img src="assets/img/sections/financial-img.svg" alt="Financial Evolution">
+        <h3 class="h3-title-section">A New Financial Evolution</h3>
+        <span class="span-subtitle-section">To be the world’s most popular and usable cryptocurrency…</span>
+        <p class="p-text-section">One Ducatus Per Person on the PlanetBased on the principles of the Italian
+            mathematician Leonardo Fibonacci, Ducatus hasgenerated a total of 7,778,742,049 crypto coins. Once these
+            coins have all been distributed, their number will be similar to the number of people on our planet.
+            <br><br>
+            The vision for Ducatus Coin is bold. But with a combination of world-class digital infrastructure, a
+            powerful network distribution system, and a suite of related crypto-economy businesses, it is a goal that is
+            not impossible to achieve.
+            <br><br>
+            Ducatus Coin owners can now access a wide range of products and services both from Ducatus Crypto-Economy
+            businesses and third-party merchants. These crypto-economy businesses are being rolled out around the word
+            in parallel with the distribution of our coins to demonstrate real-world applications not only for Ducatus
+            Coin but also for cryptocurrencies as a whole.</p>
+        <span class="ductus-btn-gradient">Find Out More ></span>
+    </div>
+</section>
+
+<section class="section-financial">
+    <div class="container">
+        <div class="section-financial-info">
+            <h2 class="h2__title" [innerHTML]="'PAGE.MAIN.FINANCIAL.TITLE' | translate"></h2>
+            <span class="span__subtitle" [innerHTML]="'PAGE.MAIN.FINANCIAL.SUBTITLE' | translate"></span>
+            <span class="span__line"></span>
+            <div class="section-financial-info-blocks">
+                <div class="section-financial-info-block">
+                    <p class="p__text" [innerHTML]="'PAGE.MAIN.FINANCIAL.TEXT_1' | translate"></p>
+                </div>
+                <div class="section-financial-info-block">
+                    <p class="p__text" [innerHTML]="'PAGE.MAIN.FINANCIAL.TEXT_2' | translate"></p>
+                    <a routerLink="/about" class="button button__brown-red">
+                        {{ 'PAGE.MAIN.FINANCIAL.BUTTON' | translate }} </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-ducatus">
+    <div class="container">
+
+        <div class="section-ducatus-blocks">
+            <div class="section-ducatus-block">
+                <span class="ducatus-coin"></span>
+                <br>
+                <p class="p__ducatus-coin" [innerHTML]="'PAGE.MAIN.SECTION_1.TITLE_1' | translate"></p>
+            </div>
+            <div class="section-ducatus-block">
+                <span class="span__title" [innerHTML]="'PAGE.MAIN.SECTION_1.TITLE_2' | translate"></span>
+                <div class="section-ducatus-blocks-text">
+                    <div class="section-ducatus-block-left">
+                        <p class="p__section-ducatus-coin icon icon__money"
+                            [innerHTML]="'PAGE.MAIN.SECTION_1.TEXT_1' | translate"></p>
+                    </div>
+                    <div class="section-ducatus-block-right">
+                        <p class="p__section-ducatus-coin icon icon__arrow"
+                            [innerHTML]="'PAGE.MAIN.SECTION_1.TEXT_2' | translate"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section-ducatus-maintains">
+    <div class="container">
+
+        <div class="section-ducatus-maintains-block">
+            <span class="span__title span__title-left"
+                [innerHTML]="'PAGE.MAIN.SECTION_2.LEFT.TITLE' | translate"></span>
+            <div class="section-ducatus-maintains-blocks">
+                <div class="section-ducatus-maintains-block-item">
+                    <span class="icon icon__house"></span>
+                    <div class="section-ducatus-maintains-block-item-text">
+                        <span class="span__maintains-item"
+                            [innerHTML]="'PAGE.MAIN.SECTION_2.LEFT.SUBTITLE_1' | translate"></span>
+                        <p class="p__section-ducatus" [innerHTML]="'PAGE.MAIN.SECTION_2.LEFT.TEXT_1' | translate"></p>
+                    </div>
+                </div>
+                <div class="section-ducatus-maintains-block-item">
+                    <span class="icon icon__people"></span>
+                    <div class="section-ducatus-maintains-block-item-text">
+                        <span class="span__maintains-item"
+                            [innerHTML]="'PAGE.MAIN.SECTION_2.LEFT.SUBTITLE_2' | translate"></span>
+                        <p class="p__section-ducatus" [innerHTML]="'PAGE.MAIN.SECTION_2.LEFT.TEXT_2' | translate"></p>
+                    </div>
+                </div>
+                <div class="section-ducatus-maintains-block-item">
+                    <span class="icon icon__hands"></span>
+                    <div class="section-ducatus-maintains-block-item-text">
+                        <span class="span__maintains-item"
+                            [innerHTML]="'PAGE.MAIN.SECTION_2.LEFT.SUBTITLE_3' | translate"></span>
+                        <p class="p__section-ducatus" [innerHTML]="'PAGE.MAIN.SECTION_2.LEFT.TEXT_3' | translate"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-ducatus-maintains-block">
+            <span class="span__title" [innerHTML]="'PAGE.MAIN.SECTION_2.RIGHT.TITLE' | translate"></span>
+            <div class="section-ducatus-maintains-blocks">
+                <div class="section-ducatus-maintains-block-item">
+                    <p class="p__section-ducatus icon icon__rocket"
+                        [innerHTML]="'PAGE.MAIN.SECTION_2.RIGHT.TEXT_1' | translate"></p>
+                </div>
+                <div class="section-ducatus-maintains-block-item">
+                    <p class="p__section-ducatus icon icon__up"
+                        [innerHTML]="'PAGE.MAIN.SECTION_2.RIGHT.TEXT_2' | translate"></p>
+                </div>
+                <div class="section-ducatus-maintains-block-item">
+                    <p class="p__section-ducatus icon icon__web"
+                        [innerHTML]="'PAGE.MAIN.SECTION_2.RIGHT.TEXT_3' | translate"></p>
+                </div>
+                <div class="section-ducatus-maintains-block-item">
+                    <p class="p__section-ducatus icon icon__coin"
+                        [innerHTML]="'PAGE.MAIN.SECTION_2.RIGHT.TEXT_4' | translate"></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section-usability">
+    <div class="section-usability-wrap">
+        <div class="container">
+            <div class="section-usability-info">
+                <h2 class="h2__title" [innerHTML]="'PAGE.MAIN.USABILITY.TITLE' | translate"></h2>
+                <span class="span__subtitle" [innerHTML]="'PAGE.MAIN.USABILITY.SUBTITLE' | translate"></span>
+                <span class="span__line"></span>
+                <div class="section-usability-info-blocks">
+                    <div class="section-usability-info-block">
+                        <p class="p__text" [innerHTML]="'PAGE.MAIN.USABILITY.TEXT' | translate"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
