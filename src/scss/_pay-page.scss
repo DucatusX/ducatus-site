@@ -1000,7 +1000,7 @@
 
     .group-currency {
         display: grid !important;
-        grid-template-columns: repeat(4, 120px);
+        grid-template-columns: repeat(auto-fill, 120px);
         justify-content: flex-start !important;
         grid-gap: 20px;
 
