@@ -435,6 +435,56 @@ li {
         }
     }
 
+    &__facebook_new {
+        border-radius: 0px;
+
+        @include before-img(block, 28px, 28px, r) {
+            background-color: transparent;
+            background-image: url('assets/img/icons/new/facebook.svg');
+            background-size: contain;
+        }
+    }
+
+    &__twitter_new {
+        border-radius: 0px;
+
+        @include before-img(block, 28px, 28px, r) {
+            background-color: transparent;
+            background-image: url('assets/img/icons/new/twitter.svg');
+            background-size: contain;
+        }
+    }
+
+    &__instagram_new {
+        border-radius: 0px;
+
+        @include before-img(block, 28px, 28px, r) {
+            background-color: transparent;
+            background-image: url('assets/img/icons/new/instagram.svg');
+            background-size: contain;
+        }
+    }
+
+    &__linkedin_new {
+        border-radius: 0px;
+
+        @include before-img(block, 28px, 28px, r) {
+            background-color: transparent;
+            background-image: url('assets/img/icons/new/linkedIn.svg');
+            background-size: contain;
+        }
+    }
+
+    &__youtube_new {
+        border-radius: 0px;
+
+        @include before-img(block, 28px, 28px, r) {
+            background-color: transparent;
+            background-image: url('assets/img/icons/new/youtube.svg');
+            background-size: contain;
+        }
+    }
+
     &__coin-ducx {
         @include before-img(block, 90px, 90px, r) {
             background-image: url('assets/img/icons/coin-ducx.svg');
