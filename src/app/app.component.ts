@@ -8,6 +8,7 @@ import {
   NavigationEnd,
   NavigationCancel,
   NavigationError,
+  ActivationEnd,
   RouterOutlet
 } from '@angular/router';
 import { slider } from './route-animation';
@@ -23,11 +24,21 @@ declare let gtag;
 export class AppComponent implements OnInit {
 
   public showOverlay = true;
+  public enableHeader = true;
+  public enableFooter = true;
 
-  constructor(private translateService: TranslateService, private router: Router) {
+  constructor(private translateService: TranslateService, protected router: Router) {
 
     router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event);
+
+      if (event instanceof ActivationEnd) {
+        this.enableHeader = !event.snapshot.data.noheader;
+        this.enableFooter = !event.snapshot.data.nofooter;
+
+        console.log(this.enableHeader, this.enableFooter);
+      }
+
     });
 
     const defaultLng = (navigator.language || navigator['browserLanguage']).split('-')[0];

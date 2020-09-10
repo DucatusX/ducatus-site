@@ -120,23 +120,27 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     // scroll menu
-    var scrollPosY = window.pageYOffset | document.body.scrollTop;
-    var navBar = document.getElementsByClassName('header')[0];
+    const scrollPosY = window.pageYOffset | document.body.scrollTop;
+    const navBar = document.getElementsByClassName('header')[0];
 
-    if (scrollPosY > 100) {
-      navBar.classList.add('header-scroll');
-    } else if (scrollPosY <= 100) {
-      navBar.classList.remove('header-scroll');
-    }
-
-    window.onscroll = function changeNav() {
-      var scrollPosY = window.pageYOffset | document.body.scrollTop;
-      var navBar = document.getElementsByClassName('header')[0];
-
+    if (navBar) {
       if (scrollPosY > 100) {
         navBar.classList.add('header-scroll');
       } else if (scrollPosY <= 100) {
         navBar.classList.remove('header-scroll');
+      }
+    }
+
+    window.onscroll = function changeNav() {
+      let scrollPosY = window.pageYOffset | document.body.scrollTop;
+      let navBar = document.getElementsByClassName('header')[0];
+
+      if (navBar) {
+        if (scrollPosY > 100) {
+          navBar.classList.add('header-scroll');
+        } else if (scrollPosY <= 100) {
+          navBar.classList.remove('header-scroll');
+        }
       }
     };
   }

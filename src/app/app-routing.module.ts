@@ -24,7 +24,11 @@ const routes: Routes = [
   },
   {
     path: 'new',
-    component: IndexNewComponent
+    component: IndexNewComponent,
+    data: {
+      noheader: true,
+      nofooter: true
+    }
   },
   {
     path: 'about',
