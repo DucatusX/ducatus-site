@@ -57,6 +57,14 @@ li {
             line-height: 37px;
             text-align: center;
             color: #8C3443;
+
+            @include b(600) {
+                font-size: 25px;
+            }
+
+            @include b(500) {
+                font-size: 20px;
+            }
         }
     }
 }
@@ -70,6 +78,10 @@ li {
             line-height: 29px;
             text-align: center;
             color: #5C5A57;
+
+            @include b(600) {
+                font-size: 18px;
+            }
         }
     }
 
@@ -151,6 +163,11 @@ li {
             font-size: 18px;
             line-height: 29px;
             color: #5C5A57;
+
+            @include b(600) {
+                font-size: 14px;
+                line-height: 22px;
+            }
         }
     }
 
@@ -667,6 +684,55 @@ li {
         @include before-img(block, 110px, 110px, r) {
             transition: 0.4s ease;
             background-image: url('assets/img/icons/arrow-community.svg');
+        }
+    }
+
+    &__stonks-new {
+        @include before-img(block, 145px, 150px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/stonks-new.svg');
+        }
+    }
+
+    &__web-new {
+        @include before-img(block, 145px, 150px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/web-new.svg');
+        }
+    }
+
+    &__users-new {
+        @include before-img(block, 145px, 150px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/users-new.svg');
+        }
+    }
+
+    &__rocket-new {
+        @include before-img(block, 145px, 150px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/rocket-new.svg');
+        }
+    }
+
+    &__hands-new {
+        @include before-img(block, 145px, 150px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/hands-new.svg');
+        }
+    }
+
+    &__gov-new {
+        @include before-img(block, 145px, 150px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/gov-new.svg');
+        }
+    }
+
+    &__duc-coin-new {
+        @include before-img(block, 145px, 150px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/duc-coin-new.svg');
         }
     }
 }

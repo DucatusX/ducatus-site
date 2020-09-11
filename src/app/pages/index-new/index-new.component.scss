@@ -43,7 +43,8 @@
     box-shadow: 0px 0px 29.9565px rgba(255, 223, 87, 0.5), inset 0px 6.91304px 25.3478px #FFDF34, inset 0px -6.91304px 9.21739px rgba(255, 250, 215, 0.81);
     border-radius: 76.0435px;
     height: 80px;
-    width: 340px;
+    max-width: 340px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -138,6 +139,11 @@
     justify-content: space-between;
     margin-top: 30px;
 
+    @include b(750) {
+      grid-template-columns: 1fr;
+      grid-gap: 30px;
+    }
+
     .icon{
       display: flex;
       color: white;
@@ -163,18 +169,89 @@
     justify-content: center;
     padding-top: 100px;
     padding-bottom: 100px;
+    max-width: 1000px;
   }
 
   &-icons {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 100px;
+
+    @include b(850) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      justify-content: center;
+    }
+
+    @include b(450) {
+      grid-template-columns: 1fr;
+    }
   }
 
   .icon  {
     display: flex;
     flex-direction: column;
-    width: 200px;
-    margin: 10px;
+    margin: 5px;
+    max-width: 250px;
+
+    @include b(850) {
+      max-width: 100%;
+    }
+  }
+
+  &-title  {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 25px;
+    color: #862632;
+  }
+
+  &-text {
+    margin-top: 15px;
+    display: block;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    color: #5C5A57;
+  }
+}
+
+.section-header-new {
+
+  .slider-item {
+    max-width: 550px;
+  }
+
+  .h2__slider-title {
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 54px;
+    color: #FFFFFF;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .p__slider-item {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .button {
+    background: linear-gradient(0deg, #8C3444, #8C3444);
+    border: 4.6087px solid #882434;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 29.9565px rgba(255, 64, 94, 0.5);
+    border-radius: 76.0435px;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 26px;
+    max-width: 380px;
+    color: #FFFFFF;
   }
 }
