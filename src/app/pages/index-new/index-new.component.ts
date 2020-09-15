@@ -87,7 +87,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         title: 'Championing the cashless economy',
         text: 'With Distribution, Convertibility, and Usability (DUC) at its core, Ducatus Coin possesses traits that are instrumental in building a solid cashless economy for the future.',
         button: 'Download Whitepaper',
-        image: 'slide-3.jpg',
+        image: 'slide-3.png',
         image_mob: 'slide-3-mob.png',
         file: 'ducatus-coin-white-paper.pdf'
       },
@@ -95,7 +95,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         title: 'Difendere l\'economia senza contanti',
         text: 'Con Distribution, Convertibility, and Usability (DUC) al centro, Ducatus Coin possiede caratteristiche che sono fondamentali per costruire una solida economia senza contanti per il futuro.',
         button: 'Scarica il white paper',
-        image: 'slide-3.jpg',
+        image: 'slide-3.png',
         image_mob: 'slide-3-mob.png',
         file: 'ducatus-coin-white-paper.pdf'
       },
@@ -103,7 +103,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         title: 'Für die bargeldlose Wirtschaft eintreten',
         text: 'Mit Distribution, Convertibility und Usability (DUC) im Mittelpunkt verfügt Ducatus Coin über Eigenschaften, die für den Aufbau einer soliden bargeldlosen Wirtschaft für die Zukunft von entscheidender Bedeutung sind.',
         button: 'Whitepaper herunterladen',
-        image: 'slide-3.jpg',
+        image: 'slide-3.png',
         image_mob: 'slide-3-mob.png',
         file: 'ducatus-coin-white-paper.pdf'
       },
@@ -111,7 +111,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         title: 'Thúc đẩy nền kinh tế không tiền mặt',
         text: 'Với cốt lõi là Phân phối, Khả năng chuyển đổi và Khả năng sử dụng (DUC), Ducatus Coin sở hữu những đặc điểm đóng vai trò quan trọng trong việc xây dựng một nền kinh tế không dùng tiền mặt vững chắc cho tương lai.',
         button: 'Tải xuống Whitepaper',
-        image: 'slide-3.jpg',
+        image: 'slide-3.png',
         image_mob: 'slide-3-mob.png',
         file: 'ducatus-coin-white-paper.pdf'
       }
