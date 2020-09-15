@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // pages
-import { IndexComponent } from './pages/index/index.component';
+// import { IndexComponent } from './pages/index/index.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { IndexNewComponent } from './pages/index-new/index-new.component';
@@ -20,16 +20,16 @@ import { UserResolver } from './resolvers';
 const routes: Routes = [
   {
     path: '',
-    component: IndexComponent
+    component: IndexNewComponent
   },
-  {
-    path: 'new',
-    component: IndexNewComponent,
-    data: {
-      noheader: true,
-      nofooter: true
-    }
-  },
+  // {
+  //   path: 'new',
+  //   component: IndexNewComponent,
+  //   data: {
+  //     noheader: true,
+  //     nofooter: true
+  //   }
+  // },
   {
     path: 'about',
     component: AboutComponent,
