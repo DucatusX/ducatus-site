@@ -15,7 +15,7 @@
                             <div class="slider-item">
                                 <h2 class="h2__slider-title" [innerHTML]="slide[lang].title"></h2>
                                 <p class="p__slider-item" [innerHTML]="slide[lang].text"></p>
-                                <a [routerLink]="'assets/downloads/pdf/' + slide[lang].file" target="_blank"
+                                <a [routerLink]="'/assets/downloads/pdf/' + slide[lang].file" target="_blank"
                                     class="button">{{ slide[lang].button }} ></a>
                             </div>
                         </div>
