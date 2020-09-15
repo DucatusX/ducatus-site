@@ -91,7 +91,6 @@ export class UserService {
         .post(URLS.LOGIN, data, URLS.HOSTS.AUTH_PATH)
         .toPromise()
         .then((response) => {
-          console.log(response);
           this.updateUser();
           resolve(response);
         }, reject);

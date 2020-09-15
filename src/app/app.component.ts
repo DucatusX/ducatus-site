@@ -35,8 +35,6 @@ export class AppComponent implements OnInit {
       if (event instanceof ActivationEnd) {
         this.enableHeader = !event.snapshot.data.noheader;
         this.enableFooter = !event.snapshot.data.nofooter;
-
-        console.log(this.enableHeader, this.enableFooter);
       }
 
     });

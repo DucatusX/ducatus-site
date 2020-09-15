@@ -36,9 +36,9 @@ export class TicketsComponent implements OnInit {
   public autoHide = false;
   public responsive = false;
   public config: PaginationInstance = {
-      id: 'tickets-pagination',
-      itemsPerPage: 10,
-      currentPage: 1
+    id: 'tickets-pagination',
+    itemsPerPage: 10,
+    currentPage: 1
   };
   public eventLog: string[] = [];
 
@@ -61,21 +61,20 @@ export class TicketsComponent implements OnInit {
 
   public startScrollTo(id: string) {
     const el = document.getElementById(id);
-    el.scrollIntoView({behavior: 'smooth'});
-}
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
 
   public onPageBoundsCorrection(value: number) {
-      this.config.currentPage = value;
-      console.log(value);
+    this.config.currentPage = value;
   }
 
   public pushItem() {
-      const item = this.popped.pop() || 'new ticket';
-      this.players.push(item);
+    const item = this.popped.pop() || 'new ticket';
+    this.players.push(item);
   }
 
   public popItem() {
-      this.popped.push(this.players.pop());
+    this.popped.push(this.players.pop());
   }
 
   public searchChange(event: string) {
