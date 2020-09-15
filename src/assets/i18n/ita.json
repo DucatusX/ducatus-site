@@ -216,7 +216,7 @@
             "TITLE": "Comprare DUC",
             "FORM": {
                 "RADIO": {
-                    "PRICE": "Prezzo DUC = {{ ducRateToUsd }} USD",
+                    "PRICE": "Prezzo DUC = {{ curName }} {{ ducRate }}",
                     "TEXT": "Seleziona tra le seguenti opzioni e ricevi il numero corrispondente di hash per il sorteggio",
                     "LINK": "(ulteriori informazioni)",
                     "TICKET": {

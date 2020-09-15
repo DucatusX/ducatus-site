@@ -216,7 +216,7 @@
             "TITLE": "Mua DUC",
             "FORM": {
                 "RADIO": {
-                    "PRICE": "Giá của DUC = {{ ducRateToUsd }} USD",
+                    "PRICE": "Giá của DUC = {{ curName }} {{ ducRate }}",
                     "TEXT": " Chọn một trong những lựa chọn bên dưới và nhận số lượt rút thăm tương ứng",
                     "LINK": "(thêm thông tin)",
                     "TICKET": {
