@@ -184,7 +184,6 @@ export class GoldLotteryComponent implements OnInit {
     this.goldlotteryservice.codeRegistrate(this.formData.addressDuc, this.formData.addressDucx, new UpperCasePipe().transform(this.formData.code)).then((result) => {
       if (result.token_id) {
         this.ducPrice = result.token_type * result.gold_price * result.duc_value / result.duc_count;
-        console.log(this.ducPrice);
         this.winData = result;
         this.win = true;
         this.formData.formValidating = false;
@@ -228,7 +227,6 @@ export class GoldLotteryComponent implements OnInit {
     this.goldlotteryservice.codeCheck(new UpperCasePipe().transform(this.formDataCheck.code)).then((result) => {
       if (result.token_id) {
         this.ducPrice = result.token_type * result.gold_price * result.duc_value / result.duc_count;
-        console.log(this.ducPrice);
         this.winData = result;
         this.win = true;
         this.formData.formValidating = false;

@@ -171,7 +171,6 @@ export class VoucherComponent implements OnInit {
         this.jsonCSV = chunk.data;
       },
       complete: () => {
-        console.log('Result: ', this.jsonCSV);
         this.addVouchers(this.jsonCSV);
       },
     });
@@ -184,7 +183,6 @@ export class VoucherComponent implements OnInit {
     });
 
     this.voucherService.sendVoucher(vouchers).then((res) => {
-      console.log(res);
       this.updateVouchers();
       this.loadingCSV = false;
     }).catch(err => {
@@ -216,7 +214,5 @@ export class VoucherComponent implements OnInit {
         return sortVoucher1 < sortVoucher2 ? 1 : -1;
       }
     });
-
-    console.log(this.vouchers);
   }
 }

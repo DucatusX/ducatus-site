@@ -25,6 +25,7 @@ import { UserResolver } from './resolvers';
 // pages
 import { AppComponent } from './app.component';
 import { IndexComponent } from './pages/index/index.component';
+import { IndexNewComponent } from './pages/index-new/index-new.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BuyComponent } from './pages/buy/buy.component';
@@ -40,6 +41,8 @@ import { TicketsComponent } from './pages/buy/tikcets/tickets.component';
 // partials
 import { HeaderComponent } from './pages/index/header/header.component';
 import { FooterComponent } from './pages/index/footer/footer.component';
+import { HeaderNewComponent } from './pages/index-new/header/header-new.component';
+import { FooterNewComponent } from './pages/index-new/footer/footer-new.component';
 
 // components
 import { CountdownComponent } from './components/countdown/countdown.component';
@@ -60,6 +63,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     // pages
     AppComponent,
     IndexComponent,
+    IndexNewComponent,
     AboutComponent,
     ContactComponent,
     BuyComponent,
@@ -75,6 +79,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     // components
     HeaderComponent,
     FooterComponent,
+    HeaderNewComponent,
+    FooterNewComponent,
 
     // pipes
     SafePipe,

@@ -1,0 +1,106 @@
+<!-- <app-header-new></app-header-new> -->
+
+<section class="section-header section-header-new">
+    <div class="section-header-container">
+        <div class="swiper-pagination"></div>
+        <div class="section-header-slider">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" *ngFor="let slide of slider">
+                        <div class="section-header-wrap section-header-wrap-desctop"
+                            [style.background-image]="'url(assets/img/slider/' + slide[lang].image + ')'"></div>
+                        <div class="section-header-wrap section-header-wrap-mobile"
+                            [style.background-image]="'url(assets/img/slider/' + slide[lang].image_mob + ')'"></div>
+                        <div class="container-slider">
+                            <div class="slider-item">
+                                <h2 class="h2__slider-title" [innerHTML]="slide[lang].title"></h2>
+                                <p class="p__slider-item" [innerHTML]="slide[lang].text"></p>
+                                <a [routerLink]="'/assets/downloads/pdf/' + slide[lang].file" target="_blank"
+                                    class="button">{{ slide[lang].button }} ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-financial-evolution">
+    <div class="container">
+        <img src="assets/img/sections/financial-img.svg" alt="Financial Evolution">
+        <h3 class="h3-title-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.ONE.TITLE' | translate"></h3>
+        <span class="span-subtitle-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.ONE.SUBTITLE' | translate"></span>
+        <p class="p-text-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.ONE.TEXT' | translate"></p>
+        <span class="ductus-btn-gradient" routerLink="/about"
+            [innerHTML]="'PAGE.NEWMAIN.SECTION.ONE.BUTTON' | translate"></span>
+    </div>
+</section>
+
+<section class="section-community-new">
+    <div class="container">
+        <h3 class="h3-title-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.TWO.TITLE' | translate"></h3>
+        <span class="span-subtitle-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.TWO.SUBTITLE' | translate"></span>
+        <div class="section-community-icons">
+            <span class="icon icon__cash-community" [innerHTML]="'PAGE.NEWMAIN.SECTION.TWO.TEXT_1' | translate"></span>
+            <span class="icon icon__arrow-community" [innerHTML]="'PAGE.NEWMAIN.SECTION.TWO.TEXT_2' | translate"></span>
+        </div>
+    </div>
+</section>
+
+<section class="section-maintains-market-leading">
+    <div class="container">
+        <h3 class="h3-title-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.TITLE' | translate"></h3>
+        <div class="section-maintains-market-leading-icons">
+            <div class="icon icon__gov-new">
+                <span class="section-maintains-market-leading-title"
+                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TITLE_1' | translate"></span>
+                <span class="section-maintains-market-leading-text"
+                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TEXT_1' | translate"></span>
+            </div>
+            <div class="icon icon__users-new">
+                <span class="section-maintains-market-leading-title"
+                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TITLE_2' | translate"></span>
+                <span class="section-maintains-market-leading-text"
+                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TEXT_2' | translate"></span>
+            </div>
+            <div class="icon icon__hands-new">
+                <span class="section-maintains-market-leading-title"
+                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TITLE_3' | translate"></span>
+                <span class="section-maintains-market-leading-text"
+                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TEXT_3' | translate"></span>
+            </div>
+        </div>
+        <h3 class="h3-title-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.TITLE_2' | translate"></h3>
+        <div class="section-maintains-market-leading-icons">
+            <div class="icon icon__rocket-new icon-f">
+                <span class="section-maintains-market-leading-text"
+                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TEXT_4' | translate"></span>
+            </div>
+            <div class="icon icon__stonks-new icon-f">
+                <span class="section-maintains-market-leading-text"
+                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TEXT_5' | translate"></span>
+            </div>
+            <div class="icon icon__web-new icon-f">
+                <span class="section-maintains-market-leading-text"
+                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TEXT_6' | translate"></span>
+            </div>
+            <div class="icon icon__duc-coin-new icon-f">
+                <span class="section-maintains-market-leading-text"
+                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TEXT_7' | translate"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-usability-crypto">
+    <div class="container">
+        <h3 class="h3-title-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.FOUR.TITLE' | translate"></h3>
+    </div>
+    <img src="assets/img/sections/usability-img-section.svg" alt="Usability with the Ducatus Crypto-Economy">
+    <div class="container">
+        <p class="p-text-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.FOUR.TEXT' | translate"></p>
+    </div>
+</section>
+
+<!-- <app-footer-new></app-footer-new> -->

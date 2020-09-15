@@ -110,6 +110,42 @@
                 "TEXT": "Ducatus ritiene che l'usabilità sia l'ultima misura di una valuta legittima. A supporto di questa visione, sono state create le società affiliate Ducatus che offrono servizi  di base per garantire e facilitare l'utilizzo agli utenti Ducatus Coin e ad altri utenti di crypto. Queste aziende Ducatus sono i cardini della cripto-economia Ducatus. Dall'acquisto di un espresso alla prenotazione di una camera in un hotel di lusso, le transazioni che erano solo in contanti ora possono essere cashless, attraverso l'uso di Ducatus Coin."
             }
         },
+        "NEWMAIN": {
+            "SECTION": {
+                "ONE": {
+                    "TITLE": "Una nuova evoluzione finanziaria",
+                    "SUBTITLE": "Essere la criptovaluta più popolare e utilizzabile del mondo ...",
+                    "TEXT": "Un Ducatus per persona sul pianeta. Basato sui principi del matematico italiano Leonardo Fibonacci, Ducatus ha generato un totale di 7.778.742.049 criptovalute. Una volta distribuite tutte queste monete, il loro numero sarà simile al numero di persone sul nostro pianeta. <br><br> La visione per Ducatus Coin è audace. Ma con una combinazione di infrastruttura digitale di livello mondiale, un potente sistema di distribuzione di rete e una suite di attività correlate alla criptoeconomia, è un obiettivo che non è impossibile da raggiungere. <br><br> I proprietari di monete Ducatus ora possono accedere a una vasta gamma di prodotti e servizi sia da parte delle aziende di cripto-economia Ducatus che da commercianti di terze parti. Queste attività di cripto-economia vengono implementate in tutto il mondo in parallelo con la distribuzione delle nostre monete per dimostrare -applicazioni mondiali non solo per le monete Ducatus ma anche per le criptovalute nel loro insieme.",
+                    "BUTTON": "Scopri di più >"
+                },
+                "TWO": {
+                    "TITLE": "Le comunità diffondono le tecnologie. <br> Aziende come Ducatus le rendono tendenze dominanti.",
+                    "SUBTITLE": "Ducatus sviluppa commercialmente le monete",
+                    "TEXT_1": "Le monete Ducatus sono pre-minate e vendute, quindi vengono investiti i profitti per costruire il brand.",
+                    "TEXT_2": "La tecnologia Ducatus Coin è sviluppata internamente sulla base del nostro piano strategico di business a lungo termine."
+                },
+                "THREE": {
+                    "TITLE": "Ducatus mantiene gli standard leader <br> di mercato",
+                    "TITLE_2": "Ducatus è un business, non un <br> progetto tecnologico",
+                    "ICONS": {
+                        "TITLE_1": "Governance",
+                        "TEXT_1": "Gestito da professionisti esperti con esperienze in diversi settori tra cui marketing, finanza e ingegneria",
+                        "TITLE_2": "Trasparenza",
+                        "TEXT_2": "Team di dirigenti e azionisti visibili e accessibili",
+                        "TITLE_3": "Conformità",
+                        "TEXT_3": "Collabora con gli enti governativi e rispetta i regolamenti stabiliti dalle autorità",
+                        "TEXT_4": "Istituito <br> nel 2016",
+                        "TEXT_5": "Team di gestione globale di grande esperienza",
+                        "TEXT_6": "Team di vendita globale dinamico: Networking Marketing Strategy",
+                        "TEXT_7": "Quasi 1 miliardo di monete Ducatus vendute in oltre 180 paesi a partire da gennaio 2020"
+                    }
+                },
+                "FOUR": {
+                    "TITLE": "Usabilità con la Ducatus <br> Crypto-Economy",
+                    "TEXT": "Usa le monete Ducatus per acquistare caffè, prenotare una vacanza, acquistare souvenir. Se lo desideri, puoi persino acquistare proprietà o la casa dei tuoi sogni. <br><br> TQuesti e altri scambi finanziari sono resi possibili dall'esclusiva cripto-economia Ducatus. Ducatus ritiene che l'usabilità sia l'ultima misura di una valuta legittima. A supporto di questa visione, sono state create le società affiliate Ducatus che offrono servizi di base per garantire e facilitare l'utilizzo agli utenti Ducatus Coin e ad altri utenti di crypto. Queste aziende Ducatus sono i cardini della cripto-economia Ducatus. Dall'acquisto di un espresso alla prenotazione di una camera in un hotel di lusso, le transazioni che erano solo in contanti ora possono essere cashless, attraverso l'uso di Ducatus Coin."
+                }
+            }
+        },
         "ABOUT": {
             "TITLE": "Informazioni su Ducatus Coin",
             "SECTION_1": {
@@ -180,7 +216,7 @@
             "TITLE": "Comprare DUC",
             "FORM": {
                 "RADIO": {
-                    "PRICE": "Prezzo DUC = {{ ducRateToUsd }} USD",
+                    "PRICE": "Prezzo DUC = {{ curName }} {{ ducRate }}",
                     "TEXT": "Seleziona tra le seguenti opzioni e ricevi il numero corrispondente di hash per il sorteggio",
                     "LINK": "(ulteriori informazioni)",
                     "TICKET": {

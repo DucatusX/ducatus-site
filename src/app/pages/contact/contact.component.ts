@@ -25,7 +25,6 @@ export class ContactComponent implements OnInit {
     this.disableFields = true;
 
     this.sendservice.sendContactMessage(this.formData).then((result) => {
-      console.log('Success', result);
       this.contactMainSend = 1;
       this.disableFields = false;
     }).catch((err) => {
