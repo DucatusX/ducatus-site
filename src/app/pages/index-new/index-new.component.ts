@@ -48,74 +48,74 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         file: 'ducatus-coin-white-paper.pdf'
       },
     },
-    // {
-    //   eng: {
-    //     title: 'Cryptocurrency for everyday living',
-    //     text: 'Enjoy the freedom of cashless, borderless and secure everyday transactions, from buying your morning coffee to purchasing your dream home, now all possible with Ducatus Coin.',
-    //     button: 'Download Whitepaper',
-    //     image: 'slide-2.png',
-    //     image_mob: 'slide-2-mob.png',
-    //     file: 'ducatus-coin-white-paper.pdf'
-    //   },
-    //   ita: {
-    //     title: 'Criptovaluta per la vita di tutti i giorni',
-    //     text: 'Goditi la libertà di transazioni quotidiane senza contanti, senza confini e sicure, dall\'acquisto del caffè del mattino all\'acquisto della casa dei tuoi sogni, ora tutto possibile con Ducatus Coin.',
-    //     button: 'Scarica il white paper',
-    //     image: 'slide-2.png',
-    //     image_mob: 'slide-2-mob.png',
-    //     file: 'ducatus-coin-white-paper.pdf'
-    //   },
-    //   deu: {
-    //     title: 'Kryptowährung für das tägliche Leben',
-    //     text: 'Genießen Sie die Freiheit bargeldloser, grenzenloser und sicherer Transaktionen im Alltag, vom Kauf Ihres Morgenkaffees bis zum Kauf Ihres Traumhauses, all das jetzt möglich mit Ducatus Coin.',
-    //     button: 'Whitepaper herunterladen',
-    //     image: 'slide-2.png',
-    //     image_mob: 'slide-2-mob.png',
-    //     file: 'ducatus-coin-white-paper.pdf'
-    //   },
-    //   vie: {
-    //     title: 'Tiền mã hoá cho cuộc sống hàng ngày',
-    //     text: 'Tận hưởng sự tự do của các giao dịch hàng ngày không tiền mặt, không biên giới và an toàn, từ mua cà phê buổi sáng đến mua ngôi nhà mơ ước của bạn, giờ đây tất cả đều có thể với Ducatus Coin.',
-    //     button: 'Tải xuống Whitepaper',
-    //     image: 'slide-2.png',
-    //     image_mob: 'slide-2-mob.png',
-    //     file: 'ducatus-coin-white-paper.pdf'
-    //   },
-    // },
-    // {
-    //   eng: {
-    //     title: 'Championing the crypto-economy',
-    //     text: 'With Distribution, Convertibility and Usability (DUC) at its core, Ducatus Coin encourages the practical use and application of cryptocurrency in real life. These traits are instrumental in helping build a solid crypto-economy for the future.',
-    //     button: 'Download Whitepaper',
-    //     image: 'slide-3.jpg',
-    //     image_mob: 'slide-3-mob.png',
-    //     file: 'ducatus-coin-white-paper.pdf'
-    //   },
-    //   ita: {
-    //     title: 'Sostenere l\'economia digitale',
-    //     text: 'Con la distribuzione, la convertibilità e l\'usabilità (DUC) al centro, Ducatus Coin incoraggia l\'uso pratico e l\'applicazione della criptovaluta nella vita quotidiana.  Questi tratti sono fondamentali per aiutare a costruire una solida criptoeconomia per il futuro.',
-    //     button: 'Scarica il white paper',
-    //     image: 'slide-3.jpg',
-    //     image_mob: 'slide-3-mob.png',
-    //     file: 'ducatus-coin-white-paper.pdf'
-    //   },
-    //   deu: {
-    //     title: 'Verfechter der digitalen Wirtschaft',
-    //     text: 'Mit Distribution, Convertibility and Usability (DUC) im Mittelpunkt fördert Ducatus Coin die praktische Verwendung und Anwendung von Kryptowährung im realen Leben. Diese Eigenschaften tragen maßgeblich zum Aufbau einer soliden Kryptoökonomie für die Zukunft bei.',
-    //     button: 'Whitepaper herunterladen',
-    //     image: 'slide-3.jpg',
-    //     image_mob: 'slide-3-mob.png',
-    //     file: 'ducatus-coin-white-paper.pdf'
-    //   },
-    //   vie: {
-    //     title: 'Ủng hộ nền kinh tế kỹ thuật số',
-    //     text: 'Với việc phân phối, khả năng chuyển đổi và khả năng sử dụng (DUC) là cốt lõi, Ducatus Coin khuyến khích sử dụng thực tế và ứng dụng tiền mã hoá trong cuộc sống thực. Những đặc điểm này là công cụ giúp xây dựng nền kinh tế tiền mã hoá vững chắc cho tương lai.',
-    //     button: 'Tải xuống Whitepaper',
-    //     image: 'slide-3.jpg',
-    //     image_mob: 'slide-3-mob.png',
-    //     file: 'ducatus-coin-white-paper.pdf'
-    //   }
-    // },
+    {
+      eng: {
+        title: 'Cryptocurrency for everyday living',
+        text: 'Enjoy the freedom of cashless, borderless and secure everyday transactions, from buying your morning coffee to purchasing your dream home, now all possible with Ducatus Coin.',
+        button: 'Download Whitepaper',
+        image: 'slide-2.png',
+        image_mob: 'slide-2-mob.png',
+        file: 'ducatus-coin-white-paper.pdf'
+      },
+      ita: {
+        title: 'Criptovaluta per la vita di tutti i giorni',
+        text: 'Goditi la libertà di transazioni quotidiane senza contanti, senza confini e sicure, dall\'acquisto del caffè del mattino all\'acquisto della casa dei tuoi sogni, ora tutto possibile con Ducatus Coin.',
+        button: 'Scarica il white paper',
+        image: 'slide-2.png',
+        image_mob: 'slide-2-mob.png',
+        file: 'ducatus-coin-white-paper.pdf'
+      },
+      deu: {
+        title: 'Kryptowährung für das tägliche Leben',
+        text: 'Genießen Sie die Freiheit bargeldloser, grenzenloser und sicherer Transaktionen im Alltag, vom Kauf Ihres Morgenkaffees bis zum Kauf Ihres Traumhauses, all das jetzt möglich mit Ducatus Coin.',
+        button: 'Whitepaper herunterladen',
+        image: 'slide-2.png',
+        image_mob: 'slide-2-mob.png',
+        file: 'ducatus-coin-white-paper.pdf'
+      },
+      vie: {
+        title: 'Tiền mã hoá cho cuộc sống hàng ngày',
+        text: 'Tận hưởng sự tự do của các giao dịch hàng ngày không tiền mặt, không biên giới và an toàn, từ mua cà phê buổi sáng đến mua ngôi nhà mơ ước của bạn, giờ đây tất cả đều có thể với Ducatus Coin.',
+        button: 'Tải xuống Whitepaper',
+        image: 'slide-2.png',
+        image_mob: 'slide-2-mob.png',
+        file: 'ducatus-coin-white-paper.pdf'
+      },
+    },
+    {
+      eng: {
+        title: 'Championing the crypto-economy',
+        text: 'With Distribution, Convertibility and Usability (DUC) at its core, Ducatus Coin encourages the practical use and application of cryptocurrency in real life. These traits are instrumental in helping build a solid crypto-economy for the future.',
+        button: 'Download Whitepaper',
+        image: 'slide-3.jpg',
+        image_mob: 'slide-3-mob.png',
+        file: 'ducatus-coin-white-paper.pdf'
+      },
+      ita: {
+        title: 'Sostenere l\'economia digitale',
+        text: 'Con la distribuzione, la convertibilità e l\'usabilità (DUC) al centro, Ducatus Coin incoraggia l\'uso pratico e l\'applicazione della criptovaluta nella vita quotidiana.  Questi tratti sono fondamentali per aiutare a costruire una solida criptoeconomia per il futuro.',
+        button: 'Scarica il white paper',
+        image: 'slide-3.jpg',
+        image_mob: 'slide-3-mob.png',
+        file: 'ducatus-coin-white-paper.pdf'
+      },
+      deu: {
+        title: 'Verfechter der digitalen Wirtschaft',
+        text: 'Mit Distribution, Convertibility and Usability (DUC) im Mittelpunkt fördert Ducatus Coin die praktische Verwendung und Anwendung von Kryptowährung im realen Leben. Diese Eigenschaften tragen maßgeblich zum Aufbau einer soliden Kryptoökonomie für die Zukunft bei.',
+        button: 'Whitepaper herunterladen',
+        image: 'slide-3.jpg',
+        image_mob: 'slide-3-mob.png',
+        file: 'ducatus-coin-white-paper.pdf'
+      },
+      vie: {
+        title: 'Ủng hộ nền kinh tế kỹ thuật số',
+        text: 'Với việc phân phối, khả năng chuyển đổi và khả năng sử dụng (DUC) là cốt lõi, Ducatus Coin khuyến khích sử dụng thực tế và ứng dụng tiền mã hoá trong cuộc sống thực. Những đặc điểm này là công cụ giúp xây dựng nền kinh tế tiền mã hoá vững chắc cho tương lai.',
+        button: 'Tải xuống Whitepaper',
+        image: 'slide-3.jpg',
+        image_mob: 'slide-3-mob.png',
+        file: 'ducatus-coin-white-paper.pdf'
+      }
+    },
   ];
 
   constructor(

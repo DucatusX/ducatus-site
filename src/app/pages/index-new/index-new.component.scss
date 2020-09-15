@@ -179,6 +179,14 @@
     margin-top: 10px;
     margin-bottom: 100px;
 
+    .icon-f {
+      width: 180px;
+
+      @include b(850) {
+        width: 100%;
+      }
+    }
+
     @include b(850) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
