@@ -47,11 +47,44 @@ li {
             margin: 15px 0;
         }
     }
+}
 
+.h3 {
+    &-title {
+        &-section {
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 37px;
+            text-align: center;
+            color: #8C3443;
 
+            @include b(600) {
+                font-size: 25px;
+            }
+
+            @include b(500) {
+                font-size: 20px;
+            }
+        }
+    }
 }
 
 .span {
+
+    &-subtitle {
+        &-section {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 29px;
+            text-align: center;
+            color: #5C5A57;
+
+            @include b(600) {
+                font-size: 18px;
+            }
+        }
+    }
+
     &__title {
         font-weight: normal;
         font-size: 24px;
@@ -123,6 +156,20 @@ li {
 }
 
 .p {
+
+    &-text {
+        &-section{
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 29px;
+            color: #5C5A57;
+
+            @include b(600) {
+                font-size: 14px;
+                line-height: 22px;
+            }
+        }
+    }
 
     &__section-ducatus,
     &__slider-item,
@@ -405,6 +452,56 @@ li {
         }
     }
 
+    &__facebook_new {
+        border-radius: 0px;
+
+        @include before-img(block, 28px, 28px, r) {
+            background-color: transparent;
+            background-image: url('assets/img/icons/new/facebook.svg');
+            background-size: contain;
+        }
+    }
+
+    &__twitter_new {
+        border-radius: 0px;
+
+        @include before-img(block, 28px, 28px, r) {
+            background-color: transparent;
+            background-image: url('assets/img/icons/new/twitter.svg');
+            background-size: contain;
+        }
+    }
+
+    &__instagram_new {
+        border-radius: 0px;
+
+        @include before-img(block, 28px, 28px, r) {
+            background-color: transparent;
+            background-image: url('assets/img/icons/new/instagram.svg');
+            background-size: contain;
+        }
+    }
+
+    &__linkedin_new {
+        border-radius: 0px;
+
+        @include before-img(block, 28px, 28px, r) {
+            background-color: transparent;
+            background-image: url('assets/img/icons/new/linkedIn.svg');
+            background-size: contain;
+        }
+    }
+
+    &__youtube_new {
+        border-radius: 0px;
+
+        @include before-img(block, 28px, 28px, r) {
+            background-color: transparent;
+            background-image: url('assets/img/icons/new/youtube.svg');
+            background-size: contain;
+        }
+    }
+
     &__coin-ducx {
         @include before-img(block, 90px, 90px, r) {
             background-image: url('assets/img/icons/coin-ducx.svg');
@@ -573,6 +670,69 @@ li {
         @include before-img(block, 14px, 14px, r) {
             transition: 0.4s ease;
             background-image: url('assets/img/icons/search.svg');
+        }
+    }
+
+    &__cash-community {
+        @include before-img(block, 110px, 110px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/cash-community.svg');
+        }
+    }
+
+    &__arrow-community {
+        @include before-img(block, 110px, 110px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/arrow-community.svg');
+        }
+    }
+
+    &__stonks-new {
+        @include before-img(block, 145px, 150px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/stonks-new.svg');
+        }
+    }
+
+    &__web-new {
+        @include before-img(block, 145px, 150px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/web-new.svg');
+        }
+    }
+
+    &__users-new {
+        @include before-img(block, 145px, 150px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/users-new.svg');
+        }
+    }
+
+    &__rocket-new {
+        @include before-img(block, 145px, 150px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/rocket-new.svg');
+        }
+    }
+
+    &__hands-new {
+        @include before-img(block, 145px, 150px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/hands-new.svg');
+        }
+    }
+
+    &__gov-new {
+        @include before-img(block, 145px, 150px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/gov-new.svg');
+        }
+    }
+
+    &__duc-coin-new {
+        @include before-img(block, 145px, 150px, r) {
+            transition: 0.4s ease;
+            background-image: url('assets/img/icons/duc-coin-new.svg');
         }
     }
 }

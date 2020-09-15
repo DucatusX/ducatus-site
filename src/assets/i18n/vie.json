@@ -110,6 +110,42 @@
                 "TEXT": "Ducatus tin rằng khả năng sử dụng là thước đo cuối cùng của một loại tiền tệ hợp pháp. Để hỗ trợ tầm nhìn này, các doanh nghiệp liên kết của Ducatus cung cấp các nhu cầu cơ bản đã được tạo ra để mang lại sự dễ dàng và thuận tiện cho Ducatus Coin và những người dùng tiền mã hoá khác. Các doanh nghiệp Ducatus này là nền tảng của Nênt Kinh Tê Tiền Mã Hoá Ducatus. Từ việc mua một tách espresso đến đặt phòng tại một khách sạn sang trọng, các giao dịch trước đây chỉ có thể là tiền mặt, giờ không cần dùng tiền mặt nữa nhờ việc sử dụng Ducatus Coin."
             }
         },
+        "NEWMAIN": {
+            "SECTION": {
+                "ONE": {
+                    "TITLE": "Một tiến hoá tài chính mới",
+                    "SUBTITLE": "Trở thành tiền mã hoá phổ biến nhất thế giới và có thể ứng dụng thực tiễn...",
+                    "TEXT": "Một Ducatus cho mỗi người trên hành tinh. Dựa trên các nguyên tắc của nhà toán học người Ý Leonardo Fibonacci, Ducatus đã tạo ra tổng cộng 7,778,742,049 đồng tiền mã hoá. Một khi những đồng tiền này đã được phân phối, số lượng của chúng sẽ tương tự như số người trên hành tinh của chúng ta. <br><br> Tầm nhìn cho Ducatus Coin rất táo bạo. Nhưng với sự kết hợp của cơ sở hạ tầng kỹ thuật số đẳng cấp thế giới, hệ thống phân phối mạng mạnh mẽ và một bộ các doanh nghiệp kinh tế tiền mã hoá có liên quan, đó là một mục tiêu không thể không đạt được. <br><br> Chủ sở hữu Ducatus Coin hiện có thể truy cập vào một loạt các sản phẩm và dịch vụ từ các doanh nghiệp thuộc nền kinh tế tiền mã hoá Ducatus và các doanh nghiệp bên thứ ba. Các doanh nghiệp kinh tế tiền mã hoá này đang được triển khai song song với việc phân phối coin của chúng tôi để chứng minh thực tế các ứng dụng thực tế không chỉ cho Ducatus Coin mà còn cho toàn bộ các loại tiền mã hoá.",
+                    "BUTTON": "Tìm hiểu thêm >"
+                },
+                "TWO": {
+                    "TITLE": "Cộng đồng phổ biến công nghệ. <br> Các công ty như Ducatus biến chúng thành chủ đạo.",
+                    "SUBTITLE": "Ducatus phát triển một cách thương mại",
+                    "TEXT_1": "Ducatus Coins được khai thác trước và bán, sau đó lợi nhuận được đầu tư để xây dựng thương hiệu.",
+                    "TEXT_2": "Công nghệ coin được phát triển nội bộ dựa trên kế hoạch kinh doanh dài hạn chiến lược của chúng tôi."
+                },
+                "THREE": {
+                    "TITLE": "Ducatus duy trì các tiêu chuẩn hàng đầu thị <br> trường",
+                    "TITLE_2": "Ducatus là một doanh nghiệp, không phải là một dự án công nghệ",
+                    "ICONS": {
+                        "TITLE_1": "Quản trị",
+                        "TEXT_1": "Được quản lý bởi các chuyên gia giàu kinh nghiệm với nền tảng trong một loạt các lĩnh vực bao gồm tiếp thị, tài chính và kỹ thuật",
+                        "TITLE_2": "Minh bạch",
+                        "TEXT_2": "Đội ngũ lãnh đạo và cổ đông cấp cao sẵn sàng ra mặt và dễ tiếp cận",
+                        "TITLE_3": "Tuân thủ",
+                        "TEXT_3": "Hợp tác với các cơ quan chính phủ và tuân thủ các quy định do chính quyền đặt ra",
+                        "TEXT_4": "Thành lập <br> năm 2016",
+                        "TEXT_5": "Đội ngũ lãnh đạo toàn cầu giàu kinh nghiệm",
+                        "TEXT_6": "Đội ngũ bán hàng toàn cầu năng động: Chiến lược tiếp thị mạng",
+                        "TEXT_7": "Gần 1 tỷ Ducatus được bán tại hơn 180 quốc gia tính đến tháng 1 năm 2020"
+                    }
+                },
+                "FOUR": {
+                    "TITLE": "Khả năng sử dụng với nền kinh tế tiền mã hoá Ducatus",
+                    "TEXT": "Sử dụng Ducatus Coins để mua cà phê, đặt kỳ nghỉ, mua quà lưu niệm. Bạn thậm chí có thể mua bất động sản hoặc ngôi nhà mơ ước của mình nếu bạn muốn. <br><br> Những giao dịch tài chính này có thể được thực hiện thông qua Nền Kinh Tế Tiền Thuật Toán Ducatus độc đáo. Ducatus tin rằng khả năng sử dụng là thước đo cuối cùng của một loại tiền tệ hợp pháp. Để hỗ trợ tầm nhìn này, các doanh nghiệp liên kết của Ducatus cung cấp các nhu cầu cơ bản đã được tạo ra để mang lại sự dễ dàng và thuận tiện cho Ducatus Coin và những người dùng tiền mã hoá khác. Các doanh nghiệp Ducatus này là nền tảng của Nênt Kinh Tê Tiền Mã Hoá Ducatus. Từ việc mua một tách espresso đến đặt phòng tại một khách sạn sang trọng, các giao dịch trước đây chỉ có thể là tiền mặt, giờ không cần dùng tiền mặt nữa nhờ việc sử dụng Ducatus Coin."
+                }
+            }
+        },
         "ABOUT": {
             "TITLE": "Về Ducatus Coin",
             "SECTION_1": {
@@ -180,7 +216,7 @@
             "TITLE": "Mua DUC",
             "FORM": {
                 "RADIO": {
-                    "PRICE": "Giá của DUC = {{ ducRateToUsd }} USD",
+                    "PRICE": "Giá của DUC = {{ curName }} {{ ducRate }}",
                     "TEXT": " Chọn một trong những lựa chọn bên dưới và nhận số lượt rút thăm tương ứng",
                     "LINK": "(thêm thông tin)",
                     "TICKET": {

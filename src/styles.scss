@@ -847,23 +847,31 @@ $custom-typography: mat-typography-config(
         background-color: $brown-red;
         position: relative;
         height: 100%;
+
+        .container {
+            display: grid !important;
+            grid-template-columns: minmax(320px,500px) minmax(320px,400px);
+            justify-content: space-between !important;
+            max-width: 1060px;
+            padding: 50px 15px;
+
+            @include b(650) {
+                grid-gap: 50px;
+                grid-template-columns: 1fr;
+            }
+        }
     }
 
     &-title {
         display: block;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         font-weight: bold;
+        font-size: 25px;
         color: white;
-        font-size: 27px;
 
-        &-left {
-            padding-right: 60px;
-
-            @include b(900) {
-                padding-right: 0;
-            }
+        &-right {
+            margin-bottom: 20px;
         }
-
     }
 
     &-text {
@@ -882,14 +890,12 @@ $custom-typography: mat-typography-config(
     }
 
     &-list {
-        justify-content: space-between;
+        justify-content: space-around;
         display: flex;
-        margin-top: 120px;
-
-        @include b(850) {
-            flex-direction: column;
-            margin-top: 30px;
-        }
+        margin-top: 30px;
+        margin-left: -10px;
+        margin-right: -10px;
+        flex-wrap: wrap;
 
         .download_ducatus,
         .download_googleplay,
@@ -898,8 +904,9 @@ $custom-typography: mat-typography-config(
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
-            height: 55px;
-            width: 150px;
+            min-height: 55px;
+            min-width: 150px;
+            margin: 0 5px;
 
             @include b(900) {
                 background-size: contain;
@@ -933,75 +940,28 @@ $custom-typography: mat-typography-config(
         }
     }
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-        max-width: 1060px;
-
-        @include b(850) {
-            flex-direction: column-reverse;
-            padding: 50px 15px;
-        }
-
-    }
-
     &-block {
-        width: 50%;
+        width: 100%;
 
-        @include b(850) {
-            width: 100%;
-        }
-
-        &-fill {
-            background-color: #B89C5E;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            .section-app-block-wrap {
-                background-image: url('assets/img/icons/icon-wallet.svg');
-                background-position: top right;
-                background-repeat: no-repeat;
-                background-size: 60px;
-            }
-        }
-
-        &:nth-child(1) {
-            padding: 30px 30px 100px 30px;
-            margin-top: -130px;
-
-            @include b(900) {
-                padding: 30px 10px 80px 10px;
-            }
-
-            @include b(850) {
-                margin-top: 30px;
-                padding: 30px;
-            }
-
-            br {
-                @include b(750) {
-                    display: none;
-                }
-            }
-
-            .section-text {
-                .section-app-title {
-                    margin-bottom: 10px;
-                }
+        &-wrap {
+            @include b(650) {
+                text-align: center;
             }
         }
 
         &:nth-child(2) {
-
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0 5px;
+            padding: 0 10px 0 30px;
 
             @include b(850) {
                 justify-content: flex-start;
-                padding: 0 30px;
+            }
+
+            @include b(650) {
+                justify-content: center;
+                padding: 0;
             }
 
             .section-app-block-wrap {
@@ -1010,25 +970,19 @@ $custom-typography: mat-typography-config(
             }
 
             .section-text {
-                .section-app-line {
-                    height: 3px;
-                    width: 30px;
-                    border-radius: 5px;
-                    display: block;
-                    margin-bottom: 30px;
-                    background-color: #B89C5E;
-                }
-
                 .section-app-title {
                     margin-bottom: 20px;
                 }
 
                 .section-app-text {
                     line-height: 2;
+
+                    @include b(650) {
+                        text-align: center;
+                    }        
                 }
             }
         }
-
     }
 }
 
