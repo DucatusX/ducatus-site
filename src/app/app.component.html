@@ -1,10 +1,12 @@
-<app-header *ngIf="enableHeader"></app-header>
+<!-- <app-header *ngIf="enableHeader"></app-header> -->
+<app-header-new></app-header-new>
 
 <div [@routeAnimations]="prepareRoute(outlet)">
   <router-outlet #outlet="outlet" (activate)="onActivate($event)"></router-outlet>
 </div>
 
-<app-footer *ngIf="enableFooter"></app-footer>
+<app-footer-new></app-footer-new>
+<!-- <app-footer *ngIf="enableFooter"></app-footer> -->
 
 <div class="page-overlay" *ngIf="showOverlay">
   <img src="/assets/img/icons/logo.svg" alt="ducauts logo">
