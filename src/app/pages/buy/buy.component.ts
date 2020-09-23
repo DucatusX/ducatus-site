@@ -43,10 +43,10 @@ export class BuyComponent implements OnInit, OnDestroy {
   public selectedMoney = 'usd';
 
   public currencyTemplate = [
-    { name: 'Card', shortName: 'credit card' },
-    { name: 'USDC', shortName: 'usdc' },
-    { name: 'Bitcoin', shortName: 'btc' },
-    { name: 'Ethereum', shortName: 'eth' }
+    { name: 'Card', displayName: 'credit card', shortName: 'card' },
+    { name: 'USDC', displayName: 'usdc', shortName: 'usdc' },
+    { name: 'Bitcoin', displayName: 'btc', shortName: 'btc' },
+    { name: 'Ethereum', displayName: 'eth', shortName: 'eth' }
   ];
 
   public moneyTemplate = [
