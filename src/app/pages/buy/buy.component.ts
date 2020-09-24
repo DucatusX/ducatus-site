@@ -43,10 +43,10 @@ export class BuyComponent implements OnInit, OnDestroy {
   public selectedMoney = 'usd';
 
   public currencyTemplate = [
-    { name: 'Ethereum', shortName: 'eth' },
-    { name: 'Bitcoin', shortName: 'btc' },
-    { name: 'USDC', shortName: 'usdc' },
-    { name: 'Card', shortName: 'card' }
+    { name: 'Card', displayName: 'credit card', shortName: 'card' },
+    { name: 'USDC', displayName: 'usdc', shortName: 'usdc' },
+    { name: 'Bitcoin', displayName: 'btc', shortName: 'btc' },
+    { name: 'Ethereum', displayName: 'eth', shortName: 'eth' }
   ];
 
   public moneyTemplate = [
@@ -346,7 +346,7 @@ export class BuyComponent implements OnInit, OnDestroy {
     if (email && address && this.loadedAddress && !this.loadingData) {
       this.loadingQr = true;
 
-      const currency  = this.BuyGroup.controls['currency'].value;
+      const currency = this.BuyGroup.controls['currency'].value;
       const amount = Number((this.BuyGroup.value.amount / this.ducToUsd * this.rates.DUC[this.currencyData[currency].shortName.toUpperCase()]).toFixed(this.currencyData[currency].decimals)) + 0.00005;
 
       this.currencyData[currency].amount = (Math.ceil((amount) * 10000) / 10000 + 0.00001).toFixed(5);
