@@ -272,6 +272,18 @@ li {
         }
     }
 
+    &__congratulations {
+        @include before-img(block, 64px, 64px, r) {
+            background-image: url('assets/img/icons/congratulations.svg');
+        }
+    }
+
+    &__watch-out {
+        @include before-img(block, 37px, 37px, r) {
+            background-image: url('assets/img/icons/watch-out.svg');
+        }
+    }
+
     &__people {
         @include before-img(block, 90px, 90px, r) {
             background-color: $white;

@@ -23,8 +23,11 @@ export class BuyComponent implements OnInit, OnDestroy {
   public loadingCard = false;
   public modal = false;
   public modalInfo = false;
+  public modalWinner = false;
   public modalAccept = false;
+
   private checker;
+
   public bg: string;
   public percentLottery = 0;
   public lang = 'eng';
@@ -41,6 +44,8 @@ export class BuyComponent implements OnInit, OnDestroy {
 
   public ducToUsd = 0.05;
   public selectedMoney = 'usd';
+
+  public winners = [];
 
   public currencyTemplate = [
     { name: 'Card', displayName: 'credit card', shortName: 'card' },
@@ -168,6 +173,7 @@ export class BuyComponent implements OnInit, OnDestroy {
     sent_duc_amount: '',
     started_at: 0,
     ended: false,
+    winners_data: []
   };
 
   public lotteryDesc: any = {
@@ -207,8 +213,6 @@ export class BuyComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    window['jQuery']['cookie']('termsBuy') ? this.acceptModalTerms() : this.modal = true;
-
     const defaultLng = (navigator.language || navigator['browserLanguage']).split('-')[0];
     const langToSet = window['jQuery']['cookie']('lng') || (['deu', 'eng', 'vie', 'ita'].includes(defaultLng) ? defaultLng : 'eng');
 
@@ -219,14 +223,18 @@ export class BuyComponent implements OnInit, OnDestroy {
     });
 
     this.route.queryParams.subscribe((params) => {
-      this.referralIncoming = params['referral'];
+      if (params['referral']) { window['jQuery']['cookie']('referral', params['referral']); }
     });
 
-    if (this.referralIncoming) { window['jQuery']['cookie']('referral', this.referralIncoming); }
+    window['jQuery']['cookie']('termsBuy') ? this.acceptModalTerms() : this.modal = true;
   }
 
   ngOnDestroy() {
     this.checker = undefined;
+  }
+
+  public countdownEvent(state) {
+    this.lottery.ended = state;
   }
 
   get ducAddress() {
@@ -425,6 +433,26 @@ export class BuyComponent implements OnInit, OnDestroy {
     this.buyservice.getLottery().then((result) => {
       this.lotteryDesc = result[0];
       this.bg = this.lotteryDesc.image ? this.lotteryDesc.image : 'assets/img/sections/buy-bg.png';
+
+      if (this.lotteryDesc && this.lotteryDesc.winners_data) {
+
+        let count = 0;
+
+        this.lotteryDesc.winners_data.map(value => {
+          value['deu'] = this.lotteryDesc.description.deu.prizes[count];
+          value['eng'] = this.lotteryDesc.description.eng.prizes[count];
+          value['vie'] = this.lotteryDesc.description.vie.prizes[count];
+          value['ita'] = this.lotteryDesc.description.ita.prizes[count];
+          count++;
+          this.winners.push(value);
+        });
+
+        console.log(this.lotteryDesc);
+        console.log(this.winners);
+
+        this.modalWinner = true;
+      }
+
       this.checkLotteryStatus();
     });
 

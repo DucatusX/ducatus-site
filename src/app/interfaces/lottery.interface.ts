@@ -27,4 +27,5 @@ export interface Lottery {
   winner_address?: string;
   winner_tx_hash?: string;
   filled_at?: any;
+  winners_data?: any;
 }

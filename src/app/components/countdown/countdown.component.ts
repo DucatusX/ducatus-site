@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, OnDestroy, ValueProvider } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Observable, Subscription, interval } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-countdown',
@@ -13,6 +13,8 @@ export class CountdownComponent implements OnInit {
   @Input() timeStart: number;
   @Input() correctTimeStart: number;
   @Input() timeEndDayPlus: number;
+
+  @Output() countdownEvent = new EventEmitter<any>();
 
   private counter$: Observable<number>;
   private subscription: Subscription;
@@ -52,7 +54,14 @@ export class CountdownComponent implements OnInit {
     const future = new Date(this.timeStart);
     future.setDate(future.getDate() + this.timeEndDayPlus);
     this.counter$ = interval(1000).pipe(map(() => Math.floor((future.getTime() - new Date().getTime()) / 1000)));
-    this.subscription = this.counter$.subscribe((x) => this.message = this.dhms(x));
+    this.subscription = this.counter$.subscribe((x) => {
+      if (new Date(future).getTime() < new Date().getTime()) {
+        this.subscription.unsubscribe();
+        this.countdownEvent.emit(true);
+      }
+
+      this.message = this.dhms(x);
+    });
   }
 
   OnDestroy(): void {

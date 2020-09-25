@@ -11,14 +11,19 @@
             <div class="pay-form-block" *ngIf="!loadingData">
 
                 <div class="hidden-mobile" *ngIf="lottery.ended">
-                    <div *ngIf="lottery.winner_address" class="lottery-win">
-                        <div class="lottery-win-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WINNER.TITLE' | translate }}</div>
-                        <span class="lottery-win-text">{{ lottery.winner_tx_hash }}</span>
-                    </div>
-                    <div *ngIf="!lottery.winner_address" class="lottery-waiting">
+                    <div *ngIf="!lottery.winners_data" class="lottery-waiting">
                         <div class="lottery-waiting-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TITLE' | translate }}
                         </div>
                         <div class="lottery-waiting-text">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TEXT' | translate }}</div>
+                    </div>
+                    <!-- <div *ngIf="lottery.winner_address" class="lottery-win">
+                        <div class="lottery-win-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WINNER.TITLE' | translate }}</div>
+                        <span class="lottery-win-text">{{ lottery.winner_tx_hash }}</span>
+                    </div> -->
+                    <div style="min-height: 80px;padding: 10px;margin-bottom: 30px;"
+                        *ngIf="lottery.winners_data && !modalWinner" (click)="modalWinner = true"
+                        class="lottery-win btn ducatus-btn ducatus-btn-brown">
+                        View winners
                     </div>
                 </div>
 
@@ -63,7 +68,7 @@
                             {{ 'PAGE.BUY.LOTTERY.BLOCK.COUNTDOWN.TITLE' | translate }}</div>
                         <span class="lottery-tickets-timer-count">
                             <app-countdown [timeStart]="lottery.filled_at" [correctTimeStart]="1000"
-                                [timeEndDayPlus]="8">
+                                [timeEndDayPlus]="8" (countdownEvent)="countdownEvent($event)">
                             </app-countdown>
                         </span>
                     </div>
@@ -311,7 +316,7 @@
 
             <div class="hidden-desktop pay-form-block" *ngIf="!loadingData">
                 <div *ngIf="lottery.ended">
-                    <div *ngIf="lottery.winner_address" class="lottery-win">
+                    <!-- <div *ngIf="lottery.winner_address" class="lottery-win">
                         <div class="lottery-win-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WINNER.TITLE' | translate }}</div>
                         <span class="lottery-win-text">{{ lottery.winner_tx_hash }}</span>
                     </div>
@@ -319,6 +324,11 @@
                         <div class="lottery-waiting-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TITLE' | translate }}
                         </div>
                         <div class="lottery-waiting-text">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TEXT' | translate }}</div>
+                    </div> -->
+                    <div style="min-height: 80px;padding: 10px;margin-bottom: 30px;"
+                        *ngIf="lottery.winners_data && !modalWinner" (click)="modalWinner = true"
+                        class="lottery-win btn ducatus-btn ducatus-btn-brown">
+                        View winners
                     </div>
                 </div>
 
@@ -351,8 +361,7 @@
                         <div class="lottery-tickets-item">
                             <img src="/assets/img/icons/ticket.svg" height="57" width="70" alt="ducatus lottery ticket">
                             <span [routerLink]="['/buy/entries']" class="lottery-tickets-item-title"
-                                [innerHTML]="'PAGE.BUY.LOTTERY.BLOCK.TICKETS.LINK' | translate:{tickets_amount:
-                                                                                                                            (lottery.gave_tickets_amount | number) }"></span>
+                                [innerHTML]="'PAGE.BUY.LOTTERY.BLOCK.TICKETS.LINK' | translate:{tickets_amount: (lottery.gave_tickets_amount | number) }"></span>
                         </div>
                         <div class="lottery-tickets-spacer"><span></span></div>
                         <div class="lottery-tickets-item">
@@ -393,6 +402,42 @@
         <div class="modal-content-bottom">
             <button id="btn-modal" style="margin: 0 auto;" (click)="modalInfo = false"
                 class="ducatus-btn ducatus-btn-brown">{{ 'PAGE.BUY.MODAL.INFO.BUTTON' | translate }}</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" style="padding: 0 10px;" *ngIf="modalWinner">
+    <div class="modal-wrap modal-congratulation-wrap">
+        <div class="modal-content-top modal-congratulation">
+            <span class="icon icon__congratulations">Congratulations!</span>
+            <span class="modal-congratulation-text" style="text-align: center;"><b>We have electronically drawn the
+                    winning hashes through smart
+                    contract. Are you one of them?</b></span>
+            <div class="modal-congratulation-winners">
+                <div class="modal-congratulation-winners-item" *ngFor="let item of winners">
+                    <div class="modal-congratulation-winners-item-content">
+                        <span class="modal-congratulation-winners-item-content-prize">1st prize</span>
+                        <span
+                            class="modal-congratulation-winners-item-content-count">{{ item[lang].description }}</span>
+                        <span class="modal-congratulation-winners-item-content-hash">Hash: <span
+                                class="modal-congratulation-winners-item-content-accent">
+                                {{ item.tx_hash }}</span></span>
+                    </div>
+                </div>
+            </div>
+            <span class="modal-congratulation-text">We will contact all winners via email for instructions on how to
+                claim your prizes. Thank you to all who participated and congratulations for being a part of the Ducatus
+                cashless future.</span>
+            <span class="icon icon__watch-out">Watch Out!</span>
+            <span class="modal-congratulation-watch-out">We’re launching our next round of competition soon. This time,
+                we’re giving away a luxury studio
+                apartment in legendary Liverpool and more exciting extras!</span>
+            <span class="modal-congratulation-watch-out">Visit us again on 3 October 2020 to join. The next lucky winner
+                could be YOU!</span>
+        </div>
+        <div class="modal-content-bottom">
+            <button id="btn-modal" style="margin: 0 auto;" (click)="modalWinner = false"
+                class="ducatus-btn ducatus-btn-brown">OK</button>
         </div>
     </div>
 </div>

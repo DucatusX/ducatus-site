@@ -121,3 +121,184 @@
         text-decoration: underline;
     }
 }
+
+.modal-congratulation {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    overflow-y: auto;
+    padding: 30px 30px 20px 30px;
+
+    @include b(600) {
+        grid-gap: 10px;
+        padding: 20px;
+    }
+
+    &-wrap {
+        max-width: 650px;
+        overflow-y: auto;
+        min-height: 300px;
+        max-height: 99vh;
+
+        .modal-content-bottom {
+            background-color: #fdfbf5;
+            padding: 0px 20px 20px 20px;
+        }
+    }
+
+    .icon__congratulations {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 33px;
+        text-align: center;
+        color: #852632;
+
+        @include b(600) {
+            font-size: 24px;
+        }
+
+        &:before {
+            margin-bottom: 5px;
+
+            @include b(600) {
+                width: 45px;
+                height: 44px;
+                background-size: cover;
+            }
+        }
+    }
+
+    .icon__watch-out {
+        display: flex;
+        text-align: left;
+        justify-content: flex-start;
+        margin-top: 10px;
+        align-items: center;
+        font-weight: bold;
+        font-size: 22px;
+        color: #862633;
+
+        @include b(600) {
+            font-size: 18px;
+        }
+
+        &:before {
+            margin-right: 15px;
+        }
+    }
+
+    &-text {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #000000;
+
+        @include b(600) {
+            font-size: 13px;
+            line-height: 1.4;
+        }
+    }
+
+    &-watch-out {
+        font-weight: normal;
+        font-size: 14px;
+        color: #862633;
+
+        @include b(600) {
+            font-size: 12px;
+        }
+    }
+
+    &-winners {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        width: 100%;
+        word-break: break-all;
+        
+        &-item {
+            display: flex;
+            align-items: center;
+            background-color: #F9F4EC;
+            border-radius: 6px;
+            justify-content: center;
+            width: 100%;
+            padding: 7px 15px;
+            counter-increment: winners-item; 
+
+            &:before {
+                // content: attr(data-title);
+                content: counter(winners-item);
+                min-width: 35px;
+                min-height: 35px;
+                max-width: 35px;
+                max-height: 35px;
+                margin-right: 15px;
+                color: white;
+                background-color: #892734;
+                border-radius: 5em;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @include b(600) {
+                    min-width: 25px;
+                    min-height: 25px;
+                    max-width: 25px;
+                    max-height: 25px;
+                    font-size: 12px;
+                    margin-right: 10px;
+                }
+            }
+
+            &-content {
+                text-align: left;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-gap: 0px;
+                width: 100%;
+
+                &-prize {
+                    font-weight: normal;
+                    font-size: 12px;
+                    color: #000000;
+
+                    @include b(600) {
+                        font-size: 10px;
+                    }
+                }
+                
+                &-count {
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: #862633;
+
+                    @include b(600) {
+                        font-size: 12px;
+                    }
+                }
+
+                &-hash {
+                    font-weight: normal;
+                    font-size: 14px;
+                    color: #000000;
+
+                    @include b(600) {
+                        font-size: 12px;
+                    }
+                }
+
+                &-accent {
+                    color: #862633 !important;
+                }
+            }
+        }
+    }
+}
