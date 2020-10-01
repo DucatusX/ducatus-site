@@ -11,11 +11,9 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
-  styleUrls: ['./buy.component.scss']
+  styleUrls: ['./buy.component.scss'],
 })
-
 export class BuyComponent implements OnInit, OnDestroy {
-
   public BuyGroup: FormGroup;
   public loadingQr = true;
   public loadingData = true;
@@ -51,7 +49,7 @@ export class BuyComponent implements OnInit, OnDestroy {
     { name: 'Card', displayName: 'credit card', shortName: 'card' },
     { name: 'USDC', displayName: 'usdc', shortName: 'usdc' },
     { name: 'Bitcoin', displayName: 'btc', shortName: 'btc' },
-    { name: 'Ethereum', displayName: 'eth', shortName: 'eth' }
+    { name: 'Ethereum', displayName: 'eth', shortName: 'eth' },
   ];
 
   public moneyTemplate = [
@@ -73,36 +71,36 @@ export class BuyComponent implements OnInit, OnDestroy {
       usd: { postition: 'after', sign: '$', price: 10 },
       eur: { postition: 'before', sign: '€', price: 8.46 },
       gbp: { postition: 'before', sign: '£', price: 7.62 },
-      chf: { postition: 'after', sign: '₣', price: 9.10 },
-      ticket: 1
+      chf: { postition: 'after', sign: '₣', price: 9.1 },
+      ticket: 1,
     },
     {
       usd: { postition: 'after', sign: '$', price: 50 },
       eur: { postition: 'before', sign: '€', price: 42.31 },
       gbp: { postition: 'before', sign: '£', price: 38.08 },
       chf: { postition: 'after', sign: '₣', price: 45.51 },
-      ticket: 6
+      ticket: 6,
     },
     {
       usd: { postition: 'after', sign: '$', price: 100 },
       eur: { postition: 'before', sign: '€', price: 84.62 },
       gbp: { postition: 'before', sign: '£', price: 76.19 },
       chf: { postition: 'after', sign: '₣', price: 91.03 },
-      ticket: 13
+      ticket: 13,
     },
     {
       usd: { postition: 'after', sign: '$', price: 500 },
       eur: { postition: 'before', sign: '€', price: 423.09 },
       gbp: { postition: 'before', sign: '£', price: 380.82 },
       chf: { postition: 'after', sign: '₣', price: 455.15 },
-      ticket: 70
+      ticket: 70,
     },
     {
       usd: { postition: 'after', sign: '$', price: 1000 },
       eur: { postition: 'before', sign: '€', price: 846.17 },
       gbp: { postition: 'before', sign: '£', price: 761.63 },
       chf: { postition: 'after', sign: '₣', price: 910.29 },
-      ticket: 150
+      ticket: 150,
     },
   ];
 
@@ -120,7 +118,7 @@ export class BuyComponent implements OnInit, OnDestroy {
       },
       address: '',
       amount: null,
-      info: ''
+      info: '',
     },
     btc: {
       name: 'Bitcoin',
@@ -135,7 +133,7 @@ export class BuyComponent implements OnInit, OnDestroy {
       },
       address: '',
       amount: null,
-      info: ''
+      info: '',
     },
     usdc: {
       name: 'USDC',
@@ -150,20 +148,20 @@ export class BuyComponent implements OnInit, OnDestroy {
       },
       address: '',
       amount: null,
-      info: ''
-    }
+      info: '',
+    },
   };
 
   public rates: Rates = {
     DUC: {
       ETH: 0.00046189,
-      BTC: 0.00001040,
-      DUCX: 0.10000000,
-      USDC: 0.06000000
+      BTC: 0.0000104,
+      DUCX: 0.1,
+      USDC: 0.06,
     },
     DUCX: {
-      DUC: 10.00000000
-    }
+      DUC: 10.0,
+    },
   };
 
   public lottery: Lottery = {
@@ -173,11 +171,11 @@ export class BuyComponent implements OnInit, OnDestroy {
     sent_duc_amount: '',
     started_at: 0,
     ended: false,
-    winners_data: []
+    winners_data: [],
   };
 
   public lotteryDesc: any = {
-    description: []
+    description: [],
   };
 
   constructor(
@@ -189,32 +187,28 @@ export class BuyComponent implements OnInit, OnDestroy {
     protected route: ActivatedRoute
   ) {
     this.BuyGroup = this.formBuilder.group({
-      currency: [
-        'eth',
-        Validators.compose([Validators.required])
-      ],
-      money: [
-        'usd',
-        Validators.compose([Validators.required])
-      ],
-      amount: [
-        100,
-        Validators.compose([Validators.required])
-      ],
+      currency: ['eth', Validators.compose([Validators.required])],
+      money: ['usd', Validators.compose([Validators.required])],
+      amount: [100, Validators.compose([Validators.required])],
       address: [
         '',
-        Validators.compose([Validators.minLength(34), Validators.maxLength(34), Validators.required])
+        Validators.compose([
+          Validators.minLength(34),
+          Validators.maxLength(34),
+          Validators.required,
+        ]),
       ],
-      email: [
-        '',
-        Validators.compose([Validators.required, Validators.email])
-      ]
+      email: ['', Validators.compose([Validators.required, Validators.email])],
     });
   }
 
   ngOnInit() {
-    const defaultLng = (navigator.language || navigator['browserLanguage']).split('-')[0];
-    const langToSet = window['jQuery']['cookie']('lng') || (['deu', 'eng', 'vie', 'ita'].includes(defaultLng) ? defaultLng : 'eng');
+    const defaultLng = (
+      navigator.language || navigator['browserLanguage']
+    ).split('-')[0];
+    const langToSet =
+      window['jQuery']['cookie']('lng') ||
+      (['deu', 'eng', 'vie', 'ita'].includes(defaultLng) ? defaultLng : 'eng');
 
     this.lang = langToSet;
 
@@ -223,10 +217,14 @@ export class BuyComponent implements OnInit, OnDestroy {
     });
 
     this.route.queryParams.subscribe((params) => {
-      if (params['referral']) { window['jQuery']['cookie']('referral', params['referral']); }
+      if (params['referral']) {
+        window['jQuery']['cookie']('referral', params['referral']);
+      }
     });
 
-    window['jQuery']['cookie']('termsBuy') ? this.acceptModalTerms() : this.modal = true;
+    window['jQuery']['cookie']('termsBuy')
+      ? this.acceptModalTerms()
+      : (this.modal = true);
   }
 
   ngOnDestroy() {
@@ -257,7 +255,6 @@ export class BuyComponent implements OnInit, OnDestroy {
     if (this.BuyGroup.controls['currency'].value !== 'card') {
       this.BuyGroup.controls['money'].setValue('usd');
     }
-
 
     if (this.BuyGroup.controls['currency'].value === 'card') {
       this.BuyGroup.controls['address'].setErrors(null);
@@ -306,15 +303,30 @@ export class BuyComponent implements OnInit, OnDestroy {
       return;
     }
 
-    if (address.value.length === 34 && ['L', 'l', 'M', 'm'].includes(address.value.substring(0, 1))) {
+    if (
+      address.value.length === 34 &&
+      ['L', 'l', 'M', 'm'].includes(address.value.substring(0, 1))
+    ) {
       this.currencyData['eth'].address = this.currencyData['btc'].address = '';
       this.loadedAddress = false;
-      this.checkDucatusAddress(address.value).then((result) => {
-        if (result.address_valid) {
-          this.BuyGroup.controls['address'].setErrors(null);
-        } else { this.BuyGroup.controls['address'].setErrors({ 'incorrect': true }); this.referralAddress = ''; this.generateReferralLink(); }
-      }).catch(err => { console.error(err); });
-    } else { this.BuyGroup.controls['address'].setErrors({ 'incorrect': true }); this.referralAddress = ''; this.generateReferralLink(); }
+      this.checkDucatusAddress(address.value)
+        .then((result) => {
+          if (result.address_valid) {
+            this.BuyGroup.controls['address'].setErrors(null);
+          } else {
+            this.BuyGroup.controls['address'].setErrors({ incorrect: true });
+            this.referralAddress = '';
+            this.generateReferralLink();
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    } else {
+      this.BuyGroup.controls['address'].setErrors({ incorrect: true });
+      this.referralAddress = '';
+      this.generateReferralLink();
+    }
 
     if (address.value !== this.savedAddress) {
       this.buttonSubmit = false;
@@ -326,22 +338,28 @@ export class BuyComponent implements OnInit, OnDestroy {
     const email = this.BuyGroup.controls['email'];
 
     if (address.valid && email.valid) {
-      this.buyservice.getExchange(address.value, 'DUC', email.value).then((result) => {
-        this.loadedAddress = true;
-        this.currencyData['eth'].address = result.eth_address;
-        this.currencyData['btc'].address = result.btc_address;
-        this.currencyData['usdc'].address = result.eth_address;
-        this.setQrAddress();
-        this.BuyGroup.controls['address'].setErrors(null);
-        this.BuyGroup.controls['email'].setErrors(null);
-      }).catch(err => { console.error(err); this.loadedAddress = false; });
+      this.buyservice
+        .getExchange(address.value, 'DUC', email.value)
+        .then((result) => {
+          this.loadedAddress = true;
+          this.currencyData['eth'].address = result.eth_address;
+          this.currencyData['btc'].address = result.btc_address;
+          this.currencyData['usdc'].address = result.eth_address;
+          this.setQrAddress();
+          this.BuyGroup.controls['address'].setErrors(null);
+          this.BuyGroup.controls['email'].setErrors(null);
+        })
+        .catch((err) => {
+          console.error(err);
+          this.loadedAddress = false;
+        });
     } else {
       if (!address.valid) {
-        this.BuyGroup.controls['address'].setErrors({ 'incorrect': true });
+        this.BuyGroup.controls['address'].setErrors({ incorrect: true });
         this.BuyGroup.controls['address'].markAsTouched();
       }
       if (!email.valid) {
-        this.BuyGroup.controls['email'].setErrors({ 'incorrect': true });
+        this.BuyGroup.controls['email'].setErrors({ incorrect: true });
         this.BuyGroup.controls['email'].markAsTouched();
       }
     }
@@ -355,12 +373,30 @@ export class BuyComponent implements OnInit, OnDestroy {
       this.loadingQr = true;
 
       const currency = this.BuyGroup.controls['currency'].value;
-      const amount = Number((this.BuyGroup.value.amount / this.ducToUsd * this.rates.DUC[this.currencyData[currency].shortName.toUpperCase()]).toFixed(this.currencyData[currency].decimals)) + 0.00005;
+      const amount =
+        Number(
+          (
+            (this.BuyGroup.value.amount / this.ducToUsd) *
+            this.rates.DUC[this.currencyData[currency].shortName.toUpperCase()]
+          ).toFixed(this.currencyData[currency].decimals)
+        ) + 0.00005;
 
-      this.currencyData[currency].amount = (Math.ceil((amount) * 10000) / 10000 + 0.00001).toFixed(5);
-      this.currencyData[currency].info = this.currencyData[currency].qrName.toLowerCase() + ':' + this.currencyData[currency].address;
+      this.currencyData[currency].amount = (
+        Math.ceil(amount * 10000) / 10000 +
+        0.00001
+      ).toFixed(5);
+      this.currencyData[currency].info =
+        this.currencyData[currency].qrName.toLowerCase() +
+        ':' +
+        this.currencyData[currency].address;
 
-      this.googleAnalyticsService.eventEmitter('get_lotetry_address', 'lottery', 'address', 'generate', 10);
+      this.googleAnalyticsService.eventEmitter(
+        'get_lotetry_address',
+        'lottery',
+        'address',
+        'generate',
+        10
+      );
 
       this.loadingQr = false;
     } else {
@@ -368,7 +404,7 @@ export class BuyComponent implements OnInit, OnDestroy {
 
       if (type !== 'amount') {
         if (!email || !address) {
-          this.BuyGroup.controls['address'].setErrors({ 'incorrect': true });
+          this.BuyGroup.controls['address'].setErrors({ incorrect: true });
           this.BuyGroup.controls['address'].markAsTouched();
         }
       }
@@ -376,33 +412,57 @@ export class BuyComponent implements OnInit, OnDestroy {
   }
 
   private checkLotteryStatus() {
-    this.buyservice.getLotteryInfo().then((result) => {
-      this.lottery = result;
+    this.buyservice
+      .getLotteryInfo()
+      .then((result) => {
+        this.lottery = result;
 
-      const percent = 100 * Number(this.lottery.sent_duc_amount) / Number(this.lottery.duc_amount);
-      this.percentLottery = percent;
+        const percent =
+          (100 * Number(this.lottery.sent_duc_amount)) /
+          Number(this.lottery.duc_amount);
+        this.percentLottery = percent;
 
-      Number(percent) >= 100 ? this.lottery.percent = '100%' : this.lottery.percent = percent.toString().substr(0, 5) + '%';
-    }).catch(err => console.error(err));
+        Number(percent) >= 100
+          ? (this.lottery.percent = '100%')
+          : (this.lottery.percent = percent.toString().substr(0, 5) + '%');
+      })
+      .catch((err) => console.error(err));
 
     if (!this.lottery.winner_address) {
       this.checker = setTimeout(() => {
-        if (this.checker) { this.checkLotteryStatus(); }
+        if (this.checker) {
+          this.checkLotteryStatus();
+        }
       }, 10000);
-    } else { this.checker = undefined; }
+    } else {
+      this.checker = undefined;
+    }
   }
 
   public generateReferralLink() {
-    if (this.referralAddress.length === 34 && ['L', 'l', 'M', 'm'].includes(this.referralAddress.substring(0, 1))) {
+    if (
+      this.referralAddress.length === 34 &&
+      ['L', 'l', 'M', 'm'].includes(this.referralAddress.substring(0, 1))
+    ) {
       this.referralAddressError = false;
       this.referralLink = '';
-      this.checkDucatusAddress(this.referralAddress).then((result) => {
-        if (result.address_valid) {
-          this.referralAddressError = false;
-          this.referralLink = window.location.origin + '/buy?referral=' + this.referralAddress;
-        } else { this.referralAddressError = true; }
-      }).catch(err => { console.error(err); });
-    } else { this.referralAddressError = true; this.referralLink = ''; }
+      this.checkDucatusAddress(this.referralAddress)
+        .then((result) => {
+          if (result.address_valid) {
+            this.referralAddressError = false;
+            this.referralLink =
+              window.location.origin + '/buy?referral=' + this.referralAddress;
+          } else {
+            this.referralAddressError = true;
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    } else {
+      this.referralAddressError = true;
+      this.referralLink = '';
+    }
   }
 
   public cardLink() {
@@ -410,20 +470,31 @@ export class BuyComponent implements OnInit, OnDestroy {
     const currency = this.BuyGroup.controls['money'];
     const email = this.BuyGroup.controls['email'];
 
-    const address = this.BuyGroup.controls['currency'].value !== 'card' ? this.BuyGroup.controls['address'] : { value: 'null' };
+    const address =
+      this.BuyGroup.controls['currency'].value !== 'card'
+        ? this.BuyGroup.controls['address']
+        : { value: 'null' };
 
     this.loadingCard = true;
 
-    this.buyservice.getCardLink(amount.value, currency.value.toUpperCase(), address.value, email.value).then(res => {
-      if (res.redirect_url) {
-        window.open(res.redirect_url, '_blank');
-        this.cardRedirect = res.redirect_url;
-      }
-      this.loadingCard = false;
-    }).catch(err => {
-      console.log(err);
-      this.loadingCard = false;
-    });
+    this.buyservice
+      .getCardLink(
+        amount.value,
+        currency.value.toUpperCase(),
+        address.value,
+        email.value
+      )
+      .then((res) => {
+        if (res.redirect_url) {
+          window.open(res.redirect_url, '_blank');
+          this.cardRedirect = res.redirect_url;
+        }
+        this.loadingCard = false;
+      })
+      .catch((err) => {
+        console.log(err);
+        this.loadingCard = false;
+      });
   }
 
   public acceptModalTerms() {
@@ -432,13 +503,14 @@ export class BuyComponent implements OnInit, OnDestroy {
 
     this.buyservice.getLottery().then((result) => {
       this.lotteryDesc = result[0];
-      this.bg = this.lotteryDesc.image ? this.lotteryDesc.image : 'assets/img/sections/buy-bg.png';
+      this.bg = this.lotteryDesc.image
+        ? this.lotteryDesc.image
+        : 'assets/img/sections/buy-bg.png';
 
       if (this.lotteryDesc && this.lotteryDesc.winners_data) {
-
         let count = 0;
 
-        this.lotteryDesc.winners_data.map(value => {
+        this.lotteryDesc.winners_data.map((value) => {
           value['deu'] = this.lotteryDesc.description.deu.prizes[count];
           value['eng'] = this.lotteryDesc.description.eng.prizes[count];
           value['vie'] = this.lotteryDesc.description.vie.prizes[count];
@@ -448,22 +520,29 @@ export class BuyComponent implements OnInit, OnDestroy {
         });
 
         console.log(this.lotteryDesc);
-        console.log(this.winners);
+        console.log(this.winners, 'winners');
+        this.winners[0].eng.description = '80% of all achieved DUC sales';
 
-        this.modalWinner = true;
+        if (!window.localStorage['modalWinner']) {
+          this.modalWinner = true;
+          window.localStorage['modalWinner'] = true;
+        }
       }
 
       this.checkLotteryStatus();
     });
 
-    this.buyservice.getRates().then((result) => {
-      this.rates = result;
-      this.loadingData = false;
-    }).catch(err => {
-      setTimeout(() => {
-        this.acceptModalTerms();
-      }, 5000);
-      console.error(err);
-    });
+    this.buyservice
+      .getRates()
+      .then((result) => {
+        this.rates = result;
+        this.loadingData = false;
+      })
+      .catch((err) => {
+        setTimeout(() => {
+          this.acceptModalTerms();
+        }, 5000);
+        console.error(err);
+      });
   }
 }
