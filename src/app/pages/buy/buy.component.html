@@ -1,17 +1,13 @@
 <section
   class="section-header-page header-buy-page"
   [ngStyle]="{ 'background-image': 'url(' + bg + ')' }"
->
-  <div class="container">
-    <h1 class="h1__title-page" [innerHTML]="'PAGE.BUY.TITLE' | translate"></h1>
-  </div>
-</section>
+></section>
 
 <section class="app color-page buy-page">
   <div class="container">
     <div class="pay-form">
       <div class="pay-form-block" *ngIf="!loadingData">
-        <div class="hidden-mobile" *ngIf="lottery.ended">
+        <!-- <div class="hidden-mobile" *ngIf="lottery.ended">
           <div *ngIf="!lottery.winners_data" class="lottery-waiting">
             <div class="lottery-waiting-title">
               {{ "PAGE.BUY.LOTTERY.BLOCK.WAITING.TITLE" | translate }}
@@ -20,10 +16,6 @@
               {{ "PAGE.BUY.LOTTERY.BLOCK.WAITING.TEXT" | translate }}
             </div>
           </div>
-          <!-- <div *ngIf="lottery.winner_address" class="lottery-win">
-                        <div class="lottery-win-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WINNER.TITLE' | translate }}</div>
-                        <span class="lottery-win-text">{{ lottery.winner_tx_hash }}</span>
-                    </div> -->
           <div
             style="min-height: 80px; padding: 10px; margin-bottom: 30px"
             *ngIf="lottery.winners_data && !modalWinner"
@@ -32,137 +24,86 @@
           >
             View winners
           </div>
-        </div>
+        </div> -->
 
         <div class="lottery">
           <div class="lottery-wrap">
-            <span
-              *ngIf="
-                lotteryDesc.description && lotteryDesc.description[lang].title
-              "
-              class="lottery-title"
-              [innerHTML]="lotteryDesc.description[lang].title"
-            ></span>
-            <span
-              *ngIf="
-                lotteryDesc.description &&
-                lotteryDesc.description[lang].subtitle
-              "
-              class="lottery-subtitle"
-              [innerHTML]="lotteryDesc.description[lang].subtitle"
-            ></span>
+            <span class="lottery-title">{{
+              "PAGE.BUY.LOTTERY.TITLE" | translate
+            }}</span>
+            <span class="lottery-subtitle">{{
+              "PAGE.BUY.LOTTERY.BLOCK.PRIZE.TITLE" | translate
+            }}</span>
 
-            <div *ngIf="lotteryDesc.description[lang].prizes">
-              <div *ngFor="let item of lotteryDesc.description[lang].prizes">
-                <span
-                  *ngIf="item.description"
-                  class="lottery-prize-desc"
-                  [innerHTML]="item.description"
-                ></span>
+            <div>
+              <div>
+                <span class="lottery-prize-desc">{{
+                  "PAGE.BUY.LOTTERY.BLOCK.PRIZE.SUBTITLE" | translate
+                }}</span>
 
-                <ul *ngIf="item.list">
-                  <li *ngFor="let list of item.list">{{ list }}</li>
+                <ul>
+                  <li>
+                    {{ "PAGE.BUY.LOTTERY.BLOCK.PRIZE.ITEM1" | translate }}
+                  </li>
+
+                  <li>
+                    {{ "PAGE.BUY.LOTTERY.BLOCK.PRIZE.ITEM2" | translate }}
+                  </li>
+
+                  <li>
+                    {{ "PAGE.BUY.LOTTERY.BLOCK.PRIZE.ITEM3" | translate }}
+                  </li>
+
+                  <li>
+                    {{ "PAGE.BUY.LOTTERY.BLOCK.PRIZE.ITEM4" | translate }}
+                  </li>
                 </ul>
-
-                <div *ngIf="item.video" class="lottery-video">
-                  <iframe
-                    [src]="item.video | safe"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
               </div>
             </div>
+            <span class="lottery-subtitle">{{
+              "PAGE.BUY.LOTTERY.BLOCK.HOW.TITLE" | translate
+            }}</span>
+            <div>
+              <div>
+                <ul>
+                  <li>
+                    {{ "PAGE.BUY.LOTTERY.BLOCK.HOW.ITEM1" | translate }}
+                  </li>
 
-            <div class="lottery-info">
-              <span class="lottery-info-title">{{
-                "PAGE.BUY.LOTTERY.BLOCK.INFO.TITLE" | translate
-              }}</span>
-              <div
-                [innerHTML]="
-                  'PAGE.BUY.LOTTERY.BLOCK.INFO.TEXT'
-                    | translate: { duc_amount: (lottery.duc_amount | number) }
-                "
-              ></div>
+                  <li>
+                    {{ "PAGE.BUY.LOTTERY.BLOCK.HOW.ITEM2" | translate }}
+                  </li>
+
+                  <li>
+                    {{ "PAGE.BUY.LOTTERY.BLOCK.HOW.ITEM3" | translate }}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-
+      </div>
+      <div class="lotery-galery">
         <div
-          *ngIf="!lottery.ended"
-          class="lottery-tickets hidden-mobile mt-m-30"
-        >
+          class="lotery-galery-main"
+          [ngStyle]="{
+            'background-image':
+              'url(assets/img/lotery/' + slides[activeSlide] + '.jpeg)'
+          }"
+        ></div>
+        <div class="lotery-galery-thumb">
           <div
-            *ngIf="lottery.filled_at && !lottery.ended"
-            class="lottery-tickets-timer"
+            class="lotery-galery-item"
+            *ngFor="let slide of slides; let i = index"
+            [ngClass]="{ active: i === activeSlide }"
+            (click)="changeSlide(i)"
           >
-            <div class="lottery-tickets-timer-title">
-              {{ "PAGE.BUY.LOTTERY.BLOCK.COUNTDOWN.TITLE" | translate }}
-            </div>
-            <span class="lottery-tickets-timer-count">
-              <app-countdown
-                [timeStart]="lottery.filled_at"
-                [correctTimeStart]="1000"
-                [timeEndDayPlus]="8"
-                (countdownEvent)="countdownEvent($event)"
-              >
-              </app-countdown>
-            </span>
-          </div>
-
-          <div
-            *ngIf="!lottery.filled_at && !lottery.ended"
-            class="lottery-tickets-progress"
-          >
-            <span class="lottery-tickets-progress-title"
-              >{{ "PAGE.BUY.LOTTERY.BLOCK.PROGRESS.TITLE" | translate }}
-              <img
-                src="/assets/img/icons/lottery-rocket.svg"
-                height="25"
-                width="25"
-                alt="ducatus lottery rocket"
-            /></span>
-            <div class="lottery-tickets-progress-bar">
-              <span
-                [style.width]="lottery.percent"
-                [ngClass]="{ 'progress-info-5': percentLottery > 5 }"
-                [attr.data-progress]="lottery.percent"
-              ></span>
-            </div>
-          </div>
-
-          <div class="lottery-tickets-spacer"><span></span></div>
-
-          <div class="lottery-tickets-items">
-            <div class="lottery-tickets-item">
-              <img
-                src="/assets/img/icons/ticket.svg"
-                height="57"
-                width="70"
-                alt="ducatus lottery ticket"
-              />
-              <span
-                [routerLink]="['/buy/entries']"
-                class="lottery-tickets-item-title"
-                [innerHTML]="
-                  'PAGE.BUY.LOTTERY.BLOCK.TICKETS.LINK'
-                    | translate
-                      : {
-                          tickets_amount: (lottery.gave_tickets_amount | number)
-                        }
-                "
-              ></span>
-            </div>
-            <div class="lottery-tickets-spacer"><span></span></div>
-            <div class="lottery-tickets-item">
-              <span class="lottery-tickets-item-amount">{{
-                lottery.sent_duc_amount | number
-              }}</span>
-              <span class="lottery-tickets-item-text">{{
-                "PAGE.BUY.LOTTERY.BLOCK.TICKETS.TEXT" | translate
-              }}</span>
-            </div>
+            <div
+              class="lotery-galery-item-img"
+              [ngStyle]="{
+                'background-image': 'url(assets/img/lotery/' + slide + '.jpeg)'
+              }"
+            ></div>
           </div>
         </div>
       </div>
@@ -205,13 +146,14 @@
           </div>
         </div>
       </div>
-
-      <div class="pay-form-wrap mt-m-30">
-        <form
-          [formGroup]="BuyGroup"
-          class="ducatus-pay-form"
-          *ngIf="!loadingData"
-        >
+    </div>
+    <div class="lotery-form">
+      <form
+        [formGroup]="BuyGroup"
+        class="ducatus-pay-form"
+        *ngIf="!loadingData"
+      >
+        <div class="lotery-form-wrapper">
           <div class="group group-input">
             <div class="group-radio group-currency">
               <div
@@ -249,7 +191,10 @@
             <label class="group-radio-label" for="money-usd"
               >Choose the currency</label
             >
-            <div class="group-radio" style="justify-content: flex-start">
+            <div
+              class="group-radio group-radio--costs"
+              style="justify-content: flex-start"
+            >
               <div *ngFor="let item of moneyTemplate" class="group-radio-item">
                 <input
                   (ngModelChange)="setCurrency()"
@@ -286,7 +231,7 @@
                 "PAGE.BUY.FORM.RADIO.LINK" | translate
               }}</span></label
             >
-            <div class="group-radio">
+            <div class="group-radio group-radio--costs">
               <div *ngFor="let item of priceTemplate" class="group-radio-item">
                 <input
                   (ngModelChange)="setAmount()"
@@ -319,7 +264,9 @@
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="lotery-form-wrapper">
           <div
             class="group group-input"
             *ngIf="BuyGroup.controls['currency'].value !== 'card'"
@@ -487,7 +434,11 @@
               ></span>
             </div>
           </div>
-        </form>
+        </div>
+      </form>
+    </div>
+    <div class="pay-form">
+      <div class="pay-form-wrap mt-m-30">
         <div class="ducatus-pay-form loading-pay-form" *ngIf="loadingData">
           <div
             class="group group-input group-input-select"
@@ -554,81 +505,11 @@
           <div class="group group-input group-input-select input-h-60"></div>
         </div>
       </div>
-
-      <div
-        class="hidden-desktop pay-form-block"
-        style="margin-top: 60px !important"
-        *ngIf="!loadingData"
-      >
-        <div class="buy-info-block" *ngIf="!loadingData">
-          <span class="buy-info-block-referral-title">{{
-            "PAGE.BUY.REFERRAL.TITLE" | translate
-          }}</span>
-          <span class="buy-info-block-referral-subtitle">{{
-            "PAGE.BUY.REFERRAL.SUBTITLE" | translate
-          }}</span>
-          <div class="group group-input">
-            <label for="referralAddress">{{
-              "PAGE.BUY.REFERRAL.LABEL" | translate
-            }}</label>
-            <input
-              id="referralAddress"
-              class="input input-white"
-              [ngClass]="{ 'error-input': referralAddressError }"
-              [(ngModel)]="referralAddress"
-              [placeholder]="'PAGE.BUY.REFERRAL.PLACEHOLDER' | translate"
-              (ngModelChange)="generateReferralLink()"
-            />
-            <span class="error-address-value" *ngIf="referralAddressError">{{
-              "PAGE.BUY.REFERRAL.ERROR" | translate
-            }}</span>
-          </div>
-          <div
-            *ngIf="!referralAddressError && referralLink"
-            class="group group-input"
-          >
-            <label style="margin-top: 30px">{{
-              "PAGE.BUY.REFERRAL.LINK" | translate
-            }}</label>
-            <div class="buy-info-block-referral-link">
-              <span class="buy-info-block-referral-link-text">{{
-                referralLink
-              }}</span>
-              <span
-                class="icon icon__copy"
-                [cdkCopyToClipboard]="referralLink"
-              ></span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hidden-desktop pay-form-block" *ngIf="!loadingData">
-        <div *ngIf="lottery.ended">
-          <!-- <div *ngIf="lottery.winner_address" class="lottery-win">
-                        <div class="lottery-win-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WINNER.TITLE' | translate }}</div>
-                        <span class="lottery-win-text">{{ lottery.winner_tx_hash }}</span>
-                    </div>
-                    <div *ngIf="!lottery.winner_address" class="lottery-waiting">
-                        <div class="lottery-waiting-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TITLE' | translate }}
-                        </div>
-                        <div class="lottery-waiting-text">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TEXT' | translate }}</div>
-                    </div> -->
-          <div
-            style="min-height: 80px; padding: 10px; margin-bottom: 30px"
-            *ngIf="lottery.winners_data && !modalWinner"
-            (click)="modalWinner = true"
-            class="lottery-win btn ducatus-btn ducatus-btn-brown"
-          >
-            View winners
-          </div>
-        </div>
-
-        <div *ngIf="!lottery.ended" class="lottery-tickets">
-          <div
-            *ngIf="lottery.filled_at && !lottery.ended"
-            class="lottery-tickets-timer"
-          >
+      <div class="pay-form-block">
+        <!-- *ngIf="!lottery.ended" -->
+        <div class="lottery-tickets hidden-mobile mt-m-30">
+          <!-- *ngIf="lottery.filled_at && !lottery.ended" -->
+          <div class="lottery-tickets-timer">
             <div class="lottery-tickets-timer-title">
               {{ "PAGE.BUY.LOTTERY.BLOCK.COUNTDOWN.TITLE" | translate }}
             </div>
@@ -637,15 +518,13 @@
                 [timeStart]="lottery.filled_at"
                 [correctTimeStart]="1000"
                 [timeEndDayPlus]="8"
+                (countdownEvent)="countdownEvent($event)"
               >
               </app-countdown>
             </span>
           </div>
-
-          <div
-            *ngIf="!lottery.filled_at && !lottery.ended"
-            class="lottery-tickets-progress"
-          >
+          <!-- *ngIf="!lottery.filled_at && !lottery.ended" -->
+          <div class="lottery-tickets-progress">
             <span class="lottery-tickets-progress-title"
               >{{ "PAGE.BUY.LOTTERY.BLOCK.PROGRESS.TITLE" | translate }}
               <img
@@ -693,6 +572,150 @@
               <span class="lottery-tickets-item-text">{{
                 "PAGE.BUY.LOTTERY.BLOCK.TICKETS.TEXT" | translate
               }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="hidden-desktop"
+          style="margin-top: 60px !important"
+          *ngIf="!loadingData"
+        >
+          <div class="buy-info-block" *ngIf="!loadingData">
+            <span class="buy-info-block-referral-title">{{
+              "PAGE.BUY.REFERRAL.TITLE" | translate
+            }}</span>
+            <span class="buy-info-block-referral-subtitle">{{
+              "PAGE.BUY.REFERRAL.SUBTITLE" | translate
+            }}</span>
+            <div class="group group-input">
+              <label for="referralAddress">{{
+                "PAGE.BUY.REFERRAL.LABEL" | translate
+              }}</label>
+              <input
+                id="referralAddress"
+                class="input input-white"
+                [ngClass]="{ 'error-input': referralAddressError }"
+                [(ngModel)]="referralAddress"
+                [placeholder]="'PAGE.BUY.REFERRAL.PLACEHOLDER' | translate"
+                (ngModelChange)="generateReferralLink()"
+              />
+              <span class="error-address-value" *ngIf="referralAddressError">{{
+                "PAGE.BUY.REFERRAL.ERROR" | translate
+              }}</span>
+            </div>
+            <div
+              *ngIf="!referralAddressError && referralLink"
+              class="group group-input"
+            >
+              <label style="margin-top: 30px">{{
+                "PAGE.BUY.REFERRAL.LINK" | translate
+              }}</label>
+              <div class="buy-info-block-referral-link">
+                <span class="buy-info-block-referral-link-text">{{
+                  referralLink
+                }}</span>
+                <span
+                  class="icon icon__copy"
+                  [cdkCopyToClipboard]="referralLink"
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden-desktop pay-form-block" *ngIf="!loadingData">
+          <div *ngIf="lottery.ended">
+            <!-- <div *ngIf="lottery.winner_address" class="lottery-win">
+                        <div class="lottery-win-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WINNER.TITLE' | translate }}</div>
+                        <span class="lottery-win-text">{{ lottery.winner_tx_hash }}</span>
+                    </div>
+                    <div *ngIf="!lottery.winner_address" class="lottery-waiting">
+                        <div class="lottery-waiting-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TITLE' | translate }}
+                        </div>
+                        <div class="lottery-waiting-text">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TEXT' | translate }}</div>
+                    </div> -->
+            <div
+              style="min-height: 80px; padding: 10px; margin-bottom: 30px"
+              *ngIf="lottery.winners_data && !modalWinner"
+              (click)="modalWinner = true"
+              class="lottery-win btn ducatus-btn ducatus-btn-brown"
+            >
+              View winners
+            </div>
+          </div>
+
+          <div *ngIf="!lottery.ended" class="lottery-tickets">
+            <div
+              *ngIf="lottery.filled_at && !lottery.ended"
+              class="lottery-tickets-timer"
+            >
+              <div class="lottery-tickets-timer-title">
+                {{ "PAGE.BUY.LOTTERY.BLOCK.COUNTDOWN.TITLE" | translate }}
+              </div>
+              <span class="lottery-tickets-timer-count">
+                <app-countdown
+                  [timeStart]="lottery.filled_at"
+                  [correctTimeStart]="1000"
+                  [timeEndDayPlus]="8"
+                >
+                </app-countdown>
+              </span>
+            </div>
+
+            <div
+              *ngIf="!lottery.filled_at && !lottery.ended"
+              class="lottery-tickets-progress"
+            >
+              <span class="lottery-tickets-progress-title"
+                >{{ "PAGE.BUY.LOTTERY.BLOCK.PROGRESS.TITLE" | translate }}
+                <img
+                  src="/assets/img/icons/lottery-rocket.svg"
+                  height="25"
+                  width="25"
+                  alt="ducatus lottery rocket"
+              /></span>
+              <div class="lottery-tickets-progress-bar">
+                <span
+                  [style.width]="lottery.percent"
+                  [ngClass]="{ 'progress-info-5': percentLottery > 5 }"
+                  [attr.data-progress]="lottery.percent"
+                ></span>
+              </div>
+            </div>
+
+            <div class="lottery-tickets-spacer"><span></span></div>
+
+            <div class="lottery-tickets-items">
+              <div class="lottery-tickets-item">
+                <img
+                  src="/assets/img/icons/ticket.svg"
+                  height="57"
+                  width="70"
+                  alt="ducatus lottery ticket"
+                />
+                <span
+                  [routerLink]="['/buy/entries']"
+                  class="lottery-tickets-item-title"
+                  [innerHTML]="
+                    'PAGE.BUY.LOTTERY.BLOCK.TICKETS.LINK'
+                      | translate
+                        : {
+                            tickets_amount:
+                              (lottery.gave_tickets_amount | number)
+                          }
+                  "
+                ></span>
+              </div>
+              <div class="lottery-tickets-spacer"><span></span></div>
+              <div class="lottery-tickets-item">
+                <span class="lottery-tickets-item-amount">{{
+                  lottery.sent_duc_amount | number
+                }}</span>
+                <span class="lottery-tickets-item-text">{{
+                  "PAGE.BUY.LOTTERY.BLOCK.TICKETS.TEXT" | translate
+                }}</span>
+              </div>
             </div>
           </div>
         </div>

@@ -1,304 +1,381 @@
 @import "../../../scss/vars";
 @import "../../../scss/mixins";
 
-.loading-pay-form {
-    padding: 30px !important;
-
-    .group {
-        background: linear-gradient(124deg, #f7f3eb, #e9e1ca, #f7f3eb);
-        background-size: 1800% 1800%;
-        -webkit-animation: rainbow 4s ease infinite;
-        -z-animation: rainbow 4s ease infinite;
-        -o-animation: rainbow 4s ease infinite;
-        animation: rainbow 4s ease infinite;
-        margin-bottom: 15px;
-        border-radius: 5px;
-
-        &:nth-last-child(1) {
-            margin-bottom: 0 !important;
-        }
-    }
-
-
-    .input-h-20 {
-        height: 30px !important;
-    }
-
-    .input-h-60 {
-        height: 60px !important;
-    }
-
-    .input-h-105 {
-        height: 105px !important;
-    }
-
-    .input-h-85 {
-        height: 85px !important;
-    }
-
+.lotery-form {
+  margin-top: 40px;
+  @include b(500) {
+    padding: 0 15px;
+  }
 }
+.lotery-galery {
+  &-main {
+    width: 600px;
+    height: 600px;
+    background-size: cover;
+    border-radius: 12px;
+    @include b(500) {
+      display: none;
+    }
+  }
+  &-thumb {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    @include b(500) {
+      overflow: scroll;
+      padding: 0 15px;
+      &:after {
+        min-width: 15px;
+        content: "";
+        display: block;
+        min-height: 100%;
+      }
+    }
+  }
+  &-item {
+    width: 69px;
+    cursor: pointer;
+    height: 69px;
+    background-size: cover;
+    border-radius: 13px;
+    border: 7px solid transparent;
+    @include b(500) {
+      width: 270px;
+      min-width: 270px;
+      height: 270px;
+      border: none;
+    }
+    & + & {
+      @include b(500) {
+        margin-left: 15px;
+      }
+    }
+    &-img {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      border-radius: 6px;
+    }
+    &.active {
+      border-color: #f5dca4;
+      @include b(500) {
+        border: none;
+      }
+    }
+  }
+}
+.loading-pay-form {
+  padding: 30px !important;
 
+  .group {
+    background: linear-gradient(124deg, #f7f3eb, #e9e1ca, #f7f3eb);
+    background-size: 1800% 1800%;
+    -webkit-animation: rainbow 4s ease infinite;
+    -z-animation: rainbow 4s ease infinite;
+    -o-animation: rainbow 4s ease infinite;
+    animation: rainbow 4s ease infinite;
+    margin-bottom: 15px;
+    border-radius: 5px;
 
+    &:nth-last-child(1) {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .input-h-20 {
+    height: 30px !important;
+  }
+
+  .input-h-60 {
+    height: 60px !important;
+  }
+
+  .input-h-105 {
+    height: 105px !important;
+  }
+
+  .input-h-85 {
+    height: 85px !important;
+  }
+}
 @-webkit-keyframes rainbow {
-    0% {
-        background-position: 0% 82%
-    }
+  0% {
+    background-position: 0% 82%;
+  }
 
-    50% {
-        background-position: 100% 19%
-    }
+  50% {
+    background-position: 100% 19%;
+  }
 
-    100% {
-        background-position: 0% 82%
-    }
+  100% {
+    background-position: 0% 82%;
+  }
 }
 
 @-moz-keyframes rainbow {
-    0% {
-        background-position: 0% 82%
-    }
+  0% {
+    background-position: 0% 82%;
+  }
 
-    50% {
-        background-position: 100% 19%
-    }
+  50% {
+    background-position: 100% 19%;
+  }
 
-    100% {
-        background-position: 0% 82%
-    }
+  100% {
+    background-position: 0% 82%;
+  }
 }
 
 @-o-keyframes rainbow {
-    0% {
-        background-position: 0% 82%
-    }
+  0% {
+    background-position: 0% 82%;
+  }
 
-    50% {
-        background-position: 100% 19%
-    }
+  50% {
+    background-position: 100% 19%;
+  }
 
-    100% {
-        background-position: 0% 82%
-    }
+  100% {
+    background-position: 0% 82%;
+  }
 }
 
 @keyframes rainbow {
-    0% {
-        background-position: 0% 82%
-    }
+  0% {
+    background-position: 0% 82%;
+  }
 
-    50% {
-        background-position: 100% 19%
-    }
+  50% {
+    background-position: 100% 19%;
+  }
 
-    100% {
-        background-position: 0% 82%
-    }
+  100% {
+    background-position: 0% 82%;
+  }
 }
 
 .color-page {
-    background-color: #F4F0E5 !important;
-    background-image: none !important;
+  background-color: #f4f0e5 !important;
+  background-image: none !important;
 }
 
 .buy-page {
-    @include b(600) {
-        padding-top: 20px !important;
-    }
+  @include b(600) {
+    padding-top: 20px !important;
+  }
 }
 
 .header-buy-page {
-    background-position: 30% 50% !important;
-    background-color: black;
+  background-position: 30% 50% !important;
+  background-color: black;
+  height: 650px;
+  position: relative;
+  @include b(500) {
+    height: 175px;
+    margin-top: 70px;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    background: linear-gradient(360deg, #f4f0e5 10%, rgba(0, 0, 0, 0) 100%);
+    width: 100%;
+    left: 0;
+    bottom: -10px;
+    height: 200px;
+    @include b(500) {
+      height: 100px;
+    }
+  }
 }
 
 .ducatus-info-link {
-    color: #852633;
-    cursor: pointer;
-    transition: 0.4s ease;
-    font-size: 12px;
+  color: #852633;
+  cursor: pointer;
+  transition: 0.4s ease;
+  font-size: 12px;
 
-    &:hover {
-        text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .modal-congratulation {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 15px;
-    align-items: center;
-    justify-content: center;
-    min-height: 300px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  overflow-y: auto;
+  padding: 30px 30px 20px 30px;
+
+  @include b(600) {
+    grid-gap: 10px;
+    padding: 20px;
+  }
+
+  &-wrap {
+    max-width: 650px;
     overflow-y: auto;
-    padding: 30px 30px 20px 30px;
+    min-height: 300px;
+    max-height: 99vh;
+
+    .modal-content-bottom {
+      background-color: #fdfbf5;
+      padding: 0px 20px 20px 20px;
+    }
+  }
+
+  .icon__congratulations {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 33px;
+    text-align: center;
+    color: #852632;
 
     @include b(600) {
-        grid-gap: 10px;
-        padding: 20px;
+      font-size: 24px;
     }
 
-    &-wrap {
-        max-width: 650px;
-        overflow-y: auto;
-        min-height: 300px;
-        max-height: 99vh;
+    &:before {
+      margin-bottom: 5px;
 
-        .modal-content-bottom {
-            background-color: #fdfbf5;
-            padding: 0px 20px 20px 20px;
-        }
+      @include b(600) {
+        width: 45px;
+        height: 44px;
+        background-size: cover;
+      }
+    }
+  }
+
+  .icon__watch-out {
+    display: flex;
+    text-align: left;
+    justify-content: flex-start;
+    margin-top: 10px;
+    align-items: center;
+    font-weight: bold;
+    font-size: 22px;
+    color: #862633;
+
+    @include b(600) {
+      font-size: 18px;
     }
 
-    .icon__congratulations {
+    &:before {
+      margin-right: 15px;
+    }
+  }
+
+  &-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #000000;
+
+    @include b(600) {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+  }
+
+  &-watch-out {
+    font-weight: normal;
+    font-size: 14px;
+    color: #862633;
+
+    @include b(600) {
+      font-size: 12px;
+    }
+  }
+
+  &-winners {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    width: 100%;
+    word-break: break-all;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      background-color: #f9f4ec;
+      border-radius: 6px;
+      justify-content: center;
+      width: 100%;
+      padding: 7px 15px;
+      counter-increment: winners-item;
+
+      &:before {
+        // content: attr(data-title);
+        content: counter(winners-item);
+        min-width: 35px;
+        min-height: 35px;
+        max-width: 35px;
+        max-height: 35px;
+        margin-right: 15px;
+        color: white;
+        background-color: #892734;
+        border-radius: 5em;
+        font-weight: bold;
         display: flex;
-        flex-direction: column;
-        text-align: center;
         justify-content: center;
         align-items: center;
-        font-weight: bold;
-        font-size: 33px;
-        text-align: center;
-        color: #852632;
 
         @include b(600) {
-            font-size: 24px;
+          min-width: 25px;
+          min-height: 25px;
+          max-width: 25px;
+          max-height: 25px;
+          font-size: 12px;
+          margin-right: 10px;
         }
+      }
 
-        &:before {
-            margin-bottom: 5px;
-
-            @include b(600) {
-                width: 45px;
-                height: 44px;
-                background-size: cover;
-            }
-        }
-    }
-
-    .icon__watch-out {
-        display: flex;
+      &-content {
         text-align: left;
-        justify-content: flex-start;
-        margin-top: 10px;
-        align-items: center;
-        font-weight: bold;
-        font-size: 22px;
-        color: #862633;
-
-        @include b(600) {
-            font-size: 18px;
-        }
-
-        &:before {
-            margin-right: 15px;
-        }
-    }
-
-    &-text {
-        font-size: 15px;
-        line-height: 1.7;
-        color: #000000;
-
-        @include b(600) {
-            font-size: 13px;
-            line-height: 1.4;
-        }
-    }
-
-    &-watch-out {
-        font-weight: normal;
-        font-size: 14px;
-        color: #862633;
-
-        @include b(600) {
-            font-size: 12px;
-        }
-    }
-
-    &-winners {
         display: grid;
         grid-template-columns: 1fr;
-        grid-gap: 10px;
+        grid-gap: 0px;
         width: 100%;
-        word-break: break-all;
-        
-        &-item {
-            display: flex;
-            align-items: center;
-            background-color: #F9F4EC;
-            border-radius: 6px;
-            justify-content: center;
-            width: 100%;
-            padding: 7px 15px;
-            counter-increment: winners-item; 
 
-            &:before {
-                // content: attr(data-title);
-                content: counter(winners-item);
-                min-width: 35px;
-                min-height: 35px;
-                max-width: 35px;
-                max-height: 35px;
-                margin-right: 15px;
-                color: white;
-                background-color: #892734;
-                border-radius: 5em;
-                font-weight: bold;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+        &-prize {
+          font-weight: normal;
+          font-size: 12px;
+          color: #000000;
 
-                @include b(600) {
-                    min-width: 25px;
-                    min-height: 25px;
-                    max-width: 25px;
-                    max-height: 25px;
-                    font-size: 12px;
-                    margin-right: 10px;
-                }
-            }
-
-            &-content {
-                text-align: left;
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-gap: 0px;
-                width: 100%;
-
-                &-prize {
-                    font-weight: normal;
-                    font-size: 12px;
-                    color: #000000;
-
-                    @include b(600) {
-                        font-size: 10px;
-                    }
-                }
-                
-                &-count {
-                    font-weight: bold;
-                    font-size: 14px;
-                    color: #862633;
-
-                    @include b(600) {
-                        font-size: 12px;
-                    }
-                }
-
-                &-hash {
-                    font-weight: normal;
-                    font-size: 14px;
-                    color: #000000;
-
-                    @include b(600) {
-                        font-size: 12px;
-                    }
-                }
-
-                &-accent {
-                    color: #862633 !important;
-                }
-            }
+          @include b(600) {
+            font-size: 10px;
+          }
         }
+
+        &-count {
+          font-weight: bold;
+          font-size: 14px;
+          color: #862633;
+
+          @include b(600) {
+            font-size: 12px;
+          }
+        }
+
+        &-hash {
+          font-weight: normal;
+          font-size: 14px;
+          color: #000000;
+
+          @include b(600) {
+            font-size: 12px;
+          }
+        }
+
+        &-accent {
+          color: #862633 !important;
+        }
+      }
     }
+  }
 }

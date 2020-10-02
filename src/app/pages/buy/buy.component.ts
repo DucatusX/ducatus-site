@@ -45,6 +45,18 @@ export class BuyComponent implements OnInit, OnDestroy {
 
   public winners = [];
 
+  public slides = [
+    'slide-1',
+    'slide-2',
+    'slide-3',
+    'slide-4',
+    'slide-5',
+    'slide-6',
+    'slide-7',
+  ];
+
+  public activeSlide = 0;
+
   public currencyTemplate = [
     { name: 'Card', displayName: 'credit card', shortName: 'card' },
     { name: 'USDC', displayName: 'usdc', shortName: 'usdc' },
@@ -231,8 +243,12 @@ export class BuyComponent implements OnInit, OnDestroy {
     this.checker = undefined;
   }
 
+  public changeSlide(slide) {
+    this.activeSlide = slide;
+  }
+
   public countdownEvent(state) {
-    this.lottery.ended = state;
+    this.lottery.ended = false;
   }
 
   get ducAddress() {
@@ -502,10 +518,12 @@ export class BuyComponent implements OnInit, OnDestroy {
     this.modal = false;
 
     this.buyservice.getLottery().then((result) => {
+      console.log(result[0], 'result');
       this.lotteryDesc = result[0];
-      this.bg = this.lotteryDesc.image
-        ? this.lotteryDesc.image
-        : 'assets/img/sections/buy-bg.png';
+      // this.bg = this.lotteryDesc.image
+      //   ? this.lotteryDesc.image
+      //   : 'assets/img/sections/buy-bg.png';
+      this.bg = 'assets/img/sections/buy-bg.png';
 
       if (this.lotteryDesc && this.lotteryDesc.winners_data) {
         let count = 0;
