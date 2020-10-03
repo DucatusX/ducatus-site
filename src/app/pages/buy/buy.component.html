@@ -389,7 +389,7 @@
                 class="ducatus-btn ducatus-btn-brown"
                 style="min-width: 100%; display: flex"
               >
-                <span *ngIf="!loadingCard">Continue</span>
+                <span *ngIf="!loadingCard">{{ "CONTINUE" | translate }}</span>
               </button>
               <button
                 [ngClass]="{ 'icon icon__loading': loadingCard }"

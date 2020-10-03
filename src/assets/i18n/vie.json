@@ -1,465 +1,481 @@
 {
-    "HEADER": {
-        "MENU": {
-            "HOME": "Trang Chủ",
-            "ABOUT": "Về Duc",
-            "BUY": "Mua Duc",
-            "DUCATUSX": "DUCX",
-            "LOTTERY": "Xổ số vàng",
-            "CONTACT": "Tiếp xúc"
-        }
-    },
-    "FOOTER": {
-        "MENU": {
-            "SECTION": {
-                "SOON": "Sắp có",
-                "ONE": {
-                    "TITLE": "Trong khoảng",
-                    "LINK_1": "Về Ducatus",
-                    "LINK_2": "Ducatus Công ty",
-                    "LINK_3": "Tiếp xúc"
-                },
-                "TWO": {
-                    "TITLE": "Ducatus Cách sống",
-                    "LINK_1": "Ducatus Học viện",
-                    "LINK_2": "Ducatus Quán cà phê",
-                    "LINK_3": "Ducatus Từ thiện"
-                },
-                "THREE": {
-                    "TITLE": "Ducatus Cách sống",
-                    "LINK_1": "Ducatus Sức khỏe",
-                    "LINK_2": "Ducatus Bất động sản",
-                    "LINK_3": "Ducatus Du lịch"
-                },
-                "FOUR": {
-                    "TITLE": "Ducatus Biz",
-                    "LINK_1": "Mạng lưới Ducatus",
-                    "LINK_2": "D-MOB",
-                    "LINK_3": "Thương gia Ducatus"
-                }
-            },
-            "LEGAL": "Legal",
-            "LEGAL_DISCLAIMER": "Legal Disclaimer",
-            "TERMS": "Điều khoản và điều kiện"
-        }
-    },
-    "APPS": {
-        "TITLE": "Cài đặt ví Ducatus Wallet",
-        "SUBTITLE": "Mua, lưu trữ và bán tiền mã hoá",
-        "TEXT_1": "Làm thế nào để nhận được Ducatus Coins?",
-        "TEXT_2": "Trải nghiệm Ducatus Coin của bạn bắt đầu khi bạn tải xuống ví điện tử Ducatus."
-    },
-    "PRIVACY": {
-        "TEXT": "Trang web này sử dụng cookie để đảm bảo bạn có được trải nghiệm tốt nhất trên trang web của chúng tôi. Bằng cách tiếp tục sử dụng trang web này, bạn đồng ý với việc sử dụng chúng.",
-        "BUTTON_ACCEPT": "Chấp nhận",
-        "BUTTON_DECLINE": "Từ chối"
-    },
-    "PAGE": {
-        "MAIN": {
-            "SLIDER": {
-                "ONE": {
-                    "TITLE": "Ducatus Coin",
-                    "TEXT": "Lấy cảm hứng từ đồng tiền giao dịch La Mã cổ đại và được thúc đẩy bởi tinh thần cách mạng đã tạo ra tiền kỹ thuật số, Ducatus Coin đưa ra một hình thức giao dịch tài chính thay thế - một hình thức bao quát, độc đáo và mang đến khả năng vô biên.",
-                    "BUTTON": "Tải xuống Whitepaper"
-                },
-                "TWO": {
-                    "TITLE": "Tiền mã hoá cho cuộc sống hàng ngày",
-                    "TEXT": "Tận hưởng sự tự do của các giao dịch hàng ngày không tiền mặt, không biên giới và an toàn, từ mua cà phê buổi sáng đến mua ngôi nhà mơ ước của bạn, giờ đây tất cả đều có thể với Ducatus Coin.",
-                    "BUTTON": "Tải xuống Whitepaper"
-                },
-                "THREE": {
-                    "TITLE": "Ủng hộ nền kinh tế kỹ thuật số",
-                    "TEXT": "Với việc phân phối, khả năng chuyển đổi và khả năng sử dụng (DUC) là cốt lõi, Ducatus Coin khuyến khích sử dụng thực tế và ứng dụng tiền mã hoá trong cuộc sống thực. Những đặc điểm này là công cụ giúp xây dựng nền kinh tế tiền mã hoá vững chắc cho tương lai.",
-                    "BUTTON": "Tải xuống Whitepaper"
-                }
-            },
-            "FINANCIAL": {
-                "TITLE": "Một tiến hoá tài chính mới",
-                "SUBTITLE": "Trở thành tiền mã hoá phổ biến nhất thế giới và có thể ứng dụng thực tiễn...",
-                "TEXT_1": "Một Ducatus cho mỗi người trên hành tinh. <br><br> Dựa trên các nguyên tắc của nhà toán học người Ý Leonardo Fibonacci, Ducatus đã tạo ra tổng cộng 7,778,742,049 đồng tiền mã hoá. Một khi những đồng tiền này đã được phân phối, số lượng của chúng sẽ tương tự như số người trên hành tinh của chúng ta. <br><br> Tầm nhìn cho Ducatus Coin rất táo bạo. Nhưng với sự kết hợp của cơ sở hạ tầng kỹ thuật số đẳng cấp thế giới, hệ thống phân phối mạng mạnh mẽ và một bộ các doanh nghiệp kinh tế tiền mã hoá có liên quan, đó là một mục tiêu không thể không đạt được. ",
-                "TEXT_2": "Chủ sở hữu Ducatus Coin hiện có thể truy cập vào một loạt các sản phẩm và dịch vụ từ các doanh nghiệp thuộc nền kinh tế tiền mã hoá Ducatus và các doanh nghiệp bên thứ ba. Các doanh nghiệp kinh tế tiền mã hoá này đang được triển khai song song với việc phân phối coin của chúng tôi để chứng minh thực tế các ứng dụng thực tế không chỉ cho Ducatus Coin mà còn cho toàn bộ các loại tiền mã hoá.",
-                "BUTTON": "Tìm hiểu thêm"
-            },
-            "SECTION_1": {
-                "TITLE_1": "Cộng đồng phổ biến công nghệ. <br> Các công ty như Ducatus biến chúng thành chủ đạo.",
-                "TITLE_2": "Ducatus phát triển một cách <br> thương mại",
-                "TEXT_1": "Ducatus Coins được khai thác trước và bán, sau đó lợi nhuận được đầu tư để xây dựng thương hiệu.",
-                "TEXT_2": "Công nghệ coin được phát triển nội bộ dựa trên kế hoạch kinh doanh dài hạn chiến lược của chúng tôi."
-            },
-            "SECTION_2": {
-                "LEFT": {
-                    "TITLE": "Ducatus duy trì các tiêu chuẩn hàng đầu thị trường",
-                    "SUBTITLE_1": "Quản trị",
-                    "TEXT_1": "Được quản lý bởi các chuyên gia giàu kinh nghiệm với nền tảng trong một loạt các lĩnh vực bao gồm tiếp thị, tài chính và kỹ thuật",
-                    "SUBTITLE_2": "Minh bạch",
-                    "TEXT_2": "Đội ngũ lãnh đạo và cổ đông cấp cao sẵn sàng ra mặt và dễ tiếp cận",
-                    "SUBTITLE_3": "Tuân thủ",
-                    "TEXT_3": "Hợp tác với các cơ quan chính phủ và tuân thủ các quy định do chính quyền đặt ra"
-                },
-                "RIGHT": {
-                    "TITLE": "Ducatus là một doanh nghiệp, <br> không phải là một dự án công nghệ",
-                    "TEXT_1": "Thành lập <br> năm 2016",
-                    "TEXT_2": "Đội ngũ lãnh đạo toàn cầu giàu kinh nghiệm",
-                    "TEXT_3": "Đội ngũ bán hàng toàn cầu năng động: Chiến lược tiếp thị mạng",
-                    "TEXT_4": "Gần 1 tỷ Ducatus được bán tại hơn 180 quốc gia tính đến tháng 1 năm 2020"
-                }
-            },
-            "USABILITY": {
-                "TITLE": "Khả năng sử dụng với nền kinh tế tiền mã hoá Ducatus",
-                "SUBTITLE": "Sử dụng Ducatus Coins để mua cà phê, đặt kỳ nghỉ, mua quà lưu niệm. Bạn thậm chí có thể mua bất động sản hoặc ngôi nhà mơ ước của mình nếu bạn muốn. Những giao dịch tài chính này có thể được thực hiện thông qua Nền Kinh Tế Tiền Thuật Toán Ducatus độc đáo.",
-                "TEXT": "Ducatus tin rằng khả năng sử dụng là thước đo cuối cùng của một loại tiền tệ hợp pháp. Để hỗ trợ tầm nhìn này, các doanh nghiệp liên kết của Ducatus cung cấp các nhu cầu cơ bản đã được tạo ra để mang lại sự dễ dàng và thuận tiện cho Ducatus Coin và những người dùng tiền mã hoá khác. Các doanh nghiệp Ducatus này là nền tảng của Nênt Kinh Tê Tiền Mã Hoá Ducatus. Từ việc mua một tách espresso đến đặt phòng tại một khách sạn sang trọng, các giao dịch trước đây chỉ có thể là tiền mặt, giờ không cần dùng tiền mặt nữa nhờ việc sử dụng Ducatus Coin."
-            }
-        },
-        "NEWMAIN": {
-            "SECTION": {
-                "ONE": {
-                    "TITLE": "Một tiến hoá tài chính mới",
-                    "SUBTITLE": "Trở thành tiền mã hoá phổ biến nhất thế giới và có thể ứng dụng thực tiễn...",
-                    "TEXT": "Một Ducatus cho mỗi người trên hành tinh. Dựa trên các nguyên tắc của nhà toán học người Ý Leonardo Fibonacci, Ducatus đã tạo ra tổng cộng 7,778,742,049 đồng tiền mã hoá. Một khi những đồng tiền này đã được phân phối, số lượng của chúng sẽ tương tự như số người trên hành tinh của chúng ta. <br><br> Tầm nhìn cho Ducatus Coin rất táo bạo. Nhưng với sự kết hợp của cơ sở hạ tầng kỹ thuật số đẳng cấp thế giới, hệ thống phân phối mạng mạnh mẽ và một bộ các doanh nghiệp kinh tế tiền mã hoá có liên quan, đó là một mục tiêu không thể không đạt được. <br><br> Chủ sở hữu Ducatus Coin hiện có thể truy cập vào một loạt các sản phẩm và dịch vụ từ các doanh nghiệp thuộc nền kinh tế tiền mã hoá Ducatus và các doanh nghiệp bên thứ ba. Các doanh nghiệp kinh tế tiền mã hoá này đang được triển khai song song với việc phân phối coin của chúng tôi để chứng minh thực tế các ứng dụng thực tế không chỉ cho Ducatus Coin mà còn cho toàn bộ các loại tiền mã hoá.",
-                    "BUTTON": "Tìm hiểu thêm >"
-                },
-                "TWO": {
-                    "TITLE": "Cộng đồng phổ biến công nghệ. <br> Các công ty như Ducatus biến chúng thành chủ đạo.",
-                    "SUBTITLE": "Ducatus phát triển một cách thương mại",
-                    "TEXT_1": "Ducatus Coins được khai thác trước và bán, sau đó lợi nhuận được đầu tư để xây dựng thương hiệu.",
-                    "TEXT_2": "Công nghệ coin được phát triển nội bộ dựa trên kế hoạch kinh doanh dài hạn chiến lược của chúng tôi."
-                },
-                "THREE": {
-                    "TITLE": "Ducatus duy trì các tiêu chuẩn hàng đầu thị <br> trường",
-                    "TITLE_2": "Ducatus là một doanh nghiệp, không phải là một dự án công nghệ",
-                    "ICONS": {
-                        "TITLE_1": "Quản trị",
-                        "TEXT_1": "Được quản lý bởi các chuyên gia giàu kinh nghiệm với nền tảng trong một loạt các lĩnh vực bao gồm tiếp thị, tài chính và kỹ thuật",
-                        "TITLE_2": "Minh bạch",
-                        "TEXT_2": "Đội ngũ lãnh đạo và cổ đông cấp cao sẵn sàng ra mặt và dễ tiếp cận",
-                        "TITLE_3": "Tuân thủ",
-                        "TEXT_3": "Hợp tác với các cơ quan chính phủ và tuân thủ các quy định do chính quyền đặt ra",
-                        "TEXT_4": "Thành lập <br> năm 2016",
-                        "TEXT_5": "Đội ngũ lãnh đạo toàn cầu giàu kinh nghiệm",
-                        "TEXT_6": "Đội ngũ bán hàng toàn cầu năng động: Chiến lược tiếp thị mạng",
-                        "TEXT_7": "Gần 1 tỷ Ducatus được bán tại hơn 180 quốc gia tính đến tháng 1 năm 2020"
-                    }
-                },
-                "FOUR": {
-                    "TITLE": "Khả năng sử dụng với nền kinh tế tiền mã hoá Ducatus",
-                    "TEXT": "Sử dụng Ducatus Coins để mua cà phê, đặt kỳ nghỉ, mua quà lưu niệm. Bạn thậm chí có thể mua bất động sản hoặc ngôi nhà mơ ước của mình nếu bạn muốn. <br><br> Những giao dịch tài chính này có thể được thực hiện thông qua Nền Kinh Tế Tiền Thuật Toán Ducatus độc đáo. Ducatus tin rằng khả năng sử dụng là thước đo cuối cùng của một loại tiền tệ hợp pháp. Để hỗ trợ tầm nhìn này, các doanh nghiệp liên kết của Ducatus cung cấp các nhu cầu cơ bản đã được tạo ra để mang lại sự dễ dàng và thuận tiện cho Ducatus Coin và những người dùng tiền mã hoá khác. Các doanh nghiệp Ducatus này là nền tảng của Nênt Kinh Tê Tiền Mã Hoá Ducatus. Từ việc mua một tách espresso đến đặt phòng tại một khách sạn sang trọng, các giao dịch trước đây chỉ có thể là tiền mặt, giờ không cần dùng tiền mặt nữa nhờ việc sử dụng Ducatus Coin."
-                }
-            }
-        },
-        "ABOUT": {
-            "TITLE": "Về Ducatus Coin",
-            "SECTION_1": {
-                "TITLE": "Về Ducatus Coin",
-                "TEXT": "Thuận tiện, nhanh chóng và an toàn, Ducatus Coin là một loại tiền mã hoá được tạo ra để sử dụng lâu dài. Ducatus Coin là loại tiền mã hoá duy nhất được hỗ trợ bởi Nền Kinh Tế Tiền Mã Hoá Ducatus, một nhóm các doanh nghiệp liên kết không ngừng phát triển của Ducatus tiến đến không dùng tiền mặt cho các nhu cầu cơ bản của cuộc sống: thực phẩm, quần áo, chỗ ở, nghỉ ngơi và thư giãn, ..."
-            },
-            "SECTION_2": {
-                "TITLE": "Ưu điểm của Ducatus Coin",
-                "SUBTITLE": "Ducatus Coin kết hợp những lợi ích của Bitcoin với mô hình kinh doanh chiến lược tiên tiến - Nền Kinh Tế Tiền Mã Hoá Ducatus.",
-                "LIST": {
-                    "TITLE_1": "Ducatus Coin rất an toàn",
-                    "TEXT_1": "Bảo mật tốt nhất từ một công nghệ không ngừng phát triển",
-                    "TITLE_2": "Ducatus Coin nhanh hơn",
-                    "TEXT_2": "Chuyển tiền nhanh gấp 10 lần so với Bitcoin do thời gian khối 1 phút",
-                    "TITLE_3": "Ducatus Coin không biên giới",
-                    "TEXT_3": "Chuyển tiền bất cứ nơi nào trên thế giới với chi phí tối thiểu",
-                    "TITLE_4": "Ducatus Coin trao quyền cho bạn",
-                    "TEXT_4": "Tất cả lợi ích của hệ thống tài chính toàn cầu ngay trong điện thoại thông minh của bạn",
-                    "TITLE_5": "Ducatus Coin là một sáng tạo",
-                    "TEXT_5": "Được hỗ trợ bởi một cơ sở hạ tầng chiến lược được thiết kế để thúc đẩy sự chấp nhận và chấp nhận tiền mã hoá toàn cầu",
-                    "TITLE_6": "Ducatus Coin là một sự chuyên nghiệp",
-                    "TEXT_6": "Ban lãnh đạo Ducatus đảm bảo rằng Ducatus Coin luôn tuân thủ pháp luật và các quy định toàn cầu"
-                }
-            },
-            "TECHNOLOGY": {
-                "TITLE": "Công nghệ Ducatus Coin",
-                "SUBTITLE": "Ducatus Coin là một fork của Litecoin và do đó sử dụng scrypt làm cơ sở cho thuật toán Proof of Work.",
-                "TEXT_1": "Ducatus Blockchain",
-                "TEXT_2": "Mã nguồn"
-            },
-            "MILESTONES": {
-                "TITLE": "Các cột mốc",
-                "LIST": {
-                    "YEAR_15": "Tháng 6 năm 2020",
-                    "TEXT_15": "<b>Mua xu Ducatus bằng Bitcoin, Ethereum và thẻ tín dụng đã trở nên khả thi thông qua Ví Ducatus được cập nhật</b>",
-                    "YEAR_14": "Tháng 4 năm 2020",
-                    "TEXT_14": "Một nhánh của chuỗi khối Ethereum, DucatusX được tạo ra để hỗ trợ cả giao dịch và tạo hợp đồng thông minh",
-                    "YEAR_13": "Tháng 3 năm 2020",
-                    "TEXT_13": "Ducatus Coins và vàng vật chất (ở dạng tiền xu và thanh) đã được đăng ký trên blockchain và được cung cấp dưới dạng một gói duy nhất thông qua Remus Gold",
-                    "YEAR_12": "Tháng 2 năm 2020",
-                    "TEXT_12": "Mua Ducatus Coins trực tuyến bắt đầu qua ducatuscoins.com",
-                    "YEAR_11": "Tháng 1 năm 2020",
-                    "TEXT_11": "Ví Ducatus đa tiền tệ đã được ra mắt",
-                    "YEAR_10": "Tháng 12 năm 2019",
-                    "TEXT_10": "1 tỷ Ducatus Coins đã được bán kể từ khi được giới thiệu vào năm 2017",
-                    "YEAR_9": "Tháng 10 năm 2019",
-                    "TEXT_9": "Ví Ducatus đa tiền tệ đã được ra mắt. ",
-                    "YEAR_8": "Tháng 1 năm 2019",
-                    "TEXT_8": "Ducatus đã được liệt kê là Nhà cung cấp giải pháp Blockchain phát triển nhanh nhất 10 năm đáng theo dõi trong năm 2019 bởi APAC Business Headlines.",
-                    "YEAR_7": "Tháng 3 năm 2018",
-                    "TEXT_7": "Ducatus Coin đã được liệt kê trên sàn giao dịch tiền mã hoá Coinbene.",
-                    "YEAR_6": "Tháng 1 năm 2018",
-                    "TEXT_6": "Ducatus đã tài trợ Blockchain Cruise Asia, một sự kiện lớn về blockchain và tiền mã hoá trong khu vực.",
-                    "YEAR_5": "Tháng 10 năm 2017",
-                    "TEXT_5": "Blockchain của Ducatus được đưa ra và giao dịch Ducatus công khai trực tiếp đầu tiên được thực hiện bởi Giám đốc điều hành Ronny Tome của chúng tôi với Dustin Trammell tại Hội nghị thượng đỉnh châu Âu Ducatus ở Rome.",
-                    "YEAR_4": "Tháng 9 năm 2017",
-                    "TEXT_4": "Khai thác trên blockchain cho tất cả Ducatus Coin đã được hoàn thành.",
-                    "YEAR_3": "Tháng 8 năm 2017",
-                    "TEXT_3": "Văn phòng công ty Ducatus được khánh thành tại Singapore.",
-                    "YEAR_2": "Tháng 7 năm 2017",
-                    "TEXT_2": "Tuần làm việc công nghệ Ducatus được tổ chức bởi Dustin Trammell tại DEFCON XXV ở Las Vegas.",
-                    "YEAR_1": "Tháng 3 năm 2017",
-                    "TEXT_1": "Thương hiệu Ducatus và Sách trắng kỹ thuật Ducatus đầu tiên đã được ra mắt tại Hội nghị thượng đỉnh toàn cầu Ducatus ở Dubai."
-                }
-            }
-        },
-        "BUY": {
-            "TITLE": "Mua DUC",
-            "FORM": {
-                "RADIO": {
-                    "PRICE": "Giá của DUC = {{ curName }} {{ ducRate }}",
-                    "TEXT": " Chọn một trong những lựa chọn bên dưới và nhận số lượt rút thăm tương ứng",
-                    "LINK": "(thêm thông tin)",
-                    "TICKET": {
-                        "ONE": "lượt",
-                        "MANY": "lượt"
-                    }
-                },
-                "ADDRESS": {
-                    "TEXT": "Nhập địa chỉ nhận DUC<br>Cần địa chỉ Ducatus? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Tải xuống</a> ví Ducatus TẠI ĐÂY!",
-                    "PLACEHOLDER": "Nhập địa chỉ nhận DUC",
-                    "ERROR": "Lỗi! Vui lòng kiểm tra, định dạng địa chỉ không chính xác!"
-                },
-                "EMAIL": {
-                    "TEXT": "Nhập email của bạn vì bạn sẽ được thông báo nếu bạn là người chiến thắng",
-                    "PLACEHOLDER": "Nhập email của bạn "
-                },
-                "RESULT": {
-                    "TEXT_1": "Gửi đồng ",
-                    "TEXT_2": " của bạn đến địa chỉ sau:",
-                    "QR": {
-                        "TEXT": "hoặc quét mã QR này:"
-                    },
-                    "ERROR": "đã xảy ra lỗi, thử lại sau",
-                    "NOTE": "Hãy lưu ý rằng bạn sẽ mất khoảng {{ time }} để nhận DUC về ví <br><br>"
-                },
-                "SUBMIT": "Gửi đi"
-            },
-            "INFO": {
-                "TITLE": "Hãy khám phá, học hỏi và có thêm thu nhập từ việc trở thành một phần của nền kinh tế không tiền mặt Ducatus.",
-                "LINK": {
-                    "ONE": "Mua bán cryptocurrency trên sàn AA+",
-                    "TWO": "Sử dụng DUC để mua sắm những món đồ yêu thích trực tuyến"
-                }
-            },
-            "REFERRAL": {
-                "TITLE": "Liên kết giới thiệu",
-                "SUBTITLE": "Chia sẻ cơ hội tuyệt vời này với bạn bè và gia đình của bạn và nhận phần thưởng giới thiệu 5% DUC cho bất kỳ giao dịch mua nào họ thực hiện bằng liên kết dưới đây",
-                "LABEL": "Nhập địa chỉ Ducatus của bạn",
-                "PLACEHOLDER": "Nhập địa chỉ Ducatus của bạn",
-                "ERROR": "Lỗi! Vui lòng kiểm tra, định dạng địa chỉ không chính xác!",
-                "LINK": "Liên kết giới thiệu của bạn"
-            },
-            "LOTTERY": {
-                "BLOCK": {
-                    "WINNER": {
-                        "TITLE": "GIÀNH CHIẾN THẮNG"
-                    },
-                    "WAITING": {
-                        "TITLE": "Xin vui lòng chờ",
-                        "TEXT": "người chiến thắng tính toán..."
-                    },
-                    "COUNTDOWN": {
-                        "TITLE": "Đếm ngược đến ngày rút thăm"
-                    },
-                    "PROGRESS": {
-                        "TITLE": "Phần trăm doanh số bán ra phải đạt đúng chỉ tiêu trước khi cuộc đếm ngược thời gian diễn ra"
-                    },
-                    "TICKETS": {
-                        "LINK": "Danh sách {{ tickets_amount }} tổng số mục băm →",
-                        "TEXT": "Số lượng DUC"
-                    },
-                    "INFO": {
-                        "TITLE": "Làm thế nào bạn có thể giành được bất kỳ giải thưởng tuyệt vời này ?",
-                        "TEXT": "<p class=\"lottery-info-text\">Mỗi người mua ĐỨC đều có cơ hội trúng thưởng. Mua DUC càng cao, bạn càng có nhiều cơ hội trúng thưởng.</p> <p class=\"lottery-info-text\">Sau khi đạt được mục tiêu {{ duc_amount }}  ĐỨC đã bán, thời gian đếm ngược 8 ngày đến Ngày Rút thăm May mắn sẽ bắt đầu. Việc bán DUC tiếp tục cho đến khi bộ đếm ngược đến 00: 00: 00: 00 sẽ kích hoạt rút thăm.</p> <p class=\"lottery-info-text\">Qua một trận hòa đồng thông minh ngẫu nhiên, băm chiến thắng es sẽ được xác định và công bố trên trang này và người chiến thắng s sẽ được thông báo qua email.</p>"
-                    }
-                }
-            },
-            "MODAL": {
-                "TERMS": {
-                    "TEXT": "Vui lòng đánh dấu vào ô bên dưới để xác nhận rằng bạn thừa nhận và đồng ý với <a href='assets/downloads/pdf/Lucky_Draw_Terms_Conditions.pdf' target='_blank'> Điều khoản & Điều kiện </a> khi mua DUC. Ducatus Coin không có sẵn để mua từ Centurion tại Singapore.",
-                    "AGREE": "Tôi đồng ý với các Điều khoản & Điều kiện",
-                    "BUTTON": "Đóng"
-                },
-                "INFO": {
-                    "TEXT": "<p>Số lượng quy đổi chính xác của DUC được căn cứ theo theo giá trị thanh toán BTC / ETH sẽ được gửi đến ví DUC được chỉ định. Tuy nhiên, nếu số tiền (USD) công ty nhận được bé hơn giá trị của gói bạn đã chọn, hệ thống sẽ mặc định ghi nhận số lượt rút thăm của bạn ở gói giá trị thấp hơn.</p><p>Để mua DUC với bội số nguyên của 1000 USD, bạn có thể thực hiện nhiều giao dịch riêng biệt, vì số lượng giới hạn tối đa cho một lần mua là 1000 USD.</p>",
-                    "BUTTON": "Đóng"
-                }
-            }
-        },
-        "TICKETS": {
-            "TITLE": "Mua DUC",
-            "TABLE": {
-                "TITLE": "Bài dự thi / Băm đủ điều kiện để rút thăm"
-            }
-        },
-        "CONTACT": {
-            "TITLE": "Liên hệ",
-            "TEXT": "Centurion Global Limited <br> Harneys Services (Cayman Limited) <br> 4th Floor, Harbour Place, 103 South Church Street <br> Grand Cayman <br> PO Box 10240, KY1-1002 <br> Cayman Islands <br> <br>",
-            "FORM": {
-                "TEXT": "Liên hệ với chúng tôi để biết thêm chi tiết",
-                "TEXT_1": "Tên của bạn",
-                "TEXT_2": "Số điện thoại của bạn",
-                "TEXT_3": "Email của bạn",
-                "TEXT_4": "Tin nhắn",
-                "BUTTON": "YÊU CẦU"
-            }
-        },
-        "LEGAL": {
-            "TITLE": "Legal",
-            "DISCLAIMER": "Đối với mục đích sử dụng thông tin, đây là bản dịch từ phiên bản gốc tiếng Anh. Trong trường hợp có sự khác biệt, nội dung tiếng Anh gốc sẽ được ưu tiên.",
-            "SECTION": {
-                "ONE": {
-                    "TITLE": "CÁC ĐIỀU KHOẢN VÀ ĐIỀU KIỆN CHUNG",
-                    "TEXT": "Trong các điều kiện chung &, người bán và các chi nhánh của nó và các công ty liên quan cùng nhau được gọi là “Centurion toàn cầu giới hạn“, “chúng tôi“, “chúng tôi“ hoặc “của chúng tôi “và người mua được gọi sau đây là “người mua“, “bạn“ hay “của bạn“.",
-                    "SUBTITLE_1": "1. 1. tuyên bố miễn trừ",
-                    "TEXT_1": "<li>a. người mua đồng ý và thừa nhận rõ ràng rằng nó là tham gia vào các ký tự rủi ro của riêng mình. Trong phạm vi tối đa được pháp luật hiện hành cho phép, Centurion Global Limited không đại diện hoặc bảo đảm bất kỳ loại nào, rõ ràng hay ngụ ý, về hoạt động hoặc hiệu suất của đồng xu, hoặc thông tin, nội dung, tài liệu, sản phẩm (bao gồm cả đồng xu hoặc blockchain, ví tiền điện tử và phần mềm liên quan) hoặc bất kỳ khía cạnh hoặc yếu tố nào khác của các sản phẩm và dịch , trừ khi có quy định khác bằng văn bản.</li> <li>b. người mua xác nhận rằng nó có sự hiểu biết thích hợp về nền, rủi ro, cách sử dụng và chức năng của các loại tiền tệ mật mã cũng như phần mềm dựa trên blockchain, và rằng nó không dựa trên bất kỳ tuyên bố hoặc đại diện nào của Centurion Global Limited hoặc bất kỳ cộng sự nào của nó đối với những vấn đề này khi nhập vào hợp đồng. Người mua đã độc lập thẩm định tất cả các rủi ro, sự phù hợp và thành tích của đồng xu và đã thu được tư vấn chuyên nghiệp có liên quan và độc lập nếu cần thiết.</li> <li>c. người mua thừa nhận và đồng ý rằng, trong phạm vi đầy đủ cho phép của pháp luật hiện hành, quy định hoặc đạo luật, Centurion Global Limited và bất kỳ thực thể hoặc cá nhân liên quan nào không có trách nhiệm pháp lý (bao gồm bất kỳ thiệt hại gián tiếp, ngẫu nhiên, đặc biệt, mẫu mực hoặc hậu quả, để mất lợi nhuận, thiện chí hoặc dữ liệu) dẫn đến từ hoặc liên quan đến việc sử dụng hoặc không có khả năng sử dụng đồng </li> <li>d. Centurion Global Limited không có đại diện hoặc bảo hành và từ chối tất cả các tuyên bố và cam đoan, rõ ràng hay ngụ ý, bao gồm bất kỳ sự đồng nhất ngụ ý về khả năng bán và phù hợp cho một mục đích cụ thể liên quan đến đồng xu. </li> <li>e. Centurion Global Limited không cam đoan hoặc đảm bảo theo bất kỳ cách nào mà sản phẩm hoặc dịch vụ của mình không có virus hoặc các thành phần có hại khác. Centurion Global Limited sẽ không chịu trách nhiệm về thiệt hại của bất kỳ loại nào phát sinh từ hoặc là kết quả của việc sử dụng bất kỳ sản phẩm hoặc dịch vụ của Centurion Global Limited, bao gồm, nhưng không giới hạn các thiệt hại gián tiếp, ngẫu nhiên, trừng phạt hoặc hậu quả</li> <li>f. Centurion Global Limited từ chối trách nhiệm pháp lý trong các trường hợp trộm cắp, hacking, tấn công mạng hoặc tấn công vào blockchains và không theo bất kỳ cách nào đảm bảo sự an toàn của chúng. Tất cả các rủi ro hoặc tổn thất, bao gồm nhưng không liên quan đến tổn thất của tiền xu hoặc thiệt hại cho phần cứng do những tình huống này sẽ là người mua một mình.</li> <li>g. người mua sẽ chịu trách nhiệm duy nhất về việc tuân thủ bất kỳ luật pháp địa phương liên quan đến các giao dịch của bạn, bao gồm nhưng không giới hạn bất kỳ và tất cả các ý nghĩa thuế của hợp đồng.</li> <li>h. người mua đồng ý rằng nó không phải là mua tiền xu cho mục đích đầu tư, suy đoán để bán lại ngay lập tức hoặc mục đích tài chính khác.</li> <li>i. người mua đồng ý rằng tất cả các giao dịch mua của tiền xu từ Centurion Global Limited được thực hiện bởi người mua cho sử dụng riêng của mình để mua hàng hoá/dịch vụ cung cấp bởi Centurion Global Limited hoặc bất kỳ doanh nghiệp liên quan hoặc bởi các doanh nghiệp của bên thứ ba và người mua sẽ không sử dụng tiền xu để đưa ra một thứ cấp cho công chúng Nếu người mua có ý định làm như vậy, người mua sẽ hoàn toàn chịu trách nhiệm tuân thủ tất cả các luật và quy định có liên quan bao gồm bất kỳ yêu cầu đăng ký nào, nếu có, áp dụng cho các dịch vụ đó.</li> <li>j. DISCLAIMER người Mỹ: các đồng xu được bán bởi CENTURION, như mô tả dưới đây có thể không được cung cấp, bán hoặc phân phối, trực tiếp hoặc gián tiếp, tại Hoa Kỳ hoặc cho các tài khoản hoặc rủi ro của một người Mỹ (như được định nghĩa dưới đây). NỘI DUNG CỦA TÀI LIỆU NÀY CÓ THỂ KHÔNG ĐƯỢC COI LÀ MỘT ĐỀ NGHỊ HOẶC LỜI MỜI CHO NGƯỜI MỸ ĐỂ THU ĐƯỢC TIỀN XU HOẶC MỘT LỜI MỜI BÁN HOẶC THỊ TRƯỜNG CÁC ĐỒNG XU. CÁC CÔNG DÂN HOA KỲ (' US '), NGƯỜI DÂN MỸ, CHỦ THẺ U.S. GREEN HOẶC KHÁCH HÀNG CÓ ĐỊA CHỈ GỬI THƯ TỪ MỸ, SỐ ĐIỆN THOẠI U.S., ĐỀU LÀ NHỮNG NGƯỜI CÓ TOÀN... MỘT NGƯỜI LÀ MỘT ' CƯ DÂN ' NẾU ANH TA/CÔ ẤY CÓ MẶT TẠI MỸ TRONG HƠN 31 NGÀY TRONG NĂM DƯƠNG LỊCH HIỆN TẠI VÀ CHO TRUNG BÌNH ÍT NHẤT 183 NGÀY SO VỚI NĂM DƯƠNG LỊCH HIỆN TẠI VÀ 2 NĂM LỊCH TRƯỚC ĐÓ. XIN LƯU Ý RẰNG ĐỊNH NGHĨA CỦA TẬP ĐOÀN DUCATUS CỦA NGƯỜI MỸ CÓ THỂ KHÔNG GIỐNG NHƯ ĐỊNH NGHĨA ĐƯỢC SỬ DỤNG BỞI CÁC DỊCH VỤ DOANH THU NỘI ĐỊA HOA KÌ CHO CÁC MỤC ĐÍCH THUẾ MỸ HOẶC DO HOA HỒNG VÀ TRAO ĐỔI US SECURITIES.</li>",
-                    "SUBTITLE_2": "2. rủi ro liên quan đến tiền xu",
-                    "TEXT_2": "Mua tiền xu liên quan đến rủi ro. Không có bảo đảm rằng bất kỳ việc mua lại Coins sẽ cho kết quả trong bạn hoặc bất kỳ người nào khác được hưởng bất kỳ hình thức của lợi ích tài chính hoặc kinh tế. Bạn nhận ra và đồng ý rằng Centurion Global Limited đã không đại diện, bảo hành, hứa hẹn, cam kết, dự, đề nghị hoặc ý nghĩa gì đối với bạn về triển vọng tương lai hoặc thu nhập, hoặc là bạn sẽ kiếm được bất kỳ tiền hoặc nhận ra bất kỳ trở lại tài chính hoặc khác, như là kết quả của việc thu mua hoặc quyền sở hữu của bạn và/hoặc sử dụng Coins Bạn hiểu rằng bạn có thể phải chịu một số lượng mất mát tài chính hoặc thiệt hại, đáng kể hoặc bằng cách khác, kết quả từ việc mua hoặc giao dịch với các đồng xu. <br><br> Bạn đã xem xét và cảm thấy thoải mái với tất cả những rủi ro này, bao gồm nhưng không giới hạn ở những người được nêu dưới đây, và sẽ không mang lại một hành động chống lại hoặc cố gắng giữ cho Centurion Global Limited chịu trách nhiệm trong bất kỳ cách nào hoặc liên quan. Trong trường hợp cần thiết, bạn đồng ý và đại diện rằng bạn sẽ hoặc đã thu được tư vấn pháp lý và tài chính độc lập chuyên nghiệp."
-                },
-                "TWO": {
-                    "TITLE": "Dấu ấn",
-                    "TEXT": "Trang web Ducatus Coins thuộc sở hữu của:<br> Centurion Global Limited<br> Dịch vụ harneys (Cayman Limited)<br> Tầng 4, Harbour Place, 103 South Church Street<br> Grand Cayman<br> PO Box 10240, KY1- 1002,<br> Quần đảo Cayman. <br><br> <b>Tổng Giám đốc điều hành: Ronny Tome</b> <br> Đối với bất kỳ câu hỏi nào bạn có thể có liên quan đến công ty của chúng tôi, hãy gửi email cho chúng tôi: support@ducatus.net.<br><br> <b>Quyền sở hữu </b> <br> Các tài liệu trên trang web này, bao gồm các thông tin có sẵn trên hoặc thông qua trang web này (các “nội dung“) được bảo vệ bởi bản quyền, thương hiệu và các hình thức khác của quyền sở hữu.Tất cả các quyền, chức danh và lợi ích trong nội dung đều thuộc sở hữu, được cấp phép hoặc kiểm soát bởi công ty. < br > < br > < b > Nội dung < /b><br> Trừ khi có cung cấp, không có phần nội dung của trang web này sẽ được tái tạo, tái bản, tải lên, đăng, truyền hoặc phân phối theo bất kỳ cách nào, mà không có sự cho phép trước bằng văn bản của công ty.<br><br> Sửa đổi bất kỳ nội dung hoặc sử dụng nội dung cho bất kỳ mục đích nào khác sẽ là vi phạm bản quyền của công ty và các quyền sở hữu trí tuệ khác. Đồ họa và hình ảnh trên trang web này được bảo vệ bởi bản quyền và có thể không được sao chép hoặc phù hợp theo bất kỳ cách nào mà không có sự cho phép bằng văn bản của chủ sở hữu quyền tác giả tương ứng.<br><br> Thiết kế và bố trí của trang web này được bảo vệ bởi sở hữu trí tuệ và các luật khác và có thể không được sao chép hoặc sao chép toàn bộ hoặc một phần. Không có biểu tượng, đồ họa, âm thanh, hình ảnh, văn bản hoặc bất kỳ nội dung nào khác từ trang web này có thể được sao chép, sao chép hoặc truyền đi trừ khi có sự cho phép rõ ràng bằng văn bản của công ty."
-                },
-                "THREE": {
-                    "TITLE": "CHÍNH SÁCH BẢO MẬT",
-                    "SUBTITLE_1": "1. giới thiệu",
-                    "TEXT_1": "Chính sách bảo mật này được thiết kế để thông báo cho bạn về các chính sách của chúng tôi về việc thu thập, sử dụng và tiết lộ dữ liệu cá nhân mà chúng tôi nhận được từ bạn, cũng như để giúp bạn đưa ra quyết định sáng suốt trước khi cung cấp cho chúng tôi bất kỳ thông tin cá nhân nào của bạn.<br><br> Trong chính sách bảo mật này, “chúng tôi“, “chúng tôi“, “của chúng tôi“ có nghĩa là Centurion Global Limited có văn phòng đăng ký tại quần đảo Cayman(như bộ điều khiển theo quy định bảo vệ dữ liệu chung của châu Âu(“GDPR“) và các chi nhánh và công ty liên quan cụ thể là, Emperor Holdings Limited có văn phòng đăng.<br><br> Nếu bạn, bất cứ lúc nào, có bất kỳ thắc mắc nào về chính sách bảo mật này hoặc bất kỳ truy vấn nào khác liên quan đến cách chúng tôi có thể quản lý, xử lý và bảo vệ dữ liệu cá nhân của bạn, vui lòng liên hệ với cán bộ bảo vệ dữ liệu của chúng tôi (có thông tin liên hệ được nêu dưới đây). <br><br> <a href='mailto:support@ducatus.net' target='_blank' class='a__link'>support@ducatus.net</a><br> Chú ý: nhân viên bảo vệ dữ liệu<br><br> Bằng việc sử dụng trang web và/hoặc các dịch vụ và/hoặc sản phẩm khác của chúng tôi, bạn bày tỏ thỏa thuận với chính sách này và các điều kiện xử lý dữ liệu cá nhân của bạn ở đây; Nếu bạn không đồng ý với những điều kiện này, bạn không nên sử dụng trang web và/hoặc các dịch vụ và/hoặc sản phẩm khác của chúng tôi.",
-                    "SUBTITLE_2": "2. dữ liệu chúng tôi thu thập",
-                    "TEXT_2": " Dữ liệu cá nhân: trong khi sử dụng trang web, và/hoặc các dịch vụ của chúng tôi và/hoặc các sản phẩm của chúng tôi, chúng tôi có thể yêu cầu bạn cung cấp cho chúng tôi dữ liệu cá nhân có thể được sử dụng để liên hệ hoặc nhận dạng bạn. “Dữ liệu cá nhân“ được định nghĩa để có nghĩa là dữ liệu, cho dù là đúng hay không, về một cá nhân có thể được xác định từ dữ liệu đó, hoặc từ dữ liệu đó và các thông tin khác mà một tổ chức có hoặc có khả năng truy cập được cung cấp trong phạm vi bạn cư trú tại, hoặc phải tuân theo luật dữ liệu cá nhân của, một thẩm quyền của pháp luật có liên quan hoặc các quy tắc áp dụng khác trong đó cung cấp cho một định nghĩa khác nhau của dữ liệu cá nhân, định nghĩa của “dữ liệu cá nhân“ dưới đây được hiểu để cũng bao gồm bất kỳ loại dữ liệu khác được đưa vào định nghĩa khác nhau. Các dữ liệu cá nhân mà chúng tôi có thể thu thập từ bạn bao gồm, nhưng không giới hạn, lời chào của bạn, tên, công ty, tên, công nghiệp, giới tính, quốc gia cư trú, số điện thoại liên lạc và một hoặc nhiều địa chỉ email."
-                }
-            }
-        },
-        "LEGAL_DISCLAIMER": {
-            "TITLE": "Legal Disclaimer",
-            "DISCLAIMER": "Đối với mục đích sử dụng thông tin, đây là bản dịch từ phiên bản gốc tiếng Anh. Trong trường hợp có sự khác biệt, nội dung tiếng Anh gốc sẽ được ưu tiên.",
-            "TEXT": "Thông báo quan trọng: www.ducatuscoins.com thuộc sở hữu của Centurion Global Limited (“Centurion Global“), với văn phòng đăng ký tại Harneys Services (Cayman Limited), 4th Floor Harbour Place, 103 South Church Street, Grand Cayman, PO Box 10240, KY1-1002, quần đảo Cayman.<br><br> Bằng truy cập vào trang web này, bạn đồng ý bị ràng buộc bởi điều khoản của Centurion sử dụng và chính sách bảo mật. Ducatus Coin (“đồng xu“) do Centurion Global ban hành dành cho những người mua đủ điều kiện và chấp nhận những rủi ro liên quan đến quyền sở hữu tài sản kỹ thuật số như Coin.Mỗi người mua được khuyên nên tiến hành tự siêng năng của mình như là không có của Centurion toàn cầu, các chi nhánh của nó cung cấp bất kỳ tư vấn đầu tư, tư vấn kinh doanh hoặc thuế hoặc tư vấn pháp lý. < br > < br > CÁC THÔNG TIN ĐƯỢC CUNG CẤP TRÊN TRANG WEB NÀY KHÔNG PHẢI ĐỂ LƯU HÀNH, HIỂN THỊ, TIẾP NHẬN HOẶC PHÂN PHỐI TẠI SINGAPORE(BAO GỒM CẢ CÔNG CHÚNG HOẶC BẤT KỲ PHẦN NÀO CỦA CÔNG CHÚNG TẠI SINGAPORE) HOẶC BẤT KỲ KHU VỰC PHÁP LÝ NÀO KHÁC NƠI CÁC SẢN PHẨM HOẶC DỊCH VỤ CỦA CENTURION HOẶC CÁC CHI NHÁNH CỦA NÓ SẼ BỊ CẤM MÀ KHÔNG CẦN GIẤY PHÉP HOẶC MIỄN TRỪ.CẢ CENTURION CŨNG NHƯ BẤT KỲ CHI NHÁNH NÀO CỦA NÓ CUNG CẤP BẤT KỲ DỊCH VỤ NÀO CẤU THÀNH MỘT DỊCH VỤ THANH TOÁN CHO CÁC MỤC ĐÍCH CỦA ĐẠO LUẬT DỊCH VỤ THANH TOÁN SINGAPORE 2019, HOẶC BẤT KỲ HOẠT ĐỘNG NÀO KHÁC THEO QUY ĐỊNH CỦA CƠ QUAN TIỀN TỆ SINGAPORE, TẠI SINGAPORE HOẶC CHO BẤT KỲ NGƯỜI NÀO TẠI SINGAPORE.ĐỒNG XU KHÔNG CÓ SẴN ĐỂ BÁN BỞI CENUTURION TẠI SINGAPORE."
-        },
-        "GOLD_LOTTERY": {
-            "TITLE": "Gold Lottery",
-            "NAV": {
-                "TITLE_1": "Đăng ký",
-                "TITLE_2": "Đang kiểm tra"
-            },
-            "REGISTRATE": {
-                "TEXT_1": "Điền vô mẫu đơn để liên kết thẻ vàng với ví DUC, DUCX để nhận DUC và Token Vàng",
-                "TEXT_2": "Nhập mã thẻ cá nhân",
-                "ERROR_1": "Mã code đã đăng ký rồi",
-                "ERROR_2": "Mã code không hợp lệ",
-                "TEXT_3": "Nhập địa chỉ ví DUC",
-                "PLACEHOLDER_1": "Nhập địa chỉ ví Ducatus",
-                "ERROR_3": "Invalid address!",
-                "TEXT_4": "Nhập địa chỉ ví DUCX",
-                "ERROR_4": "Địa chỉ ví không hợp lệ",
-                "PLACEHOLDER_2": "Nhập địa chỉ ví DucatusX"
-            },
-            "BUTTON": "Bước tiếp theo",
-            "CHECK": {
-                "TEXT_1": "Điền vào mẫu đơn để kiểm tra đăng ký thẻ",
-                "TEXT_2": "Nhập mã code công khai",
-                "ERROR_1": "Mã code không hợp lệ",
-                "ERROR_2": "Mã code chưa được đăng ký",
-                "TEXT_3": "Nhập địa chỉ ví DUC",
-                "ERROR_3": "Địa chỉ ví không hợp lệ",
-                "TEXT_4": "Nhập địa chỉ ví DUCX",
-                "ERROR_4": "Địa chỉ ví không hợp lệ"
-            },
-            "INFO": {
-                "TEXT_1": "Đồng:",
-                "TEXT_2": "Thổi Vàng",
-                "TEXT_3": "Coin Vàng",
-                "TEXT_4": "Ngày mua:",
-                "TEXT_5": "Độ tinh khiết:",
-                "TEXT_6": "99.999%",
-                "TEXT_7": "Quốc gia:",
-                "TEXT_8": "Trọng lượng:",
-                "TEXT_9": "g",
-                "TEXT_10": "Giá Vàng, $/gram:",
-                "TEXT_11": "$",
-                "TEXT_12": "Đơn vị chứng nhận:",
-                "TEXT_13": "Ngày sản xuất:",
-                "TEXT_14": "Địa chỉ ví nhận thưởng:",
-                "TEXT_15": "DUC chuyển trực tiếp to địa chỉ này",
-                "TEXT_16": "Token DUCX VÀNG được chuyển trực tiếp tới địa chỉ này"
-            }
-        },
-        "DUCATUSX": {
-            "TITLE": "DucatusX",
-            "CONTENT": {
-                "TITLE": "Giới thiệu DucatusX",
-                "TEXT": "Được tạo ra để hỗ trợ các giao dịch ngang hàng, cũng như tạo ra các hợp đồng thông minh, DucatusX là một nhánh của chuỗi khối Ethereum. Nhưng không giống như Ethereum, DucatusX sử dụng thuật toán đồng thuận “Proof of Authority” giúp giảm đáng kể chi phí bảo trì. Trong tương lai, dự kiến sẽ chuyển sang “Proof of Stake”, giúp người dùng tin tưởng hơn nữa khi lựa chọn DucatusX cho các dự án của họ. Trên DucatusX, các khối được sản xuất thường xuyên bởi 3 nút đã được chứng minh và bảo mật, dẫn đến chi phí ổn định và tốc độ sản xuất khối đáng tin cậy."
-            },
-            "BLOCK_1": {
-                "TITLE": "Tại sao DucX",
-                "TEXT": "Hỗ trợ cộng đồng mạnh mẽ",
-                "TEXT_1": "Các dự án đáng tin cậy,<br> không cho phép mã thông báo lừa đảo",
-                "TEXT_2": "Phí thấp hơn,<br> phần thưởng đặt cược",
-                "TEXT_3": "Tổng số DucX cố định tối đa 777,874.204"
-            },
-            "BLOCK_2": {
-                "TITLE": "Tài nguyên DucatusX",
-                "TEXT": "Hỗ trợ cộng đồng mạnh mẽ",
-                "TEXT_1": "Quản lý DucatusX",
-                "TEXT_2": "Sử dụng Ví Ducatus của chúng tôi để quản lý DucatusX",
-                "TEXT_3": "Chuyển đổi Ducatus sang DucatusX",
-                "TEXT_4": "DucatusX có thể được chuyển đổi từ và thành Ducatus (DUC) theo tỷ lệ cố định 1:10 trên <a href='https://www.ducatuscoins.com/buy'>https://www.ducatuscoins.com/buy</a>",
-                "TEXT_5": "Tạo token DucatusX",
-                "TEXT_6": "DucatusX hỗ trợ các hợp đồng thông minh và cho phép bạn mã hóa tài sản của mình. Quá trình này rất đơn giản, tất cả những gì bạn phải làm là làm theo các bước trên <a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a>. Mã thông báo được tạo trên DucatusX có thể được bán thông qua AA + sau khi được chấp nhận niêm yết.",
-                "TEXT_7": "Tạo số lượng mã thông báo phù hợp thông qua DucatusX.",
-                "TEXT_8": "Dự trữ/đóng băng mã thông báo tại các địa chỉ cụ thể.",
-                "TEXT_9": "Thực hiện hợp đồng crowdsale bằng cách sử dụng mã thông báo đã tạo của bạn, không cần tạo mới.",
-                "TEXT_10": "Bạn có thể phân phối mã thông báo của riêng bạn.",
-                "TEXT_11": "Tạo hợp đồng crowdsale",
-                "TEXT_12": "Để thu hút các khoản đầu tư vào dự án của mình, bạn có thể tạo một hợp đồng mã thông báo và bán nó thông qua crowdsale. Để nhận được mã thông báo dự án, người mua sẽ cần gửi cho bạn DucX, sau đó bạn có thể chi tiêu cho nhu cầu của dự án. <br><a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a>",
-                "TEXT_13": "Bao gồm chức năng hợp đồng mã thông báo",
-                "TEXT_14": "Tự động phân phối mã thông báo trong khi đầu tư",
-                "TEXT_15": "Đặt ngày bắt đầu và ngày kết thúc cho ICO",
-                "TEXT_16": "Thay đổi ngày của ICO",
-                "TEXT_17": "Chỉ định tỷ lệ mã thông báo",
-                "TEXT_18": "Các chương trình tiền thưởng (tức là thời gian, số tiền đầu tư, v.v.)",
-                "TEXT_19": "Danh sách trắng",
-                "TEXT_20": "Đầu tư tối thiểu / tối đa"
-            },
-            "BLOCK_3": {
-                "TITLE": "Thông số kỹ thuật (DucatusX vs Ethereum)",
-                "TEXT_1": "<b>DucatusX</b>",
-                "TEXT_2": "<b>Ethereum</b>",
-                "TEXT_3": "<p>POA</p>",
-                "TEXT_4": "<p>POW</p>",
-                "TEXT_5": "<p>432 ZH</p>",
-                "TEXT_6": "<p>2,148.98 TH</p>",
-                "TEXT_7": "<p>Ổn đinh 40 giây</p>",
-                "TEXT_8": "<p>từ 15 giây đến 15 phút, tùy thuộc vào tải mạng</p>",
-                "TEXT_9": "<p>giá gas tối thiểu = 8gwei</p><p>giới hạn gas = 21000</p><p>8 x 21000 = 0.000168 DUCX = 0.000084$</p>",
-                "TEXT_10": "<p>đối với giá gas cũ = 8 gwei (quá thấp so với ethereum, không khuyến nghị)</p><p>giới hạn gas = 21000</p><p>8 x 21000 = 0.000168 ETH = 0,022848$</p>",
-                "TEXT_11": "<b>DucatusX</b>",
-                "TEXT_12": "<b>Ethereum</b>",
-                "TEXT_13": "<p>Đúng (chắc chắn), các hợp đồng chỉ có thể được tạo sau khi quản trị viên phân tích dự án và phê duyệt</p>",
-                "TEXT_14": "<p>Đúng (chắc chắn)</p>",
-                "TEXT_15": "<p>Đúng. Vì lý do bảo mật, các cổng chỉ mở cho các tài nguyên đã được chứng minh</p>",
-                "TEXT_16": "<p>đúng</p>",
-                "TEXT_17": "<p>0 - tại thời điểm này, tất cả các giao dịch được bao gồm trong khối. Thời gian ngưng giao dịch = Thời gian tạo khối mới</p>",
-                "TEXT_18": "<p>34 586</p>",
-                "TABLE_TITLE_1": "Thuật toán đồng thuận",
-                "TABLE_TITLE_2": "Độ khó",
-                "TABLE_TITLE_3": "Tốc độ sản xuất khối",
-                "TABLE_TITLE_4": "Chi phí TX",
-                "TABLE_TITLE_5": "Hỗ trợ hợp đồng thông minh",
-                "TABLE_TITLE_6": "Hỗ trợ RPC, WEB",
-                "TABLE_TITLE_7": "Tổng số giao dịch đang chờ xử lý"
-            }
-        },
-        "VAUCHER": {
-            "TITLE": "Voucher"
-        }
+  "HEADER": {
+    "MENU": {
+      "HOME": "Trang Chủ",
+      "ABOUT": "Về Duc",
+      "BUY": "Mua Duc",
+      "DUCATUSX": "DUCX",
+      "LOTTERY": "Xổ số vàng",
+      "CONTACT": "Tiếp xúc"
     }
+  },
+  "CONTINUE": "Tiếp tục",
+  "FOOTER": {
+    "MENU": {
+      "SECTION": {
+        "SOON": "Sắp có",
+        "ONE": {
+          "TITLE": "Trong khoảng",
+          "LINK_1": "Về Ducatus",
+          "LINK_2": "Ducatus Công ty",
+          "LINK_3": "Tiếp xúc"
+        },
+        "TWO": {
+          "TITLE": "Ducatus Cách sống",
+          "LINK_1": "Ducatus Học viện",
+          "LINK_2": "Ducatus Quán cà phê",
+          "LINK_3": "Ducatus Từ thiện"
+        },
+        "THREE": {
+          "TITLE": "Ducatus Cách sống",
+          "LINK_1": "Ducatus Sức khỏe",
+          "LINK_2": "Ducatus Bất động sản",
+          "LINK_3": "Ducatus Du lịch"
+        },
+        "FOUR": {
+          "TITLE": "Ducatus Biz",
+          "LINK_1": "Mạng lưới Ducatus",
+          "LINK_2": "D-MOB",
+          "LINK_3": "Thương gia Ducatus"
+        }
+      },
+      "LEGAL": "Legal",
+      "LEGAL_DISCLAIMER": "Legal Disclaimer",
+      "TERMS": "Điều khoản và điều kiện"
+    }
+  },
+  "APPS": {
+    "TITLE": "Cài đặt ví Ducatus Wallet",
+    "SUBTITLE": "Mua, lưu trữ và bán tiền mã hoá",
+    "TEXT_1": "Làm thế nào để nhận được Ducatus Coins?",
+    "TEXT_2": "Trải nghiệm Ducatus Coin của bạn bắt đầu khi bạn tải xuống ví điện tử Ducatus."
+  },
+  "PRIVACY": {
+    "TEXT": "Trang web này sử dụng cookie để đảm bảo bạn có được trải nghiệm tốt nhất trên trang web của chúng tôi. Bằng cách tiếp tục sử dụng trang web này, bạn đồng ý với việc sử dụng chúng.",
+    "BUTTON_ACCEPT": "Chấp nhận",
+    "BUTTON_DECLINE": "Từ chối"
+  },
+  "PAGE": {
+    "MAIN": {
+      "SLIDER": {
+        "ONE": {
+          "TITLE": "Ducatus Coin",
+          "TEXT": "Lấy cảm hứng từ đồng tiền giao dịch La Mã cổ đại và được thúc đẩy bởi tinh thần cách mạng đã tạo ra tiền kỹ thuật số, Ducatus Coin đưa ra một hình thức giao dịch tài chính thay thế - một hình thức bao quát, độc đáo và mang đến khả năng vô biên.",
+          "BUTTON": "Tải xuống Whitepaper"
+        },
+        "TWO": {
+          "TITLE": "Tiền mã hoá cho cuộc sống hàng ngày",
+          "TEXT": "Tận hưởng sự tự do của các giao dịch hàng ngày không tiền mặt, không biên giới và an toàn, từ mua cà phê buổi sáng đến mua ngôi nhà mơ ước của bạn, giờ đây tất cả đều có thể với Ducatus Coin.",
+          "BUTTON": "Tải xuống Whitepaper"
+        },
+        "THREE": {
+          "TITLE": "Ủng hộ nền kinh tế kỹ thuật số",
+          "TEXT": "Với việc phân phối, khả năng chuyển đổi và khả năng sử dụng (DUC) là cốt lõi, Ducatus Coin khuyến khích sử dụng thực tế và ứng dụng tiền mã hoá trong cuộc sống thực. Những đặc điểm này là công cụ giúp xây dựng nền kinh tế tiền mã hoá vững chắc cho tương lai.",
+          "BUTTON": "Tải xuống Whitepaper"
+        }
+      },
+      "FINANCIAL": {
+        "TITLE": "Một tiến hoá tài chính mới",
+        "SUBTITLE": "Trở thành tiền mã hoá phổ biến nhất thế giới và có thể ứng dụng thực tiễn...",
+        "TEXT_1": "Một Ducatus cho mỗi người trên hành tinh. <br><br> Dựa trên các nguyên tắc của nhà toán học người Ý Leonardo Fibonacci, Ducatus đã tạo ra tổng cộng 7,778,742,049 đồng tiền mã hoá. Một khi những đồng tiền này đã được phân phối, số lượng của chúng sẽ tương tự như số người trên hành tinh của chúng ta. <br><br> Tầm nhìn cho Ducatus Coin rất táo bạo. Nhưng với sự kết hợp của cơ sở hạ tầng kỹ thuật số đẳng cấp thế giới, hệ thống phân phối mạng mạnh mẽ và một bộ các doanh nghiệp kinh tế tiền mã hoá có liên quan, đó là một mục tiêu không thể không đạt được. ",
+        "TEXT_2": "Chủ sở hữu Ducatus Coin hiện có thể truy cập vào một loạt các sản phẩm và dịch vụ từ các doanh nghiệp thuộc nền kinh tế tiền mã hoá Ducatus và các doanh nghiệp bên thứ ba. Các doanh nghiệp kinh tế tiền mã hoá này đang được triển khai song song với việc phân phối coin của chúng tôi để chứng minh thực tế các ứng dụng thực tế không chỉ cho Ducatus Coin mà còn cho toàn bộ các loại tiền mã hoá.",
+        "BUTTON": "Tìm hiểu thêm"
+      },
+      "SECTION_1": {
+        "TITLE_1": "Cộng đồng phổ biến công nghệ. <br> Các công ty như Ducatus biến chúng thành chủ đạo.",
+        "TITLE_2": "Ducatus phát triển một cách <br> thương mại",
+        "TEXT_1": "Ducatus Coins được khai thác trước và bán, sau đó lợi nhuận được đầu tư để xây dựng thương hiệu.",
+        "TEXT_2": "Công nghệ coin được phát triển nội bộ dựa trên kế hoạch kinh doanh dài hạn chiến lược của chúng tôi."
+      },
+      "SECTION_2": {
+        "LEFT": {
+          "TITLE": "Ducatus duy trì các tiêu chuẩn hàng đầu thị trường",
+          "SUBTITLE_1": "Quản trị",
+          "TEXT_1": "Được quản lý bởi các chuyên gia giàu kinh nghiệm với nền tảng trong một loạt các lĩnh vực bao gồm tiếp thị, tài chính và kỹ thuật",
+          "SUBTITLE_2": "Minh bạch",
+          "TEXT_2": "Đội ngũ lãnh đạo và cổ đông cấp cao sẵn sàng ra mặt và dễ tiếp cận",
+          "SUBTITLE_3": "Tuân thủ",
+          "TEXT_3": "Hợp tác với các cơ quan chính phủ và tuân thủ các quy định do chính quyền đặt ra"
+        },
+        "RIGHT": {
+          "TITLE": "Ducatus là một doanh nghiệp, <br> không phải là một dự án công nghệ",
+          "TEXT_1": "Thành lập <br> năm 2016",
+          "TEXT_2": "Đội ngũ lãnh đạo toàn cầu giàu kinh nghiệm",
+          "TEXT_3": "Đội ngũ bán hàng toàn cầu năng động: Chiến lược tiếp thị mạng",
+          "TEXT_4": "Gần 1 tỷ Ducatus được bán tại hơn 180 quốc gia tính đến tháng 1 năm 2020"
+        }
+      },
+      "USABILITY": {
+        "TITLE": "Khả năng sử dụng với nền kinh tế tiền mã hoá Ducatus",
+        "SUBTITLE": "Sử dụng Ducatus Coins để mua cà phê, đặt kỳ nghỉ, mua quà lưu niệm. Bạn thậm chí có thể mua bất động sản hoặc ngôi nhà mơ ước của mình nếu bạn muốn. Những giao dịch tài chính này có thể được thực hiện thông qua Nền Kinh Tế Tiền Thuật Toán Ducatus độc đáo.",
+        "TEXT": "Ducatus tin rằng khả năng sử dụng là thước đo cuối cùng của một loại tiền tệ hợp pháp. Để hỗ trợ tầm nhìn này, các doanh nghiệp liên kết của Ducatus cung cấp các nhu cầu cơ bản đã được tạo ra để mang lại sự dễ dàng và thuận tiện cho Ducatus Coin và những người dùng tiền mã hoá khác. Các doanh nghiệp Ducatus này là nền tảng của Nênt Kinh Tê Tiền Mã Hoá Ducatus. Từ việc mua một tách espresso đến đặt phòng tại một khách sạn sang trọng, các giao dịch trước đây chỉ có thể là tiền mặt, giờ không cần dùng tiền mặt nữa nhờ việc sử dụng Ducatus Coin."
+      }
+    },
+    "NEWMAIN": {
+      "SECTION": {
+        "ONE": {
+          "TITLE": "Một tiến hoá tài chính mới",
+          "SUBTITLE": "Trở thành tiền mã hoá phổ biến nhất thế giới và có thể ứng dụng thực tiễn...",
+          "TEXT": "Một Ducatus cho mỗi người trên hành tinh. Dựa trên các nguyên tắc của nhà toán học người Ý Leonardo Fibonacci, Ducatus đã tạo ra tổng cộng 7,778,742,049 đồng tiền mã hoá. Một khi những đồng tiền này đã được phân phối, số lượng của chúng sẽ tương tự như số người trên hành tinh của chúng ta. <br><br> Tầm nhìn cho Ducatus Coin rất táo bạo. Nhưng với sự kết hợp của cơ sở hạ tầng kỹ thuật số đẳng cấp thế giới, hệ thống phân phối mạng mạnh mẽ và một bộ các doanh nghiệp kinh tế tiền mã hoá có liên quan, đó là một mục tiêu không thể không đạt được. <br><br> Chủ sở hữu Ducatus Coin hiện có thể truy cập vào một loạt các sản phẩm và dịch vụ từ các doanh nghiệp thuộc nền kinh tế tiền mã hoá Ducatus và các doanh nghiệp bên thứ ba. Các doanh nghiệp kinh tế tiền mã hoá này đang được triển khai song song với việc phân phối coin của chúng tôi để chứng minh thực tế các ứng dụng thực tế không chỉ cho Ducatus Coin mà còn cho toàn bộ các loại tiền mã hoá.",
+          "BUTTON": "Tìm hiểu thêm >"
+        },
+        "TWO": {
+          "TITLE": "Cộng đồng phổ biến công nghệ. <br> Các công ty như Ducatus biến chúng thành chủ đạo.",
+          "SUBTITLE": "Ducatus phát triển một cách thương mại",
+          "TEXT_1": "Ducatus Coins được khai thác trước và bán, sau đó lợi nhuận được đầu tư để xây dựng thương hiệu.",
+          "TEXT_2": "Công nghệ coin được phát triển nội bộ dựa trên kế hoạch kinh doanh dài hạn chiến lược của chúng tôi."
+        },
+        "THREE": {
+          "TITLE": "Ducatus duy trì các tiêu chuẩn hàng đầu thị <br> trường",
+          "TITLE_2": "Ducatus là một doanh nghiệp, không phải là một dự án công nghệ",
+          "ICONS": {
+            "TITLE_1": "Quản trị",
+            "TEXT_1": "Được quản lý bởi các chuyên gia giàu kinh nghiệm với nền tảng trong một loạt các lĩnh vực bao gồm tiếp thị, tài chính và kỹ thuật",
+            "TITLE_2": "Minh bạch",
+            "TEXT_2": "Đội ngũ lãnh đạo và cổ đông cấp cao sẵn sàng ra mặt và dễ tiếp cận",
+            "TITLE_3": "Tuân thủ",
+            "TEXT_3": "Hợp tác với các cơ quan chính phủ và tuân thủ các quy định do chính quyền đặt ra",
+            "TEXT_4": "Thành lập <br> năm 2016",
+            "TEXT_5": "Đội ngũ lãnh đạo toàn cầu giàu kinh nghiệm",
+            "TEXT_6": "Đội ngũ bán hàng toàn cầu năng động: Chiến lược tiếp thị mạng",
+            "TEXT_7": "Gần 1 tỷ Ducatus được bán tại hơn 180 quốc gia tính đến tháng 1 năm 2020"
+          }
+        },
+        "FOUR": {
+          "TITLE": "Khả năng sử dụng với nền kinh tế tiền mã hoá Ducatus",
+          "TEXT": "Sử dụng Ducatus Coins để mua cà phê, đặt kỳ nghỉ, mua quà lưu niệm. Bạn thậm chí có thể mua bất động sản hoặc ngôi nhà mơ ước của mình nếu bạn muốn. <br><br> Những giao dịch tài chính này có thể được thực hiện thông qua Nền Kinh Tế Tiền Thuật Toán Ducatus độc đáo. Ducatus tin rằng khả năng sử dụng là thước đo cuối cùng của một loại tiền tệ hợp pháp. Để hỗ trợ tầm nhìn này, các doanh nghiệp liên kết của Ducatus cung cấp các nhu cầu cơ bản đã được tạo ra để mang lại sự dễ dàng và thuận tiện cho Ducatus Coin và những người dùng tiền mã hoá khác. Các doanh nghiệp Ducatus này là nền tảng của Nênt Kinh Tê Tiền Mã Hoá Ducatus. Từ việc mua một tách espresso đến đặt phòng tại một khách sạn sang trọng, các giao dịch trước đây chỉ có thể là tiền mặt, giờ không cần dùng tiền mặt nữa nhờ việc sử dụng Ducatus Coin."
+        }
+      }
+    },
+    "ABOUT": {
+      "TITLE": "Về Ducatus Coin",
+      "SECTION_1": {
+        "TITLE": "Về Ducatus Coin",
+        "TEXT": "Thuận tiện, nhanh chóng và an toàn, Ducatus Coin là một loại tiền mã hoá được tạo ra để sử dụng lâu dài. Ducatus Coin là loại tiền mã hoá duy nhất được hỗ trợ bởi Nền Kinh Tế Tiền Mã Hoá Ducatus, một nhóm các doanh nghiệp liên kết không ngừng phát triển của Ducatus tiến đến không dùng tiền mặt cho các nhu cầu cơ bản của cuộc sống: thực phẩm, quần áo, chỗ ở, nghỉ ngơi và thư giãn, ..."
+      },
+      "SECTION_2": {
+        "TITLE": "Ưu điểm của Ducatus Coin",
+        "SUBTITLE": "Ducatus Coin kết hợp những lợi ích của Bitcoin với mô hình kinh doanh chiến lược tiên tiến - Nền Kinh Tế Tiền Mã Hoá Ducatus.",
+        "LIST": {
+          "TITLE_1": "Ducatus Coin rất an toàn",
+          "TEXT_1": "Bảo mật tốt nhất từ một công nghệ không ngừng phát triển",
+          "TITLE_2": "Ducatus Coin nhanh hơn",
+          "TEXT_2": "Chuyển tiền nhanh gấp 10 lần so với Bitcoin do thời gian khối 1 phút",
+          "TITLE_3": "Ducatus Coin không biên giới",
+          "TEXT_3": "Chuyển tiền bất cứ nơi nào trên thế giới với chi phí tối thiểu",
+          "TITLE_4": "Ducatus Coin trao quyền cho bạn",
+          "TEXT_4": "Tất cả lợi ích của hệ thống tài chính toàn cầu ngay trong điện thoại thông minh của bạn",
+          "TITLE_5": "Ducatus Coin là một sáng tạo",
+          "TEXT_5": "Được hỗ trợ bởi một cơ sở hạ tầng chiến lược được thiết kế để thúc đẩy sự chấp nhận và chấp nhận tiền mã hoá toàn cầu",
+          "TITLE_6": "Ducatus Coin là một sự chuyên nghiệp",
+          "TEXT_6": "Ban lãnh đạo Ducatus đảm bảo rằng Ducatus Coin luôn tuân thủ pháp luật và các quy định toàn cầu"
+        }
+      },
+      "TECHNOLOGY": {
+        "TITLE": "Công nghệ Ducatus Coin",
+        "SUBTITLE": "Ducatus Coin là một fork của Litecoin và do đó sử dụng scrypt làm cơ sở cho thuật toán Proof of Work.",
+        "TEXT_1": "Ducatus Blockchain",
+        "TEXT_2": "Mã nguồn"
+      },
+      "MILESTONES": {
+        "TITLE": "Các cột mốc",
+        "LIST": {
+          "YEAR_15": "Tháng 6 năm 2020",
+          "TEXT_15": "<b>Mua xu Ducatus bằng Bitcoin, Ethereum và thẻ tín dụng đã trở nên khả thi thông qua Ví Ducatus được cập nhật</b>",
+          "YEAR_14": "Tháng 4 năm 2020",
+          "TEXT_14": "Một nhánh của chuỗi khối Ethereum, DucatusX được tạo ra để hỗ trợ cả giao dịch và tạo hợp đồng thông minh",
+          "YEAR_13": "Tháng 3 năm 2020",
+          "TEXT_13": "Ducatus Coins và vàng vật chất (ở dạng tiền xu và thanh) đã được đăng ký trên blockchain và được cung cấp dưới dạng một gói duy nhất thông qua Remus Gold",
+          "YEAR_12": "Tháng 2 năm 2020",
+          "TEXT_12": "Mua Ducatus Coins trực tuyến bắt đầu qua ducatuscoins.com",
+          "YEAR_11": "Tháng 1 năm 2020",
+          "TEXT_11": "Ví Ducatus đa tiền tệ đã được ra mắt",
+          "YEAR_10": "Tháng 12 năm 2019",
+          "TEXT_10": "1 tỷ Ducatus Coins đã được bán kể từ khi được giới thiệu vào năm 2017",
+          "YEAR_9": "Tháng 10 năm 2019",
+          "TEXT_9": "Ví Ducatus đa tiền tệ đã được ra mắt. ",
+          "YEAR_8": "Tháng 1 năm 2019",
+          "TEXT_8": "Ducatus đã được liệt kê là Nhà cung cấp giải pháp Blockchain phát triển nhanh nhất 10 năm đáng theo dõi trong năm 2019 bởi APAC Business Headlines.",
+          "YEAR_7": "Tháng 3 năm 2018",
+          "TEXT_7": "Ducatus Coin đã được liệt kê trên sàn giao dịch tiền mã hoá Coinbene.",
+          "YEAR_6": "Tháng 1 năm 2018",
+          "TEXT_6": "Ducatus đã tài trợ Blockchain Cruise Asia, một sự kiện lớn về blockchain và tiền mã hoá trong khu vực.",
+          "YEAR_5": "Tháng 10 năm 2017",
+          "TEXT_5": "Blockchain của Ducatus được đưa ra và giao dịch Ducatus công khai trực tiếp đầu tiên được thực hiện bởi Giám đốc điều hành Ronny Tome của chúng tôi với Dustin Trammell tại Hội nghị thượng đỉnh châu Âu Ducatus ở Rome.",
+          "YEAR_4": "Tháng 9 năm 2017",
+          "TEXT_4": "Khai thác trên blockchain cho tất cả Ducatus Coin đã được hoàn thành.",
+          "YEAR_3": "Tháng 8 năm 2017",
+          "TEXT_3": "Văn phòng công ty Ducatus được khánh thành tại Singapore.",
+          "YEAR_2": "Tháng 7 năm 2017",
+          "TEXT_2": "Tuần làm việc công nghệ Ducatus được tổ chức bởi Dustin Trammell tại DEFCON XXV ở Las Vegas.",
+          "YEAR_1": "Tháng 3 năm 2017",
+          "TEXT_1": "Thương hiệu Ducatus và Sách trắng kỹ thuật Ducatus đầu tiên đã được ra mắt tại Hội nghị thượng đỉnh toàn cầu Ducatus ở Dubai."
+        }
+      }
+    },
+    "BUY": {
+      "TITLE": "Mua DUC",
+      "FORM": {
+        "RADIO": {
+          "PRICE": "Giá của DUC = {{ curName }} {{ ducRate }}",
+          "TEXT": " Chọn một trong những lựa chọn bên dưới và nhận số lượt rút thăm tương ứng",
+          "LINK": "(thêm thông tin)",
+          "TICKET": {
+            "ONE": "lượt",
+            "MANY": "lượt"
+          }
+        },
+        "ADDRESS": {
+          "TEXT": "Nhập địa chỉ nhận DUC<br>Cần địa chỉ Ducatus? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Tải xuống</a> ví Ducatus TẠI ĐÂY!",
+          "PLACEHOLDER": "Nhập địa chỉ nhận DUC",
+          "ERROR": "Lỗi! Vui lòng kiểm tra, định dạng địa chỉ không chính xác!"
+        },
+        "EMAIL": {
+          "TEXT": "Nhập email của bạn vì bạn sẽ được thông báo nếu bạn là người chiến thắng",
+          "PLACEHOLDER": "Nhập email của bạn "
+        },
+        "RESULT": {
+          "TEXT_1": "Gửi đồng ",
+          "TEXT_2": " của bạn đến địa chỉ sau:",
+          "QR": {
+            "TEXT": "hoặc quét mã QR này:"
+          },
+          "ERROR": "đã xảy ra lỗi, thử lại sau",
+          "NOTE": "Hãy lưu ý rằng bạn sẽ mất khoảng {{ time }} để nhận DUC về ví <br><br>"
+        },
+        "SUBMIT": "Gửi đi"
+      },
+      "INFO": {
+        "TITLE": "Hãy khám phá, học hỏi và có thêm thu nhập từ việc trở thành một phần của nền kinh tế không tiền mặt Ducatus.",
+        "LINK": {
+          "ONE": "Mua bán cryptocurrency trên sàn AA+",
+          "TWO": "Sử dụng DUC để mua sắm những món đồ yêu thích trực tuyến"
+        }
+      },
+      "REFERRAL": {
+        "TITLE": "Liên kết giới thiệu",
+        "SUBTITLE": "Chia sẻ cơ hội tuyệt vời này với bạn bè và gia đình của bạn và nhận phần thưởng giới thiệu 5% DUC cho bất kỳ giao dịch mua nào họ thực hiện bằng liên kết dưới đây",
+        "LABEL": "Nhập địa chỉ Ducatus của bạn",
+        "PLACEHOLDER": "Nhập địa chỉ Ducatus của bạn",
+        "ERROR": "Lỗi! Vui lòng kiểm tra, định dạng địa chỉ không chính xác!",
+        "LINK": "Liên kết giới thiệu của bạn"
+      },
+      "LOTTERY": {
+        "TITLE": "Một căn hộ tại Quảng trường Kingsway của Liverpool có thể trở thành sở hữu của bạn!",
+        "BLOCK": {
+          "PRIZE": {
+            "TITLE": "Mua DUC để giành lấy cơ hội có được một căn hộ sang trọng trị giá $150,000 kèm vé mùa giải của Liverpool FC tại Anfield.",
+            "SUBTITLE": "Tại nơi sinh ra của huyền thoại The Beatles và Liverpool FC, một khu landmark mới chuẩn bị xuất hiện - Quảng trường Kingsway. Là sự pha trộn giữa thiết kế thông minh, vật liệu cao cấp và các đặc điểm kiến trúc truyền thống lộng lẫy, khu nhà ở này có tầm nhìn tuyệt đẹp về hướng chân trời của thành phố Liverpool.",
+            "ITEM1": "Chỉ mất 4 phút để đến cảng Princess Dock trên bờ sông nổi tiếng của Liverpool và trung tâm phát triển chính trong tương lai của Vương quốc Anh",
+            "ITEM2": "Toà nhà đầu tiên sẽ hoàn thành vào Quý 3 năm 2021",
+            "ITEM3": "Được thoả thuận thuê lại với lợi nhuận hấp dẫn",
+            "ITEM4": "Hợp đồng thuê lên đến 250 năm"
+          },
+          "HOW": {
+            "TITLE": "Làm thế nào để bạn giành được một căn hộ studio sang trọng ở Quảng trường Kingsway cùng vé mùa giải của Liverpool FC?",
+            "ITEM1": "Mua DUC để chúng tôi đạt mốc 3 triệu Ducatus bán được vào hoặc trước ngày 30/11/2020.",
+            "ITEM2": "Sau khi đạt được mục tiêu 3 triệu DUC bán được, chúng ta sẽ đếm ngược 8 ngày để bắt đầu Rút thăm May mắn. Tất nhiên, khi bạn mua càng nhiều DUC, bạn càng có nhiều cơ hội trúng thưởng.",
+            "ITEM3": "Người thắng cuộc sẽ được rút thăm thông qua một hợp đồng thông minh ngẫu nhiên. Những mã hash chiến thắng sẽ được xác định và công bố trên trang này và Người chiến thắng sẽ được thông báo qua email."
+          },
+          "WINNER": {
+            "TITLE": "GIÀNH CHIẾN THẮNG"
+          },
+          "WAITING": {
+            "TITLE": "Xin vui lòng chờ",
+            "TEXT": "người chiến thắng tính toán..."
+          },
+          "COUNTDOWN": {
+            "TITLE": "Đếm ngược đến ngày rút thăm"
+          },
+          "PROGRESS": {
+            "TITLE": "Phần trăm doanh số bán ra phải đạt đúng chỉ tiêu trước khi cuộc đếm ngược thời gian diễn ra"
+          },
+          "TICKETS": {
+            "LINK": "Danh sách {{ tickets_amount }} tổng số mục băm →",
+            "TEXT": "Số lượng DUC"
+          },
+          "INFO": {
+            "TITLE": "Làm thế nào bạn có thể giành được bất kỳ giải thưởng tuyệt vời này ?",
+            "TEXT": "<p class=\"lottery-info-text\">Mỗi người mua ĐỨC đều có cơ hội trúng thưởng. Mua DUC càng cao, bạn càng có nhiều cơ hội trúng thưởng.</p> <p class=\"lottery-info-text\">Sau khi đạt được mục tiêu {{ duc_amount }}  ĐỨC đã bán, thời gian đếm ngược 8 ngày đến Ngày Rút thăm May mắn sẽ bắt đầu. Việc bán DUC tiếp tục cho đến khi bộ đếm ngược đến 00: 00: 00: 00 sẽ kích hoạt rút thăm.</p> <p class=\"lottery-info-text\">Qua một trận hòa đồng thông minh ngẫu nhiên, băm chiến thắng es sẽ được xác định và công bố trên trang này và người chiến thắng s sẽ được thông báo qua email.</p>"
+          }
+        }
+      },
+      "MODAL": {
+        "TERMS": {
+          "TEXT": "Vui lòng đánh dấu vào ô bên dưới để xác nhận rằng bạn thừa nhận và đồng ý với <a href='assets/downloads/pdf/Lucky_Draw_Terms_Conditions.pdf' target='_blank'> Điều khoản & Điều kiện </a> khi mua DUC. Ducatus Coin không có sẵn để mua từ Centurion tại Singapore.",
+          "AGREE": "Tôi đồng ý với các Điều khoản & Điều kiện",
+          "BUTTON": "Đóng"
+        },
+        "INFO": {
+          "TEXT": "<p>Số lượng quy đổi chính xác của DUC được căn cứ theo theo giá trị thanh toán BTC / ETH sẽ được gửi đến ví DUC được chỉ định. Tuy nhiên, nếu số tiền (USD) công ty nhận được bé hơn giá trị của gói bạn đã chọn, hệ thống sẽ mặc định ghi nhận số lượt rút thăm của bạn ở gói giá trị thấp hơn.</p><p>Để mua DUC với bội số nguyên của 1000 USD, bạn có thể thực hiện nhiều giao dịch riêng biệt, vì số lượng giới hạn tối đa cho một lần mua là 1000 USD.</p>",
+          "BUTTON": "Đóng"
+        }
+      }
+    },
+    "TICKETS": {
+      "TITLE": "Mua DUC",
+      "TABLE": {
+        "TITLE": "Bài dự thi / Băm đủ điều kiện để rút thăm"
+      }
+    },
+    "CONTACT": {
+      "TITLE": "Liên hệ",
+      "TEXT": "Centurion Global Limited <br> Harneys Services (Cayman Limited) <br> 4th Floor, Harbour Place, 103 South Church Street <br> Grand Cayman <br> PO Box 10240, KY1-1002 <br> Cayman Islands <br> <br>",
+      "FORM": {
+        "TEXT": "Liên hệ với chúng tôi để biết thêm chi tiết",
+        "TEXT_1": "Tên của bạn",
+        "TEXT_2": "Số điện thoại của bạn",
+        "TEXT_3": "Email của bạn",
+        "TEXT_4": "Tin nhắn",
+        "BUTTON": "YÊU CẦU"
+      }
+    },
+    "LEGAL": {
+      "TITLE": "Legal",
+      "DISCLAIMER": "Đối với mục đích sử dụng thông tin, đây là bản dịch từ phiên bản gốc tiếng Anh. Trong trường hợp có sự khác biệt, nội dung tiếng Anh gốc sẽ được ưu tiên.",
+      "SECTION": {
+        "ONE": {
+          "TITLE": "CÁC ĐIỀU KHOẢN VÀ ĐIỀU KIỆN CHUNG",
+          "TEXT": "Trong các điều kiện chung &, người bán và các chi nhánh của nó và các công ty liên quan cùng nhau được gọi là “Centurion toàn cầu giới hạn“, “chúng tôi“, “chúng tôi“ hoặc “của chúng tôi “và người mua được gọi sau đây là “người mua“, “bạn“ hay “của bạn“.",
+          "SUBTITLE_1": "1. 1. tuyên bố miễn trừ",
+          "TEXT_1": "<li>a. người mua đồng ý và thừa nhận rõ ràng rằng nó là tham gia vào các ký tự rủi ro của riêng mình. Trong phạm vi tối đa được pháp luật hiện hành cho phép, Centurion Global Limited không đại diện hoặc bảo đảm bất kỳ loại nào, rõ ràng hay ngụ ý, về hoạt động hoặc hiệu suất của đồng xu, hoặc thông tin, nội dung, tài liệu, sản phẩm (bao gồm cả đồng xu hoặc blockchain, ví tiền điện tử và phần mềm liên quan) hoặc bất kỳ khía cạnh hoặc yếu tố nào khác của các sản phẩm và dịch , trừ khi có quy định khác bằng văn bản.</li> <li>b. người mua xác nhận rằng nó có sự hiểu biết thích hợp về nền, rủi ro, cách sử dụng và chức năng của các loại tiền tệ mật mã cũng như phần mềm dựa trên blockchain, và rằng nó không dựa trên bất kỳ tuyên bố hoặc đại diện nào của Centurion Global Limited hoặc bất kỳ cộng sự nào của nó đối với những vấn đề này khi nhập vào hợp đồng. Người mua đã độc lập thẩm định tất cả các rủi ro, sự phù hợp và thành tích của đồng xu và đã thu được tư vấn chuyên nghiệp có liên quan và độc lập nếu cần thiết.</li> <li>c. người mua thừa nhận và đồng ý rằng, trong phạm vi đầy đủ cho phép của pháp luật hiện hành, quy định hoặc đạo luật, Centurion Global Limited và bất kỳ thực thể hoặc cá nhân liên quan nào không có trách nhiệm pháp lý (bao gồm bất kỳ thiệt hại gián tiếp, ngẫu nhiên, đặc biệt, mẫu mực hoặc hậu quả, để mất lợi nhuận, thiện chí hoặc dữ liệu) dẫn đến từ hoặc liên quan đến việc sử dụng hoặc không có khả năng sử dụng đồng </li> <li>d. Centurion Global Limited không có đại diện hoặc bảo hành và từ chối tất cả các tuyên bố và cam đoan, rõ ràng hay ngụ ý, bao gồm bất kỳ sự đồng nhất ngụ ý về khả năng bán và phù hợp cho một mục đích cụ thể liên quan đến đồng xu. </li> <li>e. Centurion Global Limited không cam đoan hoặc đảm bảo theo bất kỳ cách nào mà sản phẩm hoặc dịch vụ của mình không có virus hoặc các thành phần có hại khác. Centurion Global Limited sẽ không chịu trách nhiệm về thiệt hại của bất kỳ loại nào phát sinh từ hoặc là kết quả của việc sử dụng bất kỳ sản phẩm hoặc dịch vụ của Centurion Global Limited, bao gồm, nhưng không giới hạn các thiệt hại gián tiếp, ngẫu nhiên, trừng phạt hoặc hậu quả</li> <li>f. Centurion Global Limited từ chối trách nhiệm pháp lý trong các trường hợp trộm cắp, hacking, tấn công mạng hoặc tấn công vào blockchains và không theo bất kỳ cách nào đảm bảo sự an toàn của chúng. Tất cả các rủi ro hoặc tổn thất, bao gồm nhưng không liên quan đến tổn thất của tiền xu hoặc thiệt hại cho phần cứng do những tình huống này sẽ là người mua một mình.</li> <li>g. người mua sẽ chịu trách nhiệm duy nhất về việc tuân thủ bất kỳ luật pháp địa phương liên quan đến các giao dịch của bạn, bao gồm nhưng không giới hạn bất kỳ và tất cả các ý nghĩa thuế của hợp đồng.</li> <li>h. người mua đồng ý rằng nó không phải là mua tiền xu cho mục đích đầu tư, suy đoán để bán lại ngay lập tức hoặc mục đích tài chính khác.</li> <li>i. người mua đồng ý rằng tất cả các giao dịch mua của tiền xu từ Centurion Global Limited được thực hiện bởi người mua cho sử dụng riêng của mình để mua hàng hoá/dịch vụ cung cấp bởi Centurion Global Limited hoặc bất kỳ doanh nghiệp liên quan hoặc bởi các doanh nghiệp của bên thứ ba và người mua sẽ không sử dụng tiền xu để đưa ra một thứ cấp cho công chúng Nếu người mua có ý định làm như vậy, người mua sẽ hoàn toàn chịu trách nhiệm tuân thủ tất cả các luật và quy định có liên quan bao gồm bất kỳ yêu cầu đăng ký nào, nếu có, áp dụng cho các dịch vụ đó.</li> <li>j. DISCLAIMER người Mỹ: các đồng xu được bán bởi CENTURION, như mô tả dưới đây có thể không được cung cấp, bán hoặc phân phối, trực tiếp hoặc gián tiếp, tại Hoa Kỳ hoặc cho các tài khoản hoặc rủi ro của một người Mỹ (như được định nghĩa dưới đây). NỘI DUNG CỦA TÀI LIỆU NÀY CÓ THỂ KHÔNG ĐƯỢC COI LÀ MỘT ĐỀ NGHỊ HOẶC LỜI MỜI CHO NGƯỜI MỸ ĐỂ THU ĐƯỢC TIỀN XU HOẶC MỘT LỜI MỜI BÁN HOẶC THỊ TRƯỜNG CÁC ĐỒNG XU. CÁC CÔNG DÂN HOA KỲ (' US '), NGƯỜI DÂN MỸ, CHỦ THẺ U.S. GREEN HOẶC KHÁCH HÀNG CÓ ĐỊA CHỈ GỬI THƯ TỪ MỸ, SỐ ĐIỆN THOẠI U.S., ĐỀU LÀ NHỮNG NGƯỜI CÓ TOÀN... MỘT NGƯỜI LÀ MỘT ' CƯ DÂN ' NẾU ANH TA/CÔ ẤY CÓ MẶT TẠI MỸ TRONG HƠN 31 NGÀY TRONG NĂM DƯƠNG LỊCH HIỆN TẠI VÀ CHO TRUNG BÌNH ÍT NHẤT 183 NGÀY SO VỚI NĂM DƯƠNG LỊCH HIỆN TẠI VÀ 2 NĂM LỊCH TRƯỚC ĐÓ. XIN LƯU Ý RẰNG ĐỊNH NGHĨA CỦA TẬP ĐOÀN DUCATUS CỦA NGƯỜI MỸ CÓ THỂ KHÔNG GIỐNG NHƯ ĐỊNH NGHĨA ĐƯỢC SỬ DỤNG BỞI CÁC DỊCH VỤ DOANH THU NỘI ĐỊA HOA KÌ CHO CÁC MỤC ĐÍCH THUẾ MỸ HOẶC DO HOA HỒNG VÀ TRAO ĐỔI US SECURITIES.</li>",
+          "SUBTITLE_2": "2. rủi ro liên quan đến tiền xu",
+          "TEXT_2": "Mua tiền xu liên quan đến rủi ro. Không có bảo đảm rằng bất kỳ việc mua lại Coins sẽ cho kết quả trong bạn hoặc bất kỳ người nào khác được hưởng bất kỳ hình thức của lợi ích tài chính hoặc kinh tế. Bạn nhận ra và đồng ý rằng Centurion Global Limited đã không đại diện, bảo hành, hứa hẹn, cam kết, dự, đề nghị hoặc ý nghĩa gì đối với bạn về triển vọng tương lai hoặc thu nhập, hoặc là bạn sẽ kiếm được bất kỳ tiền hoặc nhận ra bất kỳ trở lại tài chính hoặc khác, như là kết quả của việc thu mua hoặc quyền sở hữu của bạn và/hoặc sử dụng Coins Bạn hiểu rằng bạn có thể phải chịu một số lượng mất mát tài chính hoặc thiệt hại, đáng kể hoặc bằng cách khác, kết quả từ việc mua hoặc giao dịch với các đồng xu. <br><br> Bạn đã xem xét và cảm thấy thoải mái với tất cả những rủi ro này, bao gồm nhưng không giới hạn ở những người được nêu dưới đây, và sẽ không mang lại một hành động chống lại hoặc cố gắng giữ cho Centurion Global Limited chịu trách nhiệm trong bất kỳ cách nào hoặc liên quan. Trong trường hợp cần thiết, bạn đồng ý và đại diện rằng bạn sẽ hoặc đã thu được tư vấn pháp lý và tài chính độc lập chuyên nghiệp."
+        },
+        "TWO": {
+          "TITLE": "Dấu ấn",
+          "TEXT": "Trang web Ducatus Coins thuộc sở hữu của:<br> Centurion Global Limited<br> Dịch vụ harneys (Cayman Limited)<br> Tầng 4, Harbour Place, 103 South Church Street<br> Grand Cayman<br> PO Box 10240, KY1- 1002,<br> Quần đảo Cayman. <br><br> <b>Tổng Giám đốc điều hành: Ronny Tome</b> <br> Đối với bất kỳ câu hỏi nào bạn có thể có liên quan đến công ty của chúng tôi, hãy gửi email cho chúng tôi: support@ducatus.net.<br><br> <b>Quyền sở hữu </b> <br> Các tài liệu trên trang web này, bao gồm các thông tin có sẵn trên hoặc thông qua trang web này (các “nội dung“) được bảo vệ bởi bản quyền, thương hiệu và các hình thức khác của quyền sở hữu.Tất cả các quyền, chức danh và lợi ích trong nội dung đều thuộc sở hữu, được cấp phép hoặc kiểm soát bởi công ty. < br > < br > < b > Nội dung < /b><br> Trừ khi có cung cấp, không có phần nội dung của trang web này sẽ được tái tạo, tái bản, tải lên, đăng, truyền hoặc phân phối theo bất kỳ cách nào, mà không có sự cho phép trước bằng văn bản của công ty.<br><br> Sửa đổi bất kỳ nội dung hoặc sử dụng nội dung cho bất kỳ mục đích nào khác sẽ là vi phạm bản quyền của công ty và các quyền sở hữu trí tuệ khác. Đồ họa và hình ảnh trên trang web này được bảo vệ bởi bản quyền và có thể không được sao chép hoặc phù hợp theo bất kỳ cách nào mà không có sự cho phép bằng văn bản của chủ sở hữu quyền tác giả tương ứng.<br><br> Thiết kế và bố trí của trang web này được bảo vệ bởi sở hữu trí tuệ và các luật khác và có thể không được sao chép hoặc sao chép toàn bộ hoặc một phần. Không có biểu tượng, đồ họa, âm thanh, hình ảnh, văn bản hoặc bất kỳ nội dung nào khác từ trang web này có thể được sao chép, sao chép hoặc truyền đi trừ khi có sự cho phép rõ ràng bằng văn bản của công ty."
+        },
+        "THREE": {
+          "TITLE": "CHÍNH SÁCH BẢO MẬT",
+          "SUBTITLE_1": "1. giới thiệu",
+          "TEXT_1": "Chính sách bảo mật này được thiết kế để thông báo cho bạn về các chính sách của chúng tôi về việc thu thập, sử dụng và tiết lộ dữ liệu cá nhân mà chúng tôi nhận được từ bạn, cũng như để giúp bạn đưa ra quyết định sáng suốt trước khi cung cấp cho chúng tôi bất kỳ thông tin cá nhân nào của bạn.<br><br> Trong chính sách bảo mật này, “chúng tôi“, “chúng tôi“, “của chúng tôi“ có nghĩa là Centurion Global Limited có văn phòng đăng ký tại quần đảo Cayman(như bộ điều khiển theo quy định bảo vệ dữ liệu chung của châu Âu(“GDPR“) và các chi nhánh và công ty liên quan cụ thể là, Emperor Holdings Limited có văn phòng đăng.<br><br> Nếu bạn, bất cứ lúc nào, có bất kỳ thắc mắc nào về chính sách bảo mật này hoặc bất kỳ truy vấn nào khác liên quan đến cách chúng tôi có thể quản lý, xử lý và bảo vệ dữ liệu cá nhân của bạn, vui lòng liên hệ với cán bộ bảo vệ dữ liệu của chúng tôi (có thông tin liên hệ được nêu dưới đây). <br><br> <a href='mailto:support@ducatus.net' target='_blank' class='a__link'>support@ducatus.net</a><br> Chú ý: nhân viên bảo vệ dữ liệu<br><br> Bằng việc sử dụng trang web và/hoặc các dịch vụ và/hoặc sản phẩm khác của chúng tôi, bạn bày tỏ thỏa thuận với chính sách này và các điều kiện xử lý dữ liệu cá nhân của bạn ở đây; Nếu bạn không đồng ý với những điều kiện này, bạn không nên sử dụng trang web và/hoặc các dịch vụ và/hoặc sản phẩm khác của chúng tôi.",
+          "SUBTITLE_2": "2. dữ liệu chúng tôi thu thập",
+          "TEXT_2": " Dữ liệu cá nhân: trong khi sử dụng trang web, và/hoặc các dịch vụ của chúng tôi và/hoặc các sản phẩm của chúng tôi, chúng tôi có thể yêu cầu bạn cung cấp cho chúng tôi dữ liệu cá nhân có thể được sử dụng để liên hệ hoặc nhận dạng bạn. “Dữ liệu cá nhân“ được định nghĩa để có nghĩa là dữ liệu, cho dù là đúng hay không, về một cá nhân có thể được xác định từ dữ liệu đó, hoặc từ dữ liệu đó và các thông tin khác mà một tổ chức có hoặc có khả năng truy cập được cung cấp trong phạm vi bạn cư trú tại, hoặc phải tuân theo luật dữ liệu cá nhân của, một thẩm quyền của pháp luật có liên quan hoặc các quy tắc áp dụng khác trong đó cung cấp cho một định nghĩa khác nhau của dữ liệu cá nhân, định nghĩa của “dữ liệu cá nhân“ dưới đây được hiểu để cũng bao gồm bất kỳ loại dữ liệu khác được đưa vào định nghĩa khác nhau. Các dữ liệu cá nhân mà chúng tôi có thể thu thập từ bạn bao gồm, nhưng không giới hạn, lời chào của bạn, tên, công ty, tên, công nghiệp, giới tính, quốc gia cư trú, số điện thoại liên lạc và một hoặc nhiều địa chỉ email."
+        }
+      }
+    },
+    "LEGAL_DISCLAIMER": {
+      "TITLE": "Legal Disclaimer",
+      "DISCLAIMER": "Đối với mục đích sử dụng thông tin, đây là bản dịch từ phiên bản gốc tiếng Anh. Trong trường hợp có sự khác biệt, nội dung tiếng Anh gốc sẽ được ưu tiên.",
+      "TEXT": "Thông báo quan trọng: www.ducatuscoins.com thuộc sở hữu của Centurion Global Limited (“Centurion Global“), với văn phòng đăng ký tại Harneys Services (Cayman Limited), 4th Floor Harbour Place, 103 South Church Street, Grand Cayman, PO Box 10240, KY1-1002, quần đảo Cayman.<br><br> Bằng truy cập vào trang web này, bạn đồng ý bị ràng buộc bởi điều khoản của Centurion sử dụng và chính sách bảo mật. Ducatus Coin (“đồng xu“) do Centurion Global ban hành dành cho những người mua đủ điều kiện và chấp nhận những rủi ro liên quan đến quyền sở hữu tài sản kỹ thuật số như Coin.Mỗi người mua được khuyên nên tiến hành tự siêng năng của mình như là không có của Centurion toàn cầu, các chi nhánh của nó cung cấp bất kỳ tư vấn đầu tư, tư vấn kinh doanh hoặc thuế hoặc tư vấn pháp lý. < br > < br > CÁC THÔNG TIN ĐƯỢC CUNG CẤP TRÊN TRANG WEB NÀY KHÔNG PHẢI ĐỂ LƯU HÀNH, HIỂN THỊ, TIẾP NHẬN HOẶC PHÂN PHỐI TẠI SINGAPORE(BAO GỒM CẢ CÔNG CHÚNG HOẶC BẤT KỲ PHẦN NÀO CỦA CÔNG CHÚNG TẠI SINGAPORE) HOẶC BẤT KỲ KHU VỰC PHÁP LÝ NÀO KHÁC NƠI CÁC SẢN PHẨM HOẶC DỊCH VỤ CỦA CENTURION HOẶC CÁC CHI NHÁNH CỦA NÓ SẼ BỊ CẤM MÀ KHÔNG CẦN GIẤY PHÉP HOẶC MIỄN TRỪ.CẢ CENTURION CŨNG NHƯ BẤT KỲ CHI NHÁNH NÀO CỦA NÓ CUNG CẤP BẤT KỲ DỊCH VỤ NÀO CẤU THÀNH MỘT DỊCH VỤ THANH TOÁN CHO CÁC MỤC ĐÍCH CỦA ĐẠO LUẬT DỊCH VỤ THANH TOÁN SINGAPORE 2019, HOẶC BẤT KỲ HOẠT ĐỘNG NÀO KHÁC THEO QUY ĐỊNH CỦA CƠ QUAN TIỀN TỆ SINGAPORE, TẠI SINGAPORE HOẶC CHO BẤT KỲ NGƯỜI NÀO TẠI SINGAPORE.ĐỒNG XU KHÔNG CÓ SẴN ĐỂ BÁN BỞI CENUTURION TẠI SINGAPORE."
+    },
+    "GOLD_LOTTERY": {
+      "TITLE": "Gold Lottery",
+      "NAV": {
+        "TITLE_1": "Đăng ký",
+        "TITLE_2": "Đang kiểm tra"
+      },
+      "REGISTRATE": {
+        "TEXT_1": "Điền vô mẫu đơn để liên kết thẻ vàng với ví DUC, DUCX để nhận DUC và Token Vàng",
+        "TEXT_2": "Nhập mã thẻ cá nhân",
+        "ERROR_1": "Mã code đã đăng ký rồi",
+        "ERROR_2": "Mã code không hợp lệ",
+        "TEXT_3": "Nhập địa chỉ ví DUC",
+        "PLACEHOLDER_1": "Nhập địa chỉ ví Ducatus",
+        "ERROR_3": "Invalid address!",
+        "TEXT_4": "Nhập địa chỉ ví DUCX",
+        "ERROR_4": "Địa chỉ ví không hợp lệ",
+        "PLACEHOLDER_2": "Nhập địa chỉ ví DucatusX"
+      },
+      "BUTTON": "Bước tiếp theo",
+      "CHECK": {
+        "TEXT_1": "Điền vào mẫu đơn để kiểm tra đăng ký thẻ",
+        "TEXT_2": "Nhập mã code công khai",
+        "ERROR_1": "Mã code không hợp lệ",
+        "ERROR_2": "Mã code chưa được đăng ký",
+        "TEXT_3": "Nhập địa chỉ ví DUC",
+        "ERROR_3": "Địa chỉ ví không hợp lệ",
+        "TEXT_4": "Nhập địa chỉ ví DUCX",
+        "ERROR_4": "Địa chỉ ví không hợp lệ"
+      },
+      "INFO": {
+        "TEXT_1": "Đồng:",
+        "TEXT_2": "Thổi Vàng",
+        "TEXT_3": "Coin Vàng",
+        "TEXT_4": "Ngày mua:",
+        "TEXT_5": "Độ tinh khiết:",
+        "TEXT_6": "99.999%",
+        "TEXT_7": "Quốc gia:",
+        "TEXT_8": "Trọng lượng:",
+        "TEXT_9": "g",
+        "TEXT_10": "Giá Vàng, $/gram:",
+        "TEXT_11": "$",
+        "TEXT_12": "Đơn vị chứng nhận:",
+        "TEXT_13": "Ngày sản xuất:",
+        "TEXT_14": "Địa chỉ ví nhận thưởng:",
+        "TEXT_15": "DUC chuyển trực tiếp to địa chỉ này",
+        "TEXT_16": "Token DUCX VÀNG được chuyển trực tiếp tới địa chỉ này"
+      }
+    },
+    "DUCATUSX": {
+      "TITLE": "DucatusX",
+      "CONTENT": {
+        "TITLE": "Giới thiệu DucatusX",
+        "TEXT": "Được tạo ra để hỗ trợ các giao dịch ngang hàng, cũng như tạo ra các hợp đồng thông minh, DucatusX là một nhánh của chuỗi khối Ethereum. Nhưng không giống như Ethereum, DucatusX sử dụng thuật toán đồng thuận “Proof of Authority” giúp giảm đáng kể chi phí bảo trì. Trong tương lai, dự kiến sẽ chuyển sang “Proof of Stake”, giúp người dùng tin tưởng hơn nữa khi lựa chọn DucatusX cho các dự án của họ. Trên DucatusX, các khối được sản xuất thường xuyên bởi 3 nút đã được chứng minh và bảo mật, dẫn đến chi phí ổn định và tốc độ sản xuất khối đáng tin cậy."
+      },
+      "BLOCK_1": {
+        "TITLE": "Tại sao DucX",
+        "TEXT": "Hỗ trợ cộng đồng mạnh mẽ",
+        "TEXT_1": "Các dự án đáng tin cậy,<br> không cho phép mã thông báo lừa đảo",
+        "TEXT_2": "Phí thấp hơn,<br> phần thưởng đặt cược",
+        "TEXT_3": "Tổng số DucX cố định tối đa 777,874.204"
+      },
+      "BLOCK_2": {
+        "TITLE": "Tài nguyên DucatusX",
+        "TEXT": "Hỗ trợ cộng đồng mạnh mẽ",
+        "TEXT_1": "Quản lý DucatusX",
+        "TEXT_2": "Sử dụng Ví Ducatus của chúng tôi để quản lý DucatusX",
+        "TEXT_3": "Chuyển đổi Ducatus sang DucatusX",
+        "TEXT_4": "DucatusX có thể được chuyển đổi từ và thành Ducatus (DUC) theo tỷ lệ cố định 1:10 trên <a href='https://www.ducatuscoins.com/buy'>https://www.ducatuscoins.com/buy</a>",
+        "TEXT_5": "Tạo token DucatusX",
+        "TEXT_6": "DucatusX hỗ trợ các hợp đồng thông minh và cho phép bạn mã hóa tài sản của mình. Quá trình này rất đơn giản, tất cả những gì bạn phải làm là làm theo các bước trên <a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a>. Mã thông báo được tạo trên DucatusX có thể được bán thông qua AA + sau khi được chấp nhận niêm yết.",
+        "TEXT_7": "Tạo số lượng mã thông báo phù hợp thông qua DucatusX.",
+        "TEXT_8": "Dự trữ/đóng băng mã thông báo tại các địa chỉ cụ thể.",
+        "TEXT_9": "Thực hiện hợp đồng crowdsale bằng cách sử dụng mã thông báo đã tạo của bạn, không cần tạo mới.",
+        "TEXT_10": "Bạn có thể phân phối mã thông báo của riêng bạn.",
+        "TEXT_11": "Tạo hợp đồng crowdsale",
+        "TEXT_12": "Để thu hút các khoản đầu tư vào dự án của mình, bạn có thể tạo một hợp đồng mã thông báo và bán nó thông qua crowdsale. Để nhận được mã thông báo dự án, người mua sẽ cần gửi cho bạn DucX, sau đó bạn có thể chi tiêu cho nhu cầu của dự án. <br><a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a>",
+        "TEXT_13": "Bao gồm chức năng hợp đồng mã thông báo",
+        "TEXT_14": "Tự động phân phối mã thông báo trong khi đầu tư",
+        "TEXT_15": "Đặt ngày bắt đầu và ngày kết thúc cho ICO",
+        "TEXT_16": "Thay đổi ngày của ICO",
+        "TEXT_17": "Chỉ định tỷ lệ mã thông báo",
+        "TEXT_18": "Các chương trình tiền thưởng (tức là thời gian, số tiền đầu tư, v.v.)",
+        "TEXT_19": "Danh sách trắng",
+        "TEXT_20": "Đầu tư tối thiểu / tối đa"
+      },
+      "BLOCK_3": {
+        "TITLE": "Thông số kỹ thuật (DucatusX vs Ethereum)",
+        "TEXT_1": "<b>DucatusX</b>",
+        "TEXT_2": "<b>Ethereum</b>",
+        "TEXT_3": "<p>POA</p>",
+        "TEXT_4": "<p>POW</p>",
+        "TEXT_5": "<p>432 ZH</p>",
+        "TEXT_6": "<p>2,148.98 TH</p>",
+        "TEXT_7": "<p>Ổn đinh 40 giây</p>",
+        "TEXT_8": "<p>từ 15 giây đến 15 phút, tùy thuộc vào tải mạng</p>",
+        "TEXT_9": "<p>giá gas tối thiểu = 8gwei</p><p>giới hạn gas = 21000</p><p>8 x 21000 = 0.000168 DUCX = 0.000084$</p>",
+        "TEXT_10": "<p>đối với giá gas cũ = 8 gwei (quá thấp so với ethereum, không khuyến nghị)</p><p>giới hạn gas = 21000</p><p>8 x 21000 = 0.000168 ETH = 0,022848$</p>",
+        "TEXT_11": "<b>DucatusX</b>",
+        "TEXT_12": "<b>Ethereum</b>",
+        "TEXT_13": "<p>Đúng (chắc chắn), các hợp đồng chỉ có thể được tạo sau khi quản trị viên phân tích dự án và phê duyệt</p>",
+        "TEXT_14": "<p>Đúng (chắc chắn)</p>",
+        "TEXT_15": "<p>Đúng. Vì lý do bảo mật, các cổng chỉ mở cho các tài nguyên đã được chứng minh</p>",
+        "TEXT_16": "<p>đúng</p>",
+        "TEXT_17": "<p>0 - tại thời điểm này, tất cả các giao dịch được bao gồm trong khối. Thời gian ngưng giao dịch = Thời gian tạo khối mới</p>",
+        "TEXT_18": "<p>34 586</p>",
+        "TABLE_TITLE_1": "Thuật toán đồng thuận",
+        "TABLE_TITLE_2": "Độ khó",
+        "TABLE_TITLE_3": "Tốc độ sản xuất khối",
+        "TABLE_TITLE_4": "Chi phí TX",
+        "TABLE_TITLE_5": "Hỗ trợ hợp đồng thông minh",
+        "TABLE_TITLE_6": "Hỗ trợ RPC, WEB",
+        "TABLE_TITLE_7": "Tổng số giao dịch đang chờ xử lý"
+      }
+    },
+    "VAUCHER": {
+      "TITLE": "Voucher"
+    }
+  }
 }

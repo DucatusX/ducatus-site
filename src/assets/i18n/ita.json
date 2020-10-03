@@ -1,463 +1,479 @@
 {
-    "HEADER": {
-        "MENU": {
-            "HOME": "Casa",
-            "ABOUT": "A proposito di Duc",
-            "BUY": "Acquistare Duc",
-            "DUCATUSX": "DUCX",
-            "LOTTERY": "Lotteria d'oro",
-            "CONTACT": "Contatto"
-        }
-    },
-    "FOOTER": {
-        "MENU": {
-            "SECTION": {
-                "SOON": "Prossimamente",
-                "ONE": {
-                    "TITLE": "A PROPOSITO DI",
-                    "LINK_1": "A proposito di Ducatus",
-                    "LINK_2": "Ducatus aziendale",
-                    "LINK_3": "Contatto"
-                },
-                "TWO": {
-                    "TITLE": "Ducatus Stile di vita",
-                    "LINK_1": "Ducatus Accademia",
-                    "LINK_2": "Ducatus Caffè",
-                    "LINK_3": "Ducatus Beneficenza"
-                },
-                "THREE": {
-                    "TITLE": "Ducatus Stile di vita",
-                    "LINK_1": "Ducatus Salute",
-                    "LINK_2": "Ducatus Proprietà",
-                    "LINK_3": "Ducatus Viaggio"
-                },
-                "FOUR": {
-                    "TITLE": "Ducatus Biz",
-                    "LINK_1": "Ducatus Rete",
-                    "LINK_2": "D-MOB",
-                    "LINK_3": "Commercianti Ducatus"
-                }
-            },
-            "LEGAL": "Legale",
-            "LEGAL_DISCLAIMER": "Legal Disclaimer",
-            "TERMS": "Termini & Condizioni"
-        }
-    },
-    "APPS": {
-        "TITLE": "Installa il portafoglio Ducatus",
-        "SUBTITLE": "Acquista, archivia e vendi Cryptos",
-        "TEXT_1": "Come ottenere Ducatus Coin?",
-        "TEXT_2": "La tua esperienza con Ducatus Coin inizia quando scarichi l'e-wallet Ducatus."
-    },
-    "PRIVACY": {
-        "TEXT": "Questo sito Web utilizza i cookie per assicurarti la migliore esperienza sul nostro sito Web. Continuando a utilizzare questo sito Web, accetti il loro utilizzo.",
-        "BUTTON_ACCEPT": "Accettare",
-        "BUTTON_DECLINE": "Declino"
-    },
-    "PAGE": {
-        "MAIN": {
-            "SLIDER": {
-                "ONE": {
-                    "TITLE": "Ducatus Coin",
-                    "TEXT": "Ispirato all'antica moneta di scambio romana e alimentato dallo spirito rivoluzionario che ha creato la moneta digitale, Ducatus Coin presenta una forma alternativa di scambio finanziario - inclusiva, unica e che offre possibilità illimitate.",
-                    "BUTTON": "Scarica il white paper"
-                },
-                "TWO": {
-                    "TITLE": "Criptovaluta per la vita di tutti i giorni",
-                    "TEXT": "Goditi la libertà di transazioni quotidiane senza contanti, senza confini e sicure, dall'acquisto del caffè del mattino all'acquisto della casa dei tuoi sogni, ora tutto possibile con Ducatus Coin.",
-                    "BUTTON": "Scarica il white paper"
-                },
-                "THREE": {
-                    "TITLE": "Sostenere l'economia digitale",
-                    "TEXT": "Con la distribuzione, la convertibilità e l'usabilità (DUC) al centro, Ducatus Coin incoraggia l'uso pratico e l'applicazione della criptovaluta nella vita quotidiana.  Questi tratti sono fondamentali per aiutare a costruire una solida criptoeconomia per il futuro.",
-                    "BUTTON": "Scarica il white paper"
-                }
-            },
-            "FINANCIAL": {
-                "TITLE": "Una nuova evoluzione finanziaria",
-                "SUBTITLE": "Essere la criptovaluta più popolare e utilizzabile del mondo ... ",
-                "TEXT_1": "Un Ducatus per persona sul pianeta. <br><br> Basato sui principi del matematico italiano Leonardo Fibonacci, Ducatus ha generato un totale di 7.778.742.049 criptovalute. Una volta distribuite tutte queste monete, il loro numero sarà simile al numero di persone sul nostro pianeta. <br><br> La visione per Ducatus Coin è audace. Ma con una combinazione di infrastruttura digitale di livello mondiale, un potente sistema di distribuzione di rete e una suite di attività correlate alla criptoeconomia, è un obiettivo che non è impossibile da raggiungere.",
-                "TEXT_2": "I proprietari di monete Ducatus ora possono accedere a una vasta gamma di prodotti e servizi sia da parte delle aziende di cripto-economia Ducatus che da commercianti di terze parti. Queste attività di cripto-economia vengono implementate in tutto il mondo in parallelo con la distribuzione delle nostre monete per dimostrare -applicazioni mondiali non solo per le monete Ducatus ma anche per le criptovalute nel loro insieme.",
-                "BUTTON": "Scopri di più"
-            },
-            "SECTION_1": {
-                "TITLE_1": "Le comunità diffondono le tecnologie. <br> Aziende come Ducatus le rendono tendenze dominanti.",
-                "TITLE_2": "Ducatus sviluppa <br> commercialmente le monete",
-                "TEXT_1": "Le monete Ducatus sono pre-minate e vendute, quindi vengono investiti i profitti per costruire il brand.",
-                "TEXT_2": "La tecnologia Ducatus Coin è sviluppata internamente sulla base del nostro piano strategico di business a lungo termine."
-            },
-            "SECTION_2": {
-                "LEFT": {
-                    "TITLE": "Ducatus mantiene gli standard leader di mercato",
-                    "SUBTITLE_1": "Governance",
-                    "TEXT_1": "Gestito da professionisti esperti con esperienze in diversi settori tra cui marketing, finanza e ingegneria",
-                    "SUBTITLE_2": "Trasparenza",
-                    "TEXT_2": "Team di dirigenti e azionisti visibili e accessibili",
-                    "SUBTITLE_3": "Conformità",
-                    "TEXT_3": "Collabora con gli enti governativi e rispetta i regolamenti stabiliti dalle autorità"
-                },
-                "RIGHT": {
-                    "TITLE": "Ducatus è un business, <br> non un progetto tecnologico",
-                    "TEXT_1": "Istituito <br> nel 2016",
-                    "TEXT_2": "Team di gestione globale di grande esperienza",
-                    "TEXT_3": "Team di vendita globale dinamico: Networking Marketing Strategy",
-                    "TEXT_4": "Quasi 1 miliardo di monete Ducatus vendute in oltre 180 paesi a partire da gennaio 2020"
-                }
-            },
-            "USABILITY": {
-                "TITLE": "Usabilità con la Ducatus Crypto-Economy",
-                "SUBTITLE": "Usa le monete Ducatus per acquistare caffè, prenotare una vacanza, acquistare souvenir. Se lo desideri, puoi persino acquistare proprietà o la casa dei tuoi sogni. Questi e altri scambi finanziari sono resi possibili dall'esclusiva cripto-economia Ducatus.",
-                "TEXT": "Ducatus ritiene che l'usabilità sia l'ultima misura di una valuta legittima. A supporto di questa visione, sono state create le società affiliate Ducatus che offrono servizi  di base per garantire e facilitare l'utilizzo agli utenti Ducatus Coin e ad altri utenti di crypto. Queste aziende Ducatus sono i cardini della cripto-economia Ducatus. Dall'acquisto di un espresso alla prenotazione di una camera in un hotel di lusso, le transazioni che erano solo in contanti ora possono essere cashless, attraverso l'uso di Ducatus Coin."
-            }
-        },
-        "NEWMAIN": {
-            "SECTION": {
-                "ONE": {
-                    "TITLE": "Una nuova evoluzione finanziaria",
-                    "SUBTITLE": "Essere la criptovaluta più popolare e utilizzabile del mondo ...",
-                    "TEXT": "Un Ducatus per persona sul pianeta. Basato sui principi del matematico italiano Leonardo Fibonacci, Ducatus ha generato un totale di 7.778.742.049 criptovalute. Una volta distribuite tutte queste monete, il loro numero sarà simile al numero di persone sul nostro pianeta. <br><br> La visione per Ducatus Coin è audace. Ma con una combinazione di infrastruttura digitale di livello mondiale, un potente sistema di distribuzione di rete e una suite di attività correlate alla criptoeconomia, è un obiettivo che non è impossibile da raggiungere. <br><br> I proprietari di monete Ducatus ora possono accedere a una vasta gamma di prodotti e servizi sia da parte delle aziende di cripto-economia Ducatus che da commercianti di terze parti. Queste attività di cripto-economia vengono implementate in tutto il mondo in parallelo con la distribuzione delle nostre monete per dimostrare -applicazioni mondiali non solo per le monete Ducatus ma anche per le criptovalute nel loro insieme.",
-                    "BUTTON": "Scopri di più >"
-                },
-                "TWO": {
-                    "TITLE": "Le comunità diffondono le tecnologie. <br> Aziende come Ducatus le rendono tendenze dominanti.",
-                    "SUBTITLE": "Ducatus sviluppa commercialmente le monete",
-                    "TEXT_1": "Le monete Ducatus sono pre-minate e vendute, quindi vengono investiti i profitti per costruire il brand.",
-                    "TEXT_2": "La tecnologia Ducatus Coin è sviluppata internamente sulla base del nostro piano strategico di business a lungo termine."
-                },
-                "THREE": {
-                    "TITLE": "Ducatus mantiene gli standard leader <br> di mercato",
-                    "TITLE_2": "Ducatus è un business, non un <br> progetto tecnologico",
-                    "ICONS": {
-                        "TITLE_1": "Governance",
-                        "TEXT_1": "Gestito da professionisti esperti con esperienze in diversi settori tra cui marketing, finanza e ingegneria",
-                        "TITLE_2": "Trasparenza",
-                        "TEXT_2": "Team di dirigenti e azionisti visibili e accessibili",
-                        "TITLE_3": "Conformità",
-                        "TEXT_3": "Collabora con gli enti governativi e rispetta i regolamenti stabiliti dalle autorità",
-                        "TEXT_4": "Istituito <br> nel 2016",
-                        "TEXT_5": "Team di gestione globale di grande esperienza",
-                        "TEXT_6": "Team di vendita globale dinamico: Networking Marketing Strategy",
-                        "TEXT_7": "Quasi 1 miliardo di monete Ducatus vendute in oltre 180 paesi a partire da gennaio 2020"
-                    }
-                },
-                "FOUR": {
-                    "TITLE": "Usabilità con la Ducatus <br> Crypto-Economy",
-                    "TEXT": "Usa le monete Ducatus per acquistare caffè, prenotare una vacanza, acquistare souvenir. Se lo desideri, puoi persino acquistare proprietà o la casa dei tuoi sogni. <br><br> TQuesti e altri scambi finanziari sono resi possibili dall'esclusiva cripto-economia Ducatus. Ducatus ritiene che l'usabilità sia l'ultima misura di una valuta legittima. A supporto di questa visione, sono state create le società affiliate Ducatus che offrono servizi di base per garantire e facilitare l'utilizzo agli utenti Ducatus Coin e ad altri utenti di crypto. Queste aziende Ducatus sono i cardini della cripto-economia Ducatus. Dall'acquisto di un espresso alla prenotazione di una camera in un hotel di lusso, le transazioni che erano solo in contanti ora possono essere cashless, attraverso l'uso di Ducatus Coin."
-                }
-            }
-        },
-        "ABOUT": {
-            "TITLE": "Informazioni su Ducatus Coin",
-            "SECTION_1": {
-                "TITLE": "Informazioni su Ducatus Coin",
-                "TEXT": "Conveniente, veloce e sicuro, Ducatus Coin è una criptovaluta creata per l'usabilità a lungo termine. Ducatus Coin è l'unica criptovaluta supportata dall'esclusiva Ducatus Crypto-Economy, un gruppo di aziende affiliate Ducatus in crescita , transazioni senza contanti per le necessità di base della vita: cibo, vestiti, alloggio, riposo e relax e altro ancora."
-            },
-            "SECTION_2": {
-                "TITLE": "Vantaggi della moneta Ducatus",
-                "SUBTITLE": "Ducatus Coin combina i vantaggi di Bitcoin con un modello di business strategico lungimirante: la Ducatus Crypto-Economy.",
-                "LIST": {
-                    "TITLE_1": "Ducatus Coin è altamente sicuro",
-                    "TEXT_1": "La migliore sicurezza del settore grazie a una tecnologia in costante evoluzione",
-                    "TITLE_2": "Ducatus Coin è più veloce",
-                    "TEXT_2": "Trasferimenti di fondi 10 volte più rapidi rispetto a Bitcoin grazie a tempi di blocco di 1 minuto",
-                    "TITLE_3": "La moneta Ducatus non ha confini",
-                    "TEXT_3": "Trasferisci fondi in qualsiasi parte del mondo a costi minimi",
-                    "TITLE_4": "Ducatus Coin ti mette al comando",
-                    "TEXT_4": "Tutti i vantaggi di un sistema finanziario globale direttamente sul tuo smartphone",
-                    "TITLE_5": "Ducatus Coin è innovativo",
-                    "TEXT_5": "Supportato da un'infrastruttura strategica progettata per promuovere l'accettazione e l'adozione globale della criptovaluta",
-                    "TITLE_6": "Ducatus Coin è professionale",
-                    "TEXT_6": "Il management di Ducatus garantisce che Ducatus Coin sia conforme alle leggi ed ai regolamenti globali"
-                }
-            },
-            "TECHNOLOGY": {
-                "TITLE": "Tecnologia delle monete Ducatus",
-                "SUBTITLE": "Ducatus Coin è un fork di Litecoin e utilizza quindi scrypt come base di un algoritmo Proof of Work.",
-                "TEXT_1": "Ducatus Blockchain",
-                "TEXT_2": "Codice sorgente"
-            },
-            "MILESTONES": {
-                "TITLE": "Pietre miliari",
-                "LIST": {
-                    "YEAR_15": "Giugno 2020",
-                    "TEXT_15": "<b>L'acquisto di monete Ducatus con Bitcoin, Ethereum e carta di credito è diventato possibile attraverso il Portafoglio Ducatus aggiornato</b>",
-                    "YEAR_14": "Aprile 2020",
-                    "TEXT_14": "Un fork della blockchain di Ethereum, DucatusX è stato creato per supportare sia le transazioni che la creazione di contratti intelligenti",
-                    "YEAR_13": "Marzo 2020",
-                    "TEXT_13": "Le monete Ducatus e l'oro fisico (sotto forma di monete e lingotti) sono stati registrati sulla blockchain e offerti come un unico pacchetto tramite Remus Gold",
-                    "YEAR_12": "Febbraio 2020",
-                    "TEXT_12": "L'acquisto online di monete Ducatus è iniziato tramite ducatuscoins.com",
-                    "YEAR_11": "Gennaio 2020",
-                    "TEXT_11": "Viene lanciato Portafoglio Ducatus multivaluta",
-                    "YEAR_10": "Dicembre 2019",
-                    "TEXT_10": "1 miliardo di monete Ducatus sono state vendute dalla sua introduzione nel 2017",
-                    "YEAR_9": "Ottobre 2019",
-                    "TEXT_9": "È stato lanciato il Portafoglio Ducatus multivaluta.",
-                    "YEAR_8": "Gennaio 2019",
-                    "TEXT_8": "Ducatus è stato elencato come 10 fornitori di soluzioni Blockchain in più rapida crescita da tenere d'occhio nel 2019 da APAC Business Headlines.",
-                    "YEAR_7": "Marzo 2018",
-                    "TEXT_7": "La moneta Ducatus è stata quotata nell'exchanghe di criptovaluta Coinbene.",
-                    "YEAR_6": "Gennaio 2018",
-                    "TEXT_6": "Ducatus ha sponsorizzato Blockchain Cruise Asia, un importante evento blockchain e criptovaluta regionale.",
-                    "YEAR_5": "Ottobre 2017",
-                    "TEXT_5": "La blockchain Ducatus è stata lanciata e la prima transazione live pubblica Ducatus è stata eseguita dal nostro CEO Ronny Tome con Dustin Trammell al vertice europeo Ducatus di Roma.",
-                    "YEAR_4": "Settembre 2017",
-                    "TEXT_4": "L'estrazione su blockchain è stata completata per tutte le monete Ducatus.",
-                    "YEAR_3": "Agosto 2017",
-                    "TEXT_3": "L'ufficio aziendale Ducatus è stato inaugurato a Singapore.",
-                    "YEAR_2": "Luglio 2017",
-                    "TEXT_2": "La settimana di lavoro sulla tecnologia Ducatus è stata ospitata da Dustin Trammell al DEFCON XXV di Las Vegas.",
-                    "YEAR_1": "Marzo 2017",
-                    "TEXT_1": "Il marchio Ducatus e il primo white paper tecnico Ducatus sono stati lanciati al Vertice globale Ducatus di Dubai."
-                }
-            }
-        },
-        "BUY": {
-            "TITLE": "Comprare DUC",
-            "FORM": {
-                "RADIO": {
-                    "PRICE": "Prezzo DUC = {{ curName }} {{ ducRate }}",
-                    "TEXT": "Seleziona tra le seguenti opzioni e ricevi il numero corrispondente di hash per il sorteggio",
-                    "LINK": "(ulteriori informazioni)",
-                    "TICKET": {
-                        "ONE": "<br>iscrizione",
-                        "MANY": "<br>inserimenti"
-                    }
-                },
-                "ADDRESS": {
-                    "TEXT": "Inserisci il tuo indirizzo di ricezione DUC<br>Hai bisogno di un indirizzo Ducatus? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Scarica</a> QUI il Portafoglio Ducatus!",
-                    "PLACEHOLDER": "Inserisci il tuo indirizzo di ricezione DUC",
-                    "ERROR": "Errore! Si prega di verificare, il formato dell'indirizzo non è corretto!"
-                },
-                "EMAIL": {
-                    "TEXT": "Inserisci il tuo indirizzo e-mail in modo che possiamo contattarti se TU SEI il VINCITORE",
-                    "PLACEHOLDER": "Inserisci il tuo indirizzo email"
-                },
-                "RESULT": {
-                    "TEXT_1": "Invia ",
-                    "TEXT_2": " al seguente indirizzo",
-                    "QR": {
-                        "TEXT": "O scansiona questo codice QR"
-                    },
-                    "ERROR": "qualcosa è andato storto, riprovare più tardi",
-                    "NOTE": "Tieni presente che potrebbero essere necessari fino a {{ time }} prima di ricevere i DUC nel tuo wallet <br><br>"
-                },
-                "SUBMIT": "Invia"
-            },
-            "INFO": {
-                "TITLE": "Scopri, impara e guadagna facendo parte dell'Economia Cashless Ducatus.",
-                "LINK": {
-                    "ONE": "Fai trading di crypto su AA +",
-                    "TWO": "Usa DUC e acquista online oggetti amati"
-                }
-            },
-            "REFERRAL": {
-                "TITLE": "Link di riferimento",
-                "SUBTITLE": "Condividi questa straordinaria opportunità con i tuoi amici e familiari e ricevi un bonus di segnalazione DUC del 5% per qualsiasi acquisto effettuato utilizzando il link seguente",
-                "LABEL": "Inserisci il tuo indirizzo Ducatus",
-                "PLACEHOLDER": "Inserisci il tuo indirizzo Ducatus",
-                "ERROR": "Errore! Si prega di verificare, il formato dell'indirizzo non è corretto!",
-                "LINK": "Il tuo link di riferimento"
-            },
-            "LOTTERY": {
-                "BLOCK": {
-                    "WINNER": {
-                        "TITLE": "HASH VINCENTE"
-                    },
-                    "WAITING": {
-                        "TITLE": "Attendere prego",
-                        "TEXT": "calcolo vincitore ..."
-                    },
-                    "COUNTDOWN": {
-                        "TITLE": "Conto alla rovescia per disegnare la data"
-                    },
-                    "PROGRESS": {
-                        "TITLE": "% dell'obiettivo di vendita raggiunto prima dell'inizio del conto alla rovescia"
-                    },
-                    "TICKETS": {
-                        "LINK": "Elenco di {{ tickets_amount }} voci di hash totali →",
-                        "TEXT": "Numero di DUC"
-                    },
-                    "INFO": {
-                        "TITLE": "Come puoi vincere uno di questi fantastici premi?",
-                        "TEXT": "<p class=\"lottery-info-text\">Ogni acquirente di DUC ha la possibilità di vincere. Più alto è il tuo acquisto DUC, maggiori sono le possibilità di vincita che ottieni.</p> <p class=\"lottery-info-text\">Una volta raggiunto l'obiettivo di {{ duc_amount }} DUC venduti, inizia il conto alla rovescia di 8 giorni per il Lucky Draw Day. La vendita di DUC continua fino a quando il conto alla rovescia raggiunge le 00:00:00:00, il che attiverà l'estrazione.</p> <p class=\"lottery-info-text\">Attraverso una casuale pareggio contratto di intelligente, i vincitori hash es saranno determinati e pubblicati in questa pagina e il vincitore s saranno informati via e-mail.</p>"
-                    }
-                }
-            },
-            "MODAL": {
-                "TERMS": {
-                    "TEXT": "Spuntare la casella di seguito per confermare di riconoscere e accettare i <a href='assets/downloads/pdf/Lucky_Draw_Terms_Conditions.pdf' target='_blank'> Termini e condizioni </a> dell'acquisto DUC. La moneta Ducatus non è disponibile per l'acquisto da Centurion a Singapore.",
-                    "AGREE": "sono d'accordo con i termini e le condizioni",
-                    "BUTTON": "Vicino"
-                },
-                "INFO": {
-                    "TEXT": "<p>L'importo esatto di DUC verrà inviato al wallet DUC indicato come da pagamento BTC / ETH ricevuto. Tuttavia, se il denaro ricevuto è inferiore all'importo in USD dichiarato per il pacchetto scelto, il sistema di default invierà solo il numero di hash per l'estrazione relativo al pacchetto inferiore.</p><p>Per acquistare DUC in multipli di 1000 USD, è possibile farlo in transazioni separate, poiché le hash assegnate per transazione sono limitate a 150, equivalenti a un acquisto di 1000 USD.</p>",
-                    "BUTTON": "Vicino"
-                }
-            }
-        },
-        "TICKETS": {
-            "TITLE": "Comprare DUC",
-            "TABLE": {
-                "TITLE": "Voci / hash idonei per il sorteggio"
-            }
-        },
-        "CONTACT": {
-            "TITLE": "Contatto",
-            "TEXT": "Centurion Global Limited <br> Harneys Services (Cayman Limited) <br> 4th Floor, Harbor Place, 103 South Church Street <br> Grand Cayman <br> PO Box 10240, KY1-1002 <br> Isole Cayman <br> <br>",
-            "FORM": {
-                "TEXT": "Contattateci per maggiori dettagli",
-                "TEXT_1": "Il tuo nome",
-                "TEXT_2": "Il tuo numero di telefono",
-                "TEXT_3": "La tua email",
-                "TEXT_4": "Il tuo messaggio",
-                "BUTTON": "INCHIESTA"
-            }
-        },
-        "LEGAL": {
-            "TITLE": "Legal",
-            "SECTION": {
-                "ONE": {
-                    "TITLE": "Termini e condizioni generali",
-                    "TEXT": "In questi Termini generali & Condizioni, il Venditore e le sue consociate e società correlate insieme sono qui di seguito indicati come \"Centurion Global Limited\", \"noi\", \"noi\" o \"nostro\" e l'Acquirente è qui in seguito indicato come il \"Acquirente\",\"tu\" o \"tuo\".",
-                    "SUBTITLE_1": "1. Dichiarazioni di non responsabilità",
-                    "TEXT_1": "<li>a. L'acquirente accetta e riconosce espressamente di stipulare il Contratto a proprio rischio e pericolo. Nella massima misura consentita dalla legge applicabile, Centurion Global Limited non produce rappresentazioni o garanzie di alcun tipo, espresso o implicito, per quanto riguarda il funzionamento o le prestazioni delle monete, o le informazioni, i contenuti, i materiali, i prodotti (comprese le monete o la blockchain, i portafogli criptovaluta e il relativo software) o qualsiasi altro aspetto o elemento dei prodotti e servizi di Centurion Global Limited inclusi o altrimenti resi disponibili attraverso il sito web , se non diversamente specificato per iscritto.</li> <li>b. L'acquirente conferma di avere una comprensione adeguata del background, dei rischi, dell'utilizzo e delle funzioni delle valute crittografiche e del software basato su blockchain, e che non si basa su dichiarazioni o rappresentazioni fatte da Centurion Global Limited o da uno dei suoi associati in merito a queste questioni quando stipula il Contratto. L'Acquirente ha valutato in modo indipendente tutti i rischi, l'idoneità e i meriti delle Monete e ha ottenuto, ove necessario, una consulenza professionale pertinente e indipendente.</li> <li>c. L'acquirente riconosce e concorda sul fatto che, nella piena misura consentita dalla legge, dalla regolamentazione o dallo statuto applicabile, la stessa Centurion Global Limited e tutte le entità o le persone associate non hanno alcuna responsabilità (compresi i danni indiretti, accessori, speciali, esemplari o conseguenti, alla perdita di profitti, all'avviamento o ai dati) derivanti o relativi all'uso o all'incapacità di utilizzare le monete per i beni/servizi forniti dal Gruppo Ducatuo o da qualsiasi attività associata o da società terze.</li> <li>d. Centurion Global Limited non produce alcuna rappresentanza o garanzia e declina espressamente tutte le rappresentanze e le garanzie, espressa o implicita, comprese eventuali garanzie implicite di merchantability e idoneità per uno scopo particolare in relazione alle Monete.</li> <li>e. Centurion Global Limited non garantisce o garantisce in alcun modo che i suoi prodotti o servizi siano privi di virus o altri componenti dannosi. Centurion Global Limited non sarà ritenuta responsabile per danni di qualsiasi tipo derivanti o derivanti dall'uso di uno qualsiasi dei prodotti o servizi Centurion Global Limited, inclusi, ma non solo, danni indiretti, incidentali, punitivi o conseguenti</li> <li>f. Centurion Global Limited declina la responsabilità in caso di furto, hacking, attacchi informatici o attacchi alle blockchain e non garantisce in alcun modo la loro sicurezza. Tutti i rischi o le perdite, incluse ma non correlate alle perdite di monete o ai danni all'hardware dovuti a queste situazioni, saranno solo dell'Acquirente.</li> <li>g. L'acquirente si assumerà la responsabilità esclusiva del rispetto delle leggi locali in relazione alle transazioni, incluse, a dire, a meno che non si limitano a tutte le implicazioni fiscali del Contratto.</li> <li>h. L'acquirente accetta che non sta acquistando monete per scopi di investimento, speculazione per la rivendita immediata o altro scopo finanziario.</li> <li>i. L'acquirente accetta che tutti gli acquisti delle Monete da Centurion Global Limited siano effettuati dall'Acquirente per il proprio utilizzo per l'acquisto dei beni/servizi forniti da Centurion Global Limited o da qualsiasi attività associata o da attività di terze parti e l'Acquirente non utilizzerà le Monete per fare un'offerta secondaria al pubblico. Se l'Acquirente intende farlo, l'Acquirente è l'unico responsabile del rispetto di tutte le leggi e regolamenti pertinenti, compresi eventuali requisiti di registrazione, se presenti, applicabili a tali offerte.</li> <li>j. DISCLAIMER US PERSONS: THE COINS SOLD PER CENTURION, AS DESCRIBED HEREUNDER MAY NOT BE OFFERED, SOLD OR DISTRIBUTED, DIRECTLY OR INDIRECTLY, IN THE UNITED STATES OR PER THE ACCOUNT OR RISK OF A U.S. PERSON(AS DEFINED BELOW). IL CONTENUTO DI QUESTO DOCUMENTO NON PUÒ ESSERE REGARDED AS AN OFFER OR INVITATION PER U.S. PERSONS To ACQUIRE COINS O AN INVITATION TO SELL OR MARKET I COINS. UNITED STATES('U.S.') CITTADINI, U.S.RESIDENTS, U.S.GREEN CARD HOLDERS O CLIENTI CON A U.S.MAILING ADDRESS, U.S.TELEPHONE NUMBER, SONO TUTTI U.S.PERSONS. UNA PERSONA È UNA 'U.S.RESIDENT' SE HE / SHE IS PRESENT IN THE U.S.FOR MORE THAN 31 DAYS IN THE CURRENT CALENDAR YEAR And PER UNA MEDIA DI AT LEAST 183 GIORNI PER IL CALENDARIO CORRENTE ANNO E IL 2 PRECEDENTI TEMPO DI CALENDARIO. NOTA NOTA CHE LA DEFINIZIONE DEL DUCATUS GROUP' S DI U.S.PERSON NON può ESSERE LA SAME AS THE DEFINITION USED BY THE U.S.INLAND REVENUE Services PER U.S.TAX PURPOSES O BY THE U.S.S.SECURITIES AND EXCHANGE COMMISSION.</li>",
-                    "SUBTITLE_2": "2. Rischi relativi alle monete",
-                    "TEXT_2": "L'acquisto di monete comporta rischi. Non vi è alcuna garanzia che qualsiasi acquisizione di monete si tradurrà in voi o qualsiasi altra persona godendo di qualsiasi forma di guadagno finanziario o economico. L'utente riconosce e accetta che Centurion Global Limited non ha fatto dichiarazioni, garanzie, promesse, garanzie, proiezioni, suggerimenti o implicazioni per voi su prospettive o guadagni futuri, o che guadagnerai denaro o realizzerai qualsiasi rendimento finanziario o di altro tipo, a seguito della tua acquisizione o proprietà e/o dell'uso di monete, e che Centurion Global Limited non ha autorizzato alcuna dichiarazione o comunicazione da parte di nessun'altra persona. L'utente è consapevole del fatto che si può subire una quantità di perdite o danni finanziari, sostanziali o meno, derivanti dall'acquisto o dal trattamento delle monete.<br><br> Hai considerato e sei a tuo agio con tutti questi rischi, compresi, ma non limitati a quelli descritti di seguito, e non porterà un'azione contro o tenterà di ritenere il Centurion Global Limited responsabile in alcun modo o riguardo. Ove necessario, l'utente è d'accordo e rappresenta che si otterrà o avete ottenuto una consulenza professionale indipendente legale e finanziaria."
-                },
-                "TWO": {
-                    "TITLE": "Impressum",
-                    "TEXT": "Il sito ducatus Coins è di proprietà di:<br> Centurion Global Limited<br> Harneys Services (Cayman Limited)<br> 4th Floor, Harbour Place, 103 South Church Street<br> Grand Cayman<br> PO Box 10240, KY1-1002<br> Cayman Islands <br><br> <b>Chief Executive Officer: Ronny Tome</b> <br> Per qualsiasi domanda si può avere in merito alla nostra azienda, inviarci una e-mail: support@ducatus.net. <br><br> <b>Diritti di Proprietary Rights proprietà</b> <br> I materiali presenti su questo sito Web, comprese le informazioni disponibili su o attraverso questo sito web (i \"Contenuti\"), sono protetti da copyright, marchio e altre forme di diritti di proprietà. Tutti i diritti, il titolo e l'interesse per i Contenuti sono di proprietà, autorizzati o controllati dalla Società.<br><br> <b>Contenuto</b><br> Salvo quanto altrimenti previsto, nessuna parte del Contenuto di questo sito web deve essere riprodotta, ripubblicata, caricata, pubblicata, trasmessa o altrimenti distribuita in alcun modo, senza il previo permesso scritto della Società.<br><br> La modifica di uno qualsiasi dei Contenuti o l'utilizzo dei Contenuti per qualsiasi altro scopo sarà una violazione del diritto d'autore della Società e di altri diritti di proprietà intellettuale. La grafica e le immagini di questo sito web sono protette da copyright e non possono essere riprodotte o appropriate in alcun modo senza il permesso scritto dei rispettivi proprietari dei diritti d'autore. La progettazione e la disposizione di questo sito web è protetta dalla proprietà intellettuale e da altre leggi e non può essere copiata o riprodotta in tutto o in parte.<br><br> Nessun logo, grafico, suono, immagine, testo o qualsiasi altro contenuto di questo sito web può essere copiato, riprodotto o trasmesso a meno che non sia espressamente consentito per iscritto dalla Società."
-                },
-                "THREE": {
-                    "TITLE": "Informativa sulla privacy",
-                    "SUBTITLE_1": "1. Introduzione",
-                    "TEXT_1": "La presente Informativa sulla privacy è progettata per informare l'utente delle nostre norme relative alla raccolta, all'utilizzo e alla divulgazione dei Dati Personali che riceviamo dall'utente, nonché per assistervi nel prendere una decisione informata prima di fornirci i tuoi Dati Personali.<br><br> In questa politica sulla privacy, \"noi\", \"noi\", \"nostro\" significa Centurion Global Limited che ha il suo ufficio registrato nelle Isole Cayman (come Controllore secondo il regolamento generale europeo sulla protezione dei dati (\"GDPR\") e le sue affiliate e società correlate vale a dire, Emperor Holdings Limited avendo il suo ufficio registrato nelle isole Cayman, nella loro qualità di Destinatari e Processori ai sensi del GDPR.<br><br> Se l'utente, in qualsiasi momento, ha domande sulla presente Informativa sulla privacy o su qualsiasi altra domanda in relazione a come possiamo gestire, elaborare e proteggere i propri dati personali, non esitate a contattare il nostro Responsabile della protezione dei dati (i cui dati di contatto sono riportati di seguito).<br><br> <a href='mailto:support@ducatus.net' target='_blank' class='a__link'>support@ducatus.net</a><br> Attenzione: Data Protection Officer <br><br> Utilizzando il Sito e/o i nostri altri servizi e/o prodotti, esprimete il vostro accordo con la presente Informativa e le condizioni di trattamento dei vostri Dati Personali contenuti nel presente documento; se non siete d'accordo con queste condizioni, non dovreste utilizzare il Sito e/o i nostri altri servizi e/o prodotti.",
-                    "SUBTITLE_2": "2. Dati che raccogliamo",
-                    "TEXT_2": "Dati personali: durante l'utilizzo del Sito, e/o dei nostri servizi e/o dei nostri prodotti, potremmo chiederti di fornirci Dati Personali che possono essere utilizzati per contattarti o identificarti. Per \"Dati personali\" si intendono i dati, reale o meno, di una persona che può essere identificata da tali dati, o da tali dati e altre informazioni a cui un'organizzazione ha o è probabile che abbia accesso a condizione che, nella misura in cui risiedi, o sia altrimenti soggetta alle leggi sui dati personali, una giurisdizione delle leggi pertinenti o di altre norme applicabili di cui prevedono una diversa definizione di dati personali, la definizione di \"dati personali\" in questo modo sia interpretata anche da qualsiasi altro tipo di dati che siano inclusi in tale definizione diversa. I Dati Personali che potremmo raccogliere da voi includono, ma non si limitano a, il vostro saluto, nome, azienda, designazione, settore, genere, paese di residenza, numero di contatto e uno o più indirizzi e-mail."
-                }
-            }
-        },
-        "LEGAL_DISCLAIMER": {
-            "TITLE": "Disclaimer",
-            "TEXT": "Avviso importante: www.ducatuscoins.com è di proprietà di Centurion Global Limited (\"Centurion Global\"), con sede legale presso Harneys  Services (Cayman Limited), 4th Floor Harbour Place, 103 South Church Street, Grand Cayman, PO Box 10240, KY1-1002, Isole Cayman.<br><br>Visitando questo sito, l'utente accetta di essere vincolato dalle Condizioni d'uso e dall'Informativa sulla privacy di Centurion. Il  Ducatus  Coin (la \"Coin\") emesso da Centurion Global è destinato ad acquirenti qualificati che capiscono e accettano i rischi associati alla proprietà di beni digitali come la moneta. Ogni acquirente è consigliato di condurre la propria due diligence come nessuno di Centurion Global, le sue consociate fornisce alcuna consulenza di investimento, consulenza aziendale o consulenza fiscale o legale.<br><br> LE INFORMAZIONI FORNITO SU QUESTO SITO NON è PER CIRCULATION, DISPLAY, RECEPTION O DISTRIBUTION IN SINGAPORE (INCLUDING TO THE PUBLIC OR ANY SECTION OF THE PUBLIC IN SINGAPORE) O QUALSIASI ALTRA JURISDICTION DOVE I PRODOTTI O I Servizi DI CENTURION O ITS AFFILIATES SAREBBE PROIBITO CON UNA Licenza RICHIESTA O EDIE. NÉ CENTURION NOR ANY OF ITS AFFILIATES HEREBY OFFERS ANY SERVICE THAT WOULD A PAYMENT SERVICE FOR PURPOSES OF THE PAYMENT SERVICES ACT 2019, OR ANY OTHER ACTIVITY SUBJECT TO REGULATION BY THE MONETARY AUTHORITY OF SINGAPORE, IN SINGAPORE OR TO ANY PERSON IN SINGAPORE. LA MONETA NON È DISPONIBILE PER LA VENDITA DA CENUTURION A SINGAPORE."
-        },
-        "GOLD_LOTTERY": {
-            "TITLE": "Gold Lottery",
-            "NAV": {
-                "TITLE_1": "Registrazione",
-                "TITLE_2": "Verifica"
-            },
-            "REGISTRATE": {
-                "TEXT_1": "Compilail modulo per collegare la tua gold card, DUC, wallet DUCX per ricevere DUC e GOLD TOKEN",
-                "TEXT_2": "Inserisci il codice privato della carta",
-                "ERROR_1": "Il codice è già registrato!",
-                "ERROR_2": "Codice non valido!",
-                "TEXT_3": "Inseriscil’indirizzo DUC",
-                "PLACEHOLDER_1": "Inseriscil’indirizzo Ducatus",
-                "ERROR_3": "Indirizzo non valido!",
-                "TEXT_4": "Inseriscil’indirizzo DUCX",
-                "ERROR_4": "Indirizzo non valido!",
-                "PLACEHOLDER_2": "Inseriscil’indirizzo DucatusX"
-            },
-            "BUTTON": "Prossimo Passaggio",
-            "CHECK": {
-                "TEXT_1": "Compila il modulo per verificare la registrazione della tua carta",
-                "TEXT_2": "Inserisci il codice pubblico",
-                "ERROR_1": "Codice non valido!",
-                "ERROR_2": "Codice non registrato!",
-                "TEXT_3": "Inseriscil’indirizzo DUC",
-                "ERROR_3": "Indirizzo non valido!",
-                "TEXT_4": "Inseriscil’indirizzo DUCX",
-                "ERROR_4": "Indirizzo non valido!"
-            },
-            "INFO": {
-                "TEXT_1": "Oro:",
-                "TEXT_2": "bar",
-                "TEXT_3": "coin",
-                "TEXT_4": "Data di acquisto:",
-                "TEXT_5": "Purezza:",
-                "TEXT_6": "99.999%",
-                "TEXT_7": "Nazione:",
-                "TEXT_8": "Peso:",
-                "TEXT_9": "g",
-                "TEXT_10": "Prezzo oro, $/grammo:",
-                "TEXT_11": "$",
-                "TEXT_12": "Certificato:",
-                "TEXT_13": "Data produzione:",
-                "TEXT_14": "Indirizzi bonus:",
-                "TEXT_15": "DUC diretto a questo indirizzo",
-                "TEXT_16": "GOLD DUCX token diretto a questo indirizzo"
-            }
-        },
-        "DUCATUSX": {
-            "TITLE": "DucatusX",
-            "CONTENT": {
-                "TITLE": "Informazioni su DucatusX",
-                "TEXT": "Creato per supportare le transazioni peer-to-peer, nonché la creazione di contratti intelligenti, DucatusX è un fork della blockchain di Ethereum. Ma a differenza di Ethereum, DucatusX utilizza un algoritmo di consenso \"Proof of Authority\" che riduce significativamente i costi di manutenzione. In futuro, si prevede di passare a \"Proof of Stake\", dando agli utenti ancora più fiducia nella scelta di DucatusX per i loro progetti. Su DucatusX, i blocchi vengono prodotti regolarmente da 3 nodi collaudati e protetti, con conseguente costo stabile e velocità affidabile di produzione dei blocchi."
-            },
-            "BLOCK_1": {
-                "TITLE": "Perchè Ducx",
-                "TEXT": "Forte sostegno della comunità",
-                "TEXT_1": "Progetti affidabili,<br> nessun gettone truffa consentito",
-                "TEXT_2": "Commissioni più basse,<br> ricompense di staking",
-                "TEXT_3": "Numero totale di DucX fissato al massimo 777.874.204"
-            },
-            "BLOCK_2": {
-                "TITLE": "Risorse Ducatusx",
-                "TEXT": "Forte sostegno della comunità",
-                "TEXT_1": "Gestisci DucatusX",
-                "TEXT_2": "Usa il nostro Portafoglio Ducatus per gestire DucatusX",
-                "TEXT_3": "Converti Ducatus in DucatusX",
-                "TEXT_4": "DucatusX può essere convertito da e in Ducatus (DUC) con un rapporto fisso di 1:10 su <a href='https://www.ducatuscoins.com/buy'>https://www.ducatuscoins.com/buy</a>",
-                "TEXT_5": "Crea token DucatusX",
-                "TEXT_6": "DucatusX supporta contratti intelligenti e ti consente di tokenizzare le tue risorse. Il processo è semplice, tutto ciò che devi fare è seguire i passaggi su <a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a>. Un token creato su DucatusX può essere venduto tramite AA + dopo essere stato accettato per la quotazione.",
-                "TEXT_7": "Crea la giusta quantità di gettoni tramite DucatusX.",
-                "TEXT_8": "Riserva/Congela i token a indirizzi specifici.",
-                "TEXT_9": "Crea un contratto di crowdsale utilizzando il token creato, non è necessario crearne uno nuovo.",
-                "TEXT_10": "Puoi distribuire i token da solo.",
-                "TEXT_11": "Creare Crowdsale contract",
-                "TEXT_12": "Per attirare investitori nel tuo progetto, puoi creare un contratto token e venderlo tramite crowdsale. Per ottenere i token del progetto, gli acquirenti dovranno inviarti DucX, che potrai quindi spendere per le esigenze del progetto. <br><a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a>",
-                "TEXT_13": "Include la funzionalità dei contratti token",
-                "TEXT_14": "Distribuzione automatica dei gettoni durante un investimento",
-                "TEXT_15": "Imposta le date di inizio e fine per l'ICO",
-                "TEXT_16": "Modifica le date dell'ICO",
-                "TEXT_17": "Specifica un tasso di token",
-                "TEXT_18": "Programmi bonus (ad es. tempo, quantità di investimenti, ecc.)",
-                "TEXT_19": "Lista bianca",
-                "TEXT_20": "Investimento min / max"
-            },
-            "BLOCK_3": {
-                "TITLE": "Tech Spec (DucatusX vs Ethereum)",
-                "TEXT_1": "<b>DucatusX</b>",
-                "TEXT_2": "<b>Ethereum</b>",
-                "TEXT_3": "<p>POA</p>",
-                "TEXT_4": "<p>POW</p>",
-                "TEXT_5": "<p>432 ZH</p>",
-                "TEXT_6": "<p>2,148.98 TH</p>",
-                "TEXT_7": "<p>40 sec. stabile</p>",
-                "TEXT_8": "<p>da 15 secondi a 15 minuti, dipende dal carico di rete</p>",
-                "TEXT_9": "<p>prezzo minimo del gas = 8gwei</p><p>limite del gas = 21000</p><p>8 x 21000 = 0.000168 DUCX = 0.000084$</p>",
-                "TEXT_10": "<p>per ex prezzo del gas = 8 gwei (è troppo basso per ethereum, sconsigliato)</p><p>limite del gas = 21000</p><p>8 x 21000 = 0.000168 ETH = 0,022848$</p>",
-                "TEXT_11": "<b>DucatusX</b>",
-                "TEXT_12": "<b>Ethereum</b>",
-                "TEXT_13": "<p>Sì (Solidità), i contratti possono essere creati solo dopo l'analisi del progetto e l'approvazione dell'amministratore</p>",
-                "TEXT_14": "<p>Sì (Solidità)</p>",
-                "TEXT_15": "<p>Sì. Per motivi di sicurezza, le porte sono state aperte solo per risorse comprovate</p>",
-                "TEXT_16": "<p>sì</p>",
-                "TEXT_17": "<p>0 - al momento, tutte le transazioni incluse nel blocco. Timeout transazione = Nuovo tempo di creazione del blocco</p>",
-                "TEXT_18": "<p>34 586</p>",
-                "TABLE_TITLE_1": "Consenso",
-                "TABLE_TITLE_2": "Difficoltà",
-                "TABLE_TITLE_3": "Velocità di produzione blocchi",
-                "TABLE_TITLE_4": "Costo TX",
-                "TABLE_TITLE_5": "Supporto per Smart-contract",
-                "TABLE_TITLE_6": "RPC, supporto socket WEB",
-                "TABLE_TITLE_7": "Totale transazione in sospeso"
-            }
-        },
-        "VAUCHER": {
-            "TITLE": "Voucher"
-        }
+  "HEADER": {
+    "MENU": {
+      "HOME": "Casa",
+      "ABOUT": "A proposito di Duc",
+      "BUY": "Acquistare Duc",
+      "DUCATUSX": "DUCX",
+      "LOTTERY": "Lotteria d'oro",
+      "CONTACT": "Contatto"
     }
+  },
+  "CONTINUE": "Continua",
+  "FOOTER": {
+    "MENU": {
+      "SECTION": {
+        "SOON": "Prossimamente",
+        "ONE": {
+          "TITLE": "A PROPOSITO DI",
+          "LINK_1": "A proposito di Ducatus",
+          "LINK_2": "Ducatus aziendale",
+          "LINK_3": "Contatto"
+        },
+        "TWO": {
+          "TITLE": "Ducatus Stile di vita",
+          "LINK_1": "Ducatus Accademia",
+          "LINK_2": "Ducatus Caffè",
+          "LINK_3": "Ducatus Beneficenza"
+        },
+        "THREE": {
+          "TITLE": "Ducatus Stile di vita",
+          "LINK_1": "Ducatus Salute",
+          "LINK_2": "Ducatus Proprietà",
+          "LINK_3": "Ducatus Viaggio"
+        },
+        "FOUR": {
+          "TITLE": "Ducatus Biz",
+          "LINK_1": "Ducatus Rete",
+          "LINK_2": "D-MOB",
+          "LINK_3": "Commercianti Ducatus"
+        }
+      },
+      "LEGAL": "Legale",
+      "LEGAL_DISCLAIMER": "Legal Disclaimer",
+      "TERMS": "Termini & Condizioni"
+    }
+  },
+  "APPS": {
+    "TITLE": "Installa il portafoglio Ducatus",
+    "SUBTITLE": "Acquista, archivia e vendi Cryptos",
+    "TEXT_1": "Come ottenere Ducatus Coin?",
+    "TEXT_2": "La tua esperienza con Ducatus Coin inizia quando scarichi l'e-wallet Ducatus."
+  },
+  "PRIVACY": {
+    "TEXT": "Questo sito Web utilizza i cookie per assicurarti la migliore esperienza sul nostro sito Web. Continuando a utilizzare questo sito Web, accetti il loro utilizzo.",
+    "BUTTON_ACCEPT": "Accettare",
+    "BUTTON_DECLINE": "Declino"
+  },
+  "PAGE": {
+    "MAIN": {
+      "SLIDER": {
+        "ONE": {
+          "TITLE": "Ducatus Coin",
+          "TEXT": "Ispirato all'antica moneta di scambio romana e alimentato dallo spirito rivoluzionario che ha creato la moneta digitale, Ducatus Coin presenta una forma alternativa di scambio finanziario - inclusiva, unica e che offre possibilità illimitate.",
+          "BUTTON": "Scarica il white paper"
+        },
+        "TWO": {
+          "TITLE": "Criptovaluta per la vita di tutti i giorni",
+          "TEXT": "Goditi la libertà di transazioni quotidiane senza contanti, senza confini e sicure, dall'acquisto del caffè del mattino all'acquisto della casa dei tuoi sogni, ora tutto possibile con Ducatus Coin.",
+          "BUTTON": "Scarica il white paper"
+        },
+        "THREE": {
+          "TITLE": "Sostenere l'economia digitale",
+          "TEXT": "Con la distribuzione, la convertibilità e l'usabilità (DUC) al centro, Ducatus Coin incoraggia l'uso pratico e l'applicazione della criptovaluta nella vita quotidiana.  Questi tratti sono fondamentali per aiutare a costruire una solida criptoeconomia per il futuro.",
+          "BUTTON": "Scarica il white paper"
+        }
+      },
+      "FINANCIAL": {
+        "TITLE": "Una nuova evoluzione finanziaria",
+        "SUBTITLE": "Essere la criptovaluta più popolare e utilizzabile del mondo ... ",
+        "TEXT_1": "Un Ducatus per persona sul pianeta. <br><br> Basato sui principi del matematico italiano Leonardo Fibonacci, Ducatus ha generato un totale di 7.778.742.049 criptovalute. Una volta distribuite tutte queste monete, il loro numero sarà simile al numero di persone sul nostro pianeta. <br><br> La visione per Ducatus Coin è audace. Ma con una combinazione di infrastruttura digitale di livello mondiale, un potente sistema di distribuzione di rete e una suite di attività correlate alla criptoeconomia, è un obiettivo che non è impossibile da raggiungere.",
+        "TEXT_2": "I proprietari di monete Ducatus ora possono accedere a una vasta gamma di prodotti e servizi sia da parte delle aziende di cripto-economia Ducatus che da commercianti di terze parti. Queste attività di cripto-economia vengono implementate in tutto il mondo in parallelo con la distribuzione delle nostre monete per dimostrare -applicazioni mondiali non solo per le monete Ducatus ma anche per le criptovalute nel loro insieme.",
+        "BUTTON": "Scopri di più"
+      },
+      "SECTION_1": {
+        "TITLE_1": "Le comunità diffondono le tecnologie. <br> Aziende come Ducatus le rendono tendenze dominanti.",
+        "TITLE_2": "Ducatus sviluppa <br> commercialmente le monete",
+        "TEXT_1": "Le monete Ducatus sono pre-minate e vendute, quindi vengono investiti i profitti per costruire il brand.",
+        "TEXT_2": "La tecnologia Ducatus Coin è sviluppata internamente sulla base del nostro piano strategico di business a lungo termine."
+      },
+      "SECTION_2": {
+        "LEFT": {
+          "TITLE": "Ducatus mantiene gli standard leader di mercato",
+          "SUBTITLE_1": "Governance",
+          "TEXT_1": "Gestito da professionisti esperti con esperienze in diversi settori tra cui marketing, finanza e ingegneria",
+          "SUBTITLE_2": "Trasparenza",
+          "TEXT_2": "Team di dirigenti e azionisti visibili e accessibili",
+          "SUBTITLE_3": "Conformità",
+          "TEXT_3": "Collabora con gli enti governativi e rispetta i regolamenti stabiliti dalle autorità"
+        },
+        "RIGHT": {
+          "TITLE": "Ducatus è un business, <br> non un progetto tecnologico",
+          "TEXT_1": "Istituito <br> nel 2016",
+          "TEXT_2": "Team di gestione globale di grande esperienza",
+          "TEXT_3": "Team di vendita globale dinamico: Networking Marketing Strategy",
+          "TEXT_4": "Quasi 1 miliardo di monete Ducatus vendute in oltre 180 paesi a partire da gennaio 2020"
+        }
+      },
+      "USABILITY": {
+        "TITLE": "Usabilità con la Ducatus Crypto-Economy",
+        "SUBTITLE": "Usa le monete Ducatus per acquistare caffè, prenotare una vacanza, acquistare souvenir. Se lo desideri, puoi persino acquistare proprietà o la casa dei tuoi sogni. Questi e altri scambi finanziari sono resi possibili dall'esclusiva cripto-economia Ducatus.",
+        "TEXT": "Ducatus ritiene che l'usabilità sia l'ultima misura di una valuta legittima. A supporto di questa visione, sono state create le società affiliate Ducatus che offrono servizi  di base per garantire e facilitare l'utilizzo agli utenti Ducatus Coin e ad altri utenti di crypto. Queste aziende Ducatus sono i cardini della cripto-economia Ducatus. Dall'acquisto di un espresso alla prenotazione di una camera in un hotel di lusso, le transazioni che erano solo in contanti ora possono essere cashless, attraverso l'uso di Ducatus Coin."
+      }
+    },
+    "NEWMAIN": {
+      "SECTION": {
+        "ONE": {
+          "TITLE": "Una nuova evoluzione finanziaria",
+          "SUBTITLE": "Essere la criptovaluta più popolare e utilizzabile del mondo ...",
+          "TEXT": "Un Ducatus per persona sul pianeta. Basato sui principi del matematico italiano Leonardo Fibonacci, Ducatus ha generato un totale di 7.778.742.049 criptovalute. Una volta distribuite tutte queste monete, il loro numero sarà simile al numero di persone sul nostro pianeta. <br><br> La visione per Ducatus Coin è audace. Ma con una combinazione di infrastruttura digitale di livello mondiale, un potente sistema di distribuzione di rete e una suite di attività correlate alla criptoeconomia, è un obiettivo che non è impossibile da raggiungere. <br><br> I proprietari di monete Ducatus ora possono accedere a una vasta gamma di prodotti e servizi sia da parte delle aziende di cripto-economia Ducatus che da commercianti di terze parti. Queste attività di cripto-economia vengono implementate in tutto il mondo in parallelo con la distribuzione delle nostre monete per dimostrare -applicazioni mondiali non solo per le monete Ducatus ma anche per le criptovalute nel loro insieme.",
+          "BUTTON": "Scopri di più >"
+        },
+        "TWO": {
+          "TITLE": "Le comunità diffondono le tecnologie. <br> Aziende come Ducatus le rendono tendenze dominanti.",
+          "SUBTITLE": "Ducatus sviluppa commercialmente le monete",
+          "TEXT_1": "Le monete Ducatus sono pre-minate e vendute, quindi vengono investiti i profitti per costruire il brand.",
+          "TEXT_2": "La tecnologia Ducatus Coin è sviluppata internamente sulla base del nostro piano strategico di business a lungo termine."
+        },
+        "THREE": {
+          "TITLE": "Ducatus mantiene gli standard leader <br> di mercato",
+          "TITLE_2": "Ducatus è un business, non un <br> progetto tecnologico",
+          "ICONS": {
+            "TITLE_1": "Governance",
+            "TEXT_1": "Gestito da professionisti esperti con esperienze in diversi settori tra cui marketing, finanza e ingegneria",
+            "TITLE_2": "Trasparenza",
+            "TEXT_2": "Team di dirigenti e azionisti visibili e accessibili",
+            "TITLE_3": "Conformità",
+            "TEXT_3": "Collabora con gli enti governativi e rispetta i regolamenti stabiliti dalle autorità",
+            "TEXT_4": "Istituito <br> nel 2016",
+            "TEXT_5": "Team di gestione globale di grande esperienza",
+            "TEXT_6": "Team di vendita globale dinamico: Networking Marketing Strategy",
+            "TEXT_7": "Quasi 1 miliardo di monete Ducatus vendute in oltre 180 paesi a partire da gennaio 2020"
+          }
+        },
+        "FOUR": {
+          "TITLE": "Usabilità con la Ducatus <br> Crypto-Economy",
+          "TEXT": "Usa le monete Ducatus per acquistare caffè, prenotare una vacanza, acquistare souvenir. Se lo desideri, puoi persino acquistare proprietà o la casa dei tuoi sogni. <br><br> TQuesti e altri scambi finanziari sono resi possibili dall'esclusiva cripto-economia Ducatus. Ducatus ritiene che l'usabilità sia l'ultima misura di una valuta legittima. A supporto di questa visione, sono state create le società affiliate Ducatus che offrono servizi di base per garantire e facilitare l'utilizzo agli utenti Ducatus Coin e ad altri utenti di crypto. Queste aziende Ducatus sono i cardini della cripto-economia Ducatus. Dall'acquisto di un espresso alla prenotazione di una camera in un hotel di lusso, le transazioni che erano solo in contanti ora possono essere cashless, attraverso l'uso di Ducatus Coin."
+        }
+      }
+    },
+    "ABOUT": {
+      "TITLE": "Informazioni su Ducatus Coin",
+      "SECTION_1": {
+        "TITLE": "Informazioni su Ducatus Coin",
+        "TEXT": "Conveniente, veloce e sicuro, Ducatus Coin è una criptovaluta creata per l'usabilità a lungo termine. Ducatus Coin è l'unica criptovaluta supportata dall'esclusiva Ducatus Crypto-Economy, un gruppo di aziende affiliate Ducatus in crescita , transazioni senza contanti per le necessità di base della vita: cibo, vestiti, alloggio, riposo e relax e altro ancora."
+      },
+      "SECTION_2": {
+        "TITLE": "Vantaggi della moneta Ducatus",
+        "SUBTITLE": "Ducatus Coin combina i vantaggi di Bitcoin con un modello di business strategico lungimirante: la Ducatus Crypto-Economy.",
+        "LIST": {
+          "TITLE_1": "Ducatus Coin è altamente sicuro",
+          "TEXT_1": "La migliore sicurezza del settore grazie a una tecnologia in costante evoluzione",
+          "TITLE_2": "Ducatus Coin è più veloce",
+          "TEXT_2": "Trasferimenti di fondi 10 volte più rapidi rispetto a Bitcoin grazie a tempi di blocco di 1 minuto",
+          "TITLE_3": "La moneta Ducatus non ha confini",
+          "TEXT_3": "Trasferisci fondi in qualsiasi parte del mondo a costi minimi",
+          "TITLE_4": "Ducatus Coin ti mette al comando",
+          "TEXT_4": "Tutti i vantaggi di un sistema finanziario globale direttamente sul tuo smartphone",
+          "TITLE_5": "Ducatus Coin è innovativo",
+          "TEXT_5": "Supportato da un'infrastruttura strategica progettata per promuovere l'accettazione e l'adozione globale della criptovaluta",
+          "TITLE_6": "Ducatus Coin è professionale",
+          "TEXT_6": "Il management di Ducatus garantisce che Ducatus Coin sia conforme alle leggi ed ai regolamenti globali"
+        }
+      },
+      "TECHNOLOGY": {
+        "TITLE": "Tecnologia delle monete Ducatus",
+        "SUBTITLE": "Ducatus Coin è un fork di Litecoin e utilizza quindi scrypt come base di un algoritmo Proof of Work.",
+        "TEXT_1": "Ducatus Blockchain",
+        "TEXT_2": "Codice sorgente"
+      },
+      "MILESTONES": {
+        "TITLE": "Pietre miliari",
+        "LIST": {
+          "YEAR_15": "Giugno 2020",
+          "TEXT_15": "<b>L'acquisto di monete Ducatus con Bitcoin, Ethereum e carta di credito è diventato possibile attraverso il Portafoglio Ducatus aggiornato</b>",
+          "YEAR_14": "Aprile 2020",
+          "TEXT_14": "Un fork della blockchain di Ethereum, DucatusX è stato creato per supportare sia le transazioni che la creazione di contratti intelligenti",
+          "YEAR_13": "Marzo 2020",
+          "TEXT_13": "Le monete Ducatus e l'oro fisico (sotto forma di monete e lingotti) sono stati registrati sulla blockchain e offerti come un unico pacchetto tramite Remus Gold",
+          "YEAR_12": "Febbraio 2020",
+          "TEXT_12": "L'acquisto online di monete Ducatus è iniziato tramite ducatuscoins.com",
+          "YEAR_11": "Gennaio 2020",
+          "TEXT_11": "Viene lanciato Portafoglio Ducatus multivaluta",
+          "YEAR_10": "Dicembre 2019",
+          "TEXT_10": "1 miliardo di monete Ducatus sono state vendute dalla sua introduzione nel 2017",
+          "YEAR_9": "Ottobre 2019",
+          "TEXT_9": "È stato lanciato il Portafoglio Ducatus multivaluta.",
+          "YEAR_8": "Gennaio 2019",
+          "TEXT_8": "Ducatus è stato elencato come 10 fornitori di soluzioni Blockchain in più rapida crescita da tenere d'occhio nel 2019 da APAC Business Headlines.",
+          "YEAR_7": "Marzo 2018",
+          "TEXT_7": "La moneta Ducatus è stata quotata nell'exchanghe di criptovaluta Coinbene.",
+          "YEAR_6": "Gennaio 2018",
+          "TEXT_6": "Ducatus ha sponsorizzato Blockchain Cruise Asia, un importante evento blockchain e criptovaluta regionale.",
+          "YEAR_5": "Ottobre 2017",
+          "TEXT_5": "La blockchain Ducatus è stata lanciata e la prima transazione live pubblica Ducatus è stata eseguita dal nostro CEO Ronny Tome con Dustin Trammell al vertice europeo Ducatus di Roma.",
+          "YEAR_4": "Settembre 2017",
+          "TEXT_4": "L'estrazione su blockchain è stata completata per tutte le monete Ducatus.",
+          "YEAR_3": "Agosto 2017",
+          "TEXT_3": "L'ufficio aziendale Ducatus è stato inaugurato a Singapore.",
+          "YEAR_2": "Luglio 2017",
+          "TEXT_2": "La settimana di lavoro sulla tecnologia Ducatus è stata ospitata da Dustin Trammell al DEFCON XXV di Las Vegas.",
+          "YEAR_1": "Marzo 2017",
+          "TEXT_1": "Il marchio Ducatus e il primo white paper tecnico Ducatus sono stati lanciati al Vertice globale Ducatus di Dubai."
+        }
+      }
+    },
+    "BUY": {
+      "TITLE": "Comprare DUC",
+      "FORM": {
+        "RADIO": {
+          "PRICE": "Prezzo DUC = {{ curName }} {{ ducRate }}",
+          "TEXT": "Seleziona tra le seguenti opzioni e ricevi il numero corrispondente di hash per il sorteggio",
+          "LINK": "(ulteriori informazioni)",
+          "TICKET": {
+            "ONE": "<br>iscrizione",
+            "MANY": "<br>inserimenti"
+          }
+        },
+        "ADDRESS": {
+          "TEXT": "Inserisci il tuo indirizzo di ricezione DUC<br>Hai bisogno di un indirizzo Ducatus? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Scarica</a> QUI il Portafoglio Ducatus!",
+          "PLACEHOLDER": "Inserisci il tuo indirizzo di ricezione DUC",
+          "ERROR": "Errore! Si prega di verificare, il formato dell'indirizzo non è corretto!"
+        },
+        "EMAIL": {
+          "TEXT": "Inserisci il tuo indirizzo e-mail in modo che possiamo contattarti se TU SEI il VINCITORE",
+          "PLACEHOLDER": "Inserisci il tuo indirizzo email"
+        },
+        "RESULT": {
+          "TEXT_1": "Invia ",
+          "TEXT_2": " al seguente indirizzo",
+          "QR": {
+            "TEXT": "O scansiona questo codice QR"
+          },
+          "ERROR": "qualcosa è andato storto, riprovare più tardi",
+          "NOTE": "Tieni presente che potrebbero essere necessari fino a {{ time }} prima di ricevere i DUC nel tuo wallet <br><br>"
+        },
+        "SUBMIT": "Invia"
+      },
+      "INFO": {
+        "TITLE": "Scopri, impara e guadagna facendo parte dell'Economia Cashless Ducatus.",
+        "LINK": {
+          "ONE": "Fai trading di crypto su AA +",
+          "TWO": "Usa DUC e acquista online oggetti amati"
+        }
+      },
+      "REFERRAL": {
+        "TITLE": "Link di riferimento",
+        "SUBTITLE": "Condividi questa straordinaria opportunità con i tuoi amici e familiari e ricevi un bonus di segnalazione DUC del 5% per qualsiasi acquisto effettuato utilizzando il link seguente",
+        "LABEL": "Inserisci il tuo indirizzo Ducatus",
+        "PLACEHOLDER": "Inserisci il tuo indirizzo Ducatus",
+        "ERROR": "Errore! Si prega di verificare, il formato dell'indirizzo non è corretto!",
+        "LINK": "Il tuo link di riferimento"
+      },
+      "LOTTERY": {
+        "TITLE": "Un pezzo di Kingsway Square a Liverpool ora può essere tuo! ",
+        "BLOCK": {
+          "PRIZE": {
+            "TITLE": "Acquista DUC e hai la possibilità di vincere un appartamento di lusso da $ 150.000 più l'abbonamento per le partite del Liverpool FC ad Anfield .",
+            "SUBTITLE": "Nel leggendario luogo di nascita dei Beatles e del Liverpool FC, sorgerà un nuovo punto di riferimento: Kingsway Square. Una miscela di design intelligente, materiali di alta qualità e straordinarie caratteristiche originali, questa struttura residenziale offre una vista mozzafiato sullo skyline della città di Liverpool.",
+            "ITEM1": "Situato a soli 4 minuti dal Princess Dock, sul famoso lungomare di Liverpool e sede dei principali sviluppi futuri del Regno Unito",
+            "ITEM2": "Il primo blocco dovrebbe essere completato Q3 2021",
+            "ITEM3": "Opzione di contratto di leasing disponibile, con rendimenti interessanti",
+            "ITEM4": "Affitto di 250 anni"
+          },
+          "HOW": {
+            "TITLE": "Come puoi vincere un monolocale di lusso a Kingsway Square e gli abbonamenti del Liverpool FC?",
+            "ITEM1": "Acquista DUC in modo da raggiungere il nostro obiettivo di 3 milioni di Ducatus venduti entro il 30 novembre 2020.",
+            "ITEM2": "Una volta raggiunto l'obiettivo di 3 milioni di DUC venduti, inizia il conto alla rovescia di 8 giorni per il Lucky Draw Day. Ovviamente, maggiore è il tuo acquisto di DUC, maggiori sono le possibilità di vincita.",
+            "ITEM3": "I vincitori verranno estratti tramite un'estrazione casuale in smart contract. Gli hash vincenti verranno determinati e pubblicati su questa pagina e il vincitore verrà informato tramite e-mail."
+          },
+          "WINNER": {
+            "TITLE": "HASH VINCENTE"
+          },
+          "WAITING": {
+            "TITLE": "Attendere prego",
+            "TEXT": "calcolo vincitore ..."
+          },
+          "COUNTDOWN": {
+            "TITLE": "Conto alla rovescia per disegnare la data"
+          },
+          "PROGRESS": {
+            "TITLE": "% dell'obiettivo di vendita raggiunto prima dell'inizio del conto alla rovescia"
+          },
+          "TICKETS": {
+            "LINK": "Elenco di {{ tickets_amount }} voci di hash totali →",
+            "TEXT": "Numero di DUC"
+          },
+          "INFO": {
+            "TITLE": "Come puoi vincere uno di questi fantastici premi?",
+            "TEXT": "<p class=\"lottery-info-text\">Ogni acquirente di DUC ha la possibilità di vincere. Più alto è il tuo acquisto DUC, maggiori sono le possibilità di vincita che ottieni.</p> <p class=\"lottery-info-text\">Una volta raggiunto l'obiettivo di {{ duc_amount }} DUC venduti, inizia il conto alla rovescia di 8 giorni per il Lucky Draw Day. La vendita di DUC continua fino a quando il conto alla rovescia raggiunge le 00:00:00:00, il che attiverà l'estrazione.</p> <p class=\"lottery-info-text\">Attraverso una casuale pareggio contratto di intelligente, i vincitori hash es saranno determinati e pubblicati in questa pagina e il vincitore s saranno informati via e-mail.</p>"
+          }
+        }
+      },
+      "MODAL": {
+        "TERMS": {
+          "TEXT": "Spuntare la casella di seguito per confermare di riconoscere e accettare i <a href='assets/downloads/pdf/Lucky_Draw_Terms_Conditions.pdf' target='_blank'> Termini e condizioni </a> dell'acquisto DUC. La moneta Ducatus non è disponibile per l'acquisto da Centurion a Singapore.",
+          "AGREE": "sono d'accordo con i termini e le condizioni",
+          "BUTTON": "Vicino"
+        },
+        "INFO": {
+          "TEXT": "<p>L'importo esatto di DUC verrà inviato al wallet DUC indicato come da pagamento BTC / ETH ricevuto. Tuttavia, se il denaro ricevuto è inferiore all'importo in USD dichiarato per il pacchetto scelto, il sistema di default invierà solo il numero di hash per l'estrazione relativo al pacchetto inferiore.</p><p>Per acquistare DUC in multipli di 1000 USD, è possibile farlo in transazioni separate, poiché le hash assegnate per transazione sono limitate a 150, equivalenti a un acquisto di 1000 USD.</p>",
+          "BUTTON": "Vicino"
+        }
+      }
+    },
+    "TICKETS": {
+      "TITLE": "Comprare DUC",
+      "TABLE": {
+        "TITLE": "Voci / hash idonei per il sorteggio"
+      }
+    },
+    "CONTACT": {
+      "TITLE": "Contatto",
+      "TEXT": "Centurion Global Limited <br> Harneys Services (Cayman Limited) <br> 4th Floor, Harbor Place, 103 South Church Street <br> Grand Cayman <br> PO Box 10240, KY1-1002 <br> Isole Cayman <br> <br>",
+      "FORM": {
+        "TEXT": "Contattateci per maggiori dettagli",
+        "TEXT_1": "Il tuo nome",
+        "TEXT_2": "Il tuo numero di telefono",
+        "TEXT_3": "La tua email",
+        "TEXT_4": "Il tuo messaggio",
+        "BUTTON": "INCHIESTA"
+      }
+    },
+    "LEGAL": {
+      "TITLE": "Legal",
+      "SECTION": {
+        "ONE": {
+          "TITLE": "Termini e condizioni generali",
+          "TEXT": "In questi Termini generali & Condizioni, il Venditore e le sue consociate e società correlate insieme sono qui di seguito indicati come \"Centurion Global Limited\", \"noi\", \"noi\" o \"nostro\" e l'Acquirente è qui in seguito indicato come il \"Acquirente\",\"tu\" o \"tuo\".",
+          "SUBTITLE_1": "1. Dichiarazioni di non responsabilità",
+          "TEXT_1": "<li>a. L'acquirente accetta e riconosce espressamente di stipulare il Contratto a proprio rischio e pericolo. Nella massima misura consentita dalla legge applicabile, Centurion Global Limited non produce rappresentazioni o garanzie di alcun tipo, espresso o implicito, per quanto riguarda il funzionamento o le prestazioni delle monete, o le informazioni, i contenuti, i materiali, i prodotti (comprese le monete o la blockchain, i portafogli criptovaluta e il relativo software) o qualsiasi altro aspetto o elemento dei prodotti e servizi di Centurion Global Limited inclusi o altrimenti resi disponibili attraverso il sito web , se non diversamente specificato per iscritto.</li> <li>b. L'acquirente conferma di avere una comprensione adeguata del background, dei rischi, dell'utilizzo e delle funzioni delle valute crittografiche e del software basato su blockchain, e che non si basa su dichiarazioni o rappresentazioni fatte da Centurion Global Limited o da uno dei suoi associati in merito a queste questioni quando stipula il Contratto. L'Acquirente ha valutato in modo indipendente tutti i rischi, l'idoneità e i meriti delle Monete e ha ottenuto, ove necessario, una consulenza professionale pertinente e indipendente.</li> <li>c. L'acquirente riconosce e concorda sul fatto che, nella piena misura consentita dalla legge, dalla regolamentazione o dallo statuto applicabile, la stessa Centurion Global Limited e tutte le entità o le persone associate non hanno alcuna responsabilità (compresi i danni indiretti, accessori, speciali, esemplari o conseguenti, alla perdita di profitti, all'avviamento o ai dati) derivanti o relativi all'uso o all'incapacità di utilizzare le monete per i beni/servizi forniti dal Gruppo Ducatuo o da qualsiasi attività associata o da società terze.</li> <li>d. Centurion Global Limited non produce alcuna rappresentanza o garanzia e declina espressamente tutte le rappresentanze e le garanzie, espressa o implicita, comprese eventuali garanzie implicite di merchantability e idoneità per uno scopo particolare in relazione alle Monete.</li> <li>e. Centurion Global Limited non garantisce o garantisce in alcun modo che i suoi prodotti o servizi siano privi di virus o altri componenti dannosi. Centurion Global Limited non sarà ritenuta responsabile per danni di qualsiasi tipo derivanti o derivanti dall'uso di uno qualsiasi dei prodotti o servizi Centurion Global Limited, inclusi, ma non solo, danni indiretti, incidentali, punitivi o conseguenti</li> <li>f. Centurion Global Limited declina la responsabilità in caso di furto, hacking, attacchi informatici o attacchi alle blockchain e non garantisce in alcun modo la loro sicurezza. Tutti i rischi o le perdite, incluse ma non correlate alle perdite di monete o ai danni all'hardware dovuti a queste situazioni, saranno solo dell'Acquirente.</li> <li>g. L'acquirente si assumerà la responsabilità esclusiva del rispetto delle leggi locali in relazione alle transazioni, incluse, a dire, a meno che non si limitano a tutte le implicazioni fiscali del Contratto.</li> <li>h. L'acquirente accetta che non sta acquistando monete per scopi di investimento, speculazione per la rivendita immediata o altro scopo finanziario.</li> <li>i. L'acquirente accetta che tutti gli acquisti delle Monete da Centurion Global Limited siano effettuati dall'Acquirente per il proprio utilizzo per l'acquisto dei beni/servizi forniti da Centurion Global Limited o da qualsiasi attività associata o da attività di terze parti e l'Acquirente non utilizzerà le Monete per fare un'offerta secondaria al pubblico. Se l'Acquirente intende farlo, l'Acquirente è l'unico responsabile del rispetto di tutte le leggi e regolamenti pertinenti, compresi eventuali requisiti di registrazione, se presenti, applicabili a tali offerte.</li> <li>j. DISCLAIMER US PERSONS: THE COINS SOLD PER CENTURION, AS DESCRIBED HEREUNDER MAY NOT BE OFFERED, SOLD OR DISTRIBUTED, DIRECTLY OR INDIRECTLY, IN THE UNITED STATES OR PER THE ACCOUNT OR RISK OF A U.S. PERSON(AS DEFINED BELOW). IL CONTENUTO DI QUESTO DOCUMENTO NON PUÒ ESSERE REGARDED AS AN OFFER OR INVITATION PER U.S. PERSONS To ACQUIRE COINS O AN INVITATION TO SELL OR MARKET I COINS. UNITED STATES('U.S.') CITTADINI, U.S.RESIDENTS, U.S.GREEN CARD HOLDERS O CLIENTI CON A U.S.MAILING ADDRESS, U.S.TELEPHONE NUMBER, SONO TUTTI U.S.PERSONS. UNA PERSONA È UNA 'U.S.RESIDENT' SE HE / SHE IS PRESENT IN THE U.S.FOR MORE THAN 31 DAYS IN THE CURRENT CALENDAR YEAR And PER UNA MEDIA DI AT LEAST 183 GIORNI PER IL CALENDARIO CORRENTE ANNO E IL 2 PRECEDENTI TEMPO DI CALENDARIO. NOTA NOTA CHE LA DEFINIZIONE DEL DUCATUS GROUP' S DI U.S.PERSON NON può ESSERE LA SAME AS THE DEFINITION USED BY THE U.S.INLAND REVENUE Services PER U.S.TAX PURPOSES O BY THE U.S.S.SECURITIES AND EXCHANGE COMMISSION.</li>",
+          "SUBTITLE_2": "2. Rischi relativi alle monete",
+          "TEXT_2": "L'acquisto di monete comporta rischi. Non vi è alcuna garanzia che qualsiasi acquisizione di monete si tradurrà in voi o qualsiasi altra persona godendo di qualsiasi forma di guadagno finanziario o economico. L'utente riconosce e accetta che Centurion Global Limited non ha fatto dichiarazioni, garanzie, promesse, garanzie, proiezioni, suggerimenti o implicazioni per voi su prospettive o guadagni futuri, o che guadagnerai denaro o realizzerai qualsiasi rendimento finanziario o di altro tipo, a seguito della tua acquisizione o proprietà e/o dell'uso di monete, e che Centurion Global Limited non ha autorizzato alcuna dichiarazione o comunicazione da parte di nessun'altra persona. L'utente è consapevole del fatto che si può subire una quantità di perdite o danni finanziari, sostanziali o meno, derivanti dall'acquisto o dal trattamento delle monete.<br><br> Hai considerato e sei a tuo agio con tutti questi rischi, compresi, ma non limitati a quelli descritti di seguito, e non porterà un'azione contro o tenterà di ritenere il Centurion Global Limited responsabile in alcun modo o riguardo. Ove necessario, l'utente è d'accordo e rappresenta che si otterrà o avete ottenuto una consulenza professionale indipendente legale e finanziaria."
+        },
+        "TWO": {
+          "TITLE": "Impressum",
+          "TEXT": "Il sito ducatus Coins è di proprietà di:<br> Centurion Global Limited<br> Harneys Services (Cayman Limited)<br> 4th Floor, Harbour Place, 103 South Church Street<br> Grand Cayman<br> PO Box 10240, KY1-1002<br> Cayman Islands <br><br> <b>Chief Executive Officer: Ronny Tome</b> <br> Per qualsiasi domanda si può avere in merito alla nostra azienda, inviarci una e-mail: support@ducatus.net. <br><br> <b>Diritti di Proprietary Rights proprietà</b> <br> I materiali presenti su questo sito Web, comprese le informazioni disponibili su o attraverso questo sito web (i \"Contenuti\"), sono protetti da copyright, marchio e altre forme di diritti di proprietà. Tutti i diritti, il titolo e l'interesse per i Contenuti sono di proprietà, autorizzati o controllati dalla Società.<br><br> <b>Contenuto</b><br> Salvo quanto altrimenti previsto, nessuna parte del Contenuto di questo sito web deve essere riprodotta, ripubblicata, caricata, pubblicata, trasmessa o altrimenti distribuita in alcun modo, senza il previo permesso scritto della Società.<br><br> La modifica di uno qualsiasi dei Contenuti o l'utilizzo dei Contenuti per qualsiasi altro scopo sarà una violazione del diritto d'autore della Società e di altri diritti di proprietà intellettuale. La grafica e le immagini di questo sito web sono protette da copyright e non possono essere riprodotte o appropriate in alcun modo senza il permesso scritto dei rispettivi proprietari dei diritti d'autore. La progettazione e la disposizione di questo sito web è protetta dalla proprietà intellettuale e da altre leggi e non può essere copiata o riprodotta in tutto o in parte.<br><br> Nessun logo, grafico, suono, immagine, testo o qualsiasi altro contenuto di questo sito web può essere copiato, riprodotto o trasmesso a meno che non sia espressamente consentito per iscritto dalla Società."
+        },
+        "THREE": {
+          "TITLE": "Informativa sulla privacy",
+          "SUBTITLE_1": "1. Introduzione",
+          "TEXT_1": "La presente Informativa sulla privacy è progettata per informare l'utente delle nostre norme relative alla raccolta, all'utilizzo e alla divulgazione dei Dati Personali che riceviamo dall'utente, nonché per assistervi nel prendere una decisione informata prima di fornirci i tuoi Dati Personali.<br><br> In questa politica sulla privacy, \"noi\", \"noi\", \"nostro\" significa Centurion Global Limited che ha il suo ufficio registrato nelle Isole Cayman (come Controllore secondo il regolamento generale europeo sulla protezione dei dati (\"GDPR\") e le sue affiliate e società correlate vale a dire, Emperor Holdings Limited avendo il suo ufficio registrato nelle isole Cayman, nella loro qualità di Destinatari e Processori ai sensi del GDPR.<br><br> Se l'utente, in qualsiasi momento, ha domande sulla presente Informativa sulla privacy o su qualsiasi altra domanda in relazione a come possiamo gestire, elaborare e proteggere i propri dati personali, non esitate a contattare il nostro Responsabile della protezione dei dati (i cui dati di contatto sono riportati di seguito).<br><br> <a href='mailto:support@ducatus.net' target='_blank' class='a__link'>support@ducatus.net</a><br> Attenzione: Data Protection Officer <br><br> Utilizzando il Sito e/o i nostri altri servizi e/o prodotti, esprimete il vostro accordo con la presente Informativa e le condizioni di trattamento dei vostri Dati Personali contenuti nel presente documento; se non siete d'accordo con queste condizioni, non dovreste utilizzare il Sito e/o i nostri altri servizi e/o prodotti.",
+          "SUBTITLE_2": "2. Dati che raccogliamo",
+          "TEXT_2": "Dati personali: durante l'utilizzo del Sito, e/o dei nostri servizi e/o dei nostri prodotti, potremmo chiederti di fornirci Dati Personali che possono essere utilizzati per contattarti o identificarti. Per \"Dati personali\" si intendono i dati, reale o meno, di una persona che può essere identificata da tali dati, o da tali dati e altre informazioni a cui un'organizzazione ha o è probabile che abbia accesso a condizione che, nella misura in cui risiedi, o sia altrimenti soggetta alle leggi sui dati personali, una giurisdizione delle leggi pertinenti o di altre norme applicabili di cui prevedono una diversa definizione di dati personali, la definizione di \"dati personali\" in questo modo sia interpretata anche da qualsiasi altro tipo di dati che siano inclusi in tale definizione diversa. I Dati Personali che potremmo raccogliere da voi includono, ma non si limitano a, il vostro saluto, nome, azienda, designazione, settore, genere, paese di residenza, numero di contatto e uno o più indirizzi e-mail."
+        }
+      }
+    },
+    "LEGAL_DISCLAIMER": {
+      "TITLE": "Disclaimer",
+      "TEXT": "Avviso importante: www.ducatuscoins.com è di proprietà di Centurion Global Limited (\"Centurion Global\"), con sede legale presso Harneys  Services (Cayman Limited), 4th Floor Harbour Place, 103 South Church Street, Grand Cayman, PO Box 10240, KY1-1002, Isole Cayman.<br><br>Visitando questo sito, l'utente accetta di essere vincolato dalle Condizioni d'uso e dall'Informativa sulla privacy di Centurion. Il  Ducatus  Coin (la \"Coin\") emesso da Centurion Global è destinato ad acquirenti qualificati che capiscono e accettano i rischi associati alla proprietà di beni digitali come la moneta. Ogni acquirente è consigliato di condurre la propria due diligence come nessuno di Centurion Global, le sue consociate fornisce alcuna consulenza di investimento, consulenza aziendale o consulenza fiscale o legale.<br><br> LE INFORMAZIONI FORNITO SU QUESTO SITO NON è PER CIRCULATION, DISPLAY, RECEPTION O DISTRIBUTION IN SINGAPORE (INCLUDING TO THE PUBLIC OR ANY SECTION OF THE PUBLIC IN SINGAPORE) O QUALSIASI ALTRA JURISDICTION DOVE I PRODOTTI O I Servizi DI CENTURION O ITS AFFILIATES SAREBBE PROIBITO CON UNA Licenza RICHIESTA O EDIE. NÉ CENTURION NOR ANY OF ITS AFFILIATES HEREBY OFFERS ANY SERVICE THAT WOULD A PAYMENT SERVICE FOR PURPOSES OF THE PAYMENT SERVICES ACT 2019, OR ANY OTHER ACTIVITY SUBJECT TO REGULATION BY THE MONETARY AUTHORITY OF SINGAPORE, IN SINGAPORE OR TO ANY PERSON IN SINGAPORE. LA MONETA NON È DISPONIBILE PER LA VENDITA DA CENUTURION A SINGAPORE."
+    },
+    "GOLD_LOTTERY": {
+      "TITLE": "Gold Lottery",
+      "NAV": {
+        "TITLE_1": "Registrazione",
+        "TITLE_2": "Verifica"
+      },
+      "REGISTRATE": {
+        "TEXT_1": "Compilail modulo per collegare la tua gold card, DUC, wallet DUCX per ricevere DUC e GOLD TOKEN",
+        "TEXT_2": "Inserisci il codice privato della carta",
+        "ERROR_1": "Il codice è già registrato!",
+        "ERROR_2": "Codice non valido!",
+        "TEXT_3": "Inseriscil’indirizzo DUC",
+        "PLACEHOLDER_1": "Inseriscil’indirizzo Ducatus",
+        "ERROR_3": "Indirizzo non valido!",
+        "TEXT_4": "Inseriscil’indirizzo DUCX",
+        "ERROR_4": "Indirizzo non valido!",
+        "PLACEHOLDER_2": "Inseriscil’indirizzo DucatusX"
+      },
+      "BUTTON": "Prossimo Passaggio",
+      "CHECK": {
+        "TEXT_1": "Compila il modulo per verificare la registrazione della tua carta",
+        "TEXT_2": "Inserisci il codice pubblico",
+        "ERROR_1": "Codice non valido!",
+        "ERROR_2": "Codice non registrato!",
+        "TEXT_3": "Inseriscil’indirizzo DUC",
+        "ERROR_3": "Indirizzo non valido!",
+        "TEXT_4": "Inseriscil’indirizzo DUCX",
+        "ERROR_4": "Indirizzo non valido!"
+      },
+      "INFO": {
+        "TEXT_1": "Oro:",
+        "TEXT_2": "bar",
+        "TEXT_3": "coin",
+        "TEXT_4": "Data di acquisto:",
+        "TEXT_5": "Purezza:",
+        "TEXT_6": "99.999%",
+        "TEXT_7": "Nazione:",
+        "TEXT_8": "Peso:",
+        "TEXT_9": "g",
+        "TEXT_10": "Prezzo oro, $/grammo:",
+        "TEXT_11": "$",
+        "TEXT_12": "Certificato:",
+        "TEXT_13": "Data produzione:",
+        "TEXT_14": "Indirizzi bonus:",
+        "TEXT_15": "DUC diretto a questo indirizzo",
+        "TEXT_16": "GOLD DUCX token diretto a questo indirizzo"
+      }
+    },
+    "DUCATUSX": {
+      "TITLE": "DucatusX",
+      "CONTENT": {
+        "TITLE": "Informazioni su DucatusX",
+        "TEXT": "Creato per supportare le transazioni peer-to-peer, nonché la creazione di contratti intelligenti, DucatusX è un fork della blockchain di Ethereum. Ma a differenza di Ethereum, DucatusX utilizza un algoritmo di consenso \"Proof of Authority\" che riduce significativamente i costi di manutenzione. In futuro, si prevede di passare a \"Proof of Stake\", dando agli utenti ancora più fiducia nella scelta di DucatusX per i loro progetti. Su DucatusX, i blocchi vengono prodotti regolarmente da 3 nodi collaudati e protetti, con conseguente costo stabile e velocità affidabile di produzione dei blocchi."
+      },
+      "BLOCK_1": {
+        "TITLE": "Perchè Ducx",
+        "TEXT": "Forte sostegno della comunità",
+        "TEXT_1": "Progetti affidabili,<br> nessun gettone truffa consentito",
+        "TEXT_2": "Commissioni più basse,<br> ricompense di staking",
+        "TEXT_3": "Numero totale di DucX fissato al massimo 777.874.204"
+      },
+      "BLOCK_2": {
+        "TITLE": "Risorse Ducatusx",
+        "TEXT": "Forte sostegno della comunità",
+        "TEXT_1": "Gestisci DucatusX",
+        "TEXT_2": "Usa il nostro Portafoglio Ducatus per gestire DucatusX",
+        "TEXT_3": "Converti Ducatus in DucatusX",
+        "TEXT_4": "DucatusX può essere convertito da e in Ducatus (DUC) con un rapporto fisso di 1:10 su <a href='https://www.ducatuscoins.com/buy'>https://www.ducatuscoins.com/buy</a>",
+        "TEXT_5": "Crea token DucatusX",
+        "TEXT_6": "DucatusX supporta contratti intelligenti e ti consente di tokenizzare le tue risorse. Il processo è semplice, tutto ciò che devi fare è seguire i passaggi su <a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a>. Un token creato su DucatusX può essere venduto tramite AA + dopo essere stato accettato per la quotazione.",
+        "TEXT_7": "Crea la giusta quantità di gettoni tramite DucatusX.",
+        "TEXT_8": "Riserva/Congela i token a indirizzi specifici.",
+        "TEXT_9": "Crea un contratto di crowdsale utilizzando il token creato, non è necessario crearne uno nuovo.",
+        "TEXT_10": "Puoi distribuire i token da solo.",
+        "TEXT_11": "Creare Crowdsale contract",
+        "TEXT_12": "Per attirare investitori nel tuo progetto, puoi creare un contratto token e venderlo tramite crowdsale. Per ottenere i token del progetto, gli acquirenti dovranno inviarti DucX, che potrai quindi spendere per le esigenze del progetto. <br><a href='http://ducx.mywish.io/create'>http://ducx.mywish.io/create</a>",
+        "TEXT_13": "Include la funzionalità dei contratti token",
+        "TEXT_14": "Distribuzione automatica dei gettoni durante un investimento",
+        "TEXT_15": "Imposta le date di inizio e fine per l'ICO",
+        "TEXT_16": "Modifica le date dell'ICO",
+        "TEXT_17": "Specifica un tasso di token",
+        "TEXT_18": "Programmi bonus (ad es. tempo, quantità di investimenti, ecc.)",
+        "TEXT_19": "Lista bianca",
+        "TEXT_20": "Investimento min / max"
+      },
+      "BLOCK_3": {
+        "TITLE": "Tech Spec (DucatusX vs Ethereum)",
+        "TEXT_1": "<b>DucatusX</b>",
+        "TEXT_2": "<b>Ethereum</b>",
+        "TEXT_3": "<p>POA</p>",
+        "TEXT_4": "<p>POW</p>",
+        "TEXT_5": "<p>432 ZH</p>",
+        "TEXT_6": "<p>2,148.98 TH</p>",
+        "TEXT_7": "<p>40 sec. stabile</p>",
+        "TEXT_8": "<p>da 15 secondi a 15 minuti, dipende dal carico di rete</p>",
+        "TEXT_9": "<p>prezzo minimo del gas = 8gwei</p><p>limite del gas = 21000</p><p>8 x 21000 = 0.000168 DUCX = 0.000084$</p>",
+        "TEXT_10": "<p>per ex prezzo del gas = 8 gwei (è troppo basso per ethereum, sconsigliato)</p><p>limite del gas = 21000</p><p>8 x 21000 = 0.000168 ETH = 0,022848$</p>",
+        "TEXT_11": "<b>DucatusX</b>",
+        "TEXT_12": "<b>Ethereum</b>",
+        "TEXT_13": "<p>Sì (Solidità), i contratti possono essere creati solo dopo l'analisi del progetto e l'approvazione dell'amministratore</p>",
+        "TEXT_14": "<p>Sì (Solidità)</p>",
+        "TEXT_15": "<p>Sì. Per motivi di sicurezza, le porte sono state aperte solo per risorse comprovate</p>",
+        "TEXT_16": "<p>sì</p>",
+        "TEXT_17": "<p>0 - al momento, tutte le transazioni incluse nel blocco. Timeout transazione = Nuovo tempo di creazione del blocco</p>",
+        "TEXT_18": "<p>34 586</p>",
+        "TABLE_TITLE_1": "Consenso",
+        "TABLE_TITLE_2": "Difficoltà",
+        "TABLE_TITLE_3": "Velocità di produzione blocchi",
+        "TABLE_TITLE_4": "Costo TX",
+        "TABLE_TITLE_5": "Supporto per Smart-contract",
+        "TABLE_TITLE_6": "RPC, supporto socket WEB",
+        "TABLE_TITLE_7": "Totale transazione in sospeso"
+      }
+    },
+    "VAUCHER": {
+      "TITLE": "Voucher"
+    }
+  }
 }

@@ -1028,7 +1028,6 @@
     display: grid !important;
     grid-template-columns: repeat(auto-fill, 120px);
     justify-content: flex-start !important;
-    grid-gap: 20px;
 
     @include b(500) {
       grid-template-columns: 1fr;
@@ -1121,6 +1120,12 @@
     border: 1px solid #e9dcca;
     border-radius: 8px;
     overflow: hidden;
+    @include b(1190) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include b(700) {
+      grid-template-columns: 1fr;
+    }
     @include b(500) {
       overflow: visible;
       grid-template-columns: 1fr 1fr;
@@ -1135,6 +1140,15 @@
       justify-content: space-between;
       overflow: visible;
       grid-gap: 15px;
+      @include b(1190) {
+        grid-template-columns: repeat(4, 95px);
+      }
+      @include b(925) {
+        grid-template-columns: repeat(3, 95px);
+      }
+      @include b(740) {
+        grid-template-columns: repeat(2, 95px);
+      }
       @include b(500) {
         display: flex;
         flex-wrap: wrap;

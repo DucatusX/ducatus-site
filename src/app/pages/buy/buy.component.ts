@@ -233,7 +233,7 @@ export class BuyComponent implements OnInit, OnDestroy {
         window['jQuery']['cookie']('referral', params['referral']);
       }
     });
-
+    this.modal = true;
     window['jQuery']['cookie']('termsBuy')
       ? this.acceptModalTerms()
       : (this.modal = true);
