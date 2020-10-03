@@ -1,18 +1,31 @@
-<section class="section-header-page header-entries-page"
-  style="background-image: url(/assets/img/sections/lottery-prize-watch.png);">
+<section
+  class="section-header-page header-entries-page"
+  style="background-image: url(assets/img/sections/buy-bg.png)"
+>
   <div class="container">
-    <h1 class="h1__title-page" [innerHTML]="'PAGE.TICKETS.TITLE' | translate"></h1>
+    <h1
+      class="h1__title-page"
+      [innerHTML]="'PAGE.TICKETS.TITLE' | translate"
+    ></h1>
   </div>
 </section>
 <section class="app lottery-info-page color-page">
   <div class="container">
-
     <div class="lottery-info">
       <div id="tickets" class="lottery-info-header">
-        <span class="lottery-info-title">{{ 'PAGE.TICKETS.TABLE.TITLE' | translate }}</span>
+        <span class="lottery-info-title">{{
+          "PAGE.TICKETS.TABLE.TITLE" | translate
+        }}</span>
         <div class="lottery-info-search">
           <span class="icon icon__search"></span>
-          <input class="lottery-info-search-input" name="search" (ngModelChange)="searchChange($event)" [(ngModel)]="search" placeholder="Search hashes" type="text">
+          <input
+            class="lottery-info-search-input"
+            name="search"
+            (ngModelChange)="searchChange($event)"
+            [(ngModel)]="search"
+            placeholder="Search hashes"
+            type="text"
+          />
         </div>
       </div>
 
@@ -20,49 +33,87 @@
         <div class="lottery-info-table">
           <div class="lottery-info-table-items">
             <div class="lottery-info-table-item">
-              <span class="lottery-ingo-table-item-icon" (click)="sort('tickets_amount')"
-                      [ngClass]="{ 'icon icon__sort-dash-up': !filter, 'icon icon__sort-dash-down': filter }"></span>
+              <span
+                class="lottery-ingo-table-item-icon"
+                (click)="sort('tickets_amount')"
+                [ngClass]="{
+                  'icon icon__sort-dash-up': !filter,
+                  'icon icon__sort-dash-down': filter
+                }"
+              ></span>
             </div>
             <div class="lottery-info-table-item"><b>Address</b></div>
           </div>
 
-          
-          <div class="lottery-info-table-items" *ngFor="let item of players | filter: search | paginate: config">
+          <div
+            class="lottery-info-table-items"
+            *ngFor="let item of players | filter: search | paginate: config"
+          >
             <div class="lottery-info-table-item">{{ item.tickets_amount }}</div>
             <div class="lottery-info-table-item">
-              <a target="_blank"
-              [attr.href]="'https://insight.ducatus.io/insight#/DUC/mainnet/tx/'+ item.tx_hash">{{ item.tx_hash }}</a>
+              <a
+                target="_blank"
+                [attr.href]="
+                  'https://insight.ducatus.io/insight#/DUC/mainnet/tx/' +
+                  item.tx_hash
+                "
+                >{{ item.tx_hash }}</a
+              >
             </div>
           </div>
         </div>
 
-        <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
+        <pagination-template
+          #p="paginationApi"
+          [id]="config.id"
+          (pageChange)="config.currentPage = $event"
+        >
           <div class="lottery-info-paginaton">
-            <button class="lottery-info-paginaton-item lottery-info-paginaton-item-arrow lottery-info-paginaton-item-arrow-left" (click)="p.previous(); startScrollTo('tickets');" [disabled]="p.isFirstPage()" [class.disabled]="p.isFirstPage()">
-                <span> < </span>
+            <button
+              class="lottery-info-paginaton-item lottery-info-paginaton-item-arrow lottery-info-paginaton-item-arrow-left"
+              (click)="p.previous(); startScrollTo('tickets')"
+              [disabled]="p.isFirstPage()"
+              [class.disabled]="p.isFirstPage()"
+            >
+              <span> < </span>
             </button>
 
-            <div class="lottery-info-paginaton-item lottery-info-paginaton-hidden-mobile" *ngFor="let page of p.pages" [class.lottery-info-paginaton-item-active]="p.getCurrent() === page.value">
-                <a (click)="p.setCurrent(page.value); startScrollTo('tickets');" *ngIf="p.getCurrent() !== page.value">
-                    <span>{{ page.label }}</span>
-                </a>
-                <div *ngIf="p.getCurrent() === page.value">
-                    <span>{{ page.label }}</span>
-                </div>
+            <div
+              class="lottery-info-paginaton-item lottery-info-paginaton-hidden-mobile"
+              *ngFor="let page of p.pages"
+              [class.lottery-info-paginaton-item-active]="
+                p.getCurrent() === page.value
+              "
+            >
+              <a
+                (click)="p.setCurrent(page.value); startScrollTo('tickets')"
+                *ngIf="p.getCurrent() !== page.value"
+              >
+                <span>{{ page.label }}</span>
+              </a>
+              <div *ngIf="p.getCurrent() === page.value">
+                <span>{{ page.label }}</span>
+              </div>
             </div>
 
-            <div class="lottery-info-paginaton-item lottery-info-paginaton-hidden-desktop">
+            <div
+              class="lottery-info-paginaton-item lottery-info-paginaton-hidden-desktop"
+            >
               <b>{{ p.getCurrent() }}</b> <span>/</span>
-              {{ (p.getTotalItems()/10+1).toFixed(0) }}
+              {{ (p.getTotalItems() / 10 + 1).toFixed(0) }}
             </div>
 
-            <button class="lottery-info-paginaton-item lottery-info-paginaton-item-arrow lottery-info-paginaton-item-arrow-right" (click)="p.next(); startScrollTo('tickets');" [disabled]="p.isLastPage()" [class.disabled]="p.isLastPage()">
-                <span> > </span>
+            <button
+              class="lottery-info-paginaton-item lottery-info-paginaton-item-arrow lottery-info-paginaton-item-arrow-right"
+              (click)="p.next(); startScrollTo('tickets')"
+              [disabled]="p.isLastPage()"
+              [class.disabled]="p.isLastPage()"
+            >
+              <span> > </span>
             </button>
           </div>
         </pagination-template>
       </div>
-
     </div>
   </div>
 </section>

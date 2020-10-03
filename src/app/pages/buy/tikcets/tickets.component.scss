@@ -2,12 +2,11 @@
 @import "../../../../scss/mixins";
 
 .color-page {
-  background-color: #F4F0E5 !important;
+  background-color: #f4f0e5 !important;
   background-image: none !important;
 }
 
 .lottery-info {
-
   &-header {
     display: flex;
     justify-content: space-between;
@@ -30,7 +29,7 @@
     align-items: center;
     max-width: 300px;
     width: 100%;
-    
+
     @include b(900) {
       max-width: 100%;
       margin-top: 30px;
@@ -42,8 +41,8 @@
     }
 
     &-input {
-      background: #FFFFFF;
-      border: 1px solid #E9DCCA;
+      background: #ffffff;
+      border: 1px solid #e9dcca;
       border-radius: 12px;
       font-style: normal;
       font-weight: normal;
@@ -117,7 +116,8 @@
         border-radius: 7px;
       }
 
-      div,a {
+      div,
+      a {
         display: flex;
         width: 100%;
         height: 100%;
@@ -194,7 +194,7 @@
     font-weight: bold;
     font-size: 30px;
     line-height: 1.3;
-    color: #414B53;
+    color: #414b53;
     display: flex;
     flex-direction: column;
 
@@ -203,7 +203,7 @@
     }
 
     &:after {
-      content: '';
+      content: "";
       height: 2px;
       width: 90px;
       background-color: $brown-red;
@@ -280,4 +280,5 @@
 
 .header-entries-page {
   background-position: 30% 50% !important;
+  height: 650px;
 }
