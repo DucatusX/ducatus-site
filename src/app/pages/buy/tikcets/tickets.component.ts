@@ -15,9 +15,8 @@ export interface Players {
 @Component({
   selector: 'app-buy',
   templateUrl: './tickets.component.html',
-  styleUrls: ['./tickets.component.scss']
+  styleUrls: ['./tickets.component.scss'],
 })
-
 export class TicketsComponent implements OnInit {
   public players: Players[] = [];
 
@@ -38,20 +37,21 @@ export class TicketsComponent implements OnInit {
   public config: PaginationInstance = {
     id: 'tickets-pagination',
     itemsPerPage: 10,
-    currentPage: 1
+    currentPage: 1,
   };
   public eventLog: string[] = [];
 
   private popped = [];
 
-  constructor(
-    private buyservice: BuyService,
-  ) { }
+  constructor(private buyservice: BuyService) {}
 
   ngOnInit() {
-    this.buyservice.getLotteryPlayers().then(res => {
-      this.players = res;
-    }).catch(err => console.error(err));
+    this.buyservice
+      .getLotteryPlayers()
+      .then((res) => {
+        this.players = res.filter((item) => item.lottery === 1);
+      })
+      .catch((err) => console.error(err));
   }
 
   public onPageChange(value: number) {
@@ -78,7 +78,6 @@ export class TicketsComponent implements OnInit {
   }
 
   public searchChange(event: string) {
-
     if (event !== '' && !this.currentPageSaveState) {
       this.currentPageSave = this.config.currentPage;
       this.currentPageSaveState = true;
@@ -93,8 +92,10 @@ export class TicketsComponent implements OnInit {
   }
 
   public sort(type: string) {
-    this.sortData[type] && this.filter ? this.filter = false : this.filter = true;
-    Object.keys(this.sortData).forEach(v => this.sortData[v] = v === type);
+    this.sortData[type] && this.filter
+      ? (this.filter = false)
+      : (this.filter = true);
+    Object.keys(this.sortData).forEach((v) => (this.sortData[v] = v === type));
 
     this.players.sort((toSort1, toSort2) => {
       let sort1: any;
