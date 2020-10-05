@@ -40,7 +40,7 @@ export class BuyComponent implements OnInit, OnDestroy {
   public referralLink: string;
   public referralIncoming: string;
 
-  public ducToUsd = 0.05;
+  public ducToUsd = 0.06;
   public selectedMoney = 'usd';
 
   public winners = [];
@@ -72,7 +72,7 @@ export class BuyComponent implements OnInit, OnDestroy {
   ];
 
   public moneyPrice = {
-    usd: { name: 'USD', price: '0.05' },
+    usd: { name: 'USD', price: '0.06' },
     eur: { name: 'EUR', price: '0.042' },
     gbp: { name: 'GBP', price: '0.038' },
     chf: { name: 'CHF', price: '0.046' },
