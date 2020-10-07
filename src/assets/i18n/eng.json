@@ -262,10 +262,9 @@
       },
       "LOTTERY": {
         "TITLE": "A piece of Liverpool’s Kingsway Square can now be yours!",
-
         "BLOCK": {
           "PRIZE": {
-            "TITLE": "Buy DUC and stand a chance to win a $150,000 luxury apartment plus season tickets to Liverpool FC matches at Anfield.",
+            "TITLE": "Buy DUC and stand a chance to win a $150,000 luxury apartment plus season ticket to Liverpool FC matches at Anfield.",
             "SUBTITLE": "At the legendary birthplace of The Beatles and the Liverpool FC, a new landmark is set to rise – Kingsway Square. A blend of intelligent design, premium materials and stunning original features, this residential property offers stunning views of Liverpool’s city skyline.",
             "ITEM1": "Located just 4 minutes from Princess Dock on Liverpool’s famous waterfront and site of the UK’s major future developments",
             "ITEM2": "First Block due for completion Q3 2021",
@@ -273,7 +272,7 @@
             "ITEM4": "250 Year leasehold"
           },
           "HOW": {
-            "TITLE": "How can you win a Kingsway Square luxury studio apartment and Liverpool FC season tickets?",
+            "TITLE": "How can you win a Kingsway Square luxury studio apartment and Liverpool FC season ticket?",
             "ITEM1": "Buy DUC so we can hit our target of 3 million Ducatus sold on or before 30 Nov 2020.",
             "ITEM2": "Once the target of 3 million DUC sold is reached, the 8-day countdown to the Lucky Draw Day starts. Of course, the higher your DUC purchase, the more winning chances you get.",
             "ITEM3": "Winners will be drawn through a random smart contract draw. Winning hashes will be determined and published on this page and the Winner will be informed by email."
