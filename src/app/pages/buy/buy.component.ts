@@ -202,14 +202,6 @@ export class BuyComponent implements OnInit, OnDestroy {
       currency: ['eth', Validators.compose([Validators.required])],
       money: ['usd', Validators.compose([Validators.required])],
       amount: [100, Validators.compose([Validators.required])],
-      address: [
-        '',
-        Validators.compose([
-          Validators.minLength(34),
-          Validators.maxLength(34),
-          Validators.required,
-        ]),
-      ],
       email: ['', Validators.compose([Validators.required, Validators.email])],
     });
   }
@@ -251,10 +243,6 @@ export class BuyComponent implements OnInit, OnDestroy {
     this.lottery.ended = false;
   }
 
-  get ducAddress() {
-    return this.BuyGroup.get('address');
-  }
-
   get lotteryVideoUrl() {
     return this.sanitizer.bypassSecurityTrustUrl(this.lottery.video);
   }
@@ -273,7 +261,6 @@ export class BuyComponent implements OnInit, OnDestroy {
     }
 
     if (this.BuyGroup.controls['currency'].value === 'card') {
-      this.BuyGroup.controls['address'].setErrors(null);
       this.buttonSubmit = false;
     }
 
@@ -289,20 +276,14 @@ export class BuyComponent implements OnInit, OnDestroy {
 
   public clickSubmit() {
     const email = this.BuyGroup.controls['email'];
-    const address = this.BuyGroup.controls['address'];
 
     if (email.valid) {
       this.savedEmail = email.value;
     }
 
-    if (address.valid) {
-      this.savedAddress = address.value;
-    }
-
-    if (email.valid && address.valid) {
+    if (email.valid) {
       this.buttonSubmit = true;
       this.getAddresses();
-      this.referralAddress = address.value;
       this.generateReferralLink();
     }
   }
@@ -311,58 +292,56 @@ export class BuyComponent implements OnInit, OnDestroy {
     return this.buyservice.getValidateDucatusAddress(address);
   }
 
-  public setAddress() {
-    const address = this.BuyGroup.controls['address'];
+  // public setAddress() {
+  //   const address = this.BuyGroup.controls['address'];
 
-    if (this.BuyGroup.controls['currency'].value === 'card') {
-      this.BuyGroup.controls['address'].setErrors(null);
-      return;
-    }
+  //   if (this.BuyGroup.controls['currency'].value === 'card') {
+  //     this.BuyGroup.controls['address'].setErrors(null);
+  //     return;
+  //   }
 
-    if (
-      address.value.length === 34 &&
-      ['L', 'l', 'M', 'm'].includes(address.value.substring(0, 1))
-    ) {
-      this.currencyData['eth'].address = this.currencyData['btc'].address = '';
-      this.loadedAddress = false;
-      this.checkDucatusAddress(address.value)
-        .then((result) => {
-          if (result.address_valid) {
-            this.BuyGroup.controls['address'].setErrors(null);
-          } else {
-            this.BuyGroup.controls['address'].setErrors({ incorrect: true });
-            this.referralAddress = '';
-            this.generateReferralLink();
-          }
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    } else {
-      this.BuyGroup.controls['address'].setErrors({ incorrect: true });
-      this.referralAddress = '';
-      this.generateReferralLink();
-    }
+  //   if (
+  //     address.value.length === 34 &&
+  //     ['L', 'l', 'M', 'm'].includes(address.value.substring(0, 1))
+  //   ) {
+  //     this.currencyData['eth'].address = this.currencyData['btc'].address = '';
+  //     this.loadedAddress = false;
+  //     this.checkDucatusAddress(address.value)
+  //       .then((result) => {
+  //         if (result.address_valid) {
+  //           this.BuyGroup.controls['address'].setErrors(null);
+  //         } else {
+  //           this.BuyGroup.controls['address'].setErrors({ incorrect: true });
+  //           this.referralAddress = '';
+  //           this.generateReferralLink();
+  //         }
+  //       })
+  //       .catch((err) => {
+  //         console.error(err);
+  //       });
+  //   } else {
+  //     this.BuyGroup.controls['address'].setErrors({ incorrect: true });
+  //     this.referralAddress = '';
+  //     this.generateReferralLink();
+  //   }
 
-    if (address.value !== this.savedAddress) {
-      this.buttonSubmit = false;
-    }
-  }
+  //   if (address.value !== this.savedAddress) {
+  //     this.buttonSubmit = false;
+  //   }
+  // }
 
   public getAddresses() {
-    const address = this.BuyGroup.controls['address'];
     const email = this.BuyGroup.controls['email'];
 
-    if (address.valid && email.valid) {
+    if (email.valid) {
       this.buyservice
-        .getExchange(address.value, 'DUC', email.value)
+        .getExchange('DUC', email.value)
         .then((result) => {
           this.loadedAddress = true;
           this.currencyData['eth'].address = result.eth_address;
           this.currencyData['btc'].address = result.btc_address;
           this.currencyData['usdc'].address = result.eth_address;
           this.setQrAddress();
-          this.BuyGroup.controls['address'].setErrors(null);
           this.BuyGroup.controls['email'].setErrors(null);
         })
         .catch((err) => {
@@ -370,10 +349,6 @@ export class BuyComponent implements OnInit, OnDestroy {
           this.loadedAddress = false;
         });
     } else {
-      if (!address.valid) {
-        this.BuyGroup.controls['address'].setErrors({ incorrect: true });
-        this.BuyGroup.controls['address'].markAsTouched();
-      }
       if (!email.valid) {
         this.BuyGroup.controls['email'].setErrors({ incorrect: true });
         this.BuyGroup.controls['email'].markAsTouched();
@@ -383,9 +358,8 @@ export class BuyComponent implements OnInit, OnDestroy {
 
   public setQrAddress(type?) {
     const email = this.BuyGroup.controls['email'].valid;
-    const address = this.BuyGroup.controls['address'].valid;
 
-    if (email && address && this.loadedAddress && !this.loadingData) {
+    if (email && this.loadedAddress && !this.loadingData) {
       this.loadingQr = true;
 
       const currency = this.BuyGroup.controls['currency'].value;
@@ -417,13 +391,6 @@ export class BuyComponent implements OnInit, OnDestroy {
       this.loadingQr = false;
     } else {
       this.loadingQr = true;
-
-      if (type !== 'amount') {
-        if (!email || !address) {
-          this.BuyGroup.controls['address'].setErrors({ incorrect: true });
-          this.BuyGroup.controls['address'].markAsTouched();
-        }
-      }
     }
   }
 
@@ -486,20 +453,10 @@ export class BuyComponent implements OnInit, OnDestroy {
     const currency = this.BuyGroup.controls['money'];
     const email = this.BuyGroup.controls['email'];
 
-    const address =
-      this.BuyGroup.controls['currency'].value !== 'card'
-        ? this.BuyGroup.controls['address']
-        : { value: 'null' };
-
     this.loadingCard = true;
 
     this.buyservice
-      .getCardLink(
-        amount.value,
-        currency.value.toUpperCase(),
-        address.value,
-        email.value
-      )
+      .getCardLink(amount.value, currency.value.toUpperCase(), email.value)
       .then((res) => {
         if (res.redirect_url) {
           window.open(res.redirect_url, '_blank');

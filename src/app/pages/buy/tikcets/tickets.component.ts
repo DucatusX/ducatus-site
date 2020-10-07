@@ -47,9 +47,9 @@ export class TicketsComponent implements OnInit {
 
   ngOnInit() {
     this.buyservice
-      .getLotteryPlayers()
+      .getLotteryPlayers(1, 1)
       .then((res) => {
-        this.players = res.filter((item) => item.lottery === 1);
+        this.players = res.results;
       })
       .catch((err) => console.error(err));
   }

@@ -275,7 +275,7 @@
               for="address"
               [innerHTML]="'PAGE.BUY.FORM.ADDRESS.TEXT' | translate"
             ></label>
-            <input
+            <!-- <input
               id="address"
               formControlName="address"
               required
@@ -284,15 +284,10 @@
               [placeholder]="'PAGE.BUY.FORM.ADDRESS.PLACEHOLDER' | translate"
               class="input input-white"
               oninput="this.value = this.value.replace('ducatus:', '');"
-            />
-            <span
-              class="error-address-value"
-              *ngIf="
-                ducAddress?.invalid &&
-                (ducAddress?.dirty || ducAddress?.touched)
-              "
-              >{{ "PAGE.BUY.FORM.ADDRESS.ERROR" | translate }}</span
-            >
+            /> -->
+            <!-- <span class="error-address-value">{{
+              "PAGE.BUY.FORM.ADDRESS.ERROR" | translate
+            }}</span> -->
           </div>
 
           <div class="group group-input">
@@ -417,7 +412,7 @@
               >
             </div>
 
-            <div
+            <!-- <div
               *ngIf="BuyGroup.controls['currency'].value !== 'card'"
               class="group group-text qr-text"
               style="margin-bottom: 0"
@@ -432,7 +427,7 @@
                         }
                 "
               ></span>
-            </div>
+            </div> -->
           </div>
         </div>
       </form>
