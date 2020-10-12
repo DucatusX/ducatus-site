@@ -267,29 +267,6 @@
         </div>
 
         <div class="lotery-form-wrapper">
-          <div
-            class="group group-input"
-            *ngIf="BuyGroup.controls['currency'].value !== 'card'"
-          >
-            <label
-              for="address"
-              [innerHTML]="'PAGE.BUY.FORM.ADDRESS.TEXT' | translate"
-            ></label>
-            <!-- <input
-              id="address"
-              formControlName="address"
-              required
-              type="text"
-              (ngModelChange)="setAddress()"
-              [placeholder]="'PAGE.BUY.FORM.ADDRESS.PLACEHOLDER' | translate"
-              class="input input-white"
-              oninput="this.value = this.value.replace('ducatus:', '');"
-            /> -->
-            <!-- <span class="error-address-value">{{
-              "PAGE.BUY.FORM.ADDRESS.ERROR" | translate
-            }}</span> -->
-          </div>
-
           <div class="group group-input">
             <label for="email">{{
               "PAGE.BUY.FORM.EMAIL.TEXT" | translate
