@@ -71,7 +71,7 @@
           <div class="lottery-info-paginaton">
             <button
               class="lottery-info-paginaton-item lottery-info-paginaton-item-arrow lottery-info-paginaton-item-arrow-left"
-              (click)="p.previous(); startScrollTo('tickets')"
+              (click)="p.previous(); startScrollTo('tickets'); changePage()"
               [disabled]="p.isFirstPage()"
               [class.disabled]="p.isFirstPage()"
             >
@@ -86,7 +86,11 @@
               "
             >
               <a
-                (click)="p.setCurrent(page.value); startScrollTo('tickets')"
+                (click)="
+                  p.setCurrent(page.value);
+                  startScrollTo('tickets');
+                  changePage()
+                "
                 *ngIf="p.getCurrent() !== page.value"
               >
                 <span>{{ page.label }}</span>
@@ -105,7 +109,7 @@
 
             <button
               class="lottery-info-paginaton-item lottery-info-paginaton-item-arrow lottery-info-paginaton-item-arrow-right"
-              (click)="p.next(); startScrollTo('tickets')"
+              (click)="p.next(); startScrollTo('tickets'); changePage()"
               [disabled]="p.isLastPage()"
               [class.disabled]="p.isLastPage()"
             >

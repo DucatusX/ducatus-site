@@ -46,10 +46,15 @@ export class TicketsComponent implements OnInit {
   constructor(private buyservice: BuyService) {}
 
   ngOnInit() {
+    this.loadPlayers(1, 1);
+  }
+
+  public loadPlayers(loteryId, page) {
     this.buyservice
-      .getLotteryPlayers(1, 1)
+      .getLotteryPlayers(loteryId, page)
       .then((res) => {
         this.players = res.results;
+        this.config.totalItems = res.count;
       })
       .catch((err) => console.error(err));
   }
@@ -62,6 +67,10 @@ export class TicketsComponent implements OnInit {
   public startScrollTo(id: string) {
     const el = document.getElementById(id);
     el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  public changePage() {
+    this.loadPlayers(1, this.config.currentPage);
   }
 
   public onPageBoundsCorrection(value: number) {
