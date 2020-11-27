@@ -255,8 +255,8 @@
       "REFERRAL": {
         "TITLE": "Referral link",
         "SUBTITLE": "Share this amazing opportunity with your friends and family and receive a 5% DUC referral bonus for any purchase they make using the below link",
-        "LABEL": "Enter your Ducatus address",
-        "PLACEHOLDER": "Enter your Ducatus address",
+        "LABEL": "Enter your DUC wallet receiving address",
+        "PLACEHOLDER": "Enter your DUC wallet receiving address",
         "ERROR": "Error! Please check, the address format is incorrect!",
         "LINK": "Your referral link"
       },
