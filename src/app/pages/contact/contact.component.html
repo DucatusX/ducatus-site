@@ -13,8 +13,8 @@
             </div>
             <div class="section-infoblock-block">
                 <div class="contact-form">
-                    <form #contactForm="ngForm" (submit)="sendMail()" id="contactform" [attr.data-form-title]="'PAGE.CONTACT.FORM.TEXT' | translate">
-                        <div class="contact-form-fields" *ngIf="contactMainSend === 0">
+                    <form #contactForm="ngForm" novalidate (submit)="sendMail(contactForm)" id="contactform" [attr.data-form-title]="'PAGE.CONTACT.FORM.TEXT' | translate">
+                        <div class="contact-form-fields" *ngIf="[0,3].includes(contactMainSend)">
                             <div class="contact-form-field-input icon icon__user" [ngClass]="{ 'error-input': name.invalid && (name.dirty || name.touched)  }">
                                 <input class="input" #name="ngModel" type="text" [disabled]="disableFields" required name="name" [(ngModel)]="formData.name" [placeholder]="'PAGE.CONTACT.FORM.TEXT_1' | translate">
                             </div>
@@ -28,8 +28,17 @@
                                 <textarea class="textarea" type="text" #message="ngModel" [disabled]="disableFields" [(ngModel)]="formData.message" required name="message" [placeholder]="'PAGE.CONTACT.FORM.TEXT_4' | translate"></textarea>
                             </div>
                             <div class="contact-form-field">
-                                <button class="button button__brown-red button-flat" [disabled]="contactForm.invalid" type="submit">{{ 'PAGE.CONTACT.FORM.BUTTON' | translate }}</button>
+                                <button class="button button__brown-red button-flat" [disabled]="contactForm.invalid || contactMainSend === 3" type="submit">{{ 'PAGE.CONTACT.FORM.BUTTON' | translate }}</button>
                             </div>
+                            <re-captcha
+                                [(ngModel)]="formModel.captcha"
+                                name="captcha"
+                                required
+                                siteKey="6Ldw2sAZAAAAAAvBdORnt1ydyDzUR1S3y2QRojqu"
+                                #captchaControl="ngModel"
+                                class="contact-form-captcha"
+                            ></re-captcha>
+                            <span *ngIf="contactMainSend === 3" class="contact-form-loading icon__loading"></span>
                         </div>
                         <div class="contact-form-fields" *ngIf="contactMainSend === 1">
                             <p style="text-align:center;">Thank you for your message!<br><br>Our customer support will contact you shortly!</p>
