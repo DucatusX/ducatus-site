@@ -1,7 +1,13 @@
 import { UserService } from 'src/app/service/user/user.service';
 import { Component, OnInit } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
+import {
+  Router,
+  Event,
+  NavigationStart,
+  NavigationEnd,
+  NavigationError,
+} from '@angular/router';
 import { hideHeaderInRoutes, adminHeaderInRoutes } from 'src/app/params';
 
 import * as $ from 'jquery';
@@ -10,10 +16,9 @@ import * as $ from 'jquery';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  host: { '(document:click)': 'onClick($event)' }
+  host: { '(document:click)': 'onClick($event)' },
 })
 export class HeaderComponent implements OnInit {
-
   public isBrowser: any;
   public openedLngList = false;
   private translator: TranslateService;
@@ -30,10 +35,10 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private userService: UserService
   ) {
-
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
         // Show loading indicator
+        console.log(event, 'event');
       }
 
       if (event instanceof NavigationEnd) {
@@ -77,7 +82,6 @@ export class HeaderComponent implements OnInit {
     this.setActiveLanguage({
       lang: translate.currentLang,
     });
-
   }
 
   private onClick($event) {
@@ -94,16 +98,22 @@ export class HeaderComponent implements OnInit {
   private setActiveLanguage(event) {
     if (this.currLanguage) {
       this.languagesList.map((lang) => {
-        if (lang['lng'] === this.currLanguage) { lang['active'] = true; }
-        else { lang['active'] = false; }
+        if (lang['lng'] === this.currLanguage) {
+          lang['active'] = true;
+        } else {
+          lang['active'] = false;
+        }
       });
     }
     this.currLanguage = event.lang;
     window['jQuery']['cookie']('lng', this.currLanguage);
 
     this.languagesList.map((lang) => {
-      if (lang['lng'] === this.currLanguage) { lang['active'] = true; }
-      else { lang['active'] = false; }
+      if (lang['lng'] === this.currLanguage) {
+        lang['active'] = true;
+      } else {
+        lang['active'] = false;
+      }
     });
     this.languagesList.sort((a, b) => {
       return b.active ? 1 : -1;

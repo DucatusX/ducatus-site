@@ -207,8 +207,7 @@
           height: max-content;
           border-radius: 12px;
           width: 100%;
-          background-color: #fdfbf6;
-          box-shadow: 0px 50px 45px rgba(204, 199, 189, 0.25);
+          background-color: #23241f;
 
           @include b(900) {
             min-height: max-content;
@@ -940,9 +939,8 @@
   // padding: 30px 30px;
   display: flex;
   padding: 0px 30px 10px 30px;
-  background-color: #fdfbf6;
+  background-color: #23241f;
   border-radius: 12px;
-  box-shadow: 0px 50px 45px rgba(204, 199, 189, 0.25);
 
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
@@ -1045,7 +1043,7 @@
         border-radius: 0px 6px 6px 0px;
       }
       &:nth-child(n + 2) {
-        border-left: 1px solid #e9dcca;
+        border-left: 1px solid #000;
       }
 
       @include b(500) {
@@ -1101,7 +1099,7 @@
       font-weight: bold;
       font-size: 15px;
       text-align: center;
-      color: rgba(0, 0, 0, 0.5);
+      color: white;
       cursor: pointer;
       text-transform: uppercase;
       text-align: left;
@@ -1116,8 +1114,8 @@
     width: 100%;
     margin-bottom: 10px;
     grid-gap: 0;
-    background: rgba(247, 243, 235, 0.7);
-    border: 1px solid #e9dcca;
+    background: #4d4c4d;
+    border: 1px solid #23241f;
     border-radius: 8px;
     overflow: hidden;
     @include b(1190) {
@@ -1174,6 +1172,9 @@
 
     &-label {
       margin-bottom: 20px !important;
+      &--white {
+        color: white !important;
+      }
     }
 
     &-item {
@@ -1268,15 +1269,11 @@
 
       &:checked {
         + label {
-          background: linear-gradient(
-              180deg,
-              #ffffff 0%,
-              rgba(255, 255, 255, 0) 100%
-            ),
-            #f7f3eb !important;
+          background: #e8c22c !important;
           border-radius: 0;
           box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.1);
           cursor: default !important;
+          color: black;
         }
       }
     }
@@ -1482,7 +1479,7 @@
 
     &-input {
       label {
-        color: rgb(127, 126, 123);
+        color: #e8c22c;
         font-weight: bold;
         font-size: 14px;
         margin-bottom: 10px;

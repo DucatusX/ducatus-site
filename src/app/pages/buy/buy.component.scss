@@ -164,7 +164,7 @@
 }
 
 .color-page {
-  background-color: #f4f0e5 !important;
+  background-color: #000 !important;
   background-image: none !important;
 }
 
@@ -186,7 +186,7 @@
   &::after {
     position: absolute;
     content: "";
-    background: linear-gradient(360deg, #f4f0e5 10%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(360deg, #000000 6.48%, rgba(0, 0, 0, 0) 56.22%);
     width: 100%;
     left: 0;
     bottom: -10px;
@@ -198,7 +198,7 @@
 }
 
 .ducatus-info-link {
-  color: #852633;
+  color: #e8c22c;
   cursor: pointer;
   transition: 0.4s ease;
   font-size: 12px;
