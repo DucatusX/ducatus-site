@@ -20,7 +20,7 @@
             style="min-height: 80px; padding: 10px; margin-bottom: 30px"
             *ngIf="lottery.winners_data && !modalWinner"
             (click)="modalWinner = true"
-            class="lottery-win btn ducatus-btn ducatus-btn-brown"
+            class="lottery-win btn ducatus-btn ducatus-btn-yellow"
           >
             View winners
           </div>
@@ -346,7 +346,7 @@
                 "
                 [disabled]="BuyGroup.invalid"
                 (click)="clickSubmit()"
-                class="ducatus-btn ducatus-btn-brown"
+                class="ducatus-btn ducatus-btn-yellow"
                 style="min-width: 100%"
               >
                 {{ "PAGE.BUY.FORM.SUBMIT" | translate }}
@@ -361,7 +361,7 @@
                 "
                 [disabled]="BuyGroup.invalid"
                 (click)="cardLink()"
-                class="ducatus-btn ducatus-btn-brown"
+                class="ducatus-btn ducatus-btn-yellow"
                 style="min-width: 100%; display: flex"
               >
                 <span *ngIf="!loadingCard">{{ "CONTINUE" | translate }}</span>
@@ -375,7 +375,7 @@
                   loadingCard
                 "
                 [disabled]="true"
-                class="ducatus-btn ducatus-btn-brown"
+                class="ducatus-btn ducatus-btn-yellow"
                 style="min-width: 100%; display: flex"
               ></button>
               <a
@@ -614,7 +614,7 @@
               style="min-height: 80px; padding: 10px; margin-bottom: 30px"
               *ngIf="lottery.winners_data && !modalWinner"
               (click)="modalWinner = true"
-              class="lottery-win btn ducatus-btn ducatus-btn-brown"
+              class="lottery-win btn ducatus-btn ducatus-btn-yellow"
             >
               View winners
             </div>
@@ -723,7 +723,7 @@
         id="btn-modal"
         (click)="acceptModalTerms()"
         [disabled]="!modalAccept"
-        class="ducatus-btn ducatus-btn-brown"
+        class="ducatus-btn ducatus-btn-yellow"
       >
         {{ "PAGE.BUY.MODAL.TERMS.BUTTON" | translate }}
       </button>
@@ -742,7 +742,7 @@
         id="btn-modal"
         style="margin: 0 auto"
         (click)="modalInfo = false"
-        class="ducatus-btn ducatus-btn-brown"
+        class="ducatus-btn ducatus-btn-yellow"
       >
         {{ "PAGE.BUY.MODAL.INFO.BUTTON" | translate }}
       </button>
@@ -814,7 +814,7 @@
         id="btn-modal"
         style="margin: 0 auto"
         (click)="modalWinner = false"
-        class="ducatus-btn ducatus-btn-brown"
+        class="ducatus-btn ducatus-btn-yellow"
       >
         OK
       </button>

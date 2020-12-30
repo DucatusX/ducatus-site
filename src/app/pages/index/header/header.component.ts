@@ -29,7 +29,6 @@ export class HeaderComponent implements OnInit {
 
   public hideHeader = false;
   public adminHeader = false;
-
   constructor(
     public translate: TranslateService,
     private router: Router,
@@ -38,7 +37,6 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
         // Show loading indicator
-        console.log(event, 'event');
       }
 
       if (event instanceof NavigationEnd) {

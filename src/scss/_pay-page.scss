@@ -305,11 +305,10 @@
           }
 
           &-tickets {
-            // margin-bottom: 49px;
             margin-top: 49px;
             border-radius: 12px;
             position: relative;
-            background-color: #fdfbf6;
+            background-color: #23241f;
             padding: 1px 0;
 
             @include b(900) {
@@ -328,7 +327,7 @@
                 font-size: 13px;
                 line-height: 16px;
                 text-align: center;
-                color: #862633;
+                color: #e8c22c;
                 opacity: 0.5;
                 margin-bottom: 5px;
               }
@@ -338,14 +337,14 @@
                 font-size: 40px;
                 line-height: 49px;
                 text-align: center;
-                color: #862633;
+                color: #e8c22c;
               }
 
               &-winner {
                 font-weight: normal;
                 font-size: 18px;
                 text-align: center;
-                color: #862633;
+                color: #e8c22c;
                 word-break: break-all;
                 line-height: 1.4;
                 margin-bottom: 30px;
@@ -377,7 +376,7 @@
                 height: 27px;
                 width: 13px;
                 border-radius: 0px 50px 50px 0px;
-                background-color: #f4f0e5;
+                background-color: black;
               }
 
               &:after {
@@ -387,7 +386,7 @@
                 height: 27px;
                 width: 13px;
                 border-radius: 50px 0px 0px 50px;
-                background-color: #f4f0e5;
+                background-color: black;
               }
             }
 
@@ -443,7 +442,7 @@
                 font-weight: bold;
                 font-size: 16px;
                 text-align: left;
-                color: #be8112;
+                color: #e8c22c;
                 cursor: pointer;
                 transition: 0.4s ease;
 
@@ -462,14 +461,14 @@
                 font-size: 16px;
                 line-height: 20px;
                 text-align: center;
-                color: #be8112;
+                color: #e8c22c;
               }
 
               &-text {
                 font-size: 16px;
                 line-height: 20px;
                 text-align: center;
-                color: #be8112;
+                color: #e8c22c;
                 margin-top: 6px;
 
                 @include bb(1150, 900) {
@@ -487,8 +486,7 @@
                 font-weight: bold;
                 font-size: 15px;
                 line-height: 18px;
-                color: #000000;
-                opacity: 0.5;
+                color: #e8c22c;
                 margin-bottom: 2px;
                 display: flex !important;
                 justify-content: space-between;
@@ -515,7 +513,7 @@
                 }
 
                 span {
-                  background: $brown-red;
+                  background: linear-gradient(0deg, #e8c22c, #e8c22c), #ffffff;
                   border-radius: 12px;
                   height: 10px;
                   bottom: 5px;
@@ -529,7 +527,7 @@
                     font-weight: bold;
                     font-size: 14px;
                     text-align: center;
-                    color: $brown-red;
+                    color: white;
                     position: absolute;
                     right: -40px;
                     top: 17px;
@@ -729,8 +727,7 @@
         // min-height: 343px;
         width: 100%;
         padding: 30px;
-        background: #fdfbf6;
-        box-shadow: 0px 50px 45px rgba(204, 199, 189, 0.25);
+        background: #23241f;
         border-radius: 12px;
         word-break: break-word;
 
@@ -774,7 +771,7 @@
           font-weight: bold;
           font-size: 17px;
           line-height: 21px;
-          color: #b6914f;
+          color: #e8c22c;
           display: inline-block;
           margin-bottom: 6px;
           width: 100%;
@@ -842,10 +839,10 @@
           color: #000000;
           cursor: pointer;
           font-family: "Montserrat", sans-serif;
+          background: #4d4c4d;
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
-          border: 1px solid #e9dcca;
         }
 
         &-referral {
@@ -853,7 +850,7 @@
             font-weight: bold;
             font-size: 24px;
             line-height: 29px;
-            color: #862633;
+            color: #e8c22c;
             margin-bottom: 20px;
             display: block;
           }
@@ -862,7 +859,7 @@
             font-weight: bold;
             font-size: 17px;
             line-height: 21px;
-            color: #b6914f;
+            color: #fff;
             opacity: 0.75;
             margin-bottom: 30px;
             display: block;
@@ -966,7 +963,7 @@
   .lotery-form-wrapper + .lotery-form-wrapper {
     padding-right: 0;
     padding-left: 40px;
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
     @include b(500) {
       padding-left: 0;
       border-left: none;
@@ -1007,8 +1004,7 @@
     appearance: none;
 
     &-white {
-      background-color: #ffffff;
-      border: 1px solid #e9dcca;
+      background-color: #4d4c4d;
     }
 
     &-fill {
@@ -1153,7 +1149,7 @@
         flex-direction: row !important;
       }
       label {
-        background: white !important;
+        background: linear-gradient(0deg, #4d4c4d, #4d4c4d) !important;
         border-radius: 12px;
         @include b(500) {
           width: 96px;
@@ -1222,7 +1218,7 @@
     }
 
     &-amount {
-      color: $brown-red;
+      color: white;
       font-weight: bold;
       font-size: 19px;
       display: block;
@@ -1274,6 +1270,9 @@
           box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.1);
           cursor: default !important;
           color: black;
+          .group-radio-amount {
+            color: black;
+          }
         }
       }
     }
