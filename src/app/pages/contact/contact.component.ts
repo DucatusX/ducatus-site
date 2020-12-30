@@ -1,16 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { SendService } from '../../service/send/send.service';
+import { NgForm } from '@angular/forms';
 
+export interface FormModel {
+  captcha?: string;
+}
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
+
 export class ContactComponent implements OnInit {
 
   public formData: any;
   public contactMainSend = 0;
   public disableFields = false;
+  public formModel: FormModel = {};
 
   constructor(private sendservice: SendService) {
     this.formData = {
@@ -21,7 +27,12 @@ export class ContactComponent implements OnInit {
     };
   }
 
-  public sendMail() {
+  public sendMail(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    
+    this.contactMainSend = 3;
     this.disableFields = true;
 
     this.sendservice.sendContactMessage(this.formData).then((result) => {
