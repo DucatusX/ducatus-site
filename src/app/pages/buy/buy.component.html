@@ -747,17 +747,33 @@
   </div>
 </div>
 
-<div class="modal" style="padding: 0 10px" *ngIf="modalWinner">
+<!-- <div class="modal" style="padding: 0 10px" *ngIf="modalWinner"> -->
+<div class="modal" style="padding: 0 10px">
   <div class="modal-wrap modal-congratulation-wrap">
     <div class="modal-content-top modal-congratulation">
-      <span class="icon icon__congratulations">Congratulations!</span>
-      <span class="modal-congratulation-text" style="text-align: center"
-        ><b
-          >We have electronically drawn the winning hashes through smart
-          contract. Are you one of them?</b
-        ></span
-      >
-      <div class="modal-congratulation-winners">
+      <span class="icon icon__congratulations"></span>
+      <div class="modal-congratulation-title">
+        <p>
+          Our Kingsway Square Promotion has ended and we have sold a total of
+        </p>
+        <p>xxxxxxx Ducatus Coins!</p>
+      </div>
+      <div class="modal-congratulation-subtitle">
+        <p>Congratulations to the winner of</p>
+        <p>xxxxxx Ducatus Coins</p>
+        <p>(80% of total DUC sold).</p>
+      </div>
+      <div class="modal-congratulation-hash">
+        <img src="/assets/img/lotery/cup.svg" />
+        <div class="modal-congratulation-hash-box">
+          <div class="modal-congratulation-hash-title">Winning Hash:</div>
+          <div class="modal-congratulation-hash-winner">
+            04351ffb1d800bb04351ffb1d800bb04351ffb1d800bb
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="modal-congratulation-winners">
         <div
           class="modal-congratulation-winners-item"
           *ngFor="let item of winners"
@@ -777,22 +793,18 @@
             >
           </div>
         </div>
-      </div>
+      </div> -->
       <span class="modal-congratulation-text"
-        >We will contact all winners via email for instructions on how to claim
-        your prizes. Thank you to all who participated and congratulations for
-        being a part of the Ducatus cashless future.</span
+        >We will contact the winner via email for instructions on how to claim
+        your prize. Thank you to everyone who participated and congratulations
+        for being a part of the Ducatus cashless future.</span
       >
-      <span class="icon icon__watch-out">Watch Out!</span>
+      <span class="icon icon__watch-out">Join the Gold Rush this 2021!</span>
       <span class="modal-congratulation-watch-out"
-        >We’re launching our next round of competition soon. This time, we’re
-        giving away a luxury studio apartment in legendary Liverpool and more
-        exciting extras!</span
-      >
-      <span class="modal-congratulation-watch-out"
-        >Visit us again on 3 October 2020 to join. The next lucky winner could
-        be YOU!</span
-      >
+        >Win a full set of 5 Ducatus Prime Gold Coins and 5 Gold Bars from Proof
+        of Gold in our latest promotion. Buy DUC now. The next lucky winner
+        could be YOU!
+      </span>
     </div>
     <div class="modal-content-bottom">
       <button
