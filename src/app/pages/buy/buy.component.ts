@@ -475,8 +475,8 @@ export class BuyComponent implements OnInit, OnDestroy {
     this.modal = false;
 
     this.buyservice.getLottery().then((result) => {
-      console.log(result[0], 'result');
-      this.lotteryDesc = result[0];
+      console.log(result, 'result');
+      this.lotteryDesc = result[2];
       // this.bg = this.lotteryDesc.image
       //   ? this.lotteryDesc.image
       //   : 'assets/img/sections/buy-bg.png';

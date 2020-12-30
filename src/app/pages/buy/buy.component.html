@@ -748,7 +748,6 @@
 </div>
 
 <div class="modal" style="padding: 0 10px" *ngIf="modalWinner">
-  <!-- <div class="modal" style="padding: 0 10px"> -->
   <div class="modal-wrap modal-congratulation-wrap">
     <div class="modal-content-top modal-congratulation">
       <span class="icon icon__congratulations"></span>
@@ -756,11 +755,11 @@
         <p>
           Our Kingsway Square Promotion has ended and we have sold a total of
         </p>
-        <p>xxxxxxx Ducatus Coins!</p>
+        <p>{{ lotteryDesc.sent_duc_amount }} Ducatus Coins!</p>
       </div>
       <div class="modal-congratulation-subtitle">
         <p>Congratulations to the winner of</p>
-        <p>xxxxxx Ducatus Coins</p>
+        <p>{{ lotteryDesc.sent_duc_amount * 0.8 | number }} Ducatus Coins</p>
         <p>(80% of total DUC sold).</p>
       </div>
       <div class="modal-congratulation-hash">
@@ -768,7 +767,7 @@
         <div class="modal-congratulation-hash-box">
           <div class="modal-congratulation-hash-title">Winning Hash:</div>
           <div class="modal-congratulation-hash-winner">
-            04351ffb1d800bb04351ffb1d800bb04351ffb1d800bb
+            {{ lotteryDesc.winners_data[0].address }}
           </div>
         </div>
       </div>
