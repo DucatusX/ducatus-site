@@ -9,8 +9,11 @@
   <div class="container" *ngIf="hideHeader">
     <div class="header-wrap">
       <div class="header-logo-block">
-        <a *ngIf="adminHeader" routerLink="/" class="header-logo"
+        <a *ngIf="adminHeader && !buyHeader" routerLink="/" class="header-logo"
           ><img src="/assets/img/ducatus-logo-first.png" alt="Ducatus logo"
+        /></a>
+        <a *ngIf="buyHeader" routerLink="/" class="header-logo"
+          ><img src="/assets/img/centurion.svg" alt="Ducatus logo"
         /></a>
         <a *ngIf="!adminHeader" class="header-logo"></a>
         <div class="header-menu-toggle-block">

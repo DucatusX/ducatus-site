@@ -22,7 +22,28 @@
   }
 
   &-buy {
+    padding: 15px 0;
     background: transparent;
+    &.header-scroll {
+      box-shadow: none;
+      background: black;
+      padding: 10px 0;
+    }
+    .header {
+      &-logo-block {
+        img {
+          width: auto;
+
+          @include b(900) {
+            width: 200px;
+          }
+
+          @include b(370) {
+            width: 150px;
+          }
+        }
+      }
+    }
   }
 
   &-hide {
@@ -125,13 +146,17 @@
     }
 
     &-link {
-      color: gray;
+      color: white;
       text-decoration: none;
       text-transform: capitalize;
       transition: 0.4s ease;
       margin: 2px 15px;
       font-weight: normal;
       cursor: pointer;
+      font-size: 14px;
+      line-height: 17px;
+      font-weight: bold;
+      text-transform: uppercase;
 
       @include b(1000) {
         margin: 2px 10px;
@@ -144,7 +169,7 @@
       }
 
       &:hover {
-        color: $brown-red;
+        color: #e8c22c;
       }
     }
 
