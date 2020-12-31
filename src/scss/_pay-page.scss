@@ -85,7 +85,7 @@
   height: 100%;
   cursor: default;
   background-size: 100px 100px;
-  padding-bottom: 250px;
+  padding-bottom: 50px;
 
   @include b(750) {
     padding-bottom: 60px;
@@ -219,7 +219,7 @@
           }
 
           &-wrap {
-            padding: 30px 30px 30px 30px;
+            padding: 40px 30px 35px 30px;
 
             @include b(600) {
               padding: 30px 20px;
@@ -537,13 +537,27 @@
             }
           }
 
+          &-hash-title {
+            color: white;
+            font-weight: bold;
+            font-size: 17px;
+            margin-bottom: 15px;
+            opacity: 0.75;
+          }
+
           &-title {
             width: 100%;
             font-weight: bold;
-            font-size: 27px;
-            color: #862633;
+            font-size: 34px;
+            line-height: 41px;
+            color: #ffffff;
             word-break: break-word;
-            margin-bottom: 25px;
+            margin-bottom: 29px;
+
+            .yellow {
+              display: inline;
+              color: #E8C22C;
+            }
 
             @include bb(1000, 900) {
               font-size: 24px;
@@ -552,22 +566,17 @@
             @include b(500) {
               font-size: 20px;
             }
-
-            br {
-              @include b(500) {
-                display: none;
-              }
-            }
           }
 
           &-subtitle {
-            font-size: 16.5px;
-            color: #b6914f;
-            opacity: 0.75;
-            margin-bottom: 25px;
-            font-weight: bold;
             width: 100%;
+            font-size: 17px;
+            line-height: 21px;
+            font-weight: bold;
+            color: #ffffff;
             word-break: break-word;
+            margin-bottom: 40px;
+            opacity: 0.75;
 
             @include bb(1000, 900) {
               font-size: 14px;
@@ -578,41 +587,55 @@
             }
           }
 
-          &-prize-desc {
-            margin-bottom: 10px;
-            font-size: 16px;
-            color: #000000;
-            opacity: 0.5;
-            line-height: 1.4;
-            font-weight: normal;
-            width: 100%;
-            word-break: break-word;
+          &-item {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            padding: 0 20px 0 30px;
+
+            &-image {
+              display: flex;
+              justify-content: center;
+              width: 61px;
+              margin-right: 28px;
+            }
+
+            &-text {
+              width: 400px;
+              font-size: 16px;
+              line-height: 20px;
+            }
+
+            &:not(:last-child) {
+              margin-bottom: 30px;
+            }
           }
 
-          ul {
-            padding-left: 20px;
-            margin-bottom: 25px;
+          &-list {
+            &-title {
+              font-size: 27px;
+              line-height: 33px;
+              color: #E8C22C;
+              margin-bottom: 40px;
+            }
+
+            margin: 0 0 50px;
+            padding: 0 12px 0 30px;
 
             @include bb(1000, 900) {
               padding-left: 5px;
             }
 
             @include b(500) {
-              padding-left: 0px;
-            }
-
-            li + li {
-              margin-top: 15px;
+              padding-left: 0;
             }
 
             li {
-              font-weight: normal;
-              font-size: 16px;
-              color: #000000;
-              opacity: 0.5;
-              line-height: 1.4;
               display: flex;
               justify-content: flex-start;
+              font-size: 16px;
+              line-height: 20px;
+              color: #ffffff;
 
               @include bb(1000, 900) {
                 font-size: 14px;
@@ -626,12 +649,33 @@
                 content: "";
                 min-width: 11px;
                 height: 11px;
-                background-color: #be8112;
+                background-color: #E8C22C;
                 border-radius: 50%;
                 margin-right: 13px;
                 margin-top: 4.5px;
               }
             }
+
+            li + li {
+              margin-top: 25px;
+            }
+
+            &-subtitle {
+              font-weight: bold;
+              font-size: 17px;
+              color: #E8C22C;
+            }
+          }
+
+          &-prize-desc {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #000000;
+            opacity: 0.5;
+            line-height: 1.4;
+            font-weight: normal;
+            width: 100%;
+            word-break: break-word;
           }
 
           &-image {
@@ -837,7 +881,6 @@
           padding: 20px;
           width: 100%;
           color: #000000;
-          cursor: pointer;
           font-family: "Montserrat", sans-serif;
           background: #4d4c4d;
           -webkit-appearance: none;
@@ -997,7 +1040,6 @@
     padding: 20px;
     width: 100%;
     color: #000000;
-    cursor: pointer;
     font-family: "Montserrat", sans-serif;
     -webkit-appearance: none;
     -moz-appearance: none;

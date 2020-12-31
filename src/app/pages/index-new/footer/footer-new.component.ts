@@ -11,6 +11,7 @@ export class FooterNewComponent implements OnInit {
 
   public privacyCookie = true;
   public hideFooter = false;
+  public buyFooter = false;
 
   constructor(
     private router: Router,
@@ -23,6 +24,7 @@ export class FooterNewComponent implements OnInit {
 
       if (event instanceof NavigationEnd) {
         this.hideFooter = !hideFooterInRoutes.includes(event.url);
+        this.buyFooter = event.url === '/buy';
       }
 
       if (event instanceof NavigationError) {

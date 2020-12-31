@@ -1,4 +1,4 @@
-<ng-container *ngIf="hideFooter">
+<ng-container *ngIf="hideFooter && !buyFooter">
 
     <section class="section-app">
         <div class="section-app-wrap">
@@ -84,7 +84,28 @@
             </span>
         </div>
     </footer>
+</ng-container>
 
+<ng-container *ngIf="buyFooter">
+  <footer class="centurion-footer">
+    <div class="centurion-footer-logo">
+      <img src="/assets/img/centurion.svg" alt="Centurion logo"/>
+    </div>
+    <div class="centurion-footer-text">Important Notice: www.centuriongm.com is owned by Centurion Global Limited (“Centurion Global” or the "Company"), with its registered office at Harneys Services (Cayman Limited), 4th Floor Harbour Place, 103 South Church Street, Grand Cayman, PO Box 10240, KY1-1002, Cayman Islands.
+      <br />
+      <br />
+      By visiting this site, you agree to be bound by Centurion Global’s Terms of Use and Privacy Policy. Digital tokens offered by Centurion Global on this site are intended for qualified buyers who understand and accept the risks associated with the ownership of such digital assets. Each buyer is advised to conduct his/her own due diligence as none of Centurion Global or its affiliates provides any investment advice, business advice or tax or legal advice.
+      <br />
+      <br />
+      THE INFORMATION PROVIDED ON THIS SITE IS NOT FOR CIRCULATION, DISPLAY, RECEPTION OR DISTRIBUTION IN SINGAPORE (INCLUDING TO THE PUBLIC OR ANY SECTION OF THE PUBLIC IN SINGAPORE) OR ANY OTHER JURISDICTION WHERE THE PRODUCTS OR SERVICES OF CENTURION GLOBAL OR ITS AFFILIATES WOULD BE PROHIBITED WITHOUT A REQUISITE LICENSE OR EXEMPTION. NEITHER CENTURION GLOBAL NOR ANY OF ITS AFFILIATES HEREBY OFFER ANY SERVICE THAT WOULD CONSTITUTE A PAYMENT SERVICE FOR PURPOSES OF THE SINGAPORE PAYMENT SERVICES ACT 2019, OR ANY OTHER ACTIVITY SUBJECT TO REGULATION BY THE MONETARY AUTHORITY OF SINGAPORE, IN SINGAPORE OR TO ANY PERSON IN SINGAPORE. NEITHER THE DUCATUS COIN NOR DUCATUSX IS AVAILABLE FOR SALE BY CENTURION GLOBAL IN SINGAPORE.
+    </div>
+    <div class="centurion-footer-links">
+      <a href="https://centuriongm.com/#abouthome" class="link">About Centurion</a>
+      <a href="https://centuriongm.com/#ourbusinesshome" class="link">Our Businesses</a>
+      <a href="https://centuriongm.com/legal.html" class="link">Legal</a>
+    </div>
+    <div class="centurion-footer-copyright">© 2020 Ducatus</div>
+  </footer>
 </ng-container>
 
 <section class="section-cookie" *ngIf="privacyCookie">

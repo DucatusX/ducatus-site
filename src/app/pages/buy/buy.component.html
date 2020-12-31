@@ -28,82 +28,71 @@
 
         <div class="lottery">
           <div class="lottery-wrap">
-            <span class="lottery-title">{{
-              "PAGE.BUY.LOTTERY.TITLE" | translate
-            }}</span>
-            <span class="lottery-subtitle">{{
-              "PAGE.BUY.LOTTERY.BLOCK.PRIZE.TITLE" | translate
-            }}</span>
+            <div class="lottery-hash-title">#GOLDRUSH2021</div>
+            <div class="lottery-title">
+              <span class="yellow">WIN 2.432 KG OF 999.99 PURE GOLD!</span> BUY DUC NOW!
+            </div>
+            <div class="lottery-subtitle">
+              STAND A CHANCE TO WIN A COMPLETE SET OF DUCATUS PRIME LIMITED EDITION GOLD COINS AND GOLD BARS FROM POG.
+            </div>
 
-            <div>
-              <div>
-                <span class="lottery-prize-desc">{{
-                  "PAGE.BUY.LOTTERY.BLOCK.PRIZE.SUBTITLE" | translate
-                }}</span>
-
-                <ul>
-                  <li>
-                    {{ "PAGE.BUY.LOTTERY.BLOCK.PRIZE.ITEM1" | translate }}
-                  </li>
-
-                  <li>
-                    {{ "PAGE.BUY.LOTTERY.BLOCK.PRIZE.ITEM2" | translate }}
-                  </li>
-
-                  <li>
-                    {{ "PAGE.BUY.LOTTERY.BLOCK.PRIZE.ITEM3" | translate }}
-                  </li>
-
-                  <li>
-                    {{ "PAGE.BUY.LOTTERY.BLOCK.PRIZE.ITEM4" | translate }}
-                  </li>
-                </ul>
+            <div class="lottery-item">
+              <div class="lottery-item-image">
+                <img src="/assets/img/icons/lottery-icon-1.svg" alt="lottery golden item">
+              </div>
+              <div class="lottery-item-text">
+                The Ducatus Prime Limited Edition: the golden standard in next-generation assets.
               </div>
             </div>
-            <span class="lottery-subtitle">{{
-              "PAGE.BUY.LOTTERY.BLOCK.HOW.TITLE" | translate
-            }}</span>
-            <div>
-              <div>
-                <ul>
-                  <li>
-                    {{ "PAGE.BUY.LOTTERY.BLOCK.HOW.ITEM1" | translate }}
-                  </li>
-
-                  <li>
-                    {{ "PAGE.BUY.LOTTERY.BLOCK.HOW.ITEM2" | translate }}
-                  </li>
-
-                  <li>
-                    {{ "PAGE.BUY.LOTTERY.BLOCK.HOW.ITEM3" | translate }}
-                  </li>
-                </ul>
+            <div class="lottery-item">
+              <div class="lottery-item-image">
+                <img src="/assets/img/icons/lottery-icon-2.svg" alt="lottery golden item">
+              </div>
+              <div class="lottery-item-text">
+                A time-honoured asset and a digital currency in one, each Ducatus Prime gold coin or gold bar comes
+                with a specific added value in DUC. The only product of its kind registered on the DucatusX blockchain.
+              </div>
+            </div>
+            <div class="lottery-item">
+              <div class="lottery-item-image">
+                <img src="/assets/img/icons/lottery-icon-3.svg" alt="lottery golden item">
+              </div>
+              <div class="lottery-item-text">
+                Finely crafted with the highest standards of 999.99 purity, the product designs are in limited
+                quantities in production based on Fibonacci series.
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="lotery-galery">
-        <div
-          class="lotery-galery-main"
-          [ngStyle]="{
-            'background-image':
-              'url(assets/img/lotery/' + slides[activeSlide] + '.jpeg)'
-          }"
-        ></div>
-        <div class="lotery-galery-thumb">
-          <div
-            class="lotery-galery-item"
-            *ngFor="let slide of slides; let i = index"
-            [ngClass]="{ active: i === activeSlide }"
-            (click)="changeSlide(i)"
-          >
-            <div
-              class="lotery-galery-item-img"
-              [ngStyle]="{
-                'background-image': 'url(assets/img/lotery/' + slide + '.jpeg)'
-              }"
-            ></div>
+      <div class="pay-form-block">
+        <div class="lottery">
+          <div class="lottery-wrap">
+            <div class="lottery-list-title">
+              How To Win Ducatus Prime Limited Edition Gold Coins And Gold Bars From Pog:
+            </div>
+            <ul class="lottery-list">
+              <li>
+                Buy DUC so we can reach our target of US$ 233,000 worth of DUC not later than 12th February 2021.
+              </li>
+              <li>
+                Every US$ 10 worth of DUC is equivalent to one (1) entry. The higher your DUC purchase, the more
+                chances you have of winning.
+              </li>
+              <li>
+                Once the target of US$ 233,000 worth of DUC sold is reached, the 8-day countdown to the Lucky Draw Day
+                starts.
+              </li>
+              <li>
+                Winners will be drawn through a random smart contract draw.
+              </li>
+              <li>
+                Winning hashes will be determined and published on this page and the Winner will be informed by email.
+              </li>
+            </ul>
+            <div class="lottery-list-subtitle">
+              Don’t Miss This GOLDEN Opportunity.
+            </div>
           </div>
         </div>
       </div>

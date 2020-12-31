@@ -27,7 +27,19 @@
     &.header-scroll {
       box-shadow: none;
       background: black;
-      padding: 10px 0;
+      padding: 15px 0;
+
+      @include b(1400) {
+        padding: 15px;
+      }
+
+      @include b(900) {
+        padding: 10px 20px;
+      }
+
+      @include b(750) {
+        padding: 10px 10px;
+      }
     }
     .header {
       &-logo-block {
@@ -43,6 +55,10 @@
           }
         }
       }
+    }
+
+    @include b(1400) {
+      padding: 15px;
     }
   }
 
@@ -70,13 +86,13 @@
   }
 
   @include b(900) {
-    padding: 5px 20px;
+    padding: 10px 20px;
   }
 
   @include b(750) {
     // background-color: white;
     margin-top: 0 !important;
-    padding: 5px 10px;
+    padding: 10px 10px;
     height: auto;
   }
 
@@ -221,7 +237,7 @@
   }
 
   @include b(900) {
-    top: 15px;
+    top: 6px;
   }
 
   &-admin {

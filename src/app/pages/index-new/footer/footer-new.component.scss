@@ -316,3 +316,37 @@
         }
     }
 }
+
+.centurion-footer {
+  padding: 70px 62px 39px;
+  background: #000000;
+
+  &-logo {
+    margin-bottom: 56px;
+  }
+
+  &-text {
+    white-space: pre-line;
+    color: white;
+    margin-bottom: 47px;
+  }
+
+  &-links {
+    margin-bottom: 40px;
+
+    .link {
+      white-space: nowrap;
+      color: #E8C22C;
+      font-weight: 500;
+      font-size: 22px;
+      text-decoration: none;
+      margin: 0 40px 40px 0;
+    }
+  }
+
+  &-copyright {
+    font-size: 15px;
+    color: #FFFFFF;
+    opacity: 0.5;
+  }
+}
