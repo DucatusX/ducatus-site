@@ -402,7 +402,7 @@
       </form>
     </div>
     <div class="pay-form">
-      <div class="pay-form-wrap mt-m-30">
+      <div class="pay-form-wrap">
         <div class="ducatus-pay-form loading-pay-form" *ngIf="loadingData">
           <div
             class="group group-input group-input-select"
@@ -429,7 +429,8 @@
           <div class="group group-input">
             <label for="referralAddress">{{
               "PAGE.BUY.REFERRAL.LABEL" | translate
-            }}</label>
+            }}
+            </label>
             <input
               id="referralAddress"
               class="input input-white"
@@ -471,78 +472,8 @@
       </div>
       <div class="pay-form-block">
         <!-- *ngIf="!lottery.ended" -->
-        <div class="lottery-tickets hidden-mobile mt-m-30">
-          <!-- *ngIf="lottery.filled_at && !lottery.ended" -->
-          <div class="lottery-tickets-timer hidden-desktop">
-            <div class="lottery-tickets-timer-title">
-              {{ "PAGE.BUY.LOTTERY.BLOCK.COUNTDOWN.TITLE" | translate }}
-            </div>
-            <span class="lottery-tickets-timer-count">
-              <app-countdown
-                [timeStart]="lottery.filled_at"
-                [correctTimeStart]="1000"
-                [timeEndDayPlus]="8"
-                (countdownEvent)="countdownEvent($event)"
-              >
-              </app-countdown>
-            </span>
-          </div>
-          <!-- *ngIf="!lottery.filled_at && !lottery.ended" -->
-          <div class="lottery-tickets-progress">
-            <span class="lottery-tickets-progress-title"
-              >{{ "PAGE.BUY.LOTTERY.BLOCK.PROGRESS.TITLE" | translate }}
-              <img
-                src="/assets/img/icons/lottery-rocket.svg"
-                height="25"
-                width="25"
-                alt="ducatus lottery rocket"
-            /></span>
-            <div class="lottery-tickets-progress-bar">
-              <span
-                [style.width]="lottery.percent"
-                [ngClass]="{ 'progress-info-5': percentLottery > 5 }"
-                [attr.data-progress]="lottery.percent"
-              ></span>
-            </div>
-          </div>
-
-          <div class="lottery-tickets-spacer"><span></span></div>
-
-          <div class="lottery-tickets-items">
-            <div class="lottery-tickets-item">
-              <img
-                src="/assets/img/icons/ticket.svg"
-                height="57"
-                width="70"
-                alt="ducatus lottery ticket"
-              />
-              <span
-                [routerLink]="['/buy/entries']"
-                class="lottery-tickets-item-title"
-                [innerHTML]="
-                  'PAGE.BUY.LOTTERY.BLOCK.TICKETS.LINK'
-                    | translate
-                      : {
-                          tickets_amount: (lottery.gave_tickets_amount | number)
-                        }
-                "
-              ></span>
-            </div>
-            <div class="lottery-tickets-spacer"><span></span></div>
-            <div class="lottery-tickets-item">
-              <span class="lottery-tickets-item-amount">{{
-                lottery.sent_duc_amount | number
-              }}</span>
-              <span class="lottery-tickets-item-text">{{
-                "PAGE.BUY.LOTTERY.BLOCK.TICKETS.TEXT" | translate
-              }}</span>
-            </div>
-          </div>
-        </div>
-
         <div
           class="hidden-desktop"
-          style="margin-top: 60px !important"
           *ngIf="!loadingData"
         >
           <div class="buy-info-block" *ngIf="!loadingData">
@@ -588,26 +519,95 @@
           </div>
         </div>
 
-        <div class="hidden-desktop pay-form-block" *ngIf="!loadingData">
-          <div *ngIf="lottery.ended">
-            <!-- <div *ngIf="lottery.winner_address" class="lottery-win">
-                        <div class="lottery-win-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WINNER.TITLE' | translate }}</div>
-                        <span class="lottery-win-text">{{ lottery.winner_tx_hash }}</span>
-                    </div>
-                    <div *ngIf="!lottery.winner_address" class="lottery-waiting">
-                        <div class="lottery-waiting-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TITLE' | translate }}
-                        </div>
-                        <div class="lottery-waiting-text">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TEXT' | translate }}</div>
-                    </div> -->
-            <div
-              style="min-height: 80px; padding: 10px; margin-bottom: 30px"
-              *ngIf="lottery.winners_data && !modalWinner"
-              (click)="modalWinner = true"
-              class="lottery-win btn ducatus-btn ducatus-btn-yellow"
-            >
-              View winners
-            </div>
+        <div class="lottery-tickets">
+        <!-- *ngIf="lottery.filled_at && !lottery.ended" -->
+        <!-- <div class="lottery-tickets-timer hidden-desktop hidden-mobile">
+          <div class="lottery-tickets-timer-title">
+            {{ "PAGE.BUY.LOTTERY.BLOCK.COUNTDOWN.TITLE" | translate }}
           </div>
+          <span class="lottery-tickets-timer-count">
+            <app-countdown
+              [timeStart]="lottery.filled_at"
+              [correctTimeStart]="1000"
+              [timeEndDayPlus]="8"
+              (countdownEvent)="countdownEvent($event)"
+            >
+            </app-countdown>
+          </span>
+        </div> -->
+        <!-- *ngIf="!lottery.filled_at && !lottery.ended" -->
+        <div class="lottery-tickets-progress">
+            <span class="lottery-tickets-progress-title"
+            >{{ "PAGE.BUY.LOTTERY.BLOCK.PROGRESS.TITLE" | translate }}
+              <img
+                src="/assets/img/icons/lottery-rocket.svg"
+                height="25"
+                width="25"
+                alt="ducatus lottery rocket"
+              /></span>
+          <div class="lottery-tickets-progress-bar">
+              <span
+                [style.width]="lottery.percent"
+                [ngClass]="{ 'progress-info-5': percentLottery > 5 }"
+                [attr.data-progress]="lottery.percent"
+              ></span>
+          </div>
+        </div>
+
+        <div class="lottery-tickets-spacer"><span></span></div>
+
+        <div class="lottery-tickets-items">
+          <div class="lottery-tickets-item">
+            <img
+              src="/assets/img/icons/ticket.svg"
+              height="57"
+              width="70"
+              alt="ducatus lottery ticket"
+            />
+            <span
+              [routerLink]="['/buy/entries']"
+              class="lottery-tickets-item-title"
+              [innerHTML]="
+                  'PAGE.BUY.LOTTERY.BLOCK.TICKETS.LINK'
+                    | translate
+                      : {
+                          tickets_amount: (lottery.gave_tickets_amount | number)
+                        }
+                "
+            ></span>
+          </div>
+          <div class="lottery-tickets-spacer"><span></span></div>
+          <div class="lottery-tickets-item">
+              <span class="lottery-tickets-item-amount">{{
+                lottery.sent_duc_amount | number
+                }}</span>
+            <span class="lottery-tickets-item-text">{{
+              "PAGE.BUY.LOTTERY.BLOCK.TICKETS.TEXT" | translate
+              }}</span>
+          </div>
+        </div>
+      </div>
+
+        <div class="hidden-desktop pay-form-block" *ngIf="!loadingData">
+<!--            <div *ngIf="lottery.ended">-->
+<!--              &lt;!&ndash; <div *ngIf="lottery.winner_address" class="lottery-win">-->
+<!--                          <div class="lottery-win-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WINNER.TITLE' | translate }}</div>-->
+<!--                          <span class="lottery-win-text">{{ lottery.winner_tx_hash }}</span>-->
+<!--                      </div>-->
+<!--                      <div *ngIf="!lottery.winner_address" class="lottery-waiting">-->
+<!--                          <div class="lottery-waiting-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TITLE' | translate }}-->
+<!--                          </div>-->
+<!--                          <div class="lottery-waiting-text">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TEXT' | translate }}</div>-->
+<!--                      </div> &ndash;&gt;-->
+<!--              <div-->
+<!--                style="min-height: 80px; padding: 10px; margin-bottom: 30px"-->
+<!--                *ngIf="lottery.winners_data && !modalWinner"-->
+<!--                (click)="modalWinner = true"-->
+<!--                class="lottery-win btn ducatus-btn ducatus-btn-yellow"-->
+<!--              >-->
+<!--                View winners-->
+<!--              </div>-->
+<!--            </div>-->
 
           <div *ngIf="!lottery.ended" class="lottery-tickets">
             <div

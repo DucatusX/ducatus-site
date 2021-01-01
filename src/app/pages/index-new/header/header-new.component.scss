@@ -24,6 +24,15 @@
   &-buy {
     padding: 15px 0;
     background: transparent;
+
+    @include b(1400) {
+      padding: 15px;
+    }
+
+    @include b(750) {
+      background: black;
+    }
+
     &.header-scroll {
       box-shadow: none;
       background: black;
@@ -41,6 +50,7 @@
         padding: 10px 10px;
       }
     }
+
     .header {
       &-logo-block {
         img {
@@ -57,8 +67,8 @@
       }
     }
 
-    @include b(1400) {
-      padding: 15px;
+    .header-menu-link {
+      color: white;
     }
   }
 
@@ -164,10 +174,8 @@
     &-link {
       color: white;
       text-decoration: none;
-      text-transform: capitalize;
       transition: 0.4s ease;
       margin: 2px 15px;
-      font-weight: normal;
       cursor: pointer;
       font-size: 14px;
       line-height: 17px;
@@ -256,7 +264,7 @@
   }
 
   @include b(370) {
-    top: 5px;
+    top: 1px;
     right: 40px;
   }
 

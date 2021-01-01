@@ -4,7 +4,6 @@
 .modal {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
-  display: none;
   top: 0;
   left: 0;
   display: flex;
@@ -91,7 +90,7 @@
     padding-bottom: 60px;
   }
 
-  @include b(600) {
+  @include b(500) {
     align-items: baseline;
     padding-top: 60px;
   }
@@ -125,6 +124,7 @@
       @include b(900) {
         display: flex;
         flex-direction: column;
+        padding: 0;
       }
 
       @include b(750) {
@@ -132,12 +132,6 @@
       }
 
       &-block {
-        @include b(900) {
-          max-width: 600px;
-          width: 100%;
-          margin: 0 auto;
-        }
-
         @include b(600) {
           padding: 0 15px;
         }
@@ -207,11 +201,11 @@
           height: max-content;
           border-radius: 12px;
           width: 100%;
+          height: 100%;
           background-color: #23241f;
 
-          @include b(900) {
-            min-height: max-content;
-            margin-top: 30px;
+          @include b(500) {
+            background: transparent;
           }
 
           span {
@@ -221,8 +215,8 @@
           &-wrap {
             padding: 40px 30px 35px 30px;
 
-            @include b(600) {
-              padding: 30px 20px;
+            @include b(500) {
+              padding: 0;
             }
           }
 
@@ -254,9 +248,7 @@
 
             &-text {
               font-weight: bold;
-              font-weight: bold;
               font-size: 18px;
-              line-height: 22px;
               text-align: center;
               color: $brown-red;
               line-height: 1.5;
@@ -305,15 +297,13 @@
           }
 
           &-tickets {
-            margin-top: 49px;
             border-radius: 12px;
             position: relative;
             background-color: #23241f;
             padding: 1px 0;
 
             @include b(900) {
-              margin-bottom: 30px;
-              margin-top: 0;
+              margin-top: 20px;
             }
 
             &-timer {
@@ -549,7 +539,6 @@
             width: 100%;
             font-weight: bold;
             font-size: 34px;
-            line-height: 41px;
             color: #ffffff;
             word-break: break-word;
             margin-bottom: 29px;
@@ -559,12 +548,8 @@
               color: #E8C22C;
             }
 
-            @include bb(1000, 900) {
-              font-size: 24px;
-            }
-
             @include b(500) {
-              font-size: 20px;
+              font-size: 27px;
             }
           }
 
@@ -578,12 +563,8 @@
             margin-bottom: 40px;
             opacity: 0.75;
 
-            @include bb(1000, 900) {
-              font-size: 14px;
-            }
-
             @include b(500) {
-              font-size: 13px;
+              opacity: 1;
             }
           }
 
@@ -592,11 +573,16 @@
             align-items: center;
             color: #ffffff;
             padding: 0 20px 0 30px;
+            margin-bottom: 30px;
+
+            @include b(500) {
+              padding: 0;
+            }
 
             &-image {
               display: flex;
               justify-content: center;
-              width: 61px;
+              min-width: 61px;
               margin-right: 28px;
             }
 
@@ -605,29 +591,27 @@
               font-size: 16px;
               line-height: 20px;
             }
-
-            &:not(:last-child) {
-              margin-bottom: 30px;
-            }
           }
 
           &-list {
+            margin: 0 0 50px;
+            padding: 0 12px 0 30px;
+
+            @include b(500) {
+              margin-bottom: 20px;
+              padding: 0;
+            }
+
             &-title {
               font-size: 27px;
               line-height: 33px;
               color: #E8C22C;
               margin-bottom: 40px;
-            }
 
-            margin: 0 0 50px;
-            padding: 0 12px 0 30px;
-
-            @include bb(1000, 900) {
-              padding-left: 5px;
-            }
-
-            @include b(500) {
-              padding-left: 0;
+              @include b(500) {
+                font-size: 20px;
+                line-height: 24px;
+              }
             }
 
             li {
@@ -636,14 +620,6 @@
               font-size: 16px;
               line-height: 20px;
               color: #ffffff;
-
-              @include bb(1000, 900) {
-                font-size: 14px;
-              }
-
-              @include b(500) {
-                font-size: 14px;
-              }
 
               &:before {
                 content: "";
@@ -664,6 +640,10 @@
               font-weight: bold;
               font-size: 17px;
               color: #E8C22C;
+
+              @include b(500) {
+                margin-bottom: 20px;
+              }
             }
           }
 
@@ -767,7 +747,6 @@
       }
 
       .buy-info-block {
-        margin-top: 47px;
         // min-height: 343px;
         width: 100%;
         padding: 30px;
@@ -1935,12 +1914,6 @@
 .hidden-mobile {
   @include b(900) {
     display: none !important;
-  }
-}
-
-.pay-form-wrap {
-  @include b(900) {
-    margin-top: 30px !important;
   }
 }
 

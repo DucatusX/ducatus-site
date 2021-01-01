@@ -256,7 +256,6 @@
                 overflow: hidden;
                 background-color: #ececec;
                 display: block;
-                overflow: hidden;
             }
 
             &-open {
@@ -321,8 +320,20 @@
   padding: 70px 62px 39px;
   background: #000000;
 
+  @include b(900) {
+    padding-top: 0;
+  }
+
   &-logo {
     margin-bottom: 56px;
+
+    img {
+      width: auto;
+
+      @include b(500) {
+        width: 200px;
+      }
+    }
   }
 
   &-text {
@@ -332,15 +343,19 @@
   }
 
   &-links {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 
     .link {
-      white-space: nowrap;
+      display: inline-block;
       color: #E8C22C;
       font-weight: 500;
       font-size: 22px;
       text-decoration: none;
       margin: 0 40px 40px 0;
+
+      @include b(665) {
+          display: block;
+      }
     }
   }
 
