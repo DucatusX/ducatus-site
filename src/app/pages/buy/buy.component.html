@@ -218,11 +218,13 @@
                       }
               }}
               <br />
-              {{ "PAGE.BUY.FORM.RADIO.TEXT" | translate }}
-              <span class="ducatus-info-link" (click)="modalInfo = true">{{
-                "PAGE.BUY.FORM.RADIO.LINK" | translate
-              }}</span></label
-            >
+              <span class="ducatus-info-text">
+                {{ "PAGE.BUY.FORM.RADIO.TEXT" | translate }}
+                <span class="ducatus-info-link" (click)="modalInfo = true">{{
+                  "PAGE.BUY.FORM.RADIO.LINK" | translate
+                }}</span>
+              </span>
+            </label>
             <div class="group-radio group-radio--costs">
               <div *ngFor="let item of priceTemplate" class="group-radio-item">
                 <input
@@ -338,7 +340,7 @@
                 class="ducatus-btn ducatus-btn-yellow"
                 style="min-width: 100%"
               >
-                {{ "PAGE.BUY.FORM.SUBMIT" | translate }}
+                {{ "PAGE.BUY.FORM.CONTINUE" | translate }}
               </button>
               <button
                 [ngClass]="{ 'icon icon__loading': loadingCard }"

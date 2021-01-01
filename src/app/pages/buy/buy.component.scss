@@ -208,14 +208,17 @@
   }
 }
 
-.ducatus-info-link {
-  color: #e8c22c;
-  cursor: pointer;
-  transition: 0.4s ease;
-  font-size: 12px;
+.ducatus-info-text {
+  font-weight: normal;
 
-  &:hover {
-    text-decoration: underline;
+  .ducatus-info-link {
+    color: #e8c22c;
+    cursor: pointer;
+    transition: 0.4s ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

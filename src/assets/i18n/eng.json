@@ -243,7 +243,8 @@
           "ERROR": "something went wrong, try again later",
           "NOTE": "Please note that it may take up to {{ time }} until you receive your DUC in your wallet <br><br>"
         },
-        "SUBMIT": "Submit"
+        "SUBMIT": "Submit",
+        "CONTINUE": "Continue"
       },
       "INFO": {
         "TITLE": "Discover, learn and earn by being part of the Ducatus Cashless Economy.",
@@ -254,9 +255,9 @@
       },
       "REFERRAL": {
         "TITLE": "Referral link",
-        "SUBTITLE": "Share this amazing opportunity with your friends and family and receive a 5% DUC referral bonus for any purchase they make using the below link",
-        "LABEL": "Enter your DUC wallet receiving address",
-        "PLACEHOLDER": "Enter your DUC wallet receiving address",
+        "SUBTITLE": "Share your referral link and get 3% revenue from each Ducatus purchase",
+        "LABEL": "Enter your Ducatus address",
+        "PLACEHOLDER": "Enter your Ducatus address",
         "ERROR": "Error! Please check, the address format is incorrect!",
         "LINK": "Your referral link"
       },
@@ -288,11 +289,11 @@
             "TITLE": "Countdown to Draw Date"
           },
           "PROGRESS": {
-            "TITLE": "% of sales target reached before draw countdown starts"
+            "TITLE": "Get a chance to win prize"
           },
           "TICKETS": {
-            "LINK": "List of {{ tickets_amount }} total hash entries →",
-            "TEXT": "Number of DUC"
+            "LINK": "Description of Counters →",
+            "TEXT": "Number of DUC sold"
           },
           "INFO": {
             "TITLE": "How can you win any of these amazing prizes?",
