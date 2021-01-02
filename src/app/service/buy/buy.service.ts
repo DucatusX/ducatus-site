@@ -14,7 +14,8 @@ export class BuyService {
   }
 
   public getLotteryInfo() {
-    return this.httpService.get(`get_lotteries_info/`).toPromise();
+    const id = 7;
+    return this.httpService.get(`lotteries/${id}/`).toPromise();
   }
 
   public getLotteryPlayers(loteryId, page) {
