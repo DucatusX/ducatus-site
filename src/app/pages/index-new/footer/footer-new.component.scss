@@ -317,8 +317,14 @@
 }
 
 .centurion-footer {
-  padding: 70px 62px 39px;
-  background: #000000;
+  padding: 70px 0 39px;
+  background: #0e0e0e;
+
+  &-container {
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
 
   @include b(900) {
     padding-top: 0;

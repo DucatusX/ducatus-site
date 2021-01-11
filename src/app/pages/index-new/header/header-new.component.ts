@@ -43,7 +43,7 @@ export class HeaderNewComponent implements OnInit {
 
       if (event instanceof NavigationEnd) {
         this.hideHeader = !hideHeaderInRoutes.includes(event.url);
-        this.buyHeader = event.url === '/buy';
+        this.buyHeader = event.url.startsWith('/buy');
         this.adminHeader = !adminHeaderInRoutes.includes(event.url);
       }
 

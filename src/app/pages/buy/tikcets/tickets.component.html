@@ -1,14 +1,8 @@
 <section
-  class="section-header-page header-entries-page"
+  class="section-header-page header-buy-page"
   style="background-image: url(assets/img/sections/buy-bg.png)"
->
-  <div class="container">
-    <h1
-      class="h1__title-page"
-      [innerHTML]="'PAGE.TICKETS.TITLE' | translate"
-    ></h1>
-  </div>
-</section>
+></section>
+
 <section class="app lottery-info-page color-page">
   <div class="container">
     <div class="lottery-info">
@@ -68,9 +62,9 @@
           [id]="config.id"
           (pageChange)="config.currentPage = $event"
         >
-          <div class="lottery-info-paginaton">
+          <div class="lottery-info-pagination">
             <button
-              class="lottery-info-paginaton-item lottery-info-paginaton-item-arrow lottery-info-paginaton-item-arrow-left"
+              class="lottery-info-pagination-item lottery-info-pagination-item-arrow lottery-info-pagination-item-arrow-left"
               (click)="p.previous(); startScrollTo('tickets'); changePage()"
               [disabled]="p.isFirstPage()"
               [class.disabled]="p.isFirstPage()"
@@ -79,9 +73,9 @@
             </button>
 
             <div
-              class="lottery-info-paginaton-item lottery-info-paginaton-hidden-mobile"
+              class="lottery-info-pagination-item lottery-info-pagination-hidden-mobile"
               *ngFor="let page of p.pages"
-              [class.lottery-info-paginaton-item-active]="
+              [class.lottery-info-pagination-item-active]="
                 p.getCurrent() === page.value
               "
             >
@@ -93,22 +87,20 @@
                 "
                 *ngIf="p.getCurrent() !== page.value"
               >
-                <span>{{ page.label }}</span>
+                <span class="inactive">{{ page.label }}</span>
               </a>
               <div *ngIf="p.getCurrent() === page.value">
                 <span>{{ page.label }}</span>
               </div>
             </div>
 
-            <div
-              class="lottery-info-paginaton-item lottery-info-paginaton-hidden-desktop"
-            >
+            <div class="lottery-info-pagination-item lottery-info-pagination-hidden-desktop">
               <b>{{ p.getCurrent() }}</b> <span>/</span>
               {{ (p.getTotalItems() / 10 + 1).toFixed(0) }}
             </div>
 
             <button
-              class="lottery-info-paginaton-item lottery-info-paginaton-item-arrow lottery-info-paginaton-item-arrow-right"
+              class="lottery-info-pagination-item lottery-info-pagination-item-arrow lottery-info-pagination-item-arrow-right"
               (click)="p.next(); startScrollTo('tickets'); changePage()"
               [disabled]="p.isLastPage()"
               [class.disabled]="p.isLastPage()"

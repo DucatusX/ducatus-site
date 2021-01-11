@@ -676,7 +676,7 @@ li {
   }
 
   &__search {
-    @include before-img(block, 14px, 14px, r) {
+    @include before-img(block, 15px, 15px, r) {
       transition: 0.4s ease;
       background-image: url("assets/img/icons/search.svg");
     }

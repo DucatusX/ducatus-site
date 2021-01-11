@@ -20,6 +20,35 @@
     }
 }
 
+.header-buy-page {
+  background-position: 30% 50% !important;
+  background-color: black;
+  height: 800px;
+  position: relative;
+
+  @include b(500) {
+    height: 175px;
+    margin-top: 62px;
+  }
+
+  @include b(370) {
+    margin-top: 51px;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    background: linear-gradient(360deg, #000000 6.48%, rgba(0, 0, 0, 0) 56.22%);
+    width: 100%;
+    left: 0;
+    bottom: -10px;
+    height: 200px;
+    @include b(500) {
+      height: 100px;
+    }
+  }
+}
+
 .cl-red {
     color: #892734 !important;
 }

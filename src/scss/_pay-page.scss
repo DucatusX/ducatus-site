@@ -118,7 +118,7 @@
       justify-content: space-between;
       grid-gap: 20px;
       &:first-child {
-        margin-top: -170px;
+        margin-top: -200px;
       }
 
       @include b(900) {
@@ -842,7 +842,7 @@
           font-size: 12px;
           margin: 5px 0 0 10px;
           display: block;
-          color: #892734;
+          color: red;
         }
 
         .error-input {
@@ -865,6 +865,13 @@
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
+
+          &-white {
+            background-color: #4d4c4d;
+            color: white;
+
+            @include placeholderColor(rgba(255, 255, 255, 0.65));
+          }
         }
 
         &-referral {
@@ -1025,6 +1032,9 @@
 
     &-white {
       background-color: #4d4c4d;
+      color: white;
+
+      @include placeholderColor(rgba(255, 255, 255, 0.65));
     }
 
     &-fill {
