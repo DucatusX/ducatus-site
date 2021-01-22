@@ -1,409 +1,240 @@
 @import "../../../scss/vars";
 @import "../../../scss/mixins";
 
-.lotery-form {
-  margin-top: 40px;
-
-  @include b(900) {
-    margin-top: 20px;
-  }
-
-  @include b(500) {
-    padding: 0 15px;
-  }
-}
-.lotery-galery {
-  &-main {
-    width: 42vw;
-    height: 42vw;
-    max-height: 600px;
-    max-width: 600px;
-    background-size: cover;
-    border-radius: 12px;
-    margin: 0 auto;
-    @include b(900) {
-      height: 96vw;
-      width: 100%;
-      max-width: unset;
-      max-height: unset;
-    }
-    @include b(500) {
-      display: none;
-    }
-  }
-  &-thumb {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 25px;
-    @include b(500) {
-      overflow: scroll;
-      padding: 0 15px;
-      &:after {
-        min-width: 15px;
-        content: "";
-        display: block;
-        min-height: 100%;
-      }
-    }
-  }
-  &-item {
-    width: 69px;
-    cursor: pointer;
-    height: 69px;
-    background-size: cover;
-    border-radius: 13px;
-    border: 7px solid transparent;
-    @include b(500) {
-      width: 270px;
-      min-width: 270px;
-      height: 270px;
-      border: none;
-    }
-    & + & {
-      @include b(500) {
-        margin-left: 15px;
-      }
-    }
-    &-img {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      border-radius: 6px;
-    }
-    &.active {
-      border-color: #f5dca4;
-      @include b(500) {
-        border: none;
-      }
-    }
-  }
-}
-.loading-pay-form {
-  padding: 30px !important;
-
-  .group {
-    background: linear-gradient(124deg, #f7f3eb, #e9e1ca, #f7f3eb);
-    background-size: 1800% 1800%;
-    -webkit-animation: rainbow 4s ease infinite;
-    -z-animation: rainbow 4s ease infinite;
-    -o-animation: rainbow 4s ease infinite;
-    animation: rainbow 4s ease infinite;
-    margin-bottom: 15px;
-    border-radius: 5px;
-
-    &:nth-last-child(1) {
-      margin-bottom: 0 !important;
-    }
-  }
-
-  .input-h-20 {
-    height: 30px !important;
-  }
-
-  .input-h-60 {
-    height: 60px !important;
-  }
-
-  .input-h-105 {
-    height: 105px !important;
-  }
-
-  .input-h-85 {
-    height: 85px !important;
-  }
-}
-@-webkit-keyframes rainbow {
-  0% {
-    background-position: 0% 82%;
-  }
-
-  50% {
-    background-position: 100% 19%;
-  }
-
-  100% {
-    background-position: 0% 82%;
-  }
-}
-
-@-moz-keyframes rainbow {
-  0% {
-    background-position: 0% 82%;
-  }
-
-  50% {
-    background-position: 100% 19%;
-  }
-
-  100% {
-    background-position: 0% 82%;
-  }
-}
-
-@-o-keyframes rainbow {
-  0% {
-    background-position: 0% 82%;
-  }
-
-  50% {
-    background-position: 100% 19%;
-  }
-
-  100% {
-    background-position: 0% 82%;
-  }
-}
-
-@keyframes rainbow {
-  0% {
-    background-position: 0% 82%;
-  }
-
-  50% {
-    background-position: 100% 19%;
-  }
-
-  100% {
-    background-position: 0% 82%;
-  }
-}
-
-.color-page {
-  background-color: #000 !important;
-  background-image: none !important;
-}
-
 .buy-page {
-  @include b(600) {
-    padding-top: 20px !important;
-  }
-}
-
-.ducatus-info-text {
-  font-weight: normal;
-
-  .ducatus-info-link {
-    color: #e8c22c;
-    cursor: pointer;
-    transition: 0.4s ease;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-.modal-congratulation {
-  grid-template-columns: 1fr;
-  background: white;
-  align-items: center;
-  justify-content: center;
-  min-height: 300px;
-  overflow-y: auto;
-  padding: 30px 30px 20px 30px;
-  p {
-    margin: 0;
-  }
-
-  @include b(600) {
-    grid-gap: 10px;
-    padding: 20px;
-  }
-  &-title {
-    font-size: 20px;
-    line-height: 24px;
-    color: #b6914f;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
-  }
-  &-subtitle {
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 30px;
-    color: #852632;
-    text-align: center;
-    margin: 15px 0px 25px;
-  }
-  &-hash {
-    padding: 25px 15px;
-    background: #f9f4ec;
-    border-radius: 6px;
-    align-items: center;
+  &-header {
+    position: relative;
     display: flex;
-    color: #862633;
-    margin-bottom: 20px;
-    font-size: 14px;
-    line-height: 17px;
-    &-box {
-      margin-left: 15px;
-    }
-    &-title {
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-  }
-
-  &-wrap {
-    max-width: 560px;
-    overflow-y: auto;
-    min-height: 300px;
-    max-height: 99vh;
-
-    .modal-content-bottom {
-      background-color: #fdfbf5;
-      padding: 0px 20px 20px 20px;
-    }
-  }
-
-  .icon__congratulations {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
     justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 33px;
-    text-align: center;
-    color: #852632;
+    overflow: hidden;
+    height: 437px;
+    background-image: url(../../../assets/img/buy-page/head-background.png);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
-    @include b(600) {
-      font-size: 24px;
+    &-text {
+      position: absolute;
+      bottom: 53px;
+      left: 78px;
+      color: white;
+      font-weight: bold;
+      font-size: 37px;
     }
 
-    &:before {
-      margin-bottom: 5px;
-
-      @include b(600) {
-        width: 45px;
-        height: 44px;
-        background-size: cover;
-      }
+    &-big-logo {
+      max-width: 100%;
     }
   }
 
-  .icon__watch-out {
-    display: flex;
-    text-align: left;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 40px 0 12px;
-    font-weight: bold;
-    font-size: 22px;
-    color: #862633;
+  &-main {
+    background-image: url(src/assets/img/buy-page/main-background.png);
+    background-size: 65px 83px;
 
-    @include b(600) {
-      font-size: 18px;
-    }
-
-    &:before {
-      margin-right: 15px;
-    }
-  }
-
-  &-text {
-    font-size: 15px;
-    line-height: 1.7;
-    color: #000000;
-
-    @include b(600) {
-      font-size: 13px;
-      line-height: 1.4;
-    }
-  }
-
-  &-watch-out {
-    font-weight: normal;
-    font-size: 14px;
-    color: #862633;
-
-    @include b(600) {
-      font-size: 12px;
-    }
-  }
-
-  &-winners {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 10px;
-    width: 100%;
-    word-break: break-all;
-
-    &-item {
+    &-container {
       display: flex;
-      align-items: center;
-      background-color: #f9f4ec;
-      border-radius: 6px;
-      justify-content: center;
-      width: 100%;
-      padding: 7px 15px;
-      counter-increment: winners-item;
+      justify-content: space-between;
+      grid-gap: 40px;
+      max-width: 1400px;
+      padding: 90px 70px 160px;
+      margin: 0 auto;
+    }
 
-      &:before {
-        // content: attr(data-title);
-        content: counter(winners-item);
-        min-width: 35px;
-        min-height: 35px;
-        max-width: 35px;
-        max-height: 35px;
-        margin-right: 15px;
-        color: white;
-        background-color: #892734;
-        border-radius: 5em;
-        font-weight: bold;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    &-block-1 {
+      width: 50%;
+      max-width: 600px;
+      border-radius: 4px;
+      background: #FDFBF6;
+      box-shadow: 0 50px 45px rgba(204, 199, 189, 0.25);
 
-        @include b(600) {
-          min-width: 25px;
-          min-height: 25px;
-          max-width: 25px;
-          max-height: 25px;
-          font-size: 12px;
-          margin-right: 10px;
+      &-panel {
+        padding: 30px;
+
+        &:nth-child(1) {
+          padding-bottom: 25px;
+        }
+
+        &:nth-child(2) {
+          padding: 25px 30px;
+          background: rgba(0, 0, 0, 0.03);
+        }
+
+        &:nth-child(3) {
+          padding-top: 25px;
         }
       }
 
-      &-content {
-        text-align: left;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 0px;
+      &-title {
+        font-weight: bold;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      &-input {
         width: 100%;
+        height: 62px;
+        padding-left: 15px;
+        border: 1px solid #E9DCCA;
+        border-radius: 2px;
+        font-size: 19px;
 
-        &-prize {
-          font-weight: normal;
-          font-size: 12px;
-          color: #000000;
-
-          @include b(600) {
-            font-size: 10px;
-          }
+        &:focus {
+          outline: none;
         }
 
-        &-count {
-          font-weight: bold;
-          font-size: 14px;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        &[type=number] {
+          -moz-appearance: textfield;
+        }
+      }
+
+      &-attention-text {
+        font-size: 14px;
+        color: #8B8B8B;
+
+        &-red {
           color: #862633;
+        }
+      }
 
-          @include b(600) {
-            font-size: 12px;
+      .duc-address {
+        &-title {
+          display: block;
+          margin-bottom: 11px;
+        }
+
+        &-input {
+          margin-bottom: 15px;
+        }
+
+        &-anchor {
+          margin-bottom: 19px;
+          font-size: 15px;
+          color: #836740;
+
+          a {
+            text-decoration: none;
+            color: #862633;
+          }
+        }
+      }
+
+      .conversion {
+        &-forms {
+          display: flex;
+          justify-content: space-between;
+          grid-gap: 20px;
+          margin-bottom: 20px;
+
+          &-send,
+          &-get {
+            width: 50%;
+            min-width: 200px;
+          }
+
+          &-send {
+            &-title {
+              display: block;
+              margin-bottom: 10px;
+
+              &:after {
+                content: url(../../../assets/img/buy-page/sign-arrow-red.svg);
+                position: relative;
+                top: -1px;
+                margin-left: 5px;
+              }
+            }
+          }
+
+          &-get {
+            &-title {
+              display: block;
+              margin-bottom: 10px;
+
+              &:before {
+                content: url(../../../assets/img/buy-page/sign-arrow-red.svg);
+                position: relative;
+                top: -1px;
+                margin-right: 5px;
+              }
+            }
+
+            &-block {
+              display: flex;
+              align-items: center;
+              width: 100%;
+              height: 62px;
+              padding-left: 15px;
+              border: 1px solid #E9DCCA;
+              border-radius: 2px;
+              font-size: 19px;
+              background: right 15px center/ 25% no-repeat url(src/assets/img/buy-page/duc-small-logo.svg), white;
+            }
           }
         }
 
-        &-hash {
-          font-weight: normal;
-          font-size: 14px;
-          color: #000000;
+        &-rate {
+          margin-bottom: 16px;
+          font-size: 16px;
+          color: rgba(0, 0, 0, 0.5);
+        }
+      }
 
-          @include b(600) {
-            font-size: 12px;
-          }
+      .send-block {
+        &-title {
+          margin-bottom: 11px;
         }
 
-        &-accent {
-          color: #862633 !important;
+        &-address {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 25px;
+
+          &-text {
+            display: flex;
+            align-items: center;
+            width: 85%;
+            height: 62px;
+            padding-right: 51px;
+            padding-left: 15px;
+            border: none;
+            border-radius: 2px;
+            background: right 15px center no-repeat url(../../../assets/img/buy-page/sign-copy-red.svg), #F5F3EE;
+            text-align: left;
+            overflow-wrap: anywhere;
+            font-size: 16px;
+            cursor: pointer;
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+
+    &-block-2 {
+      width: 50%;
+      max-width: 600px;
+
+      .video {
+        width: 100%;
+        height: 337px;
+        margin-bottom: 31px;
+        background: black;
+      }
+
+      .message {
+        padding: 30px 30px 30px 108px;
+        border: 2px solid #B89C5E45;
+        background: left 30px top 33px no-repeat url(../../../assets/img/buy-page/sign-wallet-red.svg);
+
+        &-text {
+          font-size: 16px;
+          color: #5C5A57;
         }
       }
     }

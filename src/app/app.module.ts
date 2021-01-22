@@ -36,7 +36,6 @@ import { ErrorPageComponent } from './pages/errorpage/errorpage.component';
 import { DucatusxComponent } from './pages/ducatusx/ducatusx/ducatusx.component';
 import { VoucherComponent } from './pages/voucher/voucher.component';
 import { LoginComponent } from './pages/login/login.component';
-import { TicketsComponent } from './pages/buy/tikcets/tickets.component';
 
 // partials
 import { HeaderComponent } from './pages/index/header/header.component';
@@ -74,7 +73,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     DucatusxComponent,
     VoucherComponent,
     LoginComponent,
-    TicketsComponent,
 
     // components
     HeaderComponent,

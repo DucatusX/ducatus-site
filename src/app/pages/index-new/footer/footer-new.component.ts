@@ -26,7 +26,6 @@ export class FooterNewComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         this.hideFooter = !hideFooterInRoutes.includes(event.url);
         this.buyFooter = event.url.startsWith('/buy');
-        this.sectionApp = !event.url.endsWith('/buy');
       }
 
       if (event instanceof NavigationError) {
