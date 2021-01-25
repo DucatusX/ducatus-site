@@ -36,11 +36,12 @@ export class BuyService {
       .toPromise();
   }
 
-  public getExchange(currency: string, toEmail: string) {
+  public getExchange(to_address: string, to_currency: string, email: string) {
     return this.httpService
       .post(`exchange/`, {
-        to_currency: currency,
-        email: toEmail,
+        email,
+        to_address,
+        to_currency
       })
       .toPromise();
   }

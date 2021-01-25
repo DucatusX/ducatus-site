@@ -163,7 +163,7 @@ export class BuyComponent implements OnInit {
   public getAddresses() {
     this.exchange.address.loading = true;
 
-    this.buyservice.getExchange(this.exchange.address.to, this.exchange.selected.get.name).then((result) => {
+    this.buyservice.getExchange(this.exchange.address.to, this.exchange.selected.get.name, 'email@email.com').then((result) => {
       this.addresses = result;
 
       switch (this.exchange.selected.get.name) {
