@@ -8,235 +8,122 @@
     justify-content: center;
     overflow: hidden;
     height: 437px;
-    background-image: url(../../../assets/img/buy-page/head-background.png);
+    background-image: url(src/assets/img/buy-page/head-background.png);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
     &-text {
+      &-container {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        max-width: 1366px;
+        margin: 0 auto;
+      }
+
       position: absolute;
       bottom: 53px;
       left: 78px;
       color: white;
       font-weight: bold;
       font-size: 37px;
+
+      @include b(600) {
+        font-size: 30px;
+      }
     }
 
     &-big-logo {
+      min-width: 660px;
       max-width: 100%;
     }
   }
+}
 
-  &-main {
-    background-image: url(src/assets/img/buy-page/main-background.png);
-    background-size: 65px 83px;
+.loading-pay-form {
+  padding: 30px !important;
 
-    &-container {
-      display: flex;
-      justify-content: space-between;
-      grid-gap: 40px;
-      max-width: 1400px;
-      padding: 90px 70px 160px;
-      margin: 0 auto;
-    }
+  .group {
+    background: linear-gradient(124deg, #f7f3eb, #e9e1ca, #f7f3eb);
+    background-size: 1800% 1800%;
+    -webkit-animation: rainbow 4s ease infinite;
+    -z-animation: rainbow 4s ease infinite;
+    -o-animation: rainbow 4s ease infinite;
+    animation: rainbow 4s ease infinite;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  }
 
-    &-block-1 {
-      width: 50%;
-      max-width: 600px;
-      border-radius: 4px;
-      background: #FDFBF6;
-      box-shadow: 0 50px 45px rgba(204, 199, 189, 0.25);
+  .input-h-20 {
+    height: 30px !important;
+  }
 
-      &-panel {
-        padding: 30px;
+  .input-h-60 {
+    height: 60px !important;
+  }
 
-        &:nth-child(1) {
-          padding-bottom: 25px;
-        }
+  .input-h-105 {
+    height: 105px !important;
+  }
 
-        &:nth-child(2) {
-          padding: 25px 30px;
-          background: rgba(0, 0, 0, 0.03);
-        }
+  .input-h-85 {
+    height: 85px !important;
+  }
 
-        &:nth-child(3) {
-          padding-top: 25px;
-        }
-      }
+}
 
-      &-title {
-        font-weight: bold;
-        font-size: 16px;
-        color: rgba(0, 0, 0, 0.5);
-      }
 
-      &-input {
-        width: 100%;
-        height: 62px;
-        padding-left: 15px;
-        border: 1px solid #E9DCCA;
-        border-radius: 2px;
-        font-size: 19px;
+@-webkit-keyframes rainbow {
+  0% {
+    background-position: 0% 82%
+  }
 
-        &:focus {
-          outline: none;
-        }
+  50% {
+    background-position: 100% 19%
+  }
 
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-        }
+  100% {
+    background-position: 0% 82%
+  }
+}
 
-        &[type=number] {
-          -moz-appearance: textfield;
-        }
-      }
+@-moz-keyframes rainbow {
+  0% {
+    background-position: 0% 82%
+  }
 
-      &-attention-text {
-        font-size: 14px;
-        color: #8B8B8B;
+  50% {
+    background-position: 100% 19%
+  }
 
-        &-red {
-          color: #862633;
-        }
-      }
+  100% {
+    background-position: 0% 82%
+  }
+}
 
-      .duc-address {
-        &-title {
-          display: block;
-          margin-bottom: 11px;
-        }
+@-o-keyframes rainbow {
+  0% {
+    background-position: 0% 82%
+  }
 
-        &-input {
-          margin-bottom: 15px;
-        }
+  50% {
+    background-position: 100% 19%
+  }
 
-        &-anchor {
-          margin-bottom: 19px;
-          font-size: 15px;
-          color: #836740;
+  100% {
+    background-position: 0% 82%
+  }
+}
 
-          a {
-            text-decoration: none;
-            color: #862633;
-          }
-        }
-      }
+@keyframes rainbow {
+  0% {
+    background-position: 0% 82%
+  }
 
-      .conversion {
-        &-forms {
-          display: flex;
-          justify-content: space-between;
-          grid-gap: 20px;
-          margin-bottom: 20px;
+  50% {
+    background-position: 100% 19%
+  }
 
-          &-send,
-          &-get {
-            width: 50%;
-            min-width: 200px;
-          }
-
-          &-send {
-            &-title {
-              display: block;
-              margin-bottom: 10px;
-
-              &:after {
-                content: url(../../../assets/img/buy-page/sign-arrow-red.svg);
-                position: relative;
-                top: -1px;
-                margin-left: 5px;
-              }
-            }
-          }
-
-          &-get {
-            &-title {
-              display: block;
-              margin-bottom: 10px;
-
-              &:before {
-                content: url(../../../assets/img/buy-page/sign-arrow-red.svg);
-                position: relative;
-                top: -1px;
-                margin-right: 5px;
-              }
-            }
-
-            &-block {
-              display: flex;
-              align-items: center;
-              width: 100%;
-              height: 62px;
-              padding-left: 15px;
-              border: 1px solid #E9DCCA;
-              border-radius: 2px;
-              font-size: 19px;
-              background: right 15px center/ 25% no-repeat url(src/assets/img/buy-page/duc-small-logo.svg), white;
-            }
-          }
-        }
-
-        &-rate {
-          margin-bottom: 16px;
-          font-size: 16px;
-          color: rgba(0, 0, 0, 0.5);
-        }
-      }
-
-      .send-block {
-        &-title {
-          margin-bottom: 11px;
-        }
-
-        &-address {
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: 25px;
-
-          &-text {
-            display: flex;
-            align-items: center;
-            width: 85%;
-            height: 62px;
-            padding-right: 51px;
-            padding-left: 15px;
-            border: none;
-            border-radius: 2px;
-            background: right 15px center no-repeat url(../../../assets/img/buy-page/sign-copy-red.svg), #F5F3EE;
-            text-align: left;
-            overflow-wrap: anywhere;
-            font-size: 16px;
-            cursor: pointer;
-
-            &:focus {
-              outline: none;
-            }
-          }
-        }
-      }
-    }
-
-    &-block-2 {
-      width: 50%;
-      max-width: 600px;
-
-      .video {
-        width: 100%;
-        height: 337px;
-        margin-bottom: 31px;
-        background: black;
-      }
-
-      .message {
-        padding: 30px 30px 30px 108px;
-        border: 2px solid #B89C5E45;
-        background: left 30px top 33px no-repeat url(../../../assets/img/buy-page/sign-wallet-red.svg);
-
-        &-text {
-          font-size: 16px;
-          color: #5C5A57;
-        }
-      }
-    }
+  100% {
+    background-position: 0% 82%
   }
 }

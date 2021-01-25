@@ -1,105 +1,146 @@
 <section
   class="section-header-page buy-page-header"
 >
-  <span class="buy-page-header-text">Buy DUC</span>
+  <div class="buy-page-header-text-container">
+    <span class="buy-page-header-text">{{ 'PAGE.BUY.TITLE' | translate }}</span>
+  </div>
   <img class="buy-page-header-big-logo" src="/assets/img/buy-page/head-big-logo.svg" alt="Ducatus logo">
 </section>
 
-<main class="buy-page-main">
-  <div class="buy-page-main-container">
-    <section class="buy-page-main-block-1">
-      <div class="buy-page-main-block-1-panel duc-address">
-        <label
-          class="buy-page-main-block-1-title duc-address-title"
-          for="duc-address-input"
-        >
-          Enter your Ducatus address
-        </label>
-        <input
-          type="text"
-          class="buy-page-main-block-1-input duc-address-input"
-          id="duc-address-input"
-        >
+<section class="app">
+  <div class="container">
+    <div class="pay-form">
+      <div class="pay-form-wrap">
+        <div class="ducatus-pay-form" *ngIf="!loadingData">
 
-        <div class="duc-address-anchor">
-          Need Ducatus address?
-          <a href="/buy#section-app">Download our wallet!</a>
-        </div>
+          <div class="group group-input group-input-select">
+            <label for="get-coin">You get</label>
+            <input type="number" min="0" [(ngModel)]="exchange.price.get " (ngModelChange)="setCurrentPrice('get')" placeholder="Amount" class="input input-white" id="get-coin" oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');">
 
-        <div class="buy-page-main-block-1-attention-text">
-          <span class="buy-page-main-block-1-attention-text-red">Warning!</span>
-          Please check access to the address!
-        </div>
-      </div>
+            <div class="select-coin select-coin-fill" (click)="exchange.select.get = !exchange.select.get; exchange.select.send = false" [ngClass]="{ 'select-coin-start': exchange.select.get }">
+              <ng-container *ngFor="let item of exchange.coins">
+                <span class="select-coin-selected" *ngIf="item.active"><img [src]="'assets/img/icons/' + item.icon + '.png'" [alt]="item.name"> {{ item.name }}</span>
+              </ng-container>
+              <div class="select-coin-list">
+                <div class="select-coin-list-wrap">
+                  <ng-container *ngFor="let item of exchange.coins">
+                    <span class="select-coin-list-item" (click)="coinSwitch(item.name,'get')" *ngIf="!item.active"><img [src]="'assets/img/icons/' + item.icon + '.png'" [alt]="item.name">{{ item.name }}</span>
+                  </ng-container>
+                </div>
+              </div>
 
-      <div class="buy-page-main-block-1-panel conversion">
-        <div class="conversion-forms">
-          <div class="conversion-forms-send">
-            <label
-              class="buy-page-main-block-1-title conversion-forms-send-title"
-              for="conversion-forms-input-send"
-            >
-              Send
-            </label>
-            <input
-              type="number"
-              class="buy-page-main-block-1-input conversion-forms-input"
-              id="conversion-forms-input-send"
-              min="0"
-              value="15"
-            >
+            </div>
+
           </div>
 
-          <div class="conversion-forms-get">
-            <div class="buy-page-main-block-1-title conversion-forms-get-title">
-              Get
-            </div>
-            <div class="conversion-forms-get-block">
-              {{ 13948817.1 | number }}
+          <div class="group group-text group-columns">
+
+            <span class="text">1 {{ exchange.selected.get.fullname }} = {{ exchange.rate }} {{ exchange.selected.send.fullname }}</span>
+
+          </div>
+
+          <div class="group group-input group-input-select">
+            <label for="send-coin">You send</label>
+            <input min="0" type="number" (ngModelChange)="setCurrentPrice('send')" [(ngModel)]=" exchange.price.send" placeholder="Amount" class="input input-white" id="send-coin" oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');">
+
+            <div class="select-coin select-coin-fill" (click)="exchange.selected.get.name === 'DUC' ? exchange.select.send = !exchange.select.send  : null;exchange.select.get = false" [ngClass]="{ 'select-coin-start': exchange.select.send }">
+
+              <ng-container *ngFor="let item of exchange.coins">
+                <ng-container *ngIf="item.active">
+
+                  <ng-container *ngFor="let coin of item.coins">
+                    <span class="select-coin-selected" *ngIf="coin.active"><img [src]="'assets/img/icons/'+coin.icon+'.png'" [alt]="coin.name"> {{ coin.name }}</span>
+                  </ng-container>
+
+                  <div class="select-coin-list" [ngClass]="{ 'select-coin-start': exchange.select.send }">
+
+                    <div class="select-coin-list-wrap">
+                      <ng-container *ngFor="let coin of item.coins">
+                        <span class="select-coin-list-item" *ngIf="!coin.active" (click)="coinSwitch(coin.name,'send')"><img [src]="'assets/img/icons/' + coin.icon +'.png'" [alt]="coin.name">{{ coin.name }}</span>
+                      </ng-container>
+                    </div>
+
+                  </div>
+
+
+                </ng-container>
+              </ng-container>
+
             </div>
           </div>
-        </div>
 
-        <div class="conversion-rate">
-          Exchange rate 1:10000
-        </div>
+          <div class="group group-input">
+            <label for="ducatus-address">Enter your {{ exchange.selected.get.fullname }} address for receiving coins</label>
+            <input type="text" [ngClass]="{'text' : exchange.address.validate || exchange.address.loading }" [disabled]="exchange.address.validate || exchange.address.loading" [(ngModel)]="exchange.address.to" (ngModelChange)="setAddress()" placeholder="Enter your {{ exchange.selected.get.fullname }} address for receiving coins" class="input input-white" id="ducatus-address" oninput="this.value = this.value.replace('ducatus:', '');">
+            <span class="error-address-value" *ngIf="exchange.address.error">Error! Please check, the address format is incorrect!</span>
+          </div>
 
-        <div class="buy-page-main-block-1-attention-text">
-          <span class="buy-page-main-block-1-attention-text-red">Attention!</span>
-          The rate can change while the transaction processing
+          <div id="loading-address" [ngClass]="{ 'loading-address-start': exchange.address.loading }" class="group group-block group-input group-input-copy m-b-0 qr-wrap">
+            <div class="group-wrap qr-address">
+              <label>Send your <span class="send-coin">Ducatus</span> to</label>
+              <p class="input input-accent">{{ exchange.selected.send.address }}</p>
+              <span class="copy-address icon icon-copy"></span>
+            </div>
+            <div class="qrcode">
+              <qrcode *ngIf="exchange.address.qr" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1" [qrdata]="exchange.selected.send.address" [width]="60" [errorCorrectionLevel]="'L'"></qrcode>
+            </div>
+
+            <div class="loading-address-qr">
+              <div class="loading-address-qr-wrap">
+                <p>something went wrong, try again later</p>
+                <div class="loading-address-qr-wrap-ellips">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="group group-text qr-text">
+              <span class="text-attantion"><span class="attantion">Attention!</span> You will get {{ exchange.selected.get.fullname }} to your address in {{ exchange.selected.send.text }}<br><br></span>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="ducatus-pay-form loading-pay-form" *ngIf="loadingData">
+          <div class="group group-input group-input-select input-h-60"></div>
+          <div class="group group-text group-columns input-h-20"></div>
+          <div class="group group-input group-input-select input-h-85"></div>
+          <div class="group group-input input-h-105"></div>
+          <div class="group group-input group-input-select input-h-60"></div>
+          <div class="group group-text group-columns input-h-20"></div>
         </div>
       </div>
-
-      <div class="buy-page-main-block-1-panel send-block">
-        <div class="buy-page-main-block-1-title send-block-title">
-          Send your BTC to
+      <div class="pay-form-block">
+        <div class="pay-form-block-video">
+          <iframe src="https://www.youtube.com/embed/5tzX8UzUQkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
-        <div class="send-block-address">
-          <button class="send-block-address-text">
-            1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2
-          </button>
-          <img class="send-block-address-qr" src="assets/img/buy-page/qr-code.svg" alt="QR code">
-        </div>
-
-        <div class="buy-page-main-block-1-attention-text">
-          <span class="buy-page-main-block-1-attention-text-red">Attention!</span>
-          You will receive tokens after 5 BTC blocks confirmation. The approximate time of the transaction is 1 hour.
+        <div class="pay-form-block-text">
+          <p class="p__text-section icon icon__wallet_2">
+            Your Ducatus address will be associated with a unique address in Bitcoin and Ethereum. You can top up these addresses at any time and receive Ducatus at the current exchange rate at the time of the transaction
+          </p>
         </div>
       </div>
-    </section>
-
-    <section class="buy-page-main-block-2">
-      <div class="video">
-
-      </div>
-
-      <div class="message">
-        <div class="message-text">
-          Your Ducatus address will be associated with a unique address in Bitcoin and Ethereum. You can top up these
-          addresses at any time and receive Ducatus at the current exchange rate at the time of the transaction
-        </div>
-      </div>
-    </section>
+    </div>
   </div>
-</main>
+</section>
+
+<div class="modal" *ngIf="modal">
+  <div class="modal-wrap">
+    <div class="modal-content-top">
+      <p>
+        Please tick the box below to confirm that you acknowledge and agree to the <a href="assets/downloads/pdf/Wallet_Terms_Conditions.pdf" target="_blank">Terms & Conditions</a> of DUC purchase. Ducatus Coin is not available for purchase from Centurion in Singapore.
+      </p>
+    </div>
+    <div class="modal-content-bottom">
+      <div class="input-checkbox-group">
+        <label for="terms">I agree to the Terms & Conditions</label>
+        <input type="checkbox" (ngModelChange)="modalAccept = !modalAccept" [ngModel]="modalAccept" name="terms" id="terms" class="terms">
+      </div>
+      <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!modalAccept" class="btn btn-red">Close</button>
+    </div>
+  </div>
+</div>
