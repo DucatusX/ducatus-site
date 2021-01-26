@@ -4,6 +4,7 @@
 .modal {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
+  display: none;
   top: 0;
   left: 0;
   display: flex;
@@ -14,59 +15,64 @@
   height: 100%;
 
   &-wrap {
-    border-radius: 10px;
-    min-width: 320px;
-    width: 100%;
-    max-width: 500px;
-    background-color: #fff;
+      border-radius: 10px;
+      min-width: 320px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 500px;
+      background-color: #fff;
+  }
+
+  label,
+  input {
+      cursor: pointer;
   }
 
   &-content {
-    &-top {
-      padding: 30px;
-      font-size: 14px;
-      line-height: 1.6;
-      background-color: rgb(253, 251, 246);
 
-      a {
-        color: $brown-red;
-        text-decoration: none;
-      }
-    }
-
-    &-bottom {
-      background-color: rgb(241, 236, 228);
-      padding: 20px;
-      text-align: center;
-
-      .input-checkbox-group {
-        display: flex;
-        justify-content: center;
-        flex-direction: row-reverse;
-        margin-bottom: 10px;
-        font-size: 13px;
-        color: gray;
-
-        label {
-          margin-left: 10px;
-        }
+      &-title{
+          display: block;
+          text-align: center;
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 15px;
+          color: $brown-red;
       }
 
-      .btn {
-        background-color: $brown-red;
-        padding: 15px 20px;
-        font-size: 14px;
-        border-radius: 5px;
-        width: 150px;
-        color: white;
-        margin-top: 5px;
-        cursor: pointer;
+      &-top {
+          padding: 30px;
+          font-size: 14px;
+          line-height: 1.6;
+          background-color: rgb(253, 251, 246);
 
-        &:disabled {
-          background-color: gray;
-        }
+          a {
+              color: $brown-red;
+              text-decoration: none;
+          }
       }
-    }
+
+      &-bottom {
+          background-color: rgb(241, 236, 228);
+          padding: 20px;
+          text-align: center;
+
+          .input-checkbox-group {
+              display: flex;
+              justify-content: center;
+              flex-direction: row-reverse;
+              margin-bottom: 10px;
+              font-size: 13px;
+              color: gray;
+
+              label {
+                  margin-left: 10px;
+              }
+          }
+
+          button {
+              margin: 15px auto 0 auto;
+          }
+      }
   }
 }
 

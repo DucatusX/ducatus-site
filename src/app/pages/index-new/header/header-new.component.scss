@@ -21,56 +21,56 @@
     }
   }
 
-  &-buy {
-    padding: 15px 0;
-    background: transparent;
+  // &-buy {
+  //   padding: 15px 0;
+  //   background: transparent;
 
-    @include b(1400) {
-      padding: 15px;
-    }
+    // @include b(1400) {
+    //   padding: 15px;
+    // }
 
-    @include b(750) {
-      background: black;
-    }
+    // @include b(750) {
+    //   background: black;
+    // }
 
-    &.header-scroll {
-      box-shadow: none;
-      background: black;
-      padding: 15px 0;
+    // &.header-scroll {
+    //   box-shadow: none;
+    //   background: black;
+    //   padding: 15px 0;
 
-      @include b(1400) {
-        padding: 15px;
-      }
+    //   @include b(1400) {
+    //     padding: 15px;
+    //   }
 
-      @include b(900) {
-        padding: 10px 20px;
-      }
+    //   @include b(900) {
+    //     padding: 10px 20px;
+    //   }
 
-      @include b(750) {
-        padding: 10px 10px;
-      }
-    }
+    //   @include b(750) {
+    //     padding: 10px 10px;
+    //   }
+    // }
 
-    .header {
-      &-logo-block {
-        img {
-          width: auto;
+    // .header {
+    //   &-logo-block {
+    //     img {
+    //       width: auto;
 
-          @include b(900) {
-            width: 200px;
-          }
+    //       @include b(900) {
+    //         width: 200px;
+    //       }
 
-          @include b(370) {
-            width: 150px;
-          }
-        }
-      }
-    }
+    //       @include b(370) {
+    //         width: 150px;
+    //       }
+    //     }
+    //   }
+    // }
 
-    .header-menu-link {
-      color: white;
-    }
-  }
+    // .header-menu-link {
+    //   color: white;
+    // }
+  // }
 
   &-hide {
     display: none !important;
@@ -172,15 +172,15 @@
     }
 
     &-link {
-      color: white;
+      color: black;
       text-decoration: none;
-      transition: 0.4s ease;
+      transition: 0.1s ease;
       margin: 2px 15px;
       cursor: pointer;
       font-size: 14px;
       line-height: 17px;
-      font-weight: bold;
-      text-transform: uppercase;
+      font-weight: 500;
+      text-transform: capitalize;
 
       @include b(1000) {
         margin: 2px 10px;
@@ -193,7 +193,7 @@
       }
 
       &:hover {
-        color: $gold-yellow !important;
+        color: $brown-red !important;
       }
     }
 

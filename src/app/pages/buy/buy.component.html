@@ -62,7 +62,6 @@
 
                   </div>
 
-
                 </ng-container>
               </ng-container>
 
@@ -77,12 +76,12 @@
 
           <div id="loading-address" [ngClass]="{ 'loading-address-start': exchange.address.loading }" class="group group-block group-input group-input-copy m-b-0 qr-wrap">
             <div class="group-wrap qr-address">
-              <label>Send your <span class="send-coin">Ducatus</span> to</label>
-              <p class="input input-accent">{{ exchange.selected.send.address }}</p>
+              <label>Send your <span class="send-coin">{{ exchange.selected.send.fullname }}</span> to</label>
+              <p class="input input-accent">{{ exchange.selected.send.fullname.toLowerCase() + ':' + exchange.selected.send.address + exchange.selected.send.amountType + exchange.price.send }}</p>
               <span class="copy-address icon icon-copy"></span>
             </div>
             <div class="qrcode">
-              <qrcode *ngIf="exchange.address.qr" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1" [qrdata]="exchange.selected.send.address" [width]="60" [errorCorrectionLevel]="'L'"></qrcode>
+              <qrcode *ngIf="exchange.address.qr" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1" [qrdata]="exchange.selected.send.fullname.toLowerCase() + ':' + exchange.selected.send.address + exchange.selected.send.amountType + exchange.price.send" [width]="60" [errorCorrectionLevel]="'L'"></qrcode>
             </div>
 
             <div class="loading-address-qr">
@@ -140,7 +139,7 @@
         <label for="terms">I agree to the Terms & Conditions</label>
         <input type="checkbox" (ngModelChange)="modalAccept = !modalAccept" [ngModel]="modalAccept" name="terms" id="terms" class="terms">
       </div>
-      <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!modalAccept" class="btn btn-red">Close</button>
+      <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!modalAccept" class="ducatus-btn ducatus-btn-brown">Close</button>
     </div>
   </div>
 </div>

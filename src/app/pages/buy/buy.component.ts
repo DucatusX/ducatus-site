@@ -50,6 +50,8 @@ export class BuyComponent implements OnInit {
   public modal = true;
   public modalAccept = false;
 
+  private sendCoinSelected = 'DUCX';
+  
   public exchange = {
     address: {
       to: null,
@@ -70,7 +72,7 @@ export class BuyComponent implements OnInit {
     },
     selected: {
       get: { name: 'DUC', fullname: 'Ducatus', icon: 'duc', active: true },
-      send: { name: 'DUCX', fullname: 'DucatusX', icon: 'duc', rate: 0, active: false, address: this.addresses.ducx_address, text: '10 min', }
+      send: { name: 'DUCX', fullname: 'DucatusX', amountType: '?value=', icon: 'duc', rate: 0, active: false, qraddress: '', address: this.addresses.ducx_address, text: '10 min', }
     },
     coins: [
       {
@@ -79,9 +81,9 @@ export class BuyComponent implements OnInit {
         icon: 'duc',
         active: true,
         coins: [
-          { name: 'BTC', fullname: 'Bitcoin', icon: 'btc', rate: this.rates.DUC.BTC, active: false, address: this.addresses.btc_address, text: '1 hour', },
-          { name: 'ETH', fullname: 'Etherium', icon: 'eth', rate: this.rates.DUC.ETH, active: false, address: this.addresses.eth_address, text: '40 min', },
-          { name: 'DUCX', fullname: 'DucatusX', icon: 'duc', rate: this.rates.DUC.DUCX, active: true, address: this.addresses.ducx_address, text: '10 min', }
+          { name: 'BTC', fullname: 'Bitcoin', amountType: '?amount=', icon: 'btc', rate: this.rates.DUC.BTC, active: false, qraddress: '', address: this.addresses.btc_address, text: '1 hour', },
+          { name: 'ETH', fullname: 'Etherium', amountType: '?value=', icon: 'eth', rate: this.rates.DUC.ETH, active: false, qraddress: '', address: this.addresses.eth_address, text: '40 min', },
+          { name: 'DUCX', fullname: 'DucatusX', amountType: '?value=', icon: 'duc', rate: this.rates.DUC.DUCX, active: true, qraddress: '', address: this.addresses.ducx_address, text: '10 min', }
         ]
       },
       {
@@ -90,7 +92,7 @@ export class BuyComponent implements OnInit {
         icon: 'duc',
         active: false,
         coins: [
-          { name: 'DUC', fullname: 'Ducatus', icon: 'duc', rate: this.rates.DUCX.DUC, active: true, address: this.addresses.duc_address, text: '10 min' }
+          { name: 'DUC', fullname: 'Ducatus', amountType: '?value=', icon: 'duc', rate: this.rates.DUCX.DUC, active: true, qraddress: '', address: this.addresses.duc_address, text: '10 min' }
         ]
       }
     ]
@@ -179,7 +181,9 @@ export class BuyComponent implements OnInit {
 
       this.exchange.address.loading = false;
       this.exchange.address.qr = true;
+
       console.log('address result', this.addresses, result);
+      console.log(this.exchange.selected.send.address);
     }).catch(err => { console.log('something went wrong...', err); this.exchange.address.loading = false; });
   }
 
@@ -253,7 +257,10 @@ export class BuyComponent implements OnInit {
   }
 
   public acceptModalTerms() {
+    window['jQuery']['cookie']('termsBuy', true);
     this.modal = false;
+
+    
 
     this.buyservice.getRates().then((result) => {
       this.rates = result;
@@ -279,7 +286,7 @@ export class BuyComponent implements OnInit {
         },
         selected: {
           get: { name: 'DUC', fullname: 'Ducatus', icon: 'duc', active: true },
-          send: { name: 'DUCX', fullname: 'DucatusX', icon: 'duc', rate: 0, active: false, address: this.addresses.ducx_address, text: '10 min', }
+          send: { name: 'DUCX', fullname: 'DucatusX', amountType: '?value=',  icon: 'duc', rate: 0, active: false, qraddress: '', address: this.addresses.ducx_address, text: '10 min', }
         },
         coins: [
           {
@@ -288,9 +295,9 @@ export class BuyComponent implements OnInit {
             icon: 'duc',
             active: true,
             coins: [
-              { name: 'BTC', fullname: 'Bitcoin', icon: 'btc', rate: this.rates.DUC.BTC, active: false, address: this.addresses.btc_address, text: '1 hour', },
-              { name: 'ETH', fullname: 'Etherium', icon: 'eth', rate: this.rates.DUC.ETH, active: false, address: this.addresses.eth_address, text: '40 min', },
-              { name: 'DUCX', fullname: 'DucatusX', icon: 'duc', rate: this.rates.DUC.DUCX, active: true, address: this.addresses.ducx_address, text: '10 min', }
+              { name: 'BTC', fullname: 'Bitcoin', amountType: '?amount=', icon: 'btc', rate: this.rates.DUC.BTC, active: false, qraddress: '', address: this.addresses.btc_address, text: '1 hour', },
+              { name: 'ETH', fullname: 'Etherium', amountType: '?value=', icon: 'eth', rate: this.rates.DUC.ETH, active: false, qraddress: '', address: this.addresses.eth_address, text: '40 min', },
+              { name: 'DUCX', fullname: 'DucatusX', amountType: '?value=', icon: 'duc', rate: this.rates.DUC.DUCX, active: true, qraddress: '', address: this.addresses.ducx_address, text: '10 min', }
             ]
           },
           {
@@ -299,18 +306,22 @@ export class BuyComponent implements OnInit {
             icon: 'duc',
             active: false,
             coins: [
-              { name: 'DUC', fullname: 'Ducatus', icon: 'duc', rate: this.rates.DUCX.DUC, active: true, address: this.addresses.duc_address, text: '10 min' }
+              { name: 'DUC', fullname: 'Ducatus', amountType: '?value=', icon: 'duc', rate: this.rates.DUCX.DUC, active: true, qraddress: '', address: this.addresses.duc_address, text: '10 min' }
             ]
           }
         ]
       };
 
       console.log('rates result', this.rates, this.exchange);
+      this.coinSwitch(this.sendCoinSelected, 'send');
     }).catch(err => { console.log('something went wrong...', err); });
   }
 
   ngOnInit() {
-    this.loadingData = true;
+    this.modal = true;
+    window['jQuery']['cookie']('termsBuy')
+      ? this.acceptModalTerms()
+      : (this.modal = true);
   }
 
 }
