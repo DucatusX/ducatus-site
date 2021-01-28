@@ -1,10 +1,8 @@
-<section
-  class="section-header-page buy-page-header"
->
+<section class="section-header-page buy-page-header">
   <div class="buy-page-header-text-container">
     <span class="buy-page-header-text">{{ 'PAGE.BUY.TITLE' | translate }}</span>
   </div>
-  <img class="buy-page-header-big-logo" src="/assets/img/buy-page/head-big-logo.svg" alt="Ducatus logo">
+  <img class="buy-page-header-big-logo" src="/assets/img/buy-page/head-big-logo.svg" alt="Ducatus logo" />
 </section>
 
 <section class="app">
@@ -12,72 +10,91 @@
     <div class="pay-form">
       <div class="pay-form-wrap">
         <div class="ducatus-pay-form" *ngIf="!loadingData">
-
           <div class="group group-input group-input-select">
             <label for="get-coin">You get</label>
-            <input type="number" min="0" [(ngModel)]="exchange.price.get " (ngModelChange)="setCurrentPrice('get')" placeholder="Amount" class="input input-white" id="get-coin" oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');">
+            <input type="number" min="0" [(ngModel)]="exchange.price.get" (ngModelChange)="setCurrentPrice('get')" placeholder="Amount" class="input input-white" id="get-coin" oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');" />
 
             <div class="select-coin select-coin-fill" (click)="exchange.select.get = !exchange.select.get; exchange.select.send = false" [ngClass]="{ 'select-coin-start': exchange.select.get }">
               <ng-container *ngFor="let item of exchange.coins">
-                <span class="select-coin-selected" *ngIf="item.active"><img [src]="'assets/img/icons/' + item.icon + '.png'" [alt]="item.name"> {{ item.name }}</span>
+                <span class="select-coin-selected" *ngIf="item.active">
+                  <img [src]="'assets/img/icons/' + item.icon + '.png'" [alt]="item.name" />
+                  {{ item.name }}
+                </span>
               </ng-container>
               <div class="select-coin-list">
                 <div class="select-coin-list-wrap">
                   <ng-container *ngFor="let item of exchange.coins">
-                    <span class="select-coin-list-item" (click)="coinSwitch(item.name,'get')" *ngIf="!item.active"><img [src]="'assets/img/icons/' + item.icon + '.png'" [alt]="item.name">{{ item.name }}</span>
+                    <span class="select-coin-list-item" (click)="coinSwitch(item.name, 'get')" *ngIf="!item.active">
+                      <img [src]="'assets/img/icons/' + item.icon + '.png'" [alt]="item.name" />
+                      {{ item.name }}
+                    </span>
                   </ng-container>
                 </div>
               </div>
-
             </div>
-
           </div>
 
           <div class="group group-text group-columns">
-
             <span class="text">1 {{ exchange.selected.get.fullname }} = {{ exchange.rate }} {{ exchange.selected.send.fullname }}</span>
-
           </div>
 
           <div class="group group-input group-input-select">
             <label for="send-coin">You send</label>
-            <input min="0" type="number" (ngModelChange)="setCurrentPrice('send')" [(ngModel)]=" exchange.price.send" placeholder="Amount" class="input input-white" id="send-coin" oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');">
+            <input min="0" type="number" (ngModelChange)="setCurrentPrice('send')" [(ngModel)]="exchange.price.send" placeholder="Amount" class="input input-white" id="send-coin" oninput="this.value = this.value.replace(/[^0-9](^\,)/g, '').replace(/(\..*)\./g, '$1');" />
 
-            <div class="select-coin select-coin-fill" (click)="exchange.selected.get.name === 'DUC' ? exchange.select.send = !exchange.select.send  : null;exchange.select.get = false" [ngClass]="{ 'select-coin-start': exchange.select.send }">
-
+            <div class="select-coin select-coin-fill" (click)="exchange.selected.get.name === 'DUC' ? (exchange.select.send = !exchange.select.send) : null; exchange.select.get = false" [ngClass]="{ 'select-coin-start': exchange.select.send }">
               <ng-container *ngFor="let item of exchange.coins">
                 <ng-container *ngIf="item.active">
-
                   <ng-container *ngFor="let coin of item.coins">
-                    <span class="select-coin-selected" *ngIf="coin.active"><img [src]="'assets/img/icons/'+coin.icon+'.png'" [alt]="coin.name"> {{ coin.name }}</span>
+                    <span class="select-coin-selected" *ngIf="coin.active">
+                      <img [src]="'assets/img/icons/' + coin.icon + '.png'" [alt]="coin.name" />
+                      {{ coin.name }}
+                    </span>
                   </ng-container>
 
                   <div class="select-coin-list" [ngClass]="{ 'select-coin-start': exchange.select.send }">
-
                     <div class="select-coin-list-wrap">
                       <ng-container *ngFor="let coin of item.coins">
-                        <span class="select-coin-list-item" *ngIf="!coin.active" (click)="coinSwitch(coin.name,'send')"><img [src]="'assets/img/icons/' + coin.icon +'.png'" [alt]="coin.name">{{ coin.name }}</span>
+                        <span class="select-coin-list-item" *ngIf="!coin.active" (click)="coinSwitch(coin.name, 'send')">
+                          <img [src]="'assets/img/icons/' + coin.icon + '.png'" [alt]="coin.name" />
+                          {{ coin.name }}
+                        </span>
                       </ng-container>
                     </div>
-
                   </div>
-
                 </ng-container>
               </ng-container>
-
             </div>
           </div>
 
           <div class="group group-input">
             <label for="ducatus-address">Enter your {{ exchange.selected.get.fullname }} address for receiving coins</label>
-            <input type="text" [ngClass]="{'text' : exchange.address.validate || exchange.address.loading }" [disabled]="exchange.address.validate || exchange.address.loading" [(ngModel)]="exchange.address.to" (ngModelChange)="setAddress()" placeholder="Enter your {{ exchange.selected.get.fullname }} address for receiving coins" class="input input-white" id="ducatus-address" oninput="this.value = this.value.replace('ducatus:', '');">
+            <input
+              type="text"
+              [ngClass]="{
+                text: exchange.address.validate || exchange.address.loading
+              }"
+              [disabled]="exchange.address.validate || exchange.address.loading"
+              [(ngModel)]="exchange.address.to"
+              (ngModelChange)="setAddress()"
+              placeholder="Enter your {{ exchange.selected.get.fullname }} address for receiving coins"
+              class="input input-white"
+              id="ducatus-address"
+              oninput="this.value = this.value.replace('ducatus:', '');"
+            />
             <span class="error-address-value" *ngIf="exchange.address.error">Error! Please check, the address format is incorrect!</span>
           </div>
 
           <div id="loading-address" [ngClass]="{ 'loading-address-start': exchange.address.loading }" class="group group-block group-input group-input-copy m-b-0 qr-wrap">
             <div class="group-wrap qr-address">
-              <label>Send your <span class="send-coin">{{ exchange.selected.send.fullname }}</span> to</label>
-              <p class="input input-accent">{{ exchange.selected.send.fullname.toLowerCase() + ':' + exchange.selected.send.address + exchange.selected.send.amountType + exchange.price.send }}</p>
+              <label>
+                Send your
+                <span class="send-coin">{{ exchange.selected.send.fullname }}</span>
+                to
+              </label>
+              <p class="input input-accent">
+                {{ exchange.selected.send.fullname.toLowerCase() + ':' + exchange.selected.send.address + exchange.selected.send.amountType + exchange.price.send }}
+              </p>
               <span class="copy-address icon icon-copy"></span>
             </div>
             <div class="qrcode">
@@ -97,11 +114,14 @@
             </div>
 
             <div class="group group-text qr-text">
-              <span class="text-attantion"><span class="attantion">Attention!</span> You will get {{ exchange.selected.get.fullname }} to your address in {{ exchange.selected.send.text }}<br><br></span>
+              <span class="text-attantion">
+                <span class="attantion">Attention!</span>
+                You will get {{ exchange.selected.get.fullname }} to your address in {{ exchange.selected.send.text }}
+                <br />
+                <br />
+              </span>
             </div>
-
           </div>
-
         </div>
         <div class="ducatus-pay-form loading-pay-form" *ngIf="loadingData">
           <div class="group group-input group-input-select input-h-60"></div>
@@ -118,9 +138,7 @@
         </div>
 
         <div class="pay-form-block-text">
-          <p class="p__text-section icon icon__wallet_2">
-            Your Ducatus address will be associated with a unique address in Bitcoin and Ethereum. You can top up these addresses at any time and receive Ducatus at the current exchange rate at the time of the transaction
-          </p>
+          <p class="p__text-section icon icon__wallet_2">Your Ducatus address will be associated with a unique address in Bitcoin and Ethereum. You can top up these addresses at any time and receive Ducatus at the current exchange rate at the time of the transaction</p>
         </div>
       </div>
     </div>
@@ -131,13 +149,15 @@
   <div class="modal-wrap">
     <div class="modal-content-top">
       <p>
-        Please tick the box below to confirm that you acknowledge and agree to the <a href="assets/downloads/pdf/Wallet_Terms_Conditions.pdf" target="_blank">Terms & Conditions</a> of DUC purchase. Ducatus Coin is not available for purchase from Centurion in Singapore.
+        Please tick the box below to confirm that you acknowledge and agree to the
+        <a href="assets/downloads/pdf/Wallet_Terms_Conditions.pdf" target="_blank">Terms & Conditions</a>
+        of DUC purchase. Ducatus Coin is not available for purchase from Centurion in Singapore.
       </p>
     </div>
     <div class="modal-content-bottom">
       <div class="input-checkbox-group">
         <label for="terms">I agree to the Terms & Conditions</label>
-        <input type="checkbox" (ngModelChange)="modalAccept = !modalAccept" [ngModel]="modalAccept" name="terms" id="terms" class="terms">
+        <input type="checkbox" (ngModelChange)="modalAccept = !modalAccept" [ngModel]="modalAccept" name="terms" id="terms" class="terms" />
       </div>
       <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!modalAccept" class="ducatus-btn ducatus-btn-brown">Close</button>
     </div>

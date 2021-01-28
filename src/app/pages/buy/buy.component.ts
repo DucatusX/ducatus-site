@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BuyService } from '../../service/buy/buy.service';
 
-const f = x => ((x.toString().includes('.')) ? (x.toString().split('.').pop().length) : (0));
+const f = (x) =>
+  x.toString().includes('.') ? x.toString().split('.').pop().length : 0;
 
 export interface Rates {
   DUC: {
@@ -27,23 +28,22 @@ export interface Addresses {
   host: { '(document:click)': 'onClick($event)' },
 })
 export class BuyComponent implements OnInit {
-
   public addresses: Addresses = {
     btc_address: '',
     ducx_address: '',
     eth_address: '',
-    duc_address: ''
+    duc_address: '',
   };
 
   private rates: Rates = {
     DUC: {
       ETH: 0.00046189,
-      BTC: 0.00001040,
-      DUCX: 0.10000000
+      BTC: 0.0000104,
+      DUCX: 0.1,
     },
     DUCX: {
-      DUC: 10.00000000
-    }
+      DUC: 10.0,
+    },
   };
 
   public loadingData = false;
@@ -51,28 +51,38 @@ export class BuyComponent implements OnInit {
   public modalAccept = false;
 
   private sendCoinSelected = 'DUCX';
-  
+
   public exchange = {
     address: {
       to: null,
       error: false,
       loading: false,
       validate: false,
-      qr: false
+      qr: false,
     },
     rate: this.rates.DUC.DUCX,
     price: {
       get: null,
       send: null,
-      select: 'get'
+      select: 'get',
     },
     select: {
       get: false,
-      send: false
+      send: false,
     },
     selected: {
       get: { name: 'DUC', fullname: 'Ducatus', icon: 'duc', active: true },
-      send: { name: 'DUCX', fullname: 'DucatusX', amountType: '?value=', icon: 'duc', rate: 0, active: false, qraddress: '', address: this.addresses.ducx_address, text: '10 min', }
+      send: {
+        name: 'DUCX',
+        fullname: 'DucatusX',
+        amountType: '?value=',
+        icon: 'duc',
+        rate: 0,
+        active: false,
+        qraddress: '',
+        address: this.addresses.ducx_address,
+        text: '10 min',
+      },
     },
     coins: [
       {
@@ -81,10 +91,40 @@ export class BuyComponent implements OnInit {
         icon: 'duc',
         active: true,
         coins: [
-          { name: 'BTC', fullname: 'Bitcoin', amountType: '?amount=', icon: 'btc', rate: this.rates.DUC.BTC, active: false, qraddress: '', address: this.addresses.btc_address, text: '1 hour', },
-          { name: 'ETH', fullname: 'Etherium', amountType: '?value=', icon: 'eth', rate: this.rates.DUC.ETH, active: false, qraddress: '', address: this.addresses.eth_address, text: '40 min', },
-          { name: 'DUCX', fullname: 'DucatusX', amountType: '?value=', icon: 'duc', rate: this.rates.DUC.DUCX, active: true, qraddress: '', address: this.addresses.ducx_address, text: '10 min', }
-        ]
+          {
+            name: 'BTC',
+            fullname: 'Bitcoin',
+            amountType: '?amount=',
+            icon: 'btc',
+            rate: this.rates.DUC.BTC,
+            active: false,
+            qraddress: '',
+            address: this.addresses.btc_address,
+            text: '1 hour',
+          },
+          {
+            name: 'ETH',
+            fullname: 'Etherium',
+            amountType: '?value=',
+            icon: 'eth',
+            rate: this.rates.DUC.ETH,
+            active: false,
+            qraddress: '',
+            address: this.addresses.eth_address,
+            text: '40 min',
+          },
+          {
+            name: 'DUCX',
+            fullname: 'DucatusX',
+            amountType: '?value=',
+            icon: 'duc',
+            rate: this.rates.DUC.DUCX,
+            active: true,
+            qraddress: '',
+            address: this.addresses.ducx_address,
+            text: '10 min',
+          },
+        ],
       },
       {
         name: 'DUCX',
@@ -92,15 +132,23 @@ export class BuyComponent implements OnInit {
         icon: 'duc',
         active: false,
         coins: [
-          { name: 'DUC', fullname: 'Ducatus', amountType: '?value=', icon: 'duc', rate: this.rates.DUCX.DUC, active: true, qraddress: '', address: this.addresses.duc_address, text: '10 min' }
-        ]
-      }
-    ]
+          {
+            name: 'DUC',
+            fullname: 'Ducatus',
+            amountType: '?value=',
+            icon: 'duc',
+            rate: this.rates.DUCX.DUC,
+            active: true,
+            qraddress: '',
+            address: this.addresses.duc_address,
+            text: '10 min',
+          },
+        ],
+      },
+    ],
   };
 
-  constructor(
-    private buyservice: BuyService
-  ) { }
+  constructor(private buyservice: BuyService) {}
 
   public onClick($event) {
     if ($($event.target).closest('.select-coin').length === 0) {
@@ -123,68 +171,99 @@ export class BuyComponent implements OnInit {
 
   public setAddress() {
     if (this.exchange.address.to) {
-
       switch (this.exchange.selected.get.name) {
         case 'DUC':
-          if (this.exchange.address.to.length === 34 && ['L', 'l', 'M', 'm'].includes(this.exchange.address.to.substring(0, 1))) {
-
+          if (
+            this.exchange.address.to.length === 34 &&
+            ['L', 'l', 'M', 'm'].includes(
+              this.exchange.address.to.substring(0, 1)
+            )
+          ) {
             this.exchange.address.validate = true;
             this.exchange.address.loading = true;
 
-            this.buyservice.getValidateDucatusAddress(this.exchange.address.to).then((result) => {
-              if (result) { this.exchange.address.error = false; }
-              else { this.exchange.address.error = true; }
-              this.exchange.address.validate = false;
-              this.getAddresses();
-              console.log('address result', result);
-            }).catch(err => { console.log('something went wrong...', err); this.exchange.address.validate = false; });
-
-          } else { this.exchange.address.error = true; }
+            this.buyservice
+              .getValidateDucatusAddress(this.exchange.address.to)
+              .then((result) => {
+                if (result) {
+                  this.exchange.address.error = false;
+                } else {
+                  this.exchange.address.error = true;
+                }
+                this.exchange.address.validate = false;
+                this.getAddresses();
+                console.log('address result', result);
+              })
+              .catch((err) => {
+                console.log('something went wrong...', err);
+                this.exchange.address.validate = false;
+              });
+          } else {
+            this.exchange.address.error = true;
+          }
           break;
 
         case 'DUCX':
           if (this.exchange.address.to.length === 42) {
-
             const reg = /0x[0-9a-fA-F]{40}/;
             const inputstr = this.exchange.address.to;
 
-            if (!reg.test(inputstr)) { this.exchange.address.error = true; return; }
-            if (($.trim(inputstr) == '') || ($.trim(inputstr).length < 15)) { this.exchange.address.error = true; }
-            else { this.exchange.address.error = false; this.getAddresses(); }
-
-          } else { this.exchange.address.error = true; }
+            if (!reg.test(inputstr)) {
+              this.exchange.address.error = true;
+              return;
+            }
+            if ($.trim(inputstr) == '' || $.trim(inputstr).length < 15) {
+              this.exchange.address.error = true;
+            } else {
+              this.exchange.address.error = false;
+              this.getAddresses();
+            }
+          } else {
+            this.exchange.address.error = true;
+          }
           break;
 
-        default: this.exchange.address.error = true;
+        default:
+          this.exchange.address.error = true;
       }
-
-    } else { this.exchange.address.error = false; }
-
+    } else {
+      this.exchange.address.error = false;
+    }
   }
 
   public getAddresses() {
     this.exchange.address.loading = true;
 
-    this.buyservice.getExchange(this.exchange.address.to, this.exchange.selected.get.name, 'email@email.com').then((result) => {
-      this.addresses = result;
+    this.buyservice
+      .getExchange(
+        this.exchange.address.to,
+        this.exchange.selected.get.name,
+        'email@email.com'
+      )
+      .then((result) => {
+        this.addresses = result;
 
-      switch (this.exchange.selected.get.name) {
-        case 'DUC':
-          this.exchange.coins[0].coins[0].address = this.addresses.btc_address;
-          this.exchange.coins[0].coins[1].address = this.addresses.eth_address;
-          this.exchange.coins[0].coins[2].address = this.addresses.ducx_address;
-          break;
-        case 'DUCX':
-          this.exchange.coins[1].coins[0].address = this.addresses.duc_address;
-          break;
-      }
+        switch (this.exchange.selected.get.name) {
+          case 'DUC':
+            this.exchange.coins[0].coins[0].address = this.addresses.btc_address;
+            this.exchange.coins[0].coins[1].address = this.addresses.eth_address;
+            this.exchange.coins[0].coins[2].address = this.addresses.ducx_address;
+            break;
+          case 'DUCX':
+            this.exchange.coins[1].coins[0].address = this.addresses.duc_address;
+            break;
+        }
 
-      this.exchange.address.loading = false;
-      this.exchange.address.qr = true;
+        this.exchange.address.loading = false;
+        this.exchange.address.qr = true;
 
-      console.log('address result', this.addresses, result);
-      console.log(this.exchange.selected.send.address);
-    }).catch(err => { console.log('something went wrong...', err); this.exchange.address.loading = false; });
+        console.log('address result', this.addresses, result);
+        console.log(this.exchange.selected.send.address);
+      })
+      .catch((err) => {
+        console.log('something went wrong...', err);
+        this.exchange.address.loading = false;
+      });
   }
 
   public setCurrentPrice(type: string) {
@@ -200,8 +279,12 @@ export class BuyComponent implements OnInit {
         if (price !== 0) {
           if (count === 0) {
             this.exchange.price.send = price;
-          } else { this.exchange.price.send = price.toFixed(count); }
-        } else { this.exchange.price.send = null; }
+          } else {
+            this.exchange.price.send = price.toFixed(count);
+          }
+        } else {
+          this.exchange.price.send = null;
+        }
         break;
       case 'send':
         price = this.exchange.price.get * this.exchange.rate;
@@ -209,8 +292,12 @@ export class BuyComponent implements OnInit {
         if (price !== 0) {
           if (count === 0) {
             this.exchange.price.get = price;
-          } else { this.exchange.price.get = price.toFixed(count); }
-        } else { this.exchange.price.get = null; }
+          } else {
+            this.exchange.price.get = price.toFixed(count);
+          }
+        } else {
+          this.exchange.price.get = null;
+        }
         break;
     }
   }
@@ -224,8 +311,10 @@ export class BuyComponent implements OnInit {
           item.active = item.name === name;
           if (item.active) {
             this.exchange.selected.get = item;
-            this.exchange.selected.send = item.coins.find(coin => coin.active === true);
-            rate = item.coins.find(coin => coin.active === true).rate || 0;
+            this.exchange.selected.send = item.coins.find(
+              (coin) => coin.active === true
+            );
+            rate = item.coins.find((coin) => coin.active === true).rate || 0;
           }
         });
         this.exchange.address.loading = false;
@@ -260,61 +349,119 @@ export class BuyComponent implements OnInit {
     window['jQuery']['cookie']('termsBuy', true);
     this.modal = false;
 
-    
+    this.buyservice
+      .getRates()
+      .then((result) => {
+        this.rates = result;
+        this.loadingData = false;
 
-    this.buyservice.getRates().then((result) => {
-      this.rates = result;
-      this.loadingData = false;
-
-      this.exchange = {
-        address: {
-          to: null,
-          error: false,
-          loading: false,
-          validate: false,
-          qr: false
-        },
-        rate: this.rates.DUC.DUCX,
-        price: {
-          get: null,
-          send: null,
-          select: 'get'
-        },
-        select: {
-          get: false,
-          send: false
-        },
-        selected: {
-          get: { name: 'DUC', fullname: 'Ducatus', icon: 'duc', active: true },
-          send: { name: 'DUCX', fullname: 'DucatusX', amountType: '?value=',  icon: 'duc', rate: 0, active: false, qraddress: '', address: this.addresses.ducx_address, text: '10 min', }
-        },
-        coins: [
-          {
-            name: 'DUC',
-            fullname: 'Ducatus',
-            icon: 'duc',
-            active: true,
-            coins: [
-              { name: 'BTC', fullname: 'Bitcoin', amountType: '?amount=', icon: 'btc', rate: this.rates.DUC.BTC, active: false, qraddress: '', address: this.addresses.btc_address, text: '1 hour', },
-              { name: 'ETH', fullname: 'Etherium', amountType: '?value=', icon: 'eth', rate: this.rates.DUC.ETH, active: false, qraddress: '', address: this.addresses.eth_address, text: '40 min', },
-              { name: 'DUCX', fullname: 'DucatusX', amountType: '?value=', icon: 'duc', rate: this.rates.DUC.DUCX, active: true, qraddress: '', address: this.addresses.ducx_address, text: '10 min', }
-            ]
+        this.exchange = {
+          address: {
+            to: null,
+            error: false,
+            loading: false,
+            validate: false,
+            qr: false,
           },
-          {
-            name: 'DUCX',
-            fullname: 'DucatusX',
-            icon: 'duc',
-            active: false,
-            coins: [
-              { name: 'DUC', fullname: 'Ducatus', amountType: '?value=', icon: 'duc', rate: this.rates.DUCX.DUC, active: true, qraddress: '', address: this.addresses.duc_address, text: '10 min' }
-            ]
-          }
-        ]
-      };
+          rate: this.rates.DUC.DUCX,
+          price: {
+            get: null,
+            send: null,
+            select: 'get',
+          },
+          select: {
+            get: false,
+            send: false,
+          },
+          selected: {
+            get: {
+              name: 'DUC',
+              fullname: 'Ducatus',
+              icon: 'duc',
+              active: true,
+            },
+            send: {
+              name: 'DUCX',
+              fullname: 'DucatusX',
+              amountType: '?value=',
+              icon: 'duc',
+              rate: 0,
+              active: false,
+              qraddress: '',
+              address: this.addresses.ducx_address,
+              text: '10 min',
+            },
+          },
+          coins: [
+            {
+              name: 'DUC',
+              fullname: 'Ducatus',
+              icon: 'duc',
+              active: true,
+              coins: [
+                {
+                  name: 'BTC',
+                  fullname: 'Bitcoin',
+                  amountType: '?amount=',
+                  icon: 'btc',
+                  rate: this.rates.DUC.BTC,
+                  active: false,
+                  qraddress: '',
+                  address: this.addresses.btc_address,
+                  text: '1 hour',
+                },
+                {
+                  name: 'ETH',
+                  fullname: 'Etherium',
+                  amountType: '?value=',
+                  icon: 'eth',
+                  rate: this.rates.DUC.ETH,
+                  active: false,
+                  qraddress: '',
+                  address: this.addresses.eth_address,
+                  text: '40 min',
+                },
+                {
+                  name: 'DUCX',
+                  fullname: 'DucatusX',
+                  amountType: '?value=',
+                  icon: 'duc',
+                  rate: this.rates.DUC.DUCX,
+                  active: true,
+                  qraddress: '',
+                  address: this.addresses.ducx_address,
+                  text: '10 min',
+                },
+              ],
+            },
+            {
+              name: 'DUCX',
+              fullname: 'DucatusX',
+              icon: 'duc',
+              active: false,
+              coins: [
+                {
+                  name: 'DUC',
+                  fullname: 'Ducatus',
+                  amountType: '?value=',
+                  icon: 'duc',
+                  rate: this.rates.DUCX.DUC,
+                  active: true,
+                  qraddress: '',
+                  address: this.addresses.duc_address,
+                  text: '10 min',
+                },
+              ],
+            },
+          ],
+        };
 
-      console.log('rates result', this.rates, this.exchange);
-      this.coinSwitch(this.sendCoinSelected, 'send');
-    }).catch(err => { console.log('something went wrong...', err); });
+        console.log('rates result', this.rates, this.exchange);
+        this.coinSwitch(this.sendCoinSelected, 'send');
+      })
+      .catch((err) => {
+        console.log('something went wrong...', err);
+      });
   }
 
   ngOnInit() {
@@ -323,5 +470,4 @@ export class BuyComponent implements OnInit {
       ? this.acceptModalTerms()
       : (this.modal = true);
   }
-
 }
