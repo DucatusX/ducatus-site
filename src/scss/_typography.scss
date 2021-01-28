@@ -230,7 +230,7 @@ li {
 
 .icon {
   &:before {
-    content: "";
+    content: '';
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -243,7 +243,7 @@ li {
   &__swap-arrows {
     @include before-img(block, 30px, 30px, r) {
       background-color: #f7f3eb;
-      background-image: url("assets/img/icons/swap-arrows.svg");
+      background-image: url('assets/img/icons/swap-arrows.svg');
       border-radius: 5em;
     }
   }
@@ -251,82 +251,82 @@ li {
   &__money {
     @include before-img(block, 90px, 90px, r) {
       background-color: $gold-2;
-      background-image: url("assets/img/icons/money.svg");
+      background-image: url('assets/img/icons/money.svg');
     }
   }
 
   &__arrow {
     @include before-img(block, 90px, 90px, r) {
       background-color: $gold-2;
-      background-image: url("assets/img/icons/arrow.svg");
+      background-image: url('assets/img/icons/arrow.svg');
     }
   }
 
   &__house {
     @include before-img(block, 90px, 90px, r) {
       background-color: $white;
-      background-image: url("assets/img/icons/house.svg");
+      background-image: url('assets/img/icons/house.svg');
     }
   }
 
   &__congratulations {
     @include before-img(block, 64px, 64px, r) {
-      background-image: url("assets/img/icons/congratulations.svg");
+      background-image: url('assets/img/icons/congratulations.svg');
     }
   }
 
   &__watch-out {
     @include before-img(block, 37px, 37px, r) {
-      background-image: url("assets/img/icons/watch-out.svg");
+      background-image: url('assets/img/icons/watch-out.svg');
     }
   }
 
   &__people {
     @include before-img(block, 90px, 90px, r) {
       background-color: $white;
-      background-image: url("assets/img/icons/people.svg");
+      background-image: url('assets/img/icons/people.svg');
     }
   }
 
   &__hands {
     @include before-img(block, 90px, 90px, r) {
       background-color: $white;
-      background-image: url("assets/img/icons/hands.svg");
+      background-image: url('assets/img/icons/hands.svg');
     }
   }
 
   &__web {
     @include before-img(block, 90px, 90px, r) {
       background-color: $brown-red;
-      background-image: url("assets/img/icons/web.svg");
+      background-image: url('assets/img/icons/web.svg');
     }
   }
 
   &__up {
     @include before-img(block, 90px, 90px, r) {
       background-color: $brown-red;
-      background-image: url("assets/img/icons/up.svg");
+      background-image: url('assets/img/icons/up.svg');
     }
   }
 
   &__rocket {
     @include before-img(block, 90px, 90px, r) {
       background-color: $brown-red;
-      background-image: url("assets/img/icons/rocket.svg");
+      background-image: url('assets/img/icons/rocket.svg');
     }
   }
 
   &__coin {
     @include before-img(block, 90px, 90px, r) {
       background-color: $brown-red;
-      background-image: url("assets/img/icons/coin.svg");
+      background-image: url('assets/img/icons/coin.svg');
     }
   }
 
   &__wallet {
     @include before-img(block, 90px, 90px, r) {
       background-color: $brown-red;
-      background-image: url("assets/img/icons/wallet.svg");
+      background-image: url('assets/img/icons/wallet.svg');
     }
   }
 
@@ -335,79 +335,79 @@ li {
       min-width: 50px;
       max-width: 50px;
       margin-right: 20px;
-      background-image: url("assets/img/icons/wallet.svg");
+      background-image: url('assets/img/icons/wallet.svg');
     }
   }
 
   &__blockchain {
     @include before-img(block, 100px, 100px, r) {
-      background-image: url("assets/img/icons/blockchain.svg");
+      background-image: url('assets/img/icons/blockchain.svg');
     }
   }
 
   &__source-code {
     @include before-img(block, 100px, 100px, r) {
-      background-image: url("assets/img/icons/source-code.svg");
+      background-image: url('assets/img/icons/source-code.svg');
     }
   }
 
   &__node {
     @include before-img(block, 100px, 100px, r) {
-      background-image: url("assets/img/icons/node.svg");
+      background-image: url('assets/img/icons/node.svg');
     }
   }
 
   &__big-data {
     @include before-img(block, 50px, 50px, r) {
-      background-image: url("assets/img/icons/big-data.svg");
+      background-image: url('assets/img/icons/big-data.svg');
     }
   }
 
   &__community {
     @include before-img(block, 50px, 50px, r) {
-      background-image: url("assets/img/icons/community.svg");
+      background-image: url('assets/img/icons/community.svg');
     }
   }
 
   &__hand-coin {
     @include before-img(block, 50px, 50px, r) {
-      background-image: url("assets/img/icons/hand-coin.svg");
+      background-image: url('assets/img/icons/hand-coin.svg');
     }
   }
 
   &__secure {
     @include before-img(block, 50px, 50px, r) {
-      background-image: url("assets/img/icons/secure.svg");
+      background-image: url('assets/img/icons/secure.svg');
     }
   }
 
   &__phone-coin {
     @include before-img(block, 50px, 50px, r) {
-      background-image: url("assets/img/icons/phone-coin.svg");
+      background-image: url('assets/img/icons/phone-coin.svg');
     }
   }
 
   &__rocket-2 {
     @include before-img(block, 50px, 50px, r) {
-      background-image: url("assets/img/icons/rocket-2.svg");
+      background-image: url('assets/img/icons/rocket-2.svg');
     }
   }
 
   &__user {
     @include before-img(block, 50px, 50px, r) {
-      background-image: url("assets/img/icons/user.svg");
+      background-image: url('assets/img/icons/user.svg');
     }
   }
 
   &__email {
     @include before-img(block, 50px, 50px, r) {
-      background-image: url("assets/img/icons/email.svg");
+      background-image: url('assets/img/icons/email.svg');
     }
   }
 
   &__message {
     @include before-img(block, 50px, 50px, r) {
-      background-image: url("assets/img/icons/message.svg");
+      background-image: url('assets/img/icons/message.svg');
     }
   }
 
@@ -416,7 +416,7 @@ li {
 
     @include before-img(block, 20px, 20px, r) {
       background-color: transparent;
-      background-image: url("assets/img/icons/facebook.svg");
+      background-image: url('assets/img/icons/facebook.svg');
       background-size: contain;
     }
   }
@@ -426,7 +426,7 @@ li {
 
     @include before-img(block, 20px, 20px, r) {
       background-color: transparent;
-      background-image: url("assets/img/icons/twitter.svg");
+      background-image: url('assets/img/icons/twitter.svg');
       background-size: contain;
     }
   }
@@ -436,7 +436,7 @@ li {
 
     @include before-img(block, 20px, 20px, r) {
       background-color: transparent;
-      background-image: url("assets/img/icons/instagram.svg");
+      background-image: url('assets/img/icons/instagram.svg');
       background-size: contain;
     }
   }
@@ -446,7 +446,7 @@ li {
 
     @include before-img(block, 20px, 20px, r) {
       background-color: transparent;
-      background-image: url("assets/img/icons/linkedin.svg");
+      background-image: url('assets/img/icons/linkedin.svg');
       background-size: contain;
     }
   }
@@ -456,7 +456,7 @@ li {
 
     @include before-img(block, 30px, 20px, r) {
       background-color: transparent;
-      background-image: url("assets/img/icons/youtube.svg");
+      background-image: url('assets/img/icons/youtube.svg');
       background-size: contain;
     }
   }
@@ -466,7 +466,7 @@ li {
 
     @include before-img(block, 28px, 28px, r) {
       background-color: transparent;
-      background-image: url("assets/img/icons/new/facebook.svg");
+      background-image: url('assets/img/icons/new/facebook.svg');
       background-size: contain;
     }
   }
@@ -476,7 +476,7 @@ li {
 
     @include before-img(block, 28px, 28px, r) {
       background-color: transparent;
-      background-image: url("assets/img/icons/new/twitter.svg");
+      background-image: url('assets/img/icons/new/twitter.svg');
       background-size: contain;
     }
   }
@@ -486,7 +486,7 @@ li {
 
     @include before-img(block, 28px, 28px, r) {
       background-color: transparent;
-      background-image: url("assets/img/icons/new/instagram.svg");
+      background-image: url('assets/img/icons/new/instagram.svg');
       background-size: contain;
     }
   }
@@ -496,7 +496,7 @@ li {
 
     @include before-img(block, 28px, 28px, r) {
       background-color: transparent;
-      background-image: url("assets/img/icons/new/linkedIn.svg");
+      background-image: url('assets/img/icons/new/linkedIn.svg');
       background-size: contain;
     }
   }
@@ -506,130 +506,130 @@ li {
 
     @include before-img(block, 28px, 28px, r) {
       background-color: transparent;
-      background-image: url("assets/img/icons/new/youtube.svg");
+      background-image: url('assets/img/icons/new/youtube.svg');
       background-size: contain;
     }
   }
 
   &__coin-ducx {
     @include before-img(block, 90px, 90px, r) {
-      background-image: url("assets/img/icons/coin-ducx.svg");
+      background-image: url('assets/img/icons/coin-ducx.svg');
     }
   }
 
   &__community-ducx {
     @include before-img(block, 90px, 90px, r) {
-      background-image: url("assets/img/icons/community-ducx.svg");
+      background-image: url('assets/img/icons/community-ducx.svg');
     }
   }
 
   &__trusted-ducx {
     @include before-img(block, 90px, 90px, r) {
-      background-image: url("assets/img/icons/trusted-ducx.svg");
+      background-image: url('assets/img/icons/trusted-ducx.svg');
     }
   }
 
   &__money-ducx {
     @include before-img(block, 90px, 90px, r) {
-      background-image: url("assets/img/icons/money-ducx.svg");
+      background-image: url('assets/img/icons/money-ducx.svg');
     }
   }
 
   &__coin-dollar-ducx {
     @include before-img(block, 40px, 40px, r) {
-      background-image: url("assets/img/icons/coin-dollar-ducx.svg");
+      background-image: url('assets/img/icons/coin-dollar-ducx.svg');
     }
   }
 
   &__cash-ducx {
     @include before-img(block, 40px, 40px, r) {
-      background-image: url("assets/img/icons/cash-ducx.svg");
+      background-image: url('assets/img/icons/cash-ducx.svg');
     }
   }
 
   &__snow-ducx {
     @include before-img(block, 40px, 40px, r) {
-      background-image: url("assets/img/icons/snow-ducx.svg");
+      background-image: url('assets/img/icons/snow-ducx.svg');
     }
   }
 
   &__double-money-ducx {
     @include before-img(block, 40px, 40px, r) {
-      background-image: url("assets/img/icons/double-money-ducx.svg");
+      background-image: url('assets/img/icons/double-money-ducx.svg');
     }
   }
 
   &__calendar-2-ducx {
     @include before-img(block, 40px, 40px, r) {
-      background-image: url("assets/img/icons/calendar-2-ducx.svg");
+      background-image: url('assets/img/icons/calendar-2-ducx.svg');
     }
   }
 
   &__calendar-ducx {
     @include before-img(block, 40px, 40px, r) {
-      background-image: url("assets/img/icons/calendar-ducx.svg");
+      background-image: url('assets/img/icons/calendar-ducx.svg');
     }
   }
 
   &__circles-ducx {
     @include before-img(block, 42px, 42px, r) {
-      background-image: url("assets/img/icons/circles-ducx.svg");
+      background-image: url('assets/img/icons/circles-ducx.svg');
     }
   }
 
   &__gift-ducx {
     @include before-img(block, 38px, 40px, r) {
-      background-image: url("assets/img/icons/gift-ducx.svg");
+      background-image: url('assets/img/icons/gift-ducx.svg');
     }
   }
 
   &__hand-cash-ducx {
     @include before-img(block, 48px, 48px, r) {
-      background-image: url("assets/img/icons/hand-cash-ducx.svg");
+      background-image: url('assets/img/icons/hand-cash-ducx.svg');
     }
   }
 
   &__hand-coin-ducx {
     @include before-img(block, 34px, 38px, r) {
-      background-image: url("assets/img/icons/hand-coin-ducx.svg");
+      background-image: url('assets/img/icons/hand-coin-ducx.svg');
     }
   }
 
   &__hand-dollar-ducx {
     @include before-img(block, 42px, 40px, r) {
-      background-image: url("assets/img/icons/hand-dollar-ducx.svg");
+      background-image: url('assets/img/icons/hand-dollar-ducx.svg');
     }
   }
 
   &__shield-ducx {
     @include before-img(block, 38px, 48px, r) {
-      background-image: url("assets/img/icons/shield-ducx.svg");
+      background-image: url('assets/img/icons/shield-ducx.svg');
     }
   }
 
   &__settings {
     @include before-img(block, 20px, 20px, r) {
-      background-image: url("assets/img/icons/settings.svg");
+      background-image: url('assets/img/icons/settings.svg');
     }
   }
 
   &__datetimepicker {
     @include before-img(block, 20px, 20px, r) {
-      background-image: url("assets/img/icons/datetimepicker.svg");
+      background-image: url('assets/img/icons/datetimepicker.svg');
     }
   }
 
   &__loading {
     @include before-img(block, 50px, 50px, a) {
       background-size: 80px;
-      background-image: url("assets/img/icons/loading.svg");
+      background-image: url('assets/img/icons/loading.svg');
     }
   }
 
   &__sort-down {
     @include before-img(block, 14px, 14px, a) {
       background-size: contain;
-      background-image: url("assets/img/icons/sort-down.svg");
+      background-image: url('assets/img/icons/sort-down.svg');
     }
   }
 
@@ -637,118 +637,118 @@ li {
     @include before-img(block, 14px, 14px, a) {
       transform: rotate(180deg);
       background-size: contain;
-      background-image: url("assets/img/icons/sort-down.svg");
+      background-image: url('assets/img/icons/sort-down.svg');
     }
   }
 
   &__refresh {
     @include before-img(block, 30px, 30px, a) {
-      background-image: url("assets/img/icons/refresh.svg");
+      background-image: url('assets/img/icons/refresh.svg');
     }
   }
 
   &__plus {
     @include before-img(block, 21px, 21px, r) {
       margin-right: 10px;
-      background-image: url("assets/img/icons/plus.svg");
+      background-image: url('assets/img/icons/plus.svg');
     }
   }
 
   &__copy {
     @include before-img(block, 18px, 18px, r) {
       transition: 0.4s ease;
-      background-image: url("assets/img/icons/copy.svg");
+      background-image: url('assets/img/icons/copy.svg');
     }
   }
 
   &__sort-dash-up {
     @include before-img(block, 31px, 19px, r) {
       transition: 0.4s ease;
-      background-image: url("assets/img/icons/sort-dash-up.svg");
+      background-image: url('assets/img/icons/sort-dash-up.svg');
     }
   }
 
   &__sort-dash-down {
     @include before-img(block, 31px, 19px, r) {
       transition: 0.4s ease;
-      background-image: url("assets/img/icons/sort-dash-down.svg");
+      background-image: url('assets/img/icons/sort-dash-down.svg');
     }
   }
 
   &__search {
     @include before-img(block, 15px, 15px, r) {
       transition: 0.4s ease;
-      background-image: url("assets/img/icons/search.svg");
+      background-image: url('assets/img/icons/search.svg');
     }
   }
 
   &__cash-community {
     @include before-img(block, 110px, 110px, r) {
       transition: 0.4s ease;
-      background-image: url("assets/img/icons/cash-community.svg");
+      background-image: url('assets/img/icons/cash-community.svg');
     }
   }
 
   &__arrow-community {
     @include before-img(block, 110px, 110px, r) {
       transition: 0.4s ease;
-      background-image: url("assets/img/icons/arrow-community.svg");
+      background-image: url('assets/img/icons/arrow-community.svg');
     }
   }
 
   &__stonks-new {
     @include before-img(block, 145px, 150px, r) {
       transition: 0.4s ease;
-      background-image: url("assets/img/icons/stonks-new.svg");
+      background-image: url('assets/img/icons/stonks-new.svg');
     }
   }
 
   &__web-new {
     @include before-img(block, 145px, 150px, r) {
       transition: 0.4s ease;
-      background-image: url("assets/img/icons/web-new.svg");
+      background-image: url('assets/img/icons/web-new.svg');
     }
   }
 
   &__users-new {
     @include before-img(block, 145px, 150px, r) {
       transition: 0.4s ease;
-      background-image: url("assets/img/icons/users-new.svg");
+      background-image: url('assets/img/icons/users-new.svg');
     }
   }
 
   &__rocket-new {
     @include before-img(block, 145px, 150px, r) {
       transition: 0.4s ease;
-      background-image: url("assets/img/icons/rocket-new.svg");
+      background-image: url('assets/img/icons/rocket-new.svg');
     }
   }
 
   &__hands-new {
     @include before-img(block, 145px, 150px, r) {
       transition: 0.4s ease;
-      background-image: url("assets/img/icons/hands-new.svg");
+      background-image: url('assets/img/icons/hands-new.svg');
     }
   }
 
   &__gov-new {
     @include before-img(block, 145px, 150px, r) {
       transition: 0.4s ease;
-      background-image: url("assets/img/icons/gov-new.svg");
+      background-image: url('assets/img/icons/gov-new.svg');
     }
   }
 
   &__duc-coin-new {
     @include before-img(block, 145px, 150px, r) {
       transition: 0.4s ease;
-      background-image: url("assets/img/icons/duc-coin-new.svg");
+      background-image: url('assets/img/icons/duc-coin-new.svg');
     }
   }
 }
 
 .ol-a-type {
   font-size: 16px;
-  font-family: "Montserrat", serif;
+  font-family: 'Montserrat', serif;
   line-height: 29px;
 
   li {
@@ -807,7 +807,7 @@ li {
 
         &:before {
           position: absolute;
-          content: "";
+          content: '';
           height: 18px;
           width: 18px;
           left: 4px;
@@ -832,7 +832,7 @@ li {
       border-left: 1px solid #cfb778;
       border-bottom: 1px solid #cfb778;
       border-right: none;
-      font-family: "Montserrat";
+      font-family: 'Montserrat';
       font-weight: 300;
       letter-spacing: 1px;
       color: #862632;
