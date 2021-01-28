@@ -12,8 +12,8 @@
         <!-- Ducatus Form Buy Coins -->
         <div class="ducatus-pay-form" *ngIf="rates">
           <div class="group group-input group-input-select">
-            <label for="get-coin">You get</label>
-            <input type="number" min="0" placeholder="Amount" [(ngModel)]="valueGet" (ngModelChange)="amountGet()" class="input input-white" id="get-coin" />
+            <label for="get-coin">{{ 'PAGE.BUY.FORM.FIELD.GET.TEXT' | translate }}</label>
+            <input type="number" min="0" [placeholder]="'PAGE.BUY.FORM.FIELD.GET.PLACEHOLDER' | translate" [(ngModel)]="valueGet" (ngModelChange)="amountGet()" class="input input-white" id="get-coin" />
 
             <!-- Ducatus Form Select Get Coins -->
             <label for="select-form-get" class="select-coin select-coin-fill" [ngClass]="{ 'select-coin-start': openFormGet.checked }">
@@ -42,8 +42,8 @@
           </div>
 
           <div class="group group-input group-input-select">
-            <label for="send-coin">You send</label>
-            <input min="0" type="number" placeholder="Amount" [(ngModel)]="valueSend" (ngModelChange)="amountSend()" class="input input-white" id="send-coin" />
+            <label for="send-coin">{{ 'PAGE.BUY.FORM.FIELD.SEND.TEXT' | translate }}</label>
+            <input min="0" type="number" [placeholder]="'PAGE.BUY.FORM.FIELD.SEND.PLACEHOLDER' | translate" [(ngModel)]="valueSend" (ngModelChange)="amountSend()" class="input input-white" id="send-coin" />
 
             <!-- Ducatus Form Select Send Coins -->
             <label for="select-form-send" class="select-coin select-coin-fill" [ngClass]="{ 'select-coin-start': openFormSend.checked }">
@@ -68,24 +68,31 @@
           </div>
 
           <div class="group group-input">
-            <label for="ducatus-address">Enter your {{ coins[coinGet].name }} address for receiving coins</label>
-            <input [(ngModel)]="address" (ngModelChange)="setAddress()" [disabled]="checkAddress" class="input input-white" id="ducatus-address" type="text" oninput="this.value = this.value.replace('ducatus:', '');" [placeholder]="'Enter your ' + coins[coinGet].name + ' address'" />
-            <span class="error-address-value" *ngIf="novalidAddress">Error! Please check, the address format is incorrect!</span>
+            <label for="ducatus-address" [innerHTML]="'PAGE.BUY.FORM.ADDRESS.TEXT' | translate: { coin: coins[coinGet].symbol, coinName: coins[coinGet].name }"></label>
+            <input [(ngModel)]="address" (ngModelChange)="setAddress()" [disabled]="checkAddress" class="input input-white" id="ducatus-address" type="text" oninput="this.value = this.value.replace('ducatus:', '');" [placeholder]="'PAGE.BUY.FORM.ADDRESS.PLACEHOLDER' | translate: { coin: coins[coinGet].symbol }" />
+            <span class="error-address-value" *ngIf="novalidAddress">{{ 'PAGE.BUY.FORM.ADDRESS.ERROR' | translate }}</span>
           </div>
 
-          <div id="loading-address" [ngClass]="{ 'loading-address-start': !addresses }" class="group group-block group-input group-input-copy m-b-0 qr-wrap">
+          <div id="loading-address" [ngClass]="{ 'loading-address-start': !addresses }" class="group group-input group-input-copy m-b-0 qr-wrap">
             <div class="group-wrap qr-address">
-              <label>Send {{ valueSend || 0 }} {{ coins[coinSend].name }} to</label>
-              <p *ngIf="addresses" class="input input-accent">{{ qr }}</p>
-              <span class="copy-address icon icon-copy"></span>
+              <label>{{ 'PAGE.BUY.FORM.RESULT.TEXT_1' | translate }} {{ coins[coinSend].name }} {{ 'PAGE.BUY.FORM.RESULT.TEXT_2' | translate }}</label>
+              <p class="input input-accent">
+                <span *ngIf="addresses">{{ address }}</span>
+              </p>
+              <span class="copy-address icon icon-copy" [cdkCopyToClipboard]="address"></span>
             </div>
-            <div class="qrcode">
+
+            <div class="qrcode" [attr.title]="qr">
               <qrcode *ngIf="addresses" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1" [qrdata]="qr" [width]="80" [errorCorrectionLevel]="'L'"></qrcode>
+            </div>
+
+            <div class="group-wrap qr-textCode">
+              <label>{{ 'PAGE.BUY.FORM.RESULT.QR.TEXT' | translate }}</label>
             </div>
 
             <div class="loading-address-qr">
               <div class="loading-address-qr-wrap">
-                <p>something went wrong, try again later</p>
+                <p>{{ 'PAGE.BUY.FORM.RESULT.ERROR' | translate }}</p>
                 <div class="loading-address-qr-wrap-ellips">
                   <span></span>
                   <span></span>
@@ -95,13 +102,8 @@
               </div>
             </div>
 
-            <div class="group group-text qr-text">
-              <span class="text-attantion">
-                <span class="attantion">Attention!</span>
-                You will get {{ coins[coinGet].name }} to your address in {{ coins[coinSend].wait }}
-                <br />
-                <br />
-              </span>
+            <div class="group group-text qr-text" style="margin-bottom: 0">
+              <span class="text-attantion" [innerHTML]="'PAGE.BUY.FORM.RESULT.NOTE' | translate: { time: coins[coinSend].wait, coin: coins[coinSend].symbol }"></span>
             </div>
           </div>
         </div>
@@ -126,7 +128,7 @@
           <iframe src="https://www.youtube.com/embed/5tzX8UzUQkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="pay-form-block-text">
-          <p class="p__text-section icon icon__wallet_2">Your Ducatus address will be associated with a unique address in Bitcoin and Ethereum. You can top up these addresses at any time and receive Ducatus at the current exchange rate at the time of the transaction</p>
+          <p class="p__text-section icon icon__wallet_2" [innerHTML]="'PAGE.BUY.INFO.TEXT' | translate: { coin: coins[coinGet].name }"></p>
         </div>
       </div>
       <!-- End Right Side Block -->
@@ -134,7 +136,7 @@
   </div>
 </section>
 
-<div class="modal" *ngIf="modal">
+<!-- <div class="modal" *ngIf="modal">
   <div class="modal-wrap">
     <div class="modal-content-top">
       <p>
@@ -149,6 +151,23 @@
         <input #acceptTerms type="checkbox" id="terms" class="terms" />
       </div>
       <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!acceptTerms.checked" class="ducatus-btn ducatus-btn-brown">Close</button>
+    </div>
+  </div>
+</div> -->
+
+<div class="modal" *ngIf="modal">
+  <div class="modal-wrap">
+    <div class="modal-content-top">
+      <p [innerHTML]="'PAGE.BUY.MODAL.TERMS.TEXT' | translate"></p>
+    </div>
+    <div class="modal-content-bottom">
+      <div class="input-checkbox-group">
+        <label for="terms" [innerHTML]="'PAGE.BUY.MODAL.TERMS.AGREE' | translate"></label>
+        <input #acceptTerms type="checkbox" id="terms" class="terms" />
+      </div>
+      <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!acceptTerms.checked" class="ducatus-btn ducatus-btn-brown" style="margin: 0 auto">
+        {{ 'PAGE.BUY.MODAL.TERMS.BUTTON' | translate }}
+      </button>
     </div>
   </div>
 </div>

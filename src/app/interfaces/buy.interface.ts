@@ -27,4 +27,5 @@ interface BuyCoinsInfo {
   icon: string;
   wait: string;
   qrAmount: string;
+  decimal: number;
 }

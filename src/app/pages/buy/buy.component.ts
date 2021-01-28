@@ -62,7 +62,8 @@ export class BuyComponent implements OnInit {
   }
 
   private setQr(): void {
-    this.qr = this.coins[this.coinSend].name.toLowerCase() + ':' + 'LsYgkGZZX2tvJYmb87RYwC3KdSwLtVpeiF' + this.coins[this.coinSend].qrAmount + (this.valueSend || 0);
+    this.qr = this.coins[this.coinSend].name.toLowerCase() + ':' + this.address + this.coins[this.coinSend].qrAmount + (this.valueSend.toFixed(this.coins[this.coinSend].decimal).toString() || '0');
+    // this.qr = this.coins[this.coinSend].name.toLowerCase() + ':' + this.addresses[this.coins[this.coinSend].symbol.toLowerCase() + '_address']  + this.coins[this.coinSend].qrAmount + (this.valueSend.toFixed(this.coins[this.coinSend].decimal).toString() || '0');
   }
 
   public amountGet(): any {

@@ -8,9 +8,9 @@ export const coinsFormSend = {
 };
 
 export const coins: BuyCoins = {
-  DUC: { name: 'Ducatus', symbol: 'DUC', icon: 'duc', wait: '10 min', qrAmount: '?value=' },
-  DUCX: { name: 'DucatusX', symbol: 'DUCX', icon: 'duc', wait: '10 min', qrAmount: '?value=' },
-  ETH: { name: 'Ethereum', symbol: 'ETH', icon: 'eth', wait: '40 min', qrAmount: '?value=' },
-  BTC: { name: 'Bitcoin', symbol: 'BTC', icon: 'btc', wait: '60 min', qrAmount: '?amount=' },
-  USDC: { name: 'USDC', symbol: 'USDC', icon: 'usdc', wait: '10 min', qrAmount: '?value=' },
+  DUC: { name: 'Ducatus', symbol: 'DUC', icon: 'duc', wait: '10 min', qrAmount: '?value=', decimal: 18 },
+  DUCX: { name: 'DucatusX', symbol: 'DUCX', icon: 'duc', wait: '10 min', qrAmount: '?value=', decimal: 18 },
+  ETH: { name: 'Ethereum', symbol: 'ETH', icon: 'eth', wait: '40 min', qrAmount: '?value=', decimal: 18 },
+  BTC: { name: 'Bitcoin', symbol: 'BTC', icon: 'btc', wait: '60 min', qrAmount: '?amount=', decimal: 8 },
+  USDC: { name: 'USDC', symbol: 'USDC', icon: 'usdc', wait: '10 min', qrAmount: '?value=', decimal: 18 },
 };
