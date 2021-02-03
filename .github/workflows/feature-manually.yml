@@ -39,7 +39,7 @@ jobs:
           path: ./dist
           retention-days: 1
   deploy:
-    if: ${{ github.event.inputs.deploy === 'true' }}
+    if: ${{ github.event.inputs.deploy == 'true' }}
     name: Deploy project to test server
     needs: build
     runs-on: ubuntu-latest
