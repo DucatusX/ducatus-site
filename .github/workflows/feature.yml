@@ -42,43 +42,27 @@ jobs:
         with:
           name: ducatus-dist
           path: ./dist
-  zip:
-    name: Create project zip
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: ls
-        run: ls
-      - name: Download artifacts from build
-        uses: actions/download-artifact@v2
-        with:
-          name: ducatus-dist
-      - name: ls
-        run: ls
-      - name: Zip Folder
-        run: zip -r -X ducatus-site@feature.zip ducatus-site
-      - name: ls
-        run: ls
-      - uses: actions/upload-artifact@v2
-        with:
-          name: ducatus-site@feature-zip
-          path: ducatus-site@feature.zip
-          retention-days: 2
-  upload:
-    name: Upload artifact
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: ls
-        run: ls
-      - name: Download artifacts from build
-        uses: actions/download-artifact@v2
-        with:
-          name: ducatus-dist
-      - name: ls
-        run: ls
-      - uses: actions/upload-artifact@v2
-        with:
-          name: feature-dist
-          path: ducatus-site
           retention-days: 1
+  deploy:
+    name: Deploy project to test server
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: ls
+        run: ls
+      - name: Download artifacts from build
+        uses: actions/download-artifact@v2
+        with:
+          name: ducatus-dist
+      - name: ls
+        run: ls
+      - name: Deploying to server
+        uses: burnett01/rsync-deployments@4.1
+        with:
+          switches: ${{ secrets.DEPLOY_TEST_SWITCHES }}
+          path: ${{ secrets.DEPLOY_TEST_PATH }}
+          remote_path: ${{ secrets.DEPLOY_TEST_REMOTE_PATH }}
+          remote_host: ${{ secrets.DEPLOY_TEST_HOST }}
+          remote_port: ${{ secrets.DEPLOY_TEST_PORT }}
+          remote_user: ${{ secrets.DEPLOY_TEST_USER }}
+          remote_key: ${{ secrets.DEPLOY_TEST_KEY }}
