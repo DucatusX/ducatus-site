@@ -77,7 +77,7 @@
             <div class="group-wrap qr-address">
               <label>{{ 'PAGE.BUY.FORM.RESULT.TEXT_1' | translate }} {{ coins[coinSend].name }} {{ 'PAGE.BUY.FORM.RESULT.TEXT_2' | translate }}</label>
               <p class="input input-accent">
-                <span *ngIf="addresses">{{ address }}</span>
+                <span *ngIf="addresses">{{ addresses[coins[coinSend].symbol.toLowerCase() + '_address'] }}</span>
               </p>
               <span class="copy-address icon icon-copy" [cdkCopyToClipboard]="address"></span>
             </div>
@@ -135,25 +135,6 @@
     </div>
   </div>
 </section>
-
-<!-- <div class="modal" *ngIf="modal">
-  <div class="modal-wrap">
-    <div class="modal-content-top">
-      <p>
-        Please tick the box below to confirm that you acknowledge and agree to the
-        <a href="assets/downloads/pdf/Wallet_Terms_Conditions.pdf" target="_blank">Terms & Conditions</a>
-        of DUC purchase. Ducatus Coin is not available for purchase from Centurion in Singapore.
-      </p>
-    </div>
-    <div class="modal-content-bottom">
-      <div class="input-checkbox-group">
-        <label for="terms">I agree to the Terms & Conditions</label>
-        <input #acceptTerms type="checkbox" id="terms" class="terms" />
-      </div>
-      <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!acceptTerms.checked" class="ducatus-btn ducatus-btn-brown">Close</button>
-    </div>
-  </div>
-</div> -->
 
 <div class="modal" *ngIf="modal">
   <div class="modal-wrap">

@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
-import {
-  Router,
-  Event as RouterEvent,
-  NavigationStart,
-  NavigationEnd,
-  NavigationCancel,
-  NavigationError,
-  ActivationEnd,
-  RouterOutlet
-} from '@angular/router';
+import { Router, Event as RouterEvent, NavigationStart, NavigationEnd, NavigationCancel, NavigationError, ActivationEnd, RouterOutlet } from '@angular/router';
 import { slider } from './route-animation';
 
 declare let gtag;
@@ -19,16 +10,15 @@ declare let gtag;
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [slider]
+  animations: [slider],
 })
 export class AppComponent implements OnInit {
-
   public showOverlay = true;
   public enableHeader = true;
   public enableFooter = true;
+  public title = 'ducatus-site';
 
   constructor(private translateService: TranslateService, protected router: Router) {
-
     router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event);
 
@@ -36,7 +26,6 @@ export class AppComponent implements OnInit {
         this.enableHeader = !event.snapshot.data.noheader;
         this.enableFooter = !event.snapshot.data.nofooter;
       }
-
     });
 
     const defaultLng = (navigator.language || navigator['browserLanguage']).split('-')[0];
@@ -55,9 +44,7 @@ export class AppComponent implements OnInit {
     }
     if (event instanceof NavigationEnd) {
       this.showOverlay = false;
-      gtag('config', 'UA-153904034-1',
-        { page_path: event.urlAfterRedirects }
-      );
+      gtag('config', 'UA-153904034-1', { page_path: event.urlAfterRedirects });
     }
 
     if (event instanceof NavigationCancel) {
@@ -72,5 +59,5 @@ export class AppComponent implements OnInit {
     window.scroll(0, 0);
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 }

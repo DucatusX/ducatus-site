@@ -62,8 +62,7 @@ export class BuyComponent implements OnInit {
   }
 
   private setQr(): void {
-    this.qr = this.coins[this.coinSend].name.toLowerCase() + ':' + this.address + this.coins[this.coinSend].qrAmount + (this.valueSend.toFixed(this.coins[this.coinSend].decimal).toString() || '0');
-    // this.qr = this.coins[this.coinSend].name.toLowerCase() + ':' + this.addresses[this.coins[this.coinSend].symbol.toLowerCase() + '_address']  + this.coins[this.coinSend].qrAmount + (this.valueSend.toFixed(this.coins[this.coinSend].decimal).toString() || '0');
+    this.qr = this.coins[this.coinSend].name.toLowerCase() + ':' + this.addresses[this.coins[this.coinSend].symbol.toLowerCase() + '_address'] + this.coins[this.coinSend].qrAmount + (this.valueSend ? this.valueSend.toFixed(this.coins[this.coinSend].decimal).toString() : '0');
   }
 
   public amountGet(): any {
@@ -128,7 +127,6 @@ export class BuyComponent implements OnInit {
     this.buyservice.getExchange(this.address, this.coinGet, 'email@email.com').then((result: BuyAddresses) => {
       this.addresses = result;
       this.setQr();
-      console.log('address result', result);
     });
   }
 }
