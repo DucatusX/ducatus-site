@@ -8,6 +8,13 @@ on:
   pull_request:
     branches: [feature]
 
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Node Version
+        default: 12
+        required: false
+
 jobs:
   build:
     name: Build project
