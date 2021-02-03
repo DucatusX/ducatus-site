@@ -42,10 +42,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: ls
+        run: ls
       - name: Zip Folder
         run: zip -r -X ducatus-site@feature.zip ./dist/ducatus-site
   upload:
     name: Upload artifact
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/upload-artifact@v2
