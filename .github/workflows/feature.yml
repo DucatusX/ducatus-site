@@ -43,13 +43,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Zip Folder
-        run: zip -r -X ducatus-site@feature.zip dist/ducatus-site/
+        run: zip -r -X ducatus-site@feature.zip ./dist/ducatus-site
   upload:
-    needs: zip
     name: Upload artifact
     runs-on: ubuntu-latest
     steps:
       - uses: actions/upload-artifact@v2
         with:
           name: feature-dist
-          path: dist/ducatus-site/
+          path: ./dist/ducatus-site/
