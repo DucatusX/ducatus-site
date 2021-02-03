@@ -35,14 +35,25 @@ jobs:
         run: npm install
       - name: Build project to production
         run: npm run build:prod
+      - name: ls
+        run: ls
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: ducatus-dist
+          path: ./dist/ducatus-site
   zip:
     name: Create project zip
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
       - name: ls
+        run: ls
+      - name: Download artifacts from build
+        uses: actions/download-artifact@v2
+        with:
+          name: ducatus-dist
+      - name: ls`
         run: ls
       - name: Zip Folder
         run: zip -r -X ducatus-site@feature.zip ./dist/ducatus-site
@@ -51,7 +62,16 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: ls
+        run: ls
+      - name: Download artifacts from build
+        uses: actions/download-artifact@v2
+        with:
+          name: ducatus-dist
+      - name: ls
+        run: ls
       - uses: actions/upload-artifact@v2
         with:
           name: feature-dist
           path: ./dist/ducatus-site/
+          retention-days: 5
