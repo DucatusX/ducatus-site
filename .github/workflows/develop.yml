@@ -1,4 +1,4 @@
-name: Develop | Angular PreTest/Build/Test/Deploy
+name: Develop
 on:
   push:
     branches: [develop]
