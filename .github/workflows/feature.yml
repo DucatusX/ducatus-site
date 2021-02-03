@@ -4,29 +4,29 @@ on:
     branches:
       - 'feature'
       - 'feature/**'
-
   pull_request:
     branches: [feature]
-
   workflow_dispatch:
     inputs:
       version:
         description: Node Version
         default: 12
+        required: true
+      build:
+        description: Build project
+        default: true
         required: false
-
+      deploy:
+        description: Deploy to test server
+        default: true
+        required: false
 jobs:
   build:
     name: Build project
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
       - name: Cache node packages
         uses: actions/cache@v2
         with:
@@ -34,16 +34,14 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - name: Setup node ${{ matrix.node-version }}
+      - name: Setup node ${{ github.event.inputs.version }}
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ github.event.inputs.version}}
       - name: Install project packages
         run: npm install
       - name: Build project to production
         run: npm run build:prod
-      - name: ls
-        run: ls
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -51,17 +49,14 @@ jobs:
           path: ./dist
           retention-days: 1
   deploy:
+    if: ${{ github.event.inputs.deploy }}
     name: Deploy project to test server
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: ls
-        run: ls
       - name: Download artifacts from build
         uses: actions/download-artifact@v2
         with:
           name: ducatus-dist
-      - name: ls
-        run: ls
       - name: Deploying to server
         run: rsync ${{ secrets.DEPLOY_TEST_SWITCHES }} ${{ secrets.DEPLOY_TEST_PATH }} ${{ secrets.DEPLOY_TEST_USER }}:${{ secrets.DEPLOY_TEST_KEY }}@${{ secrets.DEPLOY_TEST_HOST }}:${{ secrets.DEPLOY_TEST_REMOTE_PATH }}
