@@ -38,15 +38,25 @@ jobs:
           name: ducatus-dist
           path: ./dist
           retention-days: 1
-  # deploy:
-  #   if: ${{ github.event.inputs.deploy == 'true' }}
-  #   name: Deploy project to test server
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Download artifacts from build
-  #       uses: actions/download-artifact@v2
-  #       with:
-  #         name: ducatus-dist
-  #     - name: Deploying to server
-  #       run: rsync ${{ secrets.DEPLOY_TEST_SWITCHES }} ${{ secrets.DEPLOY_TEST_PATH }} ${{ secrets.DEPLOY_TEST_USER }}:${{ secrets.DEPLOY_TEST_KEY }}@${{ secrets.DEPLOY_TEST_HOST }}:${{ secrets.DEPLOY_TEST_REMOTE_PATH }}
+  deploy:
+    if: ${{ github.event.inputs.deploy == 'true' }}
+    name: Deploy project to test server
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts from build
+        uses: actions/download-artifact@v2
+        with:
+          name: ducatus-dist
+      - name: ls
+        run: ls
+      - name: Deploying to server
+        uses: burnett01/rsync-deployments@4.1
+        with:
+          switches: ${{ secrets.DEPLOY_TEST_SWITCHES }}
+          path: ${{ secrets.DEPLOY_TEST_PATH }}
+          remote_path: ${{ secrets.DEPLOY_TEST_REMOTE_PATH }}
+          remote_host: ${{ secrets.DEPLOY_TEST_HOST }}
+          remote_port: ${{ secrets.DEPLOY_TEST_PORT }}
+          remote_user: ${{ secrets.DEPLOY_TEST_USER }}
+          remote_key: ${{ secrets.DEPLOY_TEST_KEY }}
