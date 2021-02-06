@@ -26,7 +26,7 @@
               <div class="select-coin-list">
                 <div class="select-coin-list-wrap">
                   <div *ngFor="let coin of coinsFormGet">
-                    <span class="select-coin-list-item" [ngClass]="{ 'select-coin-active': coins[coin].symbol === coinGet }" (click)="coinGet = coin; changeGetCoin(true)">
+                    <span class="select-coin-list-item" [ngClass]="{ 'select-coin-active': coins[coin].symbol === coinGet }" (click)="coinGet = coin; changeGetCoin(true); openFormGet.checked = false">
                       <img [src]="'assets/img/icons/' + coins[coin].icon + '.png'" [alt]="coins[coin].name" />
                       {{ coins[coin].symbol }}
                     </span>
@@ -56,7 +56,7 @@
               <div class="select-coin-list">
                 <div class="select-coin-list-wrap">
                   <div *ngFor="let coin of coinsFormSend[coinGet]">
-                    <span class="select-coin-list-item" [ngClass]="{ 'select-coin-active': coins[coin].symbol === coinSend }" (click)="coinSend = coin; changeGetCoin()">
+                    <span class="select-coin-list-item" [ngClass]="{ 'select-coin-active': coins[coin].symbol === coinSend }" (click)="coinSend = coin; changeGetCoin(); openFormSend.checked = false">
                       <img [src]="'assets/img/icons/' + coins[coin].icon + '.png'" [alt]="coins[coin].name" />
                       {{ coins[coin].symbol }}
                     </span>
@@ -79,11 +79,11 @@
               <p class="input input-accent">
                 <span *ngIf="addresses">{{ addresses[coins[coinSend].symbol.toLowerCase() + '_address'] }}</span>
               </p>
-              <span class="copy-address icon icon-copy" [cdkCopyToClipboard]="address"></span>
+              <span *ngIf="addresses" class="copy-address icon icon-copy" [cdkCopyToClipboard]="addresses[coins[coinSend].symbol.toLowerCase() + '_address']"></span>
             </div>
 
             <div class="qrcode" [attr.title]="qr">
-              <qrcode *ngIf="addresses" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1" [qrdata]="qr" [width]="80" [errorCorrectionLevel]="'L'"></qrcode>
+              <qrcode *ngIf="addresses" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1" [qrdata]="addresses[coins[coinSend].symbol.toLowerCase() + '_address']" [width]="80" [errorCorrectionLevel]="'L'"></qrcode>
             </div>
 
             <div class="group-wrap qr-textCode">
@@ -93,6 +93,12 @@
             <div class="loading-address-qr">
               <div class="loading-address-qr-wrap">
                 <p>{{ 'PAGE.BUY.FORM.RESULT.ERROR' | translate }}</p>
+              </div>
+            </div>
+
+            <!-- <div class="loading-address-qr">
+              <div class="loading-address-qr-wrap">
+                <p>{{ 'PAGE.BUY.FORM.RESULT.ERROR' | translate }}</p>
                 <div class="loading-address-qr-wrap-ellips">
                   <span></span>
                   <span></span>
@@ -100,7 +106,7 @@
                   <span></span>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <div class="group group-text qr-text" style="margin-bottom: 0">
               <span class="text-attantion" [innerHTML]="'PAGE.BUY.FORM.RESULT.NOTE' | translate: { time: coins[coinSend].wait, coin: coins[coinSend].symbol }"></span>

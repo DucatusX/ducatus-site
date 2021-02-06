@@ -58,7 +58,9 @@ export class BuyComponent implements OnInit {
       this.amountGet();
     }
 
-    this.setQr();
+    if (this.addresses) {
+      this.setQr();
+    }
   }
 
   private setQr(): void {
@@ -68,13 +70,17 @@ export class BuyComponent implements OnInit {
   public amountGet(): any {
     this.valueGet = this.cleanValue(this.valueGet);
     this.valueSend = this.valueGet * this.rates[this.coinGet][this.coinSend];
-    this.setQr();
+    if (this.addresses) {
+      this.setQr();
+    }
   }
 
   public amountSend(): any {
     this.valueSend = this.cleanValue(this.valueSend);
     this.valueGet = this.valueSend / this.rates[this.coinGet][this.coinSend];
-    this.setQr();
+    if (this.addresses) {
+      this.setQr();
+    }
   }
 
   private cleanValue(amount: any): number {
