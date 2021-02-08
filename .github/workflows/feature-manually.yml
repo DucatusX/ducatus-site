@@ -10,6 +10,10 @@ on:
         description: Deploy to test server
         default: true
         required: false
+      deploy_type:
+        description: Type deploy first/second
+        default: 'first'
+        required: false
 jobs:
   build:
     name: Build project
@@ -37,7 +41,7 @@ jobs:
         with:
           name: ducatus-dist
           path: ./dist
-          retention-days: 1
+          retention-days: 2
   deploy:
     if: ${{ github.event.inputs.deploy == 'true' }}
     name: Deploy project to test server
@@ -50,7 +54,8 @@ jobs:
           name: ducatus-dist
       - name: ls
         run: ls
-      - name: Deploying to server
+      - if: ${{ github.event.inputs.deploy_type == 'first' }}
+        name: Deploying to server
         uses: burnett01/rsync-deployments@4.1
         with:
           switches: ${{ secrets.DEPLOY_TEST_SWITCHES }}
@@ -60,3 +65,14 @@ jobs:
           remote_port: ${{ secrets.DEPLOY_TEST_PORT }}
           remote_user: ${{ secrets.DEPLOY_TEST_USER }}
           remote_key: ${{ secrets.DEPLOY_TEST_KEY }}
+      - if: ${{ github.event.inputs.deploy_type == 'second' }}
+        name: Deploy to sandbox via rsync
+        uses: trendyminds/github-actions-rsync@master
+        with:
+          RSYNC_OPTIONS: ${{ secrets.DEPLOY_TEST_SWITCHES }}
+          RSYNC_TARGET: ${{ secrets.DEPLOY_TEST_REMOTE_PATH }}
+          RSYNC_SOURCE: ${{ secrets.DEPLOY_TEST_PATH }}
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_TEST_KEY }}
+          SSH_USERNAME: ${{ secrets.DEPLOY_TEST_USER }}
+          SSH_HOSTNAME: ${{ secrets.DEPLOY_TEST_HOST }}
