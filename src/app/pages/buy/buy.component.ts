@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { BigNumber } from 'bignumber.js';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { BuyAddresses, BuyRates } from 'src/app/interfaces/buy.interface';
 import { BuyService } from 'src/app/service/buy/buy.service';
@@ -9,8 +10,12 @@ import { coinsFormSend, coinsFormGet, coins } from './parameters';
   selector: 'app-buy',
   templateUrl: './buy.component.html',
   styleUrls: ['./buy.component.scss'],
+  host: { '(document:click)': 'onClick($event)' },
 })
 export class BuyComponent implements OnInit {
+  @ViewChild('openFormGet') coinsGet: ElementRef;
+  @ViewChild('openFormSend') coinsSend: ElementRef;
+
   public modal: boolean;
   public coins = coins;
 
@@ -37,6 +42,12 @@ export class BuyComponent implements OnInit {
     this.cookieService.get('termsBuy') ? this.acceptModalTerms(true) : (this.modal = true);
   }
 
+  private onClick($event: any): void {
+    if ($($event.target).closest('.select-coin').length === 0) {
+      this.coinsGet.nativeElement.checked = this.coinsSend.nativeElement.checked = false;
+    }
+  }
+
   public acceptModalTerms(start?: boolean): void {
     if (!start) {
       this.cookieService.set('termsBuy', 'true');
@@ -53,8 +64,10 @@ export class BuyComponent implements OnInit {
       this.coinSend = this.coinsFormSend[this.coinGet][0];
       this.addresses = null;
       this.address = '';
+      this.coinsGet.nativeElement.checked = false;
       this.amountSend();
     } else {
+      this.coinsSend.nativeElement.checked = false;
       this.amountGet();
     }
 
@@ -68,16 +81,18 @@ export class BuyComponent implements OnInit {
   }
 
   public amountGet(): any {
-    this.valueGet = this.cleanValue(this.valueGet);
-    this.valueSend = this.valueGet * this.rates[this.coinGet][this.coinSend];
+    // this.valueGet = this.cleanValue(this.valueGet);
+    this.valueSend = new BigNumber(this.valueGet).multipliedBy(this.rates[this.coinGet][this.coinSend]).toNumber();
+    // this.valueSend = this.valueGet * this.rates[this.coinGet][this.coinSend];
     if (this.addresses) {
       this.setQr();
     }
   }
 
   public amountSend(): any {
-    this.valueSend = this.cleanValue(this.valueSend);
-    this.valueGet = this.valueSend / this.rates[this.coinGet][this.coinSend];
+    // this.valueSend = this.cleanValue(this.valueSend);
+    this.valueGet = new BigNumber(this.valueSend).div(this.rates[this.coinGet][this.coinSend]).toNumber();
+    // this.valueGet = this.valueSend / this.rates[this.coinGet][this.coinSend];
     if (this.addresses) {
       this.setQr();
     }
