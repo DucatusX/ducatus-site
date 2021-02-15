@@ -5,7 +5,6 @@ import { BuyAddresses, BuyRates } from 'src/app/interfaces/buy.interface';
 import { BuyService } from 'src/app/service/buy/buy.service';
 import { coinsFormSend, coinsFormGet, coins } from './parameters';
 
-// const f = (x) => (x.toString().includes('.') ? x.toString().split('.').pop().length : 0);
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
@@ -81,30 +80,17 @@ export class BuyComponent implements OnInit {
   }
 
   public amountGet(): any {
-    // this.valueGet = this.cleanValue(this.valueGet);
     this.valueSend = new BigNumber(this.valueGet).multipliedBy(this.rates[this.coinGet][this.coinSend]).toNumber();
-    // this.valueSend = this.valueGet * this.rates[this.coinGet][this.coinSend];
     if (this.addresses) {
       this.setQr();
     }
   }
 
   public amountSend(): any {
-    // this.valueSend = this.cleanValue(this.valueSend);
     this.valueGet = new BigNumber(this.valueSend).div(this.rates[this.coinGet][this.coinSend]).toNumber();
-    // this.valueGet = this.valueSend / this.rates[this.coinGet][this.coinSend];
     if (this.addresses) {
       this.setQr();
     }
-  }
-
-  private cleanValue(amount: any): number {
-    amount = amount ? amount : 0;
-    const value = amount
-      .toString()
-      .replace(/[^0-9](^\,)/g, '')
-      .replace(/(\..*)\./g, '$1');
-    return +value;
   }
 
   public setAddress(): void {
