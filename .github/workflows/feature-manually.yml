@@ -50,7 +50,7 @@ jobs:
           name: ducatus-dist
       - name: ls
         run: ls
-        name: Deploying to server
+      - name: Deploying to server
         uses: burnett01/rsync-deployments@4.1
         with:
           switches: ${{ secrets.DEPLOY_TEST_SWITCHES }}
