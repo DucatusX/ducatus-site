@@ -1,4 +1,4 @@
-name: Features Trigger Manually
+name: Features Manually
 on:
   workflow_dispatch:
     inputs:
