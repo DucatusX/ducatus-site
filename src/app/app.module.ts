@@ -18,6 +18,7 @@ import { HttpClientModule, HttpClient, HttpClientXsrfModule } from '@angular/com
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CookieService } from 'ngx-cookie-service';
 
 // resolvers
 import { UserResolver } from './resolvers';
@@ -36,7 +37,6 @@ import { ErrorPageComponent } from './pages/errorpage/errorpage.component';
 import { DucatusxComponent } from './pages/ducatusx/ducatusx/ducatusx.component';
 import { VoucherComponent } from './pages/voucher/voucher.component';
 import { LoginComponent } from './pages/login/login.component';
-import { TicketsComponent } from './pages/buy/tikcets/tickets.component';
 
 // partials
 import { HeaderComponent } from './pages/index/header/header.component';
@@ -52,14 +52,12 @@ import { SafePipe } from './pipe/safeUrl.pipe';
 import { FilterPipe } from './pipe/filter.pipe';
 import { GoogleAnalyticsService } from './service/gtag/google-analytics.service';
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json?v='
-    + new Date().getTime());
+export function HttpLoaderFactory(http: HttpClient): any {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json?v=' + new Date().getTime());
 }
 
 @NgModule({
   declarations: [
-
     // pages
     AppComponent,
     IndexComponent,
@@ -74,7 +72,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     DucatusxComponent,
     VoucherComponent,
     LoginComponent,
-    TicketsComponent,
 
     // components
     HeaderComponent,
@@ -85,7 +82,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     // pipes
     SafePipe,
     FilterPipe,
-    CountdownComponent
+    CountdownComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,24 +100,21 @@ export function HttpLoaderFactory(http: HttpClient) {
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
+        deps: [HttpClient],
+      },
     }),
     BrowserAnimationsModule,
     MatDatepickerModule,
     MatNativeDateModule,
     HttpClientXsrfModule.withOptions({
       cookieName: 'csrftoken',
-      headerName: 'X-CSRFToken'
+      headerName: 'X-CSRFToken',
     }),
     RecaptchaModule,
     RecaptchaFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ],
-  providers: [
-    UserResolver,
-    GoogleAnalyticsService
-  ],
-  bootstrap: [AppComponent]
+  providers: [UserResolver, GoogleAnalyticsService, CookieService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

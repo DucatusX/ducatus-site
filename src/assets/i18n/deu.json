@@ -213,26 +213,24 @@
         }
       }
     },
+
     "BUY": {
       "TITLE": "DUC Kaufen",
       "FORM": {
-        "RADIO": {
-          "PRICE": "DUC Preis = {{ curName }} {{ ducRate }}",
-          "TEXT": "Wählen Sie aus den folgenden Optionen und erhalten Sie die entsprechende Anzahl von Hash-Einträgen für die Verlosung.",
-          "LINK": "(mehr info)",
-          "TICKET": {
-            "ONE": "Hash-<br>Eintrag",
-            "MANY": "Hash-<br>Einträge"
+        "FIELD": {
+          "GET": {
+            "TEXT": "Du erhältst",
+            "PLACEHOLDER": "Menge"
+          },
+          "SEND": {
+            "TEXT": "Du sendest",
+            "PLACEHOLDER": "Menge"
           }
         },
         "ADDRESS": {
-          "TEXT": "Geben Sie Ihre DUC Empfangsadresse ein<br>Benötigen Sie eine Ducatus-Adresse? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Laden</a> Sie die Ducatus Wallet HIER herunter!",
-          "PLACEHOLDER": "Geben Sie Ihre DUC Empfangsadresse ein",
+          "TEXT": "Geben Sie Ihre {{ coin }} Empfangsadresse ein<br>Benötigen Sie eine {{ coinName }}-Adresse? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Laden</a> Sie die Ducatus Wallet HIER herunter!",
+          "PLACEHOLDER": "Geben Sie Ihre {{ coin }} Empfangsadresse ein",
           "ERROR": "Error! Bitte überprüfen Sie, das Adressformat ist falsch!"
-        },
-        "EMAIL": {
-          "TEXT": "Geben Sie Ihre Emailadresse ein, damit wir Sie kontaktieren können, falls SIE der GEWINNER sind ",
-          "PLACEHOLDER": "Email eingeben"
         },
         "RESULT": {
           "TEXT_1": "Senden Sie Ihre ",
@@ -241,64 +239,11 @@
             "TEXT": "oder scannen Sie den QR Code"
           },
           "ERROR": "etwas ist schief gelaufen, versuchen Sie es später erneut",
-          "NOTE": "Bitte beachten Sie, dass es bis zu {{ time }} dauern kann, bis Sie Ihren DUC in Ihrer Brieftasche erhalten <br><br>"
-        },
-        "SUBMIT": "Einreichen"
+          "NOTE": "Bitte beachten Sie, dass es bis zu {{ time }} dauern kann, bis Sie Ihren {{ coin }} in Ihrer Brieftasche erhalten <br><br>"
+        }
       },
       "INFO": {
-        "TITLE": "Entdecken, lernen und verdienen Sie es, Teil der Ducatus Cashless Economy zu werden.",
-        "LINK": {
-          "ONE": "Handeln Sie Kryptowährungen auf AA+",
-          "TWO": "Nutzen Sie DUC und shoppen Sie Ihre Lieblingsprodukte online."
-        }
-      },
-      "REFERRAL": {
-        "TITLE": "Empfehlungslink",
-        "SUBTITLE": "Teilen Sie diese großartige Gelegenheit mit Ihren Freunden und Ihrer Familie und erhalten Sie einen 5% DUC-Empfehlungsbonus für jeden Einkauf, den sie über den folgenden Link tätigen",
-        "LABEL": "Geben Sie Ihre Ducatus-Adresse ein",
-        "PLACEHOLDER": "Geben Sie Ihre Ducatus-Adresse ein",
-        "ERROR": "Error! Bitte überprüfen Sie, das Adressformat ist falsch!",
-        "LINK": "Ihr Empfehlungslink"
-      },
-      "LOTTERY": {
-        "TITLE": "Ein Teil des Kingsway Square in Liverpool kann Ihnen gehören!",
-        "BLOCK": {
-          "PRIZE": {
-            "TITLE": "Kaufen Sie DUC und sichern Sie sich die Chance, ein hochwertiges Apartment im Wert von 150.000 $ zu gewinnen sowie ein Saisonticket für alle Heimspiele des FC Liverpool im Anfield Stadion. ",
-            "SUBTITLE": "Im legendären Geburtsort der Beatles und des FC Liverpool entsteht ein neues Wahrzeichen - der Kingsway Square. Eine Mischung aus intelligentem Design, erstklassigen Materialien und atemberaubenden Originalmerkmalen, bietet Ihnen dieses Wohngebäude eine fantastische Sicht auf die Skyline von Liverpool.  ",
-            "ITEM1": "Nur 4 Minuten entfernt von der Princess Anlegestelle an der berühmten Uferpromenade von Liverpool und Ort aller wichtigsten zukünftigen Bauprojekte des Vereinigten Königreichs",
-            "ITEM2": "Der erste Bauabschnitt wird im 3. Quartal 2021 fertig sein ",
-            "ITEM3": "Möglichkeit zur Vermietung über den Bauträger mit attraktiven Mieterträgen",
-            "ITEM4": "250 Jahre Pachtbesitz "
-          },
-          "HOW": {
-            "TITLE": "Wie können Sie das exklusive Studioapartment Kingsway Square und das Saisonticket beim FC Liverpool gewinnen?",
-            "ITEM1": "Kaufen Sie DUC, damit wir unser Ziel von 3 Millionen verkaufter DUC am oder vor dem 31. Dezember 2020 erreichen.",
-            "ITEM2": "Wenn das Promotionsziel der 3 Millionen DUC erreicht ist, beginnt der 8 Tage Countdown für die Verlosung. Je mehr DUC Sie kaufen, desto höher ist Ihre Gewinnchance. ",
-            "ITEM3": "Die Gewinner werden über die Ziehung eines Smart Contracts ermittelt. Die Gewinner Hashes werden auf dieser Seite generiert und veröffentlicht und der Gewinner wird per Email informiert. "
-          },
-          "WINNER": {
-            "TITLE": "GEWINNENDER HASH"
-          },
-          "WAITING": {
-            "TITLE": "Warten Sie mal",
-            "TEXT": "gewinner berechnen..."
-          },
-          "COUNTDOWN": {
-            "TITLE": "Countdown zum Ziehungsdatum"
-          },
-          "PROGRESS": {
-            "TITLE": "% des Verkaufsziels erreicht, bevor der Countdown beginnt"
-          },
-          "TICKETS": {
-            "LINK": "Liste der {{ tickets_amount }} der gesamten Hash-Einträge →",
-            "TEXT": "Anzahl der DUC"
-          },
-          "INFO": {
-            "TITLE": "Wie können Sie einen dieser erstaunlichen Preise gewinnen?",
-            "TEXT": "<p class=\"lottery-info-text\">Jeder Käufer von DUC hat die Chance zu gewinnen. Je höher Ihr DUC-Kauf ist, desto mehr Gewinnchancen erhalten Sie.</p> <p class=\"lottery-info-text\">Sobald das Ziel von {{ duc_amount }} verkauften DUC erreicht ist, beginnt der 8-Tage- Countdown bis zum Lucky Draw Day. Der Verkauf von DUC wird fortgesetzt, bis der Countdown 00: 00: 00: 00 erreicht, wodurch die Ziehung ausgelöst wird.</p> <p class=\"lottery-info-text\">Durch einen zufälligen Smart Vertrag zu ziehen, der Gewinn Hash es wird bestimmt und auf dieser Seite und die Gewinner veröffentlicht s informiert werden per E-Mail.</p>"
-          }
-        }
+        "TEXT": "Ihre {{ coin }} Adresse wird einer eindeutigen Adresse in Bitcoin und Ethereum zugeordnet. Sie können diese Adressen jederzeit aufladen und Ducatus zum aktuellen Wechselkurs zum Zeitpunkt der Transaktion erhalten"
       },
       "MODAL": {
         "TERMS": {

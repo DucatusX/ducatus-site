@@ -14,7 +14,8 @@ export class BuyService {
   }
 
   public getLotteryInfo() {
-    return this.httpService.get(`get_lotteries_info/`).toPromise();
+    const id = 7;
+    return this.httpService.get(`lotteries/${id}/`).toPromise();
   }
 
   public getLotteryPlayers(loteryId, page) {
@@ -35,11 +36,12 @@ export class BuyService {
       .toPromise();
   }
 
-  public getExchange(currency: string, toEmail: string) {
+  public getExchange(to_address: string, to_currency: string, email: string) {
     return this.httpService
       .post(`exchange/`, {
-        to_currency: currency,
-        email: toEmail,
+        email,
+        to_address,
+        to_currency
       })
       .toPromise();
   }

@@ -216,23 +216,20 @@
     "BUY": {
       "TITLE": "Buy DUC",
       "FORM": {
-        "RADIO": {
-          "PRICE": "Price of DUC = {{ curName }} {{ ducRate }}",
-          "TEXT": "Select from the below options and receive corresponding number of entries for the draw",
-          "LINK": "(more info)",
-          "TICKET": {
-            "ONE": "entry",
-            "MANY": "entries"
+        "FIELD": {
+          "GET": {
+            "TEXT": "You get",
+            "PLACEHOLDER": "Amount"
+          },
+          "SEND": {
+            "TEXT": "You send",
+            "PLACEHOLDER": "Amount"
           }
         },
         "ADDRESS": {
-          "TEXT": "Enter your DUC receiving address<br>Need Ducatus address? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Download</a> the Ducatus Wallet HERE!",
-          "PLACEHOLDER": "Enter your DUC receiving address",
+          "TEXT": "Enter your {{ coin }} receiving address<br>Need {{ coinName }} address? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Download</a> the Ducatus Wallet HERE!",
+          "PLACEHOLDER": "Enter your {{ coin }} receiving address",
           "ERROR": "Error! Please check, the address format is incorrect!"
-        },
-        "EMAIL": {
-          "TEXT": "Enter your email address so we can reach out should YOU be the WINNER",
-          "PLACEHOLDER": "Enter your email"
         },
         "RESULT": {
           "TEXT_1": "Send your",
@@ -241,64 +238,11 @@
             "TEXT": "Or scan this QR code"
           },
           "ERROR": "something went wrong, try again later",
-          "NOTE": "Please note that it may take up to {{ time }} until you receive your DUC in your wallet <br><br>"
-        },
-        "SUBMIT": "Submit"
+          "NOTE": "Please note that it may take up to {{ time }} until you receive your {{ coin }} in your wallet <br><br>"
+        }
       },
       "INFO": {
-        "TITLE": "Discover, learn and earn by being part of the Ducatus Cashless Economy.",
-        "LINK": {
-          "ONE": "Trade cryptocurrency at AA+",
-          "TWO": "Use DUC and shop for pre-loved items online"
-        }
-      },
-      "REFERRAL": {
-        "TITLE": "Referral link",
-        "SUBTITLE": "Share this amazing opportunity with your friends and family and receive a 5% DUC referral bonus for any purchase they make using the below link",
-        "LABEL": "Enter your DUC wallet receiving address",
-        "PLACEHOLDER": "Enter your DUC wallet receiving address",
-        "ERROR": "Error! Please check, the address format is incorrect!",
-        "LINK": "Your referral link"
-      },
-      "LOTTERY": {
-        "TITLE": "A piece of Liverpool’s Kingsway Square can now be yours!",
-        "BLOCK": {
-          "PRIZE": {
-            "TITLE": "Buy DUC and stand a chance to win a $150,000 luxury apartment plus season ticket to Liverpool FC matches at Anfield.",
-            "SUBTITLE": "At the legendary birthplace of The Beatles and the Liverpool FC, a new landmark is set to rise – Kingsway Square. A blend of intelligent design, premium materials and stunning original features, this residential property offers stunning views of Liverpool’s city skyline.",
-            "ITEM1": "Located just 4 minutes from Princess Dock on Liverpool’s famous waterfront and site of the UK’s major future developments",
-            "ITEM2": "First Block due for completion Q3 2021",
-            "ITEM3": "Lease-back agreement option available, with attractive returns",
-            "ITEM4": "250 Year leasehold"
-          },
-          "HOW": {
-            "TITLE": "How can you win a Kingsway Square luxury studio apartment and Liverpool FC season ticket?",
-            "ITEM1": "Buy DUC so we can hit our target of 3 million Ducatus sold on or before 31 Dec 2020.",
-            "ITEM2": "Once the target of 3 million DUC sold is reached, the 8-day countdown to the Lucky Draw Day starts. Of course, the higher your DUC purchase, the more winning chances you get.",
-            "ITEM3": "Winners will be drawn through a random smart contract draw. Winning hashes will be determined and published on this page and the Winner will be informed by email."
-          },
-          "WINNER": {
-            "TITLE": "WINNING HASH"
-          },
-          "WAITING": {
-            "TITLE": "Please wait",
-            "TEXT": "calculating winner..."
-          },
-          "COUNTDOWN": {
-            "TITLE": "Countdown to Draw Date"
-          },
-          "PROGRESS": {
-            "TITLE": "% of sales target reached before draw countdown starts"
-          },
-          "TICKETS": {
-            "LINK": "List of {{ tickets_amount }} total hash entries →",
-            "TEXT": "Number of DUC"
-          },
-          "INFO": {
-            "TITLE": "How can you win any of these amazing prizes?",
-            "TEXT": "<p class=\"lottery-info-text\">Every buyer of DUC stands a chance to win. The higher your DUC purchase, the more winning chances you get.</p> <p class=\"lottery-info-text\">Once the target of {{ duc_amount }} DUC sold is reached, the 8-day countdown to the Lucky Draw Day starts. The sale of DUC continues until the countdown reaches 00:00:00:00 which will trigger the draw.</p> <p class=\"lottery-info-text\">Through a random smart contract draw, the winning hashes will be determined and published on this page and the Winners will be informed by email.</p>"
-          }
-        }
+        "TEXT": "Your {{ coin }} address will be associated with a unique address in Bitcoin and Ethereum. You can top up these addresses at any time and receive Ducatus at the current exchange rate at the time of the transaction"
       },
       "MODAL": {
         "TERMS": {

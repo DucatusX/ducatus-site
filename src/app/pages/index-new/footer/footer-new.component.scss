@@ -256,7 +256,6 @@
                 overflow: hidden;
                 background-color: #ececec;
                 display: block;
-                overflow: hidden;
             }
 
             &-open {
@@ -315,4 +314,60 @@
             }
         }
     }
+}
+
+.centurion-footer {
+  padding: 70px 0 39px;
+  background: #0e0e0e;
+
+  &-container {
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  @include b(900) {
+    padding-top: 0;
+  }
+
+  &-logo {
+    margin-bottom: 56px;
+
+    img {
+      width: auto;
+
+      @include b(500) {
+        width: 200px;
+      }
+    }
+  }
+
+  &-text {
+    white-space: pre-line;
+    color: white;
+    margin-bottom: 47px;
+  }
+
+  &-links {
+    margin-bottom: 20px;
+
+    .link {
+      display: inline-block;
+      color: #E8C22C;
+      font-weight: 500;
+      font-size: 22px;
+      text-decoration: none;
+      margin: 0 40px 40px 0;
+
+      @include b(665) {
+          display: block;
+      }
+    }
+  }
+
+  &-copyright {
+    font-size: 15px;
+    color: #FFFFFF;
+    opacity: 0.5;
+  }
 }

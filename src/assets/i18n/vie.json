@@ -216,23 +216,20 @@
     "BUY": {
       "TITLE": "Mua DUC",
       "FORM": {
-        "RADIO": {
-          "PRICE": "Giá của DUC = {{ curName }} {{ ducRate }}",
-          "TEXT": " Chọn một trong những lựa chọn bên dưới và nhận số lượt rút thăm tương ứng",
-          "LINK": "(thêm thông tin)",
-          "TICKET": {
-            "ONE": "lượt",
-            "MANY": "lượt"
+        "FIELD": {
+          "GET": {
+            "TEXT": "Bạn lấy",
+            "PLACEHOLDER": "Số tiền"
+          },
+          "SEND": {
+            "TEXT": "Bạn gửi",
+            "PLACEHOLDER": "Số tiền"
           }
         },
         "ADDRESS": {
-          "TEXT": "Nhập địa chỉ nhận DUC<br>Cần địa chỉ Ducatus? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Tải xuống</a> ví Ducatus TẠI ĐÂY!",
-          "PLACEHOLDER": "Nhập địa chỉ nhận DUC",
+          "TEXT": "Nhập địa chỉ nhận {{ coin }}<br>Cần địa chỉ {{ coinName }}? <a class='ducatus-text-link' href='https://wallets.ducatus.io/' target='_blank'>Tải xuống</a> ví Ducatus TẠI ĐÂY!",
+          "PLACEHOLDER": "Nhập địa chỉ nhận {{ coin }}",
           "ERROR": "Lỗi! Vui lòng kiểm tra, định dạng địa chỉ không chính xác!"
-        },
-        "EMAIL": {
-          "TEXT": "Nhập email của bạn vì bạn sẽ được thông báo nếu bạn là người chiến thắng",
-          "PLACEHOLDER": "Nhập email của bạn "
         },
         "RESULT": {
           "TEXT_1": "Gửi đồng ",
@@ -241,64 +238,11 @@
             "TEXT": "hoặc quét mã QR này:"
           },
           "ERROR": "đã xảy ra lỗi, thử lại sau",
-          "NOTE": "Hãy lưu ý rằng bạn sẽ mất khoảng {{ time }} để nhận DUC về ví <br><br>"
-        },
-        "SUBMIT": "Gửi đi"
+          "NOTE": "Hãy lưu ý rằng bạn sẽ mất khoảng {{ time }} để nhận {{ coin }} về ví <br><br>"
+        }
       },
       "INFO": {
-        "TITLE": "Hãy khám phá, học hỏi và có thêm thu nhập từ việc trở thành một phần của nền kinh tế không tiền mặt Ducatus.",
-        "LINK": {
-          "ONE": "Mua bán cryptocurrency trên sàn AA+",
-          "TWO": "Sử dụng DUC để mua sắm những món đồ yêu thích trực tuyến"
-        }
-      },
-      "REFERRAL": {
-        "TITLE": "Liên kết giới thiệu",
-        "SUBTITLE": "Chia sẻ cơ hội tuyệt vời này với bạn bè và gia đình của bạn và nhận phần thưởng giới thiệu 5% DUC cho bất kỳ giao dịch mua nào họ thực hiện bằng liên kết dưới đây",
-        "LABEL": "Nhập địa chỉ Ducatus của bạn",
-        "PLACEHOLDER": "Nhập địa chỉ Ducatus của bạn",
-        "ERROR": "Lỗi! Vui lòng kiểm tra, định dạng địa chỉ không chính xác!",
-        "LINK": "Liên kết giới thiệu của bạn"
-      },
-      "LOTTERY": {
-        "TITLE": "Một căn hộ tại Quảng trường Kingsway của Liverpool có thể trở thành sở hữu của bạn!",
-        "BLOCK": {
-          "PRIZE": {
-            "TITLE": "Mua DUC để giành lấy cơ hội có được một căn hộ sang trọng trị giá $150,000 kèm vé mùa giải của Liverpool FC tại Anfield.",
-            "SUBTITLE": "Tại nơi sinh ra của huyền thoại The Beatles và Liverpool FC, một khu landmark mới chuẩn bị xuất hiện - Quảng trường Kingsway. Là sự pha trộn giữa thiết kế thông minh, vật liệu cao cấp và các đặc điểm kiến trúc truyền thống lộng lẫy, khu nhà ở này có tầm nhìn tuyệt đẹp về hướng chân trời của thành phố Liverpool.",
-            "ITEM1": "Chỉ mất 4 phút để đến cảng Princess Dock trên bờ sông nổi tiếng của Liverpool và trung tâm phát triển chính trong tương lai của Vương quốc Anh",
-            "ITEM2": "Toà nhà đầu tiên sẽ hoàn thành vào Quý 3 năm 2021",
-            "ITEM3": "Được thoả thuận thuê lại với lợi nhuận hấp dẫn",
-            "ITEM4": "Hợp đồng thuê lên đến 250 năm"
-          },
-          "HOW": {
-            "TITLE": "Làm thế nào để bạn giành được một căn hộ studio sang trọng ở Quảng trường Kingsway cùng vé mùa giải của Liverpool FC?",
-            "ITEM1": "Mua DUC để chúng tôi đạt mốc 3 triệu Ducatus bán được vào hoặc trước ngày 31/12/2020.",
-            "ITEM2": "Sau khi đạt được mục tiêu 3 triệu DUC bán được, chúng ta sẽ đếm ngược 8 ngày để bắt đầu Rút thăm May mắn. Tất nhiên, khi bạn mua càng nhiều DUC, bạn càng có nhiều cơ hội trúng thưởng.",
-            "ITEM3": "Người thắng cuộc sẽ được rút thăm thông qua một hợp đồng thông minh ngẫu nhiên. Những mã hash chiến thắng sẽ được xác định và công bố trên trang này và Người chiến thắng sẽ được thông báo qua email."
-          },
-          "WINNER": {
-            "TITLE": "GIÀNH CHIẾN THẮNG"
-          },
-          "WAITING": {
-            "TITLE": "Xin vui lòng chờ",
-            "TEXT": "người chiến thắng tính toán..."
-          },
-          "COUNTDOWN": {
-            "TITLE": "Đếm ngược đến ngày rút thăm"
-          },
-          "PROGRESS": {
-            "TITLE": "Phần trăm doanh số bán ra phải đạt đúng chỉ tiêu trước khi cuộc đếm ngược thời gian diễn ra"
-          },
-          "TICKETS": {
-            "LINK": "Danh sách {{ tickets_amount }} tổng số mục băm →",
-            "TEXT": "Số lượng DUC"
-          },
-          "INFO": {
-            "TITLE": "Làm thế nào bạn có thể giành được bất kỳ giải thưởng tuyệt vời này ?",
-            "TEXT": "<p class=\"lottery-info-text\">Mỗi người mua ĐỨC đều có cơ hội trúng thưởng. Mua DUC càng cao, bạn càng có nhiều cơ hội trúng thưởng.</p> <p class=\"lottery-info-text\">Sau khi đạt được mục tiêu {{ duc_amount }}  ĐỨC đã bán, thời gian đếm ngược 8 ngày đến Ngày Rút thăm May mắn sẽ bắt đầu. Việc bán DUC tiếp tục cho đến khi bộ đếm ngược đến 00: 00: 00: 00 sẽ kích hoạt rút thăm.</p> <p class=\"lottery-info-text\">Qua một trận hòa đồng thông minh ngẫu nhiên, băm chiến thắng es sẽ được xác định và công bố trên trang này và người chiến thắng s sẽ được thông báo qua email.</p>"
-          }
-        }
+        "TEXT": "Địa chỉ {{ coin }} của bạn sẽ được liên kết với một địa chỉ duy nhất bằng Bitcoin và Ethereum. Bạn có thể nạp tiền tại các địa chỉ này bất cứ lúc nào và nhận Ducatus theo tỷ giá hối đoái hiện tại tại thời điểm giao dịch"
       },
       "MODAL": {
         "TERMS": {

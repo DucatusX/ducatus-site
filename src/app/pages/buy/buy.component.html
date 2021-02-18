@@ -1,697 +1,143 @@
-<section
-  class="section-header-page header-buy-page"
-  [ngStyle]="{ 'background-image': 'url(' + bg + ')' }"
-></section>
+<section class="section-header-page buy-page-header" style="background-image: url(/assets/img/buy-page/head-background.png)">
+  <div class="container">
+    <h1 class="h1__title-page" [innerHTML]="'PAGE.BUY.TITLE' | translate"></h1>
+  </div>
+</section>
 
-<section class="app color-page buy-page">
+<section class="app">
   <div class="container">
     <div class="pay-form">
-      <div class="pay-form-block" *ngIf="!loadingData">
-        <!-- <div class="hidden-mobile" *ngIf="lottery.ended">
-          <div *ngIf="!lottery.winners_data" class="lottery-waiting">
-            <div class="lottery-waiting-title">
-              {{ "PAGE.BUY.LOTTERY.BLOCK.WAITING.TITLE" | translate }}
-            </div>
-            <div class="lottery-waiting-text">
-              {{ "PAGE.BUY.LOTTERY.BLOCK.WAITING.TEXT" | translate }}
-            </div>
-          </div>
-          <div
-            style="min-height: 80px; padding: 10px; margin-bottom: 30px"
-            *ngIf="lottery.winners_data && !modalWinner"
-            (click)="modalWinner = true"
-            class="lottery-win btn ducatus-btn ducatus-btn-brown"
-          >
-            View winners
-          </div>
-        </div> -->
+      <div class="pay-form-wrap">
+        <!-- Left Side -->
+        <!-- Ducatus Form Buy Coins -->
+        <div class="ducatus-pay-form" *ngIf="rates">
+          <div class="group group-input group-input-select">
+            <label for="get-coin">{{ 'PAGE.BUY.FORM.FIELD.GET.TEXT' | translate }}</label>
+            <input type="number" min="0" [placeholder]="'PAGE.BUY.FORM.FIELD.GET.PLACEHOLDER' | translate" [(ngModel)]="valueGet" (ngModelChange)="amountGet()" class="input input-white" id="get-coin" />
 
-        <div class="lottery">
-          <div class="lottery-wrap">
-            <span class="lottery-title">{{
-              "PAGE.BUY.LOTTERY.TITLE" | translate
-            }}</span>
-            <span class="lottery-subtitle">{{
-              "PAGE.BUY.LOTTERY.BLOCK.PRIZE.TITLE" | translate
-            }}</span>
+            <!-- Ducatus Form Select Get Coins -->
+            <label for="select-form-get" class="select-coin select-coin-fill" [ngClass]="{ 'select-coin-start': openFormGet.checked }">
+              <input #openFormGet type="checkbox" id="select-form-get" hidden />
+              <span class="select-coin-selected">
+                <img [src]="'assets/img/icons/' + coins[coinGet].icon + '.png'" [alt]="coins[coinGet].name" />
+                {{ coins[coinGet].symbol }}
+              </span>
 
-            <div>
-              <div>
-                <span class="lottery-prize-desc">{{
-                  "PAGE.BUY.LOTTERY.BLOCK.PRIZE.SUBTITLE" | translate
-                }}</span>
-
-                <ul>
-                  <li>
-                    {{ "PAGE.BUY.LOTTERY.BLOCK.PRIZE.ITEM1" | translate }}
-                  </li>
-
-                  <li>
-                    {{ "PAGE.BUY.LOTTERY.BLOCK.PRIZE.ITEM2" | translate }}
-                  </li>
-
-                  <li>
-                    {{ "PAGE.BUY.LOTTERY.BLOCK.PRIZE.ITEM3" | translate }}
-                  </li>
-
-                  <li>
-                    {{ "PAGE.BUY.LOTTERY.BLOCK.PRIZE.ITEM4" | translate }}
-                  </li>
-                </ul>
+              <div class="select-coin-list">
+                <div class="select-coin-list-wrap">
+                  <div *ngFor="let coin of coinsFormGet">
+                    <span class="select-coin-list-item" [ngClass]="{ 'select-coin-active': coins[coin].symbol === coinGet }" (click)="coinGet = coin; changeGetCoin(true); openFormGet.checked = false">
+                      <img [src]="'assets/img/icons/' + coins[coin].icon + '.png'" [alt]="coins[coin].name" />
+                      {{ coins[coin].symbol }}
+                    </span>
+                  </div>
+                </div>
               </div>
-            </div>
-            <span class="lottery-subtitle">{{
-              "PAGE.BUY.LOTTERY.BLOCK.HOW.TITLE" | translate
-            }}</span>
-            <div>
-              <div>
-                <ul>
-                  <li>
-                    {{ "PAGE.BUY.LOTTERY.BLOCK.HOW.ITEM1" | translate }}
-                  </li>
+            </label>
+            <!-- End Ducatus Form Select Get Coins -->
+          </div>
 
-                  <li>
-                    {{ "PAGE.BUY.LOTTERY.BLOCK.HOW.ITEM2" | translate }}
-                  </li>
+          <div class="group group-text group-columns">
+            <span class="text">1 {{ coins[coinGet].name }} = {{ rates[coinGet][coinSend] / 1 }} {{ coins[coinSend].name }}</span>
+          </div>
 
-                  <li>
-                    {{ "PAGE.BUY.LOTTERY.BLOCK.HOW.ITEM3" | translate }}
-                  </li>
-                </ul>
+          <div class="group group-input group-input-select">
+            <label for="send-coin">{{ 'PAGE.BUY.FORM.FIELD.SEND.TEXT' | translate }}</label>
+            <input min="0" type="number" [placeholder]="'PAGE.BUY.FORM.FIELD.SEND.PLACEHOLDER' | translate" [(ngModel)]="valueSend" (ngModelChange)="amountSend()" class="input input-white" id="send-coin" />
+
+            <!-- Ducatus Form Select Send Coins -->
+            <label for="select-form-send" class="select-coin select-coin-fill" [ngClass]="{ 'select-coin-start': openFormSend.checked }">
+              <input #openFormSend type="checkbox" id="select-form-send" hidden />
+              <span class="select-coin-selected">
+                <img [src]="'assets/img/icons/' + coins[coinSend].icon + '.png'" [alt]="coins[coinSend].name" />
+                {{ coins[coinSend].symbol }}
+              </span>
+
+              <div class="select-coin-list">
+                <div class="select-coin-list-wrap">
+                  <div *ngFor="let coin of coinsFormSend[coinGet]">
+                    <span class="select-coin-list-item" [ngClass]="{ 'select-coin-active': coins[coin].symbol === coinSend }" (click)="coinSend = coin; changeGetCoin(); openFormSend.checked = false">
+                      <img [src]="'assets/img/icons/' + coins[coin].icon + '.png'" [alt]="coins[coin].name" />
+                      {{ coins[coin].symbol }}
+                    </span>
+                  </div>
+                </div>
               </div>
-            </div>
+            </label>
+            <!-- End Ducatus Form Select Send Coins -->
           </div>
-        </div>
-      </div>
-      <div class="lotery-galery">
-        <div
-          class="lotery-galery-main"
-          [ngStyle]="{
-            'background-image':
-              'url(assets/img/lotery/' + slides[activeSlide] + '.jpeg)'
-          }"
-        ></div>
-        <div class="lotery-galery-thumb">
-          <div
-            class="lotery-galery-item"
-            *ngFor="let slide of slides; let i = index"
-            [ngClass]="{ active: i === activeSlide }"
-            (click)="changeSlide(i)"
-          >
-            <div
-              class="lotery-galery-item-img"
-              [ngStyle]="{
-                'background-image': 'url(assets/img/lotery/' + slide + '.jpeg)'
-              }"
-            ></div>
-          </div>
-        </div>
-      </div>
 
-      <div class="pay-form-block" *ngIf="loadingData">
-        <div class="lottery" style="padding: 30px !important; min-height: auto">
-          <div
-            class="ducatus-pay-form loading-pay-form"
-            style="padding: 0 !important; box-shadow: none"
-          >
-            <div class="group group-input group-input-select input-h-60"></div>
-            <div
-              class="group group-input group-input-select"
-              style="height: 50px"
-            ></div>
-            <div
-              class="group group-input group-input-select"
-              style="height: 130px"
-            ></div>
-            <div
-              class="group group-input group-input-select"
-              style="height: 200px"
-            ></div>
-            <div
-              class="group group-input group-input-select"
-              style="height: 103px"
-            ></div>
-          </div>
-        </div>
-
-        <div
-          class="lottery-tickets"
-          style="margin-bottom: 30px; margin-top: 30px"
-        >
-          <div class="ducatus-pay-form loading-pay-form">
-            <div class="group group-input group-input-select input-h-60"></div>
-            <div class="group group-input group-input-select input-h-60"></div>
-            <div class="group group-input group-input-select input-h-60"></div>
-            <div class="group group-text group-columns input-h-20"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="lotery-form">
-      <form
-        [formGroup]="BuyGroup"
-        class="ducatus-pay-form"
-        *ngIf="!loadingData"
-      >
-        <div class="lotery-form-wrapper">
           <div class="group group-input">
-            <div class="group-radio group-currency">
-              <div
-                *ngFor="let item of currencyTemplate"
-                class="group-radio-item group-currency-item"
-              >
-                <input
-                  (ngModelChange)="setAmount()"
-                  formControlName="currency"
-                  required
-                  type="radio"
-                  [id]="'currency-' + item.shortName"
-                  [value]="item.shortName"
-                />
-                <label [for]="'currency-' + item.shortName">
-                  <img
-                    [src]="'/assets/img/icons/' + item.displayName + '.svg'"
-                    width="30"
-                    height="30"
-                    [alt]="item.name"
-                  />
-                  <span class="group-currency-text">{{
-                    item.displayName
-                  }}</span>
-                </label>
-              </div>
-            </div>
+            <label for="ducatus-address" [innerHTML]="'PAGE.BUY.FORM.ADDRESS.TEXT' | translate: { coin: coins[coinGet].symbol, coinName: coins[coinGet].name }"></label>
+            <input [(ngModel)]="address" (ngModelChange)="setAddress()" [disabled]="checkAddress" class="input input-white" id="ducatus-address" type="text" oninput="this.value = this.value.replace('ducatus:', '');" [placeholder]="'PAGE.BUY.FORM.ADDRESS.PLACEHOLDER' | translate: { coin: coins[coinGet].symbol }" />
+            <span class="error-address-value" *ngIf="novalidAddress">{{ 'PAGE.BUY.FORM.ADDRESS.ERROR' | translate }}</span>
           </div>
 
-          <div
-            *ngIf="BuyGroup.controls['currency'].value === 'card'"
-            class="group group-input group-block"
-            style="margin: 14px -37px; background: none"
-          >
-            <label class="group-radio-label" for="money-usd"
-              >Choose the currency</label
-            >
-            <div
-              class="group-radio group-radio--costs"
-              style="justify-content: flex-start"
-            >
-              <div *ngFor="let item of moneyTemplate" class="group-radio-item">
-                <input
-                  (ngModelChange)="setCurrency()"
-                  formControlName="money"
-                  type="radio"
-                  [id]="'money-' + item.currency"
-                  [value]="item.currency"
-                />
-                <label
-                  [for]="'money-' + item.currency"
-                  style="margin: 0 7px; height: 50px"
-                >
-                  <span class="group-radio-amount" style="font-size: 14px">{{
-                    item.name
-                  }}</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <div class="group group-input group-block">
-            <label class="group-radio-label" for="amount-100">
-              {{
-                "PAGE.BUY.FORM.RADIO.PRICE"
-                  | translate
-                    : {
-                        curName: moneyPrice[selectedMoney].name,
-                        ducRate: moneyPrice[selectedMoney].price
-                      }
-              }}
-              <br />
-              {{ "PAGE.BUY.FORM.RADIO.TEXT" | translate }}
-              <span class="ducatus-info-link" (click)="modalInfo = true">{{
-                "PAGE.BUY.FORM.RADIO.LINK" | translate
-              }}</span></label
-            >
-            <div class="group-radio group-radio--costs">
-              <div *ngFor="let item of priceTemplate" class="group-radio-item">
-                <input
-                  (ngModelChange)="setAmount()"
-                  formControlName="amount"
-                  required
-                  type="radio"
-                  [id]="'amount-' + item[selectedMoney].price"
-                  [value]="item[selectedMoney].price"
-                />
-                <label [for]="'amount-' + item[selectedMoney].price">
-                  <span
-                    *ngIf="item[selectedMoney].postition === 'after'"
-                    class="group-radio-amount"
-                    >{{ item[selectedMoney].price
-                    }}{{ item[selectedMoney].sign }}</span
-                  >
-                  <span
-                    *ngIf="item[selectedMoney].postition === 'before'"
-                    class="group-radio-amount"
-                    >{{ item[selectedMoney].sign
-                    }}{{ item[selectedMoney].price }}</span
-                  >
-                  <span *ngIf="!lottery.ended || false" class="group-radio-text"
-                    >{{ item.ticket }}
-                    <span
-                      [innerHTML]="'PAGE.BUY.FORM.RADIO.TICKET.ONE' | translate"
-                    ></span>
-                  </span>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="lotery-form-wrapper">
-          <div class="group group-input">
-            <label for="email">{{
-              "PAGE.BUY.FORM.EMAIL.TEXT" | translate
-            }}</label>
-            <input
-              id="email"
-              (ngModelChange)="setEmail()"
-              formControlName="email"
-              type="email"
-              [placeholder]="'PAGE.BUY.FORM.EMAIL.PLACEHOLDER' | translate"
-              class="input input-white"
-            />
-          </div>
-
-          <div
-            id="loading-address"
-            [ngClass]="{ 'loading-address-start': !buttonSubmit }"
-            class="group group-input group-input-copy m-b-0 qr-wrap"
-          >
-            <div
-              *ngIf="BuyGroup.controls['currency'].value !== 'card'"
-              class="group-wrap qr-address"
-            >
-              <label
-                >{{ "PAGE.BUY.FORM.RESULT.TEXT_1" | translate }}
-                {{ currencyData[BuyGroup.value.currency].amount }}
-                {{ currencyData[BuyGroup.value.currency].name }}
-                {{ "PAGE.BUY.FORM.RESULT.TEXT_2" | translate }}
-              </label>
+          <div id="loading-address" [ngClass]="{ 'loading-address-start': !addresses }" class="group group-input group-input-copy m-b-0 qr-wrap">
+            <div class="group-wrap qr-address">
+              <label>{{ 'PAGE.BUY.FORM.RESULT.TEXT_1' | translate }} {{ coins[coinSend].name }} {{ 'PAGE.BUY.FORM.RESULT.TEXT_2' | translate }}</label>
               <p class="input input-accent">
-                <span *ngIf="!loadingQr && buttonSubmit">{{
-                  currencyData[BuyGroup.value.currency].address
-                }}</span>
+                <span *ngIf="addresses">{{ addresses[coins[coinSend].symbol.toLowerCase() + '_address'] }}</span>
               </p>
-              <span
-                class="copy-address icon icon-copy"
-                [cdkCopyToClipboard]="
-                  currencyData[BuyGroup.value.currency].address
-                "
-              ></span>
+              <span *ngIf="addresses" class="copy-address icon icon-copy" [cdkCopyToClipboard]="addresses[coins[coinSend].symbol.toLowerCase() + '_address']"></span>
             </div>
 
-            <div
-              *ngIf="BuyGroup.controls['currency'].value !== 'card'"
-              class="qrcode"
-              [attr.title]="currencyData[BuyGroup.value.currency].info"
-            >
-              <qrcode
-                *ngIf="!loadingQr && buttonSubmit"
-                class="qr-code"
-                [elementType]="'url'"
-                [margin]="0"
-                [scale]="1"
-                [qrdata]="currencyData[BuyGroup.value.currency].info"
-                [width]="80"
-                [errorCorrectionLevel]="'L'"
-              ></qrcode>
+            <div class="qrcode" [attr.title]="qr">
+              <qrcode *ngIf="addresses" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1" [qrdata]="addresses[coins[coinSend].symbol.toLowerCase() + '_address']" [width]="80" [errorCorrectionLevel]="'L'"></qrcode>
             </div>
 
-            <div
-              *ngIf="BuyGroup.controls['currency'].value !== 'card'"
-              class="group-wrap qr-textCode"
-            >
-              <label style="margin-bottom: 0">{{
-                "PAGE.BUY.FORM.RESULT.QR.TEXT" | translate
-              }}</label>
+            <div class="group-wrap qr-textCode">
+              <label>{{ 'PAGE.BUY.FORM.RESULT.QR.TEXT' | translate }}</label>
             </div>
 
             <div class="loading-address-qr">
-              <button
-                *ngIf="
-                  !buttonSubmit &&
-                  BuyGroup.controls['currency'].value !== 'card'
-                "
-                [disabled]="BuyGroup.invalid"
-                (click)="clickSubmit()"
-                class="ducatus-btn ducatus-btn-brown"
-                style="min-width: 100%"
-              >
-                {{ "PAGE.BUY.FORM.SUBMIT" | translate }}
-              </button>
-              <button
-                [ngClass]="{ 'icon icon__loading': loadingCard }"
-                *ngIf="
-                  cardRedirect === '' &&
-                  !buttonSubmit &&
-                  BuyGroup.controls['currency'].value === 'card' &&
-                  !loadingCard
-                "
-                [disabled]="BuyGroup.invalid"
-                (click)="cardLink()"
-                class="ducatus-btn ducatus-btn-brown"
-                style="min-width: 100%; display: flex"
-              >
-                <span *ngIf="!loadingCard">{{ "CONTINUE" | translate }}</span>
-              </button>
-              <button
-                [ngClass]="{ 'icon icon__loading': loadingCard }"
-                *ngIf="
-                  cardRedirect === '' &&
-                  !buttonSubmit &&
-                  BuyGroup.controls['currency'].value === 'card' &&
-                  loadingCard
-                "
-                [disabled]="true"
-                class="ducatus-btn ducatus-btn-brown"
-                style="min-width: 100%; display: flex"
-              ></button>
-              <a
-                [href]="cardRedirect"
-                target="_blank"
-                [ngClass]="{ 'icon icon__loading': loadingCard }"
-                *ngIf="
-                  cardRedirect !== '' &&
-                  BuyGroup.controls['currency'].value === 'card'
-                "
-                class="ducatus-btn ducatus-btn-gold"
-                style="min-width: 100%; text-decoration: none"
-                >continue in new window</a
-              >
+              <div class="loading-address-qr-wrap">
+                <p>{{ 'PAGE.BUY.FORM.RESULT.ERROR' | translate }}</p>
+              </div>
             </div>
 
-            <!-- <div
-              *ngIf="BuyGroup.controls['currency'].value !== 'card'"
-              class="group group-text qr-text"
-              style="margin-bottom: 0"
-            >
-              <span
-                class="text-attantion"
-                [innerHTML]="
-                  'PAGE.BUY.FORM.RESULT.NOTE'
-                    | translate
-                      : {
-                          time: currencyData[BuyGroup.value.currency].time[lang]
-                        }
-                "
-              ></span>
+            <!-- <div class="loading-address-qr">
+              <div class="loading-address-qr-wrap">
+                <p>{{ 'PAGE.BUY.FORM.RESULT.ERROR' | translate }}</p>
+                <div class="loading-address-qr-wrap-ellips">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
             </div> -->
+
+            <div class="group group-text qr-text" style="margin-bottom: 0">
+              <span class="text-attantion" [innerHTML]="'PAGE.BUY.FORM.RESULT.NOTE' | translate: { time: coins[coinSend].wait, coin: coins[coinSend].symbol }"></span>
+            </div>
           </div>
         </div>
-      </form>
-    </div>
-    <div class="pay-form">
-      <div class="pay-form-wrap mt-m-30">
-        <div class="ducatus-pay-form loading-pay-form" *ngIf="loadingData">
-          <div
-            class="group group-input group-input-select"
-            style="height: 90px"
-          ></div>
-          <div
-            class="group group-input group-input-select"
-            style="height: 130px"
-          ></div>
+        <!-- End Left Side -->
+
+        <!-- Left Side Loading -->
+        <div class="ducatus-pay-form loading-pay-form" *ngIf="!rates">
+          <div class="group group-input group-input-select input-h-60"></div>
+          <div class="group group-text group-columns input-h-20"></div>
           <div class="group group-input group-input-select input-h-85"></div>
-          <div class="group group-input group-input-select input-h-85"></div>
+          <div class="group group-input input-h-105"></div>
           <div class="group group-input group-input-select input-h-60"></div>
           <div class="group group-text group-columns input-h-20"></div>
         </div>
-
-        <div class="buy-info-block hidden-mobile" *ngIf="!loadingData">
-          <span class="buy-info-block-referral-title">{{
-            "PAGE.BUY.REFERRAL.TITLE" | translate
-          }}</span>
-          <span class="buy-info-block-referral-subtitle">{{
-            "PAGE.BUY.REFERRAL.SUBTITLE" | translate
-          }}</span>
-
-          <div class="group group-input">
-            <label for="referralAddress">{{
-              "PAGE.BUY.REFERRAL.LABEL" | translate
-            }}</label>
-            <input
-              id="referralAddress"
-              class="input input-white"
-              [ngClass]="{ 'error-input': referralAddressError }"
-              [(ngModel)]="referralAddress"
-              [placeholder]="'PAGE.BUY.REFERRAL.PLACEHOLDER' | translate"
-              (ngModelChange)="generateReferralLink()"
-            />
-            <span class="error-address-value" *ngIf="referralAddressError">{{
-              "PAGE.BUY.REFERRAL.ERROR" | translate
-            }}</span>
-          </div>
-
-          <div
-            *ngIf="!referralAddressError && referralLink"
-            class="group group-input"
-          >
-            <label style="margin-top: 30px">{{
-              "PAGE.BUY.REFERRAL.LINK" | translate
-            }}</label>
-            <div class="buy-info-block-referral-link">
-              <span class="buy-info-block-referral-link-text">{{
-                referralLink
-              }}</span>
-              <span
-                class="icon icon__copy"
-                [cdkCopyToClipboard]="referralLink"
-              ></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="buy-info-block loading-pay-form" *ngIf="loadingData">
-          <div class="group group-input group-input-select input-h-60"></div>
-          <div class="group group-input group-input-select input-h-60"></div>
-          <div class="group group-input group-input-select input-h-60"></div>
-          <div class="group group-input group-input-select input-h-60"></div>
-        </div>
+        <!-- End Left Side Loading -->
       </div>
+
+      <!-- Right Side Block -->
+      <!-- With Video And Text -->
       <div class="pay-form-block">
-        <!-- *ngIf="!lottery.ended" -->
-        <div class="lottery-tickets hidden-mobile mt-m-30">
-          <!-- *ngIf="lottery.filled_at && !lottery.ended" -->
-          <div class="lottery-tickets-timer hidden-desktop">
-            <div class="lottery-tickets-timer-title">
-              {{ "PAGE.BUY.LOTTERY.BLOCK.COUNTDOWN.TITLE" | translate }}
-            </div>
-            <span class="lottery-tickets-timer-count">
-              <app-countdown
-                [timeStart]="lottery.filled_at"
-                [correctTimeStart]="1000"
-                [timeEndDayPlus]="8"
-                (countdownEvent)="countdownEvent($event)"
-              >
-              </app-countdown>
-            </span>
-          </div>
-          <!-- *ngIf="!lottery.filled_at && !lottery.ended" -->
-          <div class="lottery-tickets-progress">
-            <span class="lottery-tickets-progress-title"
-              >{{ "PAGE.BUY.LOTTERY.BLOCK.PROGRESS.TITLE" | translate }}
-              <img
-                src="/assets/img/icons/lottery-rocket.svg"
-                height="25"
-                width="25"
-                alt="ducatus lottery rocket"
-            /></span>
-            <div class="lottery-tickets-progress-bar">
-              <span
-                [style.width]="lottery.percent"
-                [ngClass]="{ 'progress-info-5': percentLottery > 5 }"
-                [attr.data-progress]="lottery.percent"
-              ></span>
-            </div>
-          </div>
-
-          <div class="lottery-tickets-spacer"><span></span></div>
-
-          <div class="lottery-tickets-items">
-            <div class="lottery-tickets-item">
-              <img
-                src="/assets/img/icons/ticket.svg"
-                height="57"
-                width="70"
-                alt="ducatus lottery ticket"
-              />
-              <span
-                [routerLink]="['/buy/entries']"
-                class="lottery-tickets-item-title"
-                [innerHTML]="
-                  'PAGE.BUY.LOTTERY.BLOCK.TICKETS.LINK'
-                    | translate
-                      : {
-                          tickets_amount: (lottery.gave_tickets_amount | number)
-                        }
-                "
-              ></span>
-            </div>
-            <div class="lottery-tickets-spacer"><span></span></div>
-            <div class="lottery-tickets-item">
-              <span class="lottery-tickets-item-amount">{{
-                lottery.sent_duc_amount | number
-              }}</span>
-              <span class="lottery-tickets-item-text">{{
-                "PAGE.BUY.LOTTERY.BLOCK.TICKETS.TEXT" | translate
-              }}</span>
-            </div>
-          </div>
+        <div class="pay-form-block-video">
+          <iframe src="https://www.youtube.com/embed/5tzX8UzUQkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-
-        <div
-          class="hidden-desktop"
-          style="margin-top: 60px !important"
-          *ngIf="!loadingData"
-        >
-          <div class="buy-info-block" *ngIf="!loadingData">
-            <span class="buy-info-block-referral-title">{{
-              "PAGE.BUY.REFERRAL.TITLE" | translate
-            }}</span>
-            <span class="buy-info-block-referral-subtitle">{{
-              "PAGE.BUY.REFERRAL.SUBTITLE" | translate
-            }}</span>
-            <div class="group group-input">
-              <label for="referralAddress">{{
-                "PAGE.BUY.REFERRAL.LABEL" | translate
-              }}</label>
-              <input
-                id="referralAddress"
-                class="input input-white"
-                [ngClass]="{ 'error-input': referralAddressError }"
-                [(ngModel)]="referralAddress"
-                [placeholder]="'PAGE.BUY.REFERRAL.PLACEHOLDER' | translate"
-                (ngModelChange)="generateReferralLink()"
-              />
-              <span class="error-address-value" *ngIf="referralAddressError">{{
-                "PAGE.BUY.REFERRAL.ERROR" | translate
-              }}</span>
-            </div>
-            <div
-              *ngIf="!referralAddressError && referralLink"
-              class="group group-input"
-            >
-              <label style="margin-top: 30px">{{
-                "PAGE.BUY.REFERRAL.LINK" | translate
-              }}</label>
-              <div class="buy-info-block-referral-link">
-                <span class="buy-info-block-referral-link-text">{{
-                  referralLink
-                }}</span>
-                <span
-                  class="icon icon__copy"
-                  [cdkCopyToClipboard]="referralLink"
-                ></span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hidden-desktop pay-form-block" *ngIf="!loadingData">
-          <div *ngIf="lottery.ended">
-            <!-- <div *ngIf="lottery.winner_address" class="lottery-win">
-                        <div class="lottery-win-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WINNER.TITLE' | translate }}</div>
-                        <span class="lottery-win-text">{{ lottery.winner_tx_hash }}</span>
-                    </div>
-                    <div *ngIf="!lottery.winner_address" class="lottery-waiting">
-                        <div class="lottery-waiting-title">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TITLE' | translate }}
-                        </div>
-                        <div class="lottery-waiting-text">{{ 'PAGE.BUY.LOTTERY.BLOCK.WAITING.TEXT' | translate }}</div>
-                    </div> -->
-            <div
-              style="min-height: 80px; padding: 10px; margin-bottom: 30px"
-              *ngIf="lottery.winners_data && !modalWinner"
-              (click)="modalWinner = true"
-              class="lottery-win btn ducatus-btn ducatus-btn-brown"
-            >
-              View winners
-            </div>
-          </div>
-
-          <div *ngIf="!lottery.ended" class="lottery-tickets">
-            <div
-              *ngIf="lottery.filled_at && !lottery.ended"
-              class="lottery-tickets-timer"
-            >
-              <div class="lottery-tickets-timer-title">
-                {{ "PAGE.BUY.LOTTERY.BLOCK.COUNTDOWN.TITLE" | translate }}
-              </div>
-              <span class="lottery-tickets-timer-count">
-                <app-countdown
-                  [timeStart]="lottery.filled_at"
-                  [correctTimeStart]="1000"
-                  [timeEndDayPlus]="8"
-                >
-                </app-countdown>
-              </span>
-            </div>
-
-            <div
-              *ngIf="!lottery.filled_at && !lottery.ended"
-              class="lottery-tickets-progress"
-            >
-              <span class="lottery-tickets-progress-title"
-                >{{ "PAGE.BUY.LOTTERY.BLOCK.PROGRESS.TITLE" | translate }}
-                <img
-                  src="/assets/img/icons/lottery-rocket.svg"
-                  height="25"
-                  width="25"
-                  alt="ducatus lottery rocket"
-              /></span>
-              <div class="lottery-tickets-progress-bar">
-                <span
-                  [style.width]="lottery.percent"
-                  [ngClass]="{ 'progress-info-5': percentLottery > 5 }"
-                  [attr.data-progress]="lottery.percent"
-                ></span>
-              </div>
-            </div>
-
-            <div class="lottery-tickets-spacer"><span></span></div>
-
-            <div class="lottery-tickets-items">
-              <div class="lottery-tickets-item">
-                <img
-                  src="/assets/img/icons/ticket.svg"
-                  height="57"
-                  width="70"
-                  alt="ducatus lottery ticket"
-                />
-                <span
-                  [routerLink]="['/buy/entries']"
-                  class="lottery-tickets-item-title"
-                  [innerHTML]="
-                    'PAGE.BUY.LOTTERY.BLOCK.TICKETS.LINK'
-                      | translate
-                        : {
-                            tickets_amount:
-                              (lottery.gave_tickets_amount | number)
-                          }
-                  "
-                ></span>
-              </div>
-              <div class="lottery-tickets-spacer"><span></span></div>
-              <div class="lottery-tickets-item">
-                <span class="lottery-tickets-item-amount">{{
-                  lottery.sent_duc_amount | number
-                }}</span>
-                <span class="lottery-tickets-item-text">{{
-                  "PAGE.BUY.LOTTERY.BLOCK.TICKETS.TEXT" | translate
-                }}</span>
-              </div>
-            </div>
-          </div>
+        <div class="pay-form-block-text">
+          <p class="p__text-section icon icon__wallet_2" [innerHTML]="'PAGE.BUY.INFO.TEXT' | translate: { coin: coins[coinGet].name }"></p>
         </div>
       </div>
+      <!-- End Right Side Block -->
     </div>
   </div>
 </section>
@@ -703,116 +149,11 @@
     </div>
     <div class="modal-content-bottom">
       <div class="input-checkbox-group">
-        <label
-          for="terms"
-          [innerHTML]="'PAGE.BUY.MODAL.TERMS.AGREE' | translate"
-        ></label>
-        <input
-          type="checkbox"
-          (ngModelChange)="modalAccept = !modalAccept"
-          [ngModel]="modalAccept"
-          name="terms"
-          id="terms"
-          class="terms"
-        />
+        <label for="terms" [innerHTML]="'PAGE.BUY.MODAL.TERMS.AGREE' | translate"></label>
+        <input #acceptTerms type="checkbox" id="terms" class="terms" />
       </div>
-      <button
-        id="btn-modal"
-        (click)="acceptModalTerms()"
-        [disabled]="!modalAccept"
-        class="ducatus-btn ducatus-btn-brown"
-      >
-        {{ "PAGE.BUY.MODAL.TERMS.BUTTON" | translate }}
-      </button>
-    </div>
-  </div>
-</div>
-
-<div class="modal" *ngIf="modalInfo">
-  <div class="modal-wrap">
-    <div
-      class="modal-content-top"
-      [innerHTML]="'PAGE.BUY.MODAL.INFO.TEXT' | translate"
-    ></div>
-    <div class="modal-content-bottom">
-      <button
-        id="btn-modal"
-        style="margin: 0 auto"
-        (click)="modalInfo = false"
-        class="ducatus-btn ducatus-btn-brown"
-      >
-        {{ "PAGE.BUY.MODAL.INFO.BUTTON" | translate }}
-      </button>
-    </div>
-  </div>
-</div>
-
-<div class="modal" style="padding: 0 10px" *ngIf="modalWinner">
-  <div class="modal-wrap modal-congratulation-wrap">
-    <div class="modal-content-top modal-congratulation">
-      <span class="icon icon__congratulations"></span>
-      <div class="modal-congratulation-title">
-        <p>
-          Our Kingsway Square Promotion has ended and we have sold a total of
-        </p>
-        <p>{{ lotteryDesc.sent_duc_amount }} Ducatus Coins!</p>
-      </div>
-      <div class="modal-congratulation-subtitle">
-        <p>Congratulations to the winner of</p>
-        <p>{{ lotteryDesc.sent_duc_amount * 0.8 | number }} Ducatus Coins</p>
-        <p>(80% of total DUC sold).</p>
-      </div>
-      <div class="modal-congratulation-hash">
-        <img src="/assets/img/lotery/cup.svg" />
-        <div class="modal-congratulation-hash-box">
-          <div class="modal-congratulation-hash-title">Winning Hash:</div>
-          <div class="modal-congratulation-hash-winner">
-            {{ lotteryDesc.winners_data[0].address }}
-          </div>
-        </div>
-      </div>
-
-      <!-- <div class="modal-congratulation-winners">
-        <div
-          class="modal-congratulation-winners-item"
-          *ngFor="let item of winners"
-        >
-          <div class="modal-congratulation-winners-item-content">
-            <span class="modal-congratulation-winners-item-content-prize"
-              >1st prize</span
-            >
-            <span class="modal-congratulation-winners-item-content-count">{{
-              item["eng"].description
-            }}</span>
-            <span class="modal-congratulation-winners-item-content-hash"
-              >Hash:
-              <span class="modal-congratulation-winners-item-content-accent">
-                {{ item.tx_hash }}</span
-              ></span
-            >
-          </div>
-        </div>
-      </div> -->
-      <span class="modal-congratulation-text"
-        >We will contact the winner via email for instructions on how to claim
-        your prize. Thank you to everyone who participated and congratulations
-        for being a part of the Ducatus cashless future.</span
-      >
-      <span class="icon icon__watch-out">Join the Gold Rush this 2021!</span>
-      <span class="modal-congratulation-watch-out"
-        >Win a full set of 5 Ducatus Prime Gold Coins and 5 Gold Bars from Proof
-        of Gold in our latest promotion. Buy DUC now. The next lucky winner
-        could be YOU!
-      </span>
-    </div>
-    <div class="modal-content-bottom">
-      <button
-        id="btn-modal"
-        style="margin: 0 auto"
-        (click)="modalWinner = false"
-        class="ducatus-btn ducatus-btn-brown"
-      >
-        OK
+      <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!acceptTerms.checked" class="ducatus-btn ducatus-btn-brown" style="margin: 0 auto">
+        {{ 'PAGE.BUY.MODAL.TERMS.BUTTON' | translate }}
       </button>
     </div>
   </div>

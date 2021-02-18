@@ -1,527 +1,139 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DomSanitizer } from '@angular/platform-browser';
-
-import { BuyService } from '../../service/buy/buy.service';
-import { Lottery, Rates } from 'src/app/interfaces';
-import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { GoogleAnalyticsService } from 'src/app/service/gtag/google-analytics.service';
-import { ActivatedRoute } from '@angular/router';
+import { BigNumber } from 'bignumber.js';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { BuyAddresses, BuyRates } from 'src/app/interfaces/buy.interface';
+import { BuyService } from 'src/app/service/buy/buy.service';
+import { coinsFormSend, coinsFormGet, coins } from './parameters';
 
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
   styleUrls: ['./buy.component.scss'],
+  host: { '(document:click)': 'onClick($event)' },
 })
-export class BuyComponent implements OnInit, OnDestroy {
-  public BuyGroup: FormGroup;
-  public loadingQr = true;
-  public loadingData = true;
-  public loadedAddress = false;
-  public loadingCard = false;
-  public modal = false;
-  public modalInfo = false;
-  public modalWinner = false;
-  public modalAccept = false;
+export class BuyComponent implements OnInit {
+  @ViewChild('openFormGet') coinsGet: ElementRef;
+  @ViewChild('openFormSend') coinsSend: ElementRef;
 
-  private checker;
+  public modal: boolean;
+  public coins = coins;
 
-  public bg: string;
-  public percentLottery = 0;
-  public lang = 'eng';
-  public onLangChange: any;
-  public savedEmail: string;
-  public savedAddress: string;
-  public cardRedirect = '';
-  public buttonSubmit = false;
+  public rates: BuyRates;
+  public addresses: BuyAddresses;
 
-  public referralAddressError = false;
-  public referralAddress: string;
-  public referralLink: string;
-  public referralIncoming: string;
+  public address: string;
+  public checkAddress: boolean;
+  public novalidAddress: boolean;
 
-  public ducToUsd = 0.06;
-  public selectedMoney = 'usd';
+  public valueGet: number;
+  public valueSend: number;
 
-  public winners = [];
+  public coinGet = 'DUC';
+  public coinSend = 'DUCX';
+  public coinsFormGet = coinsFormGet;
+  public coinsFormSend = coinsFormSend;
 
-  public slides = [
-    'slide-1',
-    'slide-2',
-    'slide-3',
-    'slide-4',
-    'slide-5',
-    'slide-6',
-    'slide-7',
-  ];
+  public qr: string;
 
-  public activeSlide = 0;
+  constructor(private buyservice: BuyService, private cookieService: CookieService) {}
 
-  public currencyTemplate = [
-    { name: 'Card', displayName: 'credit card', shortName: 'card' },
-    { name: 'USDC', displayName: 'usdc', shortName: 'usdc' },
-    { name: 'Bitcoin', displayName: 'btc', shortName: 'btc' },
-    { name: 'Ethereum', displayName: 'eth', shortName: 'eth' },
-  ];
+  ngOnInit(): void {
+    this.cookieService.get('termsBuy') ? this.acceptModalTerms(true) : (this.modal = true);
+  }
 
-  public moneyTemplate = [
-    { name: '$, USD', currency: 'usd' },
-    { name: '€, EUR', currency: 'eur' },
-    { name: '£, GBP', currency: 'gbp' },
-    { name: '₣, CHF', currency: 'chf' },
-  ];
+  private onClick($event: any): void {
+    if ($($event.target).closest('.select-coin').length === 0) {
+      this.coinsGet.nativeElement.checked = this.coinsSend.nativeElement.checked = false;
+    }
+  }
 
-  public moneyPrice = {
-    usd: { name: 'USD', price: '0.06' },
-    eur: { name: 'EUR', price: '0.042' },
-    gbp: { name: 'GBP', price: '0.038' },
-    chf: { name: 'CHF', price: '0.046' },
-  };
+  public acceptModalTerms(start?: boolean): void {
+    if (!start) {
+      this.cookieService.set('termsBuy', 'true');
+      this.modal = false;
+    }
 
-  public priceTemplate = [
-    {
-      usd: { postition: 'after', sign: '$', price: 10 },
-      eur: { postition: 'before', sign: '€', price: 8.46 },
-      gbp: { postition: 'before', sign: '£', price: 7.62 },
-      chf: { postition: 'after', sign: '₣', price: 9.1 },
-      ticket: 1,
-    },
-    {
-      usd: { postition: 'after', sign: '$', price: 50 },
-      eur: { postition: 'before', sign: '€', price: 42.31 },
-      gbp: { postition: 'before', sign: '£', price: 38.08 },
-      chf: { postition: 'after', sign: '₣', price: 45.51 },
-      ticket: 6,
-    },
-    {
-      usd: { postition: 'after', sign: '$', price: 100 },
-      eur: { postition: 'before', sign: '€', price: 84.62 },
-      gbp: { postition: 'before', sign: '£', price: 76.19 },
-      chf: { postition: 'after', sign: '₣', price: 91.03 },
-      ticket: 13,
-    },
-    {
-      usd: { postition: 'after', sign: '$', price: 500 },
-      eur: { postition: 'before', sign: '€', price: 423.09 },
-      gbp: { postition: 'before', sign: '£', price: 380.82 },
-      chf: { postition: 'after', sign: '₣', price: 455.15 },
-      ticket: 70,
-    },
-    {
-      usd: { postition: 'after', sign: '$', price: 1000 },
-      eur: { postition: 'before', sign: '€', price: 846.17 },
-      gbp: { postition: 'before', sign: '£', price: 761.63 },
-      chf: { postition: 'after', sign: '₣', price: 910.29 },
-      ticket: 150,
-    },
-  ];
-
-  public currencyData = {
-    eth: {
-      name: 'Ethereum',
-      qrName: 'Ethereum',
-      shortName: 'eth',
-      decimals: 18,
-      time: {
-        eng: '15 minutes',
-        deu: '15 Minuten',
-        ita: '15 minuti',
-        vie: '15 phút',
-      },
-      address: '',
-      amount: null,
-      info: '',
-    },
-    btc: {
-      name: 'Bitcoin',
-      qrName: 'Bitcoin',
-      shortName: 'btc',
-      decimals: 8,
-      time: {
-        eng: '1 hour',
-        deu: '1 Stunde',
-        ita: '1 ora',
-        vie: '1 giờ',
-      },
-      address: '',
-      amount: null,
-      info: '',
-    },
-    usdc: {
-      name: 'USDC',
-      qrName: 'Ethereum',
-      shortName: 'usdc',
-      decimals: 18,
-      time: {
-        eng: '15 minutes',
-        deu: '15 Minuten',
-        ita: '15 minuti',
-        vie: '15 phút',
-      },
-      address: '',
-      amount: null,
-      info: '',
-    },
-  };
-
-  public rates: Rates = {
-    DUC: {
-      ETH: 0.00046189,
-      BTC: 0.0000104,
-      DUCX: 0.1,
-      USDC: 0.06,
-    },
-    DUCX: {
-      DUC: 10.0,
-    },
-  };
-
-  public lottery: Lottery = {
-    name: '',
-    image: '',
-    duc_amount: '',
-    sent_duc_amount: '',
-    started_at: 0,
-    ended: false,
-    winners_data: [],
-  };
-
-  public lotteryDesc: any = {
-    description: [],
-  };
-
-  constructor(
-    private buyservice: BuyService,
-    private formBuilder: FormBuilder,
-    private sanitizer: DomSanitizer,
-    private translate: TranslateService,
-    private googleAnalyticsService: GoogleAnalyticsService,
-    protected route: ActivatedRoute
-  ) {
-    this.BuyGroup = this.formBuilder.group({
-      currency: ['eth', Validators.compose([Validators.required])],
-      money: ['usd', Validators.compose([Validators.required])],
-      amount: [100, Validators.compose([Validators.required])],
-      email: ['', Validators.compose([Validators.required, Validators.email])],
+    this.buyservice.getRates().then((result: BuyRates) => {
+      this.rates = result;
     });
   }
 
-  ngOnInit() {
-    const defaultLng = (
-      navigator.language || navigator['browserLanguage']
-    ).split('-')[0];
-    const langToSet =
-      window['jQuery']['cookie']('lng') ||
-      (['deu', 'eng', 'vie', 'ita'].includes(defaultLng) ? defaultLng : 'eng');
-
-    this.lang = langToSet;
-
-    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-      this.lang = event.lang;
-    });
-
-    this.route.queryParams.subscribe((params) => {
-      if (params['referral']) {
-        window['jQuery']['cookie']('referral', params['referral']);
-      }
-    });
-    this.modal = true;
-    window['jQuery']['cookie']('termsBuy')
-      ? this.acceptModalTerms()
-      : (this.modal = true);
-  }
-
-  ngOnDestroy() {
-    this.checker = undefined;
-  }
-
-  public changeSlide(slide) {
-    this.activeSlide = slide;
-  }
-
-  public countdownEvent(state) {
-    this.lottery.ended = false;
-  }
-
-  get lotteryVideoUrl() {
-    return this.sanitizer.bypassSecurityTrustUrl(this.lottery.video);
-  }
-
-  public setCurrency() {
-    // this.selectedMoney = this.BuyGroup.controls['money'].value;
-    this.selectedMoney = 'usd';
-    this.cardRedirect = '';
-  }
-
-  public setAmount() {
-    this.cardRedirect = '';
-
-    if (this.BuyGroup.controls['currency'].value !== 'card') {
-      this.BuyGroup.controls['money'].setValue('usd');
-    }
-
-    if (this.BuyGroup.controls['currency'].value === 'card') {
-      this.buttonSubmit = false;
-    }
-
-    this.setQrAddress('amount');
-  }
-
-  public setEmail() {
-    const email = this.BuyGroup.controls['email'];
-    if (email.value !== this.savedEmail) {
-      this.buttonSubmit = false;
-    }
-  }
-
-  public clickSubmit() {
-    const email = this.BuyGroup.controls['email'];
-
-    if (email.valid) {
-      this.savedEmail = email.value;
-    }
-
-    if (email.valid) {
-      this.buttonSubmit = true;
-      this.getAddresses();
-      this.generateReferralLink();
-    }
-  }
-
-  private checkDucatusAddress(address: string) {
-    return this.buyservice.getValidateDucatusAddress(address);
-  }
-
-  // public setAddress() {
-  //   const address = this.BuyGroup.controls['address'];
-
-  //   if (this.BuyGroup.controls['currency'].value === 'card') {
-  //     this.BuyGroup.controls['address'].setErrors(null);
-  //     return;
-  //   }
-
-  //   if (
-  //     address.value.length === 34 &&
-  //     ['L', 'l', 'M', 'm'].includes(address.value.substring(0, 1))
-  //   ) {
-  //     this.currencyData['eth'].address = this.currencyData['btc'].address = '';
-  //     this.loadedAddress = false;
-  //     this.checkDucatusAddress(address.value)
-  //       .then((result) => {
-  //         if (result.address_valid) {
-  //           this.BuyGroup.controls['address'].setErrors(null);
-  //         } else {
-  //           this.BuyGroup.controls['address'].setErrors({ incorrect: true });
-  //           this.referralAddress = '';
-  //           this.generateReferralLink();
-  //         }
-  //       })
-  //       .catch((err) => {
-  //         console.error(err);
-  //       });
-  //   } else {
-  //     this.BuyGroup.controls['address'].setErrors({ incorrect: true });
-  //     this.referralAddress = '';
-  //     this.generateReferralLink();
-  //   }
-
-  //   if (address.value !== this.savedAddress) {
-  //     this.buttonSubmit = false;
-  //   }
-  // }
-
-  public getAddresses() {
-    const email = this.BuyGroup.controls['email'];
-
-    if (email.valid) {
-      this.buyservice
-        .getExchange('DUC', email.value)
-        .then((result) => {
-          this.loadedAddress = true;
-          this.currencyData['eth'].address = result.eth_address;
-          this.currencyData['btc'].address = result.btc_address;
-          this.currencyData['usdc'].address = result.eth_address;
-          this.setQrAddress();
-          this.BuyGroup.controls['email'].setErrors(null);
-        })
-        .catch((err) => {
-          console.error(err);
-          this.loadedAddress = false;
-        });
+  public changeGetCoin(getChange?: boolean): void {
+    if (getChange) {
+      this.coinSend = this.coinsFormSend[this.coinGet][0];
+      this.addresses = null;
+      this.address = '';
+      this.coinsGet.nativeElement.checked = false;
+      this.amountSend();
     } else {
-      if (!email.valid) {
-        this.BuyGroup.controls['email'].setErrors({ incorrect: true });
-        this.BuyGroup.controls['email'].markAsTouched();
-      }
+      this.coinsSend.nativeElement.checked = false;
+      this.amountGet();
+    }
+
+    if (this.addresses) {
+      this.setQr();
     }
   }
 
-  public setQrAddress(type?) {
-    const email = this.BuyGroup.controls['email'].valid;
+  private setQr(): void {
+    this.qr = this.coins[this.coinSend].name.toLowerCase() + ':' + this.addresses[this.coins[this.coinSend].symbol.toLowerCase() + '_address'] + this.coins[this.coinSend].qrAmount + (this.valueSend ? this.valueSend.toFixed(this.coins[this.coinSend].decimal).toString() : '0');
+  }
 
-    if (email && this.loadedAddress && !this.loadingData) {
-      this.loadingQr = true;
-
-      const currency = this.BuyGroup.controls['currency'].value;
-      const amount =
-        Number(
-          (
-            (this.BuyGroup.value.amount / this.ducToUsd) *
-            this.rates.DUC[this.currencyData[currency].shortName.toUpperCase()]
-          ).toFixed(this.currencyData[currency].decimals)
-        ) + 0.00005;
-
-      this.currencyData[currency].amount = (
-        Math.ceil(amount * 10000) / 10000 +
-        0.00001
-      ).toFixed(5);
-      this.currencyData[currency].info =
-        this.currencyData[currency].qrName.toLowerCase() +
-        ':' +
-        this.currencyData[currency].address;
-
-      this.googleAnalyticsService.eventEmitter(
-        'get_lotetry_address',
-        'lottery',
-        'address',
-        'generate',
-        10
-      );
-
-      this.loadingQr = false;
-    } else {
-      this.loadingQr = true;
+  public amountGet(): any {
+    this.valueSend = new BigNumber(this.valueGet).multipliedBy(this.rates[this.coinGet][this.coinSend]).toNumber();
+    if (this.addresses) {
+      this.setQr();
     }
   }
 
-  private checkLotteryStatus() {
-    this.buyservice
-      .getLotteryInfo()
-      .then((result) => {
-        this.lottery = result;
+  public amountSend(): any {
+    this.valueGet = new BigNumber(this.valueSend).div(this.rates[this.coinGet][this.coinSend]).toNumber();
+    if (this.addresses) {
+      this.setQr();
+    }
+  }
 
-        const percent =
-          (100 * Number(this.lottery.sent_duc_amount)) /
-          Number(this.lottery.duc_amount);
-        this.percentLottery = percent;
+  public setAddress(): void {
+    this.novalidAddress = false;
 
-        Number(percent) >= 100
-          ? (this.lottery.percent = '100%')
-          : (this.lottery.percent = percent.toString().substr(0, 5) + '%');
-      })
-      .catch((err) => console.error(err));
+    switch (this.coinGet) {
+      case 'DUC':
+        if (this.address.length === 34 && ['L', 'l', 'M', 'm'].includes(this.address.substring(0, 1))) {
+          this.checkAddress = true;
 
-    if (!this.lottery.winner_address) {
-      this.checker = setTimeout(() => {
-        if (this.checker) {
-          this.checkLotteryStatus();
+          this.buyservice.getValidateDucatusAddress(this.address).then((result: boolean) => {
+            result ? this.getAddresses() : (this.novalidAddress = true);
+          });
+        } else {
+          this.novalidAddress = true;
         }
-      }, 10000);
-    } else {
-      this.checker = undefined;
-    }
-  }
+        break;
 
-  public generateReferralLink() {
-    if (
-      this.referralAddress.length === 34 &&
-      ['L', 'l', 'M', 'm'].includes(this.referralAddress.substring(0, 1))
-    ) {
-      this.referralAddressError = false;
-      this.referralLink = '';
-      this.checkDucatusAddress(this.referralAddress)
-        .then((result) => {
-          if (result.address_valid) {
-            this.referralAddressError = false;
-            this.referralLink =
-              window.location.origin + '/buy?referral=' + this.referralAddress;
-          } else {
-            this.referralAddressError = true;
+      case 'DUCX':
+        if (this.address.length === 42) {
+          this.checkAddress = true;
+
+          if (!/0x[0-9a-fA-F]{40}/.test(this.address)) {
+            this.novalidAddress = true;
+            return;
           }
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    } else {
-      this.referralAddressError = true;
-      this.referralLink = '';
+          $.trim(this.address) === '' || $.trim(this.address).length < 15 ? (this.novalidAddress = true) : this.getAddresses();
+        } else {
+          this.novalidAddress = true;
+        }
+        break;
+
+      default:
+        this.novalidAddress = true;
     }
+
+    this.checkAddress = false;
   }
 
-  public cardLink() {
-    const amount = this.BuyGroup.controls['amount'];
-    const currency = this.BuyGroup.controls['money'];
-    const email = this.BuyGroup.controls['email'];
-
-    this.loadingCard = true;
-
-    this.buyservice
-      .getCardLink(amount.value, currency.value.toUpperCase(), email.value)
-      .then((res) => {
-        if (res.redirect_url) {
-          window.open(res.redirect_url, '_blank');
-          this.cardRedirect = res.redirect_url;
-        }
-        this.loadingCard = false;
-      })
-      .catch((err) => {
-        console.log(err);
-        this.loadingCard = false;
-      });
-  }
-
-  public acceptModalTerms() {
-    window['jQuery']['cookie']('termsBuy', true);
-    this.modal = false;
-
-    this.buyservice.getLottery().then((result) => {
-      console.log(result, 'result');
-      result.forEach((elem) => {
-        if (+elem.id === 1) {
-          this.lotteryDesc = elem;
-        }
-      });
-      // this.bg = this.lotteryDesc.image
-      //   ? this.lotteryDesc.image
-      //   : 'assets/img/sections/buy-bg.png';
-      this.bg = 'assets/img/sections/buy-bg.png';
-
-      if (this.lotteryDesc && this.lotteryDesc.winners_data) {
-        let count = 0;
-
-        this.lotteryDesc.winners_data.map((value) => {
-          value['deu'] = this.lotteryDesc.description.deu.prizes[count];
-          value['eng'] = this.lotteryDesc.description.eng.prizes[count];
-          value['vie'] = this.lotteryDesc.description.vie.prizes[count];
-          value['ita'] = this.lotteryDesc.description.ita.prizes[count];
-          count++;
-          this.winners.push(value);
-        });
-
-        console.log(this.lotteryDesc);
-        console.log(this.winners, 'winners');
-        this.winners[0].eng.description = '80% of all achieved DUC sales';
-
-        if (!window.localStorage['modalWinner']) {
-          this.modalWinner = true;
-          window.localStorage['modalWinner'] = true;
-        }
-      }
-
-      this.checkLotteryStatus();
+  public getAddresses(): void {
+    this.buyservice.getExchange(this.address, this.coinGet, 'email@email.com').then((result: BuyAddresses) => {
+      this.addresses = result;
+      this.setQr();
     });
-
-    this.buyservice
-      .getRates()
-      .then((result) => {
-        this.rates = result;
-        this.loadingData = false;
-      })
-      .catch((err) => {
-        setTimeout(() => {
-          this.acceptModalTerms();
-        }, 5000);
-        console.error(err);
-      });
   }
 }
