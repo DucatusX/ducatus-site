@@ -13,13 +13,14 @@ import { GoldLotteryComponent } from './pages/gold-lottery/gold-lottery.componen
 import { ErrorPageComponent } from './pages/errorpage/errorpage.component';
 import { DucatusxComponent } from './pages/ducatusx/ducatusx/ducatusx.component';
 import { VoucherComponent } from './pages/voucher/voucher.component';
+import { RateComponent } from './pages/rate/rate.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UserResolver } from './resolvers';
 
 const routes: Routes = [
   {
     path: '',
-    component: IndexNewComponent
+    component: IndexNewComponent,
   },
   // {
   //   path: 'new',
@@ -61,7 +62,7 @@ const routes: Routes = [
   {
     path: 'admin',
     resolve: {
-      user: UserResolver
+      user: UserResolver,
     },
     redirectTo: 'admin/login',
   },
@@ -69,12 +70,19 @@ const routes: Routes = [
     path: 'admin/voucher',
     component: VoucherComponent,
     resolve: {
-      user: UserResolver
-    }
+      user: UserResolver,
+    },
+  },
+  {
+    path: 'admin/rate',
+    component: RateComponent,
+    resolve: {
+      user: UserResolver,
+    },
   },
   {
     path: 'admin/login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: '404',
@@ -82,12 +90,12 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/404'
-  }
+    redirectTo: '/404',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

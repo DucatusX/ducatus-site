@@ -1,0 +1,74 @@
+@import '../../../scss/vars';
+@import '../../../scss/mixins';
+
+.rate {
+  padding-top: 60px;
+  @include b(mobile) {
+    padding: 40px 15px;
+  }
+  &__form {
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include b(1024) {
+        flex-direction: column;
+      }
+    }
+    &-arrow {
+      width: 20px;
+      height: 22px;
+      margin: 0 10px -29px;
+      @include b(1024) {
+        opacity: 0;
+        margin: 5px 0;
+      }
+    }
+    &-label {
+      font-size: 14px;
+      line-height: 17px;
+      margin-bottom: 10px;
+    }
+    &-btn {
+      background: $brown-red;
+      border-radius: 33px;
+      margin: 35px auto 0;
+    }
+    &-box {
+      & + & {
+        @include b(1024) {
+          margin-top: 15px;
+        }
+      }
+      @include b(mobile) {
+        width: 100%;
+      }
+    }
+    &-input {
+      background: #fbf9f6;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 20px 15px;
+      width: 400px;
+      font-weight: bold;
+      font-size: 26px;
+      line-height: 32px;
+      @include b(mobile) {
+        width: 100%;
+      }
+      &:hover,
+      &:focus {
+        outline: none;
+      }
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      &[type='number'] {
+        -moz-appearance: textfield;
+      }
+    }
+  }
+}
