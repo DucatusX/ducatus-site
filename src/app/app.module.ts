@@ -36,6 +36,7 @@ import { LegalDisclaimerComponent } from './pages/legal-disclaimer/legal-disclai
 import { ErrorPageComponent } from './pages/errorpage/errorpage.component';
 import { DucatusxComponent } from './pages/ducatusx/ducatusx/ducatusx.component';
 import { VoucherComponent } from './pages/voucher/voucher.component';
+import { RateComponent } from './pages/rate/rate.component';
 import { LoginComponent } from './pages/login/login.component';
 
 // partials
@@ -71,6 +72,7 @@ export function HttpLoaderFactory(http: HttpClient): any {
     ErrorPageComponent,
     DucatusxComponent,
     VoucherComponent,
+    RateComponent,
     LoginComponent,
 
     // components

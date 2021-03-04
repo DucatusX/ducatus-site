@@ -1,0 +1,23 @@
+<section class="section-header-page" style="background-image: url(/assets/img/sections/vaucher-bg.png)">
+  <div class="container">
+    <h1 class="h1__title-page">DUC/DUCX Price</h1>
+  </div>
+</section>
+<section class="app rate">
+  <div class="container">
+    <form class="rate__form" [formGroup]="rateGroup" (ngSubmit)="setRates()">
+      <div class="rate__form-wrapper">
+        <label class="rate__form-box">
+          <div class="rate__form-label">DUC price</div>
+          <input type="number" class="rate__form-input" formControlName="duc" />
+        </label>
+        <img src="/assets/img/rate/arrow.svg" alt="arrow" class="rate__form-arrow" />
+        <label class="rate__form-box">
+          <div class="rate__form-label">DUCX price</div>
+          <input type="number" class="rate__form-input" formControlName="ducx" />
+        </label>
+      </div>
+      <button class="rate__form-btn ducatus-btn">Apply</button>
+    </form>
+  </div>
+</section>
