@@ -9,15 +9,15 @@
       <div class="rate__form-wrapper">
         <label class="rate__form-box">
           <div class="rate__form-label">DUC price</div>
-          <input type="number" class="rate__form-input" formControlName="duc" />
+          <input type="number" class="rate__form-input" formControlName="duc" [value]="rateGroup.value.duc" (ngModelChange)="changeAmount('duc')" />
         </label>
         <img src="/assets/img/rate/arrow.svg" alt="arrow" class="rate__form-arrow" />
         <label class="rate__form-box">
           <div class="rate__form-label">DUCX price</div>
-          <input type="number" class="rate__form-input" formControlName="ducx" />
+          <input type="number" class="rate__form-input" formControlName="ducx" [value]="rateGroup.value.ducx" (ngModelChange)="changeAmount('ducx')" />
         </label>
       </div>
-      <button class="rate__form-btn ducatus-btn">Apply</button>
+      <button [disabled]="!rateGroup.value.duc || !rateGroup.value.ducx" class="rate__form-btn ducatus-btn">Apply</button>
     </form>
   </div>
 </section>
