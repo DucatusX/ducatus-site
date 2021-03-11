@@ -419,6 +419,10 @@
     },
     "VAUCHER": {
       "TITLE": "Voucher"
+    },
+    "RATE": {
+      "PRICE": "DUC pries",
+      "APPLY": "Anwenden"
     }
   }
 }

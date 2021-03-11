@@ -418,6 +418,10 @@
     },
     "VAUCHER": {
       "TITLE": "Voucher"
+    },
+    "RATE": {
+      "PRICE": "DUC prezzo",
+      "APPLY": "Applicare"
     }
   }
 }

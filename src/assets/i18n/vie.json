@@ -420,6 +420,10 @@
     },
     "VAUCHER": {
       "TITLE": "Voucher"
+    },
+    "RATE": {
+      "PRICE": "DUC giá bán",
+      "APPLY": "Ứng dụng"
     }
   }
 }

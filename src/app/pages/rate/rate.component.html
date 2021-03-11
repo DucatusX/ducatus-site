@@ -5,19 +5,19 @@
 </section>
 <section class="app rate">
   <div class="container">
-    <form class="rate__form" [formGroup]="rateGroup" (ngSubmit)="setRates()">
+    <form class="rate__form" (ngSubmit)="setRates()">
       <div class="rate__form-wrapper">
         <label class="rate__form-box">
-          <div class="rate__form-label">DUC price</div>
-          <input type="number" class="rate__form-input" formControlName="duc" [value]="rateGroup.value.duc" (ngModelChange)="changeAmount('duc')" />
+          <div class="rate__form-label" [innerHTML]="'PAGE.RATE.PRICE' | translate">DUC price</div>
+          <input type="number" class="rate__form-input" (input)="changeAmount($event, 'duc')" [formControl]="duc" />
         </label>
         <img src="/assets/img/rate/arrow.svg" alt="arrow" class="rate__form-arrow" />
         <label class="rate__form-box">
-          <div class="rate__form-label">DUCX price</div>
-          <input type="number" class="rate__form-input" formControlName="ducx" [value]="rateGroup.value.ducx" (ngModelChange)="changeAmount('ducx')" />
+          <div class="rate__form-label" [innerHTML]="'PAGE.RATE.PRICE' | translate">DUCX price</div>
+          <input type="number" class="rate__form-input" [formControl]="ducx" (input)="changeAmount($event, 'ducx')" />
         </label>
       </div>
-      <button [disabled]="!rateGroup.value.duc || !rateGroup.value.ducx" class="rate__form-btn ducatus-btn">Apply</button>
+      <button [disabled]="!duc.value || !ducx.value" class="rate__form-btn ducatus-btn" [innerHTML]="'PAGE.RATE.APPLY' | translate">Apply</button>
     </form>
   </div>
 </section>
