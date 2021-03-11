@@ -423,7 +423,8 @@
     },
     "RATE": {
       "PRICE": "DUC price",
-      "APPLY": "Apply"
+      "APPLY": "Apply",
+      "TITLE": "DUC/DUCX Price"
     }
   }
 }

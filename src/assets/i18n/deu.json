@@ -422,7 +422,8 @@
     },
     "RATE": {
       "PRICE": "DUC pries",
-      "APPLY": "Anwenden"
+      "APPLY": "Anwenden",
+      "TITLE": "DUC/DUCX Pries"
     }
   }
 }
