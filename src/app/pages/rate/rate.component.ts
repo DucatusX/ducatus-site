@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { RateService } from '../../service/rate/rate.service';
 import { BigNumber } from 'bignumber.js';
 
@@ -11,32 +11,35 @@ import { BigNumber } from 'bignumber.js';
 export class RateComponent {
   public rateGroup: FormGroup;
   private ratio: string;
-  constructor(private formBuilder: FormBuilder, private rateService: RateService) {
+  public duc = new FormControl('');
+  public ducx = new FormControl('');
+  constructor(private rateService: RateService) {
     this.rateService
       .getRates()
       .then((res: any) => {
-        this.rateGroup = this.formBuilder.group({
-          duc: [res.DUC.USD, Validators.compose([Validators.required])],
-          ducx: [res.DUCX.USD, Validators.compose([Validators.required])],
-        });
+        this.duc.setValue(res.DUC.USD);
+        this.ducx.setValue(res.DUCX.USD);
         this.ratio = new BigNumber(res.DUCX.USD).dividedBy(res.DUC.USD).toString();
       })
       .catch((res) => console.log(res, 'get rates'));
   }
 
-  changeAmount(currency): void {
+  public changeAmount(e, currency): void {
+    if (this[currency].value && this[currency].value.toString().indexOf('.') !== '-1') {
+      this[currency].setValue(+this[currency].value.toFixed(8));
+    }
     if (currency === 'duc') {
-      this.rateGroup.value.ducx = new BigNumber(this.rateGroup.value.duc).multipliedBy(this.ratio).toString();
+      this.ducx.setValue(new BigNumber(this.duc.value).multipliedBy(this.ratio).toString());
     } else {
-      this.rateGroup.value.duc = new BigNumber(this.rateGroup.value.ducx).dividedBy(this.ratio).toString();
+      this.duc.setValue(new BigNumber(this.ducx.value).multipliedBy(this.ratio).toString());
     }
   }
 
   public setRates(): void {
     this.rateService
       .changeRates({
-        DUC: +this.rateGroup.value.duc,
-        DUCX: +this.rateGroup.value.ducx,
+        DUC: +this.duc.value,
+        DUCX: +this.ducx.value,
       })
       .then((res) => console.log(res, 'changeRates'))
       .catch((res) => console.log(res, 'changeRates'));
