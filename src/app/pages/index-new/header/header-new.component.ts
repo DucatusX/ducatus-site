@@ -1,13 +1,7 @@
 import { UserService } from 'src/app/service/user/user.service';
 import { Component, OnInit } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import {
-  Router,
-  Event,
-  NavigationStart,
-  NavigationEnd,
-  NavigationError,
-} from '@angular/router';
+import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
 import { hideHeaderInRoutes, adminHeaderInRoutes } from 'src/app/params';
 
 import * as $ from 'jquery';
@@ -31,11 +25,7 @@ export class HeaderNewComponent implements OnInit {
   public adminHeader = false;
   public buyHeader = false;
 
-  constructor(
-    public translate: TranslateService,
-    private router: Router,
-    private userService: UserService
-  ) {
+  constructor(public translate: TranslateService, private router: Router, private userService: UserService) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
         // Show loading indicator
