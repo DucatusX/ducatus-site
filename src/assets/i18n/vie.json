@@ -423,6 +423,7 @@
     },
     "RATE": {
       "PRICE": "DUC giá bán",
+      "PRICEX": "DUCX giá bán",
       "APPLY": "Ứng dụng",
       "TITLE": "DUC/DUCX Giá bán"
     }

@@ -423,6 +423,7 @@
     },
     "RATE": {
       "PRICE": "DUC price",
+      "PRICEX": "DUCX price",
       "APPLY": "Apply",
       "TITLE": "DUC/DUCX Price"
     }

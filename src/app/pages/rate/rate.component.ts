@@ -29,9 +29,17 @@ export class RateComponent {
       this[currency].setValue(+this[currency].value.toFixed(8));
     }
     if (currency === 'duc') {
-      this.ducx.setValue(new BigNumber(this.duc.value).multipliedBy(this.ratio).toString());
+      if (this.duc.value < 1) {
+        this.ducx.setValue(new BigNumber(this.duc.value).multipliedBy(this.ratio).toString());
+      } else {
+        this.ducx.setValue(new BigNumber(this.duc.value).dividedBy(this.ratio).toString());
+      }
     } else {
-      this.duc.setValue(new BigNumber(this.ducx.value).multipliedBy(this.ratio).toString());
+      if (this.ducx.value < 1) {
+        this.duc.setValue(new BigNumber(this.ducx.value).dividedBy(this.ratio).toString());
+      } else {
+        this.duc.setValue(new BigNumber(this.ducx.value).multipliedBy(this.ratio).toString());
+      }
     }
   }
 
