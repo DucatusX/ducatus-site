@@ -862,6 +862,10 @@ $custom-typography: mat-typography-config(
         }
     }
 
+    &.buy-footer &-wrap {
+        background-color: #0e0e0e;
+    }
+
     &-title {
         display: block;
         margin-bottom: 5px;
@@ -874,10 +878,18 @@ $custom-typography: mat-typography-config(
         }
     }
 
+    &.buy-footer &-title {
+        color: $gold-yellow;
+    }
+
     &-text {
         font-size: 16px;
         display: block;
         color: white;
+    }
+
+    &.buy-footer &-text {
+        color: $gold-yellow;
     }
 
     &-line {
@@ -940,6 +952,18 @@ $custom-typography: mat-typography-config(
         }
     }
 
+    &.buy-footer &-list .download_ducatus {
+        background-image: url('assets/img/buttons/webwallet-lottery.svg');
+    }
+
+    &.buy-footer &-list .download_googleplay {
+        background-image: url('assets/img/buttons/googleplay-lottery.svg');
+    }
+
+    &.buy-footer &-list .download_appstore {
+        background-image: url('assets/img/buttons/appstore-lottery.svg');
+    }
+
     &-block {
         width: 100%;
 
@@ -979,7 +1003,7 @@ $custom-typography: mat-typography-config(
 
                     @include b(650) {
                         text-align: center;
-                    }        
+                    }
                 }
             }
         }

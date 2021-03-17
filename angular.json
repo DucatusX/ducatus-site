@@ -139,5 +139,8 @@
       }
     }
   },
-  "defaultProject": "ducatus-site"
+  "defaultProject": "ducatus-site",
+  "cli": {
+    "analytics": "8a367a18-9c45-44d4-b5aa-debedc3e4422"
+  }
 }
