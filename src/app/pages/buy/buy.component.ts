@@ -25,11 +25,13 @@ export class BuyComponent implements OnInit {
   public checkAddress: boolean;
   public novalidAddress: boolean;
 
-  public valueGet: number;
-  public valueSend: number;
+  public valueGet: any;
+  public valueSend: any;
+  public rateSend;
 
   public coinGet = 'DUC';
   public coinSend = 'DUCX';
+  private prevCoinGet = 'DUC';
   public coinsFormGet = coinsFormGet;
   public coinsFormSend = coinsFormSend;
 
@@ -55,6 +57,7 @@ export class BuyComponent implements OnInit {
 
     this.buyservice.getRates().then((result: BuyRates) => {
       this.rates = result;
+      this.rateSend = new BigNumber(this.rates[this.coinGet][this.coinSend]).toFixed();
     });
   }
 
@@ -64,11 +67,16 @@ export class BuyComponent implements OnInit {
       this.addresses = null;
       this.address = '';
       this.coinsGet.nativeElement.checked = false;
-      this.amountSend();
+      if (this.prevCoinGet !== this.coinGet) {
+        this.prevCoinGet = this.coinGet;
+        this.valueGet = null;
+        this.valueSend = null;
+      }
     } else {
       this.coinsSend.nativeElement.checked = false;
       this.amountGet();
     }
+    this.rateSend = new BigNumber(this.rates[this.coinGet][this.coinSend]).toFixed();
 
     if (this.addresses) {
       this.setQr();
@@ -80,14 +88,14 @@ export class BuyComponent implements OnInit {
   }
 
   public amountGet(): any {
-    this.valueSend = new BigNumber(this.valueGet).multipliedBy(this.rates[this.coinGet][this.coinSend]).toNumber();
+    this.valueSend = new BigNumber(this.valueGet).multipliedBy(this.rates[this.coinGet][this.coinSend]).toFixed();
     if (this.addresses) {
       this.setQr();
     }
   }
 
   public amountSend(): any {
-    this.valueGet = new BigNumber(this.valueSend).div(this.rates[this.coinGet][this.coinSend]).toNumber();
+    this.valueGet = new BigNumber(this.valueSend).div(this.rates[this.coinGet][this.coinSend]).toFixed();
     if (this.addresses) {
       this.setQr();
     }
