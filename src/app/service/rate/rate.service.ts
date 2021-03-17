@@ -7,7 +7,7 @@ export class RateService {
   constructor(private http: HttpClient, private httpService: HttpService) {}
 
   public getRates() {
-    return this.http.get(`https://ducexpl.rocknblock.io/api/v1/rates/`).toPromise();
+    return this.http.get(`https://rates.ducatuscoins.com/api/v1/rates/`).toPromise();
   }
 
   public changeRates(data: any) {
