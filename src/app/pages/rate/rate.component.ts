@@ -25,21 +25,26 @@ export class RateComponent {
   }
 
   public changeAmount(e, currency): void {
-    if (this[currency].value && this[currency].value.toString().indexOf('.') !== '-1') {
-      this[currency].setValue(+this[currency].value.toFixed(8));
-    }
     if (currency === 'duc') {
       if (this.duc.value < 1) {
-        this.ducx.setValue(new BigNumber(this.duc.value).multipliedBy(this.ratio).toString());
+        this.ducx.setValue(new BigNumber(this.duc.value).multipliedBy(this.ratio).toFixed().toString());
       } else {
-        this.ducx.setValue(new BigNumber(this.duc.value).dividedBy(this.ratio).toString());
+        this.ducx.setValue(new BigNumber(this.duc.value).dividedBy(this.ratio).toFixed().toString());
       }
     } else {
       if (this.ducx.value < 1) {
-        this.duc.setValue(new BigNumber(this.ducx.value).dividedBy(this.ratio).toString());
+        this.duc.setValue(new BigNumber(this.ducx.value).dividedBy(this.ratio).toFixed().toString());
       } else {
-        this.duc.setValue(new BigNumber(this.ducx.value).multipliedBy(this.ratio).toString());
+        this.duc.setValue(new BigNumber(this.ducx.value).multipliedBy(this.ratio).toFixed().toString());
       }
+    }
+    if (this.duc.value && this.duc.value.toString().indexOf('.') !== '-1' && this.duc.value.toString().split('.')[1].length > 8) {
+      const amount = new BigNumber(+this.duc.value).toFixed(8);
+      this.duc.setValue(amount);
+    }
+    if (this.ducx.value && this.ducx.value.toString().indexOf('.') !== '-1' && this.ducx.value.toString().split('.')[1].length > 8) {
+      const amount = new BigNumber(+this.ducx.value).toFixed(8);
+      this.ducx.setValue(amount);
     }
   }
 
