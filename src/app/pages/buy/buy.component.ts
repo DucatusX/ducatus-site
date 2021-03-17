@@ -67,7 +67,6 @@ export class BuyComponent implements OnInit {
       this.addresses = null;
       this.address = '';
       this.coinsGet.nativeElement.checked = false;
-      // this.amountSend();
       if (this.prevCoinGet !== this.coinGet) {
         this.prevCoinGet = this.coinGet;
         this.valueGet = null;
