@@ -38,12 +38,12 @@ export class RateComponent {
         this.duc.setValue(new BigNumber(this.ducx.value).multipliedBy(this.ratio).toFixed().toString());
       }
     }
-    if (this.duc.value && this.duc.value.toString().indexOf('.') !== '-1' && this.duc.value.toString().split('.')[1].length > 8) {
-      const amount = new BigNumber(+this.duc.value).toFixed(8);
+    if (+this.duc.value && this.duc.value.toString().indexOf('.') !== '-1' && new BigNumber(this.duc.value).toFixed().toString().split('.')[1].length > 8) {
+      const amount = new BigNumber(new BigNumber(+this.duc.value).toFixed(8)).toFixed();
       this.duc.setValue(amount);
     }
-    if (this.ducx.value && this.ducx.value.toString().indexOf('.') !== '-1' && this.ducx.value.toString().split('.')[1].length > 8) {
-      const amount = new BigNumber(+this.ducx.value).toFixed(8);
+    if (+this.ducx.value && this.ducx.value.toString().indexOf('.') !== '-1' && new BigNumber(this.ducx.value).toFixed().toString().split('.')[1].length > 8) {
+      const amount = new BigNumber(new BigNumber(+this.ducx.value).toFixed(8)).toFixed();
       this.ducx.setValue(amount);
     }
   }
