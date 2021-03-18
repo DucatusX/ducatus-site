@@ -5,6 +5,7 @@ import { BuyAddresses, BuyRates } from 'src/app/interfaces/buy.interface';
 import { BuyService } from 'src/app/service/buy/buy.service';
 import { coinsFormSend, coinsFormGet, coins } from './parameters';
 import { FormControl } from '@angular/forms';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-buy',
@@ -35,6 +36,7 @@ export class BuyComponent implements OnInit {
   private prevCoinGet = 'DUC';
   public coinsFormGet = coinsFormGet;
   public coinsFormSend = coinsFormSend;
+  private dayDucLimit;
 
   public qr: string;
 
@@ -85,28 +87,29 @@ export class BuyComponent implements OnInit {
   }
 
   private setQr(): void {
-    this.qr = this.coins[this.coinSend].name.toLowerCase() + ':' + this.addresses[this.coins[this.coinSend].symbol.toLowerCase() + '_address'] + this.coins[this.coinSend].qrAmount + (this.valueSend ? this.valueSend.value.toFixed(this.coins[this.coinSend].decimal).toString() : '0');
+    this.qr = this.coins[this.coinSend].name.toLowerCase() + ':' + this.addresses[this.coins[this.coinSend].symbol.toLowerCase() + '_address'] + this.coins[this.coinSend].qrAmount + (this.valueSend.value ? this.valueSend.value.toFixed(this.coins[this.coinSend].decimal).toString() : '0');
   }
 
   public amountGet(): any {
-    if (this.coinGet === 'DUC' && +this.valueGet.value > 25000) {
-      this.valueGet.setValue(25000);
+    if (this.coinGet === 'DUCX') {
+      const valueSend = new BigNumber(this.valueGet.value).multipliedBy(this.rates[this.coinGet][this.coinSend]).toFixed();
+      if (this.dayDucLimit && +valueSend > +this.dayDucLimit) {
+        this.valueSend.setValue(this.dayDucLimit);
+        this.amountSend();
+      } else {
+        this.valueSend.setValue(valueSend);
+      }
+    } else {
+      this.valueSend.setValue(new BigNumber(this.valueGet.value).multipliedBy(this.rates[this.coinGet][this.coinSend]).toFixed());
     }
-    if (this.coinGet === 'DUCX' && +this.valueGet.value > 2500) {
-      this.valueGet.setValue(2500);
-    }
-    this.valueSend.setValue(new BigNumber(this.valueGet.value).multipliedBy(this.rates[this.coinGet][this.coinSend]).toFixed());
     if (this.addresses) {
       this.setQr();
     }
   }
 
   public amountSend(): any {
-    if (this.coinSend === 'DUC' && +this.valueSend.value > 25000) {
-      this.valueSend.setValue(25000);
-    }
-    if (this.coinSend === 'DUCX' && +this.valueSend.value > 2500) {
-      this.valueSend.setValue(2500);
+    if (this.dayDucLimit && this.coinSend === 'DUC' && +this.valueSend.value > +this.dayDucLimit) {
+      this.valueSend.setValue(+this.dayDucLimit);
     }
     this.valueGet.setValue(new BigNumber(this.valueSend.value).div(this.rates[this.coinGet][this.coinSend]).toFixed());
     if (this.addresses) {
@@ -138,7 +141,22 @@ export class BuyComponent implements OnInit {
             this.novalidAddress = true;
             return;
           }
-          $.trim(this.address) === '' || $.trim(this.address).length < 15 ? (this.novalidAddress = true) : this.getAddresses();
+          if ($.trim(this.address) === '' || $.trim(this.address).length < 15) {
+            this.novalidAddress = true;
+          } else {
+            this.buyservice
+              .getLimit(this.address)
+              .then((res) => {
+                this.dayDucLimit = new BigNumber(res.daily_available).dividedBy(new BigNumber(10).pow(8)).toFixed();
+                if (+this.valueSend.value > +this.dayDucLimit) {
+                  this.amountGet();
+                }
+                this.getAddresses();
+              })
+              .catch(() => {
+                this.novalidAddress = true;
+              });
+          }
         } else {
           this.novalidAddress = true;
         }
