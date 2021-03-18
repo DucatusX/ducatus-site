@@ -36,7 +36,7 @@ export class BuyComponent implements OnInit {
   private prevCoinGet = 'DUC';
   public coinsFormGet = coinsFormGet;
   public coinsFormSend = coinsFormSend;
-  private dayDucLimit;
+  private dayDucLimit = 25000;
   private weekDucLimit;
 
   public qr: string;
