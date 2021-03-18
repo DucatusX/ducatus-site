@@ -94,7 +94,7 @@ export class BuyComponent implements OnInit {
   public amountGet(): any {
     if (this.coinGet === 'DUCX') {
       const valueSend = new BigNumber(this.valueGet.value).multipliedBy(this.rates[this.coinGet][this.coinSend]).toFixed();
-      if (!+this.weekDucLimit) {
+      if (+this.weekDucLimit === 0) {
         this.valueSend.setValue(0);
         this.valueGet.setValue(0);
         return;
@@ -114,7 +114,7 @@ export class BuyComponent implements OnInit {
   }
 
   public amountSend(): any {
-    if (this.coinSend === 'DUC' && !+this.weekDucLimit) {
+    if (this.coinSend === 'DUC' && +this.weekDucLimit === 0) {
       this.valueSend.setValue(0);
       this.valueGet.setValue(0);
       return;
@@ -160,7 +160,7 @@ export class BuyComponent implements OnInit {
               .then((res) => {
                 this.dayDucLimit = new BigNumber(res.daily_available).dividedBy(new BigNumber(10).pow(8)).toFixed();
                 this.weekDucLimit = new BigNumber(res.weekly_available).dividedBy(new BigNumber(10).pow(8)).toFixed();
-                if (+this.valueSend.value > +this.dayDucLimit || !+this.weekDucLimit) {
+                if (+this.valueSend.value > +this.dayDucLimit || +this.weekDucLimit === 0) {
                   this.amountGet();
                 }
                 this.getAddresses();
