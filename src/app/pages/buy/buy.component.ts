@@ -37,6 +37,7 @@ export class BuyComponent implements OnInit {
   public coinsFormGet = coinsFormGet;
   public coinsFormSend = coinsFormSend;
   private dayDucLimit;
+  private weekDucLimit;
 
   public qr: string;
 
@@ -93,6 +94,11 @@ export class BuyComponent implements OnInit {
   public amountGet(): any {
     if (this.coinGet === 'DUCX') {
       const valueSend = new BigNumber(this.valueGet.value).multipliedBy(this.rates[this.coinGet][this.coinSend]).toFixed();
+      if (!+this.weekDucLimit) {
+        this.valueSend.setValue(0);
+        this.valueGet.setValue(0);
+        return;
+      }
       if (this.dayDucLimit && +valueSend > +this.dayDucLimit) {
         this.valueSend.setValue(this.dayDucLimit);
         this.amountSend();
@@ -108,6 +114,11 @@ export class BuyComponent implements OnInit {
   }
 
   public amountSend(): any {
+    if (this.coinSend === 'DUC' && !+this.weekDucLimit) {
+      this.valueSend.setValue(0);
+      this.valueGet.setValue(0);
+      return;
+    }
     if (this.dayDucLimit && this.coinSend === 'DUC' && +this.valueSend.value > +this.dayDucLimit) {
       this.valueSend.setValue(+this.dayDucLimit);
     }
@@ -148,7 +159,8 @@ export class BuyComponent implements OnInit {
               .getLimit(this.address)
               .then((res) => {
                 this.dayDucLimit = new BigNumber(res.daily_available).dividedBy(new BigNumber(10).pow(8)).toFixed();
-                if (+this.valueSend.value > +this.dayDucLimit) {
+                this.weekDucLimit = new BigNumber(res.weekly_available).dividedBy(new BigNumber(10).pow(8)).toFixed();
+                if (+this.valueSend.value > +this.dayDucLimit || !+this.weekDucLimit) {
                   this.amountGet();
                 }
                 this.getAddresses();
