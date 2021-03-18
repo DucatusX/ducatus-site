@@ -9,6 +9,10 @@ export class BuyService {
     return this.httpService.get(`rates/`).toPromise();
   }
 
+  public getLimit(address) {
+    return this.httpService.post('transfers/', { address }, 'api/v1/').toPromise();
+  }
+
   public getLottery() {
     return this.httpService.get(`lotteries/`).toPromise();
   }
@@ -19,21 +23,15 @@ export class BuyService {
   }
 
   public getLotteryPlayers(loteryId, page) {
-    return this.httpService
-      .get(`lotteries_players/?lottery_id=${loteryId}&page=${page}`)
-      .toPromise();
+    return this.httpService.get(`lotteries_players/?lottery_id=${loteryId}&page=${page}`).toPromise();
   }
 
   public getValidateDucatusAddress(address: string) {
-    return this.httpService
-      .post(`validate_ducatus_address/`, { address })
-      .toPromise();
+    return this.httpService.post(`validate_ducatus_address/`, { address }).toPromise();
   }
 
   public getCardLink(amount: number, currency: string, email: string) {
-    return this.httpService
-      .post(`add_charge/`, { amount, currency, email })
-      .toPromise();
+    return this.httpService.post(`add_charge/`, { amount, currency, email }).toPromise();
   }
 
   public getExchange(to_address: string, to_currency: string, email: string) {
@@ -41,7 +39,7 @@ export class BuyService {
       .post(`exchange/`, {
         email,
         to_address,
-        to_currency
+        to_currency,
       })
       .toPromise();
   }
