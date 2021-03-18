@@ -36,7 +36,7 @@ export class BuyComponent implements OnInit {
   private prevCoinGet = 'DUC';
   public coinsFormGet = coinsFormGet;
   public coinsFormSend = coinsFormSend;
-  private dayDucLimit = 25000;
+  private dayDucLimit: any;
   private weekDucLimit;
 
   public qr: string;
@@ -44,6 +44,7 @@ export class BuyComponent implements OnInit {
   constructor(private buyservice: BuyService, private cookieService: CookieService) {}
 
   ngOnInit(): void {
+    this.dayDucLimit = '25000';
     this.cookieService.get('termsBuy') ? this.acceptModalTerms(true) : (this.modal = true);
   }
 
