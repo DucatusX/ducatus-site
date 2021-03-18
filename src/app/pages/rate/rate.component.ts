@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { RateService } from '../../service/rate/rate.service';
 import { BigNumber } from 'bignumber.js';
 
@@ -9,7 +9,6 @@ import { BigNumber } from 'bignumber.js';
   styleUrls: ['./rate.component.scss'],
 })
 export class RateComponent {
-  public rateGroup: FormGroup;
   private ratio: string;
   public duc = new FormControl('');
   public ducx = new FormControl('');

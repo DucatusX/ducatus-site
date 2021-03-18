@@ -13,7 +13,7 @@
         <div class="ducatus-pay-form" *ngIf="rates">
           <div class="group group-input group-input-select">
             <label for="get-coin">{{ 'PAGE.BUY.FORM.FIELD.GET.TEXT' | translate }}</label>
-            <input type="number" min="0" [placeholder]="'PAGE.BUY.FORM.FIELD.GET.PLACEHOLDER' | translate" [(ngModel)]="valueGet" (ngModelChange)="amountGet()" class="input input-white" id="get-coin" />
+            <input type="number" min="0" [placeholder]="'PAGE.BUY.FORM.FIELD.GET.PLACEHOLDER' | translate" [formControl]="valueGet" (input)="amountGet()" class="input input-white" id="get-coin" />
 
             <!-- Ducatus Form Select Get Coins -->
             <label for="select-form-get" class="select-coin select-coin-fill" [ngClass]="{ 'select-coin-start': openFormGet.checked }">
@@ -43,7 +43,7 @@
 
           <div class="group group-input group-input-select">
             <label for="send-coin">{{ 'PAGE.BUY.FORM.FIELD.SEND.TEXT' | translate }}</label>
-            <input min="0" type="number" [placeholder]="'PAGE.BUY.FORM.FIELD.SEND.PLACEHOLDER' | translate" [(ngModel)]="valueSend" (ngModelChange)="amountSend()" class="input input-white" id="send-coin" />
+            <input min="0" type="number" [placeholder]="'PAGE.BUY.FORM.FIELD.SEND.PLACEHOLDER' | translate" [formControl]="valueSend" (input)="amountSend()" class="input input-white" id="send-coin" />
 
             <!-- Ducatus Form Select Send Coins -->
             <label for="select-form-send" class="select-coin select-coin-fill" [ngClass]="{ 'select-coin-start': openFormSend.checked }">

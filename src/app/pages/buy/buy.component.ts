@@ -4,6 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { BuyAddresses, BuyRates } from 'src/app/interfaces/buy.interface';
 import { BuyService } from 'src/app/service/buy/buy.service';
 import { coinsFormSend, coinsFormGet, coins } from './parameters';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-buy',
@@ -25,8 +26,8 @@ export class BuyComponent implements OnInit {
   public checkAddress: boolean;
   public novalidAddress: boolean;
 
-  public valueGet: any;
-  public valueSend: any;
+  public valueGet = new FormControl('');
+  public valueSend = new FormControl('');
   public rateSend;
 
   public coinGet = 'DUC';
@@ -69,8 +70,8 @@ export class BuyComponent implements OnInit {
       this.coinsGet.nativeElement.checked = false;
       if (this.prevCoinGet !== this.coinGet) {
         this.prevCoinGet = this.coinGet;
-        this.valueGet = null;
-        this.valueSend = null;
+        this.valueGet.setValue(null);
+        this.valueSend.setValue(null);
       }
     } else {
       this.coinsSend.nativeElement.checked = false;
@@ -84,18 +85,30 @@ export class BuyComponent implements OnInit {
   }
 
   private setQr(): void {
-    this.qr = this.coins[this.coinSend].name.toLowerCase() + ':' + this.addresses[this.coins[this.coinSend].symbol.toLowerCase() + '_address'] + this.coins[this.coinSend].qrAmount + (this.valueSend ? this.valueSend.toFixed(this.coins[this.coinSend].decimal).toString() : '0');
+    this.qr = this.coins[this.coinSend].name.toLowerCase() + ':' + this.addresses[this.coins[this.coinSend].symbol.toLowerCase() + '_address'] + this.coins[this.coinSend].qrAmount + (this.valueSend ? this.valueSend.value.toFixed(this.coins[this.coinSend].decimal).toString() : '0');
   }
 
   public amountGet(): any {
-    this.valueSend = new BigNumber(this.valueGet).multipliedBy(this.rates[this.coinGet][this.coinSend]).toFixed();
+    if (this.coinGet === 'DUC' && +this.valueGet.value > 25000) {
+      this.valueGet.setValue(25000);
+    }
+    if (this.coinGet === 'DUCX' && +this.valueGet.value > 2500) {
+      this.valueGet.setValue(2500);
+    }
+    this.valueSend.setValue(new BigNumber(this.valueGet.value).multipliedBy(this.rates[this.coinGet][this.coinSend]).toFixed());
     if (this.addresses) {
       this.setQr();
     }
   }
 
   public amountSend(): any {
-    this.valueGet = new BigNumber(this.valueSend).div(this.rates[this.coinGet][this.coinSend]).toFixed();
+    if (this.coinSend === 'DUC' && +this.valueSend.value > 25000) {
+      this.valueSend.setValue(25000);
+    }
+    if (this.coinSend === 'DUCX' && +this.valueSend.value > 2500) {
+      this.valueSend.setValue(2500);
+    }
+    this.valueGet.setValue(new BigNumber(this.valueSend.value).div(this.rates[this.coinGet][this.coinSend]).toFixed());
     if (this.addresses) {
       this.setQr();
     }
