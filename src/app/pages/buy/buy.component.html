@@ -72,6 +72,7 @@
             <input [(ngModel)]="address" (ngModelChange)="setAddress()" [disabled]="checkAddress" class="input input-white" id="ducatus-address" type="text" oninput="this.value = this.value.replace('ducatus:', '');" [placeholder]="'PAGE.BUY.FORM.ADDRESS.PLACEHOLDER' | translate: { coin: coins[coinGet].symbol }" />
             <span class="error-address-value" *ngIf="novalidAddress">{{ 'PAGE.BUY.FORM.ADDRESS.ERROR' | translate }}</span>
           </div>
+          <div class="text text-bold attantion">Important: there’s a limit for swapping DUC to DUCX. 25,000 DUC / day and 100,000 DUC / week. If you send DUC above the limit, the excess will be returned to you.</div>
 
           <div id="loading-address" [ngClass]="{ 'loading-address-start': !addresses }" class="group group-input group-input-copy m-b-0 qr-wrap">
             <div class="group-wrap qr-address">
