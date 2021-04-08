@@ -53,7 +53,7 @@ export class BuyComponent implements OnInit {
       .getAvailableSwap()
       .then((res: boolean) => {
         this.isAvailableDucSwap = res;
-        if (this.coinGet === 'DUC' && this.coinSend === 'DUCX') {
+        if (this.coinGet === 'DUCX' && this.coinSend === 'DUC') {
           if (!this.isAvailableDucSwap) {
             this.isAvailableSwap = false;
           } else {
@@ -106,7 +106,7 @@ export class BuyComponent implements OnInit {
     if (this.addresses) {
       this.setQr();
     }
-    if (this.coinGet === 'DUC' && this.coinSend === 'DUCX') {
+    if (this.coinGet === 'DUCX' && this.coinSend === 'DUC') {
       if (!this.isAvailableDucSwap) {
         this.isAvailableSwap = false;
       } else {
