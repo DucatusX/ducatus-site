@@ -67,12 +67,13 @@
             <!-- End Ducatus Form Select Send Coins -->
           </div>
 
-          <div class="group group-input">
+          <div class="group group-input" *ngIf="isAvailableSwap">
             <label for="ducatus-address" [innerHTML]="'PAGE.BUY.FORM.ADDRESS.TEXT' | translate: { coin: coins[coinGet].symbol, coinName: coins[coinGet].name }"></label>
             <input [(ngModel)]="address" (ngModelChange)="setAddress()" [disabled]="checkAddress" class="input input-white" id="ducatus-address" type="text" oninput="this.value = this.value.replace('ducatus:', '');" [placeholder]="'PAGE.BUY.FORM.ADDRESS.PLACEHOLDER' | translate: { coin: coins[coinGet].symbol }" />
             <span class="error-address-value" *ngIf="novalidAddress">{{ 'PAGE.BUY.FORM.ADDRESS.ERROR' | translate }}</span>
           </div>
-          <div class="text text-bold attantion">Important: there’s a limit for swapping DUC to DUCX. 25,000 DUC / day and 100,000 DUC / week. If you send DUC above the limit, the excess will be returned to you.</div>
+          <div class="text text-bold attantion" *ngIf="isAvailableSwap">Important: there’s a limit for swapping DUC to DUCX. 25,000 DUC / day and 100,000 DUC / week. If you send DUC above the limit, the excess will be returned to you.</div>
+          <div class="text text-bold attantion" *ngIf="!isAvailableSwap">DUC to DUCX swap is currently restricted, please try again later</div>
 
           <div id="loading-address" [ngClass]="{ 'loading-address-start': !addresses }" class="group group-input group-input-copy m-b-0 qr-wrap">
             <div class="group-wrap qr-address">
