@@ -1,13 +1,7 @@
 import { UserService } from 'src/app/service/user/user.service';
 import { Component, OnInit } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import {
-  Router,
-  Event,
-  NavigationStart,
-  NavigationEnd,
-  NavigationError,
-} from '@angular/router';
+import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
 import { hideHeaderInRoutes, adminHeaderInRoutes } from 'src/app/params';
 
 import * as $ from 'jquery';
@@ -16,6 +10,7 @@ import * as $ from 'jquery';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
+  // tslint:disable-next-line: no-host-metadata-property
   host: { '(document:click)': 'onClick($event)' },
 })
 export class HeaderComponent implements OnInit {
@@ -29,11 +24,7 @@ export class HeaderComponent implements OnInit {
 
   public hideHeader = false;
   public adminHeader = false;
-  constructor(
-    public translate: TranslateService,
-    private router: Router,
-    private userService: UserService
-  ) {
+  constructor(public translate: TranslateService, private router: Router, private userService: UserService) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
         // Show loading indicator
@@ -82,7 +73,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  private onClick($event) {
+  private onClick($event): void {
     if ($($event.target).closest('.header-menu-toggle-block').length === 0) {
       if ($($event.target).closest('.select-coin-list-item').length === 0) {
         this.openMenu = false;
@@ -93,24 +84,24 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  private setActiveLanguage(event) {
+  private setActiveLanguage(event): any {
     if (this.currLanguage) {
       this.languagesList.map((lang) => {
-        if (lang['lng'] === this.currLanguage) {
-          lang['active'] = true;
+        if (lang.lng === this.currLanguage) {
+          lang.active = true;
         } else {
-          lang['active'] = false;
+          lang.active = false;
         }
       });
     }
     this.currLanguage = event.lang;
-    window['jQuery']['cookie']('lng', this.currLanguage);
+    window.jQuery.cookie('lng', this.currLanguage);
 
     this.languagesList.map((lang) => {
-      if (lang['lng'] === this.currLanguage) {
-        lang['active'] = true;
+      if (lang.lng === this.currLanguage) {
+        lang.active = true;
       } else {
-        lang['active'] = false;
+        lang.active = false;
       }
     });
     this.languagesList.sort((a, b) => {
@@ -118,15 +109,15 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  public toggleLanguage() {
+  public toggleLanguage(): void {
     this.openedLngList = !this.openedLngList;
   }
 
-  public setLanguage(lng) {
+  public setLanguage(lng): void {
     this.translator.use(lng);
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     // scroll menu
     const scrollPosY = window.pageYOffset | document.body.scrollTop;
     const navBar = document.getElementsByClassName('header')[0];
@@ -139,9 +130,11 @@ export class HeaderComponent implements OnInit {
       }
     }
 
-    window.onscroll = function changeNav() {
-      let scrollPosY = window.pageYOffset | document.body.scrollTop;
-      let navBar = document.getElementsByClassName('header')[0];
+    window.onscroll = function changeNav(): void {
+      // tslint:disable-next-line: no-shadowed-variable
+      const scrollPosY = window.pageYOffset | document.body.scrollTop;
+      // tslint:disable-next-line: no-shadowed-variable
+      const navBar = document.getElementsByClassName('header')[0];
 
       if (navBar) {
         if (scrollPosY > 100) {
@@ -153,7 +146,7 @@ export class HeaderComponent implements OnInit {
     };
   }
 
-  public logout() {
+  public logout(): void {
     this.userService.logout().then(() => {
       this.router.navigate(['/admin/login']);
     });

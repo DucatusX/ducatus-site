@@ -5,11 +5,9 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-countdown',
   templateUrl: './countdown.component.html',
-  styleUrls: ['./countdown.component.scss']
+  styleUrls: ['./countdown.component.scss'],
 })
-
 export class CountdownComponent implements OnInit {
-
   @Input() timeStart: number;
   @Input() correctTimeStart: number;
   @Input() timeEndDayPlus: number;
@@ -20,12 +18,14 @@ export class CountdownComponent implements OnInit {
   private subscription: Subscription;
   public message = '--:--:--:--';
 
-  constructor(
+  constructor() {}
 
-  ) { }
+  dhms(t): any {
+    let days: string | number;
+    let hours: string | number;
+    let minutes: string | number;
+    let seconds: string | number;
 
-  dhms(t) {
-    let days: string | number, hours: string | number, minutes: string | number, seconds: string | number;
     days = Math.floor(t / 86400);
     t -= days * 86400;
     hours = Math.floor(t / 3600) % 24;
@@ -39,17 +39,13 @@ export class CountdownComponent implements OnInit {
     minutes = minutes < 10 ? '0' + minutes : minutes;
     seconds = seconds < 10 ? '0' + seconds : seconds;
 
-    return [
-      days + ':',
-      hours + ':',
-      minutes + ':',
-      seconds
-    ].join('');
+    return [days + ':', hours + ':', minutes + ':', seconds].join('');
   }
 
-
-  ngOnInit() {
-    if (this.correctTimeStart) { this.timeStart = this.timeStart * 1000; }
+  ngOnInit(): void {
+    if (this.correctTimeStart) {
+      this.timeStart = this.timeStart * 1000;
+    }
 
     const future = new Date(this.timeStart);
     future.setDate(future.getDate() + this.timeEndDayPlus);
@@ -67,6 +63,4 @@ export class CountdownComponent implements OnInit {
   OnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
-
 }

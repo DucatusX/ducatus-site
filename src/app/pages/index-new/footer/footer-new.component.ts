@@ -5,19 +5,15 @@ import { hideFooterInRoutes } from 'src/app/params';
 @Component({
   selector: 'app-footer-new',
   templateUrl: './footer-new.component.html',
-  styleUrls: ['./footer-new.component.scss']
+  styleUrls: ['./footer-new.component.scss'],
 })
 export class FooterNewComponent implements OnInit {
-
   public privacyCookie = true;
   public hideFooter = false;
   public buyFooter = false;
   public sectionApp = true;
 
-  constructor(
-    private router: Router,
-  ) {
-
+  constructor(private router: Router) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
         // Show loading indicator
@@ -34,20 +30,20 @@ export class FooterNewComponent implements OnInit {
     });
   }
 
-  public privacyCookieSet() {
-    window['jQuery']['cookie']('privacyCookie', true);
+  public privacyCookieSet(): void {
+    window.jQuery.cookie('privacyCookie', true);
     this.privacyCookie = false;
   }
 
-  ngOnInit() {
-    if (window['jQuery']['cookie']('privacyCookie')) {
+  ngOnInit(): void {
+    if (window.jQuery.cookie('privacyCookie')) {
       this.privacyCookie = false;
     }
 
     const bottomMenu = document.getElementsByClassName('footer-menu');
     // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < bottomMenu.length; i++) {
-      bottomMenu[i].addEventListener('click', function () {
+      bottomMenu[i].addEventListener('click', () => {
         if ($(this).hasClass('footer-menu')) {
           if ($(this).parent().hasClass('footer-menu-same') && !$(this).parent().hasClass('footer-menu-same-open')) {
             $(this).parent().addClass('footer-menu-same-open');
@@ -64,7 +60,5 @@ export class FooterNewComponent implements OnInit {
         }
       });
     }
-
   }
-
 }

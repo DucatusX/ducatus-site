@@ -10,7 +10,7 @@ export interface FormModel {
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   public formIsProgress: boolean;
@@ -30,22 +30,19 @@ export class LoginComponent implements OnInit {
 
   public formModel: FormModel = {};
 
-  constructor(
-    private userService: UserService,
-    private router: Router
-  ) {
+  constructor(private userService: UserService, private router: Router) {
     this.userService.getCurrentUser(true, false).subscribe((user: UserInterface) => {
       this.hasUser = !user.is_ghost || false;
     });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (!this.hasUser) {
       this.router.navigate(['/admin/voucher']);
     }
   }
 
-  public sendLoginForm(form: NgForm) {
+  public sendLoginForm(form: NgForm): any {
     if (form.invalid) {
       return;
     }
@@ -55,7 +52,9 @@ export class LoginComponent implements OnInit {
       .authenticate(form.value)
       .then(
         (response) => {
-          if (response.key) { this.router.navigate(['/admin/voucher']); }
+          if (response.key) {
+            this.router.navigate(['/admin/voucher']);
+          }
         },
         (error) => {
           switch (error.status) {
@@ -81,14 +80,17 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  public logout() {
+  public logout(): void {
     this.logoutIsProgress = true;
 
-    this.userService.logout().then(() => {
-      this.hasUser = false;
-    }).finally(() => {
-      this.logoutIsProgress = false;
-      this.hasUser = false;
-    });
+    this.userService
+      .logout()
+      .then(() => {
+        this.hasUser = false;
+      })
+      .finally(() => {
+        this.logoutIsProgress = false;
+        this.hasUser = false;
+      });
   }
 }

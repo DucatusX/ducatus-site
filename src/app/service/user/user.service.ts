@@ -2,10 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
 import { Observable } from 'rxjs';
 import { URLS } from './user.service.api';
-import {
-  AuthUserInterface,
-  UserInterface,
-} from './user.interface';
+import { AuthUserInterface, UserInterface } from './user.interface';
 import { DEFAULT_USER } from './user.constant';
 
 @Injectable({
@@ -20,14 +17,14 @@ export class UserService {
     this.userObserves = [];
   }
 
-  private callSubscribers() {
+  private callSubscribers(): void {
     this.userObserves.forEach((userObserve) => {
       userObserve.next(this.userModel);
       this.userModel.isLogout = undefined;
     });
   }
 
-  public updateUser(afterLogout?: boolean) {
+  public updateUser(afterLogout?: boolean): any {
     if (this.updateProgress) {
       return;
     }
@@ -49,10 +46,7 @@ export class UserService {
       });
   }
 
-  public getCurrentUser(
-    withRequest?: boolean,
-    checkNow?: boolean
-  ): Observable<any> {
+  public getCurrentUser(withRequest?: boolean, checkNow?: boolean): Observable<any> {
     return new Observable((observer) => {
       this.userObserves.push(observer);
 
@@ -69,7 +63,7 @@ export class UserService {
       const th = this;
 
       return {
-        unsubscribe() {
+        unsubscribe(): any {
           th.userObserves = th.userObserves.filter((subscriber) => {
             return subscriber !== observer;
           });
@@ -82,9 +76,7 @@ export class UserService {
     return this.httpService.get(URLS.PROFILE, null, URLS.HOSTS.AUTH_PATH).toPromise();
   }
 
-  public authenticate(
-    data: AuthUserInterface
-  ): Promise<any> {
+  public authenticate(data: AuthUserInterface): Promise<any> {
     data.username = data.username ? data.username.toLowerCase() : data.username;
     return new Promise((resolve, reject) => {
       this.httpService
@@ -97,7 +89,7 @@ export class UserService {
     });
   }
 
-  public logout() {
+  public logout(): any {
     return this.httpService
       .get(URLS.LOGOUT, {}, URLS.HOSTS.AUTH_PATH)
       .toPromise()
