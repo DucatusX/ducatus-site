@@ -1,5 +1,5 @@
 import { BigNumber } from 'bignumber.js';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostBinding, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { BuyAddresses, BuyRates } from 'src/app/interfaces/buy.interface';
 import { BuyService } from 'src/app/service/buy/buy.service';
@@ -11,6 +11,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   selector: 'app-buy',
   templateUrl: './buy.component.html',
   styleUrls: ['./buy.component.scss'],
+  // tslint:disable-next-line: no-host-metadata-property
   host: { '(document:click)': 'onClick($event)' },
 })
 export class BuyComponent implements OnInit {

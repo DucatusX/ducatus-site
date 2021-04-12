@@ -10,6 +10,7 @@ import * as $ from 'jquery';
   selector: 'app-header-new',
   templateUrl: './header-new.component.html',
   styleUrls: ['./header-new.component.scss'],
+  // tslint:disable-next-line: no-host-metadata-property
   host: { '(document:click)': 'onClick($event)' },
 })
 export class HeaderNewComponent implements OnInit {
@@ -75,7 +76,7 @@ export class HeaderNewComponent implements OnInit {
     });
   }
 
-  private onClick($event) {
+  private onClick($event): void {
     if ($($event.target).closest('.header-menu-toggle-block').length === 0) {
       if ($($event.target).closest('.select-coin-list-item').length === 0) {
         this.openMenu = false;
@@ -86,24 +87,24 @@ export class HeaderNewComponent implements OnInit {
     }
   }
 
-  private setActiveLanguage(event) {
+  private setActiveLanguage(event): void {
     if (this.currLanguage) {
       this.languagesList.map((lang) => {
-        if (lang['lng'] === this.currLanguage) {
-          lang['active'] = true;
+        if (lang.lng === this.currLanguage) {
+          lang.active = true;
         } else {
-          lang['active'] = false;
+          lang.active = false;
         }
       });
     }
     this.currLanguage = event.lang;
-    window['jQuery']['cookie']('lng', this.currLanguage);
+    window.jQuery.cookie('lng', this.currLanguage);
 
     this.languagesList.map((lang) => {
-      if (lang['lng'] === this.currLanguage) {
-        lang['active'] = true;
+      if (lang.lng === this.currLanguage) {
+        lang.active = true;
       } else {
-        lang['active'] = false;
+        lang.active = false;
       }
     });
     this.languagesList.sort((a, b) => {
@@ -111,18 +112,18 @@ export class HeaderNewComponent implements OnInit {
     });
   }
 
-  public toggleLanguage() {
+  public toggleLanguage(): void {
     this.openedLngList = !this.openedLngList;
   }
 
-  public setLanguage(lng) {
+  public setLanguage(lng): void {
     this.translator.use(lng);
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     // scroll menu
-    var scrollPosY = window.pageYOffset | document.body.scrollTop;
-    var navBar = document.getElementsByClassName('header')[0];
+    const scrollPosY = window.pageYOffset | document.body.scrollTop;
+    const navBar = document.getElementsByClassName('header')[0];
 
     if (scrollPosY > 100) {
       navBar.classList.add('header-scroll');
@@ -130,9 +131,11 @@ export class HeaderNewComponent implements OnInit {
       navBar.classList.remove('header-scroll');
     }
 
-    window.onscroll = function changeNav() {
-      var scrollPosY = window.pageYOffset | document.body.scrollTop;
-      var navBar = document.getElementsByClassName('header')[0];
+    window.onscroll = function changeNav(): void {
+      // tslint:disable-next-line: no-shadowed-variable
+      const scrollPosY = window.pageYOffset | document.body.scrollTop;
+      // tslint:disable-next-line: no-shadowed-variable
+      const navBar = document.getElementsByClassName('header')[0];
 
       if (scrollPosY > 100) {
         navBar.classList.add('header-scroll');
@@ -142,7 +145,7 @@ export class HeaderNewComponent implements OnInit {
     };
   }
 
-  public logout() {
+  public logout(): void {
     this.userService.logout().then(() => {
       this.router.navigate(['/admin/login']);
     });

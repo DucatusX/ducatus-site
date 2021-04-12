@@ -2,14 +2,10 @@ name: Develop manually
 on:
   workflow_dispatch:
     inputs:
-      version:
-        description: Node Version
-        default: 12
-        required: true
       deploy:
-        description: Deploy to test server
+        description: To test server?
         default: true
-        required: false
+        required: true
 jobs:
   build:
     name: Build project
@@ -40,7 +36,7 @@ jobs:
         with:
           name: ducatus-dist
           path: ./dist
-          retention-days: 1
+          retention-days: 3
   deploy:
     name: Deploy project to test server
     needs: build

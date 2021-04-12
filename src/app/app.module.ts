@@ -6,6 +6,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 
+// import { RouterModule } from '@angular/router';
+
 // plugins
 import { QRCodeModule } from 'angularx-qrcode';
 import { Ng2TelInputModule } from 'ng2-tel-input';
@@ -87,8 +89,9 @@ export function HttpLoaderFactory(http: HttpClient): any {
     CountdownComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    BrowserModule,
     QRCodeModule,
     FormsModule,
     Ng2TelInputModule,
@@ -97,7 +100,6 @@ export function HttpLoaderFactory(http: HttpClient): any {
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
-    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -116,7 +118,7 @@ export function HttpLoaderFactory(http: HttpClient): any {
     RecaptchaFormsModule,
     NgxPaginationModule,
   ],
-  providers: [UserResolver, GoogleAnalyticsService, CookieService],
+  providers: [HttpClientModule, UserResolver, GoogleAnalyticsService, CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -5,24 +5,21 @@ import { Resolve, Router } from '@angular/router';
 
 @Injectable()
 export class UserResolver implements Resolve<any> {
-  constructor(
-    private userService: UserService,
-    private router: Router
-  ) { }
+  constructor(private userService: UserService, private router: Router) {}
 
-  private continue(observer) {
+  private continue(observer): any {
     observer.next();
     observer.complete();
   }
 
-  resolve() {
+  resolve(): any {
     return new Observable((observer) => {
       const subscription = this.userService.getCurrentUser(true, true).subscribe((user) => {
         !user.is_ghost ? this.continue(observer) : this.router.navigate(['/admin/login']);
         subscription.unsubscribe();
       });
       return {
-        unsubscribe() { }
+        unsubscribe(): any {},
       };
     });
   }

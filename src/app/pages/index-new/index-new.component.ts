@@ -6,10 +6,9 @@ import Swiper from 'swiper';
 @Component({
   selector: 'app-index-new',
   templateUrl: './index-new.component.html',
-  styleUrls: ['./index-new.component.scss']
+  styleUrls: ['./index-new.component.scss'],
 })
 export class IndexNewComponent implements OnInit, OnDestroy {
-
   public mySwiper;
   public lang = 'eng';
 
@@ -21,7 +20,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         button: 'Download Whitepaper',
         image: 'slide-1.png',
         image_mob: 'slide-1-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       ita: {
         title: 'Ducatus Coin',
@@ -29,7 +28,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         button: 'Scarica il white paper',
         image: 'slide-1.png',
         image_mob: 'slide-1-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       deu: {
         title: 'Ducatus-Münze',
@@ -37,7 +36,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         button: 'Whitepaper herunterladen',
         image: 'slide-1.png',
         image_mob: 'slide-1-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       vie: {
         title: 'Đồng xu Ducatus',
@@ -45,7 +44,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         button: 'Tải xuống Whitepaper',
         image: 'slide-1.png',
         image_mob: 'slide-1-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
     },
     {
@@ -55,7 +54,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         button: 'Download Whitepaper',
         image: 'slide-2.png',
         image_mob: 'slide-2-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       ita: {
         title: 'Criptovaluta per la vita di tutti i giorni',
@@ -63,7 +62,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         button: 'Scarica il white paper',
         image: 'slide-2.png',
         image_mob: 'slide-2-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       deu: {
         title: 'Kryptowährung für den Alltag',
@@ -71,7 +70,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         button: 'Whitepaper herunterladen',
         image: 'slide-2.png',
         image_mob: 'slide-2-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       vie: {
         title: 'Tiền điện tử cho cuộc sống hàng ngày',
@@ -79,7 +78,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         button: 'Tải xuống Whitepaper',
         image: 'slide-2.png',
         image_mob: 'slide-2-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
     },
     {
@@ -89,7 +88,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         button: 'Download Whitepaper',
         image: 'slide-3.png',
         image_mob: 'slide-3-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       ita: {
         title: 'Difendere l\'economia senza contanti',
@@ -97,7 +96,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         button: 'Scarica il white paper',
         image: 'slide-3.png',
         image_mob: 'slide-3-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       deu: {
         title: 'Für die bargeldlose Wirtschaft eintreten',
@@ -105,7 +104,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         button: 'Whitepaper herunterladen',
         image: 'slide-3.png',
         image_mob: 'slide-3-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       vie: {
         title: 'Thúc đẩy nền kinh tế không tiền mặt',
@@ -113,18 +112,16 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         button: 'Tải xuống Whitepaper',
         image: 'slide-3.png',
         image_mob: 'slide-3-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
-      }
+        file: 'ducatus-coin-white-paper.pdf',
+      },
     },
   ];
 
-  constructor(
-    private translate: TranslateService
-  ) { }
+  constructor(private translate: TranslateService) {}
 
-  ngOnInit() {
-    const defaultLng = (navigator.language || navigator['browserLanguage']).split('-')[0];
-    const langToSet = window['jQuery']['cookie']('lng') || (['deu', 'eng', 'vie', 'ita'].includes(defaultLng) ? defaultLng : 'eng');
+  ngOnInit(): void {
+    const defaultLng = (navigator.language || navigator.browserLanguage).split('-')[0];
+    const langToSet = window.jQuery.cookie('lng') || (['deu', 'eng', 'vie', 'ita'].includes(defaultLng) ? defaultLng : 'eng');
 
     this.lang = langToSet;
 
@@ -141,11 +138,9 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         },
       });
     }, 1000);
-
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.mySwiper = undefined;
   }
-
 }
