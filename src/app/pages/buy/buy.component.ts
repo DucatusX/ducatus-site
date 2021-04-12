@@ -38,6 +38,8 @@ export class BuyComponent implements OnInit {
   public coinsFormSend = coinsFormSend;
   private dayDucLimit: any;
   private weekDucLimit;
+  private isAvailableDucSwap = true;
+  public isAvailableSwap = true;
 
   public qr: string;
 
@@ -46,6 +48,24 @@ export class BuyComponent implements OnInit {
   ngOnInit(): void {
     this.dayDucLimit = '25000';
     this.cookieService.get('termsBuy') ? this.acceptModalTerms(true) : (this.modal = true);
+
+    this.buyservice
+      .getAvailableSwap()
+      .then((res: boolean) => {
+        this.isAvailableDucSwap = res;
+        if (this.coinGet === 'DUCX' && this.coinSend === 'DUC') {
+          if (!this.isAvailableDucSwap) {
+            this.isAvailableSwap = false;
+          } else {
+            this.isAvailableSwap = true;
+          }
+        } else {
+          this.isAvailableSwap = true;
+        }
+      })
+      .catch(() => {
+        this.isAvailableDucSwap = false;
+      });
   }
 
   private onClick($event: any): void {
@@ -85,6 +105,15 @@ export class BuyComponent implements OnInit {
 
     if (this.addresses) {
       this.setQr();
+    }
+    if (this.coinGet === 'DUCX' && this.coinSend === 'DUC') {
+      if (!this.isAvailableDucSwap) {
+        this.isAvailableSwap = false;
+      } else {
+        this.isAvailableSwap = true;
+      }
+    } else {
+      this.isAvailableSwap = true;
     }
   }
 

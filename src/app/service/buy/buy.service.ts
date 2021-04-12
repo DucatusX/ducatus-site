@@ -5,6 +5,10 @@ import { HttpService } from '../http/http.service';
 export class BuyService {
   constructor(private httpService: HttpService) {}
 
+  public getAvailableSwap() {
+    return this.httpService.get(`exchange/status/`, {}, 'api/v1/').toPromise();
+  }
+
   public getRates() {
     return this.httpService.get(`rates/`).toPromise();
   }
