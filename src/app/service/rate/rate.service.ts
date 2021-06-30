@@ -7,7 +7,7 @@ export class RateService {
   constructor(private http: HttpClient, private httpService: HttpService) {}
 
   public getRates(): any {
-    const rateUrl = window.location.hostname === 'ducatuscoins.com' ? `https://rates.ducatuscoins.com/api/v1/rates/` : `https://ducexpl.rocknblock.io/api/v1/rates/`;
+    const rateUrl = window.location.hostname === 'www.ducatuscoins.com' ? `https://rates.ducatuscoins.com/api/v1/rates/` : `https://ducexpl.rocknblock.io/api/v1/rates/`;
     return this.http.get(rateUrl).toPromise();
   }
 

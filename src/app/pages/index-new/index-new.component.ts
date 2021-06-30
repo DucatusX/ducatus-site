@@ -58,7 +58,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
       },
       ita: {
         title: 'Criptovaluta per la vita di tutti i giorni',
-        text: 'Dall\'acquisto del caffè all\'acquisto di una nuova casa, ora puoi godere della pratica libertà del senza contanti. transazioni quotidiane senza confini e sicure.',
+        text: "Dall'acquisto del caffè all'acquisto di una nuova casa, ora puoi godere della pratica libertà del senza contanti. transazioni quotidiane senza confini e sicure.",
         button: 'Scarica il white paper',
         image: 'slide-2.png',
         image_mob: 'slide-2-mob.png',
@@ -91,7 +91,7 @@ export class IndexNewComponent implements OnInit, OnDestroy {
         file: 'ducatus-coin-white-paper.pdf',
       },
       ita: {
-        title: 'Difendere l\'economia senza contanti',
+        title: "Difendere l'economia senza contanti",
         text: 'Con Distribution, Convertibility, and Usability (DUC) al centro, Ducatus Coin possiede caratteristiche che sono fondamentali per costruire una solida economia senza contanti per il futuro.',
         button: 'Scarica il white paper',
         image: 'slide-3.png',
@@ -120,7 +120,8 @@ export class IndexNewComponent implements OnInit, OnDestroy {
   constructor(private translate: TranslateService) {}
 
   ngOnInit(): void {
-    const defaultLng = (navigator.language || navigator.browserLanguage).split('-')[0];
+    const nav: any = window.navigator;
+    const defaultLng = (navigator.language || nav.browserLanguage).split('-')[0];
     const langToSet = window.jQuery.cookie('lng') || (['deu', 'eng', 'vie', 'ita'].includes(defaultLng) ? defaultLng : 'eng');
 
     this.lang = langToSet;
