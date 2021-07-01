@@ -29,7 +29,7 @@ export class IndexComponent implements OnInit, OnDestroy {
       },
       ita: {
         title: 'Ducatus Coin',
-        text: "Ispirato all'antica moneta di scambio romana e alimentato dallo spirito rivoluzionario che ha creato la moneta digitale, Ducatus Coin presenta una forma alternativa di scambio finanziario - inclusiva, unica e che offre possibilità illimitate.",
+        text: 'Ispirato all\'antica moneta di scambio romana e alimentato dallo spirito rivoluzionario che ha creato la moneta digitale, Ducatus Coin presenta una forma alternativa di scambio finanziario - inclusiva, unica e che offre possibilità illimitate.',
         button: 'Scarica il white paper',
         image: 'slide-1.png',
         image_mob: 'slide-1-mob.png',
@@ -63,7 +63,7 @@ export class IndexComponent implements OnInit, OnDestroy {
       },
       ita: {
         title: 'Criptovaluta per la vita di tutti i giorni',
-        text: "Goditi la libertà di transazioni quotidiane senza contanti, senza confini e sicure, dall'acquisto del caffè del mattino all'acquisto della casa dei tuoi sogni, ora tutto possibile con Ducatus Coin.",
+        text: 'Goditi la libertà di transazioni quotidiane senza contanti, senza confini e sicure, dall\'acquisto del caffè del mattino all\'acquisto della casa dei tuoi sogni, ora tutto possibile con Ducatus Coin.',
         button: 'Scarica il white paper',
         image: 'slide-2.png',
         image_mob: 'slide-2-mob.png',
@@ -96,8 +96,8 @@ export class IndexComponent implements OnInit, OnDestroy {
         file: 'ducatus-coin-white-paper.pdf',
       },
       ita: {
-        title: "Sostenere l'economia digitale",
-        text: "Con la distribuzione, la convertibilità e l'usabilità (DUC) al centro, Ducatus Coin incoraggia l'uso pratico e l'applicazione della criptovaluta nella vita quotidiana.  Questi tratti sono fondamentali per aiutare a costruire una solida criptoeconomia per il futuro.",
+        title: 'Sostenere l\'economia digitale',
+        text: 'Con la distribuzione, la convertibilità e l\'usabilità (DUC) al centro, Ducatus Coin incoraggia l\'uso pratico e l\'applicazione della criptovaluta nella vita quotidiana.  Questi tratti sono fondamentali per aiutare a costruire una solida criptoeconomia per il futuro.',
         button: 'Scarica il white paper',
         image: 'slide-3.jpg',
         image_mob: 'slide-3-mob.png',
