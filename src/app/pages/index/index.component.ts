@@ -3,6 +3,11 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 import Swiper from 'swiper';
 
+declare global {
+  interface Window {
+    jQuery: any;
+  }
+}
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -120,7 +125,8 @@ export class IndexComponent implements OnInit, OnDestroy {
   constructor(private translate: TranslateService) {}
 
   ngOnInit(): void {
-    const defaultLng = (navigator.language || navigator.browserLanguage).split('-')[0];
+    const nav: any = window.navigator;
+    const defaultLng = (nav.language || nav.browserLanguage).split('-')[0];
     const langToSet = window.jQuery.cookie('lng') || (['deu', 'eng', 'vie', 'ita'].includes(defaultLng) ? defaultLng : 'eng');
 
     this.lang = langToSet;

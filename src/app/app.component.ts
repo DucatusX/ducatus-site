@@ -28,7 +28,8 @@ export class AppComponent implements OnInit {
       }
     });
 
-    const defaultLng = (navigator.language || navigator.browserLanguage).split('-')[0];
+    const nav: any = window.navigator;
+    const defaultLng = (navigator.language || nav.browserLanguage).split('-')[0];
     const langToSet = window.jQuery.cookie('lng') || (['deu', 'eng', 'vie', 'ita'].includes(defaultLng) ? defaultLng : 'eng');
 
     this.translateService.use(langToSet);
