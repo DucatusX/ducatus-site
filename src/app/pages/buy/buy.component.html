@@ -80,13 +80,13 @@
               <div class="group-wrap qr-address">
                 <label>{{ 'PAGE.BUY.FORM.RESULT.TEXT_1' | translate }} {{ coins[coinSend].name }} {{ 'PAGE.BUY.FORM.RESULT.TEXT_2' | translate }}</label>
                 <p class="input input-accent">
-                  <span *ngIf="addresses">{{ addresses['duc_address'] }}</span>
+                  <span *ngIf="addresses">{{ addresses[coins[coinSend].symbol.toLowerCase() + '_address'] }}</span>
                 </p>
-                <span *ngIf="addresses" class="copy-address icon icon-copy" [cdkCopyToClipboard]="addresses['duc_address']"></span>
+                <span *ngIf="addresses" class="copy-address icon icon-copy" [cdkCopyToClipboard]="addresses[coins[coinSend].symbol.toLowerCase() + '_address']"></span>
               </div>
 
               <div class="qrcode" [attr.title]="qr">
-                <qrcode *ngIf="addresses" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1" [qrdata]="addresses['duc_address']" [width]="80" [errorCorrectionLevel]="'L'"></qrcode>
+                <qrcode *ngIf="addresses" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1" [qrdata]="addresses[coins[coinSend].symbol.toLowerCase() + '_address']" [width]="80" [errorCorrectionLevel]="'L'"></qrcode>
               </div>
 
               <div class="group-wrap qr-textCode">
