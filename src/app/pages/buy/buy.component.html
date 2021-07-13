@@ -1,104 +1,105 @@
-<section class="section-header-page buy-page-header" style="background-image: url(/assets/img/buy-page/head-background.png)">
-  <div class="container">
-    <h1 class="h1__title-page" [innerHTML]="'PAGE.BUY.TITLE' | translate"></h1>
-  </div>
-</section>
+<div>
+  <section class="section-header-page buy-page-header" style="background-image: url(/assets/img/buy-page/head-background.png)">
+    <div class="container">
+      <h1 class="h1__title-page" [innerHTML]="'PAGE.BUY.TITLE' | translate"></h1>
+    </div>
+  </section>
 
-<section class="app">
-  <div class="container">
-    <div class="pay-form">
-      <div class="pay-form-wrap">
-        <!-- Left Side -->
-        <!-- Ducatus Form Buy Coins -->
-        <div class="ducatus-pay-form" *ngIf="rates">
-          <div class="group group-input group-input-select">
-            <label for="get-coin">{{ 'PAGE.BUY.FORM.FIELD.GET.TEXT' | translate }}</label>
-            <input type="number" min="0" [placeholder]="'PAGE.BUY.FORM.FIELD.GET.PLACEHOLDER' | translate" [formControl]="valueGet" (input)="amountGet()" class="input input-white" id="get-coin" />
+  <section class="app">
+    <div class="container">
+      <div class="pay-form">
+        <div class="pay-form-wrap">
+          <!-- Left Side -->
+          <!-- Ducatus Form Buy Coins -->
+          <div class="ducatus-pay-form" *ngIf="rates">
+            <div class="group group-input group-input-select">
+              <label for="get-coin">{{ 'PAGE.BUY.FORM.FIELD.GET.TEXT' | translate }}</label>
+              <input type="number" min="0" [placeholder]="'PAGE.BUY.FORM.FIELD.GET.PLACEHOLDER' | translate" [formControl]="valueGet" (input)="amountGet()" class="input input-white" id="get-coin" />
 
-            <!-- Ducatus Form Select Get Coins -->
-            <label for="select-form-get" class="select-coin select-coin-fill" [ngClass]="{ 'select-coin-start': openFormGet.checked }">
-              <input #openFormGet type="checkbox" id="select-form-get" hidden />
-              <span class="select-coin-selected">
-                <img [src]="'assets/img/icons/' + coins[coinGet].icon + '.png'" [alt]="coins[coinGet].name" />
-                {{ coins[coinGet].symbol }}
-              </span>
+              <!-- Ducatus Form Select Get Coins -->
+              <label for="select-form-get" class="select-coin select-coin-fill" [ngClass]="{ 'select-coin-start': openFormGet.checked }">
+                <input #openFormGet type="checkbox" id="select-form-get" hidden />
+                <span class="select-coin-selected">
+                  <img [src]="'assets/img/icons/' + coins[coinGet].icon + '.png'" [alt]="coins[coinGet].name" />
+                  {{ coins[coinGet].symbol }}
+                </span>
 
-              <div class="select-coin-list">
-                <div class="select-coin-list-wrap">
-                  <div *ngFor="let coin of coinsFormGet">
-                    <span class="select-coin-list-item" [ngClass]="{ 'select-coin-active': coins[coin].symbol === coinGet }" (click)="coinGet = coin; changeGetCoin(true); openFormGet.checked = false">
-                      <img [src]="'assets/img/icons/' + coins[coin].icon + '.png'" [alt]="coins[coin].name" />
-                      {{ coins[coin].symbol }}
-                    </span>
+                <div class="select-coin-list">
+                  <div class="select-coin-list-wrap">
+                    <div *ngFor="let coin of coinsFormGet">
+                      <span class="select-coin-list-item" [ngClass]="{ 'select-coin-active': coins[coin].symbol === coinGet }" (click)="coinGet = coin; changeGetCoin(true); openFormGet.checked = false">
+                        <img [src]="'assets/img/icons/' + coins[coin].icon + '.png'" [alt]="coins[coin].name" />
+                        {{ coins[coin].symbol }}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </label>
-            <!-- End Ducatus Form Select Get Coins -->
-          </div>
+              </label>
+              <!-- End Ducatus Form Select Get Coins -->
+            </div>
 
-          <div class="group group-text group-columns">
-            <span class="text">1 {{ coins[coinGet].name }} = {{ rateSend }} {{ coins[coinSend].name }}</span>
-          </div>
+            <div class="group group-text group-columns">
+              <span class="text">1 {{ coins[coinGet].name }} = {{ rateSend }} {{ coins[coinSend].name }}</span>
+            </div>
 
-          <div class="group group-input group-input-select">
-            <label for="send-coin">{{ 'PAGE.BUY.FORM.FIELD.SEND.TEXT' | translate }}</label>
-            <input min="0" type="number" [placeholder]="'PAGE.BUY.FORM.FIELD.SEND.PLACEHOLDER' | translate" [formControl]="valueSend" (input)="amountSend()" class="input input-white" id="send-coin" />
+            <div class="group group-input group-input-select">
+              <label for="send-coin">{{ 'PAGE.BUY.FORM.FIELD.SEND.TEXT' | translate }}</label>
+              <input min="0" type="number" [placeholder]="'PAGE.BUY.FORM.FIELD.SEND.PLACEHOLDER' | translate" [formControl]="valueSend" (input)="amountSend()" class="input input-white" id="send-coin" />
 
-            <!-- Ducatus Form Select Send Coins -->
-            <label for="select-form-send" class="select-coin select-coin-fill" [ngClass]="{ 'select-coin-start': openFormSend.checked }">
-              <input #openFormSend type="checkbox" id="select-form-send" hidden />
-              <span class="select-coin-selected">
-                <img [src]="'assets/img/icons/' + coins[coinSend].icon + '.png'" [alt]="coins[coinSend].name" />
-                {{ coins[coinSend].symbol }}
-              </span>
+              <!-- Ducatus Form Select Send Coins -->
+              <label for="select-form-send" class="select-coin select-coin-fill" [ngClass]="{ 'select-coin-start': openFormSend.checked }">
+                <input #openFormSend type="checkbox" id="select-form-send" hidden />
+                <span class="select-coin-selected">
+                  <img [src]="'assets/img/icons/' + coins[coinSend].icon + '.png'" [alt]="coins[coinSend].name" />
+                  {{ coins[coinSend].symbol }}
+                </span>
 
-              <div class="select-coin-list">
-                <div class="select-coin-list-wrap">
-                  <div *ngFor="let coin of coinsFormSend[coinGet]">
-                    <span class="select-coin-list-item" [ngClass]="{ 'select-coin-active': coins[coin].symbol === coinSend }" (click)="coinSend = coin; changeGetCoin(); openFormSend.checked = false">
-                      <img [src]="'assets/img/icons/' + coins[coin].icon + '.png'" [alt]="coins[coin].name" />
-                      {{ coins[coin].symbol }}
-                    </span>
+                <div class="select-coin-list">
+                  <div class="select-coin-list-wrap">
+                    <div *ngFor="let coin of coinsFormSend[coinGet]">
+                      <span class="select-coin-list-item" [ngClass]="{ 'select-coin-active': coins[coin].symbol === coinSend }" (click)="coinSend = coin; changeGetCoin(); openFormSend.checked = false">
+                        <img [src]="'assets/img/icons/' + coins[coin].icon + '.png'" [alt]="coins[coin].name" />
+                        {{ coins[coin].symbol }}
+                      </span>
+                    </div>
                   </div>
                 </div>
+              </label>
+              <!-- End Ducatus Form Select Send Coins -->
+            </div>
+
+            <div class="group group-input" *ngIf="isAvailableSwap">
+              <label for="ducatus-address" [innerHTML]="'PAGE.BUY.FORM.ADDRESS.TEXT' | translate: { coin: coins[coinGet].symbol, coinName: coins[coinGet].name }"></label>
+              <input [(ngModel)]="address" (ngModelChange)="setAddress()" [disabled]="checkAddress" class="input input-white" id="ducatus-address" type="text" oninput="this.value = this.value.replace('ducatus:', '');" [placeholder]="'PAGE.BUY.FORM.ADDRESS.PLACEHOLDER' | translate: { coin: coins[coinGet].symbol }" />
+              <span class="error-address-value" *ngIf="novalidAddress">{{ 'PAGE.BUY.FORM.ADDRESS.ERROR' | translate }}</span>
+            </div>
+            <div class="text text-bold attantion" *ngIf="isAvailableSwap">Important: there’s a limit for swapping DUC to DUCX. 25,000 DUC / day and 100,000 DUC / week. If you send DUC above the limit, the excess will be returned to you.</div>
+            <div class="text text-bold attantion" *ngIf="!isAvailableSwap">DUC to DUCX swap is currently restricted, please try again later</div>
+
+            <div id="loading-address" [ngClass]="{ 'loading-address-start': !addresses }" class="group group-input group-input-copy m-b-0 qr-wrap">
+              <div class="group-wrap qr-address">
+                <label>{{ 'PAGE.BUY.FORM.RESULT.TEXT_1' | translate }} {{ coins[coinSend].name }} {{ 'PAGE.BUY.FORM.RESULT.TEXT_2' | translate }}</label>
+                <p class="input input-accent">
+                  <span *ngIf="addresses">{{ addresses[coins[coinSend].symbol.toLowerCase() + '_address'] }}</span>
+                </p>
+                <span *ngIf="addresses" class="copy-address icon icon-copy" [cdkCopyToClipboard]="addresses[coins[coinSend].symbol.toLowerCase() + '_address']"></span>
               </div>
-            </label>
-            <!-- End Ducatus Form Select Send Coins -->
-          </div>
 
-          <div class="group group-input" *ngIf="isAvailableSwap">
-            <label for="ducatus-address" [innerHTML]="'PAGE.BUY.FORM.ADDRESS.TEXT' | translate: { coin: coins[coinGet].symbol, coinName: coins[coinGet].name }"></label>
-            <input [(ngModel)]="address" (ngModelChange)="setAddress()" [disabled]="checkAddress" class="input input-white" id="ducatus-address" type="text" oninput="this.value = this.value.replace('ducatus:', '');" [placeholder]="'PAGE.BUY.FORM.ADDRESS.PLACEHOLDER' | translate: { coin: coins[coinGet].symbol }" />
-            <span class="error-address-value" *ngIf="novalidAddress">{{ 'PAGE.BUY.FORM.ADDRESS.ERROR' | translate }}</span>
-          </div>
-          <div class="text text-bold attantion" *ngIf="isAvailableSwap">Important: there’s a limit for swapping DUC to DUCX. 25,000 DUC / day and 100,000 DUC / week. If you send DUC above the limit, the excess will be returned to you.</div>
-          <div class="text text-bold attantion" *ngIf="!isAvailableSwap">DUC to DUCX swap is currently restricted, please try again later</div>
-
-          <div id="loading-address" [ngClass]="{ 'loading-address-start': !addresses }" class="group group-input group-input-copy m-b-0 qr-wrap">
-            <div class="group-wrap qr-address">
-              <label>{{ 'PAGE.BUY.FORM.RESULT.TEXT_1' | translate }} {{ coins[coinSend].name }} {{ 'PAGE.BUY.FORM.RESULT.TEXT_2' | translate }}</label>
-              <p class="input input-accent">
-                <span *ngIf="addresses">{{ addresses[coins[coinSend].symbol.toLowerCase() + '_address'] }}</span>
-              </p>
-              <span *ngIf="addresses" class="copy-address icon icon-copy" [cdkCopyToClipboard]="addresses[coins[coinSend].symbol.toLowerCase() + '_address']"></span>
-            </div>
-
-            <div class="qrcode" [attr.title]="qr">
-              <qrcode *ngIf="addresses" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1" [qrdata]="addresses[coins[coinSend].symbol.toLowerCase() + '_address']" [width]="80" [errorCorrectionLevel]="'L'"></qrcode>
-            </div>
-
-            <div class="group-wrap qr-textCode">
-              <label>{{ 'PAGE.BUY.FORM.RESULT.QR.TEXT' | translate }}</label>
-            </div>
-
-            <div class="loading-address-qr">
-              <div class="loading-address-qr-wrap">
-                <p>{{ 'PAGE.BUY.FORM.RESULT.ERROR' | translate }}</p>
+              <div class="qrcode" [attr.title]="qr">
+                <qrcode *ngIf="addresses" class="qr-code" [elementType]="'url'" [margin]="0" [scale]="1" [qrdata]="addresses[coins[coinSend].symbol.toLowerCase() + '_address']" [width]="80" [errorCorrectionLevel]="'L'"></qrcode>
               </div>
-            </div>
 
-            <!-- <div class="loading-address-qr">
+              <div class="group-wrap qr-textCode">
+                <label>{{ 'PAGE.BUY.FORM.RESULT.QR.TEXT' | translate }}</label>
+              </div>
+
+              <div class="loading-address-qr">
+                <div class="loading-address-qr-wrap">
+                  <p>{{ 'PAGE.BUY.FORM.RESULT.ERROR' | translate }}</p>
+                </div>
+              </div>
+
+              <!-- <div class="loading-address-qr">
               <div class="loading-address-qr-wrap">
                 <p>{{ 'PAGE.BUY.FORM.RESULT.ERROR' | translate }}</p>
                 <div class="loading-address-qr-wrap-ellips">
@@ -110,53 +111,54 @@
               </div>
             </div> -->
 
-            <div class="group group-text qr-text" style="margin-bottom: 0">
-              <span class="text-attantion" [innerHTML]="'PAGE.BUY.FORM.RESULT.NOTE' | translate: { time: coins[coinSend].wait, coin: coins[coinSend].symbol }"></span>
+              <div class="group group-text qr-text" style="margin-bottom: 0">
+                <span class="text-attantion" [innerHTML]="'PAGE.BUY.FORM.RESULT.NOTE' | translate: { time: coins[coinSend].wait, coin: coins[coinSend].symbol }"></span>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- End Left Side -->
+          <!-- End Left Side -->
 
-        <!-- Left Side Loading -->
-        <div class="ducatus-pay-form loading-pay-form" *ngIf="!rates">
-          <div class="group group-input group-input-select input-h-60"></div>
-          <div class="group group-text group-columns input-h-20"></div>
-          <div class="group group-input group-input-select input-h-85"></div>
-          <div class="group group-input input-h-105"></div>
-          <div class="group group-input group-input-select input-h-60"></div>
-          <div class="group group-text group-columns input-h-20"></div>
+          <!-- Left Side Loading -->
+          <div class="ducatus-pay-form loading-pay-form" *ngIf="!rates">
+            <div class="group group-input group-input-select input-h-60"></div>
+            <div class="group group-text group-columns input-h-20"></div>
+            <div class="group group-input group-input-select input-h-85"></div>
+            <div class="group group-input input-h-105"></div>
+            <div class="group group-input group-input-select input-h-60"></div>
+            <div class="group group-text group-columns input-h-20"></div>
+          </div>
+          <!-- End Left Side Loading -->
         </div>
-        <!-- End Left Side Loading -->
-      </div>
 
-      <!-- Right Side Block -->
-      <!-- With Video And Text -->
-      <div class="pay-form-block">
-        <div class="pay-form-block-video">
-          <iframe src="https://www.youtube.com/embed/5tzX8UzUQkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- Right Side Block -->
+        <!-- With Video And Text -->
+        <div class="pay-form-block">
+          <div class="pay-form-block-video">
+            <iframe src="https://www.youtube.com/embed/5tzX8UzUQkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="pay-form-block-text">
+            <p class="p__text-section icon icon__wallet_2" [innerHTML]="'PAGE.BUY.INFO.TEXT' | translate: { coin: coins[coinGet].name }"></p>
+          </div>
         </div>
-        <div class="pay-form-block-text">
-          <p class="p__text-section icon icon__wallet_2" [innerHTML]="'PAGE.BUY.INFO.TEXT' | translate: { coin: coins[coinGet].name }"></p>
-        </div>
+        <!-- End Right Side Block -->
       </div>
-      <!-- End Right Side Block -->
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="modal" *ngIf="modal">
-  <div class="modal-wrap">
-    <div class="modal-content-top">
-      <p [innerHTML]="'PAGE.BUY.MODAL.TERMS.TEXT' | translate"></p>
-    </div>
-    <div class="modal-content-bottom">
-      <div class="input-checkbox-group">
-        <label for="terms" [innerHTML]="'PAGE.BUY.MODAL.TERMS.AGREE' | translate"></label>
-        <input #acceptTerms type="checkbox" id="terms" class="terms" />
+  <div class="modal" *ngIf="modal">
+    <div class="modal-wrap">
+      <div class="modal-content-top">
+        <p [innerHTML]="'PAGE.BUY.MODAL.TERMS.TEXT' | translate"></p>
       </div>
-      <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!acceptTerms.checked" class="ducatus-btn ducatus-btn-brown" style="margin: 0 auto">
-        {{ 'PAGE.BUY.MODAL.TERMS.BUTTON' | translate }}
-      </button>
+      <div class="modal-content-bottom">
+        <div class="input-checkbox-group">
+          <label for="terms" [innerHTML]="'PAGE.BUY.MODAL.TERMS.AGREE' | translate"></label>
+          <input #acceptTerms type="checkbox" id="terms" class="terms" />
+        </div>
+        <button id="btn-modal" (click)="acceptModalTerms()" [disabled]="!acceptTerms.checked" class="ducatus-btn ducatus-btn-brown" style="margin: 0 auto">
+          {{ 'PAGE.BUY.MODAL.TERMS.BUTTON' | translate }}
+        </button>
+      </div>
     </div>
   </div>
 </div>

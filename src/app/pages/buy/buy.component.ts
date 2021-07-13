@@ -12,7 +12,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   templateUrl: './buy.component.html',
   styleUrls: ['./buy.component.scss'],
   // tslint:disable-next-line: no-host-metadata-property
-  host: { '(document:click)': 'onClick($event)' },
+  // host: { '(document:click)': 'onClick($event)' },
 })
 export class BuyComponent implements OnInit {
   @ViewChild('openFormGet') coinsGet: ElementRef;
