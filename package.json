@@ -2,7 +2,7 @@
   "name": "ducatus-site",
   "version": "1.6.4",
   "scripts": {
-    "ng": "ng",
+    "ng": "ng serve",
     "start": "ng serve --proxy-config proxy.conf.json --host localducatus.mywish.io --port 4224 --disableHostCheck --no-live-reload",
     "build": "ng build",
     "build:prod": "ng build --prod",
