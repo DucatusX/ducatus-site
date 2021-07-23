@@ -144,14 +144,11 @@
         line-height: 29px;
         color: $white;
       }
-
-      &:hover {
-        color: $brown-red !important;
-      }
     }
 
     &-toggle-block {
       display: none;
+      cursor: pointer;
 
       @include b(750) {
         display: block;
@@ -169,6 +166,7 @@
           border: 1px solid #FFFFFF;
           background-color: #fff;
           transform: rotate(-45deg);
+          cursor: pointer;
         }
 
         .close-second {
@@ -179,12 +177,14 @@
           border: 1px solid #FFFFFF;
           background-color: #fff;
           transform: rotate(45deg);
+          cursor: pointer;
         }
       }
 
       .header-menu-toggle {
         display: flex;
         flex-direction: column;
+        cursor: pointer;
 
         .line-toggle {
           margin-bottom: 8px;
@@ -203,10 +203,11 @@
 }
 
 .menu-open {
-  position: absolute;
-  top: -2px;
-  width: 100%;
-  padding: 106px 0 196px;
-  max-height: 496px !important;
-  //z-index: 1000;
+  @include b(750) {
+    position: absolute;
+    top: -2px;
+    width: 100%;
+    padding: 106px 0 196px;
+    max-height: 496px !important;
+  }
 }

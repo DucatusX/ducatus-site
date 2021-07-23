@@ -36,6 +36,7 @@
   }
 
   &-container {
+    padding: 0;
     width: 100%;
     height: 100%;
     position: relative;
@@ -47,7 +48,6 @@
     @include b(750) {
       float: left;
       z-index: 1;
-      padding: 0;
     }
 
     &-item {
@@ -248,6 +248,7 @@
   .container {
     position: relative;
     margin: 0 auto;
+    padding: 0;
     width: 100%;
     height: 92px;
     display: flex;
@@ -330,6 +331,7 @@
   .container {
     width: 100%;
     margin: 0;
+    padding: 0;
     height: 521px;
     background-image: url('../../../assets/img/duc-wallet-x.png');
     background-repeat: no-repeat;
@@ -418,6 +420,7 @@
     }
 
     .container {
+      padding: 0;
       width: 100%;
       height: 309px;
       display: flex;
@@ -425,7 +428,6 @@
       overflow-x: hidden;
 
       @include b(1500) {
-        padding: 0;
         height: 100%;
         flex-direction: column;
       }
@@ -751,8 +753,9 @@
           border-radius: 16px;
 
           img {
+            padding: 3px 0;
             position: absolute;
-            top: 14px;
+            top: 8px;
             right: 13px;
             cursor: pointer;
           }
