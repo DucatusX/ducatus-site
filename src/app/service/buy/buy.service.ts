@@ -38,12 +38,13 @@ export class BuyService {
     return this.httpService.post(`add_charge/`, { amount, currency, email }).toPromise();
   }
 
-  public getExchange(toAddress: string, toCurrency: string, email: string): any {
+  // tslint:disable-next-line:variable-name
+  public getExchange(to_address: string, to_currency: string, email: string): any {
     return this.httpService
       .post(`exchange/`, {
         email,
-        toAddress,
-        toCurrency,
+        to_address,
+        to_currency,
       })
       .toPromise();
   }
