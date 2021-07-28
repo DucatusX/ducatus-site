@@ -82,6 +82,15 @@
   cursor: default;
   background-size: 100px 100px;
   padding-bottom: 250px;
+  margin-bottom: -300px;
+
+  @include b(1500) {
+    margin-bottom: -540px;
+  }
+
+  @include b(1000) {
+    margin-bottom: -1000px;
+  }
 
   @include b(750) {
     padding-bottom: 60px;
@@ -112,7 +121,7 @@
       padding-top: 100px;
       display: grid;
       grid-template-columns: minmax(320px, 600px) minmax(320px, 580px);
-      justify-content: space-between;
+      justify-content: space-around;
       grid-gap: 20px;
 
       @include b(900) {
