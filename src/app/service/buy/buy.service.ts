@@ -42,8 +42,8 @@ export class BuyService {
     return this.httpService
       .post(`exchange/`, {
         email,
-        toAddress,
-        toCurrency,
+        to_address: toAddress,
+        to_currency: toCurrency,
       })
       .toPromise();
   }
