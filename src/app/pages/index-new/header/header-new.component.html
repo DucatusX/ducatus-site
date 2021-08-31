@@ -1,4 +1,5 @@
 <div
+  id='#'
   class="header"
   [ngClass]="{
     'header-hide': !hideHeader,
@@ -10,34 +11,42 @@
     <div class="header-wrap">
       <div class="header-logo-block">
         <a *ngIf="adminHeader && !buyHeader" routerLink="/" class="header-logo">
-          <img src="/assets/img/ducatus-logo-first.png" alt="Ducatus logo" />
+          <img src="/assets/img/duc-logo.svg" alt="Ducatus logo" />
         </a>
         <a *ngIf="buyHeader" routerLink="/" class="header-logo">
           <img src="/assets/img/buy-page/header-logo.svg" alt="Centurion logo" />
         </a>
         <a *ngIf="!adminHeader" class="header-logo"></a>
-        <div class="header-menu-toggle-block">
-          <label for="header-menu-toggle" class="header-menu-toggle" [ngClass]="{ 'open-menu': openMenu }" (click)="openMenu = !openMenu">
+        <div class="header-menu-toggle-block" (click)='changeMenu()'>
+          <label
+            for="header-menu-toggle"
+            class="header-menu-toggle"
+            *ngIf="!openMenu;else toggleClose"
+          >
             <span class="line-toggle"></span>
             <span class="line-toggle"></span>
             <span class="line-toggle"></span>
           </label>
+          <ng-template #toggleClose>
+            <div class="header-menu-toggle">
+              <span class="close-first"></span>
+              <span class="close-second"></span>
+            </div>
+          </ng-template>
           <input type="checkbox" id="header-menu-toggle" class="header-menu-toggle-ch" role="button" />
         </div>
       </div>
-      <div *ngIf="adminHeader" class="header-menu-block" [ngClass]="{ 'menu-open': openMenu === true }">
-        <a routerLink="/" class="header-menu-link">{{ 'HEADER.MENU.HOME' | translate }}</a>
-        <a routerLink="/about" class="header-menu-link">{{ 'HEADER.MENU.ABOUT' | translate }}</a>
-        <a routerLink="/buy" class="header-menu-link">{{ 'HEADER.MENU.BUY' | translate }}</a>
-        <a routerLink="/ducatusx" class="header-menu-link">{{ 'HEADER.MENU.DUCATUSX' | translate }}</a>
-        <!-- <a routerLink="/gold-lottery" class="header-menu-link">{{ 'HEADER.MENU.LOTTERY' | translate }}</a> -->
-        <a routerLink="/contact" class="header-menu-link">{{ 'HEADER.MENU.CONTACT' | translate }}</a>
+      <div *ngIf="adminHeader" class="header-menu-block" [ngClass]="{ 'menu-open': openMenu }">
+        <a routerLink="/" class="header-menu-link" (click)='changeMenu()'>Home</a>
+        <a routerLink="/buy" class="header-menu-link" (click)='changeMenu()'>Buy DUC</a>
+        <a routerLink="/ducatusx" class="header-menu-link" (click)='changeMenu()'>DUCX</a>
+        <a routerLink="/contact" class="header-menu-link" (click)='changeMenu()'>Contact</a>
       </div>
       <div
         *ngIf="!adminHeader"
         class="header-menu-block"
         [ngClass]="{
-          'menu-open': openMenu === true,
+          'menu-open': openMenu,
           'header-menu-block-admin': !adminHeader
         }"
       >
@@ -47,13 +56,6 @@
         <a routerLink="/admin/rate" class="header-menu-link">Rates</a>
         <a (click)="logout()" class="header-menu-link">Logout</a>
       </div>
-    </div>
-    <div class="language-select" [ngClass]="{ 'language-select-admin': !adminHeader }">
-      <ul class="language-select-list" [ngClass]="{ opened: openedLngList }" (click)="toggleLanguage()">
-        <li (click)="setLanguage(lng['lng'])" [ngClass]="{ active: lng['active'] }" *ngFor="let lng of languagesList">
-          <span>{{ lng['title'] }}</span>
-        </li>
-      </ul>
     </div>
   </div>
 </div>

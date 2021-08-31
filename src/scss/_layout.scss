@@ -4,59 +4,57 @@
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
-    height: 100%;
-    min-width: 320px;
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
-    max-width: 1366px;
-    width: 100%;
-    margin: 0 auto;
-    @include clearfix;
-    position: relative;
+  width: 100%;
+  padding: 0 50px;
 
-    @include b(1366) {
-        padding: 0 70px;
-    }
+  @include b(1366) {
+    padding: 0 70px;
+  }
 
-    @include b(900) {
-        padding: 0 15px;
-    }
+  @include b(900) {
+    padding: 0;
+  }
 }
 
 .wrapper {
-    min-height: 100%;
-    overflow: hidden;
+  min-height: 100%;
+  overflow: hidden;
 }
 
 .mt-130 {
-    margin-top: 130px;
+  margin-top: 130px;
 
-    @include b(750) {
-        margin-top: 0;
-    }
+  @include b(750) {
+    margin-top: 0;
+  }
 }
 
 .mb-130 {
-    margin-bottom: 130px;
+  margin-bottom: 130px;
 
-    @include b(750) {
-        margin-bottom: 0;
-    }
+  @include b(750) {
+    margin-bottom: 0;
+  }
 }
 
 .pb-200 {
-    padding-bottom: 200px;
+  padding-bottom: 200px;
 
-    @include b(750) {
-        padding-bottom: 0;
-    }
+  @include b(750) {
+    padding-bottom: 0;
+  }
 }

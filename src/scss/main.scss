@@ -8,17 +8,14 @@
 @import "pages-modules";
 @import "pay-page";
 
-// @import "../../../node_modules/swiper/css/swiper.min.css";
-// @import "../../../node_modules/intl-tel-input/build/css/intlTelInput.min.css";
-
 .iti__flag {
-    background-image: url("assets/img/icons/flags/flags.png");
+    background-image: url("../assets/img/icons/flags/flags.png");
 }
 
 @media (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {
     .iti__flag {
-        background-image: url("assets/img/icons/flags/flags@2x.png");
+        background-image: url("../assets/img/icons/flags/flags@2x.png");
     }
 }
 
@@ -37,391 +34,17 @@
     }
 }
 
-.swiper-container {
-    width: 100%;
-    height: 100%;
-}
-
-.swiper-pagination {
-    margin: 0;
-    bottom: 20px;
-    width: 100%;
-
-    @include b(900) {
-        // margin-bottom: 50px;
-        // position: relative;
-    }
-
-    @include b(750) {
-        // top: 270px;
-    }
-
-    &-bullet {
-        background-color: white;
-        margin-right: 7px;
-        outline: none !important;
-        width: 30px;
-        border-radius: 0;
-        height: 6px;
-
-        &-active {
-            background-color: white;
-        }
-    }
-
-}
-
-.swiper-slide {
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-
-    @include b(750) {
-        flex-direction: column;
-    }
-}
-
 html {
-    font-family: 'Montserrat';
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
 }
-
-
-.header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    height: 70px;
-    padding: 5px 70px;
-    margin-top: 40px;
-    z-index: 999;
-    transition: 0.2s ease;
-
-    &-scroll {
-        background-color: white;
-        margin-top: 0 !important;
-        padding: 0px 20px;
-        height: auto;
-        box-shadow: 0px 2px 8px -3px #00000052;
-
-        .header-menu-link {
-            color: $brown-red;
-        }
-    }
-
-    @include b(900) {
-        padding: 5px 20px;
-        margin-top: 20px;
-    }
-
-    @include b(750) {
-        background-color: white;
-        margin-top: 0 !important;
-        height: auto;
-    }
-
-    &-wrap {
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-
-        @include b(750) {
-            flex-direction: column;
-        }
-    }
-
-    &-logo-block {
-        flex-basis: 300px;
-
-        @include b(900) {
-            flex-basis: 200px;
-        }
-
-        @include b(750) {
-            flex-basis: auto;
-            align-items: center;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        img {
-            @include b(900) {
-                width: 200px;
-            }
-        }
-    }
-
-    &-menu {
-
-        &-block {
-            flex-basis: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            transition: 0.4s ease;
-
-            @include b(750) {
-                align-items: flex-end;
-                flex-direction: column;
-                max-height: 0px;
-                overflow: hidden;
-            }
-        }
-
-        &-link {
-            color: $white;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: 0.4s ease;
-            margin: 2px 20px;
-            font-weight: bold;
-
-            @include b(900) {
-                margin: 2px 10px;
-            }
-
-            @include b(750) {
-                margin: 7px 10px;
-                color: $black;
-            }
-
-            &:hover {
-                color: $gold;
-            }
-        }
-
-        &-toggle-block {
-            display: none;
-
-            label {
-                display: flex;
-                flex-direction: column;
-
-                .line-toggle {
-                    height: 2px;
-                    border-radius: 5px;
-                    background-color: $brown-red;
-                    width: 30px;
-                    margin-bottom: 5px;
-                }
-            }
-
-            input {
-                display: none;
-            }
-
-            @include b(750) {
-                display: block;
-                float: right;
-            }
-        }
-
-    }
-}
-
-.menu-open {
-    max-height: 130px;
-}
-
-
-.section-header {
-    height: 800px;
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0;
-
-    @include b(900) {
-        height: 650px;
-        padding: 100px 20px 5px 20px;
-    }
-
-    @include b(750) {
-        flex-direction: column;
-        padding: 0;
-        margin-top: 70px;
-    }
-
-    &-container {
-        max-width: 1366px;
-        width: 100%;
-        margin: 0 auto;
-        @include clearfix;
-        position: relative;
-
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        z-index: 9;
-
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        max-width: 100%;
-        min-width: 100%;
-
-        @include b(750) {
-            float: left;
-            z-index: 1;
-            padding: 0px;
-        }
-    }
-
-    &-wrap {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-
-        &-desctop {
-            @include b(750) {
-                display: none;
-            }
-        }
-
-        &-mobile {
-            display: none;
-
-            @include b(750) {
-                display: block;
-            }
-        }
-
-        @include b(1250) {
-            background-position: -60px 0;
-        }
-
-        @include b(900) {
-            background-position: 0 0;
-        }
-
-        @include b(750) {
-            position: relative;
-            max-height: 360px;
-            height: 100%;
-            // background-image: url('assets/img/header-bg-mobile.png');
-
-            width: 100%;
-            background-position: center;
-        }
-
-        // @include b(500) {
-        //     background-position: -100px center;
-        // }
-    }
-
-    .container {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        z-index: 9;
-
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        max-width: 100%;
-        min-width: 100%;
-
-        @include b(750) {
-            float: left;
-            z-index: 1;
-            padding: 0px;
-        }
-    }
-
-
-    &-slider {
-        // max-width: 450px;
-        // width: 100%;
-        width: 100%;
-        height: 100%;
-
-        .container-slider {
-            z-index: 9;
-            max-width: 1366px;
-            width: 100%;
-            margin: 0 auto;
-
-            @include b(1366) {
-                padding: 0 70px;
-            }
-
-            @include b(750) {
-                padding: 30px 15px;
-                background-color: $brown-red;
-                height: 100%;
-            }
-        }
-
-        @include b(750) {
-            max-width: 100%;
-        }
-    }
-
-    .slider-item {
-        width: 100%;
-        max-width: 450px;
-        z-index: 1;
-
-        @include b(750) {
-            max-width: 100%;
-        }
-
-        .h2__slider-title {
-            @include b(550) {
-                font-size: 18px;
-            }
-        }
-
-        .p__slider-item {
-            @include b(550) {
-                font-size: 14px;
-                line-height: 1.7;
-            }
-        }
-
-        .button {
-            @include b(550) {
-                font-size: 14px;
-            }
-        }
-
-        * {
-            margin-bottom: 40px;
-
-            @include b(550) {
-                margin-bottom: 20px;
-            }
-        }
-    }
-}
-
 
 .section-financial {
     // height: 800px;
     position: relative;
-    padding: 100px 0px 0px 0px;
-    background-image: url('assets/img/sections/bg-financial.png');
+    padding: 100px 0 0 0;
+    background-image: url('../assets/img/sections/bg-financial.png');
     background-repeat: no-repeat;
     background-position: -80px 0px;
     background-size: 320px;
@@ -434,11 +57,11 @@ html {
 
     @include b(750) {
         height: 100%;
-        padding: 50px 0px 50px 0px;
+        padding: 50px 0 50px 0;
     }
 
     @include after-img(block, 250px, 250px, a) {
-        background-image: url('assets/img/sections/bg-financial-right.png');
+        background-image: url('../assets/img/sections/bg-financial-right.png');
         background-repeat: no-repeat;
         background-position: bottom right;
         bottom: 0;
@@ -446,7 +69,7 @@ html {
     }
 
     @include before-img(block, 430px, 300px, a) {
-        background-image: url('assets/img/sections/bg-financial-left.png');
+        background-image: url('../assets/img/sections/bg-financial-left.png');
         background-repeat: no-repeat;
         background-position: bottom right;
         bottom: 0;
@@ -459,7 +82,7 @@ html {
     }
 
     .container {
-        background-image: url('assets/img/sections/bg-financial-image.png');
+        background-image: url('../assets/img/sections/bg-financial-image.png');
         background-repeat: no-repeat;
         background-position: 20px top;
         background-size: 42%;
@@ -488,7 +111,7 @@ html {
         // max-width: 750px;
         max-width: 50%;
         width: 100%;
-        padding: 0px 30px 30px 0px;
+        padding: 0 30px 30px 0;
         height: 100%;
 
         // @include b(1366) {
@@ -515,7 +138,7 @@ html {
 
             @include b(750) {
                 grid-template-columns: 1fr;
-                grid-gap: 0px;
+                grid-gap: 0;
             }
         }
     }
@@ -540,7 +163,7 @@ html {
 
         @include b(750) {
             grid-template-columns: 1fr;
-            grid-gap: 0px;
+            grid-gap: 0;
         }
 
         &-text {
@@ -550,7 +173,7 @@ html {
 
             @include b(750) {
                 grid-template-columns: 1fr;
-                grid-gap: 0px;
+                grid-gap: 0;
             }
         }
     }
@@ -593,14 +216,13 @@ html {
                 display: grid;
                 grid-template-columns: 90px 1fr;
                 grid-gap: 10px;
-                margin-bottom: 0;
                 margin: 0;
             }
         }
 
         .ducatus-coin {
             @include before-img(block, 100%, 260px, r) {
-                background-image: url('assets/img/icons/ducatus-dev.png');
+                background-image: url('../assets/img/icons/ducatus-dev.png');
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: contain;
@@ -627,16 +249,15 @@ html {
 }
 
 .section-ducatus-maintains {
-
     background: rgb(251, 250, 247);
-    padding: 0px;
+    padding: 0;
     position: relative;
-    background-image: url('assets/img/sections/bg-maintainns-2.png');
+    background-image: url('../assets/img/sections/bg-maintainns-2.png');
     background-size: initial;
     background-repeat: no-repeat;
 
     @include before-img(block, 250px, 250px, a) {
-        background-image: url('assets/img/sections/bg-maintainns-1.png');
+        background-image: url('../assets/img/sections/bg-maintainns-1.png');
         background-repeat: no-repeat;
         background-position: top right;
         top: 0;
@@ -645,7 +266,7 @@ html {
     }
 
     @include after-img(block, 340px, 200px, a) {
-        background-image: url('assets/img/sections/bg-maintainns.png');
+        background-image: url('../assets/img/sections/bg-maintainns.png');
         background-repeat: no-repeat;
         background-position: bottom right;
         bottom: 0;
@@ -662,7 +283,7 @@ html {
 
         @include b(900) {
             grid-template-columns: 1fr;
-            grid-gap: 0px;
+            grid-gap: 0;
             padding: 0;
         }
 
@@ -676,11 +297,11 @@ html {
         grid-template-columns: 1fr 1fr;
 
         &:nth-child(1) {
-            grid-gap: 0px 60px;
+            grid-gap: 0 60px;
 
             @include b(900) {
                 display: grid;
-                grid-gap: 0px 50px;
+                grid-gap: 0 50px;
             }
         }
 
@@ -708,7 +329,6 @@ html {
         }
 
         &:nth-child(1) {
-            padding-right: 70px;
             padding: 100px 15px 50px 15px;
 
             .section-ducatus-maintains-block-item {
@@ -772,7 +392,7 @@ html {
             }
 
             @include b(900) {
-                margin-bottom: 0px;
+                margin-bottom: 0;
             }
         }
 
@@ -849,7 +469,6 @@ html {
                         grid-template-columns: 90px 1fr;
                         align-items: center;
                         grid-gap: 10px;
-                        margin-bottom: 0;
                         margin: 0;
                     }
                 }
@@ -860,7 +479,7 @@ html {
 
 .section-usability {
     position: relative;
-    padding: 100px 0px 0px 0px;
+    padding: 100px 0 0;
     // background-image: url('assets/img/sections/bg-usability-1.png');
     background-repeat: no-repeat;
     background-position: 25% 0;
@@ -881,11 +500,11 @@ html {
 
     @include b(750) {
         height: 100%;
-        padding: 50px 0px 50px 0px;
+        padding: 50px 0 50px 0;
     }
 
     @include after-img(block, 250px, 250px, a) {
-        background-image: url('assets/img/sections/bg-usability-3.png');
+        background-image: url('../assets/img/sections/bg-usability-3.png');
         background-repeat: no-repeat;
         background-position: bottom left;
         bottom: 0;
@@ -893,7 +512,7 @@ html {
     }
 
     @include before-img(block, 570px, 80%, a) {
-        background-image: url('assets/img/sections/bg-usability-2.png');
+        background-image: url('../assets/img/sections/bg-usability-2.png');
         background-repeat: no-repeat;
         background-position: bottom left;
         top: 0;
@@ -923,7 +542,7 @@ html {
         width: 100%;
         margin: auto;
         // padding: 100px 0 0 0;
-        background-image: url('assets/img/sections/bg-usability-1.png');
+        background-image: url('../assets/img/sections/bg-usability-1.png');
         background-repeat: no-repeat;
         // background-position: 30px center;
         background-position: 40px -30px;
@@ -947,7 +566,7 @@ html {
     }
 
     .container {
-        background-image: url('assets/img/ducatus-logo-second.png');
+        background-image: url('../assets/img/ducatus-logo-second.png');
         background-repeat: no-repeat;
         background-position: 50px 120px;
         background-size: 350px;
@@ -973,7 +592,7 @@ html {
         float: right;
         max-width: 50%;
         width: 100%;
-        padding: 0px 50px 30px 0px;
+        padding: 0 50px 30px 0;
         height: 100%;
 
         @include b(900) {
@@ -1259,19 +878,19 @@ html {
 
         .download_ducatus {
             grid-area: ducatus;
-            background-image: url('assets/img/buttons/webwallet.svg');
+            background-image: url('../assets/img/buttons/webwallet.svg');
             border-radius: 5px;
         }
 
         .download_googleplay {
             grid-area: googleplay;
-            background-image: url('assets/img/buttons/googleplay.svg');
+            background-image: url('../assets/img/buttons/googleplay.svg');
             border-radius: 5px;
         }
 
         .download_appstore {
             grid-area: appstore;
-            background-image: url('assets/img/buttons/appstore.svg');
+            background-image: url('../assets/img/buttons/appstore.svg');
             border-radius: 5px;
         }
     }
@@ -1305,7 +924,7 @@ html {
             justify-content: space-between;
 
             .section-app-block-wrap {
-                background-image: url('assets/img/icons/icon-wallet.svg');
+                background-image: url('../assets/img/icons/icon-wallet.svg');
                 background-position: top right;
                 background-repeat: no-repeat;
                 background-size: 60px;
@@ -1394,7 +1013,7 @@ html {
         padding-left: 20px;
 
         .p__copyrights {
-            font-style: 12px;
+            font-size: 12px;
             color: #737778;
             font-weight: normal;
 
@@ -1436,7 +1055,7 @@ html {
 
         &:before {
             content: '';
-            background-image: url('assets/img/icons/logo-footer.png');
+            background-image: url('../assets/img/icons/logo-footer.png');
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
@@ -1480,7 +1099,7 @@ html {
     &-menu {
         display: flex;
         flex-direction: column;
-        padding: 0px 10px;
+        padding: 0 10px;
         max-width: 250px;
         min-width: 170px;
         width: 100%;
@@ -1538,7 +1157,7 @@ html {
                 padding-bottom: 10px;
 
                 &:before {
-                    box-shadow: 0px 3px 8px -4px #00000091;
+                    box-shadow: 0 3px 8px -4px #00000091;
                 }
             }
         }
@@ -1547,7 +1166,7 @@ html {
             font-size: 14px;
             color: #737778;
             font-weight: normal;
-            margin: 6px 0px;
+            margin: 6px 0;
             text-decoration: none;
             transition: 0.4s ease;
             position: relative;
@@ -1616,7 +1235,6 @@ html {
                 background-color: #ececec;
                 // flex-direction: column;
                 display: block;
-                overflow: hidden;
             }
 
             &-open {
@@ -1627,8 +1245,8 @@ html {
 
                     .footer-menu {
                         border: none;
-                        padding-top: 0px;
-                        padding-bottom: 0px;
+                        padding-top: 0;
+                        padding-bottom: 0;
                         max-height: 100% !important;
 
                         &:nth-child(1) {
@@ -1638,7 +1256,7 @@ html {
                             &:before {
                                 @include b(750) {
                                     display: flex;
-                                    box-shadow: 0px 3px 8px -4px #00000091;
+                                    box-shadow: 0 3px 8px -4px #00000091;
                                 }
                             }
                         }

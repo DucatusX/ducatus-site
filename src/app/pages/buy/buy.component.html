@@ -18,7 +18,7 @@
 
               <!-- Ducatus Form Select Get Coins -->
               <label for="select-form-get" class="select-coin select-coin-fill" [ngClass]="{ 'select-coin-start': openFormGet.checked }">
-                <input #openFormGet type="checkbox" id="select-form-get" hidden />
+                <input #openFormGet type="checkbox" id="select-form-get" hidden (change)="handlChange1()" />
                 <span class="select-coin-selected">
                   <img [src]="'assets/img/icons/' + coins[coinGet].icon + '.png'" [alt]="coins[coinGet].name" />
                   {{ coins[coinGet].symbol }}

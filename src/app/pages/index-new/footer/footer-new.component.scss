@@ -1,373 +1,97 @@
 @import "../../../../scss/vars";
 @import "../../../../scss/mixins";
 
-.footer-new {
-    background-color: #F4F4F4;
-    padding-top: 30px;
-    overflow: hidden;
+footer {
+  position: relative;
+  top: 300px;
+  background-color: #892331;
 
-    .container {
-        @include b(750) {
-            padding: 0;
-        }
+  @include b(1500) {
+    top: 540px;
+  }
+
+  @include b(1000) {
+    top: 1000px;
+  }
+
+  .container {
+    padding: 0 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include b(647) {
+      padding: 0;
     }
 
-    .footer-social .icon {
-        transition: 0.4s ease;
-        width: 28px;
-        height: 28px;
-        margin: 5px;
-    }
+    .menu {
+      margin: 32px 0 18px;
 
-    .footer-right {
-        justify-content: flex-start;
-    }
-
-    .footer-menu {
-        max-width: 220px;
-    }
-
-    .section-copyright {
-        background-color: #EAEBED;
-        padding: 25px;
-        font-size: 12px;
-        text-align: center;
-
-        .p__copyrights {
-            font-style: 12px;
-            color: #737778;
-            font-weight: normal;
-
-            a {
-                transition: 0.4s ease;
-                color: #737778;
-                text-decoration: none;
-
-                &:hover {
-                    text-decoration: underline;
-                    color: #821517;
-                }
-            }
-        }
-    }
-
-    .section-footer {
-        display: grid;
-        grid-template-columns: minmax(170px, 320px) 1fr;
-        margin-bottom: 30px;
-        grid-gap: 100px;
-
-        @include b(850) {
-            grid-template-columns: 1fr;
-            margin-bottom: 30px;
-            grid-gap: 30px;
-        }
-    }
-
-    &-left {
+      @include b(647) {
         display: flex;
         flex-direction: column;
-    }
-
-    &-logo {
-        height: 80px;
-        min-width: 130px;
-        width: 100%;
-        margin-bottom: 10px;
-
-        &:before {
-            content: '';
-            background-image: url('../../../../assets/img/icons/logo-footer.png');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            height: 80px;
-            width: 120px;
-            display: block;
-            margin: 0 auto;
-        }
-    }
-
-    &-social {
-        display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: space-between;
+      }
 
-        .icon {
-            transition: 0.4s ease;
-            width: 20px;
-            height: 20px;
+      a {
+        margin: 0 13px;
+        font-size: 18px;
+        line-height: 22px;
+        color: #FFFFFF;
+        text-decoration: none;
+
+        @include b(647) {
+          margin: 10px 0;
+        }
+      }
+    }
+
+    .downloading {
+      padding: 25px 0 21px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+      p {
+        margin-top: 0;
+        margin-bottom: 16px;
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+        line-height: 22px;
+      }
+
+      .btns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        a {
+          margin: 0 5px;
+
+          @include b(687) {
             margin: 5px;
+          }
 
-            &:hover {
-                opacity: 0.4;
-            }
-
-            &__youtube {
-                width: 30px;
-            }
+          img {
+            width: 126px;
+          }
         }
-    }
-
-    &-right {
-        display: flex;
-        justify-content: flex-start;
-
-        @include b(750) {
-            flex-direction: column;
-        }
-    }
-
-    &-menu {
-        display: flex;
-        flex-direction: column;
-        padding: 0px 10px;
-        max-width: 230px;
-        min-width: 170px;
-        width: 100%;
-        transition: 0.4s ease;
-
-        @include b(850) {
-            max-width: 210px;
-            min-width: 170px;
-        }
-
-        @include b(750) {
-            max-width: 100%;
-            min-width: 100%;
-            width: 100%;
-            border-top: 2px solid #E1E1E1;
-            padding: 0;
-            max-height: 50px;
-            min-height: 50px;
-            overflow: hidden;
-            position: relative;
-            background-color: #ececec;
-        }
-
-        &:before {
-            content: attr(data-title);
-            color: $brown-red;
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 25px;
-            width: 100%;
-            z-index: 9;
-
-            @include b(750) {
-                width: 100%;
-                margin-bottom: 0;
-                max-height: 50px;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                padding-left: 20px;
-                font-weight: bold;
-                color: #656C75;
-                text-transform: uppercase;
-                position: absolute;
-                background-color: #ececec;
-                top: 0;
-            }
-        }
-
-        &-open {
-            @include b(750) {
-                max-height: 100%;
-                height: 100%;
-                padding-top: 60px;
-                padding-bottom: 10px;
-
-                &:before {
-                    box-shadow: 0px 3px 8px -4px #00000091;
-                }
-            }
-        }
-
-        &-link {
-            font-size: 14px;
-            color: #737778;
-            font-weight: normal;
-            margin: 6px 0px;
-            text-decoration: none;
-            transition: 0.4s ease;
-            position: relative;
-
-            &-disable {
-                color: #737778;
-                cursor: default;
-
-                &::after {
-                    @include b(750) {
-                        content: attr(data-unactive);
-                        display: inline;
-                        position: relative;
-                        z-index: 8;
-                        font-size: 12px;
-                        background-color: #892734;
-                        color: #fff;
-                        padding: 2px 8px;
-                        border-radius: 5px;
-                        margin-left: 15px;
-                    }
-                }
-
-                &:hover {
-                    cursor: default;
-                    color: #737778 !important;
-
-                    &:before {
-                        content: attr(data-unactive);
-                        display: block;
-                        position: absolute;
-                        z-index: 999;
-                        bottom: -30px;
-                        font-size: 12px;
-                        left: 30px;
-                        background-color: #892734;
-                        color: #fff;
-                        padding: 5px 10px;
-                        border-radius: 5px;
-
-                        @include b(750) {
-                            display: none;
-                        }
-                    }
-                }
-            }
-
-            &:hover {
-                color: $brown-red;
-            }
-
-            @include b(750) {
-                padding-left: 20px;
-            }
-        }
-
-        &-same {
-            display: flex;
-            max-width: 500px;
-            width: 100%;
-
-            @include b(750) {
-                max-width: 100%;
-                max-height: 50px;
-                overflow: hidden;
-                background-color: #ececec;
-                display: block;
-            }
-
-            &-open {
-                @include b(750) {
-                    max-height: 100%;
-                    flex-direction: column;
-                    padding-bottom: 10px;
-
-                    .footer-menu {
-                        border: none;
-                        padding-top: 0px;
-                        padding-bottom: 0px;
-                        max-height: 100% !important;
-
-                        &:nth-child(1) {
-                            border-top: 2px solid #E1E1E1;
-                            padding-top: 60px;
-
-                            &:before {
-                                @include b(750) {
-                                    display: flex;
-                                    box-shadow: 0px 3px 8px -4px #00000091;
-                                }
-                            }
-                        }
-
-                        &:before {
-                            @include b(750) {
-                                display: none;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .footer-menu {
-                border: none;
-
-                &:nth-child(1) {
-                    @include b(750) {
-                        border-top: 2px solid #E1E1E1;
-                    }
-
-                    &:before {
-                        @include b(750) {
-                            display: flex;
-                        }
-                    }
-                }
-
-                &:before {
-                    @include b(750) {
-                        display: none;
-                    }
-                }
-            }
-        }
-    }
-}
-
-.centurion-footer {
-  padding: 70px 0 39px;
-  background: #0e0e0e;
-
-  &-container {
-    max-width: 1366px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-
-  @include b(900) {
-    padding-top: 0;
-  }
-
-  &-logo {
-    margin-bottom: 56px;
-
-    img {
-      width: auto;
-
-      @include b(500) {
-        width: 200px;
       }
     }
-  }
 
-  &-text {
-    white-space: pre-line;
-    color: white;
-    margin-bottom: 47px;
-  }
+    .links {
+      margin: 26px auto 24px;
 
-  &-links {
-    margin-bottom: 20px;
-
-    .link {
-      display: inline-block;
-      color: #E8C22C;
-      font-weight: 500;
-      font-size: 22px;
-      text-decoration: none;
-      margin: 0 40px 40px 0;
-
-      @include b(665) {
-          display: block;
+      a {
+        img {
+          margin: 0 4px;
+        }
       }
     }
-  }
-
-  &-copyright {
-    font-size: 15px;
-    color: #FFFFFF;
-    opacity: 0.5;
   }
 }

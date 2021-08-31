@@ -1,106 +1,290 @@
 <!-- <app-header-new></app-header-new> -->
 
-<section class="section-header section-header-new">
-    <div class="section-header-container">
-        <div class="swiper-pagination"></div>
-        <div class="section-header-slider">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" *ngFor="let slide of slider">
-                        <div class="section-header-wrap section-header-wrap-desctop"
-                            [style.background-image]="'url(assets/img/slider/' + slide[lang].image + ')'"></div>
-                        <div class="section-header-wrap section-header-wrap-mobile"
-                            [style.background-image]="'url(assets/img/slider/' + slide[lang].image_mob + ')'"></div>
-                        <div class="container-slider">
-                            <div class="slider-item">
-                                <h2 class="h2__slider-title" [innerHTML]="slide[lang].title"></h2>
-                                <p class="p__slider-item" [innerHTML]="slide[lang].text"></p>
-                                <a [routerLink]="'/assets/downloads/pdf/' + slide[lang].file" target="_blank"
-                                    class="button">{{ slide[lang].button }} ></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section class='section-header'>
+  <div class='mobile-image'></div>
+  <div class='section-header-container'>
+    <div class='section-header-container-item'>
+      <h2 class='section-header-container-item-title' [innerHTML]='header[lang].title'></h2>
+      <p class='section-header-container-item-text' [innerHTML]='header[lang].text'></p>
+      <a [routerLink]="'/assets/downloads/pdf/' + header[lang].file" target='_blank'
+         class='section-header-container-item-button'>{{ header[lang].button }}</a>
     </div>
+  </div>
 </section>
 
-<section class="section-financial-evolution">
-    <div class="container">
-        <img src="assets/img/sections/financial-img.svg" alt="Financial Evolution">
-        <h3 class="h3-title-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.ONE.TITLE' | translate"></h3>
-        <span class="span-subtitle-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.ONE.SUBTITLE' | translate"></span>
-        <p class="p-text-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.ONE.TEXT' | translate"></p>
-        <span class="ductus-btn-gradient" routerLink="/about"
-            [innerHTML]="'PAGE.NEWMAIN.SECTION.ONE.BUTTON' | translate"></span>
+<section class='section-about-us'>
+  <div class='container'>
+    <div class='first-item'>
+      <img
+        class='section-about-us-rectangle'
+        src='../../../assets/img/rectangle.png'
+        alt='about us rectangle'
+      >
+      <h2 class='first-item-title'>
+        Created for All
+      </h2>
+      <p class='first-item-text'>
+        DUC and DUCX were designed to be open and inclusive. Tech savvy or not, we believe that everyone should have the
+        ability to use reliable payment services that are as simple and common as using a credit card.
+      </p>
     </div>
+    <div class='second-item'>
+      <h3 class='second-item-title'>
+        Our Mission
+      </h3>
+      <ul class='second-item-text'>
+        <li>
+          To implement a fast blockchain with low fees.
+        </li>
+        <li>
+          To always present a clear and easy to navigate interface.
+        </li>
+        <li>
+          To be friendly enough to allow any user to control, support or make decisions and take part in the development
+          and life of a project.
+        </li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<section class="section-community-new">
-    <div class="container">
-        <h3 class="h3-title-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.TWO.TITLE' | translate"></h3>
-        <span class="span-subtitle-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.TWO.SUBTITLE' | translate"></span>
-        <div class="section-community-icons">
-            <span class="icon icon__cash-community" [innerHTML]="'PAGE.NEWMAIN.SECTION.TWO.TEXT_1' | translate"></span>
-            <span class="icon icon__arrow-community" [innerHTML]="'PAGE.NEWMAIN.SECTION.TWO.TEXT_2' | translate"></span>
-        </div>
+<section class='section-projects'>
+  <div class='container'>
+    <img class='arrow arrow-left' src='../../../assets/img/icons/arrow-left-icon.svg' alt='arrow left icon'>
+    <div class='list'>
+      <a href='https://www.merchants.ducatus.com/'>
+        <img src='../../../assets/img/duc-merchants.png' alt='ducatus merchants logo'>
+      </a>
+      <a href='https://www.facebook.com/DucatusCafeSG'>
+        <img src='../../../assets/img/duc-cafe.png' alt='ducatus cafe logo'>
+      </a>
+      <a href='https://d-pog.com/'>
+        <img src='../../../assets/img/proof-of-gold.png' alt='proof of gold logo'>
+      </a>
+      <a href='https://centuriongm.com/crowdfunding.html'>
+        <img src='../../../assets/img/centurion.png' alt='centurion logo'>
+      </a>
+      <a href='https://remusnation.com/dbay/'>
+        <img src='../../../assets/img/d-bay.png' alt='d-bay logo'>
+      </a>
     </div>
+    <img class='arrow arrow-right' src='../../../assets/img/icons/arrow-right-icon.svg' alt='arrow right icon'>
+  </div>
 </section>
 
-<section class="section-maintains-market-leading">
-    <div class="container">
-        <h3 class="h3-title-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.TITLE' | translate"></h3>
-        <div class="section-maintains-market-leading-icons">
-            <div class="icon icon__gov-new">
-                <span class="section-maintains-market-leading-title"
-                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TITLE_1' | translate"></span>
-                <span class="section-maintains-market-leading-text"
-                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TEXT_1' | translate"></span>
-            </div>
-            <div class="icon icon__users-new">
-                <span class="section-maintains-market-leading-title"
-                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TITLE_2' | translate"></span>
-                <span class="section-maintains-market-leading-text"
-                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TEXT_2' | translate"></span>
-            </div>
-            <div class="icon icon__hands-new">
-                <span class="section-maintains-market-leading-title"
-                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TITLE_3' | translate"></span>
-                <span class="section-maintains-market-leading-text"
-                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TEXT_3' | translate"></span>
-            </div>
-        </div>
-        <h3 class="h3-title-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.TITLE_2' | translate"></h3>
-        <div class="section-maintains-market-leading-icons">
-            <div class="icon icon__rocket-new icon-f">
-                <span class="section-maintains-market-leading-text"
-                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TEXT_4' | translate"></span>
-            </div>
-            <div class="icon icon__stonks-new icon-f">
-                <span class="section-maintains-market-leading-text"
-                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TEXT_5' | translate"></span>
-            </div>
-            <div class="icon icon__web-new icon-f">
-                <span class="section-maintains-market-leading-text"
-                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TEXT_6' | translate"></span>
-            </div>
-            <div class="icon icon__duc-coin-new icon-f">
-                <span class="section-maintains-market-leading-text"
-                    [innerHTML]="'PAGE.NEWMAIN.SECTION.THREE.ICONS.TEXT_7' | translate"></span>
-            </div>
-        </div>
+<section class='section-ducatus-wallet'>
+  <div class='bg-img'>
+    <img src='../../../assets/img/duc-wallet-x.png' alt='duc wallet x logo'>
+  </div>
+  <div class='container'>
+    <div class='container-item'>
+      <img src='../../../assets/img/rectangle.png' alt='rectangle'>
+      <h2 class='title'>The Ducatus Wallet</h2>
+      <p class='text'>
+        The Ducatus ecosystem exists as a web-wallet that runs on all desktop platforms Windows, Linux, macOS and mobile
+        for iOS platforms and Android. Users can send transactions and accept payments not only in DUC and DUCX but also
+        in Bitcoin, Bitcoin Cash, XRP, Ethereum and USDC, PAX and GUSD tokens. More coins and tokens will be added in
+        the
+        future.
+      </p>
+      <div class='btns'>
+        <a href='http://wallet.ducatus.io/'>
+          <img src='../../../assets/img/duc-wallet-link.png' alt='Ducatus Web Wallet link'>
+        </a>
+        <a href='https://apps.apple.com/us/app/ducatus-wallet-2-0/id1489722627'>
+          <img src='../../../assets/img/app-store-link.png' alt='App Store link'>
+        </a>
+        <a href='https://play.google.com/store/apps/details?id=io.ducatus.walnew'>
+          <img src='../../../assets/img/googleplay-link.png' alt='Googleplay link'>
+        </a>
+      </div>
     </div>
+  </div>
+  <div class='tokenomics'>
+    <div class='header'>
+      <img src='../../../assets/img/rectangle.png' alt='rectangle'>
+      <h2 class='title'>Tokenomics: Ducatus at a Glance</h2>
+    </div>
+    <div class='container'>
+      <div class='first-item'>
+        <img src='../../../assets/img/tokenomics-duc.png' alt='gold logo duc'>
+        <div class='duc'>
+          <div class='title'>Ducatus Coin (DUC)</div>
+          <ul class='text'>
+            <li>Total number of DUC is fixed at maximum 7,778,742,049</li>
+            <li>Low fees, fast transactions, staking rewards</li>
+            <li>Strong supporting community, merchant acceptance for payments</li>
+          </ul>
+        </div>
+      </div>
+      <div class='second-item'>
+        <div class='ducx'>
+          <div class='title'>DucatusX (DUCX)</div>
+          <ul class='text'>
+            <li>Total number of DUCX is fixed at maximum 777,874,204</li>
+            <li>Low fees, smart contracts available</li>
+            <li>Enabling only trusted project tokens</li>
+            <li>Strong supporting community, exchange traded</li>
+          </ul>
+        </div>
+        <img src='../../../assets/img/tokenomics-x.png' alt='red x logo'>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section-usability-crypto">
-    <div class="container">
-        <h3 class="h3-title-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.FOUR.TITLE' | translate"></h3>
+<section class='section-roadmap'>
+  <div class='header'>
+    <img src='../../../assets/img/rectangle.png' alt='red rectangle'>
+    <h2>Ducatus Technology Roadmap 2021</h2>
+  </div>
+  <div class='scroll'>
+    <img class='image' src='../../../assets/img/roadmap.png' alt='roadmap image'>
+  </div>
+</section>
+
+<section class='section-our-team'>
+  <div class='header'>
+    <img src='../../../assets/img/rectangle.png' alt='red rectangle'>
+    <h2>Our Team</h2>
+  </div>
+  <div class='items'>
+    <div class='item'>
+      <img src='../../../assets/img/member-1.png' alt='team member photo'>
+      <div class='description'>
+        <img class='team-rect' src='../../../assets/img/rectangle.png' alt='red rectangle'>
+        <div class='name'>ARTEM LOPATIN</div>
+        <div class='position'>Project Manager <br /> Rock'n'Block</div>
+      </div>
     </div>
-    <img src="assets/img/sections/usability-img-section.svg" alt="Usability with the Ducatus Crypto-Economy">
-    <div class="container">
-        <p class="p-text-section" [innerHTML]="'PAGE.NEWMAIN.SECTION.FOUR.TEXT' | translate"></p>
+    <div class='item'>
+      <img src='../../../assets/img/member-2.png' alt='team member photo'>
+      <div class='description'>
+        <img class='team-rect' src='../../../assets/img/rectangle.png' alt='red rectangle'>
+        <div class='name'>MAXIM STRENK</div>
+        <div class='position'>Lead Backend & Blockchain Developer <br /> Rock'n'Block</div>
+      </div>
     </div>
+    <div class='item'>
+      <img src='../../../assets/img/member-3.png' alt='team member photo'>
+      <div class='description'>
+        <img class='team-rect' src='../../../assets/img/rectangle.png' alt='red rectangle'>
+        <div class='name'>NIKITA ANTONOVICH</div>
+        <div class='position'>Lead Frontend Developer <br /> Rock'n'Block</div>
+      </div>
+    </div>
+    <div class='item'>
+      <img src='../../../assets/img/member-4.png' alt='team member photo'>
+      <div class='description'>
+        <img class='team-rect' src='../../../assets/img/rectangle.png' alt='red rectangle'>
+        <div class='name'>MOUHSIN SENHAJI</div>
+        <div class='position'>Head of Information <br /> Systems Ducatus</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class='section-faq'>
+  <div class='container'>
+    <img src='../../../assets/img/rectangle.png' alt='red rectangle'>
+    <h2>frequently asked questions</h2>
+    <div class='items'>
+      <div class='block'>
+        <div class='block__opened' *ngIf='FAQ[0].isOpened; else closed1'>
+          <img (click)='FAQ[0].isOpened = false' src='../../../assets/img/icons/minus.svg' alt='minus icon'>
+          <div class='quest'>What is the difference between DUC and DUCX?</div>
+          <div class='answer'>
+            While DUC and DUCX are complementary in the Ducatus ecosystem, each has its own characteristics and
+            functionalities:<br>
+            <br>
+            • DUC is based on Litecoin, DUCX is based on Ethereum. <br>
+            • DUCX supports smart contracts. <br>
+            • DUC is used primarily as a mode of payment within the Ducatus cashless economy. <br>
+            • DUCX is used primarily for trading.
+          </div>
+        </div>
+        <ng-template #closed1>
+          <div class='block__closed'>
+            <img (click)='FAQ[0].isOpened = true' src='../../../assets/img/icons/faq-plus.svg' alt='plus icon'>
+            <div class='quest'>What is the difference between DUC and DUCX?</div>
+          </div>
+        </ng-template>
+      </div>
+      <div class='block'>
+        <div class='block__opened' *ngIf='FAQ[1].isOpened; else closed2'>
+          <img (click)='FAQ[1].isOpened = false' src='../../../assets/img/icons/minus.svg' alt='minus icon'>
+          <div class='quest'>How do I buy DUC or DUCX?</div>
+          <div class='answer'>
+            You can buy DUC online at <a href='https://www.ducatuscoins.com/buy'>https://www.ducatuscoins.com/buy</a>.
+            To acquire DUCX for the first time, you can buy
+            DUC and then swap it for DUCX in the Ducatus Wallet. 1 DUCX = 10 DUC.
+          </div>
+        </div>
+        <ng-template #closed2>
+          <div class='block__closed'>
+            <img (click)='FAQ[1].isOpened = true' src='../../../assets/img/icons/faq-plus.svg' alt='plus icon'>
+            <div class='quest'>How do I buy DUC or DUCX?</div>
+          </div>
+        </ng-template>
+      </div>
+      <div class='block'>
+        <div class='block__opened' *ngIf='FAQ[2].isOpened; else closed3'>
+          <img (click)='FAQ[2].isOpened = false' src='../../../assets/img/icons/minus.svg' alt='minus icon'>
+          <div class='quest'>How do I exchange DUC or DUCX?</div>
+          <div class='answer'>As DUC is created to be a payment coin, it is not meant to be exchanged or traded directly
+            in a cryptocurrency exchange. It may be swapped for DUCX inside the Ducatus Wallet. DUCX may then be traded
+            at <a href='https://exchange.pancakeswap.finance/#/swap'>PancakeSwap</a>.
+          </div>
+        </div>
+        <ng-template #closed3>
+          <div class='block__closed'>
+            <img (click)='FAQ[2].isOpened = true' src='../../../assets/img/icons/faq-plus.svg' alt='plus icon'>
+            <div class='quest'>How do I exchange DUC or DUCX?</div>
+          </div>
+        </ng-template>
+      </div>
+      <div class='block'>
+        <div class='block__opened' *ngIf='FAQ[3].isOpened; else closed4'>
+          <img (click)='FAQ[3].isOpened = false' src='../../../assets/img/icons/minus.svg' alt='minus icon'>
+          <div class='quest'>Where can I spend DUC or DUCX?</div>
+          <div class='answer'>
+            DUCX functions as a trading token and is not currently used for merchant payments.
+            <br>
+            DUC, on the other hand, can be used as a mode of payment (like fiat). With more merchant partnerships in the
+            works and continuous merchant recruitment, more people will be able to use DUC in everyday life.
+            <br>
+            <br>
+            • Use DUC to pay for goods and services from <a href='https://www.merchants.ducatus.com/'>merchants</a> that
+            accept DUC as payment. <br>
+            • Use DUC to lease parts of projects at the Centurion <a href='https://centuriongm.com/crowdfunding.html'>Lease
+            & Earn</a> platform. <br>
+            • Use DUC to pay for pre-loved items at <a href='https://remusnation.com/dbay/'>Remusnation</a> D-Bay. <br>
+            • Give DUC as gifts. Some forward-thinking users have given it away like a cash gift voucher. <br>
+          </div>
+        </div>
+        <ng-template #closed4>
+          <div class='block__closed'>
+            <img (click)='FAQ[3].isOpened = true' src='../../../assets/img/icons/faq-plus.svg' alt='plus icon'>
+            <div class='quest'>Where can I spend DUC or DUCX?</div>
+          </div>
+        </ng-template>
+      </div>
+      <div class='block'>
+        <div class='block__opened' *ngIf='FAQ[4].isOpened; else closed5'>
+          <img (click)='FAQ[4].isOpened = false' src='../../../assets/img/icons/minus.svg' alt='minus icon'>
+          <div class='quest'>How can I contact the Dev Team?</div>
+          <div class='answer'>Enquiries about Ducatus Technology may be sent via email: <a
+            href='mailto:lopatin@mywish.io'></a>lopatin@mywish.io
+          </div>
+        </div>
+        <ng-template #closed5>
+          <div class='block__closed'>
+            <img (click)='FAQ[4].isOpened = true' src='../../../assets/img/icons/faq-plus.svg' alt='plus icon'>
+            <div class='quest'>How can I contact the Dev Team?</div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- <app-footer-new></app-footer-new> -->

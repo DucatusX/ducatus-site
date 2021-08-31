@@ -12,11 +12,12 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   templateUrl: './buy.component.html',
   styleUrls: ['./buy.component.scss'],
   // tslint:disable-next-line: no-host-metadata-property
-  // host: { '(document:click)': 'onClick($event)' },
+  host: { '(document:click)': 'onClick($event)' },
 })
 export class BuyComponent implements OnInit {
   @ViewChild('openFormGet') coinsGet: ElementRef;
   @ViewChild('openFormSend') coinsSend: ElementRef;
+  @ViewChild('acceptTerms') acceptTerms: ElementRef;
 
   public modal: boolean;
   public coins = coins;
@@ -70,7 +71,7 @@ export class BuyComponent implements OnInit {
   }
 
   private onClick($event: any): void {
-    if ($($event.target).closest('.select-coin').length === 0) {
+    if ($($event.target).closest('.select-coin').length === 0 && $($event.target).closest('.input-checkbox-group').length === 0) {
       this.coinsGet.nativeElement.checked = this.coinsSend.nativeElement.checked = false;
     }
   }
