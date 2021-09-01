@@ -6,13 +6,14 @@ import { BuyService } from 'src/app/service/buy/buy.service';
 import { coinsFormSend, coinsFormGet, coins } from './parameters';
 import { FormControl } from '@angular/forms';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { ConnectWalletService } from 'src/app/service/connect-wallet/connect-wallet.service';
 
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
   styleUrls: ['./buy.component.scss'],
   // tslint:disable-next-line: no-host-metadata-property
-  host: { '(document:click)': 'onClick($event)' },
+  // host: { '(document:click)': 'onClick($event)' },
 })
 export class BuyComponent implements OnInit {
   @ViewChild('openFormGet') coinsGet: ElementRef;
@@ -45,7 +46,7 @@ export class BuyComponent implements OnInit {
 
   public qr: string;
 
-  constructor(private buyservice: BuyService, private cookieService: CookieService) {}
+  constructor(private buyservice: BuyService, private cookieService: CookieService, private connectWalletService: ConnectWalletService) {}
 
   ngOnInit(): void {
     this.dayDucLimit = '25000';
@@ -70,11 +71,11 @@ export class BuyComponent implements OnInit {
       });
   }
 
-  private onClick($event: any): void {
-    if ($($event.target).closest('.select-coin').length === 0 && $($event.target).closest('.input-checkbox-group').length === 0) {
-      this.coinsGet.nativeElement.checked = this.coinsSend.nativeElement.checked = false;
-    }
-  }
+  // private onClick($event: any): void {
+  //   if ($($event.target).closest('.select-coin').length === 0 && $($event.target).closest('.input-checkbox-group').length === 0) {
+  //     this.coinsGet.nativeElement.checked = this.coinsSend.nativeElement.checked = false;
+  //   }
+  // }
 
   public acceptModalTerms(start?: boolean): void {
     if (!start) {
@@ -85,6 +86,16 @@ export class BuyComponent implements OnInit {
     this.buyservice.getRates().then((result: BuyRates) => {
       this.rates = result;
       this.rateSend = new BigNumber(this.rates[this.coinGet][this.coinSend]).toFixed();
+    });
+  }
+
+  public initWalletConnect(name = 'MetaMask', chain = 'BinanceSmartChain'): void {
+    this.connectWalletService.initWalletConnect(name, chain).then((res) => {
+      console.log('initWalletConnect: ', res);
+
+      this.connectWalletService.getAccount({}).then((account) => {
+        console.log('account', account);
+      });
     });
   }
 
