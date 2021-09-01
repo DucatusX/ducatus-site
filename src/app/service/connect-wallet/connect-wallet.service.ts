@@ -140,4 +140,12 @@ export class ConnectWalletService {
         });
     });
   }
+
+  public approve(): Promise<any> {
+    return this.getContract('Token').methods;
+  }
+
+  public send(): Promise<any> {
+    return this.getContract('Token').methods;
+  }
 }
