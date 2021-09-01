@@ -29,3 +29,9 @@ interface BuyCoinsInfo {
   qrAmount: string;
   decimal: number;
 }
+
+export interface IUserAccount {
+  address: string;
+  network: { name: string; chainID: number };
+  type: string;
+}

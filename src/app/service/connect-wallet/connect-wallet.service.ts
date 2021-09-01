@@ -13,7 +13,8 @@ export class ConnectWalletService {
   constructor(private connectWallet: ConnectWallet) {}
 
   public async initWalletConnect(connectName: string, chainName: string): Promise<boolean> {
-    this.connectWallet.addChains(blockchains);
+    const chainsInfo = this.connectWallet.addChains(blockchains);
+    console.log('chainsInfo:', chainsInfo);
 
     this.connectInfo = getConnectWalletInfo(chainName);
     this.chain = chains[chainName];

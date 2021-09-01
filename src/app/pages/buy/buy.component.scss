@@ -1,6 +1,30 @@
 @import '../../../scss/vars';
 @import '../../../scss/mixins';
 
+.userAccount {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px 20px;
+  margin-bottom: 20px;
+
+  &-connected {
+    font-size: 14px;
+    border: 1px solid #892834;
+    padding: 15px 10px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #f7f3eb;
+    color: #892834;
+    word-break: break-word;
+    margin-bottom: 20px;
+  }
+
+  button {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
 .loading-pay-form {
   padding: 30px !important;
 
