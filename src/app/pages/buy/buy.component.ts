@@ -5,9 +5,8 @@ import { BuyAddresses, BuyRates, IUserAccount } from 'src/app/interfaces/buy.int
 import { BuyService } from 'src/app/service/buy/buy.service';
 import { coinsFormSend, coinsFormGet, coins } from './parameters';
 import { FormControl } from '@angular/forms';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { ConnectWalletService } from 'src/app/service/connect-wallet/connect-wallet.service';
-import { deNormalizedValue, normalizedValue } from 'src/app/helper';
+import { deNormalizedValue } from 'src/app/helper';
 
 @Component({
   selector: 'app-buy',
@@ -109,7 +108,13 @@ export class BuyComponent implements OnInit {
   }
 
   public swap(): void {
+    if (+this.valueSend.value <= 0 || this.address === '' || !this.novalidAddress) {
+      // fix address
+      console.log(+this.valueSend.value <= 0, this.address === '', !this.novalidAddress);
+      return;
+    }
     this.swapProgress = true;
+
     const amount = deNormalizedValue('Token', this.valueSend.value);
 
     this.connectWalletService
@@ -118,6 +123,9 @@ export class BuyComponent implements OnInit {
         (res) => {
           console.log('swap():', res);
           this.swapModal = true;
+          this.address = '';
+          this.valueSend.setValue(0);
+          this.valueGet.setValue(0);
         },
         (err) => {
           console.log('swap() error:', err);
@@ -246,6 +254,11 @@ export class BuyComponent implements OnInit {
         } else {
           this.novalidAddress = true;
         }
+
+        // if(this.coinSend === 'WDUCX') {
+        //   this.canSwap = true;
+        // }
+
         break;
 
       default:
