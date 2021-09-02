@@ -108,9 +108,8 @@ export class BuyComponent implements OnInit {
   }
 
   public swap(): void {
-    if (isNaN(+this.valueSend.value) || +this.valueSend.value <= 0 || this.address === '' || !this.novalidAddress) {
-      // fix address
-      console.log(isNaN(+this.valueSend.value), +this.valueSend.value <= 0, this.address === '', !this.novalidAddress);
+    if (isNaN(+this.valueSend.value) || +this.valueSend.value <= 0 || this.address === '' || this.novalidAddress) {
+      console.log(isNaN(+this.valueSend.value), +this.valueSend.value <= 0, this.address === '', this.novalidAddress);
       return;
     }
     this.swapProgress = true;
@@ -237,19 +236,21 @@ export class BuyComponent implements OnInit {
           if ($.trim(this.address) === '' || $.trim(this.address).length < 15) {
             this.novalidAddress = true;
           } else {
-            this.buyservice
-              .getLimit(this.address)
-              .then((res) => {
-                this.dayDucLimit = new BigNumber(res.daily_available).dividedBy(new BigNumber(10).pow(8)).toFixed();
-                this.weekDucLimit = new BigNumber(res.weekly_available).dividedBy(new BigNumber(10).pow(8)).toFixed();
-                if (+this.valueSend.value > +this.dayDucLimit || +this.weekDucLimit === 0) {
-                  this.amountGet();
-                }
-                this.getAddresses();
-              })
-              .catch(() => {
-                this.novalidAddress = true;
-              });
+            if (this.coinSend !== 'WDUCX') {
+              this.buyservice
+                .getLimit(this.address)
+                .then((res) => {
+                  this.dayDucLimit = new BigNumber(res.daily_available).dividedBy(new BigNumber(10).pow(8)).toFixed();
+                  this.weekDucLimit = new BigNumber(res.weekly_available).dividedBy(new BigNumber(10).pow(8)).toFixed();
+                  if (+this.valueSend.value > +this.dayDucLimit || +this.weekDucLimit === 0) {
+                    this.amountGet();
+                  }
+                  this.getAddresses();
+                })
+                .catch(() => {
+                  this.novalidAddress = true;
+                });
+            }
           }
         } else {
           this.novalidAddress = true;
