@@ -108,9 +108,9 @@ export class BuyComponent implements OnInit {
   }
 
   public swap(): void {
-    if (+this.valueSend.value <= 0 || this.address === '' || !this.novalidAddress) {
+    if (isNaN(+this.valueSend.value) || +this.valueSend.value <= 0 || this.address === '' || !this.novalidAddress) {
       // fix address
-      console.log(+this.valueSend.value <= 0, this.address === '', !this.novalidAddress);
+      console.log(isNaN(+this.valueSend.value), +this.valueSend.value <= 0, this.address === '', !this.novalidAddress);
       return;
     }
     this.swapProgress = true;
