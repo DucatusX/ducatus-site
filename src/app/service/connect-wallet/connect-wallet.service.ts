@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ConnectWallet } from '@amfi/connect-wallet';
 import { getConnectWalletInfo, contracts, chains, blockchains } from 'src/app/config';
 import { IChainConfigData, IConnectWallet } from 'src/app/interfaces';
+import BigNumber from 'bignumber.js';
 
 @Injectable({
   providedIn: 'root',
@@ -38,10 +39,10 @@ export class ConnectWalletService {
   }
 
   private initContratcs(): void {
-    const { type, names, params } = contracts;
+    const { type, names, contract } = contracts;
 
     names.map((name) => {
-      const { address, abi } = params[name][type];
+      const { address, abi } = contract[name.toUpperCase()].chain[type];
       this.connectWallet.addContract({ name, address, abi }).then((status) => console.log(`is contract ${name} with ${address} added?: ${status}`));
     });
   }
@@ -50,7 +51,7 @@ export class ConnectWalletService {
 
   private async checkNetwork(): Promise<any> {
     const { connector, providerName, network } = this.connectWallet as any;
-    const { provider, network: nInfo, settings } = this.connectInfo;
+    const { network: nInfo } = this.connectInfo;
     const { name, nativeCurrency, rpc, blockExp } = this.chain;
 
     console.log('checkNetwork:', connector, providerName, network);
@@ -63,7 +64,7 @@ export class ConnectWalletService {
           try {
             await connector.connector.request({
               method: 'wallet_switchEthereumChain',
-              params: [{ chainId: `0x${network.chainID.toString(16)}` }],
+              contract: [{ chainId: `0x${network.chainID.toString(16)}` }],
             });
             return true;
           } catch (error) {
@@ -71,7 +72,7 @@ export class ConnectWalletService {
               try {
                 await connector.connector.request({
                   method: 'wallet_addEthereumChain',
-                  params: [
+                  contract: [
                     {
                       chainId: `0x${nInfo.chainID.toString(16)}`,
                       chainName: name,
@@ -141,11 +142,97 @@ export class ConnectWalletService {
     });
   }
 
-  public approve(): Promise<any> {
-    return this.getContract('Token').methods;
+  /**
+   * Token Supply
+   * @description Check if address accept spend amount of coins to contract.
+   * @example
+   * connectWalletService.getAllowance(amount,from,swapAddress).then(() => {},() => {});
+   * @returns true | false
+   */
+  //  public tokenSupply(): Promise<any> {
+  //   return new Promise((resolve, reject) => {
+
+  //   });
+  //  }
+
+  /**
+   * Check Allowance
+   * @description Check if address accept spend amount of coins to contract.
+   * @example
+   * connectWalletService.getAllowance(amount,from,swapAddress).then(() => {},() => {});
+   * @returns true | false
+   */
+  public getAllowance(amount: string, from: string, swapAddress: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.connectWallet
+        .Contract('Token')
+        .methods.allowance(from, swapAddress)
+        .call()
+        .then((allowance: string) => {
+          const allow = new BigNumber(allowance);
+          const allowed = allow.minus(amount);
+          console.log('allowance', allowance, amount, allowed.isNegative());
+          allowed.isNegative() ? reject() : resolve(1);
+        });
+    });
   }
 
-  public send(): Promise<any> {
-    return this.getContract('Token').methods;
+  /**
+   * Swap tokens from WDUCX to DUCX
+   * @description Send coins to swap on contract.
+   * @param blockchain blockchain number to swap, for WDUCX -> DUCX = 6, by default use 6
+   * @param amount amount WDUCX to swap in wei
+   * @param to DUCX address
+   * @param from WDUCX address
+   * @example
+   * connectWalletService.swapWDUCXtoDUCX(blockchain,amount,to,from).then(() => {}).catch((err)=>{});
+   * @returns true | false
+   */
+  public swapWDUCXtoDUCX(blockchain = 6, amount: string, to: string, from: string): Promise<any> {
+    const { type, contract } = contracts;
+    const swapAddress = contract.SWAP.chain[type].address;
+
+    const swap = (resolve: any, reject: any) => {
+      return this.connectWallet
+        .Contract('Swap')
+        .methods.transferToOtherBlockchain(blockchain, amount, to)
+        .send({
+          from,
+        })
+        .then((tx: any) => {
+          const { transactionHash } = tx;
+          console.log('stake', tx, transactionHash);
+
+          return this.connectWallet.txCheck(transactionHash).then(
+            (result) => {
+              console.log('swap check transaction result', result);
+            },
+            (err) => {
+              console.log('swap check transaction error', err);
+              if (err === null || undefined) {
+                this.connectWallet.clTxSubscribers(transactionHash);
+              }
+            }
+          );
+        })
+        .then(resolve, reject);
+    };
+
+    return new Promise((resolve, reject) => {
+      this.getAllowance(amount, from, swapAddress).then(
+        () => swap(resolve, reject),
+        () => {
+          this.connectWallet
+            .Contract('Token')
+            .methods.approve(swapAddress, amount)
+            .send({
+              from,
+            })
+            .then(() => {
+              swap(resolve, reject);
+            }, reject);
+        }
+      );
+    });
   }
 }

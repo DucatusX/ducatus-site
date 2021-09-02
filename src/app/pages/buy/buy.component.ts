@@ -7,6 +7,7 @@ import { coinsFormSend, coinsFormGet, coins } from './parameters';
 import { FormControl } from '@angular/forms';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { ConnectWalletService } from 'src/app/service/connect-wallet/connect-wallet.service';
+import { deNormalizedValue, normalizedValue } from 'src/app/helper';
 
 @Component({
   selector: 'app-buy',
@@ -23,6 +24,9 @@ export class BuyComponent implements OnInit {
   public modal: boolean;
   public modalConnect = false;
   public coins = coins;
+
+  public swapProgress = false;
+  public swapModal = false;
 
   public userAccount: IUserAccount;
 
@@ -102,6 +106,24 @@ export class BuyComponent implements OnInit {
         this.userAccount = account;
       });
     });
+  }
+
+  public swap(): void {
+    this.swapProgress = true;
+    const amount = deNormalizedValue('Token', this.valueSend.value);
+
+    this.connectWalletService
+      .swapWDUCXtoDUCX(6, amount, this.address, this.userAccount.address)
+      .then(
+        (res) => {
+          console.log('swap():', res);
+          this.swapModal = true;
+        },
+        (err) => {
+          console.log('swap() error:', err);
+        }
+      )
+      .finally(() => (this.swapProgress = false));
   }
 
   public changeGetCoin(getChange?: boolean): void {

@@ -51,14 +51,18 @@ export interface IConnectWallet {
 }
 
 export interface IContracts {
-  decimals: number;
   names: string[];
   type: string;
-  params: {
+  contract: {
     [index: string]: {
-      [index: string]: {
-        address: string;
-        abi: any[];
+      params?: {
+        decimals?: number;
+      };
+      chain: {
+        [index: string]: {
+          address: string;
+          abi: any[];
+        };
       };
     };
   };

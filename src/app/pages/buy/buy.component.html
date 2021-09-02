@@ -87,8 +87,21 @@
                   Connected to
                   <b>{{ userAccount.address }}</b>
                 </span>
-                <button class="ducatus-btn ducatus-btn-brown">Approve</button>
-                <button [disabled]="true" class="ducatus-btn ducatus-btn-brown">Send</button>
+                <!-- <button class="ducatus-btn ducatus-btn-brown">Approve</button> -->
+                <!-- <button (click)="swap()" [disabled]="swapProgress" class="ducatus-btn ducatus-btn-brown">Send</button> -->
+                <button (click)="swap()" [disabled]="swapProgress" class="ducatus-btn ducatus-btn-swap ducatus-btn-brown">
+                  <span *ngIf="!swapProgress">Swap</span>
+                  <div class="loading-small" *ngIf="swapProgress">
+                    <div class="loading-dots">
+                      <div class="loading-dots-wrap">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </div>
+                  </div>
+                </button>
               </div>
             </ng-container>
 
@@ -195,6 +208,15 @@
           <img [src]="'assets/img/icons/metamask.png'" alt="Meta Mask" />
           Meta Mask
         </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" *ngIf="swapModal">
+    <div class="modal-wrap">
+      <div class="modal-content-success">
+        <p>Your wDUCX were successfully swapped to DUCX</p>
+        <span (click)="swapModal = false" class="ducatus-btn ducatus-btn-brown">OK</span>
       </div>
     </div>
   </div>

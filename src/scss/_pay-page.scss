@@ -24,6 +24,31 @@
   }
 
   &-content {
+    &-success {
+      padding: 40px;
+
+      @include b(500) {
+        padding: 16px;
+      }
+
+      p {
+        font-size: 24px;
+        line-height: 1.2;
+        font-weight: bold;
+        text-align: center;
+        color: #862633;
+        margin-top: 20px;
+
+        @include b(500) {
+          font-size: 18px;
+        }
+      }
+
+      .ducatus-btn {
+        max-width: 100px;
+        margin: 0 auto;
+      }
+    }
     &-connect {
       display: flex;
       flex-wrap: wrap;
@@ -47,6 +72,7 @@
         min-height: 200px;
         width: 100%;
         cursor: pointer;
+        margin-bottom: 20px;
 
         img {
           margin-bottom: 20px;
