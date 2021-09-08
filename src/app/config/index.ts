@@ -1,7 +1,7 @@
 import { IChain } from '@amfi/connect-wallet/dist/interface';
 import { IChainConfig, IConnectWallet, IContracts } from '../interfaces';
 
-export const isProduction = false;
+export const isProduction = true;
 
 export const wallets: string[] = ['MetaMask', 'WalletConnect'];
 

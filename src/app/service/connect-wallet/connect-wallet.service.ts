@@ -54,8 +54,6 @@ export class ConnectWalletService {
     const { network: nInfo } = this.connectInfo;
     const { name, nativeCurrency, rpc, blockExp } = this.chain;
 
-    console.log('checkNetwork:', connector, providerName, network);
-
     if (providerName === 'MetaMask') {
       try {
         const resChain = await connector.connector.request({ method: 'eth_chainId' });
@@ -64,7 +62,7 @@ export class ConnectWalletService {
           try {
             await connector.connector.request({
               method: 'wallet_switchEthereumChain',
-              contract: [{ chainId: `0x${network.chainID.toString(16)}` }],
+              params: [{ chainId: `0x${network.chainID.toString(16)}` }],
             });
             return true;
           } catch (error) {
@@ -72,7 +70,7 @@ export class ConnectWalletService {
               try {
                 await connector.connector.request({
                   method: 'wallet_addEthereumChain',
-                  contract: [
+                  params: [
                     {
                       chainId: `0x${nInfo.chainID.toString(16)}`,
                       chainName: name,
