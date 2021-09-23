@@ -1,11 +1,12 @@
 import { BigNumber } from 'bignumber.js';
 import { Component, ElementRef, HostBinding, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { BuyAddresses, BuyRates } from 'src/app/interfaces/buy.interface';
+import { BuyAddresses, BuyRates, IUserAccount } from 'src/app/interfaces/buy.interface';
 import { BuyService } from 'src/app/service/buy/buy.service';
 import { coinsFormSend, coinsFormGet, coins } from './parameters';
 import { FormControl } from '@angular/forms';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { ConnectWalletService } from 'src/app/service/connect-wallet/connect-wallet.service';
+import { deNormalizedValue } from 'src/app/helper';
 
 @Component({
   selector: 'app-buy',
@@ -20,7 +21,13 @@ export class BuyComponent implements OnInit {
   @ViewChild('acceptTerms') acceptTerms: ElementRef;
 
   public modal: boolean;
+  public modalConnect = false;
   public coins = coins;
+
+  public swapProgress = false;
+  public swapModal = false;
+
+  public userAccount: IUserAccount;
 
   public rates: BuyRates;
   public addresses: BuyAddresses;
@@ -45,7 +52,7 @@ export class BuyComponent implements OnInit {
 
   public qr: string;
 
-  constructor(private buyservice: BuyService, private cookieService: CookieService) {}
+  constructor(private buyservice: BuyService, private cookieService: CookieService, private connectWalletService: ConnectWalletService) {}
 
   ngOnInit(): void {
     this.dayDucLimit = '25000';
@@ -88,6 +95,44 @@ export class BuyComponent implements OnInit {
     });
   }
 
+  public initWalletConnect(name = 'MetaMask', chain = 'BinanceSmartChain'): void {
+    this.connectWalletService.initWalletConnect(name, chain).then((res) => {
+      console.log('initWalletConnect: ', res);
+
+      this.connectWalletService.getAccount({}).then((account: IUserAccount) => {
+        console.log('account', account);
+        this.modalConnect = false;
+        this.userAccount = account;
+      });
+    });
+  }
+
+  public swap(): void {
+    if (isNaN(+this.valueSend.value) || +this.valueSend.value <= 0 || this.address === '' || this.novalidAddress) {
+      console.log(isNaN(+this.valueSend.value), +this.valueSend.value <= 0, this.address === '', this.novalidAddress);
+      return;
+    }
+    this.swapProgress = true;
+
+    const amount = deNormalizedValue('Token', this.valueSend.value);
+
+    this.connectWalletService
+      .swapWDUCXtoDUCX(6, amount, this.address, this.userAccount.address)
+      .then(
+        (res) => {
+          console.log('swap():', res);
+          this.swapModal = true;
+          this.address = '';
+          this.valueSend.setValue(0);
+          this.valueGet.setValue(0);
+        },
+        (err) => {
+          console.log('swap() error:', err);
+        }
+      )
+      .finally(() => (this.swapProgress = false));
+  }
+
   public changeGetCoin(getChange?: boolean): void {
     if (getChange) {
       this.coinSend = this.coinsFormSend[this.coinGet][0];
@@ -103,7 +148,8 @@ export class BuyComponent implements OnInit {
       this.coinsSend.nativeElement.checked = false;
       this.amountGet();
     }
-    this.rateSend = new BigNumber(this.rates[this.coinGet][this.coinSend]).toFixed();
+
+    this.rateSend = this.coinSend === 'WDUCX' ? 1 : new BigNumber(this.rates[this.coinGet][this.coinSend]).toFixed();
 
     if (this.addresses) {
       this.setQr();
@@ -124,8 +170,9 @@ export class BuyComponent implements OnInit {
   }
 
   public amountGet(): any {
+    const rate = this.coinSend === 'WDUCX' ? 1 : this.rates[this.coinGet][this.coinSend];
     if (this.coinGet === 'DUCX') {
-      const valueSend = new BigNumber(this.valueGet.value).multipliedBy(this.rates[this.coinGet][this.coinSend]).toFixed();
+      const valueSend = new BigNumber(this.valueGet.value).multipliedBy(rate).toFixed();
       if (+this.weekDucLimit === 0) {
         this.valueSend.setValue(0);
         this.valueGet.setValue(0);
@@ -138,7 +185,7 @@ export class BuyComponent implements OnInit {
         this.valueSend.setValue(valueSend);
       }
     } else {
-      this.valueSend.setValue(new BigNumber(this.valueGet.value).multipliedBy(this.rates[this.coinGet][this.coinSend]).toFixed());
+      this.valueSend.setValue(new BigNumber(this.valueGet.value).multipliedBy(rate).toFixed());
     }
     if (this.addresses) {
       this.setQr();
@@ -146,6 +193,8 @@ export class BuyComponent implements OnInit {
   }
 
   public amountSend(): any {
+    const rate = this.coinSend === 'WDUCX' ? 1 : this.rates[this.coinGet][this.coinSend];
+
     if (this.coinSend === 'DUC' && +this.weekDucLimit === 0) {
       this.valueSend.setValue(0);
       this.valueGet.setValue(0);
@@ -154,7 +203,7 @@ export class BuyComponent implements OnInit {
     if (this.dayDucLimit && this.coinSend === 'DUC' && +this.valueSend.value > +this.dayDucLimit) {
       this.valueSend.setValue(+this.dayDucLimit);
     }
-    this.valueGet.setValue(new BigNumber(this.valueSend.value).div(this.rates[this.coinGet][this.coinSend]).toFixed());
+    this.valueGet.setValue(new BigNumber(this.valueSend.value).div(rate).toFixed());
     if (this.addresses) {
       this.setQr();
     }
@@ -187,23 +236,30 @@ export class BuyComponent implements OnInit {
           if ($.trim(this.address) === '' || $.trim(this.address).length < 15) {
             this.novalidAddress = true;
           } else {
-            this.buyservice
-              .getLimit(this.address)
-              .then((res) => {
-                this.dayDucLimit = new BigNumber(res.daily_available).dividedBy(new BigNumber(10).pow(8)).toFixed();
-                this.weekDucLimit = new BigNumber(res.weekly_available).dividedBy(new BigNumber(10).pow(8)).toFixed();
-                if (+this.valueSend.value > +this.dayDucLimit || +this.weekDucLimit === 0) {
-                  this.amountGet();
-                }
-                this.getAddresses();
-              })
-              .catch(() => {
-                this.novalidAddress = true;
-              });
+            if (this.coinSend !== 'WDUCX') {
+              this.buyservice
+                .getLimit(this.address)
+                .then((res) => {
+                  this.dayDucLimit = new BigNumber(res.daily_available).dividedBy(new BigNumber(10).pow(8)).toFixed();
+                  this.weekDucLimit = new BigNumber(res.weekly_available).dividedBy(new BigNumber(10).pow(8)).toFixed();
+                  if (+this.valueSend.value > +this.dayDucLimit || +this.weekDucLimit === 0) {
+                    this.amountGet();
+                  }
+                  this.getAddresses();
+                })
+                .catch(() => {
+                  this.novalidAddress = true;
+                });
+            }
           }
         } else {
           this.novalidAddress = true;
         }
+
+        // if(this.coinSend === 'WDUCX') {
+        //   this.canSwap = true;
+        // }
+
         break;
 
       default:

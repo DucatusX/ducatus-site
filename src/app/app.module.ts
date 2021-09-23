@@ -54,6 +54,7 @@ import { CountdownComponent } from './components/countdown/countdown.component';
 import { SafePipe } from './pipe/safeUrl.pipe';
 import { FilterPipe } from './pipe/filter.pipe';
 import { GoogleAnalyticsService } from './service/gtag/google-analytics.service';
+import { ConnectWallet } from '@amfi/connect-wallet';
 
 export function HttpLoaderFactory(http: HttpClient): any {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json?v=' + new Date().getTime());
@@ -118,7 +119,7 @@ export function HttpLoaderFactory(http: HttpClient): any {
     RecaptchaFormsModule,
     NgxPaginationModule,
   ],
-  providers: [HttpClientModule, UserResolver, GoogleAnalyticsService, CookieService],
+  providers: [HttpClientModule, UserResolver, GoogleAnalyticsService, CookieService, ConnectWallet],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

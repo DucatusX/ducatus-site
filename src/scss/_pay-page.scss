@@ -20,9 +20,93 @@
     width: 100%;
     max-width: 500px;
     background-color: #fff;
+    overflow: hidden;
   }
 
   &-content {
+    &-success {
+      padding: 40px;
+
+      @include b(500) {
+        padding: 16px;
+      }
+
+      p {
+        font-size: 24px;
+        line-height: 1.2;
+        font-weight: bold;
+        text-align: center;
+        color: #862633;
+        margin-top: 20px;
+
+        @include b(500) {
+          font-size: 18px;
+        }
+      }
+
+      .ducatus-btn {
+        max-width: 100px;
+        margin: 0 auto;
+      }
+    }
+    &-connect {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      padding: 20px;
+
+      .btn {
+        display: flex;
+        flex-direction: column;
+        background-color: #fbf9f6;
+        border: 1px solid #cfb778;
+        box-sizing: border-box;
+        border-radius: 12px;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        font-size: 14px;
+        color: #862632;
+        max-width: 200px;
+        min-height: 200px;
+        width: 100%;
+        cursor: pointer;
+        margin-bottom: 20px;
+
+        img {
+          margin-bottom: 20px;
+          width: 80px;
+        }
+      }
+    }
+
+    &-head {
+      cursor: default;
+      background-color: #e9dcca;
+      color: #862632;
+      display: flex;
+      height: 100%;
+      min-height: 50px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+
+      &-close {
+        background-color: #fff;
+        width: 25px;
+        height: 25px;
+        color: #ab8b8b;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+
     &-top {
       padding: 30px;
       font-size: 14px;
@@ -1032,7 +1116,7 @@
 
         .select-coin,
         .convert-coin-to {
-          width: 120px;
+          width: 130px;
           height: 45px;
           position: absolute;
           top: 14px;
