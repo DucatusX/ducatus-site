@@ -1,5 +1,332 @@
-@import "../../../../scss/vars";
-@import "../../../../scss/mixins";
+@import '../../../../scss/vars';
+@import '../../../../scss/mixins';
+
+// new
+
+.c-support {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include b(1400) {
+    grid-template-columns: 1fr;
+  }
+
+  &-item {
+    display: flex;
+    padding: 50px;
+
+    @include b(1400) {
+      padding: 50px 20px;
+    }
+
+    &.jc-end {
+      justify-content: end;
+
+      @include b(1400) {
+        justify-content: start;
+      }
+    }
+
+    &-content {
+      max-width: 810px;
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+
+      @include b(1400) {
+        max-width: 100%;
+      }
+    }
+
+    &-title {
+      font-size: 44px;
+      font-weight: 300;
+      color: #000;
+    }
+
+    &-text {
+      font-size: 25px;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #000;
+    }
+
+    &-apps {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+
+      .app {
+        &-ducatus {
+          width: 100%;
+          min-width: 235px;
+          min-height: 70px;
+          display: flex;
+
+          &:before {
+            content: '';
+            width: 235px;
+            height: 70px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('../../../../assets/img/icons/apps/ducatus.svg');
+          }
+        }
+        &-googleplay {
+          width: 100%;
+          min-width: 235px;
+          min-height: 70px;
+          display: flex;
+
+          &:before {
+            content: '';
+            width: 235px;
+            height: 70px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('../../../../assets/img/icons/apps/googleplay.svg');
+          }
+        }
+        &-appstore {
+          width: 100%;
+          min-width: 235px;
+          min-height: 70px;
+          display: flex;
+
+          &:before {
+            content: '';
+            width: 235px;
+            height: 70px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('../../../../assets/img/icons/apps/appstore.svg');
+          }
+        }
+      }
+    }
+
+    &-video {
+      padding-bottom: 47%;
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 10px solid white;
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+    }
+
+    &-benefits {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+      margin-top: 20px;
+
+      &.cl-two {
+        grid-template-columns: 1fr 1fr;
+
+        @include b(550) {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      &-item {
+        display: flex;
+
+        .icon {
+          min-width: 100px;
+          max-width: 100px;
+          min-height: 100px;
+          max-height: 100px;
+          border-radius: 15px;
+          background-color: rgb(216, 223, 240);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &:before {
+            width: 80px;
+            height: 80px;
+          }
+        }
+
+        &-text {
+          margin: 0;
+          font-size: 20px;
+          color: #000;
+          font-weight: 300;
+          padding: 15px 0 0 15px;
+        }
+      }
+    }
+  }
+}
+
+.section {
+  &-ducatusx {
+    .container {
+      max-width: 1750px;
+      padding: 15px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .text {
+      font-size: 25px;
+      line-height: 40px;
+    }
+
+    &-title {
+      display: flex;
+      flex-direction: column;
+      font-size: 50px;
+      font-weight: 500;
+
+      &:before {
+        content: '';
+        height: 4px;
+        width: 100px;
+        background-color: #882425;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &-header-page {
+    min-height: 700px;
+
+    .container {
+      display: flex;
+      align-items: center;
+
+      h1 {
+        font-weight: 500;
+        font-size: 50px !important;
+        max-width: 1100px;
+        padding-left: 30px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      span {
+        color: #882425;
+      }
+    }
+  }
+
+  &-about-ducatusx {
+    .container {
+      display: grid;
+      grid-template-columns: minmax(320px, 610px) 1fr;
+      grid-gap: 10%;
+
+      @include b(1200) {
+        grid-template-columns: 1fr;
+      }
+
+      .why-ducatusx {
+        display: flex;
+        padding-left: 20px;
+
+        @include b(550) {
+          flex-direction: column;
+          padding-left: 0;
+        }
+
+        &-item {
+          background-color: #8f323475;
+          width: 200px;
+          height: 200px;
+          border-radius: 10em;
+          display: flex;
+          padding: 15px;
+          margin-left: -20px;
+
+          @include b(850) {
+            width: 150px;
+            height: 150px;
+          }
+
+          @include b(550) {
+            margin-left: 0;
+            width: 100%;
+            height: 80px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+          }
+
+          .icon {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 15px;
+            grid-template-rows: 60px 1fr;
+
+            @include b(850) {
+              font-size: 10px;
+              grid-template-rows: 40px 1fr;
+            }
+
+            @include b(550) {
+              display: flex;
+              align-items: center;
+              text-align: left;
+              grid-gap: 0;
+            }
+
+            text-align: center;
+            font-size: 18px;
+            color: #ffffff;
+
+            &:before {
+              background-color: #58282e;
+              border-radius: 5em;
+              width: 60px;
+              height: 60px;
+              margin: 0 auto;
+              background-size: 50%;
+
+              @include b(850) {
+                min-width: 40px;
+                max-width: 40px;
+                min-height: 40px;
+                max-height: 40px;
+              }
+
+              @include b(550) {
+                margin-right: 15px;
+              }
+            }
+          }
+        }
+
+        &-img {
+          display: flex;
+          justify-content: end;
+          margin-top: 100px;
+          padding-right: 200px;
+          margin-bottom: 100px;
+
+          @include b(850) {
+            padding-right: 0;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// old
 
 .section-infoblock-grid-double-item {
   .section-app-list {
@@ -14,7 +341,6 @@
 }
 
 .ducatusx-section {
-
   .section-text-second-block-img {
     background-size: contain;
 
@@ -109,7 +435,7 @@
           content: attr(data-title);
           width: 100%;
           position: absolute;
-          background-color: #f0eae2;
+          background-color: rgb(223, 216, 209);
           text-align: center;
           padding: 10px;
           font-weight: bold;
@@ -132,7 +458,7 @@
         }
 
         &:nth-child(1) {
-          border-right: 1px solid #e4e4e4;
+          border-right: 1px solid rgb(222, 223, 223);
         }
       }
     }
