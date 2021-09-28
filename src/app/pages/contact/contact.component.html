@@ -1,57 +1,60 @@
-<section class="section-header-page" style="background-image: url(/assets/img/sections/contact-bg.png);">
-    <div class="container">
-        <h1 class="h1__title-page" [innerHTML]="'PAGE.CONTACT.TITLE' | translate"></h1>
-    </div>
+<section class="section-header-page" style="background-image: url(/assets/img/ducatusx/contacts-bg.png)">
+  <div class="container">
+    <h1 class="h1__title-page" [innerHTML]="'PAGE.CONTACT.TITLE' | translate"></h1>
+  </div>
 </section>
 
 <section class="section-infoblock">
-    <div class="container">
-        <div class="section-infoblock-double">
-            <div class="section-infoblock-block">
-                <p class="p__text-section" [innerHTML]="'PAGE.CONTACT.TEXT' | translate"></p>
-                <a href="mailto:support@ducatus.net" class="a__link">support@ducatus.net</a>
+  <div class="container">
+    <div class="section-infoblock-double">
+      <div class="section-infoblock-block">
+        <p class="p__text-section" [innerHTML]="'PAGE.CONTACT.TEXT' | translate"></p>
+        <a href="mailto:support@ducatus.net" class="a__link">support@ducatus.net</a>
+      </div>
+      <div class="section-infoblock-block">
+        <div class="contact-form">
+          <form #contactForm="ngForm" novalidate (submit)="sendMail(contactForm)" id="contactform" [attr.data-form-title]="'PAGE.CONTACT.FORM.TEXT' | translate">
+            <div class="contact-form-fields" *ngIf="[0, 3].includes(contactMainSend)">
+              <div class="contact-form-field-input icon icon__user" [ngClass]="{ 'error-input': name.invalid && (name.dirty || name.touched) }">
+                <input class="input" #name="ngModel" type="text" [disabled]="disableFields" required name="name" [(ngModel)]="formData.name" [placeholder]="'PAGE.CONTACT.FORM.TEXT_1' | translate" />
+              </div>
+              <div class="contact-form-field-input" [ngClass]="{ 'error-input': tel.invalid && (tel.dirty || tel.touched) }">
+                <input type="tel" ng2TelInput #tel="ngModel" [disabled]="disableFields" id="phone" [(ngModel)]="formData.tel" required name="tel" oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\..*)\./g, '$1');" />
+              </div>
+              <div class="contact-form-field-input icon icon__email" [ngClass]="{ 'error-input': email.invalid && (email.dirty || email.touched) }">
+                <input class="input" type="email" #email="ngModel" [disabled]="disableFields" [(ngModel)]="formData.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required name="email" [placeholder]="'PAGE.CONTACT.FORM.TEXT_3' | translate" />
+              </div>
+              <div class="contact-form-field-textarea icon icon__message" [ngClass]="{ 'error-input': message.invalid && (message.dirty || message.touched) }">
+                <textarea class="textarea" type="text" #message="ngModel" [disabled]="disableFields" [(ngModel)]="formData.message" required name="message" [placeholder]="'PAGE.CONTACT.FORM.TEXT_4' | translate"></textarea>
+              </div>
+              <div class="contact-form-field">
+                <button class="button button__brown-red button-flat" [disabled]="contactForm.invalid || contactMainSend === 3" type="submit">{{ 'PAGE.CONTACT.FORM.BUTTON' | translate }}</button>
+              </div>
+              <re-captcha [(ngModel)]="formModel.captcha" name="captcha" required siteKey="6Ldw2sAZAAAAAAvBdORnt1ydyDzUR1S3y2QRojqu" #captchaControl="ngModel" class="contact-form-captcha"></re-captcha>
+              <span *ngIf="contactMainSend === 3" class="contact-form-loading icon__loading"></span>
             </div>
-            <div class="section-infoblock-block">
-                <div class="contact-form">
-                    <form #contactForm="ngForm" novalidate (submit)="sendMail(contactForm)" id="contactform" [attr.data-form-title]="'PAGE.CONTACT.FORM.TEXT' | translate">
-                        <div class="contact-form-fields" *ngIf="[0,3].includes(contactMainSend)">
-                            <div class="contact-form-field-input icon icon__user" [ngClass]="{ 'error-input': name.invalid && (name.dirty || name.touched)  }">
-                                <input class="input" #name="ngModel" type="text" [disabled]="disableFields" required name="name" [(ngModel)]="formData.name" [placeholder]="'PAGE.CONTACT.FORM.TEXT_1' | translate">
-                            </div>
-                            <div class="contact-form-field-input" [ngClass]="{ 'error-input': tel.invalid && (tel.dirty || tel.touched)}">
-                                <input type="tel" ng2TelInput #tel="ngModel" [disabled]="disableFields" id="phone" [(ngModel)]="formData.tel" required name="tel" oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\..*)\./g, '$1');" />
-                            </div>
-                            <div class="contact-form-field-input icon icon__email" [ngClass]="{ 'error-input': email.invalid && (email.dirty || email.touched) }">
-                                <input class="input" type="email" #email="ngModel" [disabled]="disableFields" [(ngModel)]="formData.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required name="email" [placeholder]="'PAGE.CONTACT.FORM.TEXT_3' | translate">
-                            </div>
-                            <div class="contact-form-field-textarea icon icon__message" [ngClass]="{ 'error-input': message.invalid && (message.dirty || message.touched) }">
-                                <textarea class="textarea" type="text" #message="ngModel" [disabled]="disableFields" [(ngModel)]="formData.message" required name="message" [placeholder]="'PAGE.CONTACT.FORM.TEXT_4' | translate"></textarea>
-                            </div>
-                            <div class="contact-form-field">
-                                <button class="button button__brown-red button-flat" [disabled]="contactForm.invalid || contactMainSend === 3" type="submit">{{ 'PAGE.CONTACT.FORM.BUTTON' | translate }}</button>
-                            </div>
-                            <re-captcha
-                                [(ngModel)]="formModel.captcha"
-                                name="captcha"
-                                required
-                                siteKey="6Ldw2sAZAAAAAAvBdORnt1ydyDzUR1S3y2QRojqu"
-                                #captchaControl="ngModel"
-                                class="contact-form-captcha"
-                            ></re-captcha>
-                            <span *ngIf="contactMainSend === 3" class="contact-form-loading icon__loading"></span>
-                        </div>
-                        <div class="contact-form-fields" *ngIf="contactMainSend === 1">
-                            <p style="text-align:center;">Thank you for your message!<br><br>Our customer support will contact you shortly!</p>
-                        </div>
-                        <div class="contact-form-fields" *ngIf="contactMainSend === 2">
-                            <p class="cl-red" style="text-align:center;">Something went wrong<br><br>please try again</p>
-                            <div class="contact-form-field">
-                                <span class="button button__brown-red button-flat" (click)="contactMainSend = 0" type="submit">try again</span>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+            <div class="contact-form-fields" *ngIf="contactMainSend === 1">
+              <p style="text-align: center">
+                Thank you for your message!
+                <br />
+                <br />
+                Our customer support will contact you shortly!
+              </p>
             </div>
+            <div class="contact-form-fields" *ngIf="contactMainSend === 2">
+              <p class="cl-red" style="text-align: center">
+                Something went wrong
+                <br />
+                <br />
+                please try again
+              </p>
+              <div class="contact-form-field">
+                <span class="button button__brown-red button-flat" (click)="contactMainSend = 0" type="submit">try again</span>
+              </div>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
+  </div>
 </section>
