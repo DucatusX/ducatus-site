@@ -49,6 +49,12 @@
       font-size: 25px;
       font-weight: 300;
       line-height: 1.6;
+
+      br {
+        @include b(850) {
+          display: none;
+        }
+      }
     }
 
     a {
@@ -59,7 +65,10 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 30px;
-      flex-wrap: wrap;
+
+      @include b(850) {
+        flex-wrap: wrap;
+      }
 
       .app {
         &-ducatus {
@@ -363,7 +372,7 @@
   }
 
   &.mt-80 {
-    margin-top: 80px;
+    // margin-top: 80px;
     margin-bottom: -300px;
 
     @include b(1500) {

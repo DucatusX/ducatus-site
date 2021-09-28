@@ -1,48 +1,46 @@
-<footer class='footer-new' *ngIf='hideFooter'>
-  <div class='container'>
-    <div class='menu'>
-      <a routerLink='/'>Home</a>
-      <a routerLink='/buy'>Buy DUC</a>
-      <a routerLink='/ducatusx'>DUCX</a>
-      <a routerLink='/contact'>Contact</a>
+<footer class="footer-new" *ngIf="hideFooter">
+  <div class="container">
+    <div class="menu">
+      <a routerLink="/">Home</a>
+      <a routerLink="/buy">Buy DUC</a>
+      <a routerLink="/ducatusx">About DUCX</a>
+      <a routerLink="/contact">Contact</a>
     </div>
-    <div class='downloading'>
+    <div class="downloading">
       <p>Buy, store and swap cryptocurrency with the Ducatus Wallet</p>
-      <div class='btns'>
-        <a href='http://wallet.ducatus.io/'>
-          <img src='../../../../assets/img/duc-wallet-link.png' alt='Ducatus Web Wallet link'>
+      <div class="btns">
+        <a href="http://wallet.ducatus.io/">
+          <img src="../../../../assets/img/duc-wallet-link.png" alt="Ducatus Web Wallet link" />
         </a>
-        <a href='https://apps.apple.com/us/app/ducatus-wallet-2-0/id1489722627'>
-          <img src='../../../../assets/img/app-store-link.png' alt='App Store link'>
+        <a href="https://apps.apple.com/us/app/ducatus-wallet-2-0/id1489722627">
+          <img src="../../../../assets/img/app-store-link.png" alt="App Store link" />
         </a>
-        <a href='https://play.google.com/store/apps/details?id=io.ducatus.walnew'>
-          <img src='../../../../assets/img/googleplay-link.png' alt='Googleplay link'>
+        <a href="https://play.google.com/store/apps/details?id=io.ducatus.walnew">
+          <img src="../../../../assets/img/googleplay-link.png" alt="Googleplay link" />
         </a>
       </div>
     </div>
-    <div class='links'>
-      <a href='https://www.facebook.com/WeAreDucatus/'>
-        <img src='../../../../assets/img/fb-logo.png' alt='facebook logo'>
+    <div class="links">
+      <a href="https://www.facebook.com/WeAreDucatus/">
+        <img src="../../../../assets/img/fb-logo.png" alt="facebook logo" />
       </a>
-      <a href='https://twitter.com/DucatusGlobal'>
-        <img src='../../../../assets/img/tw-logo.png' alt='twitter logo'>
+      <a href="https://twitter.com/DucatusGlobal">
+        <img src="../../../../assets/img/tw-logo.png" alt="twitter logo" />
       </a>
-      <a href='https://www.instagram.com/ducatusglobal/'>
-        <img src='../../../../assets/img/inst-logo.png' alt='instagram logo'>
+      <a href="https://www.instagram.com/ducatusglobal/">
+        <img src="../../../../assets/img/inst-logo.png" alt="instagram logo" />
       </a>
-      <a href='https://www.youtube.com/channel/UCBjE5LLJQyMq6crQholohTQ'>
-        <img src='../../../../assets/img/youtube-logo.png' alt='youtube logo'>
+      <a href="https://www.youtube.com/channel/UCBjE5LLJQyMq6crQholohTQ">
+        <img src="../../../../assets/img/youtube-logo.png" alt="youtube logo" />
       </a>
     </div>
   </div>
 </footer>
 
-<section class='section-cookie' *ngIf='privacyCookie'>
+<section class="section-cookie" *ngIf="privacyCookie">
   <span [innerHTML]="'PRIVACY.TEXT' | translate"></span>
-  <div class='section-cookie-buttons'>
-        <span class='section-cookie-buttons-item'
-              (click)='privacyCookie = false'>{{ 'PRIVACY.BUTTON_DECLINE' | translate }}</span>
-    <span id='accept_cookie' class='section-cookie-buttons-item'
-          (click)='privacyCookieSet()'>{{ 'PRIVACY.BUTTON_ACCEPT' | translate }}</span>
+  <div class="section-cookie-buttons">
+    <span class="section-cookie-buttons-item" (click)="privacyCookie = false">{{ 'PRIVACY.BUTTON_DECLINE' | translate }}</span>
+    <span id="accept_cookie" class="section-cookie-buttons-item" (click)="privacyCookieSet()">{{ 'PRIVACY.BUTTON_ACCEPT' | translate }}</span>
   </div>
 </section>
