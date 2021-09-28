@@ -84,7 +84,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            background-image: url('../../../../assets/img/icons/apps/ducatus.svg');
+            background-image: url('../../../../assets/img/icons/apps/ducatus-ducx.svg');
           }
         }
         &-googleplay {
@@ -100,7 +100,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            background-image: url('../../../../assets/img/icons/apps/googleplay.svg');
+            background-image: url('../../../../assets/img/icons/apps/googleplay-ducx.svg');
           }
         }
         &-appstore {
@@ -115,7 +115,7 @@
             height: 70px;
             background-repeat: no-repeat;
             background-position: center;
-            background-image: url('../../../../assets/img/icons/apps/appstore.svg');
+            background-image: url('../../../../assets/img/icons/apps/appstore-ducx.svg');
           }
         }
       }
@@ -320,7 +320,7 @@
 
         &-img {
           display: flex;
-          justify-content: end;
+          justify-content: flex-end;
           margin-top: 100px;
           padding-right: 200px;
           margin-bottom: 100px;
