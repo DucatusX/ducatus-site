@@ -238,8 +238,13 @@
       display: grid;
       grid-template-columns: minmax(320px, 610px) 1fr;
       grid-gap: 10%;
+      background-image: url('../../../../assets/img/duc-wallet.png');
+      background-position: right;
+      background-size: contain;
+      background-repeat: no-repeat;
 
       @include b(1200) {
+        background-image: none;
         grid-template-columns: 1fr;
       }
 
