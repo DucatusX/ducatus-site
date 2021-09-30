@@ -1,5 +1,5 @@
-@import "../../../scss/vars";
-@import "../../../scss/mixins";
+@import '../../../scss/vars';
+@import '../../../scss/mixins';
 
 .section-header {
   margin-top: 92px;
@@ -7,7 +7,7 @@
   height: 100%;
   display: flex;
   padding: 0;
-  background-image: url("../../../assets/img/slide-1.png");
+  background-image: url('../../../assets/img/slide-1.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
 
@@ -22,7 +22,7 @@
     @include b(1024) {
       display: block;
       height: 225px;
-      background-image: url("../../../assets/img/slide-1.png");
+      background-image: url('../../../assets/img/slide-1.png');
       background-size: cover;
       background-position: right 45% center;
       background-repeat: no-repeat;
@@ -99,8 +99,8 @@
         margin-top: 27px;
         width: 262px;
         height: 43px;
-        background: linear-gradient(315deg, #8A2432 27.02%, #BF1F4B 72.98%);
-        box-shadow: 0 4px 14px #8590DB;
+        background: linear-gradient(315deg, #8a2432 27.02%, #bf1f4b 72.98%);
+        box-shadow: 0 4px 14px #8590db;
         border-radius: 22px;
         cursor: pointer;
         color: #fff;
@@ -220,7 +220,7 @@
 
       &-title {
         margin: 0;
-        color: #8A2432;
+        color: #8a2432;
         font-weight: 400;
         font-size: 38px;
         line-height: 46px;
@@ -241,7 +241,7 @@
 }
 
 .section-projects {
-  background-color: #DFDFDF;
+  background-color: #dfdfdf;
   width: 100%;
   overflow-x: auto;
 
@@ -390,7 +390,6 @@
     }
   }
   .tokenomics {
-
     @include b(1000) {
       margin-top: 100px;
     }
@@ -466,7 +465,7 @@
             margin-top: 25px;
             font-size: 36px;
             line-height: 44px;
-            color: #8A2432;
+            color: #8a2432;
           }
 
           .text {
@@ -637,6 +636,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
 
     @include bb(1200, 750) {
       display: grid;
@@ -650,7 +651,7 @@
     }
 
     .item {
-      width: 220px;
+      width: 250px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -699,13 +700,13 @@
 
   .container {
     width: auto;
-    max-height: 814px;
+    // max-height: 814px;
     margin: 30px auto 0;
-    padding: 34px 50px;
+    padding: 34px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #E8EEFE;
+    background-color: #e8eefe;
 
     @include b(1035) {
       max-height: 100%;
@@ -721,28 +722,34 @@
 
     .items {
       width: 100%;
-      max-height: 650px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex-wrap: wrap;
+      word-break: break-word;
+      // max-height: 650px;
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+      // flex-wrap: wrap;
 
-      @include b(1035) {
-        max-height: 100%;
-        flex-wrap: nowrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+      max-width: max-content;
+      align-items: flex-start;
+
+      @include b(1000) {
+        grid-template-columns: 1fr;
       }
 
       .block {
-        margin-bottom: 19px;
-        margin-right: 21px;
-        width: 447px;
+        // margin-bottom: 19px;
+        // margin-right: 21px;
+        width: 450px;
         min-height: 35px;
         border: 1px solid #000000;
         border-radius: 16px;
 
         @include b(540) {
-          margin: 0 auto 19px;
-          width: 90%;
+          // margin: 0 auto 19px;
+          width: 100%;
         }
 
         &__opened {
@@ -762,8 +769,8 @@
 
           .quest {
             margin-bottom: 10px;
-            margin-right: 10px;
-            max-width: 340px;
+            // margin-right: 10px;
+            max-width: 390px;
             font-weight: bold;
             font-size: 16px;
             line-height: 20px;
@@ -791,8 +798,8 @@
           }
 
           .quest {
-            margin-right: 10px;
-            max-width: 340px;
+            // margin-right: 10px;
+            max-width: 390px;
             font-size: 16px;
             line-height: 20px;
           }
@@ -801,5 +808,3 @@
     }
   }
 }
-
-

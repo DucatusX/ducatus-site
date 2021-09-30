@@ -6,6 +6,7 @@
 .c-support {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  word-break: break-word;
 
   @include b(1400) {
     grid-template-columns: 1fr;
@@ -21,6 +22,7 @@
 
     &.jc-end {
       justify-content: end;
+      padding-left: 15px;
 
       @include b(1400) {
         justify-content: start;
@@ -113,6 +115,7 @@
             content: '';
             width: 235px;
             height: 70px;
+            background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
             background-image: url('../../../../assets/img/icons/apps/appstore-ducx.svg');

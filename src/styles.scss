@@ -14,6 +14,7 @@ $custom-typography: mat-typography-config(
 @import './scss/typography';
 @import './scss/buttons';
 @import './scss/pages-modules';
+@import './scss/pay-page';
 
 .iti__flag {
   background-image: url('assets/img/icons/flags/flags.png');
@@ -1072,5 +1073,3 @@ $custom-typography: mat-typography-config(
     }
   }
 }
-
-@import './scss/pay-page';
