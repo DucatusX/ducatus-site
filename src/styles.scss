@@ -3,27 +3,26 @@
 @import '~@angular/material/theming';
 
 $custom-typography: mat-typography-config(
-  $font-family: 'Montserrat'
+  $font-family: 'Montserrat',
 );
 
 @include angular-material-typography($custom-typography);
 
-@import "./scss/vars";
-@import "./scss/mixins";
-@import "./scss/layout";
-@import "./scss/typography";
-@import "./scss/buttons";
-@import "./scss/pages-modules";
-@import "./scss/pay-page";
+@import './scss/vars';
+@import './scss/mixins';
+@import './scss/layout';
+@import './scss/typography';
+@import './scss/buttons';
+@import './scss/pages-modules';
+@import './scss/pay-page';
 
 .iti__flag {
-  background-image: url("assets/img/icons/flags/flags.png");
+  background-image: url('assets/img/icons/flags/flags.png');
 }
 
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .iti__flag {
-    background-image: url("assets/img/icons/flags/flags@2x.png");
+    background-image: url('assets/img/icons/flags/flags@2x.png');
   }
 }
 
@@ -32,7 +31,8 @@ $custom-typography: mat-typography-config(
 }
 
 .ducatus-text-link {
-  color: $brown-red;
+  // color: $brown-red;
+  color: #505050;
   cursor: pointer;
   transition: 0.4s ease;
   text-decoration: none;
@@ -181,12 +181,11 @@ $custom-typography: mat-typography-config(
   }
 
   &-block {
-
     &:nth-child(2) {
       .span__title {
         @include b(750) {
           width: 100%;
-          border-top: 5px solid #F5F3EE;
+          border-top: 5px solid #f5f3ee;
           padding-top: 30px;
         }
       }
@@ -203,7 +202,6 @@ $custom-typography: mat-typography-config(
     }
 
     .p__section-ducatus-coin {
-
       &:before {
         margin-bottom: 15px;
         margin-top: 15px;
@@ -252,7 +250,6 @@ $custom-typography: mat-typography-config(
 }
 
 .section-ducatus-maintains {
-
   background: rgb(251, 250, 247);
   padding: 0px;
   position: relative;
@@ -323,7 +320,6 @@ $custom-typography: mat-typography-config(
   }
 
   &-block {
-
     .span__title {
       br {
         @include b(900) {
@@ -337,7 +333,6 @@ $custom-typography: mat-typography-config(
       padding: 100px 15px 50px 15px;
 
       .section-ducatus-maintains-block-item {
-
         width: 100%;
         padding-right: 50px;
 
@@ -378,7 +373,6 @@ $custom-typography: mat-typography-config(
           }
         }
       }
-
     }
 
     .span__title {
@@ -488,7 +482,7 @@ $custom-typography: mat-typography-config(
   background-repeat: no-repeat;
   background-position: 25% 0;
   background-size: 43%;
-  background-color: #F0EAE2;
+  background-color: #f0eae2;
   padding-bottom: 120px;
 
   @include b(1050) {
@@ -783,7 +777,7 @@ $custom-typography: mat-typography-config(
 }
 
 .footer {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   padding-top: 30px;
   padding-bottom: 30px;
   overflow: hidden;
@@ -899,7 +893,7 @@ $custom-typography: mat-typography-config(
       max-width: 100%;
       min-width: 100%;
       width: 100%;
-      border-top: 2px solid #E1E1E1;
+      border-top: 2px solid #e1e1e1;
       padding: 0;
       max-height: 50px;
       min-height: 50px;
@@ -926,7 +920,7 @@ $custom-typography: mat-typography-config(
         align-items: center;
         padding-left: 20px;
         font-weight: bold;
-        color: #656C75;
+        color: #656c75;
         text-transform: uppercase;
         position: absolute;
         background-color: #ececec;
@@ -1035,7 +1029,7 @@ $custom-typography: mat-typography-config(
             max-height: 100% !important;
 
             &:nth-child(1) {
-              border-top: 2px solid #E1E1E1;
+              border-top: 2px solid #e1e1e1;
               padding-top: 60px;
 
               &:before {
@@ -1060,7 +1054,7 @@ $custom-typography: mat-typography-config(
 
         &:nth-child(1) {
           @include b(750) {
-            border-top: 2px solid #E1E1E1;
+            border-top: 2px solid #e1e1e1;
           }
 
           &:before {

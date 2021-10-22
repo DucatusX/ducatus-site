@@ -1,6 +1,40 @@
 @import '../../../scss/vars';
 @import '../../../scss/mixins';
 
+.section-header-page {
+  min-height: 700px;
+  margin-top: 80px;
+  background-size: cover;
+  background-position: center;
+
+  .container {
+    display: flex;
+    align-items: center;
+
+    h1 {
+      font-weight: 500;
+      font-size: 50px !important;
+      max-width: 1100px;
+      padding-left: 30px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    span {
+      font-weight: bold;
+      color: #ffffff;
+    }
+  }
+
+  @include b(700) {
+    min-height: 300px;
+  }
+}
+
+.ducatus-text-link {
+  color: #505050 !important;
+}
+
 .loading-small {
   position: relative;
   left: 0;
@@ -25,12 +59,12 @@
 
   &-connected {
     font-size: 14px;
-    border: 1px solid #892834;
+    border: 1px solid #eaeaff;
     padding: 15px 10px;
     border-radius: 10px;
     text-align: center;
-    background-color: #f7f3eb;
-    color: #892834;
+    background-color: #ffffff;
+    color: #505050;
     word-break: break-word;
     margin-bottom: 20px;
   }

@@ -1,5 +1,5 @@
 <div
-  id='#'
+  id="#"
   class="header"
   [ngClass]="{
     'header-hide': !hideHeader,
@@ -17,12 +17,8 @@
           <img src="/assets/img/buy-page/header-logo.svg" alt="Centurion logo" />
         </a>
         <a *ngIf="!adminHeader" class="header-logo"></a>
-        <div class="header-menu-toggle-block" (click)='changeMenu()'>
-          <label
-            for="header-menu-toggle"
-            class="header-menu-toggle"
-            *ngIf="!openMenu;else toggleClose"
-          >
+        <div class="header-menu-toggle-block" (click)="changeMenu()">
+          <label for="header-menu-toggle" class="header-menu-toggle" *ngIf="!openMenu; else toggleClose">
             <span class="line-toggle"></span>
             <span class="line-toggle"></span>
             <span class="line-toggle"></span>
@@ -37,10 +33,10 @@
         </div>
       </div>
       <div *ngIf="adminHeader" class="header-menu-block" [ngClass]="{ 'menu-open': openMenu }">
-        <a routerLink="/" class="header-menu-link" (click)='changeMenu()'>Home</a>
-        <a routerLink="/buy" class="header-menu-link" (click)='changeMenu()'>Buy DUC</a>
-        <a routerLink="/ducatusx" class="header-menu-link" (click)='changeMenu()'>DUCX</a>
-        <a routerLink="/contact" class="header-menu-link" (click)='changeMenu()'>Contact</a>
+        <a routerLink="/" class="header-menu-link" (click)="changeMenu()">Home</a>
+        <a routerLink="/buy" class="header-menu-link" (click)="changeMenu()">Buy DUC</a>
+        <a routerLink="/ducatusx" class="header-menu-link" (click)="changeMenu()">About DUCX</a>
+        <a routerLink="/contact" class="header-menu-link" (click)="changeMenu()">Contact</a>
       </div>
       <div
         *ngIf="!adminHeader"

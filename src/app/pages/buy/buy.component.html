@@ -1,7 +1,10 @@
 <div>
-  <section class="section-header-page buy-page-header" style="background-image: url(/assets/img/buy-page/head-background.png)">
+  <section class="section-header-page buy-page-header" style="background-image: url(/assets/img/ducatusx/buy-page-bg.png)">
     <div class="container">
-      <h1 class="h1__title-page" [innerHTML]="'PAGE.BUY.TITLE' | translate"></h1>
+      <h1 class="h1__title-page">
+        Buy
+        <span class="h1__title-accent">DUC</span>
+      </h1>
     </div>
   </section>
 
@@ -162,11 +165,13 @@
         <!-- Right Side Block -->
         <!-- With Video And Text -->
         <div class="pay-form-block">
-          <div class="pay-form-block-video">
-            <iframe src="https://www.youtube.com/embed/5tzX8UzUQkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="pay-form-block-text">
-            <p class="p__text-section icon icon__wallet_2" [innerHTML]="'PAGE.BUY.INFO.TEXT' | translate: { coin: coins[coinGet].name }"></p>
+          <div class="pay-form-block-wrap">
+            <div class="pay-form-block-video">
+              <iframe src="https://www.youtube.com/embed/5tzX8UzUQkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="pay-form-block-text">
+              <p class="p__text-section icon icon__wallet_2" [innerHTML]="'PAGE.BUY.INFO.TEXT' | translate: { coin: coins[coinGet].name }"></p>
+            </div>
           </div>
         </div>
         <!-- End Right Side Block -->
