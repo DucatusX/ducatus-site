@@ -5,7 +5,7 @@
   position: fixed;
   width: 100%;
   top: 0;
-  height: 92px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,22 +31,6 @@
     display: none !important;
   }
 
-  .container {
-    padding: 0 135px;
-
-    @include b(1366) {
-      padding: 0 35px;
-    }
-
-    @include b(900) {
-      padding: 0;
-    }
-
-    @include b(750) {
-      margin: 0;
-      padding: 0;
-    }
-  }
 
   &-wrap {
     width: 100%;
@@ -76,7 +60,7 @@
     }
 
     img {
-      width: 220px;
+      width: 290px;
 
       @include b(900) {
         width: 200px;
@@ -90,6 +74,8 @@
 
   &-menu {
     &-block {
+      padding: 0;
+      left: 0;
       flex-basis: 65%;
       display: flex;
       align-items: center;
@@ -163,6 +149,7 @@
           margin-top: 2px;
           width: 26px;
           height: 0;
+          left:0;
           border: 1px solid #FFFFFF;
           background-color: #fff;
           transform: rotate(-45deg);
@@ -174,6 +161,7 @@
           top: 2px;
           width: 26px;
           height: 0;
+          left:0;
           border: 1px solid #FFFFFF;
           background-color: #fff;
           transform: rotate(45deg);
@@ -206,6 +194,7 @@
   @include b(750) {
     position: absolute;
     top: -2px;
+    left: 0;
     width: 100%;
     padding: 106px 0 196px;
     max-height: 496px !important;

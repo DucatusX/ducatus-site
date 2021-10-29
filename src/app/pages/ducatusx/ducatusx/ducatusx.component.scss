@@ -1,57 +1,43 @@
 @import '../../../../scss/vars';
 @import '../../../../scss/mixins';
+@import '../../../../scss/layout';
 
-.section-infoblock-grid-double{
-  padding-right: 135px;
-}
-
+// new
 
 .c-support {
   display: grid;
-  grid-template-columns: repeat(2,50%);
+  grid-template-columns: 1fr 1fr;
   word-break: break-word;
 
-  @include b(1400) {
+  @include b(1660) {
     grid-template-columns: 1fr;
   }
 
   &-item {
     display: flex;
     padding: 50px;
-    padding-right: 135px;
 
     @include b(1400) {
-      padding: 50px 20px 50px 135px;
-    }
-    @include b(1366) {
-      padding-left: 35px;
-    }
-    @include b(750){
-      padding: 50px;
+      padding: 50px 20px;
     }
 
     &.jc-end {
       justify-content: end;
-      @include b(1920){
-      padding-left: 135px;
-      }
-      @include b(1366){
-        padding-left: 35px
-      }
+      padding-left: 15px;
+
       @include b(1400) {
         justify-content: start;
-        padding-right: 20px
       }
     }
 
     &-content {
-      max-width: 810px;
+      max-width: 730px;
       width: 100%;
 
       display: flex;
       flex-direction: column;
 
-      @include b(1400) {
+      @include b(1660) {
         max-width: 100%;
       }
     }
@@ -90,7 +76,7 @@
       .app {
         &-ducatus {
           width: 100%;
-          min-width: 160px;
+          min-width: 235px;
           min-height: 70px;
           display: flex;
 
@@ -106,7 +92,7 @@
         }
         &-googleplay {
           width: 100%;
-          min-width: 160px;
+          min-width: 235px;
           min-height: 70px;
           display: flex;
 
@@ -122,7 +108,7 @@
         }
         &-appstore {
           width: 100%;
-          min-width: 160px;
+          min-width: 235px;
           min-height: 70px;
           display: flex;
 
@@ -202,33 +188,12 @@
 .section {
   &-ducatusx {
     .container {
-      max-width: 1920px;
       padding: 15px;
       width: 100%;
       margin: 0 auto;
-      @include b(1920) {
-        padding-left: 135px;
-        margin: 0;
-      }
-      @include b(1366){
-        padding-left: 35px;
-        margin: 0;
-      }
-      @include b(750){
-        padding: 15px;
-      }
     }
-    &:nth-child(3){
-      @include b(1920){
-        padding-right: 135px;
-      }
-      @include b(1366){
-        padding-right: 35px;
-      }
-      @include b(750){
-        padding: 15px;
-      }
-    }
+    
+    
 
     .text {
       font-size: 25px;
@@ -283,7 +248,7 @@
       background-size: contain;
       background-repeat: no-repeat;
 
-      @include b(1200) {
+      @include b(1400) {
         background-image: none;
         grid-template-columns: 1fr;
       }
@@ -291,7 +256,7 @@
       .why-ducatusx {
         display: flex;
         padding-left: 20px;
-        width: 100%;
+
         @include b(550) {
           flex-direction: column;
           padding-left: 0;
@@ -367,14 +332,9 @@
           display: flex;
           justify-content: flex-end;
           margin-top: 100px;
+          padding-right: 200px;
           margin-bottom: 100px;
-          @include b(1920){
-            padding-right: 135px;
-          }
-          @include b(1366){
-            padding-right: 35px
-          }
-          
+
           @include b(850) {
             padding-right: 0;
             justify-content: center;
@@ -388,7 +348,6 @@
 // old
 
 .section-infoblock-grid-double-item {
-  padding-right: 135;
   .section-app-list {
     margin-top: 10px;
     max-width: 400px;
@@ -422,18 +381,6 @@
     margin-top: 50px;
   }
 
-  &.mt-80 {
-    // margin-top: 80px;
-    margin-bottom: -300px;
-
-    @include b(1500) {
-      margin-bottom: -540px;
-    }
-
-    @include b(1000) {
-      margin-bottom: -1000px;
-    }
-  }
 
   .block-video {
     position: relative;

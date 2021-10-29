@@ -2,17 +2,8 @@
 @import "../../../../scss/mixins";
 
 footer {
-  position: relative;
-  top: 300px;
+  
   background-color: #892331;
-
-  @include b(1500) {
-    top: 540px;
-  }
-
-  @include b(1000) {
-    top: 1000px;
-  }
 
   .container {
     padding: 0 140px;

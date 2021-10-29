@@ -84,15 +84,7 @@
     display: grid;
     grid-template-columns: repeat(2, 50%);
     grid-gap: 20px;
-    margin-bottom: -300px;
 
-    @include b(1500) {
-      margin-bottom: -540px;
-    }
-
-    @include b(1000) {
-      margin-bottom: -1000px;
-    }
 
     @include b(750) {
       grid-template-columns: 1fr;

@@ -173,16 +173,7 @@
   cursor: default;
   background-size: 100px 100px;
   padding-bottom: 250px;
-  margin-bottom: -300px;
-
-  @include b(1500) {
-    margin-bottom: -540px;
-  }
-
-  @include b(1000) {
-    margin-bottom: -1000px;
-  }
-
+  
   @include b(750) {
     padding-bottom: 60px;
   }

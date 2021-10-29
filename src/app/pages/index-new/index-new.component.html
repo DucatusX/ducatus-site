@@ -1,29 +1,35 @@
 <!-- <app-header-new></app-header-new> -->
-
 <section class="section-header">
+<div class="container">
   <div class="mobile-image"></div>
   <div class="section-header-container">
     <div class="section-header-container-item">
       <h2 class="section-header-container-item-title" [innerHTML]="header[lang].title"></h2>
       <p class="section-header-container-item-text" [innerHTML]="header[lang].text"></p>
-      <a [routerLink]="'/assets/downloads/pdf/' + header[lang].file" target="_blank" class="section-header-container-item-button">{{ header[lang].button }}</a>
+      <a [routerLink]="'/assets/downloads/pdf/' + header[lang].file" target="_blank"
+        class="section-header-container-item-button">{{ header[lang].button }}</a>
     </div>
   </div>
+</div>
 </section>
+
 
 <section class="section-about-us">
   <div class="container">
     <div class="first-item">
       <img class="section-about-us-rectangle" src="../../../assets/img/rectangle.png" alt="about us rectangle" />
       <h2 class="first-item-title">Created for All</h2>
-      <p class="first-item-text">DUC and DUCX were designed to be open and inclusive. Tech savvy or not, we believe that everyone should have the ability to use reliable payment services that are as simple and common as using a credit card.</p>
+      <p class="first-item-text">DUC and DUCX were designed to be open and inclusive. Tech savvy or not, we believe that
+        everyone should have the ability to use reliable payment services that are as simple and common as using a
+        credit card.</p>
     </div>
     <div class="second-item">
       <h3 class="second-item-title">Our Mission</h3>
       <ul class="second-item-text">
         <li>To implement a fast blockchain with low fees.</li>
         <li>To always present a clear and easy to navigate interface.</li>
-        <li>To be friendly enough to allow any user to control, support or make decisions and take part in the development and life of a project.</li>
+        <li>To be friendly enough to allow any user to control, support or make decisions and take part in the
+          development and life of a project.</li>
       </ul>
     </div>
   </div>
@@ -61,7 +67,10 @@
     <div class="container-item">
       <img src="../../../assets/img/rectangle.png" alt="rectangle" />
       <h2 class="title">The Ducatus Wallet</h2>
-      <p class="text">The Ducatus ecosystem exists as a web-wallet that runs on all desktop platforms Windows, Linux, macOS and mobile for iOS platforms and Android. Users can send transactions and accept payments not only in DUC and DUCX but also in Bitcoin, Bitcoin Cash, XRP, Ethereum and USDC, PAX and GUSD tokens. More coins and tokens will be added in the future.</p>
+      <p class="text">The Ducatus ecosystem exists as a web-wallet that runs on all desktop platforms Windows, Linux,
+        macOS and mobile for iOS platforms and Android. Users can send transactions and accept payments not only in DUC
+        and DUCX but also in Bitcoin, Bitcoin Cash, XRP, Ethereum and USDC, PAX and GUSD tokens. More coins and tokens
+        will be added in the future.</p>
       <div class="btns">
         <a href="http://wallet.ducatus.io/">
           <img src="../../../assets/img/duc-wallet-link.png" alt="Ducatus Web Wallet link" />
@@ -74,12 +83,12 @@
         </a>
       </div>
     </div>
-  </div>
-  <div class="tokenomics">
     <div class="header">
       <img src="../../../assets/img/rectangle.png" alt="rectangle" />
       <h2 class="title">Tokenomics: Ducatus at a Glance</h2>
     </div>
+  </div>
+  <div class="tokenomics">
     <div class="container">
       <div class="first-item">
         <img src="../../../assets/img/tokenomics-duc.png" alt="gold logo duc" />
@@ -109,6 +118,7 @@
 </section>
 
 <section class="section-roadmap">
+  <div class="container">
   <div class="header">
     <img src="../../../assets/img/rectangle.png" alt="red rectangle" />
     <h2>Ducatus Technology Roadmap 2021</h2>
@@ -116,6 +126,7 @@
   <div class="scroll">
     <img class="image" src="../../../assets/img/roadmap.png" alt="roadmap image" />
   </div>
+</div>
 </section>
 
 <section class="section-our-team">
@@ -184,7 +195,8 @@
           <img (click)="FAQ[0].isOpened = false" src="../../../assets/img/icons/minus.svg" alt="minus icon" />
           <div class="quest">What is the difference between DUC and DUCX?</div>
           <div class="answer">
-            While DUC and DUCX are complementary in the Ducatus ecosystem, each has its own characteristics and functionalities:
+            While DUC and DUCX are complementary in the Ducatus ecosystem, each has its own characteristics and
+            functionalities:
             <br />
             <br />
             • DUC is based on Litecoin, DUCX is based on Ethereum.
@@ -210,7 +222,8 @@
           <div class="answer">
             You can buy DUC online at
             <a href="https://www.ducatuscoins.com/buy">https://www.ducatuscoins.com/buy</a>
-            . To acquire DUCX for the first time, you can buy DUC and then swap it for DUCX in the Ducatus Wallet. 1 DUCX = 10 DUC.
+            . To acquire DUCX for the first time, you can buy DUC and then swap it for DUCX in the Ducatus Wallet. 1
+            DUCX = 10 DUC.
           </div>
         </div>
         <ng-template #closed2>
@@ -225,7 +238,8 @@
           <img (click)="FAQ[2].isOpened = false" src="../../../assets/img/icons/minus.svg" alt="minus icon" />
           <div class="quest">How do I exchange DUC or DUCX?</div>
           <div class="answer">
-            As DUC is created to be a payment coin, it is not meant to be exchanged or traded directly in a cryptocurrency exchange. It may be swapped for DUCX inside the Ducatus Wallet. DUCX may then be traded at
+            As DUC is created to be a payment coin, it is not meant to be exchanged or traded directly in a
+            cryptocurrency exchange. It may be swapped for DUCX inside the Ducatus Wallet. DUCX may then be traded at
             <a href="https://exchange.pancakeswap.finance/#/swap">PancakeSwap</a>
             .
           </div>
@@ -244,7 +258,8 @@
           <div class="answer">
             DUCX functions as a trading token and is not currently used for merchant payments.
             <br />
-            DUC, on the other hand, can be used as a mode of payment (like fiat). With more merchant partnerships in the works and continuous merchant recruitment, more people will be able to use DUC in everyday life.
+            DUC, on the other hand, can be used as a mode of payment (like fiat). With more merchant partnerships in the
+            works and continuous merchant recruitment, more people will be able to use DUC in everyday life.
             <br />
             <br />
             • Use DUC to pay for goods and services from
@@ -301,7 +316,8 @@
     </div>
   </div>
   <div class="fixed-content-question-bottom">
-    <a href="https://ducatus.my3cx.sg:5001/callus/#ducatuscoins" target="_blank"><img src="../../../assets/img/arrow-gray-next.svg" alt="arrow gray next" /></a>
+    <a href="https://ducatus.my3cx.sg:5001/callus/#ducatuscoins" target="_blank"><img
+        src="../../../assets/img/arrow-gray-next.svg" alt="arrow gray next" /></a>
   </div>
 </div>
 
