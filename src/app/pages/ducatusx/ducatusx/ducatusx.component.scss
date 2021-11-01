@@ -9,7 +9,7 @@
   grid-template-columns: 1fr 1fr;
   word-break: break-word;
 
-  @include b(1660) {
+  @include b(1580) {
     grid-template-columns: 1fr;
   }
 
@@ -20,6 +20,15 @@
     @include b(1400) {
       padding: 50px 20px;
     }
+    .pb-20{
+      padding-bottom: 20px;
+    }
+    @include b(1580){
+      &:not(js-end){
+        padding-left: 15px;  
+      }
+    }
+
 
     &.jc-end {
       justify-content: end;
@@ -31,13 +40,13 @@
     }
 
     &-content {
-      max-width: 730px;
+      max-width: 710px;
       width: 100%;
 
       display: flex;
       flex-direction: column;
 
-      @include b(1660) {
+      @include b(1580) {
         max-width: 100%;
       }
     }
@@ -239,15 +248,26 @@
   }
 
   &-about-ducatusx {
+      background-image: url('../../../../assets/img/duc-wallet.png');
+      background-position: right;
+      background-size: cover;
+      background-repeat: no-repeat;
     .container {
       display: grid;
       grid-template-columns: minmax(320px, 610px) 1fr;
       grid-gap: 10%;
-      background-image: url('../../../../assets/img/duc-wallet.png');
-      background-position: right;
-      background-size: contain;
-      background-repeat: no-repeat;
-
+      .bg-img{
+        background-image: url('../../../../assets/img/ducatusx/ducatusx-asset.png');
+        background-position: right; 
+        background-repeat: no-repeat;
+        background-size: contain;
+       @include b(1400){
+        background-size: auto;
+       }
+       @include b(620){
+         background-image: none;
+       }
+     }
       @include b(1400) {
         background-image: none;
         grid-template-columns: 1fr;
@@ -335,9 +355,10 @@
           padding-right: 200px;
           margin-bottom: 100px;
 
-          @include b(850) {
+          @include b(1400) {
             padding-right: 0;
             justify-content: center;
+            padding-bottom: 254px;
           }
         }
       }
