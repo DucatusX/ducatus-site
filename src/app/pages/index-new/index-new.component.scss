@@ -101,7 +101,7 @@
   height: 100%;
   display: flex;
   background-image: url('../../../assets/img/slide-1.png');
-  background-size: 100% auto;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -112,6 +112,12 @@
     margin-top: 60px;
     background-image: none;
     background-color: #DEE1F2;
+  }
+  
+  .container{
+    @include b(1024){
+      padding: 0;
+    }
   }
 
   .mobile-image {
