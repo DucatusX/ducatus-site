@@ -98,6 +98,19 @@
         color: $white;
       }
 
+      .wallet{
+        display: none;
+        @include b(750){
+          display: block;
+        }
+        padding: 10px 22px;
+        color: #892331;
+        border-radius: 22px;
+        background-color:#fff;
+      }
+
+
+
       &-admin {
         flex-basis: auto;
         margin-right: 100px;
@@ -107,6 +120,38 @@
         }
       }
     }
+
+    
+    &-contact{
+      display: none;
+      margin-top: 30px;
+      @include b(750){
+        display: block;
+      }
+      .downloading{
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 15px;
+        img{
+          width: 160px;
+          padding: 5px;
+        }
+      }
+
+
+      .links{
+        margin-top:20px;
+        a{
+          margin: 5px;
+          img{
+            width: 30px;
+          }
+        }
+
+      }
+     
+    }
+
 
     &-link {
       color: black;
@@ -125,7 +170,7 @@
       }
 
       @include b(750) {
-        margin: 26px auto;
+        margin: 15px auto;
         font-size: 24px;
         line-height: 29px;
         color: $white;
@@ -193,10 +238,11 @@
 .menu-open {
   @include b(750) {
     position: absolute;
-    top: -2px;
+    top: 0px;
     left: 0;
     width: 100%;
-    padding: 106px 0 196px;
-    max-height: 496px !important;
+    padding: 40px 0 0;
+    max-height: 100vh;
+    height: 100vh;
   }
 }
