@@ -33,10 +33,10 @@
         </div>
       </div>
       <div *ngIf="adminHeader" class="header-menu-block" [ngClass]="{ 'menu-open': openMenu }">
-        <a routerLink="/" class="header-menu-link" (click)="changeMenu()">Home</a>
-        <a routerLink="/buy" class="header-menu-link" (click)="changeMenu()">Buy DUC</a>
-        <a routerLink="/ducatusx" class="header-menu-link" (click)="changeMenu()">About DUCX</a>
-        <a routerLink="/contact" class="header-menu-link" (click)="changeMenu()">Contact</a>
+        <a routerLink="/" class="header-menu-link" (click)="closeMenu()">Home</a>
+        <a routerLink="/buy" class="header-menu-link" (click)="closeMenu()">Buy DUC</a>
+        <a routerLink="/ducatusx" class="header-menu-link" (click)="closeMenu()">About DUCX</a>
+        <a routerLink="/contact" class="header-menu-link" (click)="closeMenu()">Contact</a>
         <a class="header-menu-link wallet">
             Connect Wallet
         </a>
