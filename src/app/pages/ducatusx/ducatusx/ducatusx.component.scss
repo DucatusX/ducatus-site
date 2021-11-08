@@ -214,6 +214,7 @@
       flex-direction: column;
       font-size: 50px;
       font-weight: 500;
+     
 
       &:before {
         content: '';
@@ -239,6 +240,9 @@
         padding-left: 30px;
         margin: 0 auto;
         width: 100%;
+        @include b (370){
+          font-size: 40px !important;;
+        }
       }
 
       span {
