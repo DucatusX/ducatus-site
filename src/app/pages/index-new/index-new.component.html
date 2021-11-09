@@ -291,9 +291,12 @@
   </div>
 </section>
 
-<div class="fixed-content-question">
+<div *ngIf="!isClosedQuestion" class="fixed-content-question">
   <div class="fixed-content-question-top">
     <div class="fixed-content-question-top-inner">
+      <div  class="btn-close" >
+        <button (click)="closeQuestion()"></button>
+      </div>
       <div class="fixed-content-question-top-inner-text">
         <b>ASK US</b>
         <span>A QUESTION</span>
