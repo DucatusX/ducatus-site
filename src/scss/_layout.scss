@@ -19,9 +19,12 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1560px;
+  max-width: 1650px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
+  @include b(1920){
+    padding: 0 4%;
+  }
 }
 
 .wrapper {
