@@ -4,7 +4,8 @@
   [ngClass]="{
     'header-hide': !hideHeader,
     'header-admin': !adminHeader,
-    'header-buy': buyHeader
+    'header-buy': buyHeader,
+    'full-height': openMenu
   }"
 >
   <div class="container" *ngIf="hideHeader">
@@ -37,7 +38,7 @@
         <a routerLink="/buy" class="header-menu-link" (click)="closeMenu()">Buy DUC</a>
         <a routerLink="/ducatusx" class="header-menu-link" (click)="closeMenu()">About DUCX</a>
         <a routerLink="/contact" class="header-menu-link" (click)="closeMenu()">Contact</a>
-        <a class="header-menu-link wallet">
+        <a  class="header-menu-link wallet">
             Connect Wallet
         </a>
         
@@ -60,16 +61,17 @@
 
           <div class="links">
             <a href="https://www.facebook.com/WeAreDucatus/">
-              <img src="../../../../assets/img/fb-logo.png" alt="facebook logo" />
+              <img src="../../../../assets/img/icons/new/facebook.svg" alt="facebook logo" />
             </a>
             <a href="https://mobile.twitter.com/ducatusx?lang=en">
-              <img src="../../../../assets/img/tw-logo.png" alt="twitter logo" />
+              <img src="../../../../assets/img/icons/new/twitter.svg" alt="twitter logo" />
+
             </a>
             <a href="https://www.instagram.com/ducatusglobal/">
-              <img src="../../../../assets/img/inst-logo.png" alt="instagram logo" />
+              <img src="../../../../assets/img/icons/new/instagram.svg" alt="instagram logo" />
             </a>
             <a href="https://www.youtube.com/channel/UCBjE5LLJQyMq6crQholohTQ">
-              <img src="../../../../assets/img/youtube-logo.png" alt="youtube logo" />
+              <img src="../../../../assets/img/icons/new/youtube.svg" alt="youtube logo" />
             </a>
           </div>
           
