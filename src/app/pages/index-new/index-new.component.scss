@@ -484,9 +484,12 @@
   .background-image{
     background-image: url('../../../assets/img/duc-wallet-x.png');
     background-repeat: no-repeat;
-    background-size: initial;
+    background-size: 650px;
     max-width: 1920px;
     margin: 0 auto;
+    @include b(1660){
+      background-size: initial;
+    }
     @include b(1260){
       background-image: none;
     }
