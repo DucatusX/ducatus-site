@@ -63,6 +63,7 @@
   <div class="bg-img">
     <img src="../../../assets/img/duc-wallet-x.png" alt="duc wallet x logo" />
   </div>
+  <div class="background-image">
   <div class="container">
     <div class="container-item">
       <img src="../../../assets/img/rectangle.png" alt="rectangle" />
@@ -88,6 +89,7 @@
       <h2 class="title">Tokenomics: Ducatus at a Glance</h2>
     </div>
   </div>
+</div>
   <div class="tokenomics">
     <div class="container">
       <div class="first-item">
@@ -189,6 +191,7 @@
 
 <section class="section-faq">
   <div class="container">
+    <div class="container-item">
     <img src="../../../assets/img/rectangle.png" alt="red rectangle" />
     <h2>frequently asked questions</h2>
     <div class="items">
@@ -214,7 +217,7 @@
           </div>
           <ng-template #closed1>
             <div class="block__closed">
-              <img (click)="FAQ[0].isOpened = true" src="../../../assets/img/icons/faq-plus.svg" alt="plus icon" />
+              <img class="tp-18" (click)="FAQ[0].isOpened = true" src="../../../assets/img/icons/faq-plus.svg" alt="plus icon" />
               <div class="quest">What is the difference between DUC and DUCX?</div>
             </div>
           </ng-template>
@@ -335,11 +338,15 @@
     
     </div>
   </div>
+  </div>
 </section>
 
-<div class="fixed-content-question">
+<div *ngIf="!isClosedQuestion" class="fixed-content-question">
   <div class="fixed-content-question-top">
     <div class="fixed-content-question-top-inner">
+      <div  class="btn-close" >
+        <button (click)="closeQuestion()"></button>
+      </div>
       <div class="fixed-content-question-top-inner-text">
         <b>ASK US</b>
         <span>A QUESTION</span>

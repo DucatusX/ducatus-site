@@ -8,6 +8,13 @@ import { Component } from '@angular/core';
 export class IndexNewComponent {
   public mySwiper;
   public lang = 'eng';
+  isClosedQuestion = false
+
+  closeQuestion():void{
+    this.isClosedQuestion = true
+    console.log('lol')
+  }
+
 
   public header = {
     eng: {
