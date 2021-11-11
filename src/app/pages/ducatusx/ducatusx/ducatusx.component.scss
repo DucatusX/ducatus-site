@@ -234,6 +234,12 @@
       @include b(1920){
         padding: 15px 4%;
       }
+      
+      @include b(550){
+        h3{
+          margin: 10px
+        }
+      }
     }
     
     
@@ -298,6 +304,9 @@
       display: grid;
       grid-template-columns: minmax(320px, 610px) 1fr;
       grid-gap: 10%;
+      @include b(1200){
+        grid-gap: 0;
+      }
       .bg-img{
         background-image: url('../../../../assets/img/ducatusx/ducatusx-asset.png');
         background-position: right; 
@@ -401,6 +410,11 @@
             padding-right: 0;
             justify-content: center;
             padding-bottom: 254px;
+          }
+          @include b(550){
+            margin-top: 10px;
+            margin-bottom: 40px;
+            padding-bottom: 0px;
           }
         }
       }
