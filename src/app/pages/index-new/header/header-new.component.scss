@@ -55,7 +55,7 @@
 
     @include b(750) {
       width: 100%;
-      margin-top: 6px;
+      margin-top: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -69,7 +69,8 @@
       }
 
       @include b(750) {
-        width: 120px;
+        width: 140px;
+        content: url("/assets/img/duc-logo.png");
       }
     }
   }
