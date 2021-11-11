@@ -149,6 +149,9 @@
     margin-top: 60px;
     background-image: none;
     background-color: #DEE1F2;
+    flex-direction: column;
+    padding: 0;
+
   }
   
   .container{
@@ -170,11 +173,6 @@
     }
   }
 
-  @include b(1024) {
-    flex-direction: column;
-    padding: 0;
-    margin-top: 90px;
-  }
 
   &-container {
     padding: 0;
@@ -535,6 +533,9 @@
         @include b(1260){
           margin-top: 95px;
         }
+        @include b(760){
+          margin-top: 54px;
+        }
       }
 
       .title {
@@ -718,7 +719,7 @@
             text-align: right;
             width: 300px;
             height: 250px;
-            align-self: end;
+            align-self: flex-end;
           }
         }
       }
@@ -732,6 +733,10 @@
 
   .header {
     margin: 70px 0 0 0;
+    
+    @include b(1660){
+      margin: 40px 0 0 0;
+    }
 
     h2 {
       margin: 25px 0 60px;
@@ -910,10 +915,11 @@
               .quest {
                 margin-bottom: 10px;
                 // margin-right: 10px;
-                max-width: 390px;
+                max-width: 350px;
                 font-weight: bold;
                 font-size: 16px;
                 line-height: 20px;
+                padding: 0 15px;
               }
     
               .answer {
@@ -943,7 +949,8 @@
 
               .quest {
                 // margin-right: 10px;
-                max-width: 390px;
+                padding: 0 15px;
+                max-width: 350px;
                 font-size: 16px;
                 line-height: 20px;
               }
