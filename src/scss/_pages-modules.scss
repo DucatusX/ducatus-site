@@ -45,8 +45,6 @@
       flex-direction: column;
     }
 
-    &:nth-child(2) {
-    }
 
     &-img {
       width: 100%;
@@ -66,8 +64,9 @@
 
 .section-infoblock {
   padding: 80px 0;
-
-  .container {
+  
+  @include b(550){
+    padding: 0;
   }
 
   &-filled {

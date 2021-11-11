@@ -1,3 +1,6 @@
+@import '../../../scss/mixins';
+
+
 .section-contact {
   &-title {
     display: flex;
@@ -19,6 +22,10 @@
 .section-header-page {
   height: 300px;
   margin-top: 80px;
+
+  @include b(550){
+    margin-top: 60px;
+  }
 
   .container {
     display: flex;

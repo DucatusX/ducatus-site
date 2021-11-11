@@ -7,6 +7,10 @@
   background-size: cover;
   background-position: center;
 
+  @include b (550){
+    margin-top: 60px
+  }
+
   .container {
     display: flex;
     align-items: center;
