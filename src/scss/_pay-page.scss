@@ -173,23 +173,14 @@
   cursor: default;
   background-size: 100px 100px;
   padding-bottom: 250px;
-  margin-bottom: -300px;
-
-  @include b(1500) {
-    margin-bottom: -540px;
-  }
-
-  @include b(1000) {
-    margin-bottom: -1000px;
-  }
-
+  
   @include b(750) {
     padding-bottom: 60px;
   }
 
   @include b(600) {
     align-items: baseline;
-    padding-top: 60px;
+    padding-top: 0;
   }
 
   .hidden {
@@ -228,6 +219,9 @@
 
       @include b(750) {
         padding-top: 50px;
+      }
+      @include b(550){
+        padding-top: 0px;
       }
 
       &-block {
@@ -697,6 +691,9 @@
   padding: 30px 30px 10px 30px;
   // background-color: #fdfbf6;
   background-color: rgb(249, 249, 255);
+  @include b(550){
+    padding-top: 70px;
+  }
 
   input[type='number']::-webkit-inner-spin-button,
   input[type='number']::-webkit-outer-spin-button {
@@ -1353,6 +1350,10 @@
       'inputAddressQr inputAddressQr'
       'qrTextCode qrCode'
       'qrText qrText';
+    @include b(550){
+      margin-top: 0;
+      grid-gap: 0
+    }
   }
 
   .qr-textCode {

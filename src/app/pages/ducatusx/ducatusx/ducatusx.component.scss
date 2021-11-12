@@ -1,5 +1,6 @@
 @import '../../../../scss/vars';
 @import '../../../../scss/mixins';
+@import '../../../../scss/layout';
 
 // new
 
@@ -8,35 +9,47 @@
   grid-template-columns: 1fr 1fr;
   word-break: break-word;
 
-  @include b(1400) {
+  @include b(1630) {
     grid-template-columns: 1fr;
   }
 
   &-item {
     display: flex;
-    padding: 50px;
+    
+    padding: 50px 0 50px 50px;
 
-    @include b(1400) {
-      padding: 50px 20px;
+    @include b(1630) {
+      padding: 50px 4%;
     }
+    .pb-20{
+      padding-bottom: 20px;
+    }
+
+
 
     &.jc-end {
       justify-content: end;
-      padding-left: 15px;
+      padding: 50px 50px 50px 0;
 
+      @include b(1630){
+        padding: 50px 4%;
+      }
       @include b(1400) {
         justify-content: start;
       }
     }
 
     &-content {
-      max-width: 810px;
+      max-width: 772px;
       width: 100%;
+      @include b(1920){
+        max-width: 700px;
+      }
 
       display: flex;
       flex-direction: column;
 
-      @include b(1400) {
+      @include b(1630) {
         max-width: 100%;
       }
     }
@@ -68,8 +81,16 @@
       justify-content: space-between;
       margin-bottom: 30px;
 
+      @include b(1630){
+        width: 92%;
+      }
+
       @include b(850) {
         flex-wrap: wrap;
+      }
+
+      a{
+        padding-bottom: 10px;
       }
 
       .app {
@@ -78,6 +99,13 @@
           min-width: 235px;
           min-height: 70px;
           display: flex;
+          @include b(1630){
+            width: auto;
+          }
+          @include b(850){
+            width: 100%;
+          }
+          
 
           &:before {
             content: '';
@@ -87,17 +115,26 @@
             background-repeat: no-repeat;
             background-position: center;
             background-image: url('../../../../assets/img/icons/apps/ducatus-ducx.svg');
+
           }
         }
         &-googleplay {
+          padding-left: 20px;
           width: 100%;
-          min-width: 235px;
+          min-width: 230px;
           min-height: 70px;
           display: flex;
+          @include b(1630){
+            width: auto;
+          }
+          @include b(850){
+            width: 100%;
+            padding-left: 0px;
+          }
 
           &:before {
             content: '';
-            width: 235px;
+            width: 230px;
             height: 70px;
             background-size: contain;
             background-repeat: no-repeat;
@@ -106,14 +143,18 @@
           }
         }
         &-appstore {
+          padding-left: 20px;
           width: 100%;
           min-width: 235px;
           min-height: 70px;
           display: flex;
+          @include b(850){
+            padding-left: 0px;
+          }
 
           &:before {
             content: '';
-            width: 235px;
+            width: 230px;
             height: 70px;
             background-size: contain;
             background-repeat: no-repeat;
@@ -187,11 +228,21 @@
 .section {
   &-ducatusx {
     .container {
-      max-width: 1750px;
-      padding: 15px;
+      padding: 15px 0;
       width: 100%;
       margin: 0 auto;
+      @include b(1920){
+        padding: 15px 4%;
+      }
+      
+      @include b(550){
+        h3{
+          margin-top: 10px
+        }
+      }
     }
+    
+    
 
     .text {
       font-size: 25px;
@@ -203,6 +254,7 @@
       flex-direction: column;
       font-size: 50px;
       font-weight: 500;
+     
 
       &:before {
         content: '';
@@ -223,11 +275,18 @@
 
       h1 {
         font-weight: 500;
-        font-size: 50px !important;
+        font-size: 80px !important;
         max-width: 1100px;
-        padding-left: 30px;
-        margin: 0 auto;
+        padding-left: 100px;
         width: 100%;
+        @include b(600){
+          padding-left: 0;
+          font-size: 60px !important;
+        }
+
+        @include b (370){
+          font-size: 50px !important;;
+        }
       }
 
       span {
@@ -237,16 +296,30 @@
   }
 
   &-about-ducatusx {
+      background-image: url('../../../../assets/img/duc-wallet.png');
+      background-position: right;
+      background-size: cover;
+      background-repeat: no-repeat;
     .container {
       display: grid;
       grid-template-columns: minmax(320px, 610px) 1fr;
       grid-gap: 10%;
-      background-image: url('../../../../assets/img/duc-wallet.png');
-      background-position: right;
-      background-size: contain;
-      background-repeat: no-repeat;
-
-      @include b(1200) {
+      @include b(1200){
+        grid-gap: 0;
+      }
+      .bg-img{
+        background-image: url('../../../../assets/img/ducatusx/ducatusx-asset.png');
+        background-position: right; 
+        background-repeat: no-repeat;
+        background-size: contain;
+       @include b(1400){
+        background-size: auto;
+       }
+       @include b(620){
+         background-image: none;
+       }
+     }
+      @include b(1400) {
         background-image: none;
         grid-template-columns: 1fr;
       }
@@ -333,9 +406,15 @@
           padding-right: 200px;
           margin-bottom: 100px;
 
-          @include b(850) {
+          @include b(1400) {
             padding-right: 0;
             justify-content: center;
+            padding-bottom: 254px;
+          }
+          @include b(550){
+            margin-top: 10px;
+            margin-bottom: 40px;
+            padding-bottom: 0px;
           }
         }
       }
@@ -379,18 +458,6 @@
     margin-top: 50px;
   }
 
-  &.mt-80 {
-    // margin-top: 80px;
-    margin-bottom: -300px;
-
-    @include b(1500) {
-      margin-bottom: -540px;
-    }
-
-    @include b(1000) {
-      margin-bottom: -1000px;
-    }
-  }
 
   .block-video {
     position: relative;

@@ -48,6 +48,17 @@ export class HeaderNewComponent implements OnInit {
   public changeMenu(): void {
     this.openMenu = !this.openMenu;
     console.log('openMenu', this.openMenu);
+    if(this.openMenu){
+      document.body.style.overflowY ='hidden'
+    }
+    else{
+      document.body.style.overflowY ='visible'
+    }
+  }
+
+  public closeMenu(): void {
+    this.openMenu = false
+    document.body.style.overflowY ='visible'
   }
 
   ngOnInit(): void {
