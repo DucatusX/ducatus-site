@@ -8,11 +8,10 @@ import { Component } from '@angular/core';
 export class IndexNewComponent {
   public mySwiper;
   public lang = 'eng';
-  isClosedQuestion = false
+  isClosedQuestion = false;
 
   closeQuestion():void{
-    this.isClosedQuestion = true
-    console.log('lol')
+    this.isClosedQuestion = true;
   }
 
 
