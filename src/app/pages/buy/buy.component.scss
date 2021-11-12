@@ -1,6 +1,84 @@
 @import '../../../scss/vars';
 @import '../../../scss/mixins';
 
+.section-header-page {
+  min-height: 700px;
+  margin-top: 80px;
+  background-size: cover;
+  background-position: center;
+
+  @include b (550){
+    margin-top: 60px
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+
+    h1 {
+      font-weight: 500;
+      font-size: 50px !important;
+      max-width: 1100px;
+      padding-left: 30px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    span {
+      font-weight: bold;
+      color: #ffffff;
+    }
+  }
+
+  @include b(700) {
+    min-height: 300px;
+  }
+}
+
+.ducatus-text-link {
+  color: #505050 !important;
+}
+
+.loading-small {
+  position: relative;
+  left: 0;
+  top: 0;
+
+  span {
+    background-color: #fdfbf5 !important;
+  }
+}
+
+.ducatus-btn-swap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userAccount {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px 20px;
+  margin-bottom: 20px;
+
+  &-connected {
+    font-size: 14px;
+    border: 1px solid #eaeaff;
+    padding: 15px 10px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #505050;
+    word-break: break-word;
+    margin-bottom: 20px;
+  }
+
+  button {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
 .loading-pay-form {
   padding: 30px !important;
 

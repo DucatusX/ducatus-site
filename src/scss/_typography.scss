@@ -744,6 +744,90 @@ li {
       background-image: url('assets/img/icons/duc-coin-new.svg');
     }
   }
+
+  // new
+
+  &__cc-bonus {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/cc-bonus.svg');
+    }
+  }
+  &__cc-change-dates {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/cc-change-dates.svg');
+    }
+  }
+  &__cc-distribution {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/cc-distribution.svg');
+    }
+  }
+  &__cc-functionality {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/cc-functionality.svg');
+    }
+  }
+  &__cc-investment {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/cc-investment.svg');
+    }
+  }
+  &__cc-specify {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/cc-specify.svg');
+    }
+  }
+  &__cc-start-end {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/cc-start-end.svg');
+    }
+  }
+  &__cc-white-list {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/cc-white-list.svg');
+    }
+  }
+  &__ct-coin {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/ct-coin.svg');
+    }
+  }
+  &__ct-coins {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/ct-coins.svg');
+    }
+  }
+  &__ct-distribute {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/ct-distribute.svg');
+    }
+  }
+  &__ct-winter {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/ct-winter.svg');
+    }
+  }
+
+  &__ck-ducatusx-1 {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/section/ducatusx-1.svg');
+    }
+  }
+  &__ck-ducatusx-2 {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/section/ducatusx-2.svg');
+    }
+  }
+  &__ck-ducatusx-3 {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/section/ducatusx-3.svg');
+    }
+  }
+  &__ck-ducatusx-4 {
+    @include before-img(block, 40px, 40px, r) {
+      background-image: url('assets/img/icons/ducatusx/section/ducatusx-4.svg');
+    }
+  }
 }
 
 .ol-a-type {

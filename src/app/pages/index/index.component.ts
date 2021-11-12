@@ -3,13 +3,17 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 import Swiper from 'swiper';
 
+declare global {
+  interface Window {
+    jQuery: any;
+  }
+}
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.scss']
+  styleUrls: ['./index.component.scss'],
 })
 export class IndexComponent implements OnInit, OnDestroy {
-
   public mySwiper;
   public lang = 'eng';
 
@@ -21,7 +25,7 @@ export class IndexComponent implements OnInit, OnDestroy {
         button: 'Download Whitepaper',
         image: 'slide-1.png',
         image_mob: 'slide-1-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       ita: {
         title: 'Ducatus Coin',
@@ -29,7 +33,7 @@ export class IndexComponent implements OnInit, OnDestroy {
         button: 'Scarica il white paper',
         image: 'slide-1.png',
         image_mob: 'slide-1-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       deu: {
         title: 'Ducatus Coin',
@@ -37,7 +41,7 @@ export class IndexComponent implements OnInit, OnDestroy {
         button: 'Whitepaper herunterladen',
         image: 'slide-1.png',
         image_mob: 'slide-1-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       vie: {
         title: 'Ducatus Coin',
@@ -45,7 +49,7 @@ export class IndexComponent implements OnInit, OnDestroy {
         button: 'Tải xuống Whitepaper',
         image: 'slide-1.png',
         image_mob: 'slide-1-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
     },
     {
@@ -55,7 +59,7 @@ export class IndexComponent implements OnInit, OnDestroy {
         button: 'Download Whitepaper',
         image: 'slide-2.png',
         image_mob: 'slide-2-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       ita: {
         title: 'Criptovaluta per la vita di tutti i giorni',
@@ -63,7 +67,7 @@ export class IndexComponent implements OnInit, OnDestroy {
         button: 'Scarica il white paper',
         image: 'slide-2.png',
         image_mob: 'slide-2-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       deu: {
         title: 'Kryptowährung für das tägliche Leben',
@@ -71,7 +75,7 @@ export class IndexComponent implements OnInit, OnDestroy {
         button: 'Whitepaper herunterladen',
         image: 'slide-2.png',
         image_mob: 'slide-2-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       vie: {
         title: 'Tiền mã hoá cho cuộc sống hàng ngày',
@@ -79,7 +83,7 @@ export class IndexComponent implements OnInit, OnDestroy {
         button: 'Tải xuống Whitepaper',
         image: 'slide-2.png',
         image_mob: 'slide-2-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
     },
     {
@@ -89,7 +93,7 @@ export class IndexComponent implements OnInit, OnDestroy {
         button: 'Download Whitepaper',
         image: 'slide-3.jpg',
         image_mob: 'slide-3-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       ita: {
         title: 'Sostenere l\'economia digitale',
@@ -97,7 +101,7 @@ export class IndexComponent implements OnInit, OnDestroy {
         button: 'Scarica il white paper',
         image: 'slide-3.jpg',
         image_mob: 'slide-3-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       deu: {
         title: 'Verfechter der digitalen Wirtschaft',
@@ -105,7 +109,7 @@ export class IndexComponent implements OnInit, OnDestroy {
         button: 'Whitepaper herunterladen',
         image: 'slide-3.jpg',
         image_mob: 'slide-3-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
+        file: 'ducatus-coin-white-paper.pdf',
       },
       vie: {
         title: 'Ủng hộ nền kinh tế kỹ thuật số',
@@ -113,18 +117,17 @@ export class IndexComponent implements OnInit, OnDestroy {
         button: 'Tải xuống Whitepaper',
         image: 'slide-3.jpg',
         image_mob: 'slide-3-mob.png',
-        file: 'ducatus-coin-white-paper.pdf'
-      }
+        file: 'ducatus-coin-white-paper.pdf',
+      },
     },
   ];
 
-  constructor(
-    private translate: TranslateService
-  ) { }
+  constructor(private translate: TranslateService) {}
 
-  ngOnInit() {
-    const defaultLng = (navigator.language || navigator['browserLanguage']).split('-')[0];
-    const langToSet = window['jQuery']['cookie']('lng') || (['deu', 'eng', 'vie', 'ita'].includes(defaultLng) ? defaultLng : 'eng');
+  ngOnInit(): void {
+    const nav: any = window.navigator;
+    const defaultLng = (nav.language || nav.browserLanguage).split('-')[0];
+    const langToSet = window.jQuery.cookie('lng') || (['deu', 'eng', 'vie', 'ita'].includes(defaultLng) ? defaultLng : 'eng');
 
     this.lang = langToSet;
 
@@ -141,11 +144,9 @@ export class IndexComponent implements OnInit, OnDestroy {
         },
       });
     }, 1000);
-
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.mySwiper = undefined;
   }
-
 }

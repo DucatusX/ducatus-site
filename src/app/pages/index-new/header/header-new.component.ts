@@ -1,6 +1,5 @@
 import { UserService } from 'src/app/service/user/user.service';
 import { Component, OnInit } from '@angular/core';
-import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
 import { hideHeaderInRoutes, adminHeaderInRoutes } from 'src/app/params';
 
@@ -10,14 +9,9 @@ import * as $ from 'jquery';
   selector: 'app-header-new',
   templateUrl: './header-new.component.html',
   styleUrls: ['./header-new.component.scss'],
-  host: { '(document:click)': 'onClick($event)' },
 })
 export class HeaderNewComponent implements OnInit {
   public isBrowser: any;
-  public openedLngList = false;
-  private translator: TranslateService;
-  public languagesList: { lng: string; title: string; active?: boolean }[];
-  public currLanguage: string;
 
   public openMenu = false;
 
@@ -25,7 +19,7 @@ export class HeaderNewComponent implements OnInit {
   public adminHeader = false;
   public buyHeader = false;
 
-  constructor(public translate: TranslateService, private router: Router, private userService: UserService) {
+  constructor(private router: Router, private userService: UserService) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
         // Show loading indicator
@@ -41,88 +35,36 @@ export class HeaderNewComponent implements OnInit {
         // console.warn(event.error);
       }
     });
-
-    this.translator = translate;
-    this.languagesList = [
-      {
-        lng: 'eng',
-        title: 'Eng',
-        active: true,
-      },
-      {
-        lng: 'ita',
-        title: 'Ita',
-        active: false,
-      },
-      {
-        lng: 'vie',
-        title: 'Vie',
-        active: false,
-      },
-      {
-        lng: 'deu',
-        title: 'Deu',
-        active: false,
-      },
-    ];
-
-    translate.onLangChange.subscribe((event: LangChangeEvent) => {
-      this.setActiveLanguage(event);
-    });
-
-    this.setActiveLanguage({
-      lang: translate.currentLang,
-    });
   }
 
-  private onClick($event) {
-    if ($($event.target).closest('.header-menu-toggle-block').length === 0) {
-      if ($($event.target).closest('.select-coin-list-item').length === 0) {
-        this.openMenu = false;
-      }
+  // private onClick($event): void {
+  //   if ($($event.target).closest('.header-menu-toggle-block').length === 0) {
+  //     if ($($event.target).closest('.select-coin-list-item').length === 0) {
+  //       this.openMenu = false;
+  //     }
+  //   }
+  // }
+
+  public changeMenu(): void {
+    this.openMenu = !this.openMenu;
+    console.log('openMenu', this.openMenu);
+    if(this.openMenu){
+      document.body.style.overflowY ='hidden'
     }
-    if ($($event.target).closest('.language-select').length === 0) {
-      this.openedLngList = false;
+    else{
+      document.body.style.overflowY ='visible'
     }
   }
 
-  private setActiveLanguage(event) {
-    if (this.currLanguage) {
-      this.languagesList.map((lang) => {
-        if (lang['lng'] === this.currLanguage) {
-          lang['active'] = true;
-        } else {
-          lang['active'] = false;
-        }
-      });
-    }
-    this.currLanguage = event.lang;
-    window['jQuery']['cookie']('lng', this.currLanguage);
-
-    this.languagesList.map((lang) => {
-      if (lang['lng'] === this.currLanguage) {
-        lang['active'] = true;
-      } else {
-        lang['active'] = false;
-      }
-    });
-    this.languagesList.sort((a, b) => {
-      return b.active ? 1 : -1;
-    });
+  public closeMenu(): void {
+    this.openMenu = false
+    document.body.style.overflowY ='visible'
   }
 
-  public toggleLanguage() {
-    this.openedLngList = !this.openedLngList;
-  }
-
-  public setLanguage(lng) {
-    this.translator.use(lng);
-  }
-
-  ngOnInit() {
+  ngOnInit(): void {
     // scroll menu
-    var scrollPosY = window.pageYOffset | document.body.scrollTop;
-    var navBar = document.getElementsByClassName('header')[0];
+    const scrollPosY = window.pageYOffset | document.body.scrollTop;
+    const navBar = document.getElementsByClassName('header')[0];
 
     if (scrollPosY > 100) {
       navBar.classList.add('header-scroll');
@@ -130,9 +72,11 @@ export class HeaderNewComponent implements OnInit {
       navBar.classList.remove('header-scroll');
     }
 
-    window.onscroll = function changeNav() {
-      var scrollPosY = window.pageYOffset | document.body.scrollTop;
-      var navBar = document.getElementsByClassName('header')[0];
+    window.onscroll = function changeNav(): void {
+      // tslint:disable-next-line: no-shadowed-variable
+      const scrollPosY = window.pageYOffset | document.body.scrollTop;
+      // tslint:disable-next-line: no-shadowed-variable
+      const navBar = document.getElementsByClassName('header')[0];
 
       if (scrollPosY > 100) {
         navBar.classList.add('header-scroll');
@@ -142,7 +86,7 @@ export class HeaderNewComponent implements OnInit {
     };
   }
 
-  public logout() {
+  public logout(): void {
     this.userService.logout().then(() => {
       this.router.navigate(['/admin/login']);
     });

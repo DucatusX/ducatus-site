@@ -1,43 +1,88 @@
 <div
+  id="#"
   class="header"
   [ngClass]="{
     'header-hide': !hideHeader,
     'header-admin': !adminHeader,
-    'header-buy': buyHeader
+    'header-buy': buyHeader,
+    'full-height': openMenu
   }"
 >
   <div class="container" *ngIf="hideHeader">
     <div class="header-wrap">
       <div class="header-logo-block">
         <a *ngIf="adminHeader && !buyHeader" routerLink="/" class="header-logo">
-          <img src="/assets/img/ducatus-logo-first.png" alt="Ducatus logo" />
+          <img src="/assets/img/duc-logo.svg" alt="Ducatus logo" />
         </a>
         <a *ngIf="buyHeader" routerLink="/" class="header-logo">
           <img src="/assets/img/buy-page/header-logo.svg" alt="Centurion logo" />
         </a>
         <a *ngIf="!adminHeader" class="header-logo"></a>
-        <div class="header-menu-toggle-block">
-          <label for="header-menu-toggle" class="header-menu-toggle" [ngClass]="{ 'open-menu': openMenu }" (click)="openMenu = !openMenu">
+        <div class="header-menu-toggle-block" (click)="changeMenu()">
+          <label for="header-menu-toggle" class="header-menu-toggle" *ngIf="!openMenu; else toggleClose">
             <span class="line-toggle"></span>
             <span class="line-toggle"></span>
             <span class="line-toggle"></span>
           </label>
+          <ng-template #toggleClose>
+            <div class="header-menu-toggle">
+              <span class="close-first"></span>
+              <span class="close-second"></span>
+            </div>
+          </ng-template>
           <input type="checkbox" id="header-menu-toggle" class="header-menu-toggle-ch" role="button" />
         </div>
       </div>
-      <div *ngIf="adminHeader" class="header-menu-block" [ngClass]="{ 'menu-open': openMenu === true }">
-        <a routerLink="/" class="header-menu-link">{{ 'HEADER.MENU.HOME' | translate }}</a>
-        <a routerLink="/about" class="header-menu-link">{{ 'HEADER.MENU.ABOUT' | translate }}</a>
-        <a routerLink="/buy" class="header-menu-link">{{ 'HEADER.MENU.BUY' | translate }}</a>
-        <a routerLink="/ducatusx" class="header-menu-link">{{ 'HEADER.MENU.DUCATUSX' | translate }}</a>
-        <!-- <a routerLink="/gold-lottery" class="header-menu-link">{{ 'HEADER.MENU.LOTTERY' | translate }}</a> -->
-        <a routerLink="/contact" class="header-menu-link">{{ 'HEADER.MENU.CONTACT' | translate }}</a>
+      <div *ngIf="adminHeader" class="header-menu-block" [ngClass]="{ 'menu-open': openMenu }">
+        <a routerLink="/" class="header-menu-link" (click)="closeMenu()">Home</a>
+        <a routerLink="/buy" class="header-menu-link" (click)="closeMenu()">Buy DUC</a>
+        <a routerLink="/ducatusx" class="header-menu-link" (click)="closeMenu()">About DUCX</a>
+        <a routerLink="/contact" class="header-menu-link" (click)="closeMenu()">Contact</a>
+        <!-- <a  class="header-menu-link wallet">
+            Connect Wallet
+        </a> -->
+        
+        <div class="header-menu-contact">
+
+          <div class="downloading">
+            <p>Buy, store and swap cryptocurrency with the Ducatus Wallet</p>
+            <div class="btns">
+              <a href="http://wallet.ducatus.io/">
+                <img src="../../../../assets/img/duc-wallet-link.png" alt="Ducatus Web Wallet link" />
+              </a>
+              <a href="https://apps.apple.com/us/app/ducatus-wallet-2-0/id1489722627">
+                <img src="../../../../assets/img/app-store-link.png" alt="App Store link" />
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=io.ducatus.walnew">
+                <img src="../../../../assets/img/googleplay-link.png" alt="Googleplay link" />
+              </a>
+            </div>
+          </div>
+
+          <div class="links">
+            <a href="https://www.facebook.com/WeAreDucatus/">
+              <img src="../../../../assets/img/icons/new/facebook.svg" alt="facebook logo" />
+            </a>
+            <a href="https://mobile.twitter.com/ducatusx?lang=en">
+              <img src="../../../../assets/img/icons/new/twitter.svg" alt="twitter logo" />
+
+            </a>
+            <a href="https://www.instagram.com/ducatusglobal/">
+              <img src="../../../../assets/img/icons/new/instagram.svg" alt="instagram logo" />
+            </a>
+            <a href="https://www.youtube.com/channel/UCBjE5LLJQyMq6crQholohTQ">
+              <img src="../../../../assets/img/icons/new/youtube.svg" alt="youtube logo" />
+            </a>
+          </div>
+          
+        </div>
+    
       </div>
       <div
         *ngIf="!adminHeader"
         class="header-menu-block"
         [ngClass]="{
-          'menu-open': openMenu === true,
+          'menu-open': openMenu,
           'header-menu-block-admin': !adminHeader
         }"
       >
@@ -47,13 +92,6 @@
         <a routerLink="/admin/rate" class="header-menu-link">Rates</a>
         <a (click)="logout()" class="header-menu-link">Logout</a>
       </div>
-    </div>
-    <div class="language-select" [ngClass]="{ 'language-select-admin': !adminHeader }">
-      <ul class="language-select-list" [ngClass]="{ opened: openedLngList }" (click)="toggleLanguage()">
-        <li (click)="setLanguage(lng['lng'])" [ngClass]="{ active: lng['active'] }" *ngFor="let lng of languagesList">
-          <span>{{ lng['title'] }}</span>
-        </li>
-      </ul>
     </div>
   </div>
 </div>

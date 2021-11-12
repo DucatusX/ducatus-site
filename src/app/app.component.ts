@@ -28,14 +28,15 @@ export class AppComponent implements OnInit {
       }
     });
 
-    const defaultLng = (navigator.language || navigator['browserLanguage']).split('-')[0];
-    const langToSet = window['jQuery']['cookie']('lng') || (['deu', 'eng', 'vie', 'ita'].includes(defaultLng) ? defaultLng : 'eng');
+    const nav: any = window.navigator;
+    const defaultLng = (navigator.language || nav.browserLanguage).split('-')[0];
+    const langToSet = window.jQuery.cookie('lng') || (['deu', 'eng', 'vie', 'ita'].includes(defaultLng) ? defaultLng : 'eng');
 
     this.translateService.use(langToSet);
   }
 
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  prepareRoute(outlet: RouterOutlet): any {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
 
   navigationInterceptor(event: RouterEvent): void {
@@ -55,7 +56,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  onActivate(event) {
+  onActivate(event): any {
     window.scroll(0, 0);
   }
 

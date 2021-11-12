@@ -6,6 +6,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 
+// import { RouterModule } from '@angular/router';
+
 // plugins
 import { QRCodeModule } from 'angularx-qrcode';
 import { Ng2TelInputModule } from 'ng2-tel-input';
@@ -52,6 +54,7 @@ import { CountdownComponent } from './components/countdown/countdown.component';
 import { SafePipe } from './pipe/safeUrl.pipe';
 import { FilterPipe } from './pipe/filter.pipe';
 import { GoogleAnalyticsService } from './service/gtag/google-analytics.service';
+import { ConnectWallet } from '@amfi/connect-wallet';
 
 export function HttpLoaderFactory(http: HttpClient): any {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json?v=' + new Date().getTime());
@@ -87,8 +90,9 @@ export function HttpLoaderFactory(http: HttpClient): any {
     CountdownComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    BrowserModule,
     QRCodeModule,
     FormsModule,
     Ng2TelInputModule,
@@ -97,7 +101,6 @@ export function HttpLoaderFactory(http: HttpClient): any {
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
-    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -116,7 +119,7 @@ export function HttpLoaderFactory(http: HttpClient): any {
     RecaptchaFormsModule,
     NgxPaginationModule,
   ],
-  providers: [UserResolver, GoogleAnalyticsService, CookieService],
+  providers: [HttpClientModule, UserResolver, GoogleAnalyticsService, CookieService, ConnectWallet],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

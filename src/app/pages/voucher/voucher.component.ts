@@ -6,9 +6,8 @@ import { IVoucher } from 'src/app/interfaces';
 @Component({
   selector: 'app-voucher',
   templateUrl: './voucher.component.html',
-  styleUrls: ['./voucher.component.scss']
+  styleUrls: ['./voucher.component.scss'],
 })
-
 export class VoucherComponent implements OnInit {
   public updateVouchersTable = false;
   public changeSort = true;
@@ -23,7 +22,7 @@ export class VoucherComponent implements OnInit {
     is_active: false,
     is_used: false,
     lock_days: false,
-    activation_date: false
+    activation_date: false,
   } as any;
 
   public popupAdd = false;
@@ -47,33 +46,33 @@ export class VoucherComponent implements OnInit {
 
   public vouchers = [] as IVoucher[];
 
-  constructor(
-    private papa: Papa,
-    private voucherService: VoucherService
-  ) { }
+  constructor(private papa: Papa, private voucherService: VoucherService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.updateVouchers();
   }
 
-  public updateVouchers() {
+  public updateVouchers(): void {
     this.updateVouchersTable = true;
 
-    this.voucherService.getVouchers()
+    this.voucherService
+      .getVouchers()
       .then((res) => {
         this.vouchers = res;
         this.changeSort = false;
         this.sortVouchers('id');
       })
-      .catch((err) => { console.log(err); })
-      .finally(() => this.updateVouchersTable = false);
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => (this.updateVouchersTable = false));
   }
 
-  public changeActive(id, activeStatus) {
+  public changeActive(id, activeStatus): void {
     let errorState = false;
     let errorText = '';
 
-    const voucherFind = this.vouchers.filter(item => {
+    const voucherFind = this.vouchers.filter((item) => {
       if (item.id === id) {
         item.isProgress = true;
         item.is_active = !item.is_active;
@@ -84,30 +83,34 @@ export class VoucherComponent implements OnInit {
     const voucher = {
       usd_amount: voucherFind[0].usd_amount,
       voucher_code: voucherFind[0].voucher_code,
-      is_active: voucherFind[0].is_active
+      is_active: voucherFind[0].is_active,
     };
 
-    this.voucherService.setVoucher(id, voucher).then((res) => {
-      this.acceptTableProgress(id);
-    }).catch((err) => {
-      console.log(err);
-      errorText = err.status + ': ' + err.statusText + ', ' + 'something went wrong, try again';
-      errorState = true;
-    }).finally(() => {
-      this.vouchers.filter((item) => {
-        if (item.id === id) {
-          if (errorState) {
-            item.is_active = activeStatus;
-            item.isProgressBtn = true;
-            item.progressText = errorText;
+    this.voucherService
+      .setVoucher(id, voucher)
+      .then((res) => {
+        this.acceptTableProgress(id);
+      })
+      .catch((err) => {
+        console.log(err);
+        errorText = err.status + ': ' + err.statusText + ', ' + 'something went wrong, try again';
+        errorState = true;
+      })
+      .finally(() => {
+        this.vouchers.filter((item) => {
+          if (item.id === id) {
+            if (errorState) {
+              item.is_active = activeStatus;
+              item.isProgressBtn = true;
+              item.progressText = errorText;
+            }
           }
-        }
+        });
       });
-    });
   }
 
-  public acceptTableProgress(id: any) {
-    this.vouchers.filter(item => {
+  public acceptTableProgress(id: any): any {
+    this.vouchers.filter((item) => {
       if (item.id === id) {
         item.isProgress = item.isProgressBtn = false;
         item.progressText = 'in progress, please wait...';
@@ -116,49 +119,52 @@ export class VoucherComponent implements OnInit {
     });
   }
 
-  public addVoucher() {
+  public addVoucher(): void {
     const voucher = {
       voucher_code: this.voucherCode,
       usd_amount: this.usdAmount,
       is_active: this.isActive,
-      lock_days: Number(this.lockDays)
+      lock_days: Number(this.lockDays),
     };
 
     this.popupInProgressText = 'in progress, please wait...';
     this.pupopInProgress = true;
 
-    this.voucherService.sendVoucher(voucher).then((res) => {
-      this.pupopInProgress = false;
-      this.close();
-      this.vouchers.push(res);
-    }).catch(err => {
-      console.log('add voucher error: ', err);
-      this.popupInProgressBtn = true;
-      this.popupInProgressText = err.status + ': ' + err.statusText + '<br><br>' + 'something went wrong, try again';
-    });
+    this.voucherService
+      .sendVoucher(voucher)
+      .then((res) => {
+        this.pupopInProgress = false;
+        this.close();
+        this.vouchers.push(res);
+      })
+      .catch((err) => {
+        console.log('add voucher error: ', err);
+        this.popupInProgressBtn = true;
+        this.popupInProgressText = err.status + ': ' + err.statusText + '<br><br>' + 'something went wrong, try again';
+      });
   }
 
-  public acceptPopupProgress() {
+  public acceptPopupProgress(): void {
     this.pupopInProgress = this.popupInProgressBtn = false;
   }
 
-  public close() {
+  public close(): void {
     this.popupAdd = this.isActive = this.pupopInProgress = false;
     this.activationCode = this.voucherCode = this.lockDays = this.usdAmount = null;
   }
 
-  public openInfoModal(title?, info?) {
+  public openInfoModal(title?, info?): void {
     this.infoModalTitle = title ? title : 'Voucher';
     this.infoModalText = info ? info : 'oops we lost text :(';
     this.popupModal = true;
   }
-  public closeInfoModal() {
+  public closeInfoModal(): void {
     this.popupModal = false;
     this.infoModalText = '';
     this.infoModalTitle = 'Voucher';
   }
 
-  public parseCsvFile($event: any) {
+  public parseCsvFile($event: any): void {
     this.loadingCSV = true;
     const file = $event.srcElement.files[0];
 
@@ -176,27 +182,29 @@ export class VoucherComponent implements OnInit {
     });
   }
 
-  public addVouchers(vouchers) {
-    vouchers.map(item => {
+  public addVouchers(vouchers): void {
+    vouchers.map((item) => {
       item.voucher_code = item.voucher_code.toString();
       item.usd_amount = item.usd_amount.toString();
     });
 
-    this.voucherService.sendVoucher(vouchers).then((res) => {
-      this.updateVouchers();
-      this.loadingCSV = false;
-    }).catch(err => {
-      console.log('add vouchers error: ', err);
-      this.loadingCSV = false;
-    });
+    this.voucherService
+      .sendVoucher(vouchers)
+      .then((res) => {
+        this.updateVouchers();
+        this.loadingCSV = false;
+      })
+      .catch((err) => {
+        console.log('add vouchers error: ', err);
+        this.loadingCSV = false;
+      });
   }
 
-  public sortVouchers(type: string, tdate?: string) {
-    this.sortData[type] && this.changeSort ? this.changeSort = false : this.changeSort = true;
-    Object.keys(this.sortData).forEach(v => this.sortData[v] = v === type);
+  public sortVouchers(type: string, tdate?: string): void {
+    this.sortData[type] && this.changeSort ? (this.changeSort = false) : (this.changeSort = true);
+    Object.keys(this.sortData).forEach((v) => (this.sortData[v] = v === type));
 
     this.vouchers.sort((vouchers1, vouchers2) => {
-
       let sortVoucher1: any;
       let sortVoucher2: any;
 

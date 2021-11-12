@@ -8,11 +8,9 @@ export interface FormModel {
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
 })
-
 export class ContactComponent implements OnInit {
-
   public formData: any;
   public contactMainSend = 0;
   public disableFields = false;
@@ -23,29 +21,30 @@ export class ContactComponent implements OnInit {
       name: '',
       tel: '',
       email: '',
-      message: ''
+      message: '',
     };
   }
 
-  public sendMail(form: NgForm) {
+  public sendMail(form: NgForm): void {
     if (form.invalid) {
       return;
     }
-    
+
     this.contactMainSend = 3;
     this.disableFields = true;
 
-    this.sendservice.sendContactMessage(this.formData).then((result) => {
-      this.contactMainSend = 1;
-      this.disableFields = false;
-    }).catch((err) => {
-      console.log('Erorr', err);
-      this.disableFields = false;
-      this.contactMainSend = 2;
-    });
+    this.sendservice
+      .sendContactMessage(this.formData)
+      .then((result) => {
+        this.contactMainSend = 1;
+        this.disableFields = false;
+      })
+      .catch((err) => {
+        console.log('Erorr', err);
+        this.disableFields = false;
+        this.contactMainSend = 2;
+      });
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit(): void {}
 }

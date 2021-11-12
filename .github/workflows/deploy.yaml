@@ -1,0 +1,76 @@
+name: Deploy
+on:
+  workflow_run:
+    workflows: ['Tests']
+    branches: [master, develop]
+    types: [completed]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-16.04
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          always-auth: true
+          registry-url: https://registry.npmjs.org
+      - name: Cache packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install project packages
+        run: npm install
+      - name: Build project
+        run: npm run build
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: ./dist
+          retention-days: 2
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-16.04
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - name: Download
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
+      - name: ls
+        run: ls
+      - name: Production deploy
+        if: ${{ github.branch == 'master' }}
+        uses: burnett01/rsync-deployments@4.1
+        with:
+          switches: ${{ secrets.DEPLOY_PROD_SWITCHES }}
+          path: './dist'
+          remote_path: ${{ secrets.DEPLOY_PROD_REMOTE_PATH }}
+          remote_host: ${{ secrets.DEPLOY_PROD_HOST }}
+          remote_port: ${{ secrets.DEPLOY_PROD_PORT }}
+          remote_user: ${{ secrets.DEPLOY_PROD_USER }}
+          remote_key: ${{ secrets.DEPLOY_PROD_KEY }}
+      - name: Test deploy
+        if: ${{ github.branch == 'develop' }}
+        uses: burnett01/rsync-deployments@4.1
+        with:
+          switches: ${{ secrets.DEPLOY_TEST_SWITCHES }}
+          path: ${{ secrets.DEPLOY_TEST_PATH }}
+          remote_path: ${{ secrets.DEPLOY_TEST_REMOTE_PATH }}
+          remote_host: ${{ secrets.DEPLOY_TEST_HOST }}
+          remote_port: ${{ secrets.DEPLOY_TEST_PORT }}
+          remote_user: ${{ secrets.DEPLOY_TEST_USER }}
+          remote_key: ${{ secrets.DEPLOY_TEST_KEY }}

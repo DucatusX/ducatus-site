@@ -1,0 +1,63 @@
+name: Tests
+on:
+  push:
+    branches:
+      - master
+      - develop
+      - 'release/**'
+      - 'feature/**'
+      - 'hotfix/**'
+
+jobs:
+  mock-tests:
+    name: Mock Tests
+    runs-on: ubuntu-16.04
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          always-auth: true
+          registry-url: https://registry.npmjs.org
+      - name: Cache packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install project packages
+        run: npm install
+      - name: Run Mock Tests
+        run: npm run test
+  lint:
+    name: Lint
+    runs-on: ubuntu-16.04
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          always-auth: true
+          registry-url: https://registry.npmjs.org
+      - name: Cache packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install project packages
+        run: npm install
+      - name: Run Lint Tests
+        run: npm run lint

@@ -20,9 +20,99 @@
     width: 100%;
     max-width: 500px;
     background-color: #fff;
+    overflow: hidden;
   }
 
   &-content {
+    &-success {
+      padding: 40px;
+
+      @include b(500) {
+        padding: 16px;
+      }
+
+      p {
+        font-size: 24px;
+        line-height: 1.2;
+        font-weight: bold;
+        text-align: center;
+        color: #862633;
+        margin-top: 20px;
+
+        @include b(500) {
+          font-size: 18px;
+        }
+      }
+
+      .ducatus-btn {
+        max-width: 100px;
+        margin: 0 auto;
+      }
+    }
+    &-connect {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      padding: 20px;
+
+      .btn {
+        display: flex;
+        flex-direction: column;
+        // background-color: #fbf9f6;
+        // border: 1px solid #cfb778;
+        // color: #862632;
+        background-color: #ffffff;
+        border: 1px solid #eaeaff;
+        color: #505050;
+        box-sizing: border-box;
+        border-radius: 12px;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        font-size: 14px;
+        max-width: 200px;
+        min-height: 200px;
+        width: 100%;
+        cursor: pointer;
+        margin-bottom: 20px;
+
+        img {
+          margin-bottom: 20px;
+          width: 80px;
+        }
+      }
+    }
+
+    &-head {
+      cursor: default;
+      // background-color: #e9dcca;
+      // color: #862632;
+      background-color: #f9f9fe;
+      color: #505050;
+      display: flex;
+      height: 100%;
+      min-height: 50px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+
+      &-close {
+        background-color: #fff;
+        width: 25px;
+        height: 25px;
+        // color: #ab8b8b;
+        color: #7f7e7b;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+
     &-top {
       padding: 30px;
       font-size: 14px;
@@ -72,7 +162,8 @@
 }
 
 .app {
-  background-image: url('assets/img/bg.png');
+  // background-image: url('assets/img/bg.png');
+  background-color: rgb(238, 239, 239);
   background-position: top left;
   display: flex;
   justify-content: space-between;
@@ -82,14 +173,14 @@
   cursor: default;
   background-size: 100px 100px;
   padding-bottom: 250px;
-
+  
   @include b(750) {
     padding-bottom: 60px;
   }
 
   @include b(600) {
     align-items: baseline;
-    padding-top: 60px;
+    padding-top: 0;
   }
 
   .hidden {
@@ -108,11 +199,18 @@
     }
 
     .pay-form {
+      // height: 100%;
+      // padding-top: 100px;
+      // display: grid;
+      // grid-template-columns: minmax(320px, 600px) minmax(320px, 580px);
+      // justify-content: space-around;
+      // grid-gap: 20px;
+
       height: 100%;
       padding-top: 100px;
       display: grid;
-      grid-template-columns: minmax(320px, 600px) minmax(320px, 580px);
-      justify-content: space-between;
+      grid-template-columns: minmax(320px, 600px) minmax(320px, 730px);
+      justify-content: center;
       grid-gap: 20px;
 
       @include b(900) {
@@ -121,6 +219,9 @@
 
       @include b(750) {
         padding-top: 50px;
+      }
+      @include b(550){
+        padding-top: 0px;
       }
 
       &-block {
@@ -154,11 +255,11 @@
         }
 
         &-text {
-          border: 1px solid #b89c5e;
-          padding: 20px 30px;
+          // border: 1px solid #b89c5e;
+          padding: 20px 15px 0 15px;
           display: flex;
           flex-direction: column;
-          margin-top: 15px;
+          margin-top: 10px;
           border-radius: 10px;
 
           .span__line {
@@ -178,8 +279,10 @@
           }
 
           p {
-            font-size: 14px;
-            line-height: 24px;
+            font-size: 17px;
+            line-height: 19px;
+            font-weight: 600;
+            align-items: center;
             margin: 0;
             display: flex;
           }
@@ -552,7 +655,7 @@
         width: 100%;
         height: max-content;
         border-radius: 12px;
-        box-shadow: 0px 50px 45px rgba(204, 199, 189, 0.25);
+        // box-shadow: 0px 50px 45px rgba(204, 199, 189, 0.25);
         overflow: hidden;
 
         @include b(900) {
@@ -586,7 +689,11 @@
   height: 100%;
   // padding: 30px 30px;
   padding: 30px 30px 10px 30px;
-  background-color: #fdfbf6;
+  // background-color: #fdfbf6;
+  background-color: rgb(249, 249, 255);
+  @include b(550){
+    padding-top: 70px;
+  }
 
   input[type='number']::-webkit-inner-spin-button,
   input[type='number']::-webkit-outer-spin-button {
@@ -849,7 +956,8 @@
     align-items: center;
 
     &-fill {
-      background-color: rgb(247, 243, 235);
+      // background-color: rgb(247, 243, 235);
+      background-color: #f0f0ff;
     }
 
     &-start {
@@ -864,7 +972,8 @@
 
     &-selected {
       font-size: 13px;
-      color: #862633;
+      // color: #862633;
+      color: #a6a6b7;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -932,7 +1041,8 @@
       position: relative;
       height: 100%;
       width: 100%;
-      background-color: rgb(247, 243, 235);
+      // background-color: rgb(247, 243, 235);
+      background-color: #f0f0ff;
       border-radius: 5px;
 
       &-wrap {
@@ -946,7 +1056,8 @@
         height: max-content;
         // overflow: scroll;
         overflow: hidden;
-        background-color: rgb(247, 243, 235);
+        // background-color: rgb(247, 243, 235);
+        background-color: rgb(240, 240, 255);
         border-radius: 5px;
         display: flex;
         flex-direction: column;
@@ -967,7 +1078,10 @@
         transition: 0.4s ease;
 
         &:hover {
-          background-color: #e9dcca;
+          // background-color: #e9dcca;
+          // background-color: rgb(240, 240, 255);
+          // background-color: rgb(238, 239, 239);
+          background-color: #f9f9ff;
         }
 
         img {
@@ -1023,7 +1137,7 @@
 
         .select-coin,
         .convert-coin-to {
-          width: 120px;
+          width: 130px;
           height: 45px;
           position: absolute;
           top: 14px;
@@ -1149,7 +1263,7 @@
   }
 
   .attantion {
-    color: #862633;
+    color: #505050;
   }
 
   .icon {
@@ -1218,7 +1332,8 @@
   }
 
   .ng-untouched {
-    border-color: #e9dcca !important;
+    // border-color: #e9dcca !important;
+    border-color: rgb(234, 234, 255) !important;
   }
 
   .error-address,
@@ -1235,6 +1350,10 @@
       'inputAddressQr inputAddressQr'
       'qrTextCode qrCode'
       'qrText qrText';
+    @include b(550){
+      margin-top: 0;
+      grid-gap: 0
+    }
   }
 
   .qr-textCode {
@@ -1319,7 +1438,7 @@
   .loading-dots {
     grid-area: loadingAddress;
     height: 60px;
-    background: #fdfbf6;
+    background: #f9f9ff;
     border-radius: 5px;
     margin-top: 20px;
     display: flex;

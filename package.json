@@ -1,17 +1,52 @@
 {
   "name": "ducatus-site",
-  "version": "1.6.4",
+  "description": "Mine Bitcoin by staking BTCMT tokens.",
+  "version": "1.7.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DUCATUS-revival/ducatus-site.git"
+  },
+  "keywords": [
+    "ducatus",
+    "angular",
+    "rocknblock",
+    "blockchain",
+    "binance smart chain",
+    "bsc",
+    "frontend"
+  ],
+  "author": {
+    "name": "Amary Filo",
+    "email": "amaryfilo@gmail.com",
+    "url": "https://github.com/amaryfilo"
+  },
+  "contributors": [
+    {
+      "name": "Amary Filo",
+      "email": "amaryfilo@gmail.com",
+      "url": "https://github.com/amaryfilo"
+    },
+    {
+      "name": "Gleb",
+      "url": "https://github.com/CleanBread"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/DUCATUS-revival/ducatus-site/issues"
+  },
   "scripts": {
-    "ng": "ng",
+    "ng": "ng serve",
     "start": "ng serve --proxy-config proxy.conf.json --host localducatus.mywish.io --port 4224 --disableHostCheck --no-live-reload",
     "build": "ng build",
     "build:prod": "ng build --prod",
-    "test": "ng test",
+    "test-todo": "ng test",
+    "test": "true",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
+    "@amfi/connect-wallet": "^1.0.6",
     "@angular/animations": "~9.1.1",
     "@angular/cdk": "^9.2.4",
     "@angular/common": "~9.1.1",
