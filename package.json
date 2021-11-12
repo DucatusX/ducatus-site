@@ -1,6 +1,6 @@
 {
   "name": "ducatus-site",
-  "description": "Mine Bitcoin by staking BTCMT tokens.",
+  "description": "The Ducatus ecosystem website.",
   "version": "1.7.0",
   "private": true,
   "repository": {
