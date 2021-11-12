@@ -84,6 +84,9 @@
     grid-template-columns: repeat(2, 50%);
     grid-gap: 20px;
 
+    h3{
+      margin-top: 20px;
+    }
 
     @include b(750) {
       grid-template-columns: 1fr;
