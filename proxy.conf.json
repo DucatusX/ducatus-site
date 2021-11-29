@@ -1,6 +1,6 @@
 {
     "/api": {
-        "target": "https://ducsite.rocknblock.io/",
+        "target": "https://ducatus-dev3.rocknblock.io/",
         "secure": false,
         "changeOrigin": true,
         "logLevel": "debug"
