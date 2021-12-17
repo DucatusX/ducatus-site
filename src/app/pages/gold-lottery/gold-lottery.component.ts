@@ -61,6 +61,10 @@ export class GoldLotteryComponent implements OnInit {
     });
   }
 
+  public backToStart():void {
+    this.win = false
+  }
+
   public registrate(form): void {
     this.registrationStep = 1;
   }
