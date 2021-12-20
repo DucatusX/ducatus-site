@@ -18,8 +18,8 @@ export class ContactComponent implements OnInit {
 
   constructor(private sendservice: SendService) {
     this.formData = {
-      name: '',
-      tel: '',
+      isWallet: false,
+      subject: '',
       email: '',
       message: '',
     };
