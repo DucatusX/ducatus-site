@@ -131,7 +131,7 @@
                                 <div class="winner-block-info-gold-left">
                                     <ul>
                                         <li>{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_1' | translate }} <span *ngIf="winData.token_type >= 144">{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_2' | translate }}</span><span *ngIf="winData.token_type < 144">{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_3' | translate }}</span></li>
-                                        <li>{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_4' | translate }} <span>{{ (winData.purchase_date| date : 'yyyy-MM-dd') || 'none' }}</span></li>
+                                        <li>{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_4' | translate }} <span>{{ winData.purchase_date}}</span></li>
                                         <li>{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_5' | translate }} <span>{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_6' | translate }}</span></li>
                                         <li>{{ 'PAGE.GOLD_LOTTERY.INFO.TEXT_7' | translate }} <span>{{ winData.country || 'none' }}</span></li>
                                     </ul>
