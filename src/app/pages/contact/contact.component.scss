@@ -56,6 +56,12 @@ button[disabled] {
   opacity: 0.5;
 }
 
+.contact-form-field-input.icon.icon__subject{
+  &:before{
+    background-size: 20px;
+  }
+}
+
 .contact {
   &-form {
     position: relative;

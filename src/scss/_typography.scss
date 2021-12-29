@@ -613,6 +613,12 @@ li {
     }
   }
 
+  &__subject{
+    @include before-img(block, 50px, 50px, r) {
+      background-image: url('assets/img/icons/subject.svg');
+    }
+  }
+
   &__datetimepicker {
     @include before-img(block, 20px, 20px, r) {
       background-image: url('assets/img/icons/datetimepicker.svg');
