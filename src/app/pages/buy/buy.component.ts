@@ -226,6 +226,7 @@ export class BuyComponent implements OnInit {
           });
         } else {
           this.novalidAddress = true;
+          this.addresses = null
         }
         break;
 
