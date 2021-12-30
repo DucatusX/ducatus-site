@@ -24,8 +24,6 @@ section.gold-lottery {
         width: 100%;
         margin: 0 auto;
 
-        &-wrap {}
-
         &-form {
             padding: 40px;
             background-image: url('/assets/img/gold/logo.svg');
@@ -160,10 +158,21 @@ section.gold-lottery {
                 overflow: hidden;
                 box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 
-                &-registration {}
-
-                &-check {
-                    // display: none;
+                .back-button{
+                        display:inline-flex;
+                        align-items:center;
+                        height: 41px;
+                        width: 41px;
+                        border-radius: 50%;
+                        background-color: rgba(155, 163, 174, 0.12);
+                        color: #d8d8d8;
+                        box-shadow: none;;
+                        @include b(mobile){
+                            margin: 30px 0 0 0;
+                        }
+                        img{
+                            margin: auto
+                        }
                 }
             }
 

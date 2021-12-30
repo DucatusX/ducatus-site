@@ -124,6 +124,9 @@
                 <div *ngIf="win">
 
                     <div class="lottery-form-block winner-block" data-title="Congratulations!">
+                        <div class="back-button" (click)="backToStart()">
+                            <img src="./../../../assets/img/buttons/button-back.svg" alt="btn-back">
+                        </div>
                         <div *ngIf="winData.token_type >= 144" class="winner-block-img" style="background-image: url(/assets/img/gold/bar.png);"></div>
                         <div *ngIf="winData.token_type <= 144" class="winner-block-img" style="background-image: url(/assets/img/gold/coin.png);"></div>
                         <div class="winner-block-info">
