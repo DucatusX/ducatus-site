@@ -19,11 +19,8 @@
         <div class="contact-form">
           <form #contactForm="ngForm" novalidate (submit)="sendMail(contactForm)" id="contactform" [attr.data-form-title]="'PAGE.CONTACT.FORM.TEXT' | translate">
             <div class="contact-form-fields" *ngIf="[0, 3].includes(contactMainSend)">
-              <div class="contact-form-field-input icon icon__user" [ngClass]="{ 'error-input': name.invalid && (name.dirty || name.touched) }">
-                <input class="input" #name="ngModel" type="text" [disabled]="disableFields" required name="name" [(ngModel)]="formData.name" [placeholder]="'PAGE.CONTACT.FORM.TEXT_1' | translate" />
-              </div>
-              <div class="contact-form-field-input" [ngClass]="{ 'error-input': tel.invalid && (tel.dirty || tel.touched) }">
-                <input type="tel" ng2TelInput #tel="ngModel" [disabled]="disableFields" id="phone" [(ngModel)]="formData.tel" required name="tel" oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\..*)\./g, '$1');" />
+              <div class="contact-form-field-input icon icon__subject" [ngClass]="{ 'error-input': subject.invalid && (subject.dirty || subject.touched) }">
+                <input class="input" #subject="ngModel" type="text" [disabled]="disableFields" required name="subject" [(ngModel)]="formData.subject" placeholder="Subject of the message" />
               </div>
               <div class="contact-form-field-input icon icon__email" [ngClass]="{ 'error-input': email.invalid && (email.dirty || email.touched) }">
                 <input class="input" type="email" #email="ngModel" [disabled]="disableFields" [(ngModel)]="formData.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required name="email" [placeholder]="'PAGE.CONTACT.FORM.TEXT_3' | translate" />
