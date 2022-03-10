@@ -14,14 +14,9 @@ export class VoucherComponent implements OnInit {
 
   public sortData = {
     id: true,
-    publish_date: false,
-    publish_date_time: false,
-    voucher_code: false,
-    activation_code: false,
-    usd_amount: false,
-    is_active: false,
-    is_used: false,
-    lock_days: false,
+    activationCode: false,
+    usdAmount: false,
+    lockDays: false,
     activation_date: false,
   } as any;
 
@@ -58,7 +53,7 @@ export class VoucherComponent implements OnInit {
     this.voucherService
       .getVouchers()
       .then((res) => {
-        this.vouchers = res;
+        this.vouchers = res.results;
         this.changeSort = false;
         this.sortVouchers('id');
       })
@@ -66,47 +61,6 @@ export class VoucherComponent implements OnInit {
         console.log(err);
       })
       .finally(() => (this.updateVouchersTable = false));
-  }
-
-  public changeActive(id, activeStatus): void {
-    let errorState = false;
-    let errorText = '';
-
-    const voucherFind = this.vouchers.filter((item) => {
-      if (item.id === id) {
-        item.isProgress = true;
-        item.is_active = !item.is_active;
-        return item;
-      }
-    });
-
-    const voucher = {
-      usd_amount: voucherFind[0].usd_amount,
-      voucher_code: voucherFind[0].voucher_code,
-      is_active: voucherFind[0].is_active,
-    };
-
-    this.voucherService
-      .setVoucher(id, voucher)
-      .then((res) => {
-        this.acceptTableProgress(id);
-      })
-      .catch((err) => {
-        console.log(err);
-        errorText = err.status + ': ' + err.statusText + ', ' + 'something went wrong, try again';
-        errorState = true;
-      })
-      .finally(() => {
-        this.vouchers.filter((item) => {
-          if (item.id === id) {
-            if (errorState) {
-              item.is_active = activeStatus;
-              item.isProgressBtn = true;
-              item.progressText = errorText;
-            }
-          }
-        });
-      });
   }
 
   public acceptTableProgress(id: any): any {
@@ -121,10 +75,9 @@ export class VoucherComponent implements OnInit {
 
   public addVoucher(): void {
     const voucher = {
-      voucher_code: this.voucherCode,
-      usd_amount: this.usdAmount,
-      is_active: this.isActive,
-      lock_days: Number(this.lockDays),
+      usdAmount: this.usdAmount,
+      currency: 'DUC',
+      lockDays: Number(this.lockDays),
     };
 
     this.popupInProgressText = 'in progress, please wait...';
@@ -184,7 +137,6 @@ export class VoucherComponent implements OnInit {
 
   public addVouchers(vouchers): void {
     vouchers.map((item) => {
-      item.voucher_code = item.voucher_code.toString();
       item.usd_amount = item.usd_amount.toString();
     });
 

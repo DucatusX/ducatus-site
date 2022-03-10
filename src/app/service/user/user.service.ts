@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
 import { Observable } from 'rxjs';
-import { URLS } from './user.service.api';
 import { AuthUserInterface, UserInterface } from './user.interface';
 import { DEFAULT_USER } from './user.constant';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +15,8 @@ export class UserService {
   private userModel: UserInterface;
   private updateProgress: boolean;
 
-  constructor(private httpService: HttpService) {
+
+  constructor(private httpService: HttpService, private http: HttpClient) {
     this.userObserves = [];
   }
 
@@ -24,7 +27,7 @@ export class UserService {
     });
   }
 
-  public updateUser(afterLogout?: boolean): any {
+  public updateUser( afterLogout?: boolean): any {
     if (this.updateProgress) {
       return;
     }
@@ -73,16 +76,19 @@ export class UserService {
   }
 
   private getProfile(): Promise<any> {
-    return this.httpService.get(URLS.PROFILE, null, URLS.HOSTS.AUTH_PATH).toPromise();
+    return this.http.get( environment.api + 'rest-auth/user/'
+    , { headers: {Authorization: `Token ${localStorage.getItem('token')}`}})
+    .toPromise();
   }
 
   public authenticate(data: AuthUserInterface): Promise<any> {
     data.username = data.username ? data.username.toLowerCase() : data.username;
     return new Promise((resolve, reject) => {
-      this.httpService
-        .post(URLS.LOGIN, data, URLS.HOSTS.AUTH_PATH)
+      this.http
+        .post( environment.api + 'rest-auth/login/', data)
         .toPromise()
-        .then((response) => {
+        .then((response: any) => {
+          localStorage.setItem('token', response.key);
           this.updateUser();
           resolve(response);
         }, reject);
@@ -90,10 +96,12 @@ export class UserService {
   }
 
   public logout(): any {
-    return this.httpService
-      .get(URLS.LOGOUT, {}, URLS.HOSTS.AUTH_PATH)
+    return this.http
+      .post( environment.api + 'rest-auth/logout/',
+      { headers: {Authorization: `Token ${localStorage.getItem('token')}`}})
       .toPromise()
       .then(() => {
+        localStorage.removeItem('token');
         this.userModel = DEFAULT_USER;
         this.updateUser(true);
       });

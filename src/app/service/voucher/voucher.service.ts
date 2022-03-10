@@ -1,12 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class VoucherService {
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService, private http: HttpClient) {}
 
   public getVouchers(): any {
-    return this.httpService.get(`vouchers/`, null, 'api/v3/').toPromise();
+    return this.http.get( environment.api + 'admin/vouchers/'
+    , { headers: {Authorization: `Token ${localStorage.getItem('token')}`}})
+      .toPromise();
   }
 
   public sendVouchers(data): any {
@@ -14,7 +18,8 @@ export class VoucherService {
   }
 
   public sendVoucher(data): any {
-    return this.httpService.post('vouchers/', data, 'api/v3/').toPromise();
+    return this.http.post( environment.api + 'admin/vouchers/', data,
+    { headers: {Authorization: `Token ${localStorage.getItem('token')}`}} ).toPromise();
   }
 
   public getVoucher(id: number): any {

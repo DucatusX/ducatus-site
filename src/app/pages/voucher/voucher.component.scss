@@ -166,9 +166,6 @@ section.voucher {
           font-size: 10px;
           display: inline-block;
           line-height: 1;
-          position: absolute;
-          top: 15px;
-          right: 5px;
           color: #5C5A57;
           transition: 0.4s ease;
 
@@ -181,6 +178,9 @@ section.voucher {
         &-activation-code {
           max-width: 270px;
           position: relative;
+          div{
+            display: flex;
+          }
         }
 
         &-voucher-code {
