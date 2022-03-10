@@ -30,7 +30,7 @@ jobs:
       - name: Install project packages
         run: npm install
       - name: Build project to production
-        run: npm run build:prod
+        run: npm run build
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
