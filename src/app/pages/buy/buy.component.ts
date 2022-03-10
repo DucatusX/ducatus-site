@@ -216,12 +216,17 @@ export class BuyComponent implements OnInit {
       case 'DUC':
         if (this.address.length === 34 && ['L', 'l', 'M', 'm'].includes(this.address.substring(0, 1))) {
           this.checkAddress = true;
+          this.buyservice.getValidateDucatusAddress(this.address).then((result) => {
 
-          this.buyservice.getValidateDucatusAddress(this.address).then((result: boolean) => {
-            result ? this.getAddresses() : (this.novalidAddress = true);
+            if (result.address_valid){
+              this.getAddresses();
+            }else{
+              this.novalidAddress = true;
+            }
           });
         } else {
           this.novalidAddress = true;
+          this.addresses = null;
         }
         break;
 
