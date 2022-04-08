@@ -214,7 +214,7 @@ export class BuyComponent implements OnInit {
 
     switch (this.coinGet) {
       case 'DUC':
-        if (this.address.length === 34 && ['L', 'l', 'M', 'm'].includes(this.address.substring(0, 1))) {
+        if (this.address.length === 34 && ['L', 'l', 'M', 'm', 'N', 'n'].includes(this.address.substring(0, 1))) {
           this.checkAddress = true;
           this.buyservice.getValidateDucatusAddress(this.address).then((result) => {
 
