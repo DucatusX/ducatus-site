@@ -54,7 +54,7 @@ export class VoucherComponent implements OnInit {
       .getVouchers()
       .then((res) => {
         this.vouchers = res.results;
-        this.changeSort = false;
+        this.changeSort = true;
         this.sortVouchers('id');
       })
       .catch((err) => {
@@ -89,6 +89,8 @@ export class VoucherComponent implements OnInit {
         this.pupopInProgress = false;
         this.close();
         this.vouchers.push(res);
+        this.changeSort = true;
+        this.sortVouchers('id');
       })
       .catch((err) => {
         console.log('add voucher error: ', err);
