@@ -119,24 +119,6 @@ export class VoucherComponent implements OnInit {
     this.infoModalTitle = 'Voucher';
   }
 
-  public parseCsvFile($event: any): void {
-    this.loadingCSV = true;
-    const file = $event.srcElement.files[0];
-
-    this.papa.parse(file, {
-      header: true,
-      dynamicTyping: true,
-      skipEmptyLines: 'greedy',
-      worker: true,
-      chunk: (chunk) => {
-        this.jsonCSV = chunk.data;
-      },
-      complete: () => {
-        this.addVouchers(this.jsonCSV);
-      },
-    });
-  }
-
   public addVouchers(vouchers): void {
     vouchers.map((item) => {
       item.usd_amount = item.usd_amount.toString();

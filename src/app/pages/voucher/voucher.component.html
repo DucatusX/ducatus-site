@@ -9,11 +9,6 @@
             <span class="page-text-title" [innerHTML]="'PAGE.VAUCHER.TITLE' | translate">Voucher</span>
             <div class="page-btn-block">
                 <span class="ducatus-btn ducatus-btn-brown icon icon__plus" (click)="popupAdd=true">New Voucher</span>
-                <label for="file" class="ducatus-btn ducatus-btn-gold" [ngClass]="{ 'icon icon__loading': loadingCSV }">
-                    <span *ngIf="!loadingCSV">Importing CSV</span>
-                </label>
-                <input type="file" id="file" accept=".csv" (change)="parseCsvFile($event)" class="ducatus-inputs-file"
-                    [disabled]="loadingCSV">
                 <span class="ducatus-btn ducatus-btn-brown table-refresh" (click)="updateVouchers()"
                     [ngClass]="{ 'icon icon__refresh': !updateVouchersTable, 'icon icon__loading': updateVouchersTable }"></span>
             </div>

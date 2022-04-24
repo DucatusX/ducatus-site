@@ -52,7 +52,7 @@ section.voucher {
     &-btn {
       &-block {
         display: grid;
-        grid-template-columns: repeat(3, max-content);
+        grid-template-columns: repeat(2, max-content);
         grid-gap: 20px;
         align-items: center;
 
