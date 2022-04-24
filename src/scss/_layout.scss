@@ -25,6 +25,9 @@ body {
   @include b(1920){
     padding: 0 4%;
   }
+  &-admin {
+    padding: 0;
+  }
 }
 
 .wrapper {

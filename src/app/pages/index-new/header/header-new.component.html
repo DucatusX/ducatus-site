@@ -8,7 +8,7 @@
     'full-height': openMenu
   }"
 >
-  <div class="container" *ngIf="hideHeader">
+  <div class="container" *ngIf="hideHeader" [ngClass]="{ 'container-admin': !adminHeader }">
     <div class="header-wrap">
       <div class="header-logo-block">
         <a *ngIf="adminHeader && !buyHeader" routerLink="/" class="header-logo">
@@ -86,11 +86,11 @@
           'header-menu-block-admin': !adminHeader
         }"
       >
-        <a class="header-menu-link">Balance</a>
-        <a class="header-menu-link">Convertor</a>
-        <a routerLink="/admin/voucher" class="header-menu-link">Voucher</a>
-        <a routerLink="/admin/rate" class="header-menu-link">Rates</a>
-        <a (click)="logout()" class="header-menu-link">Logout</a>
+        <a class="header-menu-link admin">Balance</a>
+        <a class="header-menu-link admin">Convertor</a>
+        <a routerLink="/admin/voucher" class="header-menu-link admin">Voucher</a>
+        <a routerLink="/admin/rate" class="header-menu-link admin">Rates</a>
+        <a (click)="logout()" class="header-menu-link admin">Logout</a>
       </div>
     </div>
   </div>
