@@ -174,11 +174,17 @@ section.voucher {
             transition: 0.4s ease;
           }
         }
-
+ 
         &-activation-code {
+          .icon-copy {
+            padding-right: 20px;
+            &:active {
+              opacity: 0.5;
+            }
+          }
           max-width: 270px;
           position: relative;
-          div{
+          div {
             display: flex;
           }
         }
@@ -398,6 +404,20 @@ section.voucher {
     word-break: break-all;
     position: relative;
     overflow: hidden;
+
+    .icon-copy {
+      padding: 5px 0 0 10px;
+      position: relative;
+      img {
+        position: absolute;
+        top: 8px;
+      }
+
+      &:active {
+        opacity: 0.5;
+      }
+
+    }
 
     @include b(600) {
       padding: 20px 20px;

@@ -28,6 +28,7 @@ export class VoucherComponent implements OnInit {
   public popupModal = false;
   public infoModalTitle: string;
   public infoModalText: string;
+  public isModalTitleVoucher: boolean;
 
   public cvsFile: any;
   public loadingCSV = false;
@@ -110,6 +111,7 @@ export class VoucherComponent implements OnInit {
 
   public openInfoModal(title?, info?): void {
     this.infoModalTitle = title ? title : 'Voucher';
+    this.isModalTitleVoucher = 'Activation code' ? true : false;
     this.infoModalText = info ? info : 'oops we lost text :(';
     this.popupModal = true;
   }

@@ -62,6 +62,9 @@
                             <td class="text-center">{{ item.id || 'null' }}</td>
                             <td class="voucher-activation-code">
                                 <div>
+                                    <div class="icon-copy" [cdkCopyToClipboard]="item.activationCode">
+                                        <img src="../../../assets/img/icons/copy.svg" alt="copy image">
+                                    </div>
                                     <span class="page-table-w" title="{{ item.activationCode }}">
                                         {{ item.activationCode || 'error' }}
                                     </span>
@@ -160,6 +163,9 @@
             </div>
             <div class="popup-body">
                 <span class="popup-body-text" title="{{ infoModalText }}">{{ infoModalText }}</span>
+                <span class="icon-copy" *ngIf="isModalTitleVoucher" [cdkCopyToClipboard]=" infoModalText">
+                    <img src="../../../assets/img/icons/copy.svg" alt="copy image">
+                </span>
             </div>
         </div>
     </div>
