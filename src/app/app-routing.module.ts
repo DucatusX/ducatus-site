@@ -39,10 +39,10 @@ const routes: Routes = [
     path: 'contact',
     component: ContactComponent,
   },
-  {
-    path: 'buy',
-    component: BuyComponent,
-  },
+  // {
+  //   path: 'buy',
+  //   component: BuyComponent,
+  // },
   {
     path: 'legal',
     component: LegalComponent,
