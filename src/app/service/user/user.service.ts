@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { AuthUserInterface, UserInterface } from './user.interface';
 import { DEFAULT_USER } from './user.constant';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 
 
 @Injectable({
